@@ -1,0 +1,17 @@
+﻿# Secrets
+.env.local
+.env.*.local
+.env.prod
+*.pem
+*.key
+# Sauvegardes et dumps
+*.dump
+*.sql.gz
+# Dépendances et builds
+node_modules/
+vendor/
+dist/
+var/
+# Divers
+.DS_Store
+Thumbs.db

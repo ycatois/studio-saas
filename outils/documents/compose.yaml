@@ -1,0 +1,16 @@
+# Usage (depuis la racine du studio) :
+#   docker compose -f outils/documents/compose.yaml run --rm docs python /outils/html2pdf.py <entrée.html> <sortie.pdf>
+#   docker compose -f outils/documents/compose.yaml run --rm docs python /outils/capture.py <parcours.json> <dossier-sortie>
+#   docker compose -f outils/documents/compose.yaml run --rm docs pandoc <entrée.md> -o <sortie.docx> [--reference-doc=<modèle.docx>]
+#   docker compose -f outils/documents/compose.yaml run --rm docs soffice --headless --convert-to pdf --outdir <dossier> <fichier.docx>
+services:
+  docs:
+    build: .
+    volumes:
+      - ../..:/studio
+    working_dir: /studio
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # pour capturer l'application qui tourne sur le poste
+    environment:
+      - CAPTURE_EMAIL
+      - CAPTURE_PASSWORD
