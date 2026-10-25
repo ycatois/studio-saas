@@ -7,12 +7,12 @@ statut: brouillon
 note: première version du pré-mortem, à reprendre et approfondir en phase 1 dans 1-analyse/pre-mortem.md
 ---
 
-# Pilotis — avocat du diable (objections, pré-mortem, tests)
+# Lanternis — avocat du diable (objections, pré-mortem, tests)
 
 (H) = hypothèse non vérifiée. Sources : voir `fiche-idee.md` (consultées le 2026-10-25).
 
 ## Reformulation en une phrase
-Pour le dirigeant d'une société de services B2B de 15 à 100 salariés sans DAF, qui consolide à la main des chiffres éparpillés, Pilotis promet une vue hebdomadaire fiable de la santé de l'entreprise (trésorerie, marge, équipe, commandes) sans projet BI.
+Pour le dirigeant d'une société de services B2B de 15 à 100 salariés sans DAF, qui consolide à la main des chiffres éparpillés, Lanternis promet une vue hebdomadaire fiable de la santé de l'entreprise (trésorerie, marge, équipe, commandes) sans projet BI.
 
 > Remarque : l'idée brute (« SI, financier, RH et autre, pour une PME ») est une **catégorie de produit**, pas encore une proposition. Le premier risque est de construire un « Databox français » générique, sans client précis.
 
@@ -24,13 +24,13 @@ Pour le dirigeant d'une société de services B2B de 15 à 100 salariés sans DA
 | 3 | Marché | **Risque de plateforme** : Pennylane, PayFit ou Lucca peuvent enrichir leurs propres tableaux de bord ou couper/renchérir l'accès API ; on construit sur le terrain d'autrui (H). | Forte |
 | 4 | Technique | **Coût de maintenance des connecteurs** : chaque API change, expire (PayFit ne renvoie pas de refresh token selon Nango, donc réautorisations régulières), limite les volumes. Pour un fondateur seul, 10 connecteurs peuvent consommer l'essentiel du temps (H). | Forte |
 | 5 | Technique / légal | **Accès aux logiciels français de paie et de compta** : Silae accessible selon un modèle où le cabinet de paie peut facturer l'accès (Lucca) ; intégration Silae d'Apideck en bêta, salariés seulement ; Cegid « en observation » chez Apideck ; Sage 100 souvent installé localement, donc agent local (Chift). Beaucoup de PME ont une paie externalisée chez leur comptable, donc des données hors de portée (H). | Forte |
-| 6 | Usage | **Qualité des données** : un tableau de bord n'a de valeur que si la compta est à jour et catégorisée. Si le comptable saisit au trimestre, Pilotis affiche des chiffres faux ou vides, et la confiance s'effondre (H). | Moyenne à forte |
+| 6 | Usage | **Qualité des données** : un tableau de bord n'a de valeur que si la compta est à jour et catégorisée. Si le comptable saisit au trimestre, Lanternis affiche des chiffres faux ou vides, et la confiance s'effondre (H). | Moyenne à forte |
 | 7 | Acquisition | **Pas de canal évident** : le dirigeant de PME est sur-sollicité, l'achat est peu urgent, donc cycle long et CAC élevé. Le meilleur prescripteur (l'expert-comptable) a souvent déjà son outil (Pennylane, Fathom) ou sa propre offre de tableau de bord (H). | Forte |
 | 8 | Prix | **Plafond de prix bas** : Databox gratuit jusqu'à 3 sources, Pennylane TPE dès 49 €/mois avec tableau de bord, Looker Studio gratuit. Difficile de justifier 149 € HT/mois sans valeur métier forte (H). | Moyenne |
 | 9 | Légal / RGPD | **Données de paie = données personnelles sensibles par nature** (salaires nominatifs, absences, éventuellement arrêts maladie). Exige agrégation, minimisation, sous-traitance RGPD, sécurité de haut niveau ; un incident serait fatal (H). | Moyenne |
 | 10 | Fondateur / timing | **Avantage du fondateur non identifié** et produit à large périmètre (SI + finance + RH + autre) : risque de dispersion. Le « pourquoi maintenant » (facturation électronique, API unifiées, LLM) profite aussi, et d'abord, aux acteurs installés. | Forte |
 
-## Pré-mortem : « nous sommes en avril 2028, Pilotis a échoué. Pourquoi ? »
+## Pré-mortem : « nous sommes en avril 2028, Lanternis a échoué. Pourquoi ? »
 ### Scénario 1 — Marché : « joli, mais on n'en a pas besoin »
 40 entreprises inscrites en bêta gratuite, 3 converties. Les dirigeants trouvent l'outil joli, puis reviennent à leur Excel ou à l'appli Pennylane. Le tableau de bord n'était pas branché sur une décision récurrente.
 - Signaux précoces : en entretien, personne ne cite d'épisode coûteux ; ouverture hebdomadaire < 30 % dès le premier mois.
@@ -47,7 +47,7 @@ Le fondateur passe 70 % de son temps à réparer des connecteurs (jetons expiré
 - Probabilité : **moyenne à forte** · Impact : élevé.
 
 ### Scénario 4 — Concurrence / plateforme : Pennylane mange le segment
-Pennylane (ou Agicap) sort un module « pilotage dirigeant » incluant RH et CRM, inclus dans l'abonnement. La proposition de Pilotis devient une fonctionnalité gratuite de l'outil déjà payé (H).
+Pennylane (ou Agicap) sort un module « pilotage dirigeant » incluant RH et CRM, inclus dans l'abonnement. La proposition de Lanternis devient une fonctionnalité gratuite de l'outil déjà payé (H).
 - Signaux précoces : annonces produit des acteurs installés ; prospects qui répondent « mon comptable me le fait dans Pennylane ».
 - Probabilité : **moyenne** · Impact : élevé.
 

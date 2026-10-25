@@ -5,7 +5,7 @@ date: 2026-10-25
 statut: brouillon
 ---
 
-# Synthèse marché — Pilotis
+# Synthèse marché — Lanternis
 
 Détails et sources : [marche-tam-sam-som.md](marche-tam-sam-som.md), [tendances.md](tendances.md), [signaux-demande.md](signaux-demande.md), [personas.md](personas.md), [benchmark.md](benchmark.md), [prix.md](prix.md), [acquisition.md](acquisition.md), [script-interview.md](script-interview.md).
 
@@ -22,7 +22,7 @@ Détails et sources : [marche-tam-sam-som.md](marche-tam-sam-som.md), [tendances
 ## Concurrence
 - **Top 3** : Primo (gestion des postes et des SaaS, outil pour un profil technique), Corma (gestion des SaaS pour PME, dès 3 € par utilisateur/mois), et le prestataire informatique avec son Excel ou son GLPI (le statu quo).
 - **Espace libre** : aucun acteur ne combine un écran pour un dirigeant non technicien, la couverture complète du SI (actifs, SaaS, contrats, fournisseurs, arrivées et départs), un hébergement en France, un prix forfaitaire publié et un service humain par un DSI.
-- **Conséquence** : ne pas vendre Pilotis sur la seule gestion des SaaS, où Corma est moins cher.
+- **Conséquence** : ne pas vendre Lanternis sur la seule gestion des SaaS, où Corma est moins cher.
 
 ## Prix (H, à tester en entretien)
 - 149 € / 249 € / 399 ou 449 € HT par mois selon l'effectif, annuel −20 %, remise ESS de 15 %. Pas de freemium ; un pilote de 30 jours payé par les frais de mise en place.

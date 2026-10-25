@@ -6,7 +6,7 @@ date: 2026-10-25
 statut: brouillon
 ---
 
-# Lean Canvas — Pilotis
+# Lean Canvas — Lanternis
 
 (H) = hypothèse non vérifiée. Sources : voir `fiche-idee.md` (consultées le 2026-10-25).
 
@@ -19,5 +19,5 @@ statut: brouillon
 | **5. Canaux** | • Experts-comptables prescripteurs / revendeurs (H)<br>• LinkedIn du fondateur + contenus SEO « tableau de bord dirigeant PME » (H)<br>• Marketplaces d'intégrations des éditeurs partenaires (Pennylane, PayFit, Qonto) (H) |
 | **6. Sources de revenus** | • Abonnement B2B mensuel HT par entreprise, annuel −20 % ; repères : Databox Team Core 199 $/mois en annuel, Fathom £38/mois/entreprise<br>• Paliers pressentis environ 149 € et 299 € HT/mois (H)<br>• Offre cabinet comptable par dossier connecté (H) |
 | **7. Structure de coûts** | • Développement **et maintenance continue** des connecteurs (poste n°1, récurrent) (H)<br>• Licence API unifiée éventuelle (Chift : tarif selon connexions actives, sur devis) + hébergement VPS OVH (H)<br>• Acquisition et accompagnement à l'onboarding (configuration des connecteurs) (H) |
-| **8. Métriques clés** | • Délai jusqu'au premier tableau de bord utile (objectif < 1 h après inscription) (H)<br>• Part des comptes actifs qui ouvrent Pilotis chaque semaine (H)<br>• Connecteurs actifs par compte, churn mensuel, CAC par canal (H) |
+| **8. Métriques clés** | • Délai jusqu'au premier tableau de bord utile (objectif < 1 h après inscription) (H)<br>• Part des comptes actifs qui ouvrent Lanternis chaque semaine (H)<br>• Connecteurs actifs par compte, churn mensuel, CAC par canal (H) |
 | **9. Avantage déloyal** | *(vide — rien de défendable identifié à ce stade ; à renseigner si l'utilisateur dispose d'un réseau, d'une expertise métier ou de partenariats exclusifs)* |

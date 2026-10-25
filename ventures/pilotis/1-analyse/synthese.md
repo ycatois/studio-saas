@@ -5,7 +5,7 @@ date: 2026-10-25
 statut: brouillon
 ---
 
-# Synthèse de l'analyse — Pilotis
+# Synthèse de l'analyse — Lanternis
 
 Sources : [pre-mortem.md](pre-mortem.md), [jtbd.md](jtbd.md), [faisabilite.md](faisabilite.md), [modele-revenus.md](modele-revenus.md). Tous les chiffres ci-dessous sont des hypothèses (H), sauf mention contraire dans ces documents.
 
@@ -33,6 +33,6 @@ L'idée de départ était un tableau de bord global (SI, finance, RH). L'analyse
 3. **Capacité d'acquisition du fondateur.** Il faut environ 23 h de vente par client et 3 jours par semaine pour 10 k€ de MRR, en plus du rôle de directeur technique de Tecnoo. → Chiffrer le temps réellement disponible ; tester des canaux à moindre effort (réseaux ESS, prestataires informatiques prescripteurs, contenu sur NIS2 et la cybersécurité des PME).
 
 ## Questions à trancher par le fondateur
-- Temps disponible pour Pilotis par rapport à Tecnoo.
+- Temps disponible pour Lanternis par rapport à Tecnoo.
 - Propriété du code de Cockpit DSI (Tecnoo ou le fondateur) et cession éventuelle à Hasteria.
 - Modèle hybride logiciel + service : qui facture l'accompagnement, Hasteria ou Tecnoo ?

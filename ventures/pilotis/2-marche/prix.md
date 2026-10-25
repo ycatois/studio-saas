@@ -7,7 +7,7 @@ statut: brouillon
 skills: analyse-prix
 ---
 
-# Prix — relevé du marché et stratégie recommandée pour Pilotis
+# Prix — relevé du marché et stratégie recommandée pour Lanternis
 
 > **Règle de lecture.** Relevé effectué le **2026-10-25**. Les numéros [n] renvoient aux sources de [benchmark.md](benchmark.md) (même numérotation). « Éditeur » = prix affiché par l'éditeur ; « tiers » = comparateur, blog ou annuaire, indicatif. **(H)** = hypothèse ou calcul de l'analyste à partir d'une hypothèse. Aucune conversion de devise n'est faite (pas de taux de change sourcé) : les prix restent dans leur monnaie d'origine.
 
@@ -67,9 +67,9 @@ Cas type **(H)** : structure de **50 salariés**, 50 comptes utilisateurs, aucun
 | Zluri (tiers) | 50 × 4 à 8 $ [10] | 200 à 400 $ | 4 à 8 $ | Prix non confirmé par l'éditeur |
 | Infogérance complète | 50 × 50 à 75 € [25] | 2 500 à 3 750 € | 50 à 75 € | Couvre le support, pas le pilotage |
 | DSI à temps partagé, 1 j/mois | 700 à 1 400 € [24] | 700 à 1 400 € | 14 à 28 € | Sans outil |
-| **Pilotis Pilotage (pressenti)** | forfait | **249 € HT** | **≈ 4,98 €** | Registre SI complet + alertes |
+| **Lanternis Pilotage (pressenti)** | forfait | **249 € HT** | **≈ 4,98 €** | Registre SI complet + alertes |
 
-**Grille pressentie de Pilotis, en €/salarié/mois (catalogue mensuel) :**
+**Grille pressentie de Lanternis, en €/salarié/mois (catalogue mensuel) :**
 
 | Palier | Effectif | Prix | Bas de tranche | Haut de tranche |
 |---|---|---|---|---|
@@ -78,9 +78,9 @@ Cas type **(H)** : structure de **50 salariés**, 50 comptes utilisateurs, aucun
 | Pilotage+ | 100-250 | 399 € | 3,99 € | **1,60 €** |
 
 **Lecture :**
-- Pilotis se place **au-dessus des outils pour technicien** (GLPI, Snipe-IT, Freshservice à 1 agent : moins de 1 €/salarié) et **au niveau des outils SaaS PME** (Cledara, JumpCloud, Zluri : ≈ 4 à 8 par salarié dans leur monnaie). C'est cohérent : on vend un outil utilisable sans technicien, pas une licence technique.
-- **Corma fixe un plancher visible sur le volet SaaS** : ≈ 150 €/mois à 50 utilisateurs, soit 100 € de moins que Pilotage [39]. Pilotis ne doit donc **pas se vendre sur la seule gestion des abonnements**. L'écart de prix se justifie par le matériel, les contrats et fournisseurs non SaaS, les alertes pour le dirigeant et le service humain (H, à tester en entretien face à Corma).
-- Pilotis reste **un ordre de grandeur sous le service** : 149 € ≈ 1/5 d'une journée de DSI à temps partagé (700 € en bas de fourchette [24]) ; 249 € ≈ 7 à 10 % d'une infogérance complète pour 50 salariés [25]. **C'est l'ancre de prix à utiliser en vente** (« le prix de deux heures de DSI par mois ») (H).
+- Lanternis se place **au-dessus des outils pour technicien** (GLPI, Snipe-IT, Freshservice à 1 agent : moins de 1 €/salarié) et **au niveau des outils SaaS PME** (Cledara, JumpCloud, Zluri : ≈ 4 à 8 par salarié dans leur monnaie). C'est cohérent : on vend un outil utilisable sans technicien, pas une licence technique.
+- **Corma fixe un plancher visible sur le volet SaaS** : ≈ 150 €/mois à 50 utilisateurs, soit 100 € de moins que Pilotage [39]. Lanternis ne doit donc **pas se vendre sur la seule gestion des abonnements**. L'écart de prix se justifie par le matériel, les contrats et fournisseurs non SaaS, les alertes pour le dirigeant et le service humain (H, à tester en entretien face à Corma).
+- Lanternis reste **un ordre de grandeur sous le service** : 149 € ≈ 1/5 d'une journée de DSI à temps partagé (700 € en bas de fourchette [24]) ; 249 € ≈ 7 à 10 % d'une infogérance complète pour 50 salariés [25]. **C'est l'ancre de prix à utiliser en vente** (« le prix de deux heures de DSI par mois ») (H).
 - Faiblesse de la grille : à **250 salariés, Pilotage+ tombe à 1,60 €/salarié**, moins que n'importe quel outil SaaS PME au salarié. Le haut de tranche est sous-valorisé (H).
 
 ## 3. Métrique de valeur
@@ -120,12 +120,12 @@ Cas type **(H)** : structure de **50 salariés**, 50 comptes utilisateurs, aucun
 
 ### 4.3 Prestations d'accompagnement
 
-Repères : TJM du marché 700-900 €/jour (management de transition confirmé) et 580-750 €/jour (consultant IT confirmé) [24] ; responsable informatique freelance ≈ 404-553 €/jour [35]. **TJM implicite retenu pour Pilotis : ≈ 650 à 780 € HT (H)**, à remplacer par le TJM réel de Tecnoo si c'est Tecnoo qui délivre.
+Repères : TJM du marché 700-900 €/jour (management de transition confirmé) et 580-750 €/jour (consultant IT confirmé) [24] ; responsable informatique freelance ≈ 404-553 €/jour [35]. **TJM implicite retenu pour Lanternis : ≈ 650 à 780 € HT (H)**, à remplacer par le TJM réel de Tecnoo si c'est Tecnoo qui délivre.
 
 | Prestation | Contenu (H) | Prix recommandé HT (H) | Temps (H) | TJM implicite |
 |---|---|---|---|---|
 | **Mise en place** | Import de l'Excel, connexion des sources, paramétrage des alertes, formation 1 h | **490 €** (Essentiel) / **990 €** (Pilotage, Pilotage+) — confirmé | 4 à 8 h | ≈ 860 €/j (marge pour imprévus) |
-| **Diagnostic SI** (porte d'entrée) | Inventaire des actifs, contrats et licences ; check-list sécurité ; restitution au dirigeant ; registre Pilotis prérempli ; 1er mois de Pilotis inclus | **1 490 €** (20-49) / **2 490 €** (50-250) | 2 / 3,5 j | ≈ 640-670 €/j (déduction faite du mois d'abonnement inclus) |
+| **Diagnostic SI** (porte d'entrée) | Inventaire des actifs, contrats et licences ; check-list sécurité ; restitution au dirigeant ; registre Lanternis prérempli ; 1er mois de Lanternis inclus | **1 490 €** (20-49) / **2 490 €** (50-250) | 2 / 3,5 j | ≈ 640-670 €/j (déduction faite du mois d'abonnement inclus) |
 | **DSI à temps partagé outillé ½ j/mois** | Revue des alertes, arbitrages fournisseurs, sécurité, feuille de route ; en supplément de l'abonnement | **+ 390 €/mois**, engagement 6 mois | ½ j/mois | 780 €/j |
 | **DSI à temps partagé outillé 1 j/mois** | Idem + pilotage de projets (changement de prestataire, migration) | **+ 690 €/mois**, engagement 6 mois | 1 j/mois | 690 €/j |
 

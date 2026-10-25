@@ -7,7 +7,7 @@ statut: brouillon
 skills: messages-par-persona, landing-validation-waitlist, plan-de-lancement
 ---
 
-# Pilotis : positionnement et acquisition (premier jet)
+# Lanternis : positionnement et acquisition (premier jet)
 
 > **Règle de lecture.** Les chiffres externes sont sourcés (URL, consultée le **2026-10-25**, liste en § 8). **(H)** = hypothèse non vérifiée. Tous les coûts d'acquisition sont des **calculs sur hypothèses** : ils héritent du statut (H). Le temps du fondateur est valorisé à **60 €/h (H)**, comme dans `1-analyse/modele-revenus.md` § 4.
 > **Rien n'est publié ni envoyé.** Les messages et contenus cités sont des brouillons ; toute publication, tout envoi groupé ou toute campagne passe par la validation explicite de l'utilisateur (règle 2 de `CLAUDE.md`).
@@ -19,7 +19,7 @@ skills: messages-par-persona, landing-validation-waitlist, plan-de-lancement
 
 ### 1.1 Phrase de positionnement (pour qui, contre quoi, pourquoi nous)
 
-> **Pour les dirigeants et les DAF de PME et d'associations de 20 à 250 salariés qui n'ont pas de DSI, Pilotis est un DSI de poche : un registre de tout le SI qui alerte avant les mauvaises surprises, mis en place avec eux par un DSI, pour qu'ils gardent la carte de leur informatique même quand la personne qui savait s'en va.**
+> **Pour les dirigeants et les DAF de PME et d'associations de 20 à 250 salariés qui n'ont pas de DSI, Lanternis est un DSI de poche : un registre de tout le SI qui alerte avant les mauvaises surprises, mis en place avec eux par un DSI, pour qu'ils gardent la carte de leur informatique même quand la personne qui savait s'en va.**
 
 Pourquoi c'est défendable (renvois aux études de la phase 2) :
 - **Pour qui :** le dirigeant non technicien, à qui aucun outil ne s'adresse aujourd'hui (`benchmark.md` § 0 et § 3, carte de positionnement).
@@ -40,7 +40,7 @@ Formulation de travail : **« Votre informatique ne doit pas être une boîte no
 | Alternative | Ce qu'elle fait | Notre différence (une ligne) | Source |
 |---|---|---|---|
 | Statu quo : prestataire + Excel | Dépannage, sauvegardes, inventaire dans l'outil du prestataire | La carte du SI appartient à la structure ; le prestataire peut y contribuer | `benchmark.md` § 2.6 |
-| Primo (FR) | MDM, gestion des SaaS, achat de matériel ; offre aussi pour MSP | Pilotis ne configure pas les postes : il aide le dirigeant à décider (contrats, fournisseurs, coûts, alertes) | `benchmark.md` [17] |
+| Primo (FR) | MDM, gestion des SaaS, achat de matériel ; offre aussi pour MSP | Lanternis ne configure pas les postes : il aide le dirigeant à décider (contrats, fournisseurs, coûts, alertes) | `benchmark.md` [17] |
 | Cledara (UK) | Abonnements SaaS et cartes virtuelles, 100 £/mois en entrée | En français, tout le SI (pas seulement les SaaS), hébergé en France | `benchmark.md` [15] |
 | Corma (FR) | Gouvernance des licences et des accès ; revendique 45 entreprises clientes dont Skello ; offre dédiée aux MSP | Pensé pour une structure **sans** équipe IT, avec un service humain ; prix public | https://corma.io/fr/company/about-us ; https://www.corma.io/fr/automated-saas-management-for-msps |
 | DSI à temps partagé | Conseil à 700 à 1 400 €/jour, sans outil | Le même pilotage pour une fraction du prix, et le registre reste quand l'intervenant part | `prix.md` § 1.2 [24] |
@@ -53,7 +53,7 @@ Formulation de travail : **« Votre informatique ne doit pas être une boîte no
 |---|---|---|---|
 | **P1 Marc**, dirigeant de PME de 50 à 150 salariés | « Quand votre référent informatique part, votre SI reste. Vous savez ce que vous avez, ce que vous payez et ce qui arrive à échéance, sans recruter un poste à 45-75 k€. » | Coût d'un responsable informatique : 45 à 75 k€ brut/an (S2) ; Pilotage 249 € HT/mois | Diagnostic SI (2 490 €) ou Pilotage + mise en place |
 | **P2 Nadia**, DAF d'une association médico-sociale de 60 à 200 salariés | « Présentez à votre CA et à vos financeurs un SI maîtrisé et chiffré, avec des données hébergées en France, à tarif associatif. » | Fragilités cyber et RGPD relevées par une ARS dans les ESSMS (S3) ; remise ESS de 15 % | Diagnostic SI présenté comme un livrable pour le CA |
-| **P3 Sophie**, office manager (conservée comme **utilisatrice relais**, pas comme cible d'acquisition) | « Plus d'accès oublié au départ d'un salarié, plus de renouvellement surprise : Pilotis vous prévient. » | Check-list arrivées et départs, alertes | Aucune offre propre : elle est la championne interne de P1 ou P2 |
+| **P3 Sophie**, office manager (conservée comme **utilisatrice relais**, pas comme cible d'acquisition) | « Plus d'accès oublié au départ d'un salarié, plus de renouvellement surprise : Lanternis vous prévient. » | Check-list arrivées et départs, alertes | Aucune offre propre : elle est la championne interne de P1 ou P2 |
 
 **Recommandation sur P3 :** ne pas lui consacrer de canal. Elle n'a pas le pouvoir d'achat (`personas.md`) et ses signaux sont faibles (S12). On la touche à travers le compte de P1 ou P2 (contenus « procédure de départ d'un salarié », pièce jointe que le dirigeant lui transmet). À supprimer comme persona si les entretiens le confirment.
 
@@ -112,7 +112,7 @@ Formulation de travail : **« Votre informatique ne doit pas être une boîte no
 - Limites : les fédérations ont leurs propres partenaires et calendriers (H) ; le cycle de décision peut dépasser 6 mois (R11) ; l'appartenance de Nexem et de la Fehap à l'UDES n'a pas été vérifiée.
 
 **C6. Prestataires informatiques, MSP, DSI à temps partagé**
-- Modèle (H) : le partenaire recommande Pilotis à ses clients sans DSI, ou l'utilise pour sa revue mensuelle ; commission de 20 % la première année (≈ 500 € sur un ARPA de 210 €).
+- Modèle (H) : le partenaire recommande Lanternis à ses clients sans DSI, ou l'utilise pour sa revue mensuelle ; commission de 20 % la première année (≈ 500 € sur un ARPA de 210 €).
 - Temps : 5 h de recrutement par partenaire (amorti sur 2 clients, 150 €) + 6 h de démonstration conjointe (360 €) ≈ **1 050 €**.
 - Risques : conflit d'intérêts (le prestataire vend ce qu'il conseille) ; concurrence de Primo et Corma sur les MSP ; Tecnoo elle-même est un partenaire naturel, mais lié au fondateur.
 - Test déjà prévu : 3 entretiens prestataires (`script-interview.md` § 8). Pas de budget dédié en pré-lancement.
@@ -123,7 +123,7 @@ Formulation de travail : **« Votre informatique ne doit pas être une boîte no
 
 **C7. SEO** : 360 €/mois pendant 12 mois = 4 320 € pour peut-être 3 clients la première année (H), plus 9 h de vente chacun ≈ **2 000 €**. Le seul canal adapté aux **PME de 20 à 49 salariés**, hors SAM en prospection (`marche-tam-sam-som.md` § 4). À lancer en croissance ; en pré-lancement, seulement 2 ou 3 contenus piliers qui servent aussi la landing et les entretiens.
 
-**C8. Autodiagnostic SI** : le diagnostic public MonAideCyber existe déjà sur le volet cyber (`tendances.md` § 1). L'autodiagnostic Pilotis doit couvrir **tout le SI** (contrats, abonnements, accès, dépendance à une personne) et renvoyer vers MonAideCyber pour la cyber, sans le dupliquer. Données minimales, consentement explicite (RGPD by design).
+**C8. Autodiagnostic SI** : le diagnostic public MonAideCyber existe déjà sur le volet cyber (`tendances.md` § 1). L'autodiagnostic Lanternis doit couvrir **tout le SI** (contrats, abonnements, accès, dépendance à une personne) et renvoyer vers MonAideCyber pour la cyber, sans le dupliquer. Données minimales, consentement explicite (RGPD by design).
 
 ---
 
@@ -203,7 +203,7 @@ Chaque fin de quinzaine (puis chaque mois après le lancement), on calcule pour 
 
 | Semaine | Dates | C1 Réseau chaud | C2 + C3 Prospection + LinkedIn | C4 Réseaux ESS | Socle commun (autres agents) |
 |---|---|---|---|---|---|
-| S1 | 26 oct. – 30 oct. | Lister et qualifier le vivier Tecnoo et le réseau du fondateur (taille, tranche, ESS ou non, DSI ou non) ; choisir 20 cibles | Constituer la liste de 100 structures à déclencheur (offres d'emploi, ESMS numérique) | Cartographier les relais : CRESS de la région du fondateur, délégations Nexem, Fehap, Uniopss ; Solidatech | `/marque` (plateforme, voix du fondateur) ; vérification du nom Pilotis (skill nouvelle-marque-hasteria) |
+| S1 | 26 oct. – 30 oct. | Lister et qualifier le vivier Tecnoo et le réseau du fondateur (taille, tranche, ESS ou non, DSI ou non) ; choisir 20 cibles | Constituer la liste de 100 structures à déclencheur (offres d'emploi, ESMS numérique) | Cartographier les relais : CRESS de la région du fondateur, délégations Nexem, Fehap, Uniopss ; Solidatech | `/marque` (plateforme, voix du fondateur) ; vérification du nom Lanternis (skill nouvelle-marque-hasteria) |
 | S2 | 2 nov. – 6 nov. | Envoyer les 10 premières demandes d'entretien (brouillons de `script-interview.md` § 7, envoi individuel par le fondateur) | Rédiger 2 variantes de message ; premiers posts LinkedIn (brouillons, validation requise) | Premiers contacts avec 3 relais (appel ou email individuel) | Landing de validation et liste d'attente (brand-manager, cro-conversion) ; conception de l'autodiagnostic |
 | S3 | 9 nov. – 13 nov. | 10 demandes de plus ; premiers entretiens | 30 premiers contacts (variante A / B) | 3 relais de plus ; proposer un sujet de webinaire | Mise en ligne de la landing **après validation** de l'utilisateur ; Search Console |
 | S4 | 16 nov. – 20 nov. | Entretiens ; **point d'arrêt C1** (≥ 6 entretiens obtenus ?) | 30 contacts de plus ; **point de mesure** du taux de réponse | Relances ; 1er entretien ESS issu du réseau | Autodiagnostic en ligne (après validation) ; **revue de quinzaine 1** |
@@ -241,7 +241,7 @@ Chaque fin de quinzaine (puis chaque mois après le lancement), on calcule pour 
 8. **Coût de Sales Navigator** : prix relevé par des tiers (≈ 121 € HT/mois en mensuel), à vérifier sur la page de LinkedIn.
 9. **Cotisations** CPME (selon l'union territoriale), CJD (non trouvée), BNI (sources tierces, dates non vérifiées).
 10. **Volumes de recherche SEO** : non mesurés (`signaux-demande.md` § 3).
-11. **Disponibilité du nom « Pilotis »** (marque, domaine) : non vérifiée dans ce document.
+11. **Disponibilité du nom « Lanternis »** (marque, domaine) : non vérifiée dans ce document.
 
 ---
 

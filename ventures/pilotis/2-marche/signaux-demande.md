@@ -7,7 +7,7 @@ statut: brouillon
 méthode: skill veille-signaux-demande
 ---
 
-# Pilotis : signaux de demande
+# Lanternis : signaux de demande
 
 > Signaux réels et vérifiables, consultés le 2026-10-25. Pour chacun : ce qu'il dit, sa source, sa date, **ce qu'il prouve et ce qu'il ne prouve pas**. Force notée de 1 (faible) à 5 (forte).
 > **Conclusion en tête :** **demande moyenne pour le problème, non démontrée pour la solution.** Le problème (perte de maîtrise du SI, exposition cyber, pilotage des prestataires) est documenté par des sources publiques solides. La volonté de payer un **outil** pour le résoudre, chez des structures sans DSI, n'est démontrée par aucun signal public. Seuls les entretiens et les précommandes peuvent la prouver.
@@ -70,6 +70,6 @@ méthode: skill veille-signaux-demande
 **À valider en entretien (`script-interview.md`) :**
 1. Fréquence et coût des épisodes récents (incident, départ, renouvellement subi, question d'un assureur ou d'un client) : H1, R2.
 2. Part des structures où le prestataire ou l'Excel « suffit » : H2.
-3. Budget réel consacré au SI, et ligne budgétaire où Pilotis pourrait entrer (SI, cyber, conseil) : H3.
+3. Budget réel consacré au SI, et ligne budgétaire où Lanternis pourrait entrer (SI, cyber, conseil) : H3.
 4. Préférence entre logiciel seul et logiciel + accompagnement : H4, R5.
 5. Le départ en retraite ou la démission du « référent informatique » comme déclencheur : nouvelle hypothèse issue de S2.

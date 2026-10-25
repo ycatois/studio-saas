@@ -9,6 +9,8 @@ skills: nouvelle-marque-hasteria, plateforme-de-marque
 
 # Noms et taglines — Pilotis (nom de travail)
 
+> **Décision du 2026-10-25 : le fondateur retient Lanternis.** « Cockpit DSI » a aussi été envisagé, puis écarté comme nom de marque (trop descriptif, protection faible) ; il reste possible comme accroche (« Lanternis, le cockpit DSI des PME et des associations »).
+
 > **Méthode et limites.** Vérifications faites le **2026-10-25** :
 > - **Domaines** : interrogation RDAP des registres officiels (AFNIC pour le `.fr` : `https://rdap.nic.fr/domain/<nom>.fr` ; Verisign pour le `.com` : `https://rdap.verisign.com/com/v1/domain/<nom>.com`). « Pris » = enregistrement actif trouvé ; « apparemment libre » = réponse 404 du registre ce jour-là. Un domaine libre peut être enregistré par un tiers à tout moment.
 > - **Homonymes** : recherches web (moteur de recherche) sur le nom exact, seul et associé à « logiciel », « SaaS », « informatique ». Absence de résultat ≠ absence d'utilisation.

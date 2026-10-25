@@ -6,16 +6,16 @@ date: 2026-10-25
 statut: brouillon
 ---
 
-# Fiche idée — Pilotis
+# Fiche idée — Lanternis
 
 > Sources consultées le 2026-10-25 (liste en fin de document). Tout ce qui n'est pas sourcé est marqué **(H)** = hypothèse non vérifiée.
 
 ## 1. Nom de travail
-- **Nom :** Pilotis (nom de travail, disponibilité marque/domaine non vérifiée)
+- **Nom :** Pilotis (nom de travail initial) → **Lanternis**, retenu le 2026-10-25 (voir `marque/noms-et-taglines.md`)
 - **Slug :** `pilotis`
 - **Idée brute (verbatim utilisateur) :** « un saas qui va permettre à une PME d'avoir un tableau de bord global de son activité. SI, Financier, RH, et autre. Avec la possibilité d'avoir des connecteurs avec différents produits via leurs api. »
 
-**En une phrase :** pour le dirigeant d'une société de services B2B de 15 à 100 salariés sans DAF à temps plein, qui passe ses fins de mois à consolider à la main des chiffres éparpillés entre compta, paie, CRM et banque, Pilotis livre chaque lundi matin une vue unique et fiable de la santé de l'entreprise (trésorerie, marge, masse salariale, carnet de commandes), sans projet BI.
+**En une phrase :** pour le dirigeant d'une société de services B2B de 15 à 100 salariés sans DAF à temps plein, qui passe ses fins de mois à consolider à la main des chiffres éparpillés entre compta, paie, CRM et banque, Lanternis livre chaque lundi matin une vue unique et fiable de la santé de l'entreprise (trésorerie, marge, masse salariale, carnet de commandes), sans projet BI.
 
 ## 2. Le problème (point de vue client)
 « Pour savoir où en est ma boîte, je dois ouvrir 5 outils et attendre que mon comptable me sorte une situation avec 6 semaines de retard ; je décide à l'instinct. »

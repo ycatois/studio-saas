@@ -6,7 +6,7 @@ date: 2026-10-25
 statut: brouillon
 ---
 
-# Pilotis : modèle de revenus et premiers unit economics
+# Lanternis : modèle de revenus et premiers unit economics
 
 > **Règle de lecture.** **(H)** = hypothèse non vérifiée, à tester en phase Marché. Les seuls chiffres externes repris ici viennent des sources déjà citées dans `0-idee/fiche-idee.md` (consultées le 2026-10-25). Je n'ai pas eu d'accès web pour cette analyse : aucune nouvelle source n'a été ajoutée. Les résultats calculés (ARPA, LTV, nombre de clients) héritent du statut d'hypothèse de leurs données d'entrée.
 >
@@ -27,7 +27,7 @@ statut: brouillon
 | Agicap | pas de grille publique ; estimation tierce non vérifiée vers 200 €/mois | https://www.impli.fr/avis/agicap |
 | Chift (API unifiée) | sur devis, selon le nombre de connexions actives | https://www.chift.eu/developers |
 
-**Lecture :** les outils financiers ou KPI se situent entre quelques dizaines et environ 300 €/mois. Sur le seul volet finance, Pilotis aura du mal à dépasser cette fourchette. Un prix plus élevé ne se justifie que par **les volets SI et RH croisés** et par la **taille de la cible**, nettement plus grande que celle des grilles TPE ci-dessus **(H)**.
+**Lecture :** les outils financiers ou KPI se situent entre quelques dizaines et environ 300 €/mois. Sur le seul volet finance, Lanternis aura du mal à dépasser cette fourchette. Un prix plus élevé ne se justifie que par **les volets SI et RH croisés** et par la **taille de la cible**, nettement plus grande que celle des grilles TPE ci-dessus **(H)**.
 
 ---
 
@@ -57,7 +57,7 @@ Les trois structures partagent ces règles :
 |---|---|---|---|
 | **1 volet** (SI *ou* finance *ou* RH) | 1 volet, connecteurs de ce volet | 99 € | 149 € |
 | **2 volets** | 2 volets + 3 indicateurs croisés | 179 € | 269 € |
-| **Pilotis complet** | 3 volets + tous les indicateurs croisés + synthèse CODIR | 249 € | 379 € |
+| **Lanternis complet** | 3 volets + tous les indicateurs croisés + synthèse CODIR | 249 € | 379 € |
 
 - **Pour :** prix d'appel bas (99 €), ce qui permet d'entrer par le volet SI, terrain du fondateur, puis de vendre les autres volets en montée de gamme.
 - **Contre :** le produit est vendu en morceaux alors que la promesse est la **vue croisée**. Les clients risquent de rester sur 1 volet (ARPA bas), et la grille est plus complexe à expliquer. Le volet finance seul se retrouve en concurrence directe avec Pennylane et Fathom, moins chers.
@@ -194,8 +194,8 @@ Ces totaux n'incluent **ni le développement ni la maintenance des connecteurs**
 | Service | Contenu (H) | Prix (H) | Temps (H) |
 |---|---|---|---|
 | **Mise en place** (forfait) | Connexion des sources, paramétrage, atelier indicateurs de 2 h, formation | 490 € (Essentiel) / 990 € (Pilotage, Pilotage+) | 4 à 8 h |
-| **État des lieux SI** (porte d'entrée) | Cartographie des actifs, contrats, licences et risques ; restitution ; registre SI prérempli dans Pilotis | 1 500 à 3 000 € (2,5 à 5 j) | 2,5 à 5 j |
-| **« DSI à temps partagé »** | 0,5 à 2 j/mois : arbitrages fournisseurs, sécurité, sauvegardes, feuille de route SI, appuyés sur Pilotis | 300 à 1 200 €/mois (TJM supposé 600 € HT) | 0,5 à 2 j/mois |
+| **État des lieux SI** (porte d'entrée) | Cartographie des actifs, contrats, licences et risques ; restitution ; registre SI prérempli dans Lanternis | 1 500 à 3 000 € (2,5 à 5 j) | 2,5 à 5 j |
+| **« DSI à temps partagé »** | 0,5 à 2 j/mois : arbitrages fournisseurs, sécurité, sauvegardes, feuille de route SI, appuyés sur Lanternis | 300 à 1 200 €/mois (TJM supposé 600 € HT) | 0,5 à 2 j/mois |
 
 Le TJM de 600 € n'est pas sourcé : il faut le **remplacer par le TJM réel pratiqué par Tecnoo**.
 
@@ -206,7 +206,7 @@ Le TJM de 600 € n'est pas sourcé : il faut le **remplacer par le TJM réel pr
 **Points d'attention :**
 - Ce revenu de service ne doit **pas** être compté dans le MRR SaaS : à suivre à part.
 - Il consomme le même temps fondateur que la vente. Un fondateur seul ne peut pas faire à la fois 10 k€ de MRR et 7 jours de DSI à temps partagé par mois.
-- **Question d'entité, à trancher en ADR ou avec l'utilisateur** : le service est-il facturé par Hasteria (marque Pilotis) ou réalisé par Tecnoo SAS (ESN, consultants disponibles) avec un partenariat ? La deuxième option lève la contrainte de capacité et fait de Tecnoo un **canal de distribution**, mais crée une relation entre deux sociétés à encadrer (prix de transfert, conflit d'intérêts).
+- **Question d'entité, à trancher en ADR ou avec l'utilisateur** : le service est-il facturé par Hasteria (marque Lanternis) ou réalisé par Tecnoo SAS (ESN, consultants disponibles) avec un partenariat ? La deuxième option lève la contrainte de capacité et fait de Tecnoo un **canal de distribution**, mais crée une relation entre deux sociétés à encadrer (prix de transfert, conflit d'intérêts).
 - Effet probable sur le churn : un client accompagné résilie moins **(H)**.
 
 ---

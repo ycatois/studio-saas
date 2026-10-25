@@ -7,7 +7,7 @@ statut: brouillon
 skills: benchmark-concurrentiel, analyse-prix
 ---
 
-# Benchmark concurrentiel — Pilotis (« DSI de poche »)
+# Benchmark concurrentiel — Lanternis (« DSI de poche »)
 
 > **Règle de lecture.** Toutes les sources ont été consultées le **2026-10-25** (liste numérotée en fin de document, renvoi [n]). **(H)** = hypothèse ou jugement de l'analyste, non vérifié. Les prix sont ceux affichés par l'éditeur sauf mention « tiers » (comparateur, blog, annuaire), à considérer comme indicatifs. Le détail chiffré des prix et la recommandation tarifaire sont dans [prix.md](prix.md).
 >
@@ -65,7 +65,7 @@ Légende type : **D** = direct (même tâche, même cible), **I** = indirect (m�
 | **Langue / hébergement** | FR ; OVHcloud, sauvegardes Acronis (Strasbourg), archives Scaleway (Paris) [1] | Anglais ; région non indiquée [2] | Multilingue (H) ; paiement possible en EUR [3] | Anglais (H) | Anglais (H), US |
 | **Avis : forces** | Gratuit, riche, simple côté utilisateur final [5] | Gratuit en auto-hébergé, peu de maintenance une fois installé [6] | Note 4,6/5 (1 342 avis G2), prise en main rapide [7] | — (pages d'avis inaccessibles) | — (non relevé) |
 | **Avis : plaintes** | Interface « datée », réglages durs à trouver, personnalisation qui demande du PHP [5] | Installation difficile, mises à jour lourdes, compétences serveur requises [6] | Prix hors budget pour une petite structure, rapports natifs faibles, champs d'actifs peu personnalisables [7] | — | — |
-| **Faiblesse exploitable par Pilotis** | Aucun écran pour un dirigeant ; il faut un technicien pour l'alimenter (H) | Matériel seulement, pas de coûts ni de contrats (H) | Tarif par agent IT : sans service IT interne, la métrique n'a pas de sens (H) | Surdimensionné | Suppose un administrateur et facture par utilisateur |
+| **Faiblesse exploitable par Lanternis** | Aucun écran pour un dirigeant ; il faut un technicien pour l'alimenter (H) | Matériel seulement, pas de coûts ni de contrats (H) | Tarif par agent IT : sans service IT interne, la métrique n'a pas de sens (H) | Surdimensionné | Suppose un administrateur et facture par utilisateur |
 
 **Lecture :** ces outils sont **bon marché par licence** (19 €/agent) mais exigent quelqu'un qui sache s'en servir. Pour une PME sans DSI, ils sont l'outil **du prestataire**, pas du dirigeant. **GLPI est un allié possible** (import/export, connecteur) plutôt qu'un concurrent frontal (H).
 
@@ -95,7 +95,7 @@ Légende type : **D** = direct (même tâche, même cible), **I** = indirect (m�
 | **Avis** | Témoignages éditeur seulement (Skello, Faume) [22] ; pas d'avis indépendants trouvés | Aucun avis sur Secret [21] | — |
 | **Faiblesse exploitable** | Outil d'exécution pour un responsable IT ou un « office manager tech » (H) ; pas de registre des contrats, fournisseurs, coûts globaux ; culture startup (SIRH HiBob/Personio), pas ESS (H) | Matériel seulement | Juge et partie ; pas de tableau de bord pour le dirigeant ; information détenue par le prestataire (H) |
 
-**Lecture :** Primo est **la menace n° 1** : française, financée (3,2 M€ en série A [22]), qui vise les PME et pourrait ajouter une vue « dirigeant ». Mais ses clients cités (Skello 380 salariés, Dalma, Innovafeed) sont des scale-ups tech, pas des PME traditionnelles ni l'ESS (H). Pilotis doit rester **à côté** : pilotage, contrats, fournisseurs, coûts et service humain, pas MDM.
+**Lecture :** Primo est **la menace n° 1** : française, financée (3,2 M€ en série A [22]), qui vise les PME et pourrait ajouter une vue « dirigeant ». Mais ses clients cités (Skello 380 salariés, Dalma, Innovafeed) sont des scale-ups tech, pas des PME traditionnelles ni l'ESS (H). Lanternis doit rester **à côté** : pilotage, contrats, fournisseurs, coûts et service humain, pas MDM.
 
 ### 2.4 DSI à temps partagé (cabinets et freelances)
 
@@ -113,7 +113,7 @@ Légende type : **D** = direct (même tâche, même cible), **I** = indirect (m�
 - **Cible :** PME sans DSI, souvent où le rôle informatique est tenu par le dirigeant ou le RAF [37].
 - **Forces :** conseil indépendant, arbitrages, feuille de route, relation de confiance (H).
 - **Faiblesses exploitables :** **pas d'outil** (chaque DSI à temps partagé arrive avec ses tableurs) ; à 700 €/jour et plus, une journée par mois coûte 700 à 1 400 €/mois, hors de portée d'une structure de 20 à 50 salariés (H) ; la connaissance part avec l'intervenant (H).
-- **Lecture :** c'est **le service que Pilotis peut industrialiser** : l'outil réduit le temps de l'intervenant (registre prérempli, alertes), donc permet une demi-journée par mois là où il en faudrait une à deux. Les DSI à temps partagé indépendants sont **aussi un canal** (revendeurs ou utilisateurs de Pilotis) (H).
+- **Lecture :** c'est **le service que Lanternis peut industrialiser** : l'outil réduit le temps de l'intervenant (registre prérempli, alertes), donc permet une demi-journée par mois là où il en faudrait une à deux. Les DSI à temps partagé indépendants sont **aussi un canal** (revendeurs ou utilisateurs de Lanternis) (H).
 
 ### 2.5 Tableaux de bord financiers (Pennylane, Agicap, Fathom)
 
@@ -173,14 +173,14 @@ Placement qualitatif de l'analyste **(H)**, fondé sur les cibles et fonctionnal
 
 | | Hébergement France démontré | Hébergement non indiqué / hors UE |
 |---|---|---|
-| **< 300 €/mois** | GLPI cloud [1] (mais pour technicien) — Corma (« EU Data Residency », pays non précisé ; ≈ 150 €/mois à 50 utilisateurs [39]) — **Pilotis (cible)** | Snipe-IT [2], Cledara [15], JumpCloud (≈ 300 $/mois pour licences SaaS + actifs à 50 utilisateurs [8]) |
+| **< 300 €/mois** | GLPI cloud [1] (mais pour technicien) — Corma (« EU Data Residency », pays non précisé ; ≈ 150 €/mois à 50 utilisateurs [39]) — **Lanternis (cible)** | Snipe-IT [2], Cledara [15], JumpCloud (≈ 300 $/mois pour licences SaaS + actifs à 50 utilisateurs [8]) |
 | **> 300 €/mois ou sur devis** | — | Primo [17], Fleet [20], Zluri, Torii, Productiv, Vertice, Freshservice avec ITAM (H) |
 
 Le carré « hébergé en France + prix forfaitaire < 300 €/mois + écran pour dirigeant » reste **vide** : GLPI y figure pour un autre utilisateur, et Corma s'en approche (données en UE, prix bas) mais en facturant à l'utilisateur et sur les seuls SaaS.
 
 ### Top 3 des concurrents menaçants (réévalué après l'ajout de Corma)
 1. **Primo** : plateforme IT pour PME la plus large (MDM, SaaS, matériel) [17].
-2. **Corma** : remplace Cledara dans le top 3. Il est français, financé, vise explicitement les PME, publie un prix bas (dès 3 €/utilisateur/mois) et met en avant des données en UE [38][39]. Il prend le volet « licences et abonnements » de Pilotis et pourrait s'étendre aux arrivées et départs (déjà provisioning en Pro).
+2. **Corma** : remplace Cledara dans le top 3. Il est français, financé, vise explicitement les PME, publie un prix bas (dès 3 €/utilisateur/mois) et met en avant des données en UE [38][39]. Il prend le volet « licences et abonnements » de Lanternis et pourrait s'étendre aux arrivées et départs (déjà provisioning en Pro).
 3. **Le prestataire informatique** (statu quo + Excel/GLPI) [25].
 
 Cledara passe en 4e : même périmètre que Corma, mais anglophone et plus cher.

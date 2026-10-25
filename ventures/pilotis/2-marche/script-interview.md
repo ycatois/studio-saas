@@ -7,13 +7,13 @@ statut: brouillon
 méthode: skill script-interview-client (Mom Test)
 ---
 
-# Pilotis : guide d'entretien de découverte (30 minutes, Mom Test)
+# Lanternis : guide d'entretien de découverte (30 minutes, Mom Test)
 
 ## 1. Objectif et règles
 **Objectif :** établir, à partir de **faits passés**, si les dirigeants et les RAF de structures de 20 à 249 salariés sans DSI ressentent assez la perte de maîtrise de leur SI pour payer, et sous quelle forme (logiciel, accompagnement, les deux).
 
 **Règles du Mom Test**
-- Parler de **leur vie**, pas de notre idée. Ne présenter Pilotis qu'en toute fin d'entretien, et seulement si c'est utile.
+- Parler de **leur vie**, pas de notre idée. Ne présenter Lanternis qu'en toute fin d'entretien, et seulement si c'est utile.
 - Demander des **faits passés et précis** (« la dernière fois que… »), jamais des intentions (« est-ce que vous achèteriez… »).
 - Chercher des **chiffres** : euros, heures, dates, nombre d'outils.
 - Les compliments ne valent rien ; seul un **engagement** (temps, rendez-vous, données, argent) compte.

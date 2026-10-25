@@ -7,7 +7,7 @@ statut: brouillon
 méthode: skill etude-marche-tam-sam-som (bottom-up, contrôle top-down)
 ---
 
-# Pilotis : taille de marché (TAM / SAM / SOM)
+# Lanternis : taille de marché (TAM / SAM / SOM)
 
 > **Règle de lecture.** Chaque chiffre externe est sourcé (URL, consultée le 2026-10-25). **(H)** = hypothèse non vérifiée. Les résultats calculés héritent du statut de leurs entrées : dès qu'une entrée est (H), le résultat est (H).
 > **Positionnement mesuré :** « DSI de poche » (logiciel SI + service) pour PME et structures de l'ESS de 20 à 250 salariés **sans DSI ni directeur technique**, en France, vente directe, remise ESS.
@@ -117,11 +117,11 @@ Aucune étude publique ne mesure la part des PME françaises **sans DSI ni direc
 | Royaume-Uni, SaaS management | 310,4 M$ en 2025 → 597,7 M$ en 2030 | MarketsandMarkets UK : https://www.marketsandmarkets.com/Market-Reports/geography/saas-management-market/UK | Pour une économie de taille comparable à la France, notre TAM d'environ 155 M€ sur une niche (PME sans DSI, gouvernance SI + coût) reste d'un ordre de grandeur plausible (H) |
 | Budget cybersécurité des TPE-PME | < 2 000 €/an pour les trois quarts | Baromètre Cybermalveillance.gouv.fr 2025 (OpinionWay, 588 entreprises de moins de 250 salariés), relayé par TPE Actu le 24/10/2025 : https://tpeactu.fr/2025/10/24/cybersecurite-les-tpe-pme-gagnent-en-maturite-mais-restent-fragiles/ | **Signal d'alerte :** Essentiel (1 645 €/an) équivaut au budget cyber total de la plupart des TPE-PME. Le prix doit se justifier par le coût du SI économisé, pas par la cyber seule |
 | Coût d'un responsable informatique interne en PME | 45 à 75 k€ brut/an (offres d'octobre 2026) | HelloWork : https://www.hellowork.com/fr-fr/emplois/82433859.html ; https://www.hellowork.com/fr-fr/emplois/84330801.html | Pilotage+ (≈ 4 405 €/an) ≈ 6 à 10 % d'un poste ; argument de valeur pour les 50–249 |
-| DSI à temps partagé | 800 à 1 500 €/jour | Le Monde Informatique (date non visible, probablement ancien) : https://www.lemondeinformatique.fr/actualites/lire-l-avenir-du-dsi-passe-t-il-par-le-temps-partage-67793.html | 1 j/mois ≈ 9,6 à 18 k€/an : l'offre hybride Pilotis se situe nettement en dessous |
+| DSI à temps partagé | 800 à 1 500 €/jour | Le Monde Informatique (date non visible, probablement ancien) : https://www.lemondeinformatique.fr/actualites/lire-l-avenir-du-dsi-passe-t-il-par-le-temps-partage-67793.html | 1 j/mois ≈ 9,6 à 18 k€/an : l'offre hybride Lanternis se situe nettement en dessous |
 | Dépenses IT des PME | ≈ 300 €/salarié (Idate, date inconnue) ; 4,7 % du CA (attribué à Gartner, non retrouvé) | https://www.lemondeinformatique.fr/actualites/lire-enquete-les-tpe-et-les-pme-poursuivent-leurs-efforts-d-investissement-dans-l-informatique-13336.html ; https://digitiz.fr/budget-it-pme/ | **Non fiable, non utilisé dans le calcul.** Aucune source récente sur les dépenses IT et SaaS des PME françaises n'a été trouvée |
 | Dépense SaaS par salarié | médiane 9 455 $/salarié ; 36 % de licences inutilisées | Zylo, 2026 SaaS Management Index (29/01/2026) : https://zylo.com/news/2026-saas-management-index | Clients Zylo = grandes entreprises surtout américaines : **non transposable** aux PME françaises, mais montre l'ampleur du gaspillage de licences |
 
-**Écart à expliquer :** les rapports top-down mesurent des outils de SaaS management achetés par des DSI ; Pilotis vise des structures **sans** DSI, un segment que ces rapports ne mesurent pas. Le contrôle valide l'existence d'une catégorie qui croît ; il ne valide pas la demande sur notre segment.
+**Écart à expliquer :** les rapports top-down mesurent des outils de SaaS management achetés par des DSI ; Lanternis vise des structures **sans** DSI, un segment que ces rapports ne mesurent pas. Le contrôle valide l'existence d'une catégorie qui croît ; il ne valide pas la demande sur notre segment.
 
 ## 7. Tableau des sources
 | Donnée | Valeur | Source | Date | Fiabilité |

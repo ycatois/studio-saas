@@ -7,7 +7,7 @@ statut: brouillon
 méthode: skill personas
 ---
 
-# Pilotis : personas
+# Lanternis : personas
 
 > **Fondement.** Chaque trait renvoie à un signal de `signaux-demande.md` (S1 à S12) ou à `tendances.md`. Ce qui n'est appuyé par aucun signal est marqué **(H)**. Aucun entretien n'a encore eu lieu : ces personas sont des **hypothèses de ciblage**, à réécrire avec les verbatims des 10 à 15 entretiens (`script-interview.md`).
 > **Vocabulaire :** les « mots qu'il emploie » viennent des offres d'emploi et des baromètres cités. Aucun verbatim spontané de forum n'a été trouvé (voir `signaux-demande.md` § 3).
@@ -51,7 +51,7 @@ méthode: skill personas
 **Freins et objections typiques (H, issues de `jtbd.md` § 5)**
 - « Mon prestataire s'en occupe. »
 - « Encore un outil à remplir : qui va le tenir à jour ? »
-- « Je préfère recruter quelqu'un. » Réponse : Pilotis + 0,5 j/mois de DSI à temps partagé coûte une fraction d'un poste à 45–75 k€ (S2), à valider.
+- « Je préfère recruter quelqu'un. » Réponse : Lanternis + 0,5 j/mois de DSI à temps partagé coûte une fraction d'un poste à 45–75 k€ (S2), à valider.
 - « Confier la carte de mon SI à une petite structure ? » (`pre-mortem.md`, R10).
 
 **Où il s'informe (H, à vérifier en entretien)**

@@ -6,7 +6,7 @@ date: 2026-10-25
 statut: brouillon
 ---
 
-# Pilotis — étude de faisabilité technique
+# Lanternis — étude de faisabilité technique
 
 > Toutes les sources ont été consultées le 2026-10-25 (liste en fin de document). Tout ce qui n'est pas sourcé est marqué **(H)** : hypothèse non vérifiée ou estimation de l'architecte.
 > Stack de référence : `CLAUDE.md` et `INFRA.md` (Symfony / PHP 8.3+, PostgreSQL, Symfony UX, Docker sur VPS OVH, Stripe, Mailjet). Aucune dérogation n'est proposée ici ; les choix structurants à acter sont listés en section 8 (ADR).
@@ -74,7 +74,7 @@ statut: brouillon
 | **Synthèse mensuelle** | Comité de direction, conseil d'administration (ESS), banquier | Page HTML imprimable en PDF ; génération serveur (H : Dompdf ou Gotenberg, à arbitrer) | Faible | Oui (version simple) |
 | **Facturation** | Abonnement | Stripe (compte Hasteria, métadonnée `marque=pilotis`), Stripe Checkout + portail client | Faible | Oui |
 | **Observabilité et sauvegardes** | Exploiter seul | Logs structurés, tableau de bord interne des synchros en échec, alertes à l'exploitant ; sauvegardes selon `INFRA.md` (3 copies) | Faible | Oui |
-| **API publique Pilotis** | Exposer des données à d'autres outils | Spécification `produit/packages/shared/openapi.yaml` dès le début pour l'API interne ; API publique client en v2 | — | Non |
+| **API publique Lanternis** | Exposer des données à d'autres outils | Spécification `produit/packages/shared/openapi.yaml` dès le début pour l'API interne ; API publique client en v2 | — | Non |
 | **Commentaire automatique par LLM** | « Votre marge baisse parce que… » | Hors MVP ; si un jour : modèle hébergé dans l'UE, sur agrégats uniquement, ADR obligatoire | — | Non |
 | **Mobile** | Consultation nomade | Pas d'application au MVP : web responsive + digest email. PWA éventuelle plus tard (skill choix-techno-mobile, ADR) | — | Non |
 
@@ -94,9 +94,9 @@ statut: brouillon
 | **Nango** (complément trouvé) | Gestion OAuth, stockage et rafraîchissement des jetons, proxy, synchros ; on écrit soi-même la logique | Catalogue d'authentification large (PayFit documenté) ; pas de modèle unifié | Cloud : gratuit jusqu'à 10 connexions (plafonds durs), Pay-as-you-go 50 $/mois + 0,29 $ par connexion ; auto-hébergé gratuit limité à l'authentification et au proxy ; licence Elastic (pas OSI) | Auto-hébergeable (partiellement) |
 | **n8n auto-hébergé** | Outil d'automatisation par workflows | Nœuds pour beaucoup d'outils ; pas de modèle de données unifié | Licence « Sustainable Use » : usage permis comme moteur **en arrière-plan** si les clients finaux n'accèdent jamais à l'éditeur de workflows ; les clients peuvent connecter leurs propres comptes à des automatisations construites pour eux ; un éditeur de workflows exposé aux clients, même via une interface maison, n'est pas permis sans licence Enterprise | Auto-hébergé sur le VPS |
 
-### 3.2 Ce que disent les chiffres (ordre de grandeur, H sur le taux de change et le prix Pilotis)
+### 3.2 Ce que disent les chiffres (ordre de grandeur, H sur le taux de change et le prix Lanternis)
 
-- **Apideck** : 599 $/mois couvrent 25 clients **pour une seule catégorie**. Or Pilotis a besoin d'au moins deux catégories (comptabilité et SIRH), donc du palier Scale à 1 299 $/mois. Avec 10 clients, cela fait environ 130 $ par client et par mois, pour un prix visé d'environ 149 € HT (H) : **intenable avant plusieurs dizaines de clients**. Même à 100 clients (12,99 $ par client, 3 catégories), le coût dépasse 8 % du prix visé et ne couvre pas les éditeurs non supportés (Cegid, EBP, MyUnisoft, Dolibarr).
+- **Apideck** : 599 $/mois couvrent 25 clients **pour une seule catégorie**. Or Lanternis a besoin d'au moins deux catégories (comptabilité et SIRH), donc du palier Scale à 1 299 $/mois. Avec 10 clients, cela fait environ 130 $ par client et par mois, pour un prix visé d'environ 149 € HT (H) : **intenable avant plusieurs dizaines de clients**. Même à 100 clients (12,99 $ par client, 3 catégories), le coût dépasse 8 % du prix visé et ne couvre pas les éditeurs non supportés (Cegid, EBP, MyUnisoft, Dolibarr).
 - **Merge** : un client relié à Pennylane et PayFit compte probablement pour 2 comptes liés (H, selon la définition de Merge), soit environ 130 $/mois au-delà de 10 comptes liés : **incompatible avec le modèle**.
 - **Chift et Kombo** : impossible de conclure sans devis. Ce sont pourtant les deux seuls acteurs dont la couverture correspond aux logiciels de la cible (compta tenue par les cabinets, paie Silae). **Demander les deux devis en phase 2.**
 - **Critère de bascule proposé (H)** : on achète une API unifiée pour un domaine quand son coût par client devient inférieur à 10 % du revenu par client **et** qu'elle débloque au moins 20 % de prospects qu'on ne peut pas servir autrement.
@@ -132,11 +132,11 @@ Légende priorité : **P1** = MVP minimal ; **P2** = MVP complet ; **P3** = apr�
 
 ### 4.2 RH
 
-**Principe de minimisation (H, à valider par le juriste-rgpd)** : Pilotis n'ingère que des **agrégats** (effectif, entrées et sorties, masse salariale chargée par mois, absentéisme en taux), jamais de salaire nominatif ni de motif d'absence. Les connecteurs RH lisent le minimum et agrègent à la volée ; le brut n'est pas conservé.
+**Principe de minimisation (H, à valider par le juriste-rgpd)** : Lanternis n'ingère que des **agrégats** (effectif, entrées et sorties, masse salariale chargée par mois, absentéisme en taux), jamais de salaire nominatif ni de motif d'absence. Les connecteurs RH lisent le minimum et agrègent à la volée ; le brut n'est pas conservé.
 
 | Outil | API publique ? | Authentification | Accès éditeur tiers | Coût d'accès | Points d'attention | Priorité |
 |---|---|---|---|---|---|---|
-| **PayFit** | Oui | Clé API créée **par un administrateur PayFit du client**, limitée à sa propre entreprise et à des scopes choisis ; ou OAuth 2.0 pour les partenaires | OAuth = **inscription comme partenaire PayFit obligatoire** ; selon Nango, **PayFit ne renvoie pas de jeton de rafraîchissement** : réautorisation du client à chaque expiration | Non publié (H) | Démarrer par la clé API client (pas de partenariat, pas d'expiration documentée). Scopes disponibles non listés publiquement : vérifier qu'on peut lire la masse salariale sans données nominatives (H : probablement pas, donc agrégation côté Pilotis) | **P2** |
+| **PayFit** | Oui | Clé API créée **par un administrateur PayFit du client**, limitée à sa propre entreprise et à des scopes choisis ; ou OAuth 2.0 pour les partenaires | OAuth = **inscription comme partenaire PayFit obligatoire** ; selon Nango, **PayFit ne renvoie pas de jeton de rafraîchissement** : réautorisation du client à chaque expiration | Non publié (H) | Démarrer par la clé API client (pas de partenariat, pas d'expiration documentée). Scopes disponibles non listés publiquement : vérifier qu'on peut lire la masse salariale sans données nominatives (H : probablement pas, donc agrégation côté Lanternis) | **P2** |
 | **Lucca** | Oui, « API Lucca » versionnée, avec garantie de support long terme ; anciennes API « legacy » à clé, non versionnées, en cours de remplacement | OAuth 2.0 (API actuelle), clé API (legacy) | Documentation publique, spécification OpenAPI téléchargeable | **Bac à sable payant** ; accès API lui-même non chiffré (H) | Débit et taille limités, pagination systématique, certains endpoints en bêta ou sur demande au support. Lucca est modulaire (temps, absences, paie) : les données disponibles dépendent des modules souscrits par le client | **P2** |
 | **Silae** | **Pas de documentation publique trouvée** | Non documenté publiquement | Accès **payant, activé et facturé par Silae**, demandé en général par **l'expert-comptable** via un avenant à son contrat de distribution (API REST, pas l'ancienne SOAP) — guide Kombo ; Apideck : connecteur en bêta, « Salaries » seulement ; Kombo : connecteur listé | Payant, montant non publié | **Le plus gros verrou RH** : il faut l'accord et la démarche du cabinet comptable du client, alors que le canal comptables a été écarté. **Au MVP : import CSV** de l'export de paie mensuel (H : les cabinets fournissent déjà un journal de paie) | **P3** (CSV en P1) |
 
@@ -216,7 +216,7 @@ Avant tout connecteur : référentiel SI (Cockpit DSI rendu multi-tenant), impor
 
 > Le code de Cockpit DSI **n'est pas dans le dépôt et n'a pas été lu**. Avis fondé uniquement sur sa description (`0-idee/reponses-fondateur.md`).
 
-**Avis de principe (H)** : Cockpit DSI est un atout réel pour le volet SI, qui est justement le différenciateur pressenti : son domaine (actifs, contrats, fournisseurs, jalons) correspond au référentiel SI de Pilotis, et sa stack (Symfony 7, PostgreSQL 18) est celle du studio. **Je recommande de réutiliser son modèle de domaine et son code métier comme un module de Pilotis, et non d'en faire la base de l'application** : Pilotis doit être multi-tenant, multi-domaines et orienté connecteurs dès le premier jour, et ajouter le multi-tenant à une application mono-organisation coûte souvent plus cher que de réimplanter proprement les entités (H). La décision finale fera l'objet d'un ADR après revue du code.
+**Avis de principe (H)** : Cockpit DSI est un atout réel pour le volet SI, qui est justement le différenciateur pressenti : son domaine (actifs, contrats, fournisseurs, jalons) correspond au référentiel SI de Lanternis, et sa stack (Symfony 7, PostgreSQL 18) est celle du studio. **Je recommande de réutiliser son modèle de domaine et son code métier comme un module de Lanternis, et non d'en faire la base de l'application** : Lanternis doit être multi-tenant, multi-domaines et orienté connecteurs dès le premier jour, et ajouter le multi-tenant à une application mono-organisation coûte souvent plus cher que de réimplanter proprement les entités (H). La décision finale fera l'objet d'un ADR après revue du code.
 
 **Questions à vérifier avant toute reprise :**
 

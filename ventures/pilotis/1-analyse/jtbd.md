@@ -7,11 +7,11 @@ statut: brouillon
 méthode: skill jobs-to-be-done
 ---
 
-# Pilotis : Jobs-to-be-Done du dirigeant de PME ou d'ESS sans DSI
+# Lanternis : Jobs-to-be-Done du dirigeant de PME ou d'ESS sans DSI
 
 > **Statut de ce document :** hypothèses de travail **(H)** construites à partir de la fiche idée, des réponses du fondateur et de recherches documentaires. Aucun job n'a encore été confirmé en entretien. Ce document sert à écrire le script des 10 à 15 entretiens (tests R1, R2, R6, R7 de `pre-mortem.md`) et sera réécrit avec leurs verbatims.
 
-## 1. Qui « embauche » Pilotis ?
+## 1. Qui « embauche » Lanternis ?
 | Rôle | Description (H) | Place dans la décision |
 |---|---|---|
 | **Dirigeant** (gérant, DG de PME ; directeur ou directrice d'association, de coopérative) | 20 à 250 salariés, pas de DSI ni de directeur technique, n'est pas technicien ; porte seul le risque SI sans le maîtriser | Acheteur et sponsor |
@@ -87,7 +87,7 @@ Le Job 5 (pilotage financier) reste hors du cœur du MVP.
 | **MonAideCyber / dispositifs publics** | 3 | Gratuit, crédible (ANSSI) | Diagnostic ponctuel, suivi léger ; pas d'outil de pilotage continu (H) |
 | **DSI à temps partagé / ESN** | 1, 3, 4 | Expertise humaine | Coût à la journée, ponctuel, non outillé côté client (H) |
 
-**Lecture :** le concurrent le plus fréquent est probablement « rien + le prestataire ». Pilotis doit être **plus simple que rien** à démarrer et **plus neutre que le prestataire**.
+**Lecture :** le concurrent le plus fréquent est probablement « rien + le prestataire ». Lanternis doit être **plus simple que rien** à démarrer et **plus neutre que le prestataire**.
 
 ## 5. Forces de progrès (pour changer) et freins (pour ne pas changer)
 | Force | Contenu (H) | Implication produit / marketing |

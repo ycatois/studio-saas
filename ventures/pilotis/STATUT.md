@@ -1,4 +1,4 @@
-# Pilotis — statut
+# Lanternis — statut
 Phase actuelle : 2 Marché (terminée, marque en brouillon) → prochaine : 2b Pré-lancement
 Dernière mise à jour : 2026-10-25
 Score GO/NO-GO : —
@@ -8,16 +8,16 @@ Décision : en attente
 - Phase 0 : fiche idée, Lean Canvas, avocat du diable, réponses du fondateur (`0-idee/`).
 - Phase 1 : pré-mortem, JTBD, faisabilité, modèle de revenus, synthèse (`1-analyse/`).
 - Phase 2 : TAM/SAM/SOM, tendances, signaux de demande, personas, script d'entretien, benchmark, prix, acquisition, synthèse (`2-marche/`).
-- Marque (brouillon) : `marque/plateforme-de-marque.md`, `messages-par-persona.md`, `noms-et-taglines.md`. Noms finalistes : Lanternis, Cartolis, Clairsi (choix du fondateur attendu) ; « Pilotis » déconseillé (domaines .fr/.com pris).
+- Marque (brouillon) : `marque/plateforme-de-marque.md`, `messages-par-persona.md`, `noms-et-taglines.md`. Nom de marque retenu : **Lanternis** (« Lanternis est une marque d'Hasteria SASU »).
 - Positionnement : un « DSI de poche » pour les PME (50 à 249 salariés) et l'ESS (20 à 249) sans DSI. Logiciel et service (modèle hybride).
 
 ## En cours
-- Choix du nom définitif par le fondateur (puis recherche d'antériorité INPI/EUIPO, classes 9, 35, 42).
+- Sécuriser le nom Lanternis : réserver lanternis.fr et lanternis.com, rechercher l'antériorité INPI/EUIPO (classes 9, 35, 42), puis demander l'avis d'un conseil en propriété industrielle avant le dépôt (skill nouvelle-marque-hasteria).
 - `marque/voix-fondateur.md` à compléter par le fondateur.
 - `SOCIETE.md` à compléter (bloque les mentions légales).
 
 ## Prochaines étapes
-- `/charte` une fois le nom choisi (identité visuelle).
+- `/charte` : identité visuelle de Lanternis.
 - `/prelancement` : landing de validation, liste d'attente, autodiagnostic SI comme lead magnet.
 - 12 à 15 entretiens Mom Test (script `2-marche/script-interview.md`), en commençant par le réseau Tecnoo et l'ESS.
 - Faire valider par juriste-rgpd les règles de prospection B2B avant les premiers envois.
@@ -36,5 +36,6 @@ Décision : en attente
 - 2026-10-25 — Création de la venture.
 - 2026-10-25 — Réponses du fondateur : périmètre SI complet pour des PME sans DSI ; vente directe aux PME et à l'ESS (remise ESS possible) ; la vente via les experts-comptables n'est pas retenue.
 - 2026-10-25 — Analyse : recentrage proposé sur le volet SI.
-- 2026-10-25 — Arbitrages du fondateur : (1) le temps à consacrer à Pilotis n'est pas une contrainte ; (2) le code de Cockpit DSI appartient au fondateur / Hasteria, réutilisation possible sans cession ; (3) modèle hybride logiciel + service accepté.
+- 2026-10-25 — Arbitrages du fondateur : (1) le temps à consacrer au projet n'est pas une contrainte ; (2) le code de Cockpit DSI appartient au fondateur / Hasteria, réutilisation possible sans cession ; (3) modèle hybride logiciel + service accepté.
 - 2026-10-25 — Marché : les PME marchandes de 20 à 49 salariés sont exclues du SAM (CAC non couvert en vente directe) ; segment prioritaire : 100 à 249 salariés ; ne pas se positionner sur la seule gestion des SaaS (Corma).
+- 2026-10-25 — Nom de marque : **Lanternis** retenu par le fondateur (à la place du nom de travail Pilotis ; domaines .fr et .com apparemment libres, marque à vérifier). « Cockpit DSI » est écarté comme nom de marque (trop descriptif, peu protégeable), mais reste utilisable comme accroche. Le slug technique reste `pilotis` jusqu'au renommage du dossier.

@@ -7,10 +7,10 @@ statut: brouillon
 skills: plateforme-de-marque, messages-par-persona
 ---
 
-# Plateforme de marque — Pilotis (nom de travail)
+# Plateforme de marque — Lanternis
 
-> **Règle de lecture.** « Pilotis » est un **nom de travail** : l'évaluation et les noms alternatifs sont dans [noms-et-taglines.md](noms-et-taglines.md). Les chiffres viennent des études de la phase 2 (renvois entre parenthèses, sources et URL dans ces fichiers) ; **(H)** = hypothèse non vérifiée. Aucun entretien client n'a encore eu lieu : cette plateforme est à **réviser avec les verbatims** des 12 à 15 entretiens prévus (`2-marche/script-interview.md`).
-> **Cadre commercial.** Pilotis est une marque d'Hasteria SASU (voir § 11).
+> **Règle de lecture.** « Lanternis » est un **nom de travail** : l'évaluation et les noms alternatifs sont dans [noms-et-taglines.md](noms-et-taglines.md). Les chiffres viennent des études de la phase 2 (renvois entre parenthèses, sources et URL dans ces fichiers) ; **(H)** = hypothèse non vérifiée. Aucun entretien client n'a encore eu lieu : cette plateforme est à **réviser avec les verbatims** des 12 à 15 entretiens prévus (`2-marche/script-interview.md`).
+> **Cadre commercial.** Lanternis est une marque d'Hasteria SASU (voir § 11).
 > **Identité visuelle.** Ce document couvre l'identité verbale. L'identité visuelle (`marque/charte/`) relève du directeur-artistique et doit partir de la personnalité décrite au § 7.
 
 ---
@@ -19,7 +19,7 @@ skills: plateforme-de-marque, messages-par-persona
 
 **Rendre à chaque PME et à chaque association la maîtrise de son informatique, même quand elle n'a pas de DSI.**
 
-Version longue : aujourd'hui, la connaissance du système d'information d'une structure de 50 à 249 salariés tient souvent dans la tête d'une personne ou dans l'outil d'un prestataire (`2-marche/personas.md`, P1 ; `2-marche/benchmark.md` § 2.6). Pilotis existe pour que cette connaissance appartienne à la structure, soit lisible par sa direction et survive aux départs.
+Version longue : aujourd'hui, la connaissance du système d'information d'une structure de 50 à 249 salariés tient souvent dans la tête d'une personne ou dans l'outil d'un prestataire (`2-marche/personas.md`, P1 ; `2-marche/benchmark.md` § 2.6). Lanternis existe pour que cette connaissance appartienne à la structure, soit lisible par sa direction et survive aux départs.
 
 ## 2. Vision
 
@@ -57,7 +57,7 @@ Déclinaison mesurable (H, à tenir par le produit et à valider en pilote) :
 
 ## 6. Ennemi : l'informatique en boîte noire
 
-L'ennemi n'est **ni le prestataire informatique** (il peut contribuer au registre et prescrire Pilotis : `acquisition.md` § 1.2), **ni un concurrent nommé**. C'est une informatique dont personne dans la structure n'a la carte :
+L'ennemi n'est **ni le prestataire informatique** (il peut contribuer au registre et prescrire Lanternis : `acquisition.md` § 1.2), **ni un concurrent nommé**. C'est une informatique dont personne dans la structure n'a la carte :
 - le savoir qui tient dans la tête d'une seule personne ;
 - les abonnements pris par carte bancaire sans que personne ne les voie ;
 - les contrats reconduits sans décision ;
@@ -73,7 +73,7 @@ Formule de travail : **« Votre informatique ne doit pas être une boîte noire 
 | **Souveraineté** | Vos données et la carte de votre SI vous appartiennent. | Hébergement en France ; aucune donnée de personnes accompagnées (ESS) ni contenu métier collecté ; export complet à tout moment (CSV) ; pas de revente ni d'exploitation publicitaire des données ; sous-traitants listés publiquement. |
 | **Sobriété** | Le juste nécessaire, pour vous comme pour la planète. | 12 à 15 indicateurs, pas 80 ; des alertes rares et utiles plutôt qu'un flux de notifications ; pages légères ; collecte minimale (RGPD by design) ; on vous aide aussi à **supprimer** des abonnements inutiles, pas à en ajouter. |
 
-L'**éthique** irrigue les trois : on ne vend pas par la peur (cyber), on ne critique pas le prestataire du client, on dit quand Pilotis n'est pas adapté.
+L'**éthique** irrigue les trois : on ne vend pas par la peur (cyber), on ne critique pas le prestataire du client, on dit quand Lanternis n'est pas adapté.
 
 ## 8. Personnalité
 
@@ -87,7 +87,7 @@ Image de travail pour le directeur-artistique : **un bon intendant** : discret, 
 
 ## 9. Positionnement
 
-> **Pour** les dirigeants et les DAF de PME et d'associations de 50 à 249 salariés **qui** n'ont pas de DSI et ne savent plus vraiment ce que contient, coûte et risque leur informatique, **Pilotis est** un DSI de poche : **un registre de tout le SI qui alerte avant les mauvaises surprises**, mis en place avec vous par un DSI. **Contrairement** au tableur du prestataire ou aux outils pensés pour des techniciens, **nous** écrivons pour la direction, couvrons tout le SI (pas seulement les abonnements), publions nos prix et gardons vos données en France.
+> **Pour** les dirigeants et les DAF de PME et d'associations de 50 à 249 salariés **qui** n'ont pas de DSI et ne savent plus vraiment ce que contient, coûte et risque leur informatique, **Lanternis est** un DSI de poche : **un registre de tout le SI qui alerte avant les mauvaises surprises**, mis en place avec vous par un DSI. **Contrairement** au tableur du prestataire ou aux outils pensés pour des techniciens, **nous** écrivons pour la direction, couvrons tout le SI (pas seulement les abonnements), publions nos prix et gardons vos données en France.
 
 Catégorie à installer : **« DSI de poche »** (expression du marché à tester en entretien : est-elle comprise ? est-elle trop familière pour un CA ?). Ne **pas** se placer sur la seule gestion des abonnements SaaS, où Corma est moins cher (`benchmark.md` § 3).
 
@@ -108,12 +108,12 @@ Catégorie à installer : **« DSI de poche »** (expression du marché à teste
 | « 3 comptes d'anciens salariés sont encore actifs. » | « Anomalie IAM détectée sur le périmètre. » |
 | « Le contrat de maintenance des copieurs se renouvelle dans 45 jours. » | « Échéance contractuelle imminente !!! » |
 | « Votre prestataire peut compléter le registre avec vous. » | « Votre prestataire vous cache des choses. » |
-| « Pilotis ne remplace pas votre prestataire : il vous donne la carte. » | « La solution tout-en-un qui remplace votre informatique. » |
+| « Lanternis ne remplace pas votre prestataire : il vous donne la carte. » | « La solution tout-en-un qui remplace votre informatique. » |
 | « 149 € HT par mois pour une structure de 20 à 49 salariés (tarif à confirmer). » | « Tarifs sur demande. » |
 | « Si votre référent part, votre SI reste. » | « Ne laissez plus un salarié prendre votre entreprise en otage. » |
 | « Une attaque n'est pas une fatalité. Voici trois vérifications simples. » | « 60 % des PME ferment après une cyberattaque. » (chiffre non sourcé, et vente par la peur) |
 | « Vos données sont hébergées en France et exportables à tout moment. » | « Sécurité de niveau militaire. » |
-| « Nous ne sommes pas adaptés si vous avez déjà une DSI. » | « Pilotis convient à toutes les entreprises. » |
+| « Nous ne sommes pas adaptés si vous avez déjà une DSI. » | « Lanternis convient à toutes les entreprises. » |
 
 ### 10.3 Mots à privilégier (vocabulaire des personas)
 Repris de `2-marche/personas.md` : « votre prestataire », « l'infogérance », « les sauvegardes », « les contrats », « le budget informatique », « les accès », « les licences Microsoft », « les abonnements », « arrivées et départs », « votre CA », « vos financeurs », « ESMS », « RGPD », « hébergé en France ». Et nos mots : **carte, registre, échéance, alerte, maîtrise, lisible, prévenir**.
@@ -129,10 +129,10 @@ Repris de `2-marche/personas.md` : « votre prestataire », « l'infogérance »
 
 **Message d'erreur (import Excel)**
 - Avant : « Erreur 422 : format de fichier invalide. »
-- Après : « Nous n'avons pas pu lire ce fichier. Pilotis accepte les fichiers .xlsx et .csv. Vérifiez que la première ligne contient les titres des colonnes, ou envoyez-nous le fichier : nous l'importerons avec vous. »
+- Après : « Nous n'avons pas pu lire ce fichier. Lanternis accepte les fichiers .xlsx et .csv. Vérifiez que la première ligne contient les titres des colonnes, ou envoyez-nous le fichier : nous l'importerons avec vous. »
 
 **Post LinkedIn (marque, brouillon : publication soumise à validation)**
-- Avant : « 🚀 Découvrez Pilotis, la solution innovante qui révolutionne la gestion IT des PME ! »
+- Avant : « 🚀 Découvrez Lanternis, la solution innovante qui révolutionne la gestion IT des PME ! »
 - Après : « Votre responsable informatique part à la retraite en juin. Qui sait, chez vous, quand se renouvelle le contrat du serveur ? Qui ferme ses accès le dernier jour ? Avant son départ, faites avec lui une liste en trois colonnes : ce que vous avez, ce que vous payez, ce qui arrive à échéance. C'est la première page d'un registre du SI. »
 
 **Objet d'email**
@@ -143,18 +143,18 @@ Repris de `2-marche/personas.md` : « votre prestataire », « l'infogérance »
 
 1. **Message principal :** « Votre informatique, enfin lisible : ce que vous avez, ce que vous payez, ce qui arrive à échéance. »
 2. **Continuité :** « Quand votre référent informatique part, votre SI ne part pas avec lui. » (déclencheur S2)
-3. **Coût :** « Un DSI de poche, pour une fraction du prix d'un poste. » (45 à 75 k€ brut/an pour un responsable informatique, S2 ; prix Pilotis H)
-4. **Alertes :** « Pilotis vous prévient avant : renouvellements, licences inutilisées, accès oubliés. »
+3. **Coût :** « Un DSI de poche, pour une fraction du prix d'un poste. » (45 à 75 k€ brut/an pour un responsable informatique, S2 ; prix Lanternis H)
+4. **Alertes :** « Lanternis vous prévient avant : renouvellements, licences inutilisées, accès oubliés. »
 5. **Humain :** « Mis en place avec vous par un DSI, pas livré vide. »
 6. **Souveraineté :** « La carte de votre SI vous appartient. Hébergée en France, exportable à tout moment. »
 7. **ESS (P2) :** « Présentez à votre CA et à vos financeurs une informatique maîtrisée et chiffrée, à tarif associatif. »
-8. **Neutralité :** « Pilotis ne remplace pas votre prestataire : il vous donne de quoi piloter avec lui. »
+8. **Neutralité :** « Lanternis ne remplace pas votre prestataire : il vous donne de quoi piloter avec lui. »
 
 Déclinaison par persona et par étape d'achat : [messages-par-persona.md](messages-par-persona.md). Taglines : [noms-et-taglines.md](noms-et-taglines.md).
 
 ## 12. Mention légale de marque
 
-**« Pilotis est une marque d'Hasteria SASU. »**
+**« Lanternis est une marque d'Hasteria SASU. »**
 À reprendre (avec le nom définitif) dans le pied de page du site, les mentions légales, les CGV, les factures Stripe et les emails Mailjet. Les coordonnées légales d'Hasteria sont encore « à compléter » dans `SOCIETE.md` : à renseigner avant toute mise en ligne.
 
 ## 13. Hypothèses à vérifier
