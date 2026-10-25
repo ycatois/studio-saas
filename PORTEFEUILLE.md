@@ -2,4 +2,4 @@
 
 | Venture | Phase | Score | Décision | Prochaine étape | MAJ |
 |---------|-------|-------|----------|-----------------|-----|
-| _(aucune pour l'instant — lance `/idee`)_ | | | | | |
+| [Pilotis](ventures/pilotis/STATUT.md) — tableau de bord global pour PME | 0 Idée | — | en attente | Répondre aux questions de cadrage puis `/analyse` | 2026-10-25 |
