@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" width="320" height="96" role="img" aria-labelledby="t d">
+  <title id="t">Lanternis, esquisse de principe, piste Registre</title>
+  <desc id="d">Un L vert formé par la marge et la ligne de pied d'une page de registre, trois lignes d'écriture, et un point sienne qui marque une échéance ; nom en minuscules serif. Esquisse, pas le logo final.</desc>
+  <rect width="320" height="96" fill="#F4F1E8"/>
+  <g transform="translate(14 16)" fill="none" stroke-linecap="square">
+    <path d="M10 2 V60 H62" stroke="#1F5C45" stroke-width="7"/>
+    <path d="M24 16 H58 M24 30 H58 M24 44 H46" stroke="#16211C" stroke-width="3"/>
+  </g>
+  <circle cx="68" cy="60" r="5" fill="#A1421B"/>
+  <text x="96" y="62" font-family="Charter, 'Bitstream Charter', 'Sitka Text', Cambria, Georgia, serif" font-size="40" fill="#16211C">lanternis</text>
+</svg>

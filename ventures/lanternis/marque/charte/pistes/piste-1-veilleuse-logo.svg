@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" width="320" height="96" role="img" aria-labelledby="t d">
+  <title id="t">Lanternis, esquisse de principe, piste Veilleuse</title>
+  <desc id="d">Une lanterne géométrique au trait, dont le foyer est un disque ambre, suivie du nom Lanternis en serif. Esquisse, pas le logo final.</desc>
+  <rect width="320" height="96" fill="#1B2330"/>
+  <g transform="translate(16 12)" fill="none" stroke="#FAF6EE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="7" r="5"/>
+    <path d="M18 18 H46 M20 18 V62 Q20 68 26 68 H38 Q44 68 44 62 V18"/>
+    <path d="M14 72 H50"/>
+  </g>
+  <circle cx="48" cy="54" r="9" fill="#F2B24C"/>
+  <text x="92" y="60" font-family="Fraunces, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif" font-size="38" fill="#FAF6EE">Lanternis</text>
+</svg>

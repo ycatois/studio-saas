@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · Piste 2 « Registre » · planche créative (brouillon)</title>
+<!-- statut: brouillon · auteur: directeur-artistique · 2026-10-25 · piste non choisie. Aucune ressource externe, aucune webfont. -->
+<style>
+:root{
+  --encre:#16211C; --vert:#1F5C45; --velin:#F4F1E8; --sienne:#A1421B; --filet:#CFC8B6; --gris:#505750;
+  --titre:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,serif;
+  --texte:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --chiffres:ui-monospace,"Cascadia Mono","Segoe UI Mono",Consolas,"SFMono-Regular",Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--velin);color:var(--encre);font:16px/1.55 var(--texte)}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 24px 64px;border-left:6px solid var(--vert)}
+h1,h2,h3{font-family:var(--titre);font-weight:700;line-height:1.2}
+h1{font-size:2.6rem;margin:.1em 0}
+h2{font-size:1.45rem;margin:2.2em 0 .6em;padding-bottom:.3em;border-bottom:1px solid var(--encre)}
+h2::before{content:attr(data-n);font-family:var(--chiffres);font-size:.8em;color:var(--vert);margin-right:.6em}
+h3{font-size:1.1rem;margin:1.2em 0 .4em}
+.meta{font-family:var(--chiffres);font-size:.85rem;color:var(--vert)}
+.concept{font-family:var(--titre);font-size:1.45rem;max-width:46ch}
+.mots{display:flex;flex-wrap:wrap;gap:0;padding:0;list-style:none;border-top:1px solid var(--encre)}
+.mots li{padding:6px 16px 6px 0;margin-right:16px;font-family:var(--titre);font-size:1.1rem;border-right:1px solid var(--filet)}
+.palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;border:1px solid var(--encre)}
+.sw{border-right:1px solid var(--encre)}
+.sw:last-child{border-right:0}
+.sw .c{height:84px;border-bottom:1px solid var(--encre)}
+.sw .l{padding:10px 12px;background:#fff;font-size:.9rem;min-height:92px}
+.sw code{font-family:var(--chiffres);font-weight:700}
+table{border-collapse:collapse;width:100%;font-size:.92rem;background:#fff}
+th,td{border-bottom:1px solid var(--filet);padding:7px 10px;text-align:left;vertical-align:top}
+th{border-bottom:2px solid var(--encre);font-family:var(--titre)}
+td.n{font-family:var(--chiffres)}
+.ko{font-weight:700;color:var(--sienne)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.note{font-size:.88rem;border-left:3px solid var(--vert);padding:4px 12px;background:#fff}
+.why{font-size:.85rem;color:var(--gris)}
+/* Applications */
+.hero{background:#fff;border:1px solid var(--encre);padding:24px 32px 32px;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,#ece7da 31px,#ece7da 32px)}
+.hero nav{display:flex;justify-content:space-between;align-items:baseline;font-size:.92rem;border-bottom:2px solid var(--encre);padding-bottom:8px}
+.hero h3{font-size:2.3rem;max-width:20ch;margin:1em 0 .3em}
+.hero p{max-width:54ch}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--vert);margin:20px 0;background:#fff}
+.cols div{padding:10px 12px;border-right:1px solid var(--filet)}
+.cols div:last-child{border-right:0}
+.cols b{display:block;font-family:var(--titre)}
+.cols span{font-family:var(--chiffres);font-size:.9rem}
+.btn{display:inline-block;background:var(--vert);color:var(--velin);font-weight:700;padding:12px 20px;text-decoration:none;border-radius:2px}
+.btn2{display:inline-block;color:var(--vert);font-weight:700;padding:12px 4px;margin-left:16px;text-decoration:underline;text-underline-offset:4px}
+.card{background:#fff;border:1px solid var(--encre);padding:18px 22px}
+.card h3{margin-top:0;font-size:1.15rem}
+.row{display:grid;grid-template-columns:1fr auto auto;gap:16px;padding:9px 0;border-top:1px solid var(--filet);align-items:baseline}
+.row .d{font-family:var(--chiffres);color:var(--sienne);font-weight:700}
+.row .m{font-family:var(--chiffres)}
+.post{aspect-ratio:1/1;max-width:420px;background:var(--velin);border:1px solid var(--encre);padding:30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 6px 0 0 var(--vert)}
+.post .k{font-family:var(--chiffres);font-size:.85rem;color:var(--vert)}
+.post .q{font-family:var(--titre);font-size:1.5rem;line-height:1.25;margin:0}
+.post ol{font-family:var(--chiffres);font-size:.95rem;margin:0;padding-left:1.4em}
+.post .s{font-size:.85rem;border-top:1px solid var(--encre);padding-top:8px;margin:0}
+.bc{width:340px;height:200px;background:#fff;border:1px solid var(--encre);padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 6px 0 0 var(--vert)}
+footer{margin-top:48px;font-size:.85rem;color:var(--gris)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="meta">LANTERNIS / PISTE 2 SUR 3 / BROUILLON 2026-10-25 / NON CHOISIE</p>
+<h1>Registre</h1>
+<p class="concept">La clarté d'un document bien tenu : Lanternis montre tout le SI sur une page, en lignes, en colonnes et en dates, comme le carnet d'un intendant méthodique.</p>
+
+<h2 data-n="01">Mots-clés</h2>
+<ul class="mots"><li>méthode</li><li>exactitude</li><li>lisibilité</li><li>sobriété</li><li>tenue</li></ul>
+
+<h2 data-n="02">Palette</h2>
+<div class="palette">
+  <div class="sw"><div class="c" style="background:#16211C"></div><div class="l"><code>#16211C</code> Encre<br>Texte, filets forts</div></div>
+  <div class="sw"><div class="c" style="background:#1F5C45"></div><div class="l"><code>#1F5C45</code> Vert registre<br>Couleur de marque, boutons, liens</div></div>
+  <div class="sw"><div class="c" style="background:#F4F1E8"></div><div class="l"><code>#F4F1E8</code> Vélin<br>Fond principal</div></div>
+  <div class="sw"><div class="c" style="background:#A1421B"></div><div class="l"><code>#A1421B</code> Sienne<br>Échéances et alertes (pas de rouge vif)</div></div>
+  <div class="sw"><div class="c" style="background:#CFC8B6"></div><div class="l"><code>#CFC8B6</code> Filet<br>Lignes décoratives uniquement</div></div>
+</div>
+<h3>Contrastes vérifiés (WCAG 2.x)</h3>
+<table>
+<thead><tr><th>Texte / élément</th><th>Fond</th><th>Rapport</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr><td>Encre #16211C</td><td>Vélin #F4F1E8</td><td class="n">14,7 : 1</td><td>AAA</td></tr>
+<tr><td>Vert registre #1F5C45</td><td>Vélin #F4F1E8</td><td class="n">7,0 : 1</td><td>AAA</td></tr>
+<tr><td>Vélin #F4F1E8 (bouton)</td><td>Vert registre #1F5C45</td><td class="n">7,0 : 1</td><td>AAA</td></tr>
+<tr><td>Vert registre #1F5C45</td><td>Blanc #FFFFFF</td><td class="n">7,9 : 1</td><td>AAA</td></tr>
+<tr><td>Sienne #A1421B</td><td>Vélin #F4F1E8</td><td class="n">5,6 : 1</td><td>AA</td></tr>
+<tr><td>Sienne #A1421B</td><td>Blanc #FFFFFF</td><td class="n">6,3 : 1</td><td>AA</td></tr>
+<tr><td>Gris texte #505750</td><td>Vélin #F4F1E8</td><td class="n">6,6 : 1</td><td>AA</td></tr>
+<tr><td>Filet #CFC8B6</td><td>Vélin #F4F1E8</td><td class="n">1,5 : 1</td><td class="ko">Décoratif seulement : jamais pour un bord de champ ou un indicateur (3 : 1 requis)</td></tr>
+</tbody>
+</table>
+<p class="note">Une alerte n'est jamais signalée par la seule couleur sienne : elle porte toujours une date ou un mot (« dans 45 jours »), conformément au RGAA (critère 3.1).</p>
+
+<h2 data-n="03">Typographies</h2>
+<div class="grid2">
+  <div class="card"><h3 style="font-size:1.8rem">Serif système, titres</h3>
+  <p style="font-family:var(--titre)">Charter (macOS, iOS), Sitka ou Cambria (Windows), Georgia en repli. <strong>Aucune webfont</strong> : zéro octet de police téléchargé.</p></div>
+  <div class="card"><h3>Sans système, texte · Mono système, chiffres</h3>
+  <p>system-ui, Segoe UI, Roboto, Arial pour le texte courant.</p>
+  <p style="font-family:var(--chiffres)">ui-monospace, Cascadia Mono, Consolas : 2 160,00 € · 15/12/2026 · J-45</p></div>
+</div>
+<p class="why">Contrepartie : le rendu varie un peu d'un système à l'autre (Charter sur Mac, Cambria ou Sitka sur Windows). Une version « webfont » libre (Source Serif 4, OFL) reste possible si l'uniformité prime ; à trancher au stade charte.</p>
+
+<h2 data-n="04">Formes, motifs et images</h2>
+<div class="grid2">
+  <p><strong>Formes :</strong> angles droits ou à peine adoucis (2 px), filets fins, marge verticale verte (le « montant » du registre), numérotation des sections en chiffres mono. La grille et les tableaux sont le décor.</p>
+  <p><strong>Images :</strong> aucune photo. Des fac-similés de registre et des captures produit présentées comme des documents (cadre fin, légende). Pictogrammes au trait carré de 2 px.</p>
+</div>
+
+<h2 data-n="05">Esquisse de principe du logo</h2>
+<p>Un « L » formé par la marge et la ligne de pied d'une page, trois lignes d'écriture et un point sienne : une échéance repérée. Nom en minuscules serif. <strong>Esquisse d'intention, pas le logo final</strong> (fichier : <code>piste-2-registre-logo.svg</code>).</p>
+<div class="grid2">
+<svg viewBox="0 0 320 96" width="320" height="96" role="img" aria-label="Esquisse du logo Registre sur fond vélin">
+  <rect width="320" height="96" fill="#F4F1E8" stroke="#16211C"/>
+  <g transform="translate(14 16)" fill="none" stroke-linecap="square"><path d="M10 2 V60 H62" stroke="#1F5C45" stroke-width="7"/><path d="M24 16 H58 M24 30 H58 M24 44 H46" stroke="#16211C" stroke-width="3"/></g>
+  <circle cx="68" cy="60" r="5" fill="#A1421B"/>
+  <text x="96" y="62" font-family="Charter,'Bitstream Charter','Sitka Text',Cambria,Georgia,serif" font-size="40" fill="#16211C">lanternis</text>
+</svg>
+<svg viewBox="0 0 320 96" width="320" height="96" role="img" aria-label="Esquisse du logo Registre en négatif sur vert">
+  <rect width="320" height="96" fill="#1F5C45"/>
+  <g transform="translate(14 16)" fill="none" stroke-linecap="square"><path d="M10 2 V60 H62" stroke="#F4F1E8" stroke-width="7"/><path d="M24 16 H58 M24 30 H58 M24 44 H46" stroke="#F4F1E8" stroke-width="3"/></g>
+  <circle cx="68" cy="60" r="5" fill="#F4F1E8"/>
+  <text x="96" y="62" font-family="Charter,'Bitstream Charter','Sitka Text',Cambria,Georgia,serif" font-size="40" fill="#F4F1E8">lanternis</text>
+</svg>
+</div>
+<p class="why">Le lien avec la lanterne est ici indirect (la lumière est celle de la lisibilité) : c'est un choix assumé de la piste, voir les risques.</p>
+
+<h2 data-n="06">Exemples d'application</h2>
+<h3>En-tête de landing</h3>
+<div class="hero">
+  <nav><strong style="font-family:var(--titre);font-size:1.25rem">lanternis</strong><span>Tarifs · Comment ça marche · Et mon prestataire ?</span></nav>
+  <h3>Tout votre SI sur une page. Les alertes avant les surprises.</h3>
+  <p>Un DSI de poche pour les PME et les associations sans DSI : un registre complet, mis en place avec vous, lisible par la direction.</p>
+  <div class="cols" aria-label="Exemple fictif de registre">
+    <div><b>Ce que vous avez</b><span>142 postes · 31 logiciels</span></div>
+    <div><b>Ce que vous payez</b><span>8 940 € HT / mois</span></div>
+    <div><b>Ce qui arrive à échéance</b><span>3 contrats d'ici mars</span></div>
+  </div>
+  <p><a class="btn" href="#">Faire l'autodiagnostic SI</a><a class="btn2" href="#">Voir les tarifs</a></p>
+</div>
+<p class="why">Chiffres fictifs, pour la mise en page uniquement.</p>
+
+<h3>Carte de tableau de bord (données fictives)</h3>
+<div class="grid2">
+<div class="card">
+  <h3>Échéances · 90 prochains jours</h3>
+  <div class="row"><span>Maintenance des copieurs</span><span class="d">J-45</span><span class="m">2 160 €</span></div>
+  <div class="row"><span>Licences Microsoft 365 (38)</span><span class="d">J-62</span><span class="m">4 560 €</span></div>
+  <div class="row"><span>Comptes d'anciens salariés actifs</span><span class="d">3</span><span class="m">—</span></div>
+  <p class="why">Montants annuels HT. Pourquoi vous voyez ceci : reconduction tacite le 15/12/2026.</p>
+</div>
+<div class="bc" aria-label="Carte de visite">
+  <svg viewBox="0 0 76 76" width="40" height="40" aria-hidden="true"><g fill="none" stroke-linecap="square"><path d="M10 2 V60 H62" stroke="#1F5C45" stroke-width="7"/><path d="M24 16 H58 M24 30 H58 M24 44 H46" stroke="#16211C" stroke-width="3"/></g><circle cx="54" cy="44" r="5" fill="#A1421B"/></svg>
+  <div><strong style="font-family:var(--titre);font-size:1.2rem">Prénom Nom</strong><br>Fondateur · lanternis<br><span class="why">Lanternis est une marque d'Hasteria SASU</span></div>
+</div>
+</div>
+
+<h3>Post LinkedIn (format carré, brouillon non publié)</h3>
+<div class="post">
+  <p class="k">CHECK-LIST · DÉPART DU RESPONSABLE INFORMATIQUE</p>
+  <p class="q">Avant son départ, faites avec lui une liste en trois colonnes.</p>
+  <ol><li>Ce que vous avez</li><li>Ce que vous payez</li><li>Ce qui arrive à échéance</li></ol>
+  <p class="s"><strong style="font-family:var(--titre)">lanternis</strong> · Votre informatique, enfin lisible.</p>
+</div>
+
+<h2 data-n="07">Pourquoi cette piste sert la cible</h2>
+<ul>
+<li>Elle parle la langue de la DAF et du CA (P2) : tableaux, montants, dates. Le produit ressemble à un document qu'on peut présenter, pas à un outil de technicien.</li>
+<li>Elle incarne la sobriété au maximum : aucune webfont, aucune image, des filets et du texte. Les pages sont très légères.</li>
+<li>Différenciation : registre éditorial (vélin, serif, vert sombre) à l'opposé des interfaces SaaS colorées et des écrans d'ITSM denses. <em>Hypothèse non vérifiée par relevé visuel des concurrents.</em></li>
+</ul>
+
+<h2 data-n="08">Risques de la piste</h2>
+<ul>
+<li><strong>Austérité :</strong> peut paraître administratif, « comptable » ou daté, et peu mémorable sur LinkedIn face à des visuels plus colorés.</li>
+<li><strong>Lien faible avec le nom :</strong> la lanterne n'apparaît pas ; l'identité repose sur le registre. Le nom et l'image racontent deux histoires voisines mais distinctes.</li>
+<li><strong>Vert sombre :</strong> couleur fréquente dans la finance et l'ESS (banques, mutuelles) ; risque de ressemblance générique à surveiller.</li>
+<li><strong>Polices système :</strong> rendu non uniforme selon les postes ; le logo, lui, devra être vectorisé (texte converti en tracés) au stade logo.</li>
+<li><strong>Densité :</strong> l'esthétique « tableau » peut pousser à trop afficher ; il faudra tenir la règle des 12 à 15 indicateurs.</li>
+</ul>
+
+<footer>Planche de piste créative, statut brouillon. Aucune ressource externe, aucune webfont. Données fictives ; les montants ne sont pas des tarifs. Choix de la piste : à faire par l'utilisateur.</footer>
+</div>
+</body>
+</html>

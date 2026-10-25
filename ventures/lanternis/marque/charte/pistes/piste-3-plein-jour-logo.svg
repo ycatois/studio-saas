@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" width="320" height="96" role="img" aria-labelledby="t d">
+  <title id="t">Lanternis, esquisse de principe, piste Plein jour</title>
+  <desc id="d">Une boîte carrée dont un coin s'ouvre et laisse sortir un disque de lumière jaune ; nom en sans-serif très lisible. Esquisse, pas le logo final.</desc>
+  <rect width="320" height="96" fill="#FFFFFF"/>
+  <g transform="translate(14 14)">
+    <circle cx="46" cy="20" r="18" fill="#FFE58A"/>
+    <path d="M40 10 H10 V60 H60 V30" fill="none" stroke="#1E2B37" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 46 L46 24" fill="none" stroke="#0B6E73" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="96" y="61" font-family="'Atkinson Hyperlegible', system-ui, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700" font-size="36" fill="#1E2B37">Lanternis</text>
+</svg>

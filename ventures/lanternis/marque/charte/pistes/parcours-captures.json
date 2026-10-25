@@ -1,0 +1,9 @@
+{
+  "base_url": "/studio/ventures/lanternis/marque/charte/pistes",
+  "formats": {"bureau": [1440, 900]},
+  "ecrans": [
+    {"nom": "piste-1-veilleuse", "url": "piste-1-veilleuse.html", "attendre": "h1", "pleine_page": true},
+    {"nom": "piste-2-registre", "url": "piste-2-registre.html", "attendre": "h1", "pleine_page": true},
+    {"nom": "piste-3-plein-jour", "url": "piste-3-plein-jour.html", "attendre": "h1", "pleine_page": true}
+  ]
+}

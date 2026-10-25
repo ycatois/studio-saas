@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · Piste 1 « Veilleuse » · planche créative (brouillon)</title>
+<!-- statut: brouillon · auteur: directeur-artistique · 2026-10-25 · piste non choisie. Aucune ressource externe. -->
+<style>
+:root{
+  --nuit:#1B2330; --nuit-douce:#2A3444; --ambre:#F2B24C; --ambre-profond:#8A5300;
+  --papier:#FAF6EE; --brume:#C5CDD8;
+  --titre:"Fraunces","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --texte:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--nuit);font:16px/1.55 var(--texte)}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 24px 64px}
+h1,h2,h3{font-family:var(--titre);font-weight:600;line-height:1.2}
+h1{font-size:2.4rem;margin:.2em 0}
+h2{font-size:1.5rem;margin:2.2em 0 .6em;padding-top:.6em;border-top:2px solid var(--nuit)}
+h3{font-size:1.1rem;margin:1.2em 0 .4em}
+.meta{font-size:.9rem;color:var(--ambre-profond);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.concept{font-family:var(--titre);font-size:1.45rem;max-width:46ch}
+.mots{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
+.mots li{border:2px solid var(--nuit);border-radius:999px;padding:4px 14px;font-weight:600}
+.palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.sw{border-radius:10px;overflow:hidden;border:1px solid var(--nuit)}
+.sw .c{height:84px}
+.sw .l{padding:10px 12px;background:#fff;font-size:.9rem}
+.sw code{font-weight:700}
+table{border-collapse:collapse;width:100%;font-size:.92rem;background:#fff}
+th,td{border:1px solid #8a8f98;padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--nuit);color:var(--papier)}
+.ok{font-weight:700}
+.ko{font-weight:700;color:var(--ambre-profond)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.note{font-size:.88rem;border-left:4px solid var(--ambre-profond);padding:4px 12px;background:#fff}
+/* Applications */
+.hero{background:var(--nuit);color:var(--papier);border-radius:14px;padding:28px 32px 36px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,178,76,.32) 0,rgba(242,178,76,0) 70%)}
+.hero nav{display:flex;justify-content:space-between;align-items:center;font-size:.92rem;position:relative;z-index:1}
+.hero nav span{color:var(--brume)}
+.hero h3{font-size:2.2rem;max-width:18ch;margin:1.2em 0 .3em;position:relative;z-index:1}
+.hero p{color:var(--brume);max-width:52ch;position:relative;z-index:1}
+.btn{display:inline-block;background:var(--ambre);color:var(--nuit);font-weight:700;padding:12px 20px;border-radius:8px;text-decoration:none}
+.btn2{display:inline-block;color:var(--papier);border:2px solid var(--brume);padding:10px 18px;border-radius:8px;margin-left:8px;text-decoration:none}
+.card{background:#fff;border:1px solid #d9d2c3;border-radius:12px;padding:20px 22px}
+.card h3{margin-top:0}
+.row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #e8e1d2}
+.row b{font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;color:var(--ambre-profond);border:2px solid var(--ambre-profond);border-radius:6px;padding:0 6px}
+.why{font-size:.85rem;color:#4a5260}
+.post{aspect-ratio:1/1;max-width:420px;background:var(--nuit);color:var(--papier);border-radius:12px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.post::before{content:"";position:absolute;left:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,178,76,.28) 0,rgba(242,178,76,0) 70%)}
+.post .q{font-family:var(--titre);font-size:1.55rem;line-height:1.25;position:relative}
+.post .q em{color:var(--ambre);font-style:normal}
+.post .s{font-size:.85rem;color:var(--brume);position:relative}
+.bc{width:340px;height:200px;border-radius:10px;background:var(--papier);border:1px solid var(--nuit);padding:20px;display:flex;flex-direction:column;justify-content:space-between}
+.risk li{margin:.3em 0}
+footer{margin-top:48px;font-size:.85rem;color:#4a5260}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="meta">Lanternis · Piste 1 sur 3 · brouillon du 2026-10-25 · non choisie</p>
+<h1>Veilleuse</h1>
+<p class="concept">Une lumière chaude et posée dans la pièce sombre : Lanternis est la lanterne que l'intendant allume pour que la direction voie enfin ce que contient la maison.</p>
+
+<h2>Mots-clés</h2>
+<ul class="mots"><li>chaleur</li><li>veille</li><li>présence humaine</li><li>apaisement</li><li>lumière qui révèle</li></ul>
+
+<h2>Palette</h2>
+<div class="palette">
+  <div class="sw"><div class="c" style="background:#1B2330"></div><div class="l"><code>#1B2330</code> Nuit<br>Fonds de marque, texte principal sur clair</div></div>
+  <div class="sw"><div class="c" style="background:#F2B24C"></div><div class="l"><code>#F2B24C</code> Ambre<br>La lumière : accent et boutons, <strong>sur fond sombre uniquement</strong></div></div>
+  <div class="sw"><div class="c" style="background:#FAF6EE"></div><div class="l"><code>#FAF6EE</code> Papier<br>Fond clair (site, application)</div></div>
+  <div class="sw"><div class="c" style="background:#8A5300"></div><div class="l"><code>#8A5300</code> Ambre profond<br>Liens, échéances, indicateurs sur fond clair</div></div>
+  <div class="sw"><div class="c" style="background:#C5CDD8"></div><div class="l"><code>#C5CDD8</code> Brume<br>Texte secondaire sur fond sombre</div></div>
+  <div class="sw"><div class="c" style="background:#2A3444"></div><div class="l"><code>#2A3444</code> Nuit douce<br>Surfaces et cartes sur fond sombre</div></div>
+</div>
+<h3>Contrastes vérifiés (WCAG 2.x, calcul de luminance relative)</h3>
+<table>
+<thead><tr><th>Texte / élément</th><th>Fond</th><th>Rapport</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr><td>Nuit #1B2330</td><td>Papier #FAF6EE</td><td>14,7 : 1</td><td class="ok">AAA</td></tr>
+<tr><td>Papier #FAF6EE</td><td>Nuit #1B2330</td><td>14,7 : 1</td><td class="ok">AAA</td></tr>
+<tr><td>Ambre #F2B24C</td><td>Nuit #1B2330</td><td>8,5 : 1</td><td class="ok">AAA</td></tr>
+<tr><td>Nuit #1B2330 (bouton)</td><td>Ambre #F2B24C</td><td>8,5 : 1</td><td class="ok">AAA</td></tr>
+<tr><td>Brume #C5CDD8</td><td>Nuit #1B2330</td><td>9,9 : 1</td><td class="ok">AAA</td></tr>
+<tr><td>Brume #C5CDD8</td><td>Nuit douce #2A3444</td><td>7,8 : 1</td><td class="ok">AAA</td></tr>
+<tr><td>Ambre #F2B24C</td><td>Nuit douce #2A3444</td><td>6,7 : 1</td><td class="ok">AA (AAA grand texte)</td></tr>
+<tr><td>Ambre profond #8A5300</td><td>Papier #FAF6EE</td><td>5,9 : 1</td><td class="ok">AA</td></tr>
+<tr><td>Ambre profond #8A5300</td><td>Blanc #FFFFFF</td><td>6,3 : 1</td><td class="ok">AA</td></tr>
+<tr><td>Ambre #F2B24C</td><td>Papier #FAF6EE</td><td>1,7 : 1</td><td class="ko">Échec : interdit en texte et en indicateur sur fond clair</td></tr>
+</tbody>
+</table>
+<p class="note">Règle d'usage : l'ambre ne vit que dans le noir (comme une flamme). Sur fond clair, la même fonction est tenue par l'ambre profond.</p>
+
+<h2>Typographies</h2>
+<div class="grid2">
+  <div class="card"><h3 style="font-size:1.8rem">Fraunces, titres</h3>
+  <p>Serif « à l'ancienne » douce, libre (SIL Open Font License, Google Fonts), une seule webfont, <strong>auto-hébergée</strong> en woff2, sous-ensemble latin, 1 graisse (600). Poids à mesurer après sous-ensemble (hypothèse : 25 à 40 Ko).</p>
+  <p class="note">Aperçu : si Fraunces n'est pas installée sur ce poste, la planche s'affiche avec la police de repli (Iowan Old Style, Palatino ou Georgia). Aucune police n'est chargée depuis un CDN.</p></div>
+  <div class="card"><h3>Texte : polices système</h3>
+  <p style="font-family:var(--texte)">system-ui, Segoe UI, Roboto, Helvetica Neue, Arial. Zéro téléchargement pour le corps de texte et l'application.</p>
+  <p style="font-variant-numeric:tabular-nums"><b>Chiffres tabulaires : 1 249 € HT · 45 jours · 12 indicateurs</b></p></div>
+</div>
+
+<h2>Formes, motifs et images</h2>
+<div class="grid2">
+  <p><strong>Formes :</strong> coins arrondis (8 à 14 px), un seul motif de marque : le <em>halo</em>, dégradé radial ambre très léger en CSS (aucune image), posé en coin, jamais derrière un texte. Pictogrammes au trait de 2 px, arrondis.</p>
+  <p><strong>Images :</strong> pas de photo de stock. Captures produit sur fond papier, et petites illustrations au trait (une pièce, une lanterne, un classeur) dessinées en SVG. Les visuels réseaux sont des pages de texte sur fond nuit, sans photo.</p>
+</div>
+
+<h2>Esquisse de principe du logo</h2>
+<p>Une lanterne au trait, géométrique, dont le foyer est un disque ambre ; nom en serif. <strong>Esquisse d'intention, pas le logo final</strong> (fichier : <code>piste-1-veilleuse-logo.svg</code>).</p>
+<div class="grid2">
+<svg viewBox="0 0 320 96" width="320" height="96" role="img" aria-label="Esquisse du logo Veilleuse sur fond nuit">
+  <rect width="320" height="96" rx="10" fill="#1B2330"/>
+  <g transform="translate(16 12)" fill="none" stroke="#FAF6EE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="7" r="5"/><path d="M18 18 H46 M20 18 V62 Q20 68 26 68 H38 Q44 68 44 62 V18"/><path d="M14 72 H50"/>
+  </g>
+  <circle cx="48" cy="54" r="9" fill="#F2B24C"/>
+  <text x="92" y="60" font-family="Fraunces,'Iowan Old Style','Palatino Linotype',Georgia,serif" font-size="38" fill="#FAF6EE">Lanternis</text>
+</svg>
+<svg viewBox="0 0 320 96" width="320" height="96" role="img" aria-label="Esquisse du logo Veilleuse sur fond papier">
+  <rect width="320" height="96" rx="10" fill="#FAF6EE" stroke="#1B2330"/>
+  <g transform="translate(16 12)" fill="none" stroke="#1B2330" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="7" r="5"/><path d="M18 18 H46 M20 18 V62 Q20 68 26 68 H38 Q44 68 44 62 V18"/><path d="M14 72 H50"/>
+  </g>
+  <circle cx="48" cy="54" r="9" fill="#8A5300"/>
+  <text x="92" y="60" font-family="Fraunces,'Iowan Old Style','Palatino Linotype',Georgia,serif" font-size="38" fill="#1B2330">Lanternis</text>
+</svg>
+</div>
+<p class="why">Version claire : le foyer passe en ambre profond (5,9 : 1 sur papier) pour rester visible. Le pictogramme seul doit fonctionner à 16 px (favicon) : à tester au stade logo.</p>
+
+<h2>Exemples d'application</h2>
+<h3>En-tête de landing</h3>
+<div class="hero">
+  <nav><strong style="font-family:var(--titre);font-size:1.2rem">Lanternis</strong><span>Tarifs · Comment ça marche · Et mon prestataire ?</span></nav>
+  <h3>Votre informatique, enfin lisible.</h3>
+  <p>Ce que vous avez, ce que vous payez, ce qui arrive à échéance. Un DSI de poche pour les PME et les associations, mis en place avec vous.</p>
+  <p><a class="btn" href="#">Faire l'autodiagnostic SI</a><a class="btn2" href="#">Voir les tarifs</a></p>
+</div>
+
+<h3>Carte de tableau de bord (données fictives)</h3>
+<div class="grid2">
+<div class="card">
+  <h3>Échéances des 90 prochains jours</h3>
+  <div class="row"><span>Contrat de maintenance des copieurs <span class="tag">45 j</span></span><b>2 160 € HT/an</b></div>
+  <div class="row"><span>Licences Microsoft 365 (38) <span class="tag">62 j</span></span><b>4 560 € HT/an</b></div>
+  <div class="row"><span>Comptes d'anciens salariés encore actifs</span><b>3</b></div>
+  <p class="why">Pourquoi vous voyez ceci : le contrat se reconduit tacitement le 15 décembre.</p>
+</div>
+<div class="bc" aria-label="Carte de visite">
+  <svg viewBox="0 0 64 84" width="34" height="44" aria-hidden="true"><g fill="none" stroke="#1B2330" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="7" r="5"/><path d="M18 18 H46 M20 18 V62 Q20 68 26 68 H38 Q44 68 44 62 V18"/><path d="M14 72 H50"/></g><circle cx="32" cy="42" r="9" fill="#8A5300"/></svg>
+  <div><strong style="font-family:var(--titre);font-size:1.2rem">Prénom Nom</strong><br>Fondateur, Lanternis<br><span class="why">Lanternis est une marque d'Hasteria SASU</span></div>
+</div>
+</div>
+
+<h3>Post LinkedIn (format carré, brouillon non publié)</h3>
+<div class="post">
+  <p class="q">Votre responsable informatique part en juin.<br><em>Qui sait quand se renouvelle le contrat du serveur ?</em></p>
+  <p class="s"><strong style="color:var(--papier);font-family:var(--titre)">Lanternis</strong> · Votre informatique, enfin lisible.</p>
+</div>
+
+<h2>Pourquoi cette piste sert la cible</h2>
+<ul>
+<li>Elle incarne le ton « posé, pas alarmiste » : la nuit n'est pas menaçante, elle est éclairée. Pour Marc (P1), c'est rassurant ; pour Nadia (P2), c'est humain et non technocratique.</li>
+<li>Elle met en scène l'image de l'intendant et la présence d'un DSI réel derrière l'outil (modèle hybride).</li>
+<li>Différenciation : les codes visuels dominants des outils IT et SaaS (bleus « tech », violets, dégradés vifs) sont évités au profit d'un duo nuit et ambre, plus proche de l'édition que du logiciel. <em>Hypothèse : relevé visuel des sites de Primo, Corma, Cledara et GLPI non fait (pas de capture possible ici), à vérifier.</em></li>
+</ul>
+
+<h2>Risques de la piste</h2>
+<ul class="risk">
+<li><strong>Effet « nuit » mal lu :</strong> un fond sombre dominant peut évoquer la cybersécurité anxiogène (hackers, écrans noirs), soit l'inverse du ton voulu. Parade : réserver la nuit aux surfaces de marque (landing, réseaux) et garder l'application sur papier.</li>
+<li><strong>Ambre difficile :</strong> inutilisable sur fond clair (1,7 : 1) ; il faut une discipline stricte entre ambre et ambre profond, sinon échecs d'accessibilité.</li>
+<li><strong>Lanterne littérale :</strong> le pictogramme peut tomber dans le cliché (lampe tempête, décor de Noël) ou rappeler d'autres marques à lanterne. Recherche d'antériorité graphique à faire au stade logo.</li>
+<li><strong>Une webfont :</strong> Fraunces ajoute un téléchargement (léger mais réel) et un fichier à maintenir.</li>
+<li><strong>Chaleur vs sérieux :</strong> devant un CA ou un assureur, le registre « chaleureux » doit rester sobre pour ne pas paraître artisanal.</li>
+</ul>
+
+<footer>Planche de piste créative, statut brouillon. Aucune ressource externe chargée. Les exemples d'application utilisent des données fictives ; les prix affichés sont des exemples de mise en page, pas des tarifs. Choix de la piste : à faire par l'utilisateur.</footer>
+</div>
+</body>
+</html>
