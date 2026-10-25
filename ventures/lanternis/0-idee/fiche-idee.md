@@ -1,5 +1,5 @@
 ---
-venture: pilotis
+venture: lanternis
 phase: 0 Idée
 auteur: challenger
 date: 2026-10-25
@@ -12,7 +12,7 @@ statut: brouillon
 
 ## 1. Nom de travail
 - **Nom :** Pilotis (nom de travail initial) → **Lanternis**, retenu le 2026-10-25 (voir `marque/noms-et-taglines.md`)
-- **Slug :** `pilotis`
+- **Slug :** `lanternis`
 - **Idée brute (verbatim utilisateur) :** « un saas qui va permettre à une PME d'avoir un tableau de bord global de son activité. SI, Financier, RH, et autre. Avec la possibilité d'avoir des connecteurs avec différents produits via leurs api. »
 
 **En une phrase :** pour le dirigeant d'une société de services B2B de 15 à 100 salariés sans DAF à temps plein, qui passe ses fins de mois à consolider à la main des chiffres éparpillés entre compta, paie, CRM et banque, Lanternis livre chaque lundi matin une vue unique et fiable de la santé de l'entreprise (trésorerie, marge, masse salariale, carnet de commandes), sans projet BI.

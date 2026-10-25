@@ -1,5 +1,5 @@
 ---
-venture: pilotis
+venture: lanternis
 phase: Marque (prérequis de 2b Pré-lancement)
 auteur: brand-manager
 date: 2026-10-25
@@ -67,7 +67,7 @@ Critères de création : évoquer la **carte**, la **lumière** ou la **vigie** 
 **Avant de choisir :**
 1. Recherche INPI, EUIPO et TMview (classes 9, 35, 42, signes proches) sur les finalistes, puis avis d'un conseil en propriété industrielle.
 2. Test oral en entretien : prononciation, mémorisation, sérieux perçu devant un CA (2 ou 3 noms montrés en fin d'entretien).
-3. Une fois le nom choisi : réserver rapidement `.fr` et `.com` chez OVH (action de l'utilisateur), vérifier la page LinkedIn, puis dérouler la checklist nouvelle-marque-hasteria. Le slug `pilotis` du dépôt peut rester inchangé.
+3. Une fois le nom choisi : réserver rapidement `.fr` et `.com` chez OVH (action de l'utilisateur), vérifier la page LinkedIn, puis dérouler la checklist nouvelle-marque-hasteria. Le slug `lanternis` du dépôt peut rester inchangé.
 
 ---
 

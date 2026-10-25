@@ -1,5 +1,5 @@
 ---
-venture: pilotis
+venture: lanternis
 phase: 2 Marché
 date: 2026-10-25
 statut: brouillon

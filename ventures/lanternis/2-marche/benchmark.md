@@ -1,5 +1,5 @@
 ---
-venture: pilotis
+venture: lanternis
 phase: 2 Marché
 auteur: analyste-concurrence
 date: 2026-10-25

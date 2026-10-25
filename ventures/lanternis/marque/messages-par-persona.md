@@ -1,5 +1,5 @@
 ---
-venture: pilotis
+venture: lanternis
 phase: Marque (prérequis de 2b Pré-lancement)
 auteur: brand-manager
 date: 2026-10-25

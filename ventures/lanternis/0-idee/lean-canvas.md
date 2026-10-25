@@ -1,5 +1,5 @@
 ---
-venture: pilotis
+venture: lanternis
 phase: 0 Idée
 auteur: challenger
 date: 2026-10-25

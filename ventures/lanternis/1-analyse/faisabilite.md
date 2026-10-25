@@ -1,5 +1,5 @@
 ---
-venture: pilotis
+venture: lanternis
 phase: 1 Analyse
 auteur: architecte
 date: 2026-10-25
@@ -72,7 +72,7 @@ statut: brouillon
 | **Secrets et jetons OAuth** | Stocker les accès aux outils des clients | Chiffrement **enveloppe** avec libsodium (`sodium_crypto_secretbox`) : une clé de données par organisation, elle-même chiffrée par une clé maîtresse hors base (secret Docker / variable d'environnement, jamais dans le dépôt ni dans les sauvegardes de la base) ; rafraîchissement proactif des jetons ; scopes **lecture seule** uniquement ; jamais de jeton dans les logs ; révocation et purge à la déconnexion d'une source ou à la résiliation | Moyenne | Oui |
 | **Référentiel SI** | Volet « DSI de poche » : actifs, contrats, fournisseurs, licences, domaines, jalons | Reprise du domaine de Cockpit DSI (section 7), alimenté par connecteurs (Microsoft 365, Google Workspace), import CSV et saisie | Faible à moyenne si reprise | Oui |
 | **Synthèse mensuelle** | Comité de direction, conseil d'administration (ESS), banquier | Page HTML imprimable en PDF ; génération serveur (H : Dompdf ou Gotenberg, à arbitrer) | Faible | Oui (version simple) |
-| **Facturation** | Abonnement | Stripe (compte Hasteria, métadonnée `marque=pilotis`), Stripe Checkout + portail client | Faible | Oui |
+| **Facturation** | Abonnement | Stripe (compte Hasteria, métadonnée `marque=lanternis`), Stripe Checkout + portail client | Faible | Oui |
 | **Observabilité et sauvegardes** | Exploiter seul | Logs structurés, tableau de bord interne des synchros en échec, alertes à l'exploitant ; sauvegardes selon `INFRA.md` (3 copies) | Faible | Oui |
 | **API publique Lanternis** | Exposer des données à d'autres outils | Spécification `produit/packages/shared/openapi.yaml` dès le début pour l'API interne ; API publique client en v2 | — | Non |
 | **Commentaire automatique par LLM** | « Votre marge baisse parce que… » | Hors MVP ; si un jour : modèle hébergé dans l'UE, sur agrégats uniquement, ADR obligatoire | — | Non |

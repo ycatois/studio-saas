@@ -1,5 +1,5 @@
 ---
-venture: pilotis
+venture: lanternis
 phase: 1 Analyse
 auteur: analyste-finance
 date: 2026-10-25
@@ -10,7 +10,7 @@ statut: brouillon
 
 > **Règle de lecture.** **(H)** = hypothèse non vérifiée, à tester en phase Marché. Les seuls chiffres externes repris ici viennent des sources déjà citées dans `0-idee/fiche-idee.md` (consultées le 2026-10-25). Je n'ai pas eu d'accès web pour cette analyse : aucune nouvelle source n'a été ajoutée. Les résultats calculés (ARPA, LTV, nombre de clients) héritent du statut d'hypothèse de leurs données d'entrée.
 >
-> **Cadre studio appliqué :** B2B, abonnement mensuel HT, option annuelle à −20 %, facturation par Hasteria SASU via son compte Stripe (métadonnée `marque=pilotis`), TVA en sus.
+> **Cadre studio appliqué :** B2B, abonnement mensuel HT, option annuelle à −20 %, facturation par Hasteria SASU via son compte Stripe (métadonnée `marque=lanternis`), TVA en sus.
 >
 > **Cible retenue (réponses du fondateur) :** PME et structures de l'ESS d'environ 20 à 250 salariés, sans DSI, en vente directe, avec une remise possible pour l'ESS. Volets : SI (différenciateur pressenti), finance, RH.
 
