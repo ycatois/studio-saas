@@ -1,5 +1,5 @@
 # Lanternis — statut
-Phase actuelle : 2 Marché (terminée, marque en brouillon) → prochaine : 2b Pré-lancement
+Phase actuelle : 2 Marché (terminée) · identité visuelle en cours (`/charte`) → prochaine : 2b Pré-lancement
 Dernière mise à jour : 2026-10-25
 Score GO/NO-GO : —
 Décision : en attente
@@ -9,15 +9,18 @@ Décision : en attente
 - Phase 1 : pré-mortem, JTBD, faisabilité, modèle de revenus, synthèse (`1-analyse/`).
 - Phase 2 : TAM/SAM/SOM, tendances, signaux de demande, personas, script d'entretien, benchmark, prix, acquisition, synthèse (`2-marche/`).
 - Marque (brouillon) : `marque/plateforme-de-marque.md`, `messages-par-persona.md`, `noms-et-taglines.md`. Nom de marque retenu : **Lanternis** (« Lanternis est une marque d'Hasteria SASU »).
+- Charte, étape 1 : 3 pistes créatives (Veilleuse, Registre, Plein jour) dans `marque/charte/pistes/` (planches HTML, esquisses de logo SVG, README comparatif).
 - Positionnement : un « DSI de poche » pour les PME (50 à 249 salariés) et l'ESS (20 à 249) sans DSI. Logiciel et service (modèle hybride).
 
 ## En cours
+- **Point de reprise : choix de la piste créative par le fondateur** (1 Veilleuse, 2 Registre, 3 Plein jour, ou un mélange). Ensuite : `/charte lanternis` → 3 propositions de logo (attendre le choix), charte complète et tokens, iconographie, gabarits marketing, design system (ui-designer).
+- Captures PNG des pistes non produites (Docker Desktop arrêté) : relancer la commande du § 5 de `marque/charte/pistes/README.md`.
 - Sécuriser le nom Lanternis : réserver lanternis.fr et lanternis.com, rechercher l'antériorité INPI/EUIPO (classes 9, 35, 42), puis demander l'avis d'un conseil en propriété industrielle avant le dépôt (skill nouvelle-marque-hasteria).
 - `marque/voix-fondateur.md` à compléter par le fondateur.
 - `SOCIETE.md` à compléter (bloque les mentions légales).
 
 ## Prochaines étapes
-- `/charte` : identité visuelle de Lanternis.
+- `/charte lanternis` : reprendre au choix de la piste.
 - `/prelancement` : landing de validation, liste d'attente, autodiagnostic SI comme lead magnet.
 - 12 à 15 entretiens Mom Test (script `2-marche/script-interview.md`), en commençant par le réseau Tecnoo et l'ESS.
 - Faire valider par juriste-rgpd les règles de prospection B2B avant les premiers envois.
