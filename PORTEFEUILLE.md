@@ -2,4 +2,4 @@
 
 | Venture | Phase | Score | Décision | Prochaine étape | MAJ |
 |---------|-------|-------|----------|-----------------|-----|
-| [Pilotis](ventures/pilotis/STATUT.md) — « DSI de poche » + tableau de bord pour PME/ESS sans DSI | 2 Marché (terminée) | — | en attente | `/marque` puis `/prelancement` + entretiens | 2026-10-25 |
+| [Pilotis](ventures/pilotis/STATUT.md) — « DSI de poche » + tableau de bord pour PME/ESS sans DSI | 2 Marché (terminée) · marque en brouillon | — | en attente | Choisir le nom, `/charte`, puis `/prelancement` | 2026-10-25 |

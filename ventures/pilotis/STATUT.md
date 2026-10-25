@@ -1,5 +1,5 @@
 # Pilotis — statut
-Phase actuelle : 2 Marché (terminée) → prochaine : 2b Pré-lancement
+Phase actuelle : 2 Marché (terminée, marque en brouillon) → prochaine : 2b Pré-lancement
 Dernière mise à jour : 2026-10-25
 Score GO/NO-GO : —
 Décision : en attente
@@ -8,13 +8,16 @@ Décision : en attente
 - Phase 0 : fiche idée, Lean Canvas, avocat du diable, réponses du fondateur (`0-idee/`).
 - Phase 1 : pré-mortem, JTBD, faisabilité, modèle de revenus, synthèse (`1-analyse/`).
 - Phase 2 : TAM/SAM/SOM, tendances, signaux de demande, personas, script d'entretien, benchmark, prix, acquisition, synthèse (`2-marche/`).
+- Marque (brouillon) : `marque/plateforme-de-marque.md`, `messages-par-persona.md`, `noms-et-taglines.md`. Noms finalistes : Lanternis, Cartolis, Clairsi (choix du fondateur attendu) ; « Pilotis » déconseillé (domaines .fr/.com pris).
 - Positionnement : un « DSI de poche » pour les PME (50 à 249 salariés) et l'ESS (20 à 249) sans DSI. Logiciel et service (modèle hybride).
 
 ## En cours
-- Aucun.
+- Choix du nom définitif par le fondateur (puis recherche d'antériorité INPI/EUIPO, classes 9, 35, 42).
+- `marque/voix-fondateur.md` à compléter par le fondateur.
+- `SOCIETE.md` à compléter (bloque les mentions légales).
 
 ## Prochaines étapes
-- `/marque` : `marque/` est vide, prérequis de la landing et des posts.
+- `/charte` une fois le nom choisi (identité visuelle).
 - `/prelancement` : landing de validation, liste d'attente, autodiagnostic SI comme lead magnet.
 - 12 à 15 entretiens Mom Test (script `2-marche/script-interview.md`), en commençant par le réseau Tecnoo et l'ESS.
 - Faire valider par juriste-rgpd les règles de prospection B2B avant les premiers envois.
