@@ -1,0 +1,55 @@
+# Lanternis · pré-lancement (landing + liste d'attente PHP pour o2switch)
+# Contrôles sur les PR : lint PHP, fichiers générés à jour, tests unitaires et de bout en bout.
+# Aucun déploiement ici : la mise en ligne sur o2switch reste manuelle et validée par l'utilisateur.
+name: lanternis-prelancement
+
+on:
+  pull_request:
+    paths:
+      - 'ventures/lanternis/produit/apps/prelancement/**'
+      - 'ventures/lanternis/marketing/landing/**'
+      - 'ventures/lanternis/marque/charte/tokens.css'
+      - 'ventures/lanternis/marque/charte/logo/**'
+      - 'ventures/lanternis/marque/charte/fonts/**'
+      - '.github/workflows/lanternis-prelancement.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lanternis-prelancement-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.2', '8.3']   # 8.2 : version minimale visée sur o2switch
+    defaults:
+      run:
+        working-directory: ventures/lanternis/produit/apps/prelancement
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: pdo_sqlite, curl
+          coverage: none
+          tools: none
+
+      - name: Lint (php -l sur tous les fichiers PHP)
+        run: find . -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Fichiers générés à jour (build.php --check)
+        run: php build.php --check
+
+      - name: Tests unitaires
+        run: php tests/run.php
+
+      - name: Test de bout en bout (php -S, MAIL_MODE=log)
+        run: php tests/smoke.php

@@ -1,0 +1,95 @@
+/* Lanternis · pages écrites pour le pré-lancement (autodiagnostic, merci, confirmé, désinscrit, erreur,
+   pages servies par les scripts PHP). Reprend les règles de la landing (validation.html) et n'utilise que
+   les jetons de assets/charte/tokens.css. Aucun style en ligne (CSP stricte). */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--couleur-fond);color:var(--couleur-texte);font-family:var(--police-texte);font-size:var(--taille-l);line-height:var(--interligne-texte);-webkit-text-size-adjust:100%;display:flex;flex-direction:column;min-height:100vh}
+main{flex:1 0 auto}
+main:focus{outline:none}
+h1,h2,h3{font-family:var(--police-titre);font-weight:var(--graisse-titre);line-height:var(--interligne-titre);margin:0 0 var(--espace-4)}
+h1{font-size:clamp(2rem,5vw,var(--taille-4xl))}
+h2{font-size:clamp(1.5rem,3.5vw,var(--taille-3xl))}
+h3{font-size:var(--taille-xl)}
+p{margin:0 0 var(--espace-4)}
+a{color:var(--couleur-accent);text-underline-offset:.15em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--couleur-focus);outline-offset:3px;border-radius:2px}
+img,svg{max-width:100%}
+.conteneur{width:100%;max-width:var(--largeur-contenu);margin:0 auto;padding:0 var(--grille-marge)}
+@media (max-width:40rem){.conteneur{padding:0 var(--espace-4)}}
+.texte{max-width:var(--mesure-texte)}
+.chapeau{font-size:var(--taille-xl);color:var(--couleur-texte-secondaire)}
+.petit{font-size:var(--taille-s);color:var(--couleur-texte-secondaire)}
+.num{font-variant-numeric:var(--chiffres)}
+.visuellement-cache{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.evitement{position:absolute;left:var(--espace-4);top:-4rem;z-index:10;background:var(--lt-papier);color:var(--lt-nuit);padding:var(--espace-2) var(--espace-4);border-radius:var(--rayon-m)}
+.evitement:focus{top:var(--espace-2)}
+.page-courte{padding:var(--espace-8) 0 var(--espace-8)}
+@media (max-width:40rem){.page-courte{padding:var(--espace-7) 0}}
+section{padding:var(--espace-7) 0}
+.filet{border-top:1px solid var(--couleur-filet)}
+
+/* Zone de marque (fond nuit), comme la landing */
+.zone-nuit{background:var(--couleur-surface-marque);color:var(--lt-papier);--couleur-texte:var(--lt-papier);--couleur-texte-secondaire:var(--lt-brume);--couleur-accent:var(--lt-ambre);--couleur-focus:var(--lt-ambre);--couleur-bouton-fond:var(--lt-ambre);--couleur-bouton-texte:var(--lt-nuit);--couleur-bouton-secondaire-bord:var(--lt-brume);--couleur-filet:var(--lt-lin-nuit)}
+.entete{padding:var(--espace-4) 0}
+.entete img{display:block;width:160px;height:auto}
+.pied{padding:var(--espace-6) 0;font-size:var(--taille-s)}
+.pied .conteneur{display:grid;gap:var(--espace-3)}
+.pied p{margin:0;color:var(--lt-brume)}
+.pied a{color:var(--lt-papier)}
+.pied ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--espace-5)}
+
+/* Boutons */
+.bouton{display:inline-block;font:inherit;font-weight:var(--graisse-forte);font-size:var(--taille-m);line-height:1.3;text-decoration:none;text-align:center;padding:.8rem 1.25rem;min-height:44px;border-radius:var(--rayon-m);border:2px solid var(--couleur-bouton-fond);background:var(--couleur-bouton-fond);color:var(--couleur-bouton-texte);cursor:pointer;transition:transform var(--duree-courte) var(--courbe)}
+.bouton:hover{transform:translateY(-1px)}
+.bouton-secondaire{background:transparent;color:var(--couleur-texte);border-color:var(--couleur-bouton-secondaire-bord)}
+.actions{display:flex;flex-wrap:wrap;gap:var(--espace-3);margin:var(--espace-5) 0 var(--espace-4)}
+
+/* Messages */
+.message{border-radius:var(--rayon-m);padding:var(--espace-4);margin-bottom:var(--espace-5);border-left:4px solid;background:var(--couleur-mise-en-avant)}
+.message-succes{border-color:var(--couleur-succes)}
+.message-erreur{border-color:var(--couleur-erreur)}
+.message-info{border-color:var(--couleur-info)}
+.message strong{display:block}
+.message ul{margin:var(--espace-2) 0 0;padding-left:var(--espace-5)}
+
+/* Formulaires */
+.formulaire{background:var(--couleur-surface);border:1px solid var(--couleur-filet);border-radius:var(--rayon-l);padding:var(--espace-6);max-width:var(--largeur-texte)}
+@media (max-width:40rem){.formulaire{padding:var(--espace-5) var(--espace-4)}}
+.champ{margin-bottom:var(--espace-5)}
+label,legend{display:block;font-weight:var(--graisse-forte);font-size:var(--taille-m);margin-bottom:var(--espace-2)}
+.oblig{font-weight:var(--graisse-texte);color:var(--couleur-texte-secondaire);font-size:var(--taille-s)}
+.aide{display:block;font-size:var(--taille-s);color:var(--couleur-texte-secondaire);margin:calc(-1 * var(--espace-1)) 0 var(--espace-2)}
+input[type=email],input[type=text],select{width:100%;font:inherit;font-size:var(--taille-m);color:var(--couleur-texte);background:var(--couleur-surface);border:1px solid var(--couleur-trait);border-radius:var(--rayon-m);padding:.65rem .75rem;min-height:44px}
+input:focus-visible,select:focus-visible{outline:3px solid var(--couleur-focus);outline-offset:1px}
+fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
+.choix{display:flex;align-items:flex-start;gap:var(--espace-3);margin-bottom:var(--espace-2);font-size:var(--taille-m)}
+.choix input{width:1.25rem;height:1.25rem;margin:.15rem 0 0;flex:none;accent-color:var(--couleur-bouton-fond)}
+.choix label{font-weight:var(--graisse-texte);margin:0}
+.consentement{border-top:1px solid var(--couleur-filet);padding-top:var(--espace-4)}
+.piege{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.mention-form{font-size:var(--taille-s);color:var(--couleur-texte-secondaire);margin-top:var(--espace-4)}
+
+/* Autodiagnostic */
+.intro-diag{padding:var(--espace-7) 0 var(--espace-6)}
+.question{background:var(--couleur-surface);border:1px solid var(--couleur-filet);border-radius:var(--rayon-l);padding:var(--espace-5);margin:0 0 var(--espace-5);max-width:var(--largeur-texte)}
+.question legend{font-size:var(--taille-l);padding:0;margin-bottom:var(--espace-3)}
+.question .numero{display:block;font-size:var(--taille-s);font-weight:var(--graisse-texte);color:var(--couleur-texte-secondaire);margin-bottom:var(--espace-1)}
+.question .choix{margin-bottom:var(--espace-3)}
+.question:target,.question.manquante{border-color:var(--couleur-erreur);border-width:2px}
+.progression{font-size:var(--taille-s);color:var(--couleur-texte-secondaire);margin:0 0 var(--espace-5)}
+.resultat{max-width:var(--largeur-texte)}
+.resultat:focus{outline:none}
+.profil{font-family:var(--police-titre);font-weight:var(--graisse-titre);font-size:var(--taille-2xl);margin:0 0 var(--espace-2)}
+.axes{list-style:none;margin:var(--espace-5) 0;padding:0;display:grid;gap:var(--espace-3)}
+.axes li{display:grid;grid-template-columns:minmax(10rem,1fr) 2fr auto;gap:var(--espace-3);align-items:center;font-size:var(--taille-m)}
+@media (max-width:40rem){.axes li{grid-template-columns:1fr auto}.axes meter{grid-column:1 / -1;order:3}}
+.axes meter{width:100%;height:1rem}
+.axes .valeur{font-variant-numeric:var(--chiffres);white-space:nowrap}
+.encadre{background:var(--couleur-mise-en-avant);border-radius:var(--rayon-l);padding:var(--espace-5) var(--espace-6);margin:var(--espace-5) 0}
+@media (max-width:40rem){.encadre{padding:var(--espace-5)}}
+.encadre ol,.encadre ul{margin:0;padding-left:var(--espace-5)}
+.encadre li{margin-bottom:var(--espace-2)}
+.pourquoi{font-size:var(--taille-m)}
+@media print{.zone-nuit{background:none;color:#000}.entete,.pied,.actions,#questionnaire,#echange,.evitement{display:none}}
