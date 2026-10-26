@@ -480,5 +480,225 @@ Fichiers : `marketing/landing/validation.html` (section `#tarifs`) et `marketing
 | Nombre de structures sans DSI par segment, SOM | `marche-tam-sam-som.md` (comptages sourcés × parts « sans DSI » en H) | 2026-10-25 |
 | Coûts variables, churn, temps de vente, CAC | `1-analyse/modele-revenus.md`, `2-marche/acquisition.md` (H) | — |
 | Modules, priorités, limites candidates | `1-analyse/perimetre-produit.md` (H) | 2026-10-26 |
+| API Recherche d'entreprises : champs `complements.est_ess`, `complements.est_association`, `complements.identifiant_association`, `nature_juridique`, `tranche_effectif_salarie` et `annee_tranche_effectif_salarie` (exemple : Uniopss, `est_ess` = true, nature juridique 9220) | https://recherche-entreprises.api.gouv.fr/search?q=uniopss | 2026-10-26 |
+
+---
+
+## 11. Grille D, mixte A + C, en libre-service (ajout du 2026-10-26)
+
+> **Origine.** Retour du fondateur du 2026-10-26 sur ce document. Cette section a été demandée comme « section 9 », mais les sections 9 et 10 existaient déjà : elle est numérotée 11 pour ne rien réécrire.
+> **Décisions du fondateur prises en compte :**
+> 1. **vente automatisée au maximum**, sans vente directe, sans démonstration ni séance individuelle obligatoires : inscription, essai, paiement, changement d'offre et résiliation en libre-service ;
+> 2. **essai gratuit d'un mois en libre-service** ;
+> 3. **D1 à D5 validées** (`perimetre-produit.md` § 8) ;
+> 4. **Cockpit DSI abandonné**, développement de zéro ;
+> 5. cadre de prix : 49 € HT, puis 99 € HT, puis un ou deux paliers au-dessus.
+>
+> **Ce que cela rend caduc plus haut (sans le réécrire)** : la séance individuelle et la séance collective animée par le fondateur (§ 5.3) ; la prospection directe pour les 100 à 249 (§ 6.4) ; la revue trimestrielle et la mise en place incluses dans Pilotage+ (§ 4.2) ; la recommandation du § 8, remplacée par le § 11.8.
+> Toutes les valeurs de cette section sont des **hypothèses (H)**, sauf les champs de l'API Recherche d'entreprises et le barème Stripe (§ 10).
+
+### 11.1 La formule retenue : prix fixes par tranche de 50 personnes
+J'ai comparé deux formules :
+- un tableau croisé « niveaux × tranches », avec un prix fixe par case ;
+- un prix de base avec une tranche incluse, plus des blocs de personnes.
+
+Je propose de **fusionner les deux** : la grille est un tableau de prix fixes, construit selon une seule règle que le client comprend sans calculer :
+
+> **Chaque niveau a un prix de départ pour 49 personnes au plus, puis un montant fixe par tranche de 50 personnes en plus : +30 € (Essentiel), +60 € (Pilotage), +90 € (Pilotage+).**
+
+On garde ainsi la lisibilité de A (le client lit un prix fixe dans le tableau, prévisible pour un budget voté) et l'économie de C (le prix suit la taille, à environ 1 €, 2 € ou 3 € par personne en bas de grille, avec une dégressivité modérée). La même règle prolonge la grille au-delà de 249 personnes sans devis (§ 11.7).
+
+Comptage (H) : personnes gérées au sens du § 1.1, bénévoles gratuits. Le changement de tranche est **automatique** : il s'applique après 2 relevés mensuels consécutifs au-dessus de la tranche (pas d'effet de yo-yo), avec un email 15 jours avant. En annuel, la tranche est fixée pour l'année et revue à la date anniversaire.
+
+### 11.2 Grille D (prix HT par mois)
+
+| Personnes gérées | **Essentiel** | **Pilotage** (mise en avant) | **Pilotage+** (à l'arrivée du multi-sites, P2) |
+|---|---|---|---|
+| jusqu'à 49 | **49 €** | **99 €** | **199 €** |
+| 50 à 99 | 79 € | 159 € | 289 € |
+| 100 à 149 | 109 € | 219 € | 379 € |
+| 150 à 199 | 139 € | 279 € | 469 € |
+| 200 à 249 | 169 € | 339 € | 559 € |
+| 250 à 499 | + 30 € par tranche de 50 (199 € à 319 €) | + 60 € par tranche de 50 (399 € à 639 €) | + 90 € par tranche de 50 (649 € à 1 009 €) |
+| 500 et plus | « Écrivez-nous » (§ 11.7) | | |
+
+- **Annuel −20 %** (équivalent mensuel) : Essentiel 39,20 / 63,20 / 87,20 / 111,20 / 135,20 € ; Pilotage 79,20 / 127,20 / 175,20 / 223,20 / 271,20 € ; Pilotage+ 159,20 / 231,20 / 303,20 / 375,20 / 447,20 €.
+- **Remise ESS** : −15 %, non cumulable avec l'annuel (option b du § 1.3), appliquée automatiquement (§ 11.4). **Bénévoles gratuits.**
+- **Lancement avec deux niveaux seulement** : les fonctions qui distinguent Pilotage+ (multi-sites, prestataires illimités, règles d'alerte personnalisées, API) sont toutes en P2 ou P3. Sans la revue trimestrielle, Pilotage+ n'aurait presque rien de plus à l'ouverture. Proposition : l'afficher « bientôt » et l'ouvrir avec le multi-sites.
+- **Lecture du cadre** : le premier niveau est à 49 € et le deuxième à 99 € pour la première tranche ; ces prix augmentent ensuite avec la taille. C'est la même lecture « dès 49 € » qu'en C, mais affichée en prix fixes. **Le fondateur doit confirmer cette lecture.**
+
+**Exemples de facture** (Hasteria est assujettie à la TVA : taux normal de 20 % appliqué).
+
+| Personnes gérées | Essentiel / Pilotage / Pilotage+ (mensuel HT) | Pilotage mensuel : HT + TVA = TTC | Pilotage annuel : HT par an (équiv. mensuel) → TTC par an | Pilotage ESS mensuel : HT → TTC |
+|---|---|---|---|---|
+| **30** | 49 / 99 / 199 € | 99 + 19,80 = **118,80 €** | 950,40 € (79,20 €) → 1 140,48 € | 84,15 € → 100,98 € |
+| **80** | 79 / 159 / 289 € | 159 + 31,80 = **190,80 €** | 1 526,40 € (127,20 €) → 1 831,68 € | 135,15 € → 162,18 € |
+| **150** | 139 / 279 / 469 € | 279 + 55,80 = **334,80 €** | 2 678,40 € (223,20 €) → 3 214,08 € | 237,15 € → 284,58 € |
+| **240** | 169 / 339 / 559 € | 339 + 67,80 = **406,80 €** | 3 254,40 € (271,20 €) → 3 905,28 € | 288,15 € → 345,78 € |
+
+Chaque facture mentionne : « Lanternis est une marque d'Hasteria SASU », la tranche de personnes, le niveau et la période. Les structures publiques ou les grandes associations peuvent y ajouter un numéro de bon de commande (champ libre).
+
+### 11.3 Fonctionnalités par offre (d'après le § 4.2, services humains retirés)
+
+| Module | Priorité | Essentiel | Pilotage | Pilotage+ |
+|---|---|---|---|---|
+| M0 Socle (MFA, rôles, journal) | P1 | ✓ | ✓ | ✓ |
+| M1, M2, M3 Personnes, matériel, comptes et licences | P1 | ✓ | ✓ | ✓ |
+| M4 Accès déclarés | P1 | ✓ | ✓ | ✓ |
+| M4 Revue périodique des accès | P2 | — | ✓ | ✓ |
+| M5 Contrats, fournisseurs, coût du SI | P1 | ✓ | ✓ | ✓ |
+| M5 Décision de renouvellement tracée | P2 | — | ✓ | ✓ |
+| M6 Domaines, certificats, sauvegardes | P1 | ✓ | ✓ | ✓ |
+| M7 Arrivées et départs générés depuis le registre | P1 | ✓ (modèles fournis : 1 arrivée, 1 départ) | ✓ modèles illimités et conditions | ✓ |
+| M7 Changement de poste | P2 | — | ✓ | ✓ |
+| M8 Alertes A1 à A16, digest, tableau de bord | P1 | ✓ | ✓ | ✓ |
+| M8 Règles d'alerte personnalisées | P2 (H) | — | — | ✓ |
+| M9 Passation, procédures, journal des incidents | P2 | — | ✓ | ✓ |
+| M10 Import, M365 (Google si un pilote l'utilise, D4), RDAP/TLS | P1 | ✓ | ✓ | ✓ |
+| M10 Connecteurs P2 (Qonto, Pennylane, Intune, ICS ; D5) | P2 | — | ✓ | ✓ |
+| M11 Utilisateurs Lanternis | P1 | 3 | illimités | illimités |
+| M11 Prestataires invités | P1 | 1 | 3 | illimités |
+| M11 Multi-sites, responsables de site | P2 | — | — | ✓ |
+| M12 Export CSV complet | P1 | ✓ | ✓ | ✓ |
+| M12 Synthèse mensuelle et attestations PDF | P2 | — | ✓ | ✓ |
+| M12 Historique consultable | — | 12 mois | illimité | illimité |
+| M12 API en lecture | P3 | — | — | ✓ |
+| Support | — | email, sous 2 jours ouvrés (H) | email, sous 1 jour ouvré (H) | email prioritaire (H) |
+| ~~Revue trimestrielle avec un DSI~~ ; ~~mise en place incluse~~ | — | retirées | retirées | retirées |
+
+**Services facultatifs achetables en ligne (H)**, à prix fixe, réservés et payés en libre-service (calendrier en ligne et paiement Stripe ponctuel), **plafonnés à 4 créneaux par mois** au total. Ils sont masqués quand le plafond est atteint et ne servent jamais de rendez-vous commercial :
+
+| Service | Contenu | Prix HT (H) |
+|---|---|---|
+| Séance d'aide au démarrage | 1 h en visio, avec partage d'écran : on remplit le registre ensemble (aucun fichier n'est transmis, D2) | 190 € |
+| Revue annuelle du SI | 1 h 30 en visio, à partir du tableau de bord ; compte rendu écrit | 290 € |
+
+Repère : 190 € pour 1 h, au-dessus d'un TJM de 700 à 1 400 € ramené à l'heure (≈ 100 à 200 €/h, calcul H à partir de [24]), pour couvrir la préparation. Ces services peuvent être délivrés par Tecnoo (question d'entité ouverte, `modele-revenus.md` § 7).
+
+### 11.4 Le parcours de vente automatisé
+
+| Étape | Ce que voit le client | Mécanisme (à confirmer par l'architecte) |
+|---|---|---|
+| 1. **Page de tarifs** | Simulateur : type de structure, nombre de personnes, mensuel ou annuel ; il affiche les 3 prix, l'équivalent par personne, la remise ESS possible et un **devis PDF téléchargeable** (pour la DAF, le bureau, le CA) | Calcul côté client, sans traceur ; devis généré par l'application, valable 30 jours |
+| 2. **Inscription à l'essai** | Email professionnel, nom de la structure, SIREN, outil de messagerie (M365, Google, autre), fonction ; **sans carte bancaire** | Vérification de l'email ; SIREN interrogé dans l'API Recherche d'entreprises (§ 10) : `nature_juridique`, `tranche_effectif_salarie` (contrôle de cohérence, jamais bloquant : la donnée peut dater, ex. `annee_tranche_effectif_salarie` = 2024) |
+| 3. **Onboarding guidé dans le produit** (contre le « cockpit vide ») | Liste de démarrage en 5 étapes avec barre de progression : importer le personnel (gabarit Excel, correspondance des colonnes), connecter Microsoft 365, ajouter les domaines, saisir 3 contrats, inviter le prestataire. **Structure d'exemple** (données fictives) consultable avant d'avoir ses propres données. Vidéos de 2 à 4 min par étape. Écran « Ce que Lanternis a déjà trouvé » dès la première synchronisation | Produit ; vidéos produites une fois. **Point faible** : une structure sous Google Workspace ne peut pas connecter son annuaire tant que D4 la reporte. Il faut le lui dire dès l'inscription (« Google : bientôt »), lui proposer l'import et mesurer leur part |
+| 4. **Emails automatiques pendant l'essai** (brouillons à rédiger puis à valider ; nature d'email de service à confirmer par juriste-rgpd) | J0 bienvenue et gabarit ; J2 si rien n'est importé ; J4 si M365 n'est pas connecté ; J7 premier digest réel ; J10 « 3 étapes restantes » si l'essai n'est pas activé ; J14 bilan chiffré (comptes orphelins, licences libres en € par an, échéances) ; J21 cas d'usage (départ d'un salarié) ; J25 choix de l'offre et prolongation ; J30 fin d'essai | Déclenchés par l'état du compte, pas par le calendrier seul ; au plus 7 emails, arrêt dès la souscription |
+| 5. **Prolongation** | Bouton « Prolonger de 15 jours » (une fois), pour une validation en bureau ou en CA | Automatique |
+| 6. **Conversion** | Choix du niveau ; paiement par carte ou **prélèvement SEPA** ; mensuel ou annuel ; code « pilote fondateur » éventuel (prix garanti 24 mois, 10 premières souscriptions) | Stripe Checkout ; métadonnée `marque=lanternis` sur le produit, le client et l'abonnement ; tranche gérée comme un prix Stripe par case de la grille |
+| 7. **Remise ESS vérifiée automatiquement** | Case « structure de l'ESS » cochée à l'inscription | Règle proposée (H) : remise accordée si `complements.est_ess` = true, **ou** `complements.est_association` = true, **ou** une nature juridique de fondation (à lister par juriste-rgpd ou le conseil juridique). Sinon, pas de remise, avec un lien « Votre structure est ESS mais n'est pas reconnue ? Écrivez-nous » : cas rare, traité par email, **sans téléversement de justificatif** (D2), sur la base du numéro d'agrément ESUS. Coupon Stripe appliqué automatiquement ; nouveau contrôle à chaque date anniversaire |
+| 8. **Gestion du compte** | Changer de niveau (montée immédiate au prorata, descente à la fin de la période), passer en annuel, mettre à jour le moyen de paiement, télécharger les factures, **résilier en deux clics** | Portail client Stripe ; changement de tranche automatique (§ 11.1) |
+| 9. **Facturation et relances** | Facture à chaque échéance ; emails de relance en cas d'échec de paiement ; compte en lecture seule après la période de relance, puis fin d'essai normale (§ 5.4) | Nouvelles tentatives et emails de relance de Stripe ; TVA française à 20 % ; transmission par une plateforme agréée de facturation électronique d'ici septembre 2027 (CLAUDE.md) |
+| 10. **Résiliation** | Accès jusqu'à la fin de la période payée, puis 30 jours de lecture seule avec export, puis suppression | Identique au § 5.4 |
+
+**Indicateurs de l'entonnoir automatisé (objectifs H)** : visiteur de la page de tarifs → essai ≥ 3 % ; essai → activé ≥ 50 % ; essai → payant ≥ 20 % ; part en Pilotage ≥ 55 % ; part en annuel ≥ 30 % ; demandes au support pendant l'essai ≤ 1 pour 4 essais.
+
+### 11.5 Unit economics sans vente directe (toutes en H)
+
+**Revenu moyen par client.** Répartition par taille du § 6.1 (≤ 49 : 30 % ; 50-99 : 35 % ; 100-149 : 20 % ; 150-199 : 8 % ; 200-249 : 7 %). Prix moyen catalogue par niveau : Essentiel ≈ 87,1 € ; Pilotage ≈ 175,2 € ; Pilotage+ ≈ 313,3 €.
+
+| Scénario | Mix des niveaux | Revenu catalogue | **Revenu net (× 0,893)** | Coûts variables | Marge brute | Contribution |
+|---|---|---|---|---|---|---|
+| **Lancement** (2 niveaux) | Essentiel 45 %, Pilotage 55 % | ≈ 135,6 € | **≈ 121 €** | ≈ 14,4 € | ≈ 88 % | ≈ 107 € |
+| **Cible** (Pilotage+ ouvert) | 40 % / 45 % / 15 % | ≈ 160,7 € | **≈ 143 €** | ≈ 14,9 € | ≈ 90 % | ≈ 129 € |
+| Prudent : sans vente, moins de grandes structures (40 / 45 / 10 / 3 / 2 % par taille) | 40 % / 45 % / 15 % | ≈ 137,1 € | ≈ 122 € | ≈ 14,4 € | ≈ 88 % | ≈ 108 € |
+
+Coûts variables : hébergement et emails 2 € + facturation électronique 0,50 € + Stripe (≈ 2,2 % + 0,25 €, cas carte) + **support par email 0,15 h (9 €)**. Aucun service humain n'est inclus.
+
+| | Lancement | **Cible** | Prudent |
+|---|---|---|---|
+| Clients pour 3 / 10 / 20 k€ de MRR | 25 / 83 / 166 | **21 / 70 / 140** | 25 / 82 / 164 |
+| LTV (churn 2 % / 3 %) | ≈ 5 340 / 3 560 € | ≈ 6 430 / 4 290 € | ≈ 5 400 / 3 600 € |
+| CAC tolérable (le plus serré entre le remboursement en 12 mois et LTV/CAC ≥ 3 à 3 % de churn) | ≈ 1 190 € | ≈ 1 430 € | ≈ 1 200 € |
+
+**CAC des canaux automatisés (H, aucune donnée de conversion)** — temps du fondateur valorisé à 60 €/h ; coût d'un essai ≈ 0,1 h de support (6 €) ; conversion d'un essai en client : 20 %.
+
+| Canal | Mécanisme sans vente | CAC la 1re année (H) | CAC à maturité (H) | Incertitude |
+|---|---|---|---|---|
+| **Essai en libre-service** (trafic direct, bouche-à-oreille) | § 11.4 | ≈ 30 € (5 essais × 6 €) + coût du trafic | idem | Volume inconnu |
+| **Blog SEO et autodiagnostic** | Articles produits par les agents, validés par le fondateur (≈ 2 h par article, 2 par mois ≈ 240 €/mois) ; l'autodiagnostic renvoie vers l'essai | ≈ 400 à 800 € (peu de trafic la 1re année) | ≈ 100 à 200 € | **Forte** : volumes de recherche non mesurés (`signaux-demande.md` § 3) |
+| **Réseaux ESS en one-to-many** | Article ou tribune dans la lettre d'une fédération (≈ 3 h), webinaire **enregistré** et rediffusé ; lien `?public=ess` vers l'essai | ≈ 300 à 750 € | ≈ 200 à 400 € | Accès aux relais non vérifié (`acquisition.md` § 7) |
+| **Prestataires prescripteurs** | Programme partenaire en libre-service : lien de recommandation, **commission automatique de 20 % pendant 12 mois** (≈ 340 € sur 143 €) ; le prestataire invité découvre l'outil chez un client (boucle d'invitation) | ≈ 350 à 450 € | ≈ 350 € | Outil de commission à choisir (Stripe Connect ou plateforme d'affiliation : coût à sourcer) ; concurrence de Primo et Corma sur les MSP |
+| **Solidatech** | Référencement de l'offre auprès des associations | Inconnu (conditions non trouvées, `prix.md` [32]) ; coût probable = une remise ou une commission | — | À demander à Solidatech |
+| Parrainage client | Un mois offert au parrain et au filleul | ≈ 150 à 290 € (1 mois de revenu de part et d'autre) | idem | Faible volume au début |
+
+**CAC moyen (H)** : environ **700 à 900 € la 1re année** (SEO encore faible, coûts fixes de lancement répartis sur peu de clients), puis environ **250 à 450 €** à maturité (35 % SEO, 25 % ESS, 25 % prescripteurs, 15 % parrainage et autres). **Remboursement** : ≈ 7 à 8 mois la 1re année (900 € ÷ 107 à 129 €), ≈ 2 à 4 mois à maturité. **L'économie unitaire tient largement ; le risque se déplace du CAC vers le volume** : obtenir sans aucun vendeur 18 à 26 essais par mois.
+
+**Volume d'essais nécessaire (H)** : 10 k€ en 24 mois demandent ≈ 87 souscriptions (70 clients + churn de 2 %), soit ≈ 3,6 par mois, donc **≈ 18 essais par mois**, soit ≈ 600 visiteurs qualifiés par mois sur la page de tarifs à 3 %. 20 k€ en 36 mois demandent ≈ 190 souscriptions, soit **≈ 26 essais par mois**.
+
+**Temps du fondateur par mois, hors développement (H)**
+
+| Poste | 3 k€ (21 clients, ≈ 10 essais/mois) | 10 k€ (70 clients, ≈ 18 essais/mois) | 20 k€ (140 clients, ≈ 26 essais/mois) |
+|---|---|---|---|
+| Support par email (0,15 h par client) | 3 h | 10,5 h | 21 h |
+| Questions pendant l'essai (0,1 h par essai) | 1 h | 2 h | 2,5 h |
+| Validation des contenus (blog, emails, réseaux) | 4 h | 4 h | 4 h |
+| Partenaires, relais ESS, Solidatech | 4 h | 6 h | 8 h |
+| Exceptions (cas ESS manuels, impayés, demandes de plus de 500 personnes) | 1 h | 1,5 h | 3 h |
+| Rapport mensuel et réallocation | 2 h | 3 h | 4 h |
+| **Total** | **≈ 15 h** (≈ 0,5 j/semaine) | **≈ 27 h** (≈ 1 j/semaine) | **≈ 43 h** (≈ 1,5 j/semaine) |
+| Services facultatifs (plafond) | ≤ 4 créneaux | ≤ 4 créneaux | ≤ 4 créneaux |
+
+Pour comparaison, en vente directe, il fallait ≈ 70 à 114 h par mois pour 10 k€, rien que pour vendre (§ 6.3). À 20 k€, le support devient le premier poste : il faudra une base d'aide en ligne riche ou un support de niveau 1 délégué (Tecnoo ?).
+
+### 11.6 Conséquences
+
+**1. Les structures de 100 à 249 personnes restent-elles atteignables sans vente ?** En partie seulement (H). Elles demandent plus souvent un devis, un bon de commande, un questionnaire de sécurité, un contrat de sous-traitance (RGPD), et dans l'ESS une validation en bureau ou en CA. Pour y répondre sans humain :
+- devis PDF depuis le simulateur ;
+- page « Sécurité et RGPD » avec contrat de sous-traitance accepté en ligne, liste des sous-traitants et réponses types aux questionnaires de sécurité (juriste-rgpd, securite) ;
+- dossier « Présenter Lanternis à votre CA » généré automatiquement ;
+- paiement par prélèvement SEPA, numéro de bon de commande sur la facture ;
+- prolongation de l'essai en libre-service.
+
+Il faut néanmoins s'attendre à une part plus faible de ces structures : c'est le scénario prudent du § 11.5 (−15 % de revenu moyen, 82 clients au lieu de 70 pour 10 k€). **Le segment prioritaire de `acquisition.md` (100 à 249) n'est plus le cœur de l'acquisition : les 20 à 99 le deviennent.**
+
+**2. Grands comptes et demandes de devis.** Je propose de **garder des prix publics** jusqu'à 499 personnes grâce à la règle des tranches de 50 (§ 11.2), sans négociation ni contrat particulier : CGV standard pour tous. Au-delà de 500 personnes (hors cible), un formulaire « Écrivez-nous » renvoie une réponse automatique avec la même règle. Le fondateur accepte ou refuse par email. **Pas de « nous contacter » sous 500 personnes.**
+
+**3. Le modèle hybride devient marginal.** Oui : avec 4 créneaux par mois au plus, les services pèseraient quelques centaines d'euros par mois (H), soit une part négligeable du revenu. Conséquences :
+- l'offre de DSI à temps partagé (+390 et +690 €/mois, `prix.md` § 4.3) sort de l'offre publique. Elle peut être proposée par Tecnoo comme partenaire prescripteur, avec ses propres prix ;
+- **la promesse de marque change** : « mis en place avec vous par un DSI » (landing, `marque/plateforme-de-marque.md`, `messages-par-persona.md`, angle 3 de `benchmark.md`) devient « guidé pas à pas, conçu par un DSI ». À reprendre par brand-manager et cro-conversion.
+
+La différenciation repose alors sur :
+- le registre centré sur les personnes et les preuves de départ ;
+- tout le SI, et pas seulement les SaaS ;
+- un prix public par tranche ;
+- les bénévoles gratuits ;
+- l'hébergement en France.
+
+C'est plus facile à copier pour Corma (H).
+
+**4. Le « cockpit vide » devient le risque n° 1.** Sans humain, l'activation dépend entièrement du produit : import avec correspondance des colonnes, Microsoft 365 en P1, structure d'exemple, écran des premiers constats. D4 (Google seulement si un pilote l'utilise) pénalise les associations sous Google qui arrivent en libre-service : **à réexaminer** si leur part dépasse un seuil (H : 25 % des essais).
+
+**5. Effort et délai.** Avec l'abandon de Cockpit DSI, le P1 revient à **13 à 16 semaines** (sans la réduction de 1 à 2 semaines du § 6.1 du périmètre). Le libre-service ajoute environ **2 à 3 semaines** (H, à chiffrer par l'architecte) : simulateur, Stripe Checkout et portail client, changement automatique de tranche, contrôle ESS, emails de cycle de vie, structure d'exemple, vidéos. Total : **≈ 15 à 19 semaines**. La liste d'attente du pré-lancement durera plus longtemps : la lettre mensuelle doit la tenir.
+
+**6. La validation reste humaine avant le GO.** Les 12 à 15 entretiens Mom Test ne sont pas de la vente ; ils restent nécessaires pour lever l'éliminatoire « aucun signal de demande vérifiable ». Environ 20 h une fois, ou à déléguer. Il faut aussi trancher la campagne `prospection-entretiens/` (email et téléphone) : la garder pour la recherche, ou l'abandonner.
+
+**7. Documents à reprendre par leurs auteurs.**
+- `acquisition.md` : canaux C1 et C2 (vente) retirés ; objectifs à reformuler en essais et en activation.
+- `STATUT.md`, hypothèse 5 : le seuil passe de « CAC ≤ 1 500 € » à « ≥ 18 essais par mois et ≥ 20 % de conversion ».
+- Landing : bloc tarifs (§ 8.2, à adapter à D) et bouton « Commencer l'essai » à l'ouverture.
+
+### 11.7 Grands comptes : règle proposée
+- Jusqu'à 249 personnes : grille publique, libre-service intégral.
+- De 250 à 499 : même règle (+30, +60 ou +90 € par tranche de 50), libre-service, affichée dans le simulateur.
+- 500 et plus : « Écrivez-nous ». Réponse automatique avec la règle de prix ; aucune négociation ; refus possible.
+
+### 11.8 Recommandation finale entre A, C et D (le fondateur décide)
+**Je recommande D**, ouvert avec **Essentiel et Pilotage** seulement, **Pilotage+ affiché « bientôt »** jusqu'au multi-sites.
+
+| | A | C (sans services inclus) | **D** |
+|---|---|---|---|
+| Lisibilité, budget prévisible | **Très bonne** | Moyenne (prix variable, formule) | **Bonne** (tableau fixe, une règle) |
+| Revenu net moyen (H) | ≈ 113 € | ≈ 150 à 170 € | **≈ 121 € au lancement, ≈ 143 € en cible** |
+| Revenu d'expansion quand le client grandit | Faible (4 tranches larges) | Fort | **Fort** (tranches de 50) |
+| Montée de gamme par la valeur | Aucune | Oui | **Oui** (modèles, PDF, connecteurs P2, multi-sites) |
+| Compatible avec le libre-service intégral | Oui | Oui, mais demande plus d'explication | **Oui, simulateur et devis PDF** |
+| Clients pour 10 k€ (H) | 89 | ≈ 60 à 65 | **70 (cible) à 83 (lancement)** |
+
+A est plus simple mais sacrifie l'économie et l'expansion. C est meilleur sur l'économie mais moins prévisible, et ses services inclus sont désormais exclus. D garde l'essentiel des deux. **Points à faire trancher par le fondateur** :
+1. accepter que 49 € et 99 € soient les prix de la première tranche ;
+2. ouvrir avec deux niveaux ;
+3. retenir la remise ESS automatique et non cumulable ;
+4. plafonner les services à 4 créneaux par mois ;
+5. garder des prix publics jusqu'à 499 personnes.
 
 *Prix exprimés hors taxes. Lanternis est une marque d'Hasteria SASU.*
