@@ -9,6 +9,13 @@ skills: messages-par-persona, landing-validation-waitlist, plan-de-lancement
 
 # Lanternis : positionnement et acquisition (premier jet)
 
+> **Amendement du 2026-10-26, décision du fondateur : pas de promotion sur LinkedIn pour le moment.**
+> - C3 (LinkedIn du fondateur) est **retiré**. Sales Navigator n'est plus budgété.
+> - C2 (prospection sur déclencheurs) se fait **par email et par téléphone uniquement**. Les déclencheurs sont repérés sans LinkedIn : offres d'emploi, appels à projets ESMS numérique, annuaires des fédérations.
+> - Canaux de contenu retenus : le **blog du site vitrine (SEO)**, qui passe en priorité dès le pré-lancement, et éventuellement une **page Facebook**, pertinente surtout pour le milieu associatif (H, à tester).
+> - Les objectifs du pré-lancement qui reposaient sur LinkedIn (≥ 30 inscrits) sont reportés sur le blog et l'autodiagnostic SI. Ils seront recalculés lors de `/prelancement`.
+> - Les mentions de LinkedIn plus bas dans ce document sont conservées pour l'historique.
+
 > **Règle de lecture.** Les chiffres externes sont sourcés (URL, consultée le **2026-10-25**, liste en § 8). **(H)** = hypothèse non vérifiée. Tous les coûts d'acquisition sont des **calculs sur hypothèses** : ils héritent du statut (H). Le temps du fondateur est valorisé à **60 €/h (H)**, comme dans `1-analyse/modele-revenus.md` § 4.
 > **Rien n'est publié ni envoyé.** Les messages et contenus cités sont des brouillons ; toute publication, tout envoi groupé ou toute campagne passe par la validation explicite de l'utilisateur (règle 2 de `CLAUDE.md`).
 > **Prérequis manquant :** `marque/plateforme-de-marque.md` et `marque/voix-fondateur.md` sont vides. Le positionnement ci-dessous est un **premier jet de stratégie**, pas une plateforme de marque. Il faut lancer `/marque` avant de rédiger la landing et les posts.

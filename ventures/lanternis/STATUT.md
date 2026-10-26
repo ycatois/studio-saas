@@ -1,6 +1,6 @@
 # Lanternis — statut
 Phase actuelle : 2 Marché (terminée) · identité visuelle en cours (`/charte`) → prochaine : 2b Pré-lancement
-Dernière mise à jour : 2026-10-25
+Dernière mise à jour : 2026-10-26
 Score GO/NO-GO : —
 Décision : en attente
 
@@ -16,8 +16,6 @@ Décision : en attente
 - **Point de reprise : choix de la piste créative par le fondateur** (1 Veilleuse, 2 Registre, 3 Plein jour, ou un mélange). Ensuite : `/charte lanternis` → 3 propositions de logo (attendre le choix), charte complète et tokens, iconographie, gabarits marketing, design system (ui-designer).
 - Captures PNG des pistes non produites (Docker Desktop arrêté) : relancer la commande du § 5 de `marque/charte/pistes/README.md`.
 - Sécuriser le nom Lanternis : réserver lanternis.fr et lanternis.com, rechercher l'antériorité INPI/EUIPO (classes 9, 35, 42), puis demander l'avis d'un conseil en propriété industrielle avant le dépôt (skill nouvelle-marque-hasteria).
-- `marque/voix-fondateur.md` à compléter par le fondateur.
-- `SOCIETE.md` à compléter (bloque les mentions légales).
 
 ## Prochaines étapes
 - `/charte lanternis` : reprendre au choix de la piste.
@@ -42,3 +40,5 @@ Décision : en attente
 - 2026-10-25 — Arbitrages du fondateur : (1) le temps à consacrer au projet n'est pas une contrainte ; (2) le code de Cockpit DSI appartient au fondateur / Hasteria, réutilisation possible sans cession ; (3) modèle hybride logiciel + service accepté.
 - 2026-10-25 — Marché : les PME marchandes de 20 à 49 salariés sont exclues du SAM (CAC non couvert en vente directe) ; segment prioritaire : 100 à 249 salariés ; ne pas se positionner sur la seule gestion des SaaS (Corma).
 - 2026-10-25 — Nom de marque : **Lanternis** retenu par le fondateur (à la place du nom de travail Pilotis ; domaines .fr et .com apparemment libres, marque à vérifier). « Cockpit DSI » est écarté comme nom de marque (trop descriptif, peu protégeable), mais reste utilisable comme accroche. Dossier et slug renommés en `lanternis` par le fondateur le 2026-10-25.
+- 2026-10-26 — `SOCIETE.md` complété par le fondateur ; Lanternis ajoutée aux marques exploitées.
+- 2026-10-26 — Canaux : **pas de promotion sur LinkedIn pour le moment** (C3 retiré, prospection par email et téléphone uniquement). Le blog du site vitrine (SEO) devient le canal de contenu principal, avec une page Facebook possible. Pas de voix fondateur : les contenus sont signés par la marque.
