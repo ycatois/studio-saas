@@ -318,7 +318,7 @@ Avis du product-owner, à trancher par la stratégie de prix (`2-marche/prix.md`
 **Critères de succès du MVP en pilote (H)** : registre initial monté en moins d'une demi-journée de mise en place accompagnée ; au moins 80 % des comptes rapprochés d'une personne (I9) ; au moins un processus de départ ou d'arrivée mené jusqu'à la clôture par pilote dans les 30 jours ; le dirigeant ou la DAF ouvre le digest ou le tableau de bord au moins 3 semaines sur 4.
 
 **Effort (H)** : environ **13 à 16 semaines** à temps plein pour tout le P1 (socle 2 ; M1 à M6 environ 6 ; M7 2,5 ; M8 1,5 ; connecteurs et import 4 ; sécurité, RGPD, tests et recette 1,5 ; moins 1 à 2 si reprise de Cockpit DSI). C'est plus que les 8 à 10 semaines de l'ancien § 6, car le registre des personnes, des accès et le moteur de processus remplacent des connecteurs financiers. Deux façons de réduire :
-- **Tranche 1 « pilote » (H : 9 à 11 semaines)** : sans Google Workspace (sauf pilote concerné), sans sauvegardes (US-13), tableau de bord limité à I1 à I7 ; le reste en tranche 2.
+- **Tranche 1 « pilote » (H : 9 à 11 semaines)** : sans Google Workspace (sauf pilote concerné), **avec** les sauvegardes (US-13, décision du fondateur du 2026-10-26), tableau de bord limité à I1 à I7 ; le reste en tranche 2.
 - **Pilote « concierge » (H : 6 à 8 semaines)** : sans aucun connecteur ; le fondateur fait les imports et constate lui-même les comptes. Utile si les entretiens laissent un doute sur la douleur (`faisabilite.md` § 6.3).
 
 ### 6.2 User stories prioritaires (format court)
@@ -388,7 +388,7 @@ Marketing : **oui**, outil gratuit possible sur le site (« vérifiez l'expirati
 
 **US-13 Déclarer les sauvegardes et leurs tests** (M6)
 En tant que Nadia, je veux décrire nos sauvegardes et enregistrer chaque test de restauration, afin de prouver qu'elles fonctionnent.
-Should · S · Critère clé : étant donné une sauvegarde sans test depuis 91 jours, quand le digest est généré, alors l'alerte « sauvegarde non vérifiée » y figure avec l'action « Enregistrer un test ».
+Must (décision du fondateur, 2026-10-26) · S · Critère clé : étant donné une sauvegarde sans test depuis 91 jours, quand le digest est généré, alors l'alerte « sauvegarde non vérifiée » y figure avec l'action « Enregistrer un test ».
 Marketing : **oui**, sujet de contenu (assureur, financeurs, job 3) ; sans vocabulaire de la peur.
 
 **US-14 Personnaliser les modèles d'arrivée et de départ** (M7)
