@@ -18,7 +18,7 @@ Décision : en attente
   - prospection : 30 types de structures cibles et invitations à un entretien par email et téléphone (`marketing/campagnes/prospection-entretiens/`) ;
   - suivi des résultats réels : `2-marche/validation.md`.
   - pages légales en brouillon (`marketing/landing/mentions-legales.html`, `confidentialite.html`) et conformité du pré-lancement (`conformite-prelancement.md` : registre, règles de prospection tranchées) ;
-  - site de pré-lancement et back-end de la liste d'attente pour o2switch : `produit/apps/prelancement/` (double opt-in, désinscription, autodiagnostic dans le navigateur, SQLite, Mailjet sans suivi). Tests : 25 tests et 37 vérifications de bout en bout au vert ; CI GitHub verte ; fusionné (PR #1). **Non déployé.**
+  - site de pré-lancement et back-end de la liste d'attente pour o2switch : `produit/apps/prelancement/` (double opt-in, désinscription, autodiagnostic dans le navigateur, SQLite, Mailjet sans suivi). Landing v2 (grille D, simulateur, champs palier et essai, cible 20 à 249) fusionnée (PR #2) ; 29 tests et 41 vérifications au vert, CI verte. **Non déployé.**
 - Positionnement : un « DSI de poche » pour les PME (50 à 249 salariés) et l'ESS (20 à 249) sans DSI. Logiciel et service (modèle hybride).
 
 ## En cours
@@ -80,3 +80,4 @@ Décision : en attente
   - (4) **Cockpit DSI abandonné** : le produit sera développé de zéro ;
   - (5) grille tarifaire : hésitation entre A et C, demande d'une grille mixte.
 - 2026-10-26 — **Grille tarifaire D validée** : Essentiel 49 €, Pilotage 99 € HT/mois jusqu'à 49 personnes, puis +30 € et +60 € par tranche de 50 personnes. Pilotage+ (199 €, +90 €) ouvrira avec le multi-sites. Annuel −20 % ; ESS −15 % non cumulable ; bénévoles gratuits ; essai d'un mois sans carte ; libre-service jusqu'à 499 personnes, « Écrivez-nous » au-delà. Aucun service humain inclus.
+- 2026-10-26 — Mises à jour après la grille D : marque v1.1 (« conçu par un DSI », arrivées et départs en bénéfice phare), modèle de revenus v2, acquisition v2 (canaux automatisés), prix et TAM/SAM recalculés, contenus marketing alignés. **Les PME de 20 à 49 personnes réintègrent la cible** (cœur de cible 20 à 99) ; la landing et la liste d'attente sont modifiées en conséquence (PR #2).
