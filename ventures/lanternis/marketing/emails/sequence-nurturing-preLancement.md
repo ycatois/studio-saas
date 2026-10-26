@@ -13,12 +13,13 @@ envoi: Mailjet — RIEN N'EST ENVOYÉ ; chaque édition est soumise à la valida
 
 > **Décision du fondateur, 2026-10-26.** Le libellé de la case `nouvelles` reste : « J'accepte de recevoir les nouvelles de Lanternis par email (au plus une par mois) ». Conséquences : **un seul email de nouvelles par mois au maximum** pour chaque inscrit qui a coché la case. La séquence hebdomadaire de 5 emails (v1 et v2 de ce fichier) est abandonnée ; ses 5 contenus sont fusionnés en **4 éditions mensuelles**.
 > **Ne comptent pas dans ce plafond** (selon la consigne transmise, **à confirmer par juriste-rgpd**) : les emails transactionnels de l'inscription (E0-A confirmation, E0-B bienvenue, `liste-attente-remerciement.md`) et les **réponses individuelles** du fondateur aux personnes qui ont demandé un échange (case `echange`, demande depuis l'autodiagnostic) ou qui ont répondu à une édition. Condition proposée pour que cette exclusion tienne : ces emails sont écrits un par un, répondent à une demande de la personne et ne contiennent pas de contenu de lettre.
+> **Alignement marque v1.1 (2026-10-26).** Partie « pilote » de L2 réécrite selon `marque/plateforme-de-marque.md` v1.1 et les décisions du 2026-10-26 : plus de mise en place par un DSI, plus de remise fondateur de −30 % ni de frais de mise en place ; prix de la grille D (`2-marche/propositions-tarifs.md` § 11.2) ; essai gratuit d'un mois sans carte annoncé pour l'ouverture ; Lanternis décrit au futur, « conçu par un DSI », en lecture seule. Les entretiens restent des échanges de **recherche**. L1, L3, L4 et le calendrier sont inchangés.
 
 ---
 
 ## 1. Principes
 
-- **Objectif mesurable :** faire passer un inscrit à un **entretien de 30 minutes**, puis à une **lettre d'intention « pilote fondateur »**. Repères repris de `2-marche/acquisition.md` § 4.2 (tous H), tous canaux confondus : 12 à 15 entretiens et ≥ 3 lettres d'intention à ≥ 149 € HT/mois avant le bilan. La part attribuable à la lettre sera mesurée, sans cible propre.
+- **Objectif mesurable :** faire passer un inscrit à un **entretien de 30 minutes**, puis à une **lettre d'intention « pilote fondateur »**. Repères repris de `2-marche/acquisition.md` § 4.2 (tous H), tous canaux confondus : 12 à 15 entretiens et ≥ 3 lettres d'intention avant le bilan (le seuil de « 149 € HT/mois ou plus » de l'hypothèse 3 de `STATUT.md` date d'avant la grille D : à recaler par le stratégiste). La part attribuable à la lettre sera mesurée, sans cible propre.
 - **Destinataires :** inscrits confirmés (double opt-in) avec `nouvelles = oui`. Segments P1 (`type = entreprise`) et P2 (`type = ess`) ; variantes selon `qualifie`, `echange` et l'état de la relation (§ 3).
 - **Rythme :** **éditions à date fixe**, espacées d'au moins 30 jours. Un inscrit reçoit l'édition suivant sa confirmation, jamais deux éditions à moins de 30 jours (interprétation prudente de « au plus une par mois » : 30 jours glissants plutôt que mois civil). Pas de rattrapage des éditions passées par email ; elles sont republiées sur le blog et citées par un lien dans le corps si utile.
 - **Pourquoi fusionner en 4 éditions plutôt que 5 :** avec la landing en ligne vers le 9 au 13 novembre (`acquisition.md` § 5) et la fin du pré-lancement au 18 décembre, **seules deux éditions** peuvent partir avant le bilan. Ce sont elles qui portent la progression **entretien → lettre d'intention** ; les contenus purement utiles (check-list des départs, questions au prestataire) passent après, et la dernière édition dépend de la décision GO / NO-GO.
@@ -138,26 +139,26 @@ Deux versions (P1, P2) pour la partie méthode ; partie pilote commune avec un p
 
 **Corps, partie pilote (commune, qualifiés sans lettre d'intention en cours)**
 
-> C'est ce travail que Lanternis veut rendre simple. Ce qu'il fera : tenir le registre de tout votre SI (matériel, licences et abonnements, contrats, fournisseurs, accès), vous prévenir avant chaque échéance, et être mis en place avec vous par un DSI. Ce qu'il ne fera pas : remplacer votre prestataire, dépanner vos postes, stocker vos fichiers ou vos mots de passe.
+> C'est ce travail que Lanternis veut rendre simple. Ce qu'il fera : tenir le registre de tout votre SI, centré sur les personnes (matériel, comptes et licences, abonnements, contrats, accès), préparer chaque arrivée et chaque départ avec une check-list, et vous prévenir avant chaque échéance. Il est conçu par un DSI, pour être pris en main seul, sans rendez-vous. Ce qu'il ne fera pas : remplacer votre prestataire, dépanner vos postes, modifier vos comptes (il les lira en lecture seule), stocker vos fichiers ou vos mots de passe.
 >
-> Lanternis est en construction. Nous cherchons un petit nombre de structures pilotes pour le construire avec elles.
+> Lanternis est en construction. À l'ouverture, chaque structure pourra l'essayer un mois, gratuitement et sans carte bancaire. D'ici là, nous cherchons un petit nombre de structures pilotes pour nous aider à le construire.
 >
-> **Ce que vous obtenez** : la mise en place de votre registre avec un DSI, les alertes avant échéances, et un tarif fondateur de −30 % pendant douze mois sur l'abonnement.
-> **Ce que nous vous demandons** : un entretien mensuel de retour d'expérience, et un témoignage à la fin, seulement si vous en êtes satisfait et avec votre accord écrit.
+> **Ce que vous obtenez** : un accès parmi les premiers, à l'ouverture{{si validé par le fondateur : , et le prix de votre offre garanti pendant 24 mois}}.
+> **Ce que nous vous demandons** : un entretien mensuel de retour d'expérience, où nous vous posons des questions, et un témoignage à la fin, seulement si vous en êtes satisfait et avec votre accord écrit.
 >
-> **Les prix** (hors taxes, par mois, grille en cours de validation)
-> *[P1]* De 249 € (50 à 99 salariés) à 399 € ou 449 € (100 à 249 salariés), avant la remise fondateur. Mise en place : 990 €.
-> *[P2]* De 149 € (20 à 49 salariés) à 399 € ou 449 € (100 à 249 salariés), avant remise. Les structures de l'ESS bénéficient d'une remise de 15 %, non cumulable avec la remise fondateur : la plus favorable s'applique. Mise en place : 490 € ou 990 € selon le palier.
+> **Les prix** (publics, hors taxes, par mois)
+> *[P1]* Essentiel 49 € et Pilotage 99 € jusqu'à 49 personnes ; 79 € et 159 € de 50 à 99 personnes. Au-delà, Pilotage de 219 € (100 à 149) à 339 € (200 à 249). Paiement annuel : −20 %.
+> *[P2]* Mêmes prix, avec une remise de 15 % pour les structures de l'ESS (non cumulable avec le paiement annuel). Les bénévoles ne sont pas comptés.
 >
-> **La lettre d'intention** indique votre intérêt et réserve une place de pilote. Elle ne vaut ni commande ni engagement de paiement ; rien ne sera facturé avant l'ouverture et la signature d'un contrat. Les places sont limitées à dix structures, pour accompagner chacune correctement. Il n'y a pas de date limite : si les places sont prises, nous vous le dirons simplement.
+> **La lettre d'intention** indique votre intérêt et réserve une place de pilote. Elle ne vaut ni commande ni engagement de paiement ; rien ne sera facturé avant l'ouverture et la fin de votre mois d'essai gratuit. Les places sont limitées à dix structures, pour pouvoir écouter chacune. Il n'y a pas de date limite : si les places sont prises, nous vous le dirons simplement.
 >
 > **Si cela vous intéresse, répondez « pilote » à cet email.** Si vous préférez d'abord en parler 30 minutes, dites-le dans votre réponse.
 >
 > L'équipe Lanternis
 
-*Périmètre « ne stocke ni fichiers ni mots de passe » :* repris de `marque/messages-par-persona.md` (P1, décision) ; à confirmer par l'architecte avant envoi.
+*Périmètre « lecture seule, ni fichiers ni mots de passe » :* décisions D1 et D2 du 2026-10-26 (`1-analyse/perimetre-produit.md`, `STATUT.md`). *Prix :* grille D validée le 2026-10-26 (`2-marche/propositions-tarifs.md` § 11.2 ; Pilotage+ non cité, il ouvrira avec le multi-sites).
 
-**À valider avant envoi (bloquant) :** grille de prix, remise fondateur −30 %, plafond de 10 places et non-cumul avec la remise ESS (hypothèses de `2-marche/prix.md` § 4.1 et § 4.2) ; le palier 100 à 249 (399 ou 449 €) n'est pas tranché ; texte de la lettre d'intention (non engageante) à rédiger et à faire relire ; aucune vente ni acompte avant le GO.
+**À valider avant envoi (bloquant) :** avantage « pilote fondateur » : la remise de −30 % pendant 12 mois (`prix.md`, arbitrage encore listé dans `STATUT.md`) n'est plus proposée ici ; seule la garantie de prix 24 mois pour les 10 premières souscriptions, évoquée au § 11.4 de `propositions-tarifs.md`, est reprise **entre accolades**, à retirer si le fondateur ne la valide pas ; plafond de 10 places ; intérêt de la lettre d'intention dans un modèle en libre-service avec essai gratuit (à trancher par le fondateur) ; texte de la lettre d'intention (non engageante) à rédiger et à faire relire ; aucune vente ni acompte avant le GO.
 
 ---
 
@@ -284,3 +285,4 @@ Délivrances, rebonds, désinscriptions et plaintes restent disponibles dans Mai
 8. **Domaine :** `lanternis.fr` non réservé ; aucun envoi avant SPF, DKIM et DMARC.
 9. **Ton :** objets de L2 (« Si votre référent informatique partait… », « Ce que votre CA peut vous demander… ») à relire par le brand-manager (ligne « pas de vente par la peur »).
 10. **Nom du fichier** conservé (`sequence-nurturing-preLancement.md`) pour ne pas casser les renvois ; le contenu est désormais une lettre mensuelle.
+11. **Alignement v1.1 :** la partie méthode de L2 (P1) parle encore du départ du « responsable informatique », déclencheur surtout du segment secondaire (100 à 249) ; pour le cœur de cible (20 à 99), un angle « arrivées et départs de salariés » serait plus juste (H, à décider avec le brand-manager).

@@ -13,13 +13,15 @@ skills: recherche-mots-cles (version légère), article-blog-seo
 > **Règles.** Ton de `marque/plateforme-de-marque.md` § 10 (vouvoiement, posé, sans jargon, pas de vente par la peur). Chiffres sourcés ou absents. Articles signés « L'équipe Lanternis ». Rien n'est publié sans validation explicite de l'utilisateur.
 > **Limite principale.** **Aucun volume de recherche n'a été mesuré** : l'outil de collecte n'accède ni à Google Keyword Planner, ni à Google Trends, ni à un outil SEO payant (déjà signalé dans `2-marche/signaux-demande.md` § 3). Les volumes sont donc notés « non mesuré » et la difficulté est une estimation (H) fondée sur un survol des résultats de recherche le 2026-10-26. À mesurer avant la phase 9 (Keyword Planner, puis Search Console de la vitrine).
 
+> **Alignement marque v1.1 (2026-10-26).** Pilier A élargi aux arrivées et départs (bénéfice phare de la plateforme v1.1) et sujet 6 remonté en priorité 1 ; renvois aux messages clés renumérotés (plateforme v1.1 § 11) ; P1 recentré sur les structures de 20 à 99 personnes (100 à 249 en secondaire) ; le sujet 8 compare des options du marché, Lanternis n'y propose aucun DSI à temps partagé ; CTA : liste d'attente avant l'ouverture, puis essai gratuit d'un mois sans carte. Sujets et mots-clés inchangés, volumes toujours non mesurés.
+
 ## 1. Trois piliers
 
-| Pilier | Promesse au lecteur | Personas | Jobs (`1-analyse/jtbd.md`) | Message de marque relié |
+| Pilier | Promesse au lecteur | Personas | Jobs (`1-analyse/jtbd.md`) | Message de marque relié (plateforme v1.1 § 11) |
 |---|---|---|---|---|
-| **A. Continuité : quand la personne qui savait s'en va** | « Votre informatique ne part pas avec la personne qui la connaissait. » | P1 surtout, P2 | Job 1, job 6 | Message 2 « Continuité » |
-| **B. Registre, coûts et contrats : savoir ce que vous avez et ce que vous payez** | « Ce que vous avez, ce que vous payez, ce qui arrive à échéance. » | P1, P2, P3 | Job 1, job 2 | Messages 1 et 4 |
-| **C. Sécurité et comptes à rendre, sans jargon** | « Répondre calmement à votre assureur, à votre CA ou à un client. » | P2 surtout, P1 | Job 3, job 4 | Messages 7 et 8 ; cyber en déclencheur, jamais en peur |
+| **A. Arrivées, départs et continuité : quand une personne arrive ou s'en va** | « Un départ, une check-list faite de ce que la personne a vraiment. » ; « Votre informatique ne part pas avec la personne qui la connaissait. » | P1 surtout, P3, P2 | Job 1, job 6 | Message 1 « Arrivées et départs » et message 4 « Continuité » |
+| **B. Registre, coûts et contrats : savoir ce que vous avez et ce que vous payez** | « Ce que vous avez, ce que vous payez, ce qui arrive à échéance. » | P1, P2, P3 | Job 1, job 2 | Messages 2 « Lisibilité et alertes » et 5 « Coût » |
+| **C. Sécurité et comptes à rendre, sans jargon** | « Répondre calmement à votre assureur, à votre CA ou à un client. » | P2 surtout, P1 | Job 3, job 4 | Messages 6 « Souveraineté et sécurité » et 7 « ESS » ; cyber en déclencheur, jamais en peur |
 
 Chaque pilier aura une **page pilier** (guide long) et des articles satellites reliés entre eux (skill recherche-mots-cles : 1 pilier + satellites + maillage).
 
@@ -34,9 +36,9 @@ Volumes : **non mesurés** pour toutes les lignes. Difficulté (H) : estimation 
 | 3 | B | Combien coûte vraiment votre informatique ? Calculer le coût par salarié | budget informatique PME | coût informatique par salarié ; part du budget informatique | I | non mesuré | Moyenne (H) | P1, P2 | 2 |
 | 4 | B | Abonnements logiciels oubliés : les retrouver en une matinée avec vos relevés | abonnements logiciels entreprise | abonnements SaaS oubliés ; licences inutilisées ; réduire les abonnements | I | non mesuré | Moyenne à forte (Corma, Cledara et éditeurs anglophones) | P1, P3 | 2 (angle « relevés et comptabilité », pas « gestion des SaaS ») |
 | 5 | B | Reconduction tacite des contrats informatiques : ne plus la subir | reconduction tacite contrat informatique | préavis de résiliation contrat maintenance ; contrat d'infogérance durée | I | non mesuré | Moyenne (sites juridiques) | P1, P2 | 2 |
-| 6 | A | Arrivée et départ d'un salarié : les accès à ouvrir et à fermer | départ salarié accès informatique | procédure départ salarié informatique ; supprimer compte Microsoft 365 ancien salarié | I | non mesuré | Moyenne (H) | P3, P1 | 2 (lead magnet : check-list de P3, `messages-par-persona.md`) |
+| 6 | A | Arrivée et départ d'un salarié : les accès à ouvrir et à fermer | départ salarié accès informatique | procédure départ salarié informatique ; supprimer compte Microsoft 365 ancien salarié | I | non mesuré | Moyenne (H) | P3, P1 | **1 (prochain article, v1.1)** (lead magnet : check-list de P1 et P3, `messages-par-persona.md` v1.1) |
 | 7 | A | Votre prestataire informatique a toute la connaissance : comment la partager sans conflit | dépendance prestataire informatique | réversibilité contrat infogérance ; changer de prestataire informatique | I / C | non mesuré | Faible à moyenne (H) | P1 | 3 |
-| 8 | A | Recruter un responsable informatique, prendre un DSI à temps partagé ou s'outiller ? | DSI à temps partagé | responsable informatique PME salaire ; externaliser la DSI | C | non mesuré | Moyenne (cabinets de DSI à temps partagé) | P1 | 3 (page « Lanternis ou recruter ? » de `messages-par-persona.md`) |
+| 8 | A | Recruter un responsable informatique, prendre un DSI à temps partagé ou s'outiller ? | DSI à temps partagé | responsable informatique PME salaire ; externaliser la DSI | C | non mesuré | Moyenne (cabinets de DSI à temps partagé) | P1 | 3 (page « Lanternis ou recruter ? » de `messages-par-persona.md` ; v1.1 : comparaison neutre d'options du marché, Lanternis ne vend pas de DSI à temps partagé) |
 | 9 | C | Questionnaire de sécurité de votre assureur ou d'un client : comment y répondre | questionnaire cybersécurité assurance | questionnaire sécurité fournisseur ; prouver sa sécurité informatique | I | non mesuré | Faible à moyenne (H) | P1 | 3 |
 | 10 | C | Informatique d'une association médico-sociale : ce que le CA doit savoir | informatique association médico-sociale | RGPD ESMS ; sécurité informatique ESSMS ; rapport informatique conseil d'administration | I | non mesuré | Faible (H) | P2 | 2 (pilier ESS, relais fédérations C4) |
 | 11 | C | NIS2 : votre PME ou votre association est-elle concernée ? | NIS2 PME concernée | loi Résilience ; entité importante NIS2 | I | non mesuré | Forte (beaucoup de contenus) | P1, P2 | 3 (contenu, pas argument de vente ; texte non promulgué au 11/10/2026, `2-marche/tendances.md` § 3) |
@@ -51,7 +53,7 @@ Volumes : **non mesurés** pour toutes les lignes. Difficulté (H) : estimation 
 ## 3. Choix des deux premiers articles
 
 **Article 1 : « Départ du responsable informatique : la check-list de passation »**
-- C'est le **déclencheur n° 1** retenu pour P1, le segment prioritaire (100 à 249 salariés) : des offres d'emploi d'octobre 2026 recrutent explicitement pour remplacer un responsable qui part à la retraite (`signaux-demande.md`, S2).
+- C'est le **déclencheur n° 1** retenu pour le segment secondaire de P1 (100 à 249 personnes, P1-b de `messages-par-persona.md` v1.1 ; le cœur de cible est désormais 20 à 99) : des offres d'emploi d'octobre 2026 recrutent explicitement pour remplacer un responsable qui part à la retraite (`signaux-demande.md`, S2).
 - Le moment est daté et urgent : la personne qui cherche ce sujet a un problème réel dans les semaines qui viennent. Intention forte, concurrence éditoriale faible (H).
 - Il sert directement la **prospection sur déclencheurs** (C2, par email) : à une structure qui publie une offre de remplacement, on peut envoyer un lien utile plutôt qu'un argumentaire (envoi soumis à validation et aux règles de prospection à faire valider par juriste-rgpd).
 - Il porte le message de marque « Si votre référent part, votre SI reste » sans vendre par la peur.
@@ -88,8 +90,8 @@ Pas de LinkedIn. Dérivés prévus : un post pour la page Facebook (si elle est 
 
 ## 6. Rythme proposé (H)
 
-- Pré-lancement (jusqu'au 18 décembre 2026) : les 2 articles ci-dessus, puis le sujet 10 (pilier ESS) si un relais de fédération accepte de diffuser (C4).
-- Après le GO : 2 articles par mois (sujets 3, 4, 5, 6 en premier), à recalibrer selon les premiers chiffres de la Search Console. L'effort de 6 h par article de `acquisition.md` (C7) est une hypothèse.
+- Pré-lancement (jusqu'au 18 décembre 2026) : les 2 articles ci-dessus, puis le sujet 6 (arrivées et départs, cœur de cible 20 à 99, v1.1), puis le sujet 10 (pilier ESS) si un relais de fédération accepte de diffuser (C4).
+- Après le GO : 2 articles par mois (sujets 3, 4, 5 en premier), à recalibrer selon les premiers chiffres de la Search Console. L'effort de 6 h par article de `acquisition.md` (C7) est une hypothèse.
 
 ## 7. Points ouverts
 
@@ -98,3 +100,4 @@ Pas de LinkedIn. Dérivés prévus : un post pour la page Facebook (si elle est 
 3. **Lead magnets à produire** : check-list de passation (PDF) et modèle de registre (XLSX), via `outils/documents`, aux couleurs de la charte.
 4. **Vocabulaire « DSI de poche »** : utilisé une seule fois par article, en fin, tant qu'il n'est pas validé en entretien.
 5. **Verbatims** : aucun entretien n'a eu lieu ; les articles ne contiennent ni témoignage ni cas client. À enrichir après les entretiens (avec accord écrit).
+6. **Après l'ouverture** (v1.1) : le CTA « Rejoindre la liste d'attente » des articles devient « Commencer l'essai gratuit (un mois, sans carte) » ; les fonctions passent du futur au présent seulement une fois livrées.

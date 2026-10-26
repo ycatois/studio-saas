@@ -11,22 +11,24 @@ méthode: skill personas
 
 > **Fondement.** Chaque trait renvoie à un signal de `signaux-demande.md` (S1 à S12) ou à `tendances.md`. Ce qui n'est appuyé par aucun signal est marqué **(H)**. Aucun entretien n'a encore eu lieu : ces personas sont des **hypothèses de ciblage**, à réécrire avec les verbatims des 10 à 15 entretiens (`script-interview.md`).
 > **Vocabulaire :** les « mots qu'il emploie » viennent des offres d'emploi et des baromètres cités. Aucun verbatim spontané de forum n'a été trouvé (voir `signaux-demande.md` § 3).
+> **Alignement marque v1.1 (2026-10-26).** Après les décisions du fondateur du 2026-10-26 (libre-service, essai gratuit d'un mois sans carte, grille D de `propositions-tarifs.md` § 11, aucun service humain inclus), **P1 est recentré sur les PME de 20 à 99 personnes** (cœur de l'acquisition en libre-service, `propositions-tarifs.md` § 11.6, point 1) ; **les structures de 100 à 249 deviennent un segment secondaire** (P1-b), atteignable en libre-service « en partie seulement ». Cohérent avec `marque/plateforme-de-marque.md` v1.1 § 3 et `marque/messages-par-persona.md` v1.1. Les sources et les signaux cités ne changent pas ; les chiffres de SAM ci-dessous datent du 2026-10-25 (les PME marchandes de 20 à 49 en étaient exclues) et restent **à recalculer** par l'analyste-marché ; les lignes « Offre la plus adaptée » sont remplacées par la grille D. La douleur à 20 à 99 personnes reste une hypothèse (H) à confirmer en entretien.
 
 ## Vue d'ensemble
 | | P1 : Marc, dirigeant de PME | P2 : Nadia, DAF d'une association médico-sociale | P3 : Sophie, office manager « informaticienne par défaut » |
 |---|---|---|---|
-| Structure | PME de services ou d'industrie, 50 à 150 salariés | Association gestionnaire d'ESMS, 60 à 200 salariés | PME ou association de 20 à 60 salariés |
+| Structure | PME de services ou d'industrie, **20 à 99 personnes** (cœur, v1.1) ; 100 à 249 en secondaire (P1-b) | Association gestionnaire d'ESMS, 60 à 200 salariés | PME ou association de 20 à 60 salariés |
 | Rôle dans l'achat | **Décide et paie** | **Prescrit, porte le budget** ; le directeur général et le bureau valident | **Utilise** ; influence ; ne décide pas |
-| Segment SAM | PME 50–249 (≈ 16 400 sans DSI, H) | ESS 50–249 (≈ 3 300, H) et ESS 20–49 (≈ 8 350, H) | Hors SAM marchand (PME 20–49) ; dans le SAM pour l'ESS 20–49 |
+| Segment SAM | PME 50–249 (≈ 16 400 sans DSI, H) ; chiffrage du 2026-10-25, la tranche 20–49 est à réintégrer (v1.1) | ESS 50–249 (≈ 3 300, H) et ESS 20–49 (≈ 8 350, H) | Hors SAM marchand (PME 20–49) ; dans le SAM pour l'ESS 20–49 |
 | Solidité des signaux | Moyenne à forte (S1, S2, S4) | Moyenne (S3, S10, S11, tendance 6) | **Faible** (S12, sources anciennes) |
 | Priorité de test | 1 | 2 | 3 (à confirmer ou supprimer) |
 
 ---
 
-## P1. Marc, dirigeant d'une PME de 50 à 150 salariés sans DSI
+## P1. Marc, dirigeant d'une PME de 20 à 99 personnes sans DSI (cœur de cible, v1.1)
 **Identité de travail.** Gérant ou PDG d'une PME de services B2B ou d'industrie légère. L'informatique est confiée à un **prestataire d'infogérance** et, parfois, à un technicien interne ou à un salarié « qui s'y connaît ». Il n'est pas technicien. (S1, S2)
 
 **Contexte déclencheur typique.** Son responsable informatique **part à la retraite** ou démissionne, et il découvre que la connaissance du SI partait avec lui. Les offres d'octobre 2026 décrivent exactement ce cas (S2 : « dans le cadre du départ à la retraite de son Responsable Informatique » ; « Entreprise industrielle de 150 collaborateurs »).
+*Note v1.1 (2026-10-26) :* ce déclencheur, et les offres S2 qui l'illustrent, concernent surtout le **segment secondaire de 100 à 249 personnes** (P1-b), où un référent informatique interne existe plus souvent. Pour le cœur de 20 à 99, les déclencheurs attendus sont plutôt un départ ou une arrivée mal préparés (compte resté actif, portable non rendu, premier jour sans accès) et le départ du salarié « qui s'y connaissait » (H, à confirmer en entretien ; `messages-par-persona.md` v1.1).
 
 **Objectifs**
 - Ne plus dépendre d'une seule personne ni d'un seul prestataire (job 1 de `jtbd.md`).
@@ -51,7 +53,7 @@ méthode: skill personas
 **Freins et objections typiques (H, issues de `jtbd.md` § 5)**
 - « Mon prestataire s'en occupe. »
 - « Encore un outil à remplir : qui va le tenir à jour ? »
-- « Je préfère recruter quelqu'un. » Réponse : Lanternis + 0,5 j/mois de DSI à temps partagé coûte une fraction d'un poste à 45–75 k€ (S2), à valider.
+- « Je préfère recruter quelqu'un. » Réponse (v1.1, sans DSI à temps partagé, retiré de l'offre le 2026-10-26) : un abonnement Lanternis coûte une fraction d'un poste à 45–75 k€ (S2), et la carte reste dans la structure, à valider.
 - « Confier la carte de mon SI à une petite structure ? » (`pre-mortem.md`, R10).
 
 **Où il s'informe (H, à vérifier en entretien)**
@@ -64,7 +66,9 @@ méthode: skill personas
 
 **Qui décide, qui paie, qui utilise :** Marc décide et paie ; l'assistante de direction ou le RAF utilise (P3, P2) ; le prestataire contribue ou freine (`pre-mortem.md`, R8).
 
-**Offre la plus adaptée (H) :** palier Pilotage ou Pilotage+ (249 à 399 €/mois) avec mise en place payante ; option DSI à temps partagé de 0,5 à 1 j/mois.
+**Offre la plus adaptée (H) :** *(v1.1, grille D du 2026-10-26)* essai gratuit d'un mois sans carte, puis Pilotage : 99 € HT par mois jusqu'à 49 personnes, 159 € de 50 à 99 (Essentiel : 49 € et 79 €) ; annuel −20 %. Aucune mise en place payante ni DSI à temps partagé (retirés).
+
+**Segment secondaire P1-b (100 à 249 personnes, v1.1).** Même profil de dirigeant ou de directeur général, avec plus souvent un référent informatique interne dont le départ est le déclencheur n° 1 (S2). Achat plus souvent soumis à un devis, un questionnaire de sécurité ou un contrat de sous-traitance (`propositions-tarifs.md` § 11.6). Offre (H) : Pilotage de 219 € HT par mois (100 à 149) à 339 € (200 à 249).
 
 ---
 
@@ -108,7 +112,7 @@ méthode: skill personas
 
 **Qui décide, qui paie, qui utilise :** Nadia prescrit et porte la ligne budgétaire ; le directeur général décide, le bureau ou le CA valide au-delà d'un seuil (H) ; Nadia et son équipe administrative utilisent.
 
-**Offre la plus adaptée (H) :** Pilotage avec remise ESS (≈ 212 €/mois) ; état des lieux SI vendu comme livrable à présenter au CA.
+**Offre la plus adaptée (H) :** *(v1.1, grille D)* essai gratuit d'un mois sans carte, puis Pilotage avec remise ESS de 15 % (non cumulable avec l'annuel) : environ 135 € HT par mois de 50 à 99 personnes, 186 € de 100 à 149, 237 € de 150 à 199 ; bénévoles gratuits. L'état des lieux SI vendu n'est plus proposé (aucun service humain inclus).
 
 ---
 
@@ -144,7 +148,7 @@ méthode: skill personas
 ---
 
 ## Conséquences pour le marketing et le produit (H)
-1. **Message principal pour P1 :** « Quand votre référent informatique part, votre SI ne part pas avec lui. » (S2)
+1. **Message principal pour P1 :** « Quand votre référent informatique part, votre SI ne part pas avec lui. » (S2) *(v1.1 : message de P1-b, 100 à 249 ; pour le cœur 20 à 99, le message porteur devient « Un départ, une check-list faite de ce que la personne a vraiment », `marque/plateforme-de-marque.md` v1.1 § 11.)*
 2. **Message principal pour P2 :** « Présentez à votre CA un SI maîtrisé et chiffré, données hébergées en France. » (S3, S10)
 3. **Pour P3 :** la valeur passe par les **alertes** et la check-list arrivées et départs, pas par la saisie.
 4. **Canaux à tester en priorité :** réseau Tecnoo (P1), CRESS et fédérations médico-sociales (P2), partenariat Solidatech (P2, P3), réseaux CPME et MEDEF locaux (P1).

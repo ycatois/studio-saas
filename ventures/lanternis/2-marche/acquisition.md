@@ -1,266 +1,311 @@
 ---
 venture: lanternis
-phase: 2 Marché
+phase: 2 Marché (révisé pour le pré-lancement 2b)
 auteur: strategiste-marketing
-date: 2026-10-25
+date: 2026-10-26
+version: 2
 statut: brouillon
-skills: messages-par-persona, landing-validation-waitlist, plan-de-lancement
+skills: messages-par-persona, landing-validation-waitlist, plan-de-lancement, rapport-marketing
 ---
 
-# Lanternis : positionnement et acquisition (premier jet)
+> **Version 2 — 2026-10-26.** Réécriture après les décisions du fondateur du 2026-10-26 (journal de `STATUT.md`) :
+> - vente **automatisée en libre-service**, le fondateur intervient très peu ;
+> - **essai gratuit d'un mois sans carte** ;
+> - **grille D** validée (§ 11 de `propositions-tarifs.md`) ;
+> - **pas de LinkedIn** : blog et, éventuellement, Facebook ;
+> - **cœur de cible de 20 à 99 personnes** ;
+> - **aucun service humain inclus**.
+>
+> **Ce qui change par rapport à la v1 (2026-10-25, amendée le 26) :**
+> - **retirés** : la vente directe (C1 réseau chaud comme canal de vente, C2 prospection sur déclencheurs), LinkedIn (C3), les clubs (CPME, MEDEF, CJD, BNI) et les webinaires en direct suivis de rendez-vous ;
+> - la **prospection** ne sert plus qu'à obtenir des **entretiens de validation** avant le GO ;
+> - les objectifs, les CAC et le calendrier sont recalculés.
+>
+> La v1 reste consultable dans l'historique Git.
 
-> **Amendement du 2026-10-26, décision du fondateur : pas de promotion sur LinkedIn pour le moment.**
-> - C3 (LinkedIn du fondateur) est **retiré**. Sales Navigator n'est plus budgété.
-> - C2 (prospection sur déclencheurs) se fait **par email et par téléphone uniquement**. Les déclencheurs sont repérés sans LinkedIn : offres d'emploi, appels à projets ESMS numérique, annuaires des fédérations.
-> - Canaux de contenu retenus : le **blog du site vitrine (SEO)**, qui passe en priorité dès le pré-lancement, et éventuellement une **page Facebook**, pertinente surtout pour le milieu associatif (H, à tester).
-> - Les objectifs du pré-lancement qui reposaient sur LinkedIn (≥ 30 inscrits) sont reportés sur le blog et l'autodiagnostic SI. Ils seront recalculés lors de `/prelancement`.
-> - Les mentions de LinkedIn plus bas dans ce document sont conservées pour l'historique.
+# Lanternis : positionnement et acquisition (v2, libre-service)
 
-> **Règle de lecture.** Les chiffres externes sont sourcés (URL, consultée le **2026-10-25**, liste en § 8). **(H)** = hypothèse non vérifiée. Tous les coûts d'acquisition sont des **calculs sur hypothèses** : ils héritent du statut (H). Le temps du fondateur est valorisé à **60 €/h (H)**, comme dans `1-analyse/modele-revenus.md` § 4.
-> **Rien n'est publié ni envoyé.** Les messages et contenus cités sont des brouillons ; toute publication, tout envoi groupé ou toute campagne passe par la validation explicite de l'utilisateur (règle 2 de `CLAUDE.md`).
-> **Prérequis manquant :** `marque/plateforme-de-marque.md` et `marque/voix-fondateur.md` sont vides. Le positionnement ci-dessous est un **premier jet de stratégie**, pas une plateforme de marque. Il faut lancer `/marque` avant de rédiger la landing et les posts.
+> **Règle de lecture.**
+> - **(H)** = hypothèse non vérifiée. **Tous les CAC, taux de conversion et volumes de ce document sont des calculs sur hypothèses** : aucune donnée de conversion n'existe pour cette cible.
+> - Temps du fondateur valorisé à **60 €/h (H)** (`1-analyse/modele-revenus.md`).
+> - Chiffres externes sourcés au § 10.
+> - **Rien n'est publié ni envoyé.** Tout article, post, email groupé, mise en ligne ou campagne payante passe par la validation explicite de l'utilisateur (règle 2 de `CLAUDE.md`). Les demandes d'entretien individuelles relèvent du fondateur, après validation des règles de prospection par juriste-rgpd.
 
 ---
 
-## 1. Premier positionnement
+## 1. Positionnement
 
 ### 1.1 Phrase de positionnement (pour qui, contre quoi, pourquoi nous)
 
-> **Pour les dirigeants et les DAF de PME et d'associations de 20 à 250 salariés qui n'ont pas de DSI, Lanternis est un DSI de poche : un registre de tout le SI qui alerte avant les mauvaises surprises, mis en place avec eux par un DSI, pour qu'ils gardent la carte de leur informatique même quand la personne qui savait s'en va.**
+> **Pour les dirigeants et les DAF de PME et d'associations de 20 à 99 personnes qui n'ont pas de DSI, Lanternis est le registre de tout leur SI centré sur les personnes : qui a quoi, ce que ça coûte, ce qui expire, et des départs sans oubli. Contrairement au duo « prestataire + Excel » et aux outils qui ne gèrent que les abonnements SaaS, il est guidé pas à pas, conçu par un DSI, hébergé en France, avec un prix public dès 49 € HT par mois et un mois d'essai sans carte.**
 
-Pourquoi c'est défendable (renvois aux études de la phase 2) :
-- **Pour qui :** le dirigeant non technicien, à qui aucun outil ne s'adresse aujourd'hui (`benchmark.md` § 0 et § 3, carte de positionnement).
-- **Contre quoi :** le statu quo « prestataire + Excel, ou rien » (`benchmark.md` § 2.6), et non un autre logiciel.
-- **Pourquoi nous :** logiciel + humain (25 ans de SI, cofondateur de Tecnoo), prix forfaitaire publié, hébergement en France, remise ESS (`benchmark.md` § 4, angles 1 à 5).
+- **Pour qui :** le dirigeant ou la DAF non technicien, de 20 à 99 personnes. L'offre reste ouverte en libre-service jusqu'à 499 personnes.
+- **Contre quoi :** l'« informatique en boîte noire » (§ 1.2), c'est-à-dire le statu quo « prestataire + Excel, ou rien » (`benchmark.md` § 2.6), et la gestion des seuls SaaS (Corma, Cledara).
+- **Pourquoi nous :**
+  - tout le SI, et pas seulement les SaaS ;
+  - un registre centré sur les personnes, avec des preuves de départ ;
+  - un prix public par tranche ;
+  - des bénévoles gratuits ;
+  - un hébergement en France (prévu) ;
+  - une conception par un DSI qui a 25 ans d'expérience (formulation à valider par le fondateur).
+- **Changement de promesse :** « mis en place avec vous par un DSI » (v1) devient **« guidé pas à pas, conçu par un DSI »**, puisqu'aucun service humain n'est inclus. **À reprendre par brand-manager** (`marque/plateforme-de-marque.md`, `messages-par-persona.md`) **et par cro-conversion** (landing).
 
-### 1.2 L'ennemi désigné : « l'informatique en boîte noire »
+### 1.2 L'ennemi désigné : « l'informatique en boîte noire » (inchangé)
 
-L'ennemi n'est **pas** le prestataire informatique : il est aussi un prescripteur possible (`benchmark.md` § 0, point 3 ; `script-interview.md` § 5 : « ne pas critiquer le prestataire »). L'ennemi, c'est **une informatique dont personne dans la structure n'a la carte** :
-- le savoir qui tient dans la tête d'une seule personne (le départ en retraite du responsable informatique est un vrai déclencheur : S2 de `signaux-demande.md`) ;
-- les abonnements souscrits par carte bancaire sans que personne ne les voie (shadow IT, tendance 2 de `tendances.md`) ;
-- les contrats reconduits sans décision, les comptes d'anciens salariés encore actifs (H, à confirmer en entretien).
+L'ennemi n'est **pas** le prestataire informatique : il devient même un **canal** (§ 2, prescripteurs). L'ennemi, c'est une informatique dont personne dans la structure n'a la carte :
+- le savoir qui tient dans la tête d'une seule personne (S2 de `signaux-demande.md`) ;
+- les abonnements payés par carte que personne ne voit (`tendances.md`) ;
+- les comptes d'anciens salariés encore actifs (H).
 
 Formulation de travail : **« Votre informatique ne doit pas être une boîte noire, ni pour vous, ni pour votre CA, ni pour votre assureur. »** (H, à tester)
 
-### 1.3 Face aux concurrents clés
+### 1.3 Face aux alternatives
 
-| Alternative | Ce qu'elle fait | Notre différence (une ligne) | Source |
-|---|---|---|---|
-| Statu quo : prestataire + Excel | Dépannage, sauvegardes, inventaire dans l'outil du prestataire | La carte du SI appartient à la structure ; le prestataire peut y contribuer | `benchmark.md` § 2.6 |
-| Primo (FR) | MDM, gestion des SaaS, achat de matériel ; offre aussi pour MSP | Lanternis ne configure pas les postes : il aide le dirigeant à décider (contrats, fournisseurs, coûts, alertes) | `benchmark.md` [17] |
-| Cledara (UK) | Abonnements SaaS et cartes virtuelles, 100 £/mois en entrée | En français, tout le SI (pas seulement les SaaS), hébergé en France | `benchmark.md` [15] |
-| Corma (FR) | Gouvernance des licences et des accès ; revendique 45 entreprises clientes dont Skello ; offre dédiée aux MSP | Pensé pour une structure **sans** équipe IT, avec un service humain ; prix public | https://corma.io/fr/company/about-us ; https://www.corma.io/fr/automated-saas-management-for-msps |
-| DSI à temps partagé | Conseil à 700 à 1 400 €/jour, sans outil | Le même pilotage pour une fraction du prix, et le registre reste quand l'intervenant part | `prix.md` § 1.2 [24] |
+| Alternative | Notre différence (une ligne) | Prix de référence (`prix.md`) |
+|---|---|---|
+| Prestataire + Excel | La carte du SI appartient à la structure ; le prestataire y contribue comme invité | Infogérance 50 à 75 €/poste/mois [25] |
+| Corma | Tout le SI, pas seulement les SaaS ; pensé pour une structure sans équipe IT | Dès 3 €/utilisateur/mois [39] ; Lanternis Pilotage : 1,36 à 4,95 €/personne selon la taille, sous 3 € à partir d'environ 55 personnes (H) |
+| Cledara | En français, tout le SI, hébergé en France | 100 £/mois en entrée [15] |
+| Primo | Lanternis ne configure pas les postes : il aide la direction à décider | Non publié [17] |
+| DSI à temps partagé | Le registre reste quand l'intervenant part ; « moins d'une heure de DSI par mois » | 700 à 1 400 €/jour [24] |
 
-**Point d'attention :** Primo et Corma ont tous deux une offre pour les MSP. Le canal « prestataires informatiques » (§ 2, C6) est donc **déjà travaillé par deux concurrents mieux financés**.
+**Point d'attention :** Primo et Corma ont une offre pour les prestataires informatiques (MSP). Le canal « prescripteurs » est déjà travaillé par deux concurrents mieux financés.
 
-### 1.4 Une promesse par persona
+### 1.4 Une promesse par persona (recentrée sur 20-99)
 
-| Persona | Promesse (H, à tester en entretien et sur la landing) | Preuve à apporter | Offre d'entrée |
-|---|---|---|---|
-| **P1 Marc**, dirigeant de PME de 50 à 150 salariés | « Quand votre référent informatique part, votre SI reste. Vous savez ce que vous avez, ce que vous payez et ce qui arrive à échéance, sans recruter un poste à 45-75 k€. » | Coût d'un responsable informatique : 45 à 75 k€ brut/an (S2) ; Pilotage 249 € HT/mois | Diagnostic SI (2 490 €) ou Pilotage + mise en place |
-| **P2 Nadia**, DAF d'une association médico-sociale de 60 à 200 salariés | « Présentez à votre CA et à vos financeurs un SI maîtrisé et chiffré, avec des données hébergées en France, à tarif associatif. » | Fragilités cyber et RGPD relevées par une ARS dans les ESSMS (S3) ; remise ESS de 15 % | Diagnostic SI présenté comme un livrable pour le CA |
-| **P3 Sophie**, office manager (conservée comme **utilisatrice relais**, pas comme cible d'acquisition) | « Plus d'accès oublié au départ d'un salarié, plus de renouvellement surprise : Lanternis vous prévient. » | Check-list arrivées et départs, alertes | Aucune offre propre : elle est la championne interne de P1 ou P2 |
+| Persona | Promesse (H, à tester) | Offre d'entrée |
+|---|---|---|
+| **P1 Marc**, dirigeant de PME (cœur : 20 à 99 personnes) | « Quand votre référent informatique part, votre SI reste. Vous savez ce que vous avez, ce que vous payez et ce qui expire, sans recruter. » | Autodiagnostic, puis essai d'un mois ; Pilotage de 99 à 159 € HT/mois |
+| **P2 Nadia**, DAF d'association (cœur : 20 à 99 salariés) | « Présentez à votre CA un SI maîtrisé et chiffré, données hébergées en France, bénévoles gratuits, tarif associatif. » | Contenus relayés par les réseaux ESS, puis essai ; remise ESS de 15 % |
+| P3 Sophie, office manager | « Plus d'accès oublié au départ d'un salarié. » | Pas de canal propre : c'est souvent **elle qui fera l'essai**. L'onboarding doit lui parler, les emails de conversion doivent parler au dirigeant (H) |
 
-**Recommandation sur P3 :** ne pas lui consacrer de canal. Elle n'a pas le pouvoir d'achat (`personas.md`) et ses signaux sont faibles (S12). On la touche à travers le compte de P1 ou P2 (contenus « procédure de départ d'un salarié », pièce jointe que le dirigeant lui transmet). À supprimer comme persona si les entretiens le confirment.
-
----
-
-## 2. Canaux d'acquisition plausibles, classés
-
-### 2.1 Barème de calcul (H)
-
-- Temps fondateur : 60 €/h (H, `modele-revenus.md`).
-- Temps unitaires de vente repris de `modele-revenus.md` § 6.3 : contact 15 min, rendez-vous 1 h, démonstration 1 h 30, proposition 1 h, signature 1 h.
-- **CAC = (heures × 60 €) + dépenses directes**, pour un client signé. Les entonnoirs de chaque canal sont des **hypothèses** : aucune donnée de conversion n'existe pour cette cible.
-- Le CAC tolérable n'est **pas le même partout** (voir § 3.2) : environ 1 500 à 1 700 € en moyenne, mais beaucoup moins pour les petites structures de l'ESS.
-
-### 2.2 Tableau de classement
-
-| Rang | Canal | Coût estimé | Délai avant 1er client (H) | Volume plausible (H) | CAC estimé (H) | P1 | P2 | P3 |
-|---|---|---|---|---|---|---|---|---|
-| **1** | **C1. Base clients Tecnoo et réseau personnel du fondateur** | Temps seul (+ ≈ 50 €/client de frais) | 1 à 2 mois | **Limité** : la taille du vivier n'est pas connue (à compter) ; 1 à 5 clients sur 12 mois (H) | **≈ 950 €** | Fort | Moyen (établissements d'enseignement, H) | Faible |
-| **2** | **C2. Prospection directe sur déclencheurs** (LinkedIn + email, ciblage des structures de 50 à 249 salariés qui vivent un départ de référent, un changement de prestataire, un projet ESMS numérique) | Temps + Sales Navigator Core ≈ 121 € HT/mois (tiers) + outillage ≈ 50 €/mois (H) | 2 à 3 mois | Moyen et pilotable : 1 client/mois à environ 50 contacts/mois (H) | **≈ 1 730 €** (fourchette 1 400 à 2 200 €) | Fort | Moyen | Nul |
-| **3** | **C4. Réseaux ESS et fédérations du médico-social** (CRESS, UDES, ESS France, Nexem, Fehap, Uniopss) en *one-to-many* : webinaire co-organisé, article dans une lettre d'information, atelier lors d'une journée régionale | Temps (≈ 15 h par webinaire) + éventuels frais d'adhésion ou de stand (montants non trouvés, H) | 3 à 6 mois (calendriers des fédérations, décision du bureau ou du CA) | Moyen à fort si un relais diffuse : Nexem revendique environ 10 000 à 11 000 établissements et plus de 300 000 salariés (2018-2021) ; la Fehap 368 000 collaborateurs et plus de 5 700 établissements (juin 2025) | **≈ 1 300 à 1 700 €** (1 à 2 clients par webinaire, H) | Faible | **Fort** | Moyen |
-| 4 | C6. Partenariats avec des prestataires informatiques, MSP et DSI à temps partagé (prescription ou revente) | Temps de recrutement ≈ 5 h par partenaire + commission de 20 % la 1re année (H) ≈ 500 € | 4 à 9 mois | Potentiellement le plus fort à terme, mais incertain (Primo et Corma occupent déjà ce terrain, voir § 1.3) | **≈ 1 050 €** | Fort | Moyen | Moyen |
-| 5 | C3. LinkedIn du fondateur (contenu organique, 2 posts par semaine) | ≈ 10 h/mois, soit 600 €/mois (H) | 3 à 6 mois | Faible au début, croissant ; surtout un **amplificateur** de C2 et C4 | ≈ 1 750 € au démarrage, ≈ 1 150 € à maturité (H) | Fort | Moyen | Moyen |
-| 6 | C5a. CPME (unions territoriales) et MEDEF locaux : intervention sur la cybersécurité ou le départ du référent informatique | Cotisation territoriale selon l'effectif (ex. CPME 64 : 350 € pour 0 à 10 salariés, 2026-2027) + ≈ 8 h par événement (H) | 3 à 6 mois | Faible à moyen ; la CPME co-signe le baromètre Cybermalveillance (S1) | ≈ 1 700 € (1 client pour 2 interventions, H) | Fort | Faible | Faible |
-| 7 | C8. Lead magnet : autodiagnostic SI (20 questions, score et rapport) | ≈ 20 h de conception, soit 1 200 € une fois (H) | — (outil de conversion) | **Pas un canal** : il convertit le trafic de C2 à C7 en inscrits qualifiés | Non attribuable seul (coût fixe réparti) | Fort | Fort | Fort |
-| 8 | C9. Webinaires organisés en propre | ≈ 10 h par webinaire (H) | 6 mois et plus (il faut d'abord une audience) | Faible tant que la liste est petite | Non estimable avant 6 mois ; à faire **avec** C4 ou C5a, pas seul | Moyen | Fort | Moyen |
-| 9 | C7. SEO (cybersécurité des PME, shadow IT, recrutement d'un responsable informatique, NIS2 « suis-je concerné ? », prix d'un DSI à temps partagé) | ≈ 6 h par article, 1 article/mois, soit 360 €/mois (H) | 6 à 12 mois | **Inconnu** : les volumes de recherche n'ont pas pu être mesurés (`signaux-demande.md` § 3) | ≈ 2 000 € sur les 12 premiers mois, moins ensuite (H, très fragile) | Moyen | Moyen | Fort |
-| 10 | C5b. CJD | Cotisation non trouvée (H) | 6 mois et plus | Faible ; lieu d'échange entre dirigeants plus que d'achat (H) | Non estimé | Moyen | Faible | Nul |
-| 11 | C5c. BNI | 775 à 1 000 €/an selon les sources (tiers, dates non vérifiées) + petit-déjeuner hebdomadaire ≈ 10 € + ≈ 2 h par semaine de présence (H) | 6 mois et plus | Faible pour la cible : membres surtout TPE et indépendants (H) | **≈ 4 500 € et plus** (1 client en 6 mois, H) | Faible | Nul | Nul |
-
-### 2.3 Détail des calculs par canal (H)
-
-**C1. Base Tecnoo et réseau du fondateur (réseau chaud)**
-- Entonnoir (H) : 10 contacts → 5 rendez-vous → 3 démonstrations → 2 propositions → 1 signature.
-- Temps : 2,5 + 5 + 4,5 + 2 + 1 = **15 h**, soit 900 € + 50 € de frais = **≈ 950 €**.
-- Limites : le nombre de clients Tecnoo qui sont dans le SAM (50 à 249 salariés sans DSI, ou ESS de 20 à 249) n'est pas connu ; il faut le compter. Les clients Tecnoo ont déjà un ERP piloté par Tecnoo, ce qui facilite la confiance, mais il faudra **encadrer la relation Tecnoo / Hasteria** (qui démarche, qui facture, commission éventuelle ; question ouverte dans `modele-revenus.md` § 7).
-- Rôle : **source n° 1 des entretiens et des lettres d'intention**, pas canal de croissance.
-
-**C2. Prospection directe sur déclencheurs**
-- Ciblage : structures de 50 à 249 salariés ayant un déclencheur visible (offre d'emploi « responsable informatique » liée à un départ en retraite, voir S2 ; changement de prestataire ; projet ESMS numérique, voir S3 ; fusion ou ouverture d'établissement). Pas de prospection froide des 20 à 49 (CAC tolérable trop bas, § 3.2).
-- Entonnoir (H) : 50 contacts → 6 rendez-vous → 3 démonstrations → 2 propositions → 1 signature.
-- Temps : 12,5 + 6 + 4,5 + 2 + 1 = **26 h**, soit 1 560 € + ≈ 171 € d'outils par mois (Sales Navigator ≈ 121 € HT/mois en mensuel, tiers ; outillage email ≈ 50 €, H) = **≈ 1 730 €**.
-- Sensibilité : si le déclencheur double le taux de réponse (25 contacts par client), le CAC tombe à ≈ 1 400 € ; s'il faut 80 contacts, il monte à ≈ 2 200 €, au-dessus du plafond moyen.
-- Règles : messages manuels, sans automatisation LinkedIn ; en email B2B, objet lié à la fonction du destinataire et lien de désinscription (**règle à faire valider par juriste-rgpd**).
-
-**C3. LinkedIn fondateur**
-- Effort (H) : 2 posts par semaine + commentaires et messages ≈ 10 h/mois, soit 600 €/mois.
-- Un lead entrant est plus chaud : 4 rendez-vous → 2 démonstrations → 1 proposition → 1 signature ≈ 9 h, soit 540 €.
-- Démarrage (1 client tous les 2 mois) : 1 200 + 540 ≈ **1 740 €** ; à maturité (1 client par mois) : 600 + 540 ≈ **1 140 €**.
-- Prérequis : `marque/voix-fondateur.md` (vide aujourd'hui).
-
-**C4. Réseaux ESS et fédérations**
-- Format type : webinaire co-organisé avec une CRESS ou une délégation régionale de fédération, sur un sujet utile au secteur (« cybersécurité et RGPD dans les ESMS : ce que le CA doit savoir »), sans démonstration commerciale.
-- Entonnoir (H) : 40 inscrits → 15 présents → 5 rendez-vous → 2 démonstrations → 1 à 2 signatures.
-- Temps : 15 h de préparation et de relance (900 €) + ≈ 13 h de vente, dont 3 h de plus pour un passage en bureau ou en CA (780 €) ≈ **1 700 €** pour 1 signature ; ≈ **1 300 €** par client pour 2 signatures.
-- Limites : les fédérations ont leurs propres partenaires et calendriers (H) ; le cycle de décision peut dépasser 6 mois (R11) ; l'appartenance de Nexem et de la Fehap à l'UDES n'a pas été vérifiée.
-
-**C6. Prestataires informatiques, MSP, DSI à temps partagé**
-- Modèle (H) : le partenaire recommande Lanternis à ses clients sans DSI, ou l'utilise pour sa revue mensuelle ; commission de 20 % la première année (≈ 500 € sur un ARPA de 210 €).
-- Temps : 5 h de recrutement par partenaire (amorti sur 2 clients, 150 €) + 6 h de démonstration conjointe (360 €) ≈ **1 050 €**.
-- Risques : conflit d'intérêts (le prestataire vend ce qu'il conseille) ; concurrence de Primo et Corma sur les MSP ; Tecnoo elle-même est un partenaire naturel, mais lié au fondateur.
-- Test déjà prévu : 3 entretiens prestataires (`script-interview.md` § 8). Pas de budget dédié en pré-lancement.
-
-**C5a. CPME et MEDEF locaux**
-- Hasteria est une SASU ; la cotisation dépend de l'union territoriale et de l'effectif (ex. CPME 64 : 350 € pour 0 à 10 salariés sur 2026-2027).
-- Entonnoir (H) : 2 interventions de 8 h (préparation et présence) → 1 signature + 10 h de vente : 26 h, soit 1 560 € + ≈ 175 € de cotisation au prorata ≈ **1 700 €**.
-
-**C7. SEO** : 360 €/mois pendant 12 mois = 4 320 € pour peut-être 3 clients la première année (H), plus 9 h de vente chacun ≈ **2 000 €**. Le seul canal adapté aux **PME de 20 à 49 salariés**, hors SAM en prospection (`marche-tam-sam-som.md` § 4). À lancer en croissance ; en pré-lancement, seulement 2 ou 3 contenus piliers qui servent aussi la landing et les entretiens.
-
-**C8. Autodiagnostic SI** : le diagnostic public MonAideCyber existe déjà sur le volet cyber (`tendances.md` § 1). L'autodiagnostic Lanternis doit couvrir **tout le SI** (contrats, abonnements, accès, dépendance à une personne) et renvoyer vers MonAideCyber pour la cyber, sans le dupliquer. Données minimales, consentement explicite (RGPD by design).
+Les fiches de `personas.md` (P1 sur 50-150, P2 sur 60-200) sont à recentrer par l'analyste-marche ; elles ne sont pas modifiées ici.
 
 ---
 
-## 3. CAC global estimé et comparaison avec le CAC tolérable
+## 2. Canaux d'acquisition : 3 prioritaires, 1 en test, 1 marginal
 
-### 3.1 CAC moyen pondéré pour les 15 premiers clients (≈ 3 k€ de MRR, H)
+### 2.1 Choix
 
-| Canal | Clients (H) | CAC unitaire (H) | Total |
-|---|---|---|---|
-| C1 Réseau chaud | 5 | 950 € | 4 750 € |
-| C2 Prospection sur déclencheurs | 3 | 1 730 € | 5 190 € |
-| C3 LinkedIn fondateur | 2 | 1 740 € | 3 480 € |
-| C4 Réseaux ESS | 3 | 1 500 € | 4 500 € |
-| C6 Partenaires | 2 | 1 050 € | 2 100 € |
-| **Sous-total** | **15** | | **20 020 €** |
-| Coûts fixes du pré-lancement non attribués : autodiagnostic (20 h), landing et contenus (≈ 10 h) | | | ≈ 1 800 € |
-| **CAC moyen « tout compris »** | | | **≈ 1 450 € par client (H)** |
+| Rôle | Canal | Pourquoi |
+|---|---|---|
+| **Prioritaire 1** | **Blog SEO et autodiagnostic SI → essai** | Seul canal qui touche le cœur 20-99 à grande échelle sans temps du fondateur ; décision de canal du 2026-10-26 ; contenus produits par les agents |
+| **Prioritaire 2** | **Réseaux ESS en *one-to-many*** (CRESS, fédérations, Le Mouvement associatif) **+ Solidatech** | P2 est concentrée dans des réseaux qui diffusent ; Solidatech revendique plus de 45 000 associations inscrites (S11, offre d'emploi de juin 2026) ; aucune vente individuelle |
+| **Prioritaire 3** | **Prestataires prescripteurs** avec **commission automatique** | Le prestataire voit l'outil chez un client (prestataire invité, M11) et le recommande à d'autres : boucle d'invitation ; aucun vendeur |
+| En test | **Facebook** (page, puis éventuellement publicité ciblée associations) | Pertinence ESS plausible, non démontrée ; stratégie de test de 6 semaines déjà prête (`marketing/facebook/strategie-facebook-v0.md`) |
+| Mécanisme de conversion (pas un canal) | **Essai d'un mois sans carte** + parrainage après le lancement | Convertit le trafic de tous les canaux ; parcours décrit au § 11.4 de `propositions-tarifs.md` |
+| **Marginal** | **Prospection directe** (email et téléphone, individuels) | Sert **uniquement** à obtenir 12 à 15 **entretiens de validation** avant le GO. Aucune démonstration ni proposition commerciale |
 
-- **Temps commercial moyen :** ≈ 21 h par client, cohérent avec les 23 h de `modele-revenus.md` § 6.3.
-- **Après épuisement du réseau chaud** (clients 16 et suivants) : sans C1, le mix C2, C3 à maturité, C4, C6 et C7 donne un CAC de **≈ 1 350 à 1 750 € (H)**. On est **à la limite** du plafond.
-- **Effet des frais de mise en place :** si 60 % des clients paient la mise en place (H) et que le forfait de 990 € laisse ≈ 510 € après 8 h de travail, le CAC net baisse d'environ 300 €. C'est un levier important, à garder hors du MRR (`modele-revenus.md` § 7).
+**Retirés :**
+- C1 comme canal de vente : le réseau Tecnoo et le réseau du fondateur restent une **source d'entretiens** et, après le lancement, de prescription ;
+- C2 prospection sur déclencheurs ;
+- C3 LinkedIn ;
+- C5 clubs (CPME, MEDEF, CJD, BNI) : pas de vente en salle sans rendez-vous derrière ;
+- C9 webinaires propres en direct : remplacés par des **webinaires enregistrés** diffusés par les relais ESS.
 
-### 3.2 Comparaison avec le CAC tolérable, par segment
+### 2.2 Fiche par canal (H)
 
-Le plafond de 1 500 à 1 700 € (`modele-revenus.md` § 6.2) vaut pour un ARPA central de 210 €. Avec le même coût variable de 69 €/client/mois (H) et un remboursement en 12 mois :
+| Canal | Mécanisme | Cible | Coût récurrent (H) | Délai avant effet (H) | CAC 1re année (H) | CAC à maturité (H) | Principal risque |
+|---|---|---|---|---|---|---|---|
+| **SEO et autodiagnostic** | 2 articles par mois produits par les agents, ≈ 2 h de validation chacun ; autodiagnostic en 10 questions qui renvoie vers l'essai | P1, P2 | ≈ 240 €/mois | 6 à 12 mois (domaine neuf) | 400 à 800 € | 100 à 200 € | Volumes de recherche **non mesurés** (`signaux-demande.md` § 3) |
+| **Réseaux ESS + Solidatech** | Tribune ou article dans la lettre d'un relais (≈ 3 h), webinaire de 30 min **enregistré** et rediffusé, lien `?public=ess` vers l'essai ; référencement Solidatech | P2 | ≈ 6 h/mois, soit 360 € | 3 à 6 mois (calendriers des relais) | 300 à 750 € | 200 à 400 € | Accès aux relais non vérifié ; conditions Solidatech inconnues (coût probable : remise ou commission) |
+| **Prestataires prescripteurs** | Programme en libre-service : lien de recommandation, **commission automatique de 20 % pendant 12 mois** (≈ 340 € sur 143 €/mois ; ≈ 120 € sur 49 €) ; le prestataire invité découvre l'outil chez un client | P1, P2 | Commission seule + ≈ 2 h/mois | 4 à 9 mois | 350 à 450 € | ≈ 350 € | Outil de commission non choisi (Stripe Connect ou plateforme d'affiliation, **coût non sourcé**) ; conflit d'intérêts ; Primo et Corma |
+| **Facebook** (test) | 2 posts par semaine pendant 6 semaines, puis 1 par semaine au rythme du blog ; publicité ciblée seulement après le lancement, **sur validation** | P2 surtout | ≈ 1 à 2 h/semaine, soit 260 à 520 €/mois | 1 à 3 mois | Inconnu | Inconnu | Les DAF ne lisent peut-être pas de contenus de gestion sur Facebook |
+| Essai d'un mois | Onboarding guidé, 7 emails de cycle de vie au plus, prolongation de 15 jours | Toutes | ≈ 6 € de support par essai | Dès l'ouverture | ≈ 30 € (5 essais par client) + coût du trafic | idem | Le « cockpit vide » (R1) sans aide humaine |
+| Parrainage | Un mois offert au parrain et au filleul | Clients | 1 mois de revenu de part et d'autre | Après 20 clients | 150 à 290 € | idem | Faible volume au début |
+| Prospection pour entretiens | ≈ 30 demandes individuelles pour 12 à 15 entretiens | Validation | ≈ 20 h une fois, soit ≈ 1 200 € | Immédiat | **Coût de validation**, hors CAC | — | Recrutement lent hors réseau du fondateur |
 
-| Segment et palier | Prix mensuel net (H) | Contribution/mois | **CAC maximal (12 mois)** | Canaux compatibles |
+Sources des CAC : § 11.5 de `propositions-tarifs.md` (même jeu d'hypothèses : conversion d'un essai en client de 20 %, 0,1 h de support par essai).
+
+---
+
+## 3. CAC tolérable et CAC estimé
+
+### 3.1 Plafonds par offre (remboursement en 12 mois ; H)
+
+Coûts variables par client et par mois : 2 € d'hébergement et d'emails, 0,50 € de facturation électronique, Stripe ≈ 2,2 % + 0,25 € (cas carte, barème sourcé au § 10), 0,15 h de support (9 €).
+
+| Offre et tranche | Prix net (H) | Contribution | **CAC maximal en 12 mois** | Canaux compatibles |
 |---|---|---|---|---|
-| PME 100-249, Pilotage+ mensuel | 399 € | 330 € | **≈ 3 960 €** | Tous, y compris C2 |
-| PME 50-99, Pilotage mensuel | 249 € | 180 € | **≈ 2 160 €** | C1, C2, C3, C5a, C6 |
-| ESS 50-99, Pilotage, remise ESS, mensuel | 211,65 € | 142,65 € | **≈ 1 710 €** | C1, C3, C4, C6 |
-| ESS 50-99, Pilotage, ESS + annuel | 169,32 € | 100,32 € | **≈ 1 200 €** | C4, C6 (et C1) |
-| ESS 20-49, Essentiel, remise ESS, mensuel | 126,65 € | 57,65 € | **≈ 690 €** | C4 en *one-to-many* seulement |
-| ESS 20-49, Essentiel, ESS + annuel | 101,32 € | 32,32 € | **≈ 390 €** | Aucun canal de vente directe ; contenus et prescription seulement |
+| Essentiel ≤ 49, mensuel | 49 € | ≈ 36 € | **≈ 430 €** | SEO à maturité, ESS à maturité, parrainage, prescripteurs (commission proportionnelle) |
+| Essentiel ≤ 49, annuel ou ESS | 39,20 à 41,65 € | ≈ 27 à 29 € | **≈ 320 à 350 €** | SEO et parrainage à maturité seulement |
+| Essentiel 50-99 | 79 € | ≈ 65 € | ≈ 790 € | Tous les canaux automatisés |
+| Pilotage ≤ 49 | 99 € | ≈ 85 € | **≈ 1 020 €** | Tous |
+| Pilotage 50-99 | 159 € | ≈ 144 € | ≈ 1 725 € | Tous |
+| **Moyenne, lancement** (121 € net) | | ≈ 107 € | **≈ 1 190 €** | (le plus serré entre 12 mois et LTV/CAC ≥ 3 à 3 % de churn, § 11.5) |
+| **Moyenne, cible** (143 € net) | | ≈ 129 € | **≈ 1 430 €** | idem |
+
+### 3.2 CAC moyen estimé (H)
+
+Pondération par la répartition des essais du § 4.2 (40 % SEO, 28 % ESS, 17 % prescripteurs, 5 % Facebook plafonné à 430 €, 10 % parrainage et direct) :
+- **1re année, coûts variables seuls** : (7 × 600 + 5 × 525 + 3 × 400 + 1 × 430 + 2 × 220) ÷ 18 ≈ **≈ 495 €** ; **avec les coûts fixes de lancement** répartis sur peu de clients (contenus, vidéos d'onboarding, autodiagnostic) : **≈ 700 à 900 €** (§ 11.5) ;
+- **à maturité** : (7 × 150 + 5 × 300 + 3 × 350 + 1 × 430 + 2 × 220) ÷ 18 ≈ **≈ 250 €**, dans la fourchette de 250 à 450 € du § 11.5.
 
 **Lecture :**
-1. **Le CAC global estimé (≈ 1 450 €) tient dans le plafond moyen**, mais avec peu de marge, et seulement si le réseau chaud fournit un tiers des premiers clients.
-2. **Les structures de 100 à 249 salariés sont le segment le plus rentable à prospecter** (plafond ≈ 4 000 €). La prospection directe (C2) doit viser d'abord les 100-249, puis les 50-99.
-3. **Les ESS de 20 à 49 salariés ne supportent aucune vente individuelle.** Elles ne peuvent être servies que par des canaux *one-to-many* (fédération, webinaire, autodiagnostic) et un onboarding très léger. Le maintien de ce segment dans le SAM (`marche-tam-sam-som.md` § 4) suppose ce mode d'acquisition : **à signaler au comité de décision**.
-4. Le coût variable de 69 € est supposé identique pour tous les paliers (H) ; s'il est plus faible sur Essentiel (moins de support), les plafonds des petits paliers remontent un peu.
+1. **Le CAC moyen tient largement sous le plafond moyen** (≈ 1 190 à 1 430 €), même la 1re année. Remboursement ≈ 7 à 8 mois la 1re année, ≈ 2 à 4 mois à maturité.
+2. **Les clients Essentiel ≤ 49 (≈ 320 à 430 €) ne sont rentables qu'à maturité des canaux.** La 1re année, ils sont subventionnés par les clients Pilotage. Il ne faut **aucune dépense payante ciblée sur ce seul segment** avant que le SEO ait pris.
+3. **Le risque n'est plus le CAC, c'est le volume** (§ 4).
 
 ---
 
-## 4. Les 3 canaux à tester en pré-lancement (8 semaines)
+## 4. Volumes nécessaires
 
-**Choix :** C1 (réseau chaud), C2 + C3 (prospection sur déclencheurs, appuyée par LinkedIn), C4 (réseaux ESS). Le canal partenaires (C6) est seulement **sondé** par les 3 entretiens prestataires déjà prévus, sans budget. SEO, clubs et webinaires propres attendent la phase de lancement.
+### 4.1 Entonnoir inversé pour 10 k€ de MRR en 24 mois (H, scénario « cible » du § 11.5)
 
-**Pourquoi ceux-là :** ils produisent vite les **preuves demandées par la décision** (entretiens, lettres d'intention, inscrits qualifiés), ils couvrent les deux personas acheteurs (P1 et P2), et ils mesurent directement l'hypothèse n° 5 (« la vente directe tient avec un CAC d'environ 1 600 € »).
-
-### 4.1 Objectifs chiffrés (H, à valider par l'utilisateur)
-
-| Canal | Persona | Indicateurs et objectifs à 8 semaines | Critère d'arrêt (ou de bascule) |
-|---|---|---|---|
-| **C1 Réseau chaud** | P1, P2 | 20 demandes → **≥ 10 entretiens** (50 %, seuil H5 de `script-interview.md`) → **≥ 2 lettres d'intention** ou acomptes « pilote fondateur » ; ≥ 5 recommandations obtenues ; ≥ 15 inscrits sur la liste d'attente | **< 6 entretiens sur 20 demandes à la fin de la semaine 4** : le vivier est trop petit ou trop froid → basculer le temps sur C2. Si les entretiens ont lieu mais **0 lettre d'intention après 8 entretiens avec douleur avérée**, le problème n'est pas le canal mais l'offre : remonter au comité |
-| **C2 + C3 Prospection sur déclencheurs + LinkedIn** | P1 | 100 contacts ciblés (50-249, dont la moitié en 100-249) → taux de réponse **≥ 10 %** → **≥ 5 rendez-vous** → **≥ 1 lettre d'intention** ; 8 posts LinkedIn → **≥ 30 inscrits** sur la liste d'attente depuis LinkedIn ; temps réel par contact chronométré | **Taux de réponse < 5 % après 60 contacts et 2 variantes de message**, ou CAC projeté **> 2 200 €** (≈ 35 h par client) → arrêter la prospection froide, garder LinkedIn comme simple amplificateur |
-| **C4 Réseaux ESS** | P2 | 6 relais sollicités (2 CRESS, Nexem, Fehap, Uniopss, Solidatech) → **≥ 1 relais** qui accepte un webinaire, un article ou une diffusion d'ici la semaine 6 → **≥ 30 inscrits** au webinaire → **≥ 4 entretiens ESS** → **≥ 1 lettre d'intention ESS** ; ≥ 3 structures sur 5 déclarent un cycle de décision ≤ 3 mois (R11) | **Aucun relais après 6 sollicitations**, ou **< 15 inscrits** au webinaire → l'ESS passe en canal secondaire (contenus seulement) et le SAM doit être revu |
-
-### 4.2 Objectifs globaux du pré-lancement (H)
-
-| Indicateur | Objectif à 8 semaines | Lien avec la décision |
+| Étape | Volume | Hypothèse |
 |---|---|---|
-| Entretiens Mom Test réalisés | **12 à 15**, dont ≥ 3 par tranche et 3 à 5 dans l'ESS | `script-interview.md` § 1 |
-| Lettres d'intention ou acomptes à ≥ 149 € HT/mois | **≥ 3** (sur 10 entretiens qualifiés) | Seuil H3 de `STATUT.md` |
-| Inscrits qualifiés sur la liste d'attente (structure de 20 à 249, rôle de décideur ou de prescripteur) | **≥ 80** | Signal de demande vérifiable (éliminatoire de la grille GO/NO-GO) |
-| Taux d'activation de la liste d'attente (autodiagnostic complété) | **≥ 40 %** des inscrits | Mesure l'intérêt réel, au-delà de l'inscription |
-| Taux de conversion de la landing (visiteur → inscrit) | **≥ 5 %** (H, à affiner avec cro-conversion) | Qualité du message |
-| Temps fondateur consacré à l'acquisition | ≤ 12 h/semaine, journalisé | Hypothèse n° 5 (capacité du fondateur) |
-| MRR | 0 € (pas de vente avant le GO) ; **objectif post-lancement repris de `modele-revenus.md` : 3 k€ de MRR à 12 mois, soit ≈ 15 clients** | Phase 9 |
+| Clients actifs | **70** | 143 € net par client |
+| Souscriptions brutes sur 24 mois | ≈ 87, soit **≈ 3,6 par mois** | Churn de 2 % par mois |
+| Essais | **≈ 18 par mois** | Conversion essai → payant de 20 % |
+| Essais activés | ≈ 9 par mois | Activation ≥ 50 % sous 14 jours |
+| Visiteurs qualifiés de la page de tarifs | **≈ 600 par mois** | Visiteur → essai de 3 % |
 
-### 4.3 Règle de réallocation
+**Profil dans le temps (H) :**
+- **1re année** : ≈ 14 essais par mois en moyenne, liste d'attente comprise (≈ 33 souscriptions, ≈ 30 clients) ;
+- **2e année** : ≈ 22 essais par mois (≈ 52 souscriptions, pour atteindre 70 clients). Les deux années font ≈ 18 essais par mois en moyenne.
 
-Chaque fin de quinzaine (puis chaque mois après le lancement), on calcule pour chaque canal : heures passées, euros dépensés, entretiens, lettres d'intention, inscrits, et **CAC projeté** (heures × 60 € + dépenses, divisé par les signatures ou lettres d'intention). Le canal au meilleur CAC projeté reçoit le temps libéré par les canaux arrêtés. Les résultats sont consignés dans `marketing/rapports/` (skill rapport-marketing) une fois la phase de lancement ouverte.
+### 4.2 Répartition des 18 essais par mois, en régime (2e année, H)
 
----
-
-## 5. Calendrier d'acquisition sur 8 semaines (du lundi 26 octobre au vendredi 18 décembre 2026)
-
-| Semaine | Dates | C1 Réseau chaud | C2 + C3 Prospection + LinkedIn | C4 Réseaux ESS | Socle commun (autres agents) |
-|---|---|---|---|---|---|
-| S1 | 26 oct. – 30 oct. | Lister et qualifier le vivier Tecnoo et le réseau du fondateur (taille, tranche, ESS ou non, DSI ou non) ; choisir 20 cibles | Constituer la liste de 100 structures à déclencheur (offres d'emploi, ESMS numérique) | Cartographier les relais : CRESS de la région du fondateur, délégations Nexem, Fehap, Uniopss ; Solidatech | `/marque` (plateforme, voix du fondateur) ; vérification du nom Lanternis (skill nouvelle-marque-hasteria) |
-| S2 | 2 nov. – 6 nov. | Envoyer les 10 premières demandes d'entretien (brouillons de `script-interview.md` § 7, envoi individuel par le fondateur) | Rédiger 2 variantes de message ; premiers posts LinkedIn (brouillons, validation requise) | Premiers contacts avec 3 relais (appel ou email individuel) | Landing de validation et liste d'attente (brand-manager, cro-conversion) ; conception de l'autodiagnostic |
-| S3 | 9 nov. – 13 nov. | 10 demandes de plus ; premiers entretiens | 30 premiers contacts (variante A / B) | 3 relais de plus ; proposer un sujet de webinaire | Mise en ligne de la landing **après validation** de l'utilisateur ; Search Console |
-| S4 | 16 nov. – 20 nov. | Entretiens ; **point d'arrêt C1** (≥ 6 entretiens obtenus ?) | 30 contacts de plus ; **point de mesure** du taux de réponse | Relances ; 1er entretien ESS issu du réseau | Autodiagnostic en ligne (après validation) ; **revue de quinzaine 1** |
-| S5 | 23 nov. – 27 nov. | Entretiens ; proposer l'atelier d'inventaire de 2 h aux plus intéressés | 40 contacts restants ; **point d'arrêt C2** (taux de réponse ≥ 5 % après 60 contacts ?) | Préparer le webinaire avec le relais qui a accepté | 1 ou 2 contenus piliers (redacteur-blog-seo), en brouillon |
-| S6 | 30 nov. – 4 déc. | Proposer les lettres d'intention « pilote fondateur » | Rendez-vous et démonstrations sur maquette | **Point d'arrêt C4** (≥ 1 relais ?) ; diffusion de l'invitation par le relais | **Revue de quinzaine 2** : réallocation du temps |
-| S7 | 7 déc. – 11 déc. | Relances des lettres d'intention ; 3 entretiens prestataires (sonde C6) | Rendez-vous ; lettre d'intention éventuelle | **Webinaire** ; entretiens ESS dans la foulée | Lettre aux inscrits de la liste d'attente (brouillon, validation requise) |
-| S8 | 14 déc. – 18 déc. | Bilan des entretiens (grille de `script-interview.md` § 6) | Bilan : CAC projeté par canal | Bilan : cycle de décision ESS (R11) | Synthèse pour `/bilan` et le comité de décision ; mise à jour de `STATUT.md` |
-
-**Remarques sur le calendrier :**
-- La seconde quinzaine de décembre est peu propice aux décisions (H) ; tout doit être bouclé au 18 décembre.
-- Dans l'ESS, les bureaux et CA se réunissent à un rythme propre : une lettre d'intention ESS signée avant fin décembre serait un signal fort, son absence n'est pas en soi un échec.
-- Les demandes individuelles du fondateur à son réseau relèvent de sa décision ; tout envoi groupé, post ou mise en ligne exige la validation explicite de l'utilisateur.
-
----
-
-## 6. Au-delà du pré-lancement (esquisse, à détailler en phase 9)
-
-| Phase | Canaux prioritaires (H) | Objectif mesurable (H) |
+| Canal | Essais par mois | Ce qu'il faut en amont (H) |
 |---|---|---|
-| Validation (pré-lancement, ce document) | C1, C2 + C3, C4 | ≥ 3 lettres d'intention, ≥ 80 inscrits qualifiés, 12 à 15 entretiens |
-| Lancement (après le GO et la mise en ligne) | Le meilleur canal du pré-lancement + C6 si la sonde est positive ; conversion des lettres d'intention en pilotes payants | 10 clients « pilote fondateur » ; activation : ≥ 70 % ont leur registre rempli à 30 jours (H) |
-| Croissance | C6, C3 à maturité, C7 (SEO, y compris pour les PME de 20 à 49), webinaires propres (C9) | 3 k€ de MRR à 12 mois ; CAC ≤ 1 700 € ; part des clients entrants (non prospectés) ≥ 40 % à 18 mois |
+| SEO et autodiagnostic | 7 | ≈ 230 visiteurs de la page de tarifs venant du blog, soit ≈ 2 300 visites organiques par mois si 10 % du blog passe par la page de tarifs (H) ; ou ≈ 70 autodiagnostics complétés si 10 % passent à l'essai (H) |
+| Réseaux ESS + Solidatech | 5 | ≈ 1 parution ou rediffusion par mois chez un relais ; fiche Solidatech active |
+| Prestataires prescripteurs | 3 | ≈ 12 prestataires actifs qui recommandent chacun ≈ 3 essais par an |
+| Facebook | 1 | Page active ; publicité éventuelle si son CAC reste ≤ 430 € |
+| Parrainage, bouche-à-oreille, accès direct | 2 | ≥ 30 clients |
+| **Total** | **18** | |
+
+### 4.3 Sensibilités (H)
+
+| Si… | Alors… |
+|---|---|
+| Les clients ressemblent au marché (74 % de 20-49), revenu ≈ 106 € net (`marche-tam-sam-som.md` § 4.1) | ≈ 95 clients pour 10 k€, ≈ 118 souscriptions, **≈ 25 essais par mois** |
+| Le cœur 20-99 domine (≈ 94 € net) | ≈ 107 clients, **≈ 28 essais par mois** |
+| La conversion de l'essai tombe à 10 % | **≈ 36 essais par mois** (à 143 €) |
+| Le churn monte à 3 % | ≈ 100 souscriptions sur 24 mois, ≈ 21 essais par mois |
+
+**Conséquence :** l'objectif réaliste se situe entre **18 et 28 essais par mois**. Pour le tenir, le SEO doit apporter au moins 40 % du volume ; c'est le pari principal. Il faut le vérifier au plus tôt avec la Search Console (§ 6).
 
 ---
 
-## 7. Hypothèses à vérifier (par ordre d'impact)
+## 5. Plan par phase et objectifs mesurables
 
-1. **Taille du vivier Tecnoo dans le SAM** : combien de clients Tecnoo ont 50 à 249 salariés (ou sont des ESS de 20 à 249) et pas de DSI ? Sans ce chiffre, le poids de C1 dans le CAC global est une supposition.
-2. **Entonnoirs de conversion** de tous les canaux (aucune donnée) : à mesurer pendant les 8 semaines.
-3. **Taux de réponse de la prospection sur déclencheurs** : l'idée que le départ d'un référent informatique ouvre une fenêtre d'achat vient d'offres d'emploi (S2), pas d'acheteurs.
-4. **Accès aux fédérations** (Nexem, Fehap, Uniopss) et conditions (programme partenaires payant ou non, frais de stand) : non trouvés ; les chiffres de Nexem datent de 2018 à 2021.
-5. **Relation Tecnoo / Hasteria** pour le démarchage et le service : à trancher (qui contacte, qui facture, commission).
-6. **Commission partenaire de 20 %** : non comparée aux pratiques du marché ; concurrence de Primo et Corma sur les MSP.
-7. **Règles de prospection B2B par email et sur LinkedIn** : à faire valider par juriste-rgpd avant le premier envoi.
-8. **Coût de Sales Navigator** : prix relevé par des tiers (≈ 121 € HT/mois en mensuel), à vérifier sur la page de LinkedIn.
-9. **Cotisations** CPME (selon l'union territoriale), CJD (non trouvée), BNI (sources tierces, dates non vérifiées).
-10. **Volumes de recherche SEO** : non mesurés (`signaux-demande.md` § 3).
-11. **Disponibilité du nom « Lanternis »** (marque, domaine) : non vérifiée dans ce document.
-
----
-
-## 8. Sources (consultées le 2026-10-25)
-
-| Donnée | Valeur | Source | Fiabilité |
+| Phase | Période (H) | Canaux actifs | Objectifs (H, à valider par l'utilisateur) |
 |---|---|---|---|
-| LinkedIn Sales Navigator Core | 120,99 € HT/siège/mois en mensuel, ≈ 90,74 €/mois en annuel (relevé tiers du 19/09/2026) | https://www.hublead.io/fr/sales-navigator-cost-calculator ; https://www.kanbox.io/fr/blog/linkedin-sales-navigator-prix | Moyenne (tiers, à vérifier chez LinkedIn) |
-| BNI, cotisation | 775 à 1 000 €/an selon les sources, droit d'entrée variable, petits-déjeuners ≈ 10 € | https://www.creerentreprise.fr/reseau-affaires-bni-avis-et-conseils/ ; https://www.lagazettefrance.fr/article/avec-bni-bethune-le-reseau-bni-debarque-dans-le-pas-de-calais | Faible (tiers, dates non vérifiées, variations locales) |
-| CPME, cotisation territoriale | Selon l'union et l'effectif ; CPME 64 : 350 € (0 à 10 salariés), 455 € (11 à 20), période 2026-2027 | https://www.helloasso.com/associations/cpme-64/adhesions/nouvelle-adhesion-cpme-64 | Moyenne (une seule union) |
-| CJD, cotisation | Non trouvée | — | — |
-| Nexem | ≈ 10 000 à 11 000 établissements et services, plus de 300 000 à 330 000 salariés ; 95 % d'associations | https://nexem.fr/app/uploads/Unorganized/Livre-Vert-Europeen-sur-le-Vieillissement-Contribution-Una-Nexem-19.04.21.pdf ; https://nexem.fr/sites/default/files/uploads/prive/Courriers-Nexem/Courrier-Ministres-Exonération-prime-de-fin-dannée-défiscalisée-_-003.pdf | Moyenne (documents de 2018 à 2021) |
-| Fehap | 368 000 collaborateurs, plus de 5 700 établissements (juin 2025) | https://www.lemediasocial.fr/hulkStatic/EL/ELI/2025/06/f9ceb9a16-5de4-4d6f-a684-5da32c6fa069/sharp_/ANX/cp-fehap-mgen-vdef-juin-2025.pdf | Moyenne à élevée |
-| Corma | Fondée en juillet 2023 ; 45 entreprises clientes dont Skello (déclaratif) ; levée seed de 3,5 M€ ; offre pour MSP ; pas de prix public trouvé | https://corma.io/fr/company/about-us ; https://www.corma.io/fr/automated-saas-management-for-msps ; https://www.frenchweb.fr/pourquoi-lia-fait-de-la-gouvernance-logicielle-un-veritable-casse-tete/459073 | Moyenne (déclaratif éditeur) |
-| Autres données citées | Signaux S1 à S12, prix, concurrents, CAC tolérable | `signaux-demande.md`, `tendances.md`, `benchmark.md`, `prix.md`, `marche-tam-sam-som.md`, `1-analyse/modele-revenus.md` | Voir ces documents |
+| **Validation** (pré-lancement) | 26 oct. → 18 déc. 2026 (8 semaines), puis entretien de la liste d'attente jusqu'à l'ouverture | Entretiens (prospection marginale), SEO et autodiagnostic, relais ESS et Solidatech, prestataires, Facebook en test | § 6 : 12 à 15 entretiens ; ≥ 80 inscrits qualifiés ; ≥ 3 structures pilotes engagées par écrit |
+| **Lancement** (ouverture de l'essai) | Après le GO et ≈ 15 à 19 semaines de développement (`propositions-tarifs.md` § 11.6) ; vers le printemps 2027 si le GO est donné en janvier (H) | Liste d'attente, SEO, relais ESS, programme prescripteurs ouvert, Facebook si le test est concluant | M1 : ≥ 20 essais (≥ 25 % de la liste d'attente) ; activation ≥ 50 % sous 14 jours ; conversion ≥ 20 % ; **M3 : ≥ 10 clients payants, MRR ≥ 1,2 k€** ; part Pilotage ≥ 55 % ; ≤ 1 demande de support pour 4 essais |
+| **Croissance** | M4 à M24 après l'ouverture | Réallocation mensuelle vers le meilleur CAC ; parrainage dès 20 clients ; publicité Facebook ciblée **seulement sur validation** et si CAC ≤ 430 € | **M12 : ≥ 30 clients, MRR ≥ 4 k€** ; **M24 : 70 clients, MRR ≥ 10 k€** ; 18 à 28 essais par mois ; CAC moyen ≤ 900 € (1re année) puis ≤ 450 € ; churn ≤ 2 % par mois ; temps du fondateur hors développement ≤ 27 h par mois à 10 k€ |
+
+---
+
+## 6. Pré-lancement : objectifs revus (8 semaines, du 26 octobre au 18 décembre 2026)
+
+**Ce que le pré-lancement doit prouver avant le GO :**
+1. un **signal de demande vérifiable** (éliminatoire de la grille GO/NO-GO) : des entretiens, des inscrits qualifiés et des engagements ;
+2. que **les canaux automatisés répondent** (au moins un relais ESS, au moins quelques prestataires) ;
+3. que **la liste d'attente suffira à lancer** : avec 80 inscrits qualifiés et 25 % de passage à l'essai (H), on obtient ≈ 20 essais le premier mois, soit le volume cible.
+
+**Prérequis bloquants** (`STATUT.md`) : réserver le domaine, vérifier l'antériorité du nom, faire relire les pages légales par un avocat, configurer les DNS de Mailjet, et faire valider le déploiement o2switch par le fondateur. **Si la landing n'est pas en ligne au début de S3 (9 novembre), les objectifs « en ligne » sont décalés d'autant** ; les entretiens n'en dépendent pas.
+
+### 6.1 Objectifs par canal et critères d'arrêt
+
+| Canal | Objectifs à 8 semaines (H) | Critère d'arrêt ou de bascule |
+|---|---|---|
+| **Entretiens de validation** (prospection marginale) | ≈ 30 demandes individuelles (réseau du fondateur et Tecnoo, relais ESS, prestataires, inscrits volontaires) → **12 à 15 entretiens** (≥ 8 dans le cœur 20-99, ≥ 3 ESS, ≥ 2 de 100 à 249) **+ 3 entretiens de prestataires** ; questions de prix de `prix.md` § 5 ; **≥ 60 % d'intention d'essai ferme** parmi les douleurs avérées ; **≥ 3 structures pilotes engagées par écrit** (essai dès l'ouverture, souscription à ≥ 99 € si le registre tient ses promesses) | **< 6 entretiens fin S4** : recruter via les inscrits de la liste et les relais ESS. **0 engagement après 8 entretiens à douleur avérée** : le problème est l'offre, pas le canal → remonter au comité |
+| **SEO et autodiagnostic** | Plan éditorial v1 (cœur 20-99, sans LinkedIn) ; **6 articles validés** (2 existants + 4) et publiés après validation ; autodiagnostic en ligne en S3 ; Search Console active ; **≥ 40 % des inscrits complètent l'autodiagnostic** ; ≥ 10 inscrits venus des contenus ou en accès direct | Pas d'arrêt à 8 semaines (canal lent). **Point de décision à 6 mois après la mise en ligne** : < 500 visites organiques par mois (H) → passer à 1 article par mois et réallouer vers ESS et prescripteurs |
+| **Réseaux ESS + Solidatech** | **8 relais sollicités** (2 CRESS, Nexem, Fehap, Uniopss, Le Mouvement associatif, Associathèque, Solidatech) → **≥ 1 diffusion d'ici S6** (article, lettre, webinaire enregistré) → **≥ 30 inscrits ESS** ; conditions de référencement Solidatech **obtenues par écrit** (coût, remise, commission) | **0 relais après 8 sollicitations** : l'ESS passe par le SEO et Facebook seulement, et la part de clients ESS (30 %, H) est revue |
+| **Prestataires prescripteurs** | 10 prestataires contactés ; 3 entretiens ; **≥ 3 prestataires partagent l'autodiagnostic** avec leurs clients (lien `?ref=`) → **≥ 10 inscrits** ; ≥ 2 acceptent d'être prestataires invités chez une structure pilote | **0 prestataire prêt à recommander sur 5 entretiens** : programme de commission reporté après le MVP ; le canal reste la boucle d'invitation seule |
+| **Facebook** (test de 6 semaines, S3 à S8) | Règle de `strategie-facebook-v0.md` § 5 : **≥ 8 inscrits qualifiés** venus de Facebook, ou ≥ 2 conversations menant à un entretien, ou ≥ 1 relais ; temps ≤ 2,5 h par semaine | ≤ 2 inscrits qualifiés, aucune conversation et aucun relais, ou temps > 3 h par semaine → page en vitrine minimale |
+
+### 6.2 Objectifs globaux du pré-lancement
+
+| Indicateur | Objectif à 8 semaines (H) | Lien avec la décision |
+|---|---|---|
+| Entretiens de validation | **12 à 15** + 3 prestataires | `script-interview.md` § 1 |
+| Intention d'essai ferme (date ou personne désignée) | **≥ 60 %** des entretiens à douleur avérée | Remplace les lettres d'intention à ≥ 149 € (hypothèse 3 de `STATUT.md`, à mettre à jour) |
+| Structures pilotes engagées par écrit | **≥ 3**, souscription envisagée à ≥ 99 € | Signal de demande vérifiable |
+| Palier médian choisi en entretien | **≥ Pilotage** | Valide le mix « cible » (`prix.md` § 5.5) |
+| « Trop bon marché » au-dessus du prix de la tranche | **≤ 30 %** des interviewés | Risque de prix bas |
+| **Inscrits qualifiés** (20 à 499 personnes, rôle de décideur ou de prescripteur) | **≥ 80**, dont **≥ 50 % dans le cœur 20-99** | Volume du premier mois d'essai |
+| Répartition indicative des 80 inscrits (H) | ESS et Solidatech 30 ; entretiens et réseau du fondateur 15 ; prestataires 10 ; Facebook 10 ; SEO et accès direct 15 | Mesure l'apport de chaque canal (paramètre `utm_source` ou `?ref=`) |
+| Autodiagnostic complété | **≥ 40 %** des inscrits | Intérêt réel au-delà de l'inscription |
+| Conversion de la landing (visiteur → inscrit) | **≥ 5 %** (H, à affiner avec cro-conversion) | Qualité du message |
+| Part des inscrits sous Google Workspace | À mesurer (champ du formulaire, si le fondateur l'accepte) | Réexamen de D4 au-delà de 25 % (H) |
+| Temps du fondateur | **≤ 8 h par semaine**, journalisé (entretiens ≈ 20 h au total, validation des contenus, relais) | Hypothèse « intervient très peu » |
+| MRR | **0 €** (aucune vente avant le GO) | — |
+
+`2-marche/validation.md` (journal des résultats réels) devra reprendre ces objectifs : sa ligne « Lettres d'intention à ≥ 149 € » est caduque. Ce fichier n'est pas modifié ici.
+
+---
+
+## 7. Calendrier de 8 semaines (26 octobre → 18 décembre 2026)
+
+| Sem. | Dates | Entretiens de validation | SEO et autodiagnostic | Réseaux ESS + Solidatech | Prestataires prescripteurs | Facebook (test) | Prérequis, décisions, revues |
+|---|---|---|---|---|---|---|---|
+| S1 | 26 – 30 oct. | Liste de 30 structures à solliciter (réseau Tecnoo et personnel, ESS) ; ajout des questions de prix au script (analyste-marche) | Plan éditorial v1 (content-strategist) ; articles 3 et 4 en brouillon (redacteur-blog-seo) | Cartographie des 8 relais et des contacts | Liste de 10 prestataires (Tecnoo compris ?) | — | Réserver lanternis.fr ; antériorité du nom ; trancher Hasteria ou Tecnoo pour les demandes ; juriste-rgpd valide les règles de prospection ; brand-manager : promesse « guidé pas à pas » ; cro-conversion : bloc tarifs D et bouton « Être prévenu de l'ouverture de l'essai » |
+| S2 | 2 – 6 nov. | 15 premières demandes individuelles | Validation des articles 1 à 4 par le fondateur | 4 premiers relais contactés, dont Solidatech | 3 demandes d'entretien | Liste des groupes et pages à suivre (brouillon) | Relecture des pages légales par l'avocat ; DNS Mailjet ; **validation du déploiement o2switch** |
+| S3 | 9 – 13 nov. | 15 demandes de plus ; premiers entretiens | **Landing et autodiagnostic en ligne** (après validation) ; Search Console ; 2 articles publiés (après validation) | 4 relais de plus ; proposer une tribune ou un webinaire enregistré | Entretiens de prestataires | Semaine 1 du test (posts validés) | — |
+| S4 | 16 – 20 nov. | Entretiens ; **point d'arrêt : ≥ 6 entretiens ?** | Article 3 publié ; **lettre mensuelle n° 1 (17 nov.)** | Relances | Lien `?ref=` proposé aux prestataires intéressés | Semaine 2 | **Revue de quinzaine 1** |
+| S5 | 23 – 27 nov. | Entretiens ; proposition « structure pilote » aux plus engagés | Article 4 publié | Rédaction de la tribune ou enregistrement du webinaire de 30 min | ≥ 3 prestataires partagent l'autodiagnostic ? | Semaine 3 | — |
+| S6 | 30 nov. – 4 déc. | Entretiens ; relance des engagements écrits | Article 5 en brouillon | **Point d'arrêt : ≥ 1 relais ?** ; réponse de Solidatech | **Point d'arrêt prescripteurs** | Semaine 4 | **Revue de quinzaine 2 : réallocation du temps** |
+| S7 | 7 – 11 déc. | Derniers entretiens | Article 5 publié | Diffusion par le relais | Prestataires invités chez les structures pilotes (à préparer) | Semaine 5 | — |
+| S8 | 14 – 18 déc. | Synthèse (grille de `script-interview.md` § 6, critères de `prix.md` § 5.5) | Bilan de la Search Console (impressions, requêtes) ; article 6 | Bilan : relais, inscrits ESS, cycle de décision (R11) | Bilan : inscrits par prestataire | **Décision : continuer, ajuster ou arrêter** | **Lettre mensuelle n° 2 (17 déc.)** ; synthèse pour `/bilan` et le comité de décision |
+
+**Remarques :**
+- La seconde quinzaine de décembre se prête mal aux décisions (H) : tout est bouclé au 18 décembre.
+- Après S8, et jusqu'à l'ouverture de l'essai, la **lettre mensuelle** (19 janvier, 18 février) et le blog entretiennent la liste d'attente. L'ouverture de l'essai est annoncée d'abord aux inscrits et aux structures pilotes.
+
+---
+
+## 8. Coordination, mesure et réallocation
+
+### 8.1 Qui fait quoi (pôle marketing)
+
+| Agent | Contribution au pré-lancement |
+|---|---|
+| brand-manager | Promesse sans service humain ; messages par persona recentrés sur 20-99 |
+| cro-conversion | Landing : bloc tarifs D, essai sans carte, formulaire (effectif, type, outil de messagerie) ; objectif de conversion |
+| content-strategist, redacteur-blog-seo | Plan éditorial v1 ; 6 articles ; requêtes cibles du cœur 20-99 |
+| emailing | Lettre mensuelle ; plus tard, les 7 emails de cycle de vie de l'essai (brouillons) |
+| growth | Paramètres `utm` et `?ref=` ; tableau de suivi par canal ; plus tard, programme de parrainage et de commission |
+| presse et relations | Tribunes et articles pour les relais ESS ; dossier Solidatech |
+| prospection | **Seulement** les demandes d'entretien (`marketing/campagnes/prospection-entretiens/`), sans démarche de vente |
+
+### 8.2 Règle de réallocation
+
+- **Toutes les deux semaines** pendant le pré-lancement, **chaque mois** après l'ouverture (skill rapport-marketing, `marketing/rapports/`), on calcule pour chaque canal :
+  - les heures passées et les euros dépensés ;
+  - les inscrits qualifiés, puis les essais, les activations et les souscriptions ;
+  - le **coût par inscrit qualifié** (pré-lancement), puis le **CAC projeté** (heures × 60 € + dépenses, divisé par les souscriptions).
+- **Le canal au meilleur coût reçoit le temps libéré** par les canaux arrêtés.
+- **Aucune dépense payante sans validation** de l'utilisateur.
+
+---
+
+## 9. Hypothèses à vérifier (par ordre d'impact)
+
+1. **Volume d'essais atteignable sans vendeur** (18 à 28 par mois) : c'est le nouveau risque principal. Il dépend surtout du SEO, dont les volumes de recherche ne sont pas mesurés.
+2. **Conversion essai → payant de 20 %** et **activation de 50 %** sans aide humaine : aucune donnée de référence pour cette cible.
+3. **Répartition des clients par taille** : 30 % de moins de 50 personnes (§ 11.5) contre 74 % dans le marché ; elle fait varier le revenu moyen de 106 à 143 € (`marche-tam-sam-som.md` § 4.1).
+4. **Accès aux relais ESS** et **conditions de Solidatech** : non trouvés.
+5. **Commission prescripteur de 20 % pendant 12 mois** : non comparée aux pratiques du marché ; outil et coût de gestion non sourcés ; contrat type à faire rédiger.
+6. **Facebook comme canal ESS** : non démontré.
+7. **Taux de passage de la liste d'attente à l'essai** (25 %) au bout de plusieurs mois d'attente.
+8. **Règles de prospection pour les demandes d'entretien** : à valider par juriste-rgpd avant le premier envoi.
+9. **Relation Tecnoo / Hasteria** : au nom de qui sont faites les demandes d'entretien ; Tecnoo comme prescripteur commissionné ou non.
+10. **Part des structures sous Google Workspace** (D4 reporte le connecteur Google).
+11. **Disponibilité du nom « Lanternis »** (marque, domaine) : non vérifiée.
+
+---
+
+## 10. Sources
+
+| Donnée | Valeur | Source | Consultée le | Fiabilité |
+|---|---|---|---|---|
+| Solidatech | Plus de 45 000 associations inscrites ; inscription gratuite, 300+ offres réduites | Offre d'emploi Solidatech, juin 2026 : https://jobs.makesense.org/fr/jobs/solidatech-assistante-commerciale-et-relations-associations-3Qk60a6Ez8FhbbcX6oUi (S11 de `signaux-demande.md`) ; `benchmark.md` [32] | 2026-10-25 | Moyenne (déclaratif, source indirecte) |
+| Nexem | ≈ 10 000 à 11 000 établissements et services, plus de 300 000 à 330 000 salariés | https://nexem.fr/app/uploads/Unorganized/Livre-Vert-Europeen-sur-le-Vieillissement-Contribution-Una-Nexem-19.04.21.pdf | 2026-10-25 | Moyenne (documents de 2018 à 2021) |
+| Fehap | 368 000 collaborateurs, plus de 5 700 établissements (juin 2025) | https://www.lemediasocial.fr/hulkStatic/EL/ELI/2025/06/f9ceb9a16-5de4-4d6f-a684-5da32c6fa069/sharp_/ANX/cp-fehap-mgen-vdef-juin-2025.pdf | 2026-10-25 | Moyenne à élevée |
+| Corma | Offre pour MSP ; dès 3 €/utilisateur/mois | https://www.corma.io/fr/automated-saas-management-for-msps ; https://www.corma.io/pricing (`prix.md` [39]) | 2026-10-25 | Moyenne (déclaratif éditeur) |
+| Stripe France | Cartes de l'EEE 1,5 % + 0,25 € ; SEPA 0,35 € ; Billing 0,7 % du volume | https://stripe.com/fr/pricing (`propositions-tarifs.md` § 10) | 2026-10-26 | Élevée |
+| Grille D, revenu moyen, CAC des canaux, volumes | Voir § 11 | `propositions-tarifs.md` (H) | 2026-10-26 | Hypothèses |
+| Concurrents, prix | Voir § 1 et 2 | `prix.md`, `benchmark.md` | 2026-10-25 | Voir ces documents |

@@ -15,6 +15,7 @@ page à construire: autodiagnostic.html (dev-vitrine), appelée depuis validatio
 > **Ce que c'est :** 10 questions à choix, 5 minutes, un profil et trois actions à mener ce mois-ci. Il couvre **tout le SI vu par la direction** (ce que vous avez, ce que vous payez, ce qui arrive à échéance, la continuité), pas la cybersécurité en détail : pour la cyber, il renvoie vers les dispositifs publics gratuits (MonAideCyber, Cybermalveillance.gouv.fr) au lieu de les dupliquer (`2-marche/acquisition.md`, C8).
 > **Ce que ce n'est pas :** une norme, un audit ni un classement. Le barème est une **grille de lecture maison (H)** : aucune moyenne de marché n'est affichée, faute de données. Il sera recalé après les premiers résultats et les entretiens.
 > **Remplace** la version « 20 questions » envisagée dans `acquisition.md` et `messages-par-persona.md` : 10 questions pour viser un taux de complétion élevé (H).
+> **Alignement marque v1.1 (2026-10-26).** Appel à l'action principal : la liste d'attente, avec l'essai gratuit d'un mois sans carte annoncé pour l'ouverture (`marque/plateforme-de-marque.md` v1.1, `messages-par-persona.md` v1.1). L'échange de 30 minutes reste proposé, en lien secondaire, comme **entretien de recherche** (Mom Test), et non plus comme un point d'accompagnement avec un spécialiste (§ 5, § 6, § 8). Questions, barème et profils inchangés.
 
 ---
 
@@ -125,17 +126,17 @@ Structure de l'écran de résultat : profil et score, phrase de constat, barres 
 ### Renvoi cyber (affiché pour tous les profils)
 « Cet autodiagnostic ne remplace pas un diagnostic de cybersécurité. Pour cela, des dispositifs publics gratuits existent, dont MonAideCyber et Cybermalveillance.gouv.fr. » Lien de référence : https://www.economie.gouv.fr/entreprises/cybersecurite-des-dispositifs-publics-gratuits-pour-vous-accompagner (cité dans `1-analyse/jtbd.md` ; **revérifier le lien avant publication**).
 
-## 5. Appel à l'action : un échange de 30 minutes
+## 5. Appel à l'action : la liste d'attente, puis l'essai à l'ouverture
 
-Affiché sous le résultat, pour tous les profils (texte adapté au profil dans la première phrase).
+Affiché sous le résultat, pour tous les profils (texte adapté au profil dans la première phrase). Avant l'ouverture, toute fonction s'écrit au futur ou avec « conçu pour » (plateforme v1.1, § 5 et § 10.6).
 
-- Titre : **Faites le point en 30 minutes avec un spécialiste du SI**
-- Texte (profils boîte noire et pénombre) : « Vous voulez savoir par où commencer ? Nous lisons votre résultat avec vous et repartons avec vos trois priorités. Gratuit, par téléphone ou en visio. Ce n'est pas une démonstration commerciale : si Lanternis n'est pas adapté à votre structure, nous vous le dirons. »
-- Texte (profils carte à compléter et bien éclairé) : « Vous avez déjà une bonne carte. En 30 minutes, nous regardons ensemble comment la garder à jour quand les personnes et les outils changent. Gratuit, par téléphone ou en visio, sans démonstration commerciale. »
-- Bouton : **Demander mon échange de 30 minutes**
-- Lien secondaire : « Ou simplement rejoindre la liste d'attente » (→ `validation.html?src=autodiag#liste-attente`).
+- Titre : **Passez du diagnostic à la carte**
+- Texte (profils boîte noire et pénombre) : « Lanternis est conçu pour tenir le registre de tout votre SI : qui a quoi, ce que vous payez, ce qui arrive à échéance, et une check-list à chaque arrivée et à chaque départ. Il est en construction. Rejoignez la liste d'attente : à l'ouverture, vous pourrez l'essayer un mois, gratuitement et sans carte bancaire. »
+- Texte (profils carte à compléter et bien éclairé) : « Vous avez déjà une bonne carte. Le plus difficile est de la garder à jour quand les personnes et les outils changent. Lanternis est conçu pour cela : il vous préviendra avant les échéances et préparera chaque départ. Rejoignez la liste d'attente : à l'ouverture, un mois d'essai gratuit, sans carte bancaire. »
+- Bouton : **Rejoindre la liste d'attente** (→ `validation.html?src=autodiag#liste-attente`).
+- Lien secondaire (étude) : « Vous acceptez de nous raconter comment cela se passe chez vous ? **Proposer un échange de 30 minutes pour notre étude.** » Texte affiché à l'ouverture du formulaire : « Nous menons une étude auprès de structures sans DSI. Pendant 30 minutes, par téléphone ou en visio, nous vous posons des questions sur votre situation. Nous ne présentons pas de produit et nous ne vendons rien. Vous recevrez la synthèse anonymisée de l'étude. »
 
-**Formulaire de demande d'échange** (même script `waitlist.php`, pour ne pas multiplier les traitements) : email professionnel, nom de la structure, type, effectif (obligatoires) ; case facultative « Joindre mon résultat à ma demande » (envoie `score`, `profil` et les 10 réponses codées 0 à 3, rien d'autre) ; case facultative « Recevoir les nouvelles de Lanternis ». Champs techniques : `echange=oui`, `source=autodiag`, `douleur` déduite de l'axe prioritaire (`continuite` → `depart-referent`, `payez` → `couts`, `echeance` → `renouvellements`, `avez` → `acces`).
+**Formulaire de demande d'échange (entretien de recherche)** (même script `waitlist.php`, pour ne pas multiplier les traitements) : email professionnel, nom de la structure, type, effectif (obligatoires) ; case facultative « Joindre mon résultat à ma demande » (envoie `score`, `profil` et les 10 réponses codées 0 à 3, rien d'autre) ; case facultative « Recevoir les nouvelles de Lanternis ». Champs techniques : `echange=oui`, `source=autodiag`, `douleur` déduite de l'axe prioritaire (`continuite` → `depart-referent`, `payez` → `couts`, `echeance` → `renouvellements`, `avez` → `acces`).
 - Champs supplémentaires à accepter par `waitlist.php` : `score` (0 à 30), `profil` (`boite-noire` | `penombre` | `carte-a-completer` | `bien-eclaire`), `reponses` (10 chiffres de 0 à 3), seulement si la case « Joindre mon résultat » est cochée.
 - **Pas d'outil de prise de rendez-vous tiers** en pré-lancement : Lanternis répond par email sous 2 jours ouvrés (H, engagement à confirmer par le fondateur) avec trois créneaux.
 - Les entretiens obtenus suivent `2-marche/script-interview.md` (Mom Test) : l'échange commence par l'exploration de la situation, pas par Lanternis.
@@ -144,12 +145,12 @@ Affiché sous le résultat, pour tous les profils (texte adapté au profil dans 
 
 **Email de confirmation de la demande d'échange (transactionnel)**
 - Objet : « Votre échange de 30 minutes : nous revenons vers vous sous 2 jours ouvrés »
-- Corps : « Bonjour, merci pour votre demande. Nous vous proposerons trois créneaux par retour d'email sous 2 jours ouvrés. [Si résultat joint :] Votre résultat : [profil], [score] sur 30 ; votre axe prioritaire : [axe]. D'ici là, votre première action : [action de l'axe]. — Lanternis est une marque d'Hasteria SASU. [Me désinscrire] »
+- Corps : « Bonjour, merci pour votre demande. Nous vous proposerons trois créneaux par retour d'email sous 2 jours ouvrés. Cet échange est un entretien d'étude : nous vous poserons des questions sur votre situation, sans présentation commerciale. [Si résultat joint :] Votre résultat : [profil], [score] sur 30 ; votre axe prioritaire : [axe]. D'ici là, votre première action : [action de l'axe]. — Lanternis est une marque d'Hasteria SASU. [Me désinscrire] »
 
 **Suite pour les inscrits venus de l'autodiagnostic (3 emails, uniquement si la case « nouvelles » est cochée)**
 1. J+3 : « Votre premier pas : le tableau en trois colonnes » (comment remplir ce que vous avez, ce que vous payez, ce qui arrive à échéance, avec un exemple fictif).
 2. J+10 : « Préavis : la date qui coûte un an » (repérer les dates de préavis de ses contrats ; renvoi vers l'article du blog quand il existera).
-3. J+21 : « Quand votre référent part : la liste à faire avant son dernier jour » (contenu du futur article pilier) + rappel de l'échange de 30 minutes.
+3. J+21 : « Quand votre référent part : la liste à faire avant son dernier jour » (contenu du futur article pilier) + rappel de la liste d'attente (essai d'un mois sans carte annoncé pour l'ouverture).
 
 **Promotion (3 contenus, sans LinkedIn, décision du 2026-10-26)**
 1. **Article du blog** (redacteur-blog-seo) : « Votre référent informatique part : la liste en trois colonnes à faire avant son départ », avec l'autodiagnostic en appel à l'action (sujet déjà maquetté page 13 de la charte).
@@ -171,6 +172,8 @@ Affiché sous le résultat, pour tous les profils (texte adapté au profil dans 
 ## 8. Points ouverts
 1. Seuils de profils et pondération égale des questions : hypothèses, à recaler sur les premiers résultats.
 2. Délai de réponse de 2 jours ouvrés pour l'échange : à confirmer par le fondateur (temps disponible, `acquisition.md` : ≤ 12 h/semaine d'acquisition).
-3. Formulation « spécialiste du SI » sans nommer le fondateur : conforme à la décision « pas de voix fondateur », à confirmer.
+3. Formulation « spécialiste du SI » retirée (v1.1) : l'échange est présenté comme un entretien d'étude, signé par la marque.
 4. Lien vers les dispositifs publics cyber : à revérifier le jour de la publication.
 5. Base légale et durée de conservation des résultats joints à une demande d'échange : à valider par juriste-rgpd.
+6. Les 3 emails de suite (J+3, J+10, J+21, § 6) ne respectent pas le plafond « au plus une par mois » de la case `nouvelles` (décision du 2026-10-26, `emails/sequence-nurturing-preLancement.md`) : à fusionner dans la lettre mensuelle ou à supprimer (lifecycle-emailing).
+7. Ordre des appels à l'action (liste d'attente en principal, échange d'étude en secondaire) : à suivre avec les événements `Clic liste d'attente` et `Demande échange` ; les entretiens restent nécessaires avant le GO (`propositions-tarifs.md` § 11.6, point 6).

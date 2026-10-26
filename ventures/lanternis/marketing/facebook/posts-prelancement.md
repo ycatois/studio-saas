@@ -14,6 +14,7 @@ skills: calendrier-editorial, recyclage-contenu
 > **Signature :** la page Lanternis (pas de voix fondateur). Vouvoiement, ton posé, mots interdits de `marque/plateforme-de-marque.md` § 10.4 vérifiés.
 > **Cadre :** `strategie-facebook-v0.md` (piliers, règles, indicateurs). Gabarits : `marque/charte/gabarits/` (copier un `exemple-…html`, changer les valeurs, l'ajouter au parcours de la bonne taille ; les paramètres d'URL ne passent pas à `capture.py`). Visuels validés à ranger dans `marketing/visuels/2026-11/` et `2026-12/`.
 > **Chiffres :** un seul post contient une statistique (post 5), sourcée sur le visuel et dans le texte. Les autres ne citent que des dates.
+> **Alignement marque v1.1 (2026-10-26).** Post 1 : « mis en place avec vous, pas livré vide » remplacé par « conçu par un DSI », arrivées et départs, essai gratuit d'un mois sans carte à l'ouverture, fonctions au futur. Post 3 : autodiagnostic corrigé en 10 questions. Les autres posts sont conformes (post 6 : l'échange reste un entretien de recherche).
 > **Liens :** `<domaine>` = domaine du site, non encore réservé. Paramètres UTM : `?utm_source=facebook&utm_medium=social&utm_campaign=prelancement&utm_content=post-0N`.
 
 ## Calendrier
@@ -39,7 +40,7 @@ Les dates supposent la landing en ligne en semaine 3 du pré-lancement et l'auto
 >
 > Dans beaucoup de PME et d'associations sans service informatique, la réponse tient dans la tête d'une personne, ou dans les dossiers d'un prestataire.
 >
-> Lanternis est en construction pour changer cela : un registre de tout votre informatique (matériel, logiciels, abonnements, contrats, accès), lisible par une direction, qui vous prévient avant les échéances. Il sera mis en place avec vous, pas livré vide.
+> Lanternis est en construction pour changer cela : un registre de tout votre informatique (matériel, logiciels, abonnements, contrats, accès), lisible par une direction, qui préparera chaque arrivée et chaque départ et vous préviendra avant les échéances. Il est conçu par un DSI, pour être pris en main sans rendez-vous. À l'ouverture, vous pourrez l'essayer un mois, gratuitement et sans carte bancaire.
 >
 > Sur cette page, nous publierons des repères simples pour les dirigeants, les DAF et celles et ceux qui ont « hérité » de l'informatique : des check-lists, des questions à se poser, et ce que nous apprenons en construisant le produit.
 >
@@ -95,7 +96,7 @@ Les dates supposent la landing en ligne en semaine 3 du pré-lancement et l'auto
 > – Savons-nous qui a accès à quoi, et qui ferme les accès au départ d'un salarié ?
 > – Pouvons-nous dire ce que coûte notre informatique, par an ?
 >
-> Notre autodiagnostic gratuit vous aide à y répondre en une vingtaine de questions, sans jargon : <domaine>/autodiagnostic?utm_source=facebook&utm_medium=social&utm_campaign=prelancement&utm_content=post-03
+> Notre autodiagnostic gratuit vous aide à y répondre en 10 questions, sans jargon : <domaine>/autodiagnostic?utm_source=facebook&utm_medium=social&utm_campaign=prelancement&utm_content=post-03
 
 **Visuel suggéré** : `facebook-carre-1080.html`, thème `papier`.
 - `surtitre` : « Associations »

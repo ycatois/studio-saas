@@ -27,7 +27,7 @@ Décision : en attente
   - `1-analyse/faisabilite-v2.md` : effort révisé (P1 complet 19 à 26 sem., tranche pilote 14 à 18 sem., pilote concierge 9,5 à 12,5 sem.), droits Microsoft Graph et Google, RLS ;
   - `2-marche/propositions-tarifs.md` : 3 grilles (A forfait par tranche, B modules, C prix par personne avec minimum), essai d'un mois sans carte ;
   - décidé le 2026-10-26 : D1 à D5 validées, essai gratuit en libre-service, Cockpit DSI abandonné (développement from scratch), vente quasi automatisée ;
-  - reste à décider : grille tarifaire. Grille D proposée (§ 11 de `propositions-tarifs.md`) : Essentiel 49 €, Pilotage 99 €, Pilotage+ 199 € jusqu'à 49 personnes, puis +30, +60 ou +90 € par tranche de 50 personnes ; libre-service jusqu'à 499 personnes ;
+  - **grille tarifaire D validée le 2026-10-26** (§ 11 de `propositions-tarifs.md`) : Essentiel 49 €, Pilotage 99 €, Pilotage+ 199 € jusqu'à 49 personnes, puis +30, +60 ou +90 € par tranche de 50 personnes ; libre-service jusqu'à 499 personnes ;
   - documents à mettre à jour après choix : `prix.md`, `modele-revenus.md`, TAM/SAM en euros, plafonds de CAC (`acquisition.md`), bloc tarifs de la landing, hypothèses 3, 5 et 7 ci-dessous.
 - Déposer les polices Fraunces (woff2, OFL) dans `marque/charte/fonts/` (voir `fonts/README.md`) ; d'ici là, les visuels utilisent une police de repli.
 - Recherche d'antériorité du logo et du nom (INPI, EUIPO, WIPO, logiciel Lantern) avant dépôt.
@@ -79,3 +79,4 @@ Décision : en attente
   - (3) **essai gratuit d'un mois en libre-service** ;
   - (4) **Cockpit DSI abandonné** : le produit sera développé de zéro ;
   - (5) grille tarifaire : hésitation entre A et C, demande d'une grille mixte.
+- 2026-10-26 — **Grille tarifaire D validée** : Essentiel 49 €, Pilotage 99 € HT/mois jusqu'à 49 personnes, puis +30 € et +60 € par tranche de 50 personnes. Pilotage+ (199 €, +90 €) ouvrira avec le multi-sites. Annuel −20 % ; ESS −15 % non cumulable ; bénévoles gratuits ; essai d'un mois sans carte ; libre-service jusqu'à 499 personnes, « Écrivez-nous » au-delà. Aucun service humain inclus.

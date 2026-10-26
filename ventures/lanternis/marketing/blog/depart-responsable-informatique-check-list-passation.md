@@ -12,6 +12,7 @@ image_og: "/images/blog/depart-responsable-informatique-og.png"
 image_og_alt: "Lanternis. Départ du responsable informatique : la check-list de passation à faire avant son dernier jour. Ce que vous avez, ce que vous payez, ce qui arrive à échéance."
 image_og_source: "marque/charte/gabarits/exemple-article-og-nuit.html"
 statut: brouillon
+alignement: "Alignement marque v1.1 (2026-10-26) : paragraphe Lanternis au futur (« conçu par un DSI », arrivées et départs, essai d'un mois sans carte à l'ouverture), plus de « avec vous » ; autodiagnostic corrigé en 10 questions ; le DSI à temps partagé reste cité comme option du marché, pas comme offre de Lanternis"
 ---
 
 # Départ du responsable informatique : la check-list de passation
@@ -135,8 +136,8 @@ Au minimum ceux des comptes partagés et des comptes administrateur qu'il connai
 Une passation bien faite ne vaut que si la liste reste à jour. C'est précisément le rôle d'un registre du SI : un seul endroit où la direction voit ce que la structure possède, ce qu'elle paie et ce qui arrive à échéance, avec une alerte avant chaque date importante.
 
 - **Téléchargez la check-list de passation** (PDF et tableur, sans inscription obligatoire) : [check-list de passation](/telechargements/check-list-passation-responsable-informatique).
-- **Faites l'autodiagnostic SI** : 20 questions pour savoir où vous en êtes, avant ou après le départ de votre responsable informatique : [l'autodiagnostic SI](/autodiagnostic-si).
-- **Lanternis**, le DSI de poche que nous préparons, tient ce registre avec vous et vous prévient avant les échéances. Il ne remplace pas votre prestataire : il vous donne la carte. [Rejoignez la liste d'attente](/liste-d-attente) pour être prévenu du lancement.
+- **Faites l'autodiagnostic SI** : 10 questions pour savoir où vous en êtes, avant ou après le départ de votre responsable informatique : [l'autodiagnostic SI](/autodiagnostic-si).
+- **Lanternis**, le DSI de poche que nous préparons, est conçu par un DSI pour tenir ce registre, préparer chaque arrivée et chaque départ, y compris celui d'un référent informatique, et vous prévenir avant les échéances. Il ne remplacera pas votre prestataire : il vous donnera la carte. [Rejoignez la liste d'attente](/liste-d-attente) : à l'ouverture, vous pourrez l'essayer un mois, gratuitement et sans carte bancaire.
 
 ## Sources
 

@@ -14,6 +14,7 @@ envoi: Mailjet, en transactionnel, déclenché par `waitlist.php` et `confirm.ph
 > **Sources :** `marque/plateforme-de-marque.md` (vouvoiement, ton posé, pas de vente par la peur, mots interdits § 10.4) ; `marque/messages-par-persona.md` (P1, P2) ; `marketing/landing/validation.md` § 7 (formulaire, double opt-in) et § 9 (premiers brouillons de ces deux emails, repris et complétés ici) ; `marketing/landing/conformite-prelancement.md` (registre T1 à T4, pixels § 2.3, pied d'email § 4.3, données transmises à Mailjet § 5.3).
 > **Signature :** la marque (« L'équipe Lanternis »), conformément à la décision du 2026-10-26 (pas de voix fondateur).
 > **Chiffres :** aucun, hormis le nombre de questions de l'autodiagnostic (10) et sa durée annoncée sur la landing (5 minutes, `validation.md` § 5).
+> **Alignement marque v1.1 (2026-10-26).** E0-B annonce l'essai gratuit d'un mois sans carte à l'ouverture ; la phrase « hors cible » reprend la cible v1.1 (PME et associations de 20 à 249 personnes, cœur 20 à 99) ; l'échange de 30 minutes reste un entretien de recherche. Aucun prix dans ces deux emails (E0-B reste un email de bienvenue, sans offre) : la grille D figure dans la lettre mensuelle (L2).
 
 ---
 
@@ -36,7 +37,7 @@ Champs de `validation.html` (aucun prénom) : `email`, `structure`, `type` (`ent
 
 **Segments** (seules données transmises à Mailjet, `conformite-prelancement.md` § 5.3) : `email`, `structure`, `segment` (P1 = `entreprise`, P2 = `ess`), `nouvelles`. **Ajouts proposés** pour les emails ci-dessous : `echange` (oui/non) et `qualifie` (oui/non). **À valider par juriste-rgpd** avant de les envoyer à Mailjet. Ni `douleur`, ni `douleur_autre`, ni `source` ne sont transmis.
 
-**Hors cible** (`qualifie = non` : effectif moins de 20 ou 250 et plus, ou entreprise de 20 à 49) : mêmes emails, avec la phrase de franchise du § 3.
+**Hors cible** (`qualifie = non` : effectif moins de 20 ou 250 et plus) : mêmes emails, avec la phrase de franchise du § 3. *(v1.1 : les entreprises de 20 à 49 ne sont plus hors cible, elles font partie du cœur 20 à 99. La règle de qualification de `validation.md` § 7.1 et le script `waitlist.php` doivent suivre ; `validation.md` est en cours de mise à jour par un autre agent.)*
 
 ---
 
@@ -84,7 +85,7 @@ Champs de `validation.html` (aucun prénom) : `email`, `structure`, `type` (`ent
 
 > Bonjour,
 >
-> Merci, votre inscription est confirmée. Nous ouvrirons Lanternis d'abord aux inscrits, par petits groupes, et nous vous préviendrons avant.
+> Merci, votre inscription est confirmée. Nous ouvrirons Lanternis d'abord aux inscrits, par petits groupes, et nous vous préviendrons avant. Vous pourrez alors l'essayer un mois, gratuitement et sans carte bancaire.
 >
 > En attendant, une question, à laquelle vous pouvez répondre simplement à cet email : **quel est aujourd'hui votre plus gros problème avec votre informatique ?** Une ligne suffit. Nous lisons toutes les réponses.
 >
@@ -97,11 +98,11 @@ Champs de `validation.html` (aucun prénom) : `email`, `structure`, `type` (`ent
 >
 > *[si `echange = oui`]* Vous avez aussi accepté un échange de 30 minutes. Nous vous écrirons personnellement dans les prochains jours pour convenir d'un créneau ; vous pouvez aussi nous répondre dès maintenant avec deux ou trois disponibilités. Nous ne vendons rien pendant cet échange, et vous recevrez la synthèse anonymisée de l'étude.
 >
-> *[si `qualifie = non`]* Lanternis est conçu pour les structures de 50 à 249 salariés sans DSI, et pour celles de l'ESS dès 20 salariés. Si la vôtre est en dehors de ce cadre, l'autodiagnostic reste utile ; nous vous dirons franchement si Lanternis vous convient.
+> *[si `qualifie = non`]* Lanternis est conçu pour les PME et les associations de 20 à 249 personnes sans DSI. Si la vôtre est en dehors de ce cadre, l'autodiagnostic reste utile ; nous vous dirons franchement si Lanternis vous convient.
 >
 > L'équipe Lanternis
 
-(Le cadre « 50 à 249, ESS dès 20 » reprend la règle de qualification de `validation.md` § 7.1.)
+(Cadre « 20 à 249 personnes » : cible de `marque/plateforme-de-marque.md` v1.1, § 3 et § 9. L'ancienne règle « 50 à 249, ESS dès 20 » de `validation.md` § 7.1 est à aligner.)
 
 ### Test A/B prévu
 - **Variable :** objet (A question ouverte, B bénéfice « 10 questions »).

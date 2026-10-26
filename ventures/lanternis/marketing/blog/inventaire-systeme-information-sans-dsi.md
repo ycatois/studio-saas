@@ -12,6 +12,7 @@ image_og: "/images/blog/inventaire-systeme-information-og.png"
 image_og_alt: "Lanternis. Inventaire du SI sans DSI : ce que vous avez, ce que vous payez, ce qui arrive à échéance. Illustration : un tableur devient un registre en trois colonnes."
 image_og_source: "marque/charte/gabarits/article-og-1200x630.html (thème nuit, illustration onboarding)"
 statut: brouillon
+alignement: "Alignement marque v1.1 (2026-10-26) : paragraphe Lanternis au futur (« conçu par un DSI », import du tableur, essai d'un mois sans carte à l'ouverture), plus de « met le registre en place avec vous » ; autodiagnostic corrigé en 10 questions"
 ---
 
 # Inventaire informatique de PME : la méthode sans DSI
@@ -133,8 +134,8 @@ Non. Il aide, car il montre où sont les données et qui y accède, mais le RGPD
 Un inventaire, c'est une photographie ; un registre tenu à jour, c'est une carte. Si votre responsable informatique doit partir prochainement, notre [check-list de passation](/blog/depart-responsable-informatique-check-list-passation) vous aide à récupérer l'essentiel avant son dernier jour.
 
 - **Téléchargez le modèle de registre du SI**, gratuit et sans inscription obligatoire : [modèle de registre](/telechargements/modele-registre-si).
-- **Faites l'autodiagnostic SI** : 20 questions pour savoir quelles rubriques de votre inventaire sont les plus fragiles : [l'autodiagnostic SI](/autodiagnostic-si).
-- **Lanternis**, le DSI de poche que nous préparons, reprend votre tableur, met le registre en place avec vous et vous prévient avant chaque échéance. Vos données restent exportables à tout moment. [Rejoignez la liste d'attente](/liste-d-attente) pour être prévenu du lancement.
+- **Faites l'autodiagnostic SI** : 10 questions pour savoir quelles rubriques de votre inventaire sont les plus fragiles : [l'autodiagnostic SI](/autodiagnostic-si).
+- **Lanternis**, le DSI de poche que nous préparons, est conçu par un DSI pour partir de votre tableur, tenir le registre à jour et vous prévenir avant chaque échéance. L'export complet de vos données est prévu dans toutes les offres. [Rejoignez la liste d'attente](/liste-d-attente) : à l'ouverture, vous pourrez l'essayer un mois, gratuitement et sans carte bancaire.
 
 ## Sources
 

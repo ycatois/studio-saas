@@ -16,6 +16,7 @@ sources internes: 2-marche/script-interview.md, 2-marche/personas.md, 2-marche/a
 > **Canaux : email et téléphone uniquement** (pas de LinkedIn, amendement du 2026-10-26).
 > **Rien n'est envoyé.** Chaque message est envoyé **à la main, un par un**, par le fondateur, depuis une adresse professionnelle, après validation de l'utilisateur et relecture du § 6 par un avocat. Pas d'outil d'envoi automatisé, **aucun suivi des ouvertures ni des clics** (pas de pixel, pas de lien traqué).
 > **Ton** (`plateforme-de-marque.md` § 10) : vouvoiement, phrases courtes, aucun vocabulaire de la peur, aucune critique du prestataire, aucun chiffre non sourcé. Corps de message de 60 à 120 mots, **une seule question**.
+> **Alignement marque v1.1 (2026-10-26).** L'entretien de découverte reste un échange de recherche (aucune démonstration, aucun prix, aucune offre d'accompagnement) ; P2 : « J'accompagne depuis 25 ans des organisations » remplacé par « Je travaille depuis 25 ans sur les systèmes d'information » (pas de promesse d'accompagnement ; formulation « 25 ans » toujours à valider par le fondateur) ; P1 : tranche d'effectif par défaut alignée sur le cœur de cible 20 à 99 personnes (100 à 249 en secondaire).
 > **Champs à personnaliser :** `{Structure}`, `{Fonction}`, `{Civilité Nom}`, `{observation}`, `{date limite}` (environ 2 semaines plus tard), `{Prénom Nom du fondateur}`, `{téléphone}`, `{source}`, `{lien confidentialité}`.
 
 ## 0. Vue d'ensemble de la séquence
@@ -73,7 +74,7 @@ Règles :
 
 > Bonjour {Civilité Nom},
 >
-> Je mène une étude auprès de dirigeants de PME de {50 à 249} salariés qui n'ont pas de service informatique interne. Je cherche à comprendre comment ils savent ce qu'ils possèdent, ce qu'ils paient et ce qui arrive à échéance, entre le prestataire, les abonnements et les contrats.
+> Je mène une étude auprès de dirigeants de PME de {20 à 99} salariés qui n'ont pas de service informatique interne. Je cherche à comprendre comment ils savent ce qu'ils possèdent, ce qu'ils paient et ce qui arrive à échéance, entre le prestataire, les abonnements et les contrats.
 >
 > Je travaille depuis 25 ans dans l'informatique d'entreprise. Je ne vends rien : ce qui m'aide, ce sont des exemples concrets.
 >
@@ -104,7 +105,7 @@ Règles :
 >
 > Dans beaucoup d'associations, l'informatique revient à la direction administrative et financière, sans service dédié. [J'ai vu que {Structure} prépare un projet ESMS numérique.]
 >
-> J'accompagne depuis 25 ans des organisations sur leurs systèmes d'information. Je mène une étude auprès de DAF d'associations de 50 à 249 salariés, pour comprendre comment elles suivent leurs contrats, leurs abonnements et la sécurité des données, et comment elles en rendent compte au CA.
+> Je travaille depuis 25 ans sur les systèmes d'information des organisations. Je mène une étude auprès de DAF d'associations de 50 à 249 salariés, pour comprendre comment elles suivent leurs contrats, leurs abonnements et la sécurité des données, et comment elles en rendent compte au CA.
 >
 > Aucune démarche commerciale. Auriez-vous 30 minutes, par téléphone ou en visio, d'ici le {date limite} ? La synthèse anonymisée vous sera envoyée et pourra servir à votre CA.
 >
