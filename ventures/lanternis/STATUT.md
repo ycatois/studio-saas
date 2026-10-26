@@ -17,6 +17,8 @@ Décision : en attente
   - Facebook : stratégie de test sur 6 semaines et 6 posts (`marketing/facebook/`) ;
   - prospection : 30 types de structures cibles et invitations à un entretien par email et téléphone (`marketing/campagnes/prospection-entretiens/`) ;
   - suivi des résultats réels : `2-marche/validation.md`.
+  - pages légales en brouillon (`marketing/landing/mentions-legales.html`, `confidentialite.html`) et conformité du pré-lancement (`conformite-prelancement.md` : registre, règles de prospection tranchées) ;
+  - site de pré-lancement et back-end de la liste d'attente pour o2switch : `produit/apps/prelancement/` (double opt-in, désinscription, autodiagnostic dans le navigateur, SQLite, Mailjet sans suivi). Tests : 25 tests et 37 vérifications de bout en bout au vert ; CI GitHub verte ; fusionné (PR #1). **Non déployé.**
 - Positionnement : un « DSI de poche » pour les PME (50 à 249 salariés) et l'ESS (20 à 249) sans DSI. Logiciel et service (modèle hybride).
 
 ## En cours
@@ -28,13 +30,14 @@ Décision : en attente
 - **Avant toute mise en ligne ou tout envoi (bloquant) :**
   - réserver le domaine lanternis.fr ;
   - vérifier l'antériorité du nom ;
-  - faire rédiger par juriste-rgpd la politique de confidentialité et les mentions légales, et valider les règles de prospection (section 6 de `invitation-entretien.md`) ;
-  - faire écrire par dev-vitrine `waitlist.php`, la confirmation, la désinscription et la page de l'autodiagnostic ;
+  - faire relire les pages légales par un avocat et lever les [À CONFIRMER] (hébergeur, transferts et DPA Mailjet, outil d'audience) ;
+  - préparer o2switch (dossier, config.php, cron de purge) avant le déploiement validé par le fondateur ;
   - configurer Mailjet (SPF, DKIM, DMARC).
 - **Arbitrages du fondateur :**
   - demander la fonction de l'inscrit dans le formulaire ?
   - valider le tarif fondateur (−30 % pendant 12 mois, 10 places) et la formulation « 25 ans d'expérience du SI » ;
   - prospecter le réseau Tecnoo au nom d'Hasteria ou de Tecnoo ?
+  - case « nouvelles » : garder « au plus une par mois » (la séquence passe à un email par mois) ou changer le libellé pour autoriser la séquence de 5 emails en 25 jours ?
 - **Ensuite :** lancer les entretiens (réseau Tecnoo et ESS) et consigner les résultats dans `2-marche/validation.md`.
 - 12 à 15 entretiens Mom Test (script `2-marche/script-interview.md`), en commençant par le réseau Tecnoo et l'ESS.
 - Faire valider par juriste-rgpd les règles de prospection B2B avant les premiers envois.
@@ -61,3 +64,4 @@ Décision : en attente
 - 2026-10-26 — Piste créative **Veilleuse** retenue par le fondateur (nuit #1B2330, ambre #F2B24C, papier #FAF6EE ; Fraunces + polices système).
 - 2026-10-26 — Logo **Lanterne-arche** retenu (affiné : anneau détaché, foyer agrandi, symbole compact pour 16 à 24 px). Charte v1.0, iconographie, gabarits et design system v0.1 produits.
 - 2026-10-26 — Pré-lancement préparé en brouillon. Série LinkedIn remplacée par un test Facebook (6 semaines, orienté associations) ; le blog est le canal de contenu principal. Fichiers de suivi de prospection exclus du dépôt (`.gitignore`).
+- 2026-10-26 — Pages légales et conformité du pré-lancement rédigées (projets, relecture d'avocat requise). Back-end de la liste d'attente développé, testé et fusionné (PR #1) ; déploiement soumis à validation.
