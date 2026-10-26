@@ -15,3 +15,7 @@ var/
 # Divers
 .DS_Store
 Thumbs.db
+# Données personnelles de prospection (fichiers de suivi remplis, exports de contacts) : jamais dans le dépôt
+**/prospection*/suivi*
+**/prives/
+*.contacts.csv

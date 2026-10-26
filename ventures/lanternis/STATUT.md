@@ -1,5 +1,5 @@
 # Lanternis — statut
-Phase actuelle : 2 Marché (terminée) · identité visuelle faite → prochaine : 2b Pré-lancement
+Phase actuelle : 2b Pré-lancement (supports prêts en brouillon, mesure non démarrée)
 Dernière mise à jour : 2026-10-26
 Score GO/NO-GO : —
 Décision : en attente
@@ -10,6 +10,13 @@ Décision : en attente
 - Phase 2 : TAM/SAM/SOM, tendances, signaux de demande, personas, script d'entretien, benchmark, prix, acquisition, synthèse (`2-marche/`).
 - Marque (brouillon) : `marque/plateforme-de-marque.md`, `messages-par-persona.md`, `noms-et-taglines.md`. Nom de marque retenu : **Lanternis** (« Lanternis est une marque d'Hasteria SASU »).
 - Identité visuelle v1.0 (piste Veilleuse, logo Lanterne-arche) : `marque/charte/` (logo et déclinaisons, `tokens.css` et `tokens.json`, `charte-graphique.pdf` de 14 pages, image Open Graph, 20 icônes et 3 illustrations, gabarits blog, Facebook et email avec exemples). Design system v0.1 de l'application : `5-cadrage/design-system/` (design-system.md, components.css, demo.html).
+- Pré-lancement (brouillons, rien de publié ni d'envoyé) :
+  - landing de validation `marketing/landing/validation.html` et sa stratégie `validation.md`, avec l'autodiagnostic SI en 10 questions (`autodiagnostic.md`) ;
+  - blog : `marketing/blog/plan-editorial-v0.md` et 2 articles (départ du responsable informatique ; inventaire informatique de PME sans DSI) ;
+  - emails : confirmation de la liste d'attente et séquence de 5 emails (`marketing/emails/`) ;
+  - Facebook : stratégie de test sur 6 semaines et 6 posts (`marketing/facebook/`) ;
+  - prospection : 30 types de structures cibles et invitations à un entretien par email et téléphone (`marketing/campagnes/prospection-entretiens/`) ;
+  - suivi des résultats réels : `2-marche/validation.md`.
 - Positionnement : un « DSI de poche » pour les PME (50 à 249 salariés) et l'ESS (20 à 249) sans DSI. Logiciel et service (modèle hybride).
 
 ## En cours
@@ -18,7 +25,17 @@ Décision : en attente
 - Sécuriser le nom Lanternis : réserver lanternis.fr et lanternis.com, rechercher l'antériorité INPI/EUIPO (classes 9, 35, 42), puis demander l'avis d'un conseil en propriété industrielle avant le dépôt (skill nouvelle-marque-hasteria).
 
 ## Prochaines étapes
-- `/prelancement` : landing de validation, liste d'attente, autodiagnostic SI comme lead magnet.
+- **Avant toute mise en ligne ou tout envoi (bloquant) :**
+  - réserver le domaine lanternis.fr ;
+  - vérifier l'antériorité du nom ;
+  - faire rédiger par juriste-rgpd la politique de confidentialité et les mentions légales, et valider les règles de prospection (section 6 de `invitation-entretien.md`) ;
+  - faire écrire par dev-vitrine `waitlist.php`, la confirmation, la désinscription et la page de l'autodiagnostic ;
+  - configurer Mailjet (SPF, DKIM, DMARC).
+- **Arbitrages du fondateur :**
+  - demander la fonction de l'inscrit dans le formulaire ?
+  - valider le tarif fondateur (−30 % pendant 12 mois, 10 places) et la formulation « 25 ans d'expérience du SI » ;
+  - prospecter le réseau Tecnoo au nom d'Hasteria ou de Tecnoo ?
+- **Ensuite :** lancer les entretiens (réseau Tecnoo et ESS) et consigner les résultats dans `2-marche/validation.md`.
 - 12 à 15 entretiens Mom Test (script `2-marche/script-interview.md`), en commençant par le réseau Tecnoo et l'ESS.
 - Faire valider par juriste-rgpd les règles de prospection B2B avant les premiers envois.
 - Devis : Chift, Kombo, Bridge, Powens ; demander à ESS France les données Flores par taille.
@@ -43,3 +60,4 @@ Décision : en attente
 - 2026-10-26 — Canaux : **pas de promotion sur LinkedIn pour le moment** (C3 retiré, prospection par email et téléphone uniquement). Le blog du site vitrine (SEO) devient le canal de contenu principal, avec une page Facebook possible. Pas de voix fondateur : les contenus sont signés par la marque.
 - 2026-10-26 — Piste créative **Veilleuse** retenue par le fondateur (nuit #1B2330, ambre #F2B24C, papier #FAF6EE ; Fraunces + polices système).
 - 2026-10-26 — Logo **Lanterne-arche** retenu (affiné : anneau détaché, foyer agrandi, symbole compact pour 16 à 24 px). Charte v1.0, iconographie, gabarits et design system v0.1 produits.
+- 2026-10-26 — Pré-lancement préparé en brouillon. Série LinkedIn remplacée par un test Facebook (6 semaines, orienté associations) ; le blog est le canal de contenu principal. Fichiers de suivi de prospection exclus du dépôt (`.gitignore`).

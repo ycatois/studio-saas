@@ -1,0 +1,593 @@
+<!doctype html>
+<!--
+  Lanternis · landing de validation (liste d'attente) · statut: brouillon · 2026-10-26
+  Auteur : cro-conversion. Stratégie, textes, champs et comportement attendu de waitlist.php : validation.md.
+  NE PAS PUBLIER sans validation explicite du fondateur (règle 2 de CLAUDE.md).
+  Aucune ressource externe, aucun cookie, aucun traceur. Les attributs data-evenement préparent
+  une mesure d'audience sans cookie (Plausible ou Matomo sans cookie : hypothèse, voir validation.md § 7).
+  Chemins relatifs valables depuis ventures/lanternis/marketing/landing/ ; à réécrire par dev-vitrine
+  quand la page sera intégrée au site Astro (copier tokens.css, les SVG et la police dans les assets).
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · Votre informatique, enfin lisible · Liste d'attente</title>
+<meta name="description" content="Lanternis, le DSI de poche des PME et des associations sans DSI : ce que vous avez, ce que vous payez, ce qui arrive à échéance. En préparation : rejoignez la liste d'attente.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../../marque/charte/logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../marque/charte/tokens.css">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--couleur-fond);color:var(--couleur-texte);font-family:var(--police-texte);font-size:var(--taille-l);line-height:var(--interligne-texte);-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:var(--police-titre);font-weight:var(--graisse-titre);line-height:var(--interligne-titre);margin:0 0 var(--espace-4)}
+h1{font-size:clamp(2rem,6vw,var(--taille-5xl))}
+h2{font-size:clamp(1.6rem,4vw,var(--taille-3xl))}
+h3{font-size:var(--taille-xl)}
+p{margin:0 0 var(--espace-4)}
+a{color:var(--couleur-accent);text-underline-offset:.15em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--couleur-focus);outline-offset:3px;border-radius:2px}
+img,svg{max-width:100%}
+.num{font-variant-numeric:var(--chiffres)}
+.conteneur{width:100%;max-width:var(--largeur-contenu);margin:0 auto;padding:0 var(--grille-marge)}
+@media (max-width:40rem){.conteneur{padding:0 var(--espace-4)}}
+.texte{max-width:var(--mesure-texte)}
+.chapeau{font-size:var(--taille-xl);color:var(--couleur-texte-secondaire)}
+.petit{font-size:var(--taille-s);color:var(--couleur-texte-secondaire)}
+.visuellement-cache{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.evitement{position:absolute;left:var(--espace-4);top:-4rem;z-index:10;background:var(--lt-papier);color:var(--lt-nuit);padding:var(--espace-2) var(--espace-4);border-radius:var(--rayon-m)}
+.evitement:focus{top:var(--espace-2)}
+section{padding:var(--espace-8) 0}
+@media (max-width:40rem){section{padding:var(--espace-7) 0}}
+.filet{border-top:1px solid var(--couleur-filet)}
+
+/* Zone de marque (fond nuit) : rôles redéfinis localement, contrastes de tokens.css */
+.zone-nuit{background:var(--couleur-surface-marque);color:var(--lt-papier);--couleur-texte:var(--lt-papier);--couleur-texte-secondaire:var(--lt-brume);--couleur-accent:var(--lt-ambre);--couleur-focus:var(--lt-ambre);--couleur-bouton-fond:var(--lt-ambre);--couleur-bouton-texte:var(--lt-nuit);--couleur-bouton-secondaire-bord:var(--lt-brume);--couleur-filet:var(--lt-lin-nuit)}
+
+/* Boutons */
+.bouton{display:inline-block;font:inherit;font-weight:var(--graisse-forte);font-size:var(--taille-m);line-height:1.3;text-decoration:none;text-align:center;padding:.8rem 1.25rem;min-height:44px;border-radius:var(--rayon-m);border:2px solid var(--couleur-bouton-fond);background:var(--couleur-bouton-fond);color:var(--couleur-bouton-texte);cursor:pointer;transition:transform var(--duree-courte) var(--courbe)}
+.bouton:hover{transform:translateY(-1px)}
+.bouton-secondaire{background:transparent;color:var(--couleur-texte);border-color:var(--couleur-bouton-secondaire-bord)}
+
+/* En-tête */
+.entete{padding:var(--espace-4) 0}
+.entete .conteneur{display:flex;align-items:center;justify-content:space-between;gap:var(--espace-4);flex-wrap:wrap}
+.entete img{display:block;width:160px;height:auto}
+.entete nav ul{list-style:none;margin:0;padding:0;display:flex;gap:var(--espace-5);flex-wrap:wrap;font-size:var(--taille-s)}
+.entete nav a{color:var(--lt-brume);text-decoration:none;padding:var(--espace-2) 0;display:inline-block}
+.entete nav a:hover{color:var(--lt-papier);text-decoration:underline}
+@media (max-width:40rem){.entete nav{display:none}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:var(--espace-6) 0 var(--espace-8)}
+.hero .halo{position:absolute;right:-14rem;top:-16rem;width:34rem;height:34rem;border-radius:50%;background:var(--halo);pointer-events:none}
+@media (max-width:60rem){.hero .halo{display:none}}
+.hero .grille{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:var(--espace-7);align-items:center}
+@media (max-width:60rem){.hero .grille{grid-template-columns:1fr;gap:var(--espace-6)}}
+.etiquette{display:inline-block;font-size:var(--taille-s);font-weight:var(--graisse-forte);border:1px solid var(--couleur-bouton-secondaire-bord);border-radius:var(--rayon-rond);padding:.15rem .75rem;margin-bottom:var(--espace-4)}
+.hero .chapeau{color:var(--lt-brume);max-width:36rem}
+.actions{display:flex;flex-wrap:wrap;gap:var(--espace-3);margin:var(--espace-5) 0 var(--espace-4)}
+.hero .petit{color:var(--lt-brume)}
+
+/* Aperçu produit (thème papier fixe : l'application vit sur le papier) */
+.apercu{background:var(--lt-papier);color:var(--lt-nuit);border-radius:var(--rayon-l);padding:var(--espace-5);font-size:var(--taille-s);line-height:var(--interligne-serre)}
+.apercu figcaption{font-size:var(--taille-xs);color:var(--lt-ardoise);margin-top:var(--espace-3)}
+.apercu .titre-apercu{font-family:var(--police-titre);font-weight:var(--graisse-titre);font-size:var(--taille-l);margin:0 0 var(--espace-3)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--espace-2);margin-bottom:var(--espace-3)}
+.kpi{background:var(--lt-blanc);border:1px solid var(--lt-lin);border-radius:var(--rayon-m);padding:var(--espace-2) var(--espace-3)}
+.kpi strong{display:block;font-size:var(--taille-l);font-variant-numeric:var(--chiffres)}
+.kpi span{color:var(--lt-ardoise);font-size:var(--taille-xs)}
+.echeances{background:var(--lt-blanc);border:1px solid var(--lt-lin);border-radius:var(--rayon-m);padding:var(--espace-3)}
+.echeances ul{list-style:none;margin:0;padding:0}
+.echeances li{display:flex;justify-content:space-between;gap:var(--espace-3);padding:var(--espace-2) 0;border-top:1px solid var(--lt-lin)}
+.echeances li:first-child{border-top:0}
+.pastille{display:inline-block;background:var(--lt-ambre-pale);color:var(--lt-ambre-profond);font-weight:var(--graisse-forte);font-size:var(--taille-xs);border-radius:var(--rayon-s);padding:0 .35rem;margin-left:.35rem;white-space:nowrap}
+.pourquoi{color:var(--lt-ardoise);font-size:var(--taille-xs);margin:var(--espace-2) 0 0}
+@media (max-width:30rem){.kpis{grid-template-columns:1fr}}
+
+/* Cartes et grilles */
+.grille-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--grille-gouttiere);margin-top:var(--espace-6)}
+.grille-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--grille-gouttiere);margin-top:var(--espace-6)}
+@media (max-width:60rem){.grille-3{grid-template-columns:1fr}}
+@media (max-width:40rem){.grille-2{grid-template-columns:1fr}}
+.carte{background:var(--couleur-surface);border:1px solid var(--couleur-filet);border-radius:var(--rayon-l);padding:var(--espace-5)}
+.carte h3{margin-bottom:var(--espace-2)}
+.carte p:last-child,.carte ul:last-child{margin-bottom:0}
+.icone{width:28px;height:28px;color:var(--couleur-texte);margin-bottom:var(--espace-3);--icone-lumiere:var(--couleur-accent)}
+.douleurs{list-style:none;padding:0;margin:var(--espace-6) 0 0;display:grid;gap:var(--espace-4);max-width:var(--mesure-texte)}
+.douleurs li{border-left:3px solid var(--couleur-accent);padding:var(--espace-1) 0 var(--espace-1) var(--espace-4)}
+.etapes{list-style:none;padding:0;margin:var(--espace-6) 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--grille-gouttiere);counter-reset:etape}
+@media (max-width:60rem){.etapes{grid-template-columns:1fr}}
+.etapes li{counter-increment:etape;background:var(--couleur-surface);border:1px solid var(--couleur-filet);border-radius:var(--rayon-l);padding:var(--espace-5)}
+.etapes li::before{content:counter(etape);display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--couleur-bouton-fond);color:var(--couleur-bouton-texte);font-weight:var(--graisse-forte);margin-bottom:var(--espace-3)}
+.encadre{background:var(--couleur-mise-en-avant);border-radius:var(--rayon-l);padding:var(--espace-5) var(--espace-6)}
+@media (max-width:40rem){.encadre{padding:var(--espace-5)}}
+.liste-coche{list-style:none;padding:0;margin:0}
+.liste-coche li{position:relative;padding-left:1.75rem;margin-bottom:var(--espace-2)}
+.liste-coche li::before{content:"";position:absolute;left:.25rem;top:.55em;width:.8rem;height:.45rem;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg)}
+.liste-non li::before{width:.8rem;height:0;border-left:0;transform:none;top:.75em}
+.statut-prevu{font-size:var(--taille-xs);font-weight:var(--graisse-forte);color:var(--couleur-texte-secondaire);border:1px solid var(--couleur-trait);border-radius:var(--rayon-s);padding:0 .35rem;margin-left:.35rem;white-space:nowrap}
+
+/* Tarifs */
+table{border-collapse:collapse;width:100%;font-size:var(--taille-m)}
+caption{text-align:left;font-weight:var(--graisse-forte);margin-bottom:var(--espace-3)}
+th,td{text-align:left;padding:var(--espace-3);border-bottom:1px solid var(--couleur-filet);vertical-align:top}
+thead th{font-size:var(--taille-s);color:var(--couleur-texte-secondaire)}
+td.prix{font-variant-numeric:var(--chiffres);white-space:nowrap;font-weight:var(--graisse-forte)}
+.tableau-defilant{overflow-x:auto}
+.prix-phare{font-family:var(--police-titre);font-weight:var(--graisse-titre);font-size:var(--taille-2xl);margin:0 0 var(--espace-2)}
+
+/* Autodiagnostic */
+.autodiag{display:grid;grid-template-columns:auto 1fr;gap:var(--espace-6);align-items:center;border-radius:var(--rayon-xl);padding:var(--espace-7) var(--espace-6)}
+.autodiag img{width:72px;height:auto}
+@media (max-width:40rem){.autodiag{grid-template-columns:1fr;padding:var(--espace-6) var(--espace-5)}}
+
+/* FAQ */
+details{border-bottom:1px solid var(--couleur-filet);padding:var(--espace-4) 0}
+summary{cursor:pointer;font-weight:var(--graisse-forte);list-style-position:outside;padding-left:var(--espace-1)}
+summary::marker{color:var(--couleur-accent)}
+details p{margin:var(--espace-3) 0 0}
+
+/* Formulaire */
+.formulaire{background:var(--couleur-surface);border:1px solid var(--couleur-filet);border-radius:var(--rayon-l);padding:var(--espace-6);max-width:var(--largeur-texte)}
+@media (max-width:40rem){.formulaire{padding:var(--espace-5) var(--espace-4)}}
+.champ{margin-bottom:var(--espace-5)}
+label,legend{display:block;font-weight:var(--graisse-forte);font-size:var(--taille-m);margin-bottom:var(--espace-2)}
+.oblig{font-weight:var(--graisse-texte);color:var(--couleur-texte-secondaire);font-size:var(--taille-s)}
+.aide{display:block;font-size:var(--taille-s);color:var(--couleur-texte-secondaire);margin:calc(-1 * var(--espace-1)) 0 var(--espace-2)}
+input[type=email],input[type=text],select{width:100%;font:inherit;font-size:var(--taille-m);color:var(--couleur-texte);background:var(--couleur-surface);border:1px solid var(--couleur-trait);border-radius:var(--rayon-m);padding:.65rem .75rem;min-height:44px}
+input:focus-visible,select:focus-visible{outline:3px solid var(--couleur-focus);outline-offset:1px}
+fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
+.choix{display:flex;align-items:flex-start;gap:var(--espace-3);margin-bottom:var(--espace-2);font-size:var(--taille-m)}
+.choix input{width:1.25rem;height:1.25rem;margin:.15rem 0 0;flex:none;accent-color:var(--couleur-bouton-fond)}
+.choix label{font-weight:var(--graisse-texte);margin:0}
+.consentement{border-top:1px solid var(--couleur-filet);padding-top:var(--espace-4)}
+.piege{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.message{border-radius:var(--rayon-m);padding:var(--espace-4);margin-bottom:var(--espace-5);border-left:4px solid}
+.message-succes{border-color:var(--couleur-succes);background:var(--couleur-mise-en-avant)}
+.message-erreur{border-color:var(--couleur-erreur);background:var(--couleur-mise-en-avant)}
+.message strong{display:block}
+.mention-form{font-size:var(--taille-s);color:var(--couleur-texte-secondaire);margin-top:var(--espace-4)}
+
+/* Pied de page */
+.pied{padding:var(--espace-7) 0 var(--espace-6);font-size:var(--taille-s)}
+.pied .conteneur{display:grid;gap:var(--espace-4)}
+.pied img{width:140px;height:auto}
+.pied p{margin:0;color:var(--lt-brume)}
+.pied a{color:var(--lt-papier)}
+.pied ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--espace-5)}
+@media print{.zone-nuit{background:none;color:#000}.halo,.actions,.entete nav{display:none}}
+</style>
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<a class="evitement" href="#liste-attente">Aller au formulaire de la liste d'attente</a>
+
+<div class="zone-nuit">
+ <header class="entete" role="banner">
+  <div class="conteneur">
+   <a href="#contenu" aria-label="Lanternis, haut de la page"><img src="../../marque/charte/logo/logo-horizontal-nuit.svg" width="160" height="34" alt="Lanternis"></a>
+   <nav aria-label="Navigation de la page">
+    <ul>
+     <li><a href="#comment">Comment ça marche</a></li>
+     <li><a href="#tarifs">Tarifs envisagés</a></li>
+     <li><a href="#prestataire">Et mon prestataire ?</a></li>
+     <li><a href="#questions">Questions</a></li>
+    </ul>
+   </nav>
+  </div>
+ </header>
+</div>
+
+<main id="contenu" tabindex="-1">
+ <section class="hero zone-nuit" aria-labelledby="titre-principal">
+  <div class="halo" aria-hidden="true"></div>
+  <div class="conteneur grille">
+   <div>
+    <p class="etiquette">En préparation · liste d'attente ouverte</p>
+    <!-- Titre A (défaut, P1) ; B via ?v=b ; variante ESS via ?public=ess. Textes : validation.md § 4 et § 8. -->
+    <h1 id="titre-principal" data-titre-a="Votre informatique, enfin lisible." data-titre-b="Quand votre référent informatique part, votre informatique reste." data-titre-ess="Présentez à votre CA une informatique maîtrisée et chiffrée.">Votre informatique, enfin lisible.</h1>
+    <p class="chapeau" id="sous-titre" data-sous-titre-ess="Ce que vous avez, ce que vous payez, ce qui arrive à échéance, sur une seule page. Un DSI de poche pour les associations et les structures de l'ESS de 20 à 249 salariés sans DSI, mis en place avec vous, à tarif associatif.">Ce que vous avez, ce que vous payez, ce qui arrive à échéance, sur une seule page, avec une alerte avant chaque renouvellement. Un DSI de poche pour les PME et les associations sans DSI, mis en place avec vous.</p>
+    <div class="actions">
+     <a class="bouton" href="#liste-attente" data-evenement="CTA hero">Rejoindre la liste d'attente</a>
+     <a class="bouton bouton-secondaire" href="#tarifs" data-evenement="Voir tarifs">Voir les tarifs envisagés</a>
+    </div>
+    <p class="petit">Gratuit et sans engagement. Pour les PME de 50 à 249 salariés et les associations de 20 à 249 salariés.</p>
+   </div>
+
+   <figure class="apercu" aria-labelledby="legende-apercu">
+    <p class="titre-apercu">Votre informatique ce mois-ci</p>
+    <div class="kpis">
+     <div class="kpi"><span>Coût informatique annuel</span><strong>38 420 € HT</strong></div>
+     <div class="kpi"><span>Échéances à 90 jours</span><strong>4 <span class="pastille">à décider</span></strong></div>
+     <div class="kpi"><span>Accès d'anciens salariés</span><strong>3 <span class="pastille">à fermer</span></strong></div>
+    </div>
+    <div class="echeances">
+     <p style="margin:0 0 var(--espace-2);font-weight:600">Échéances des 90 prochains jours</p>
+     <ul>
+      <li><span>Maintenance des copieurs <span class="pastille">dans 45 j</span></span><span class="num">2 160 € HT/an</span></li>
+      <li><span>Licences Microsoft 365 (38) <span class="pastille">dans 62 j</span></span><span class="num">4 560 € HT/an</span></li>
+      <li><span>Nom de domaine principal <span class="pastille">dans 80 j</span></span><span class="num">18 € HT/an</span></li>
+     </ul>
+     <p class="pourquoi">Pourquoi vous voyez ceci : le contrat des copieurs se reconduit tacitement le 15 décembre.</p>
+    </div>
+    <figcaption id="legende-apercu">Maquette de principe du tableau de bord prévu. Exemple fictif : ces montants ne viennent d'aucun client.</figcaption>
+   </figure>
+  </div>
+ </section>
+
+ <!-- 2. Problème -->
+ <section aria-labelledby="titre-probleme">
+  <div class="conteneur">
+   <h2 id="titre-probleme">Votre informatique est-elle une boîte noire ?</h2>
+   <p class="chapeau texte">Sans DSI, la carte de votre système d'information (le SI, c'est-à-dire tout votre informatique) tient souvent dans la tête d'une personne ou dans l'outil de votre prestataire.</p>
+   <ul class="douleurs">
+    <li><strong>Une seule personne sait.</strong> Si votre référent informatique partait demain, qui saurait ce que vous possédez, ce que vous payez et ce qui se renouvelle le mois prochain ?</li>
+    <li><strong>Des contrats se reconduisent sans décision.</strong> Abonnements pris par carte bancaire, licences que personne n'utilise, contrats de maintenance renouvelés faute d'avoir vu passer la date de préavis.</li>
+    <li><strong>On ne sait plus qui a accès à quoi.</strong> Comptes d'anciens salariés, accès de prestataires : la question arrive souvent le jour où un client, un assureur ou votre CA la pose.</li>
+   </ul>
+  </div>
+ </section>
+
+ <!-- 3. Solution -->
+ <section class="filet" aria-labelledby="titre-solution">
+  <div class="conteneur">
+   <h2 id="titre-solution">Lanternis vous donne la carte, et vous prévient avant</h2>
+   <p class="chapeau texte">Un registre de tout votre SI, écrit pour la direction, pas pour des techniciens.</p>
+   <div class="grille-3">
+    <div class="carte">
+     <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+     <h3>Ce que vous avez</h3>
+     <p>Matériel, logiciels, licences et abonnements, contrats, fournisseurs, accès : un seul registre, lisible en quelques minutes.</p>
+    </div>
+    <div class="carte">
+     <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.3A4.5 4.5 0 1 0 15.5 15.7"/><path d="M7.5 10.6h5M7.5 13.4h5"/></svg>
+     <h3>Ce que vous payez</h3>
+     <p>Chaque abonnement et chaque contrat en euros HT par an, et le coût de votre informatique par salarié. De quoi supprimer ce qui ne sert plus.</p>
+    </div>
+    <div class="carte">
+     <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="15.5" cy="15.5" r="2" fill="currentColor" stroke="none" style="fill:var(--icone-lumiere)"/></svg>
+     <h3>Ce qui arrive à échéance</h3>
+     <p>Une alerte avant chaque renouvellement, chaque fin de contrat et chaque départ de salarié à traiter. Des alertes rares et utiles, pas un flux de notifications.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 4. Comment ça marche -->
+ <section class="filet" id="comment" aria-labelledby="titre-comment">
+  <div class="conteneur">
+   <h2 id="titre-comment">Comment ça marche</h2>
+   <p class="chapeau texte">Lanternis n'est pas livré vide : la mise en place se fait avec vous, par un spécialiste du SI.</p>
+   <ol class="etapes">
+    <li><h3>On part de ce que vous avez déjà</h3><p>Votre fichier Excel, vos factures, la liste de votre prestataire. Nous remplissons le registre avec vous.</p></li>
+    <li><h3>On relie vos outils</h3><p>Microsoft 365 ou Google Workspace, votre banque ou votre logiciel comptable, pour que le registre reste à jour <span class="statut-prevu">connecteurs prévus</span>.</p></li>
+    <li><h3>Vous êtes prévenu avant</h3><p>Des alertes avant les échéances et une synthèse mensuelle d'une page pour la direction.</p></li>
+   </ol>
+  </div>
+ </section>
+
+ <!-- 5. Et mon prestataire ? -->
+ <section class="filet" id="prestataire" aria-labelledby="titre-prestataire">
+  <div class="conteneur">
+   <div class="encadre texte">
+    <h2 id="titre-prestataire">Et votre prestataire ?</h2>
+    <p>Il fait marcher vos postes, vos sauvegardes et votre réseau : il continue. Lanternis ne le remplace pas, il vous donne la carte pour piloter avec lui. Votre prestataire peut d'ailleurs compléter le registre avec vous.</p>
+    <p style="margin:0"><strong>Si votre référent part, votre SI reste.</strong></p>
+   </div>
+  </div>
+ </section>
+
+ <!-- 6. Lead magnet : autodiagnostic -->
+ <section aria-labelledby="titre-autodiag">
+  <div class="conteneur">
+   <div class="autodiag zone-nuit">
+    <img src="../../marque/charte/logo/symbole-nuit.svg" width="72" height="72" alt="">
+    <div>
+     <h2 id="titre-autodiag">Autodiagnostic SI gratuit : 10 questions, 5 minutes</h2>
+     <p class="texte" style="color:var(--lt-brume)">Savez-vous ce que vous avez, ce que vous payez et ce qui arrive à échéance ? Répondez à 10 questions et obtenez votre profil, avec trois actions simples à mener ce mois-ci. Le résultat s'affiche à l'écran : aucune adresse email n'est demandée pour le voir.</p>
+     <!-- autodiagnostic.html : page à construire par dev-vitrine à partir de autodiagnostic.md (calcul dans le navigateur). -->
+     <a class="bouton" href="autodiagnostic.html" data-evenement="Clic autodiagnostic">Faire l'autodiagnostic</a>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 7. Pour qui / pas pour qui -->
+ <section class="filet" aria-labelledby="titre-pourqui">
+  <div class="conteneur">
+   <h2 id="titre-pourqui">Pour qui, et pour qui ce n'est pas</h2>
+   <div class="grille-2">
+    <div class="carte">
+     <h3>Lanternis est fait pour vous si</h3>
+     <ul class="liste-coche">
+      <li>vous dirigez une PME de 50 à 249 salariés, ou une association de 20 à 249 salariés ;</li>
+      <li>vous n'avez pas de DSI, et l'informatique repose sur un prestataire, un référent ou « la personne qui s'y connaît » ;</li>
+      <li>vous voulez savoir ce que vous payez et décider avant les renouvellements ;</li>
+      <li>vous devez rendre des comptes : à votre CA, à vos financeurs, à un assureur ou à un client.</li>
+     </ul>
+    </div>
+    <div class="carte">
+     <h3>Ce n'est pas pour vous si</h3>
+     <ul class="liste-coche liste-non">
+      <li>vous avez déjà une DSI ou une équipe informatique interne qui tient ce registre ;</li>
+      <li>vous cherchez un dépannage, une infogérance ou un antivirus : c'est le métier de votre prestataire ;</li>
+      <li>vous cherchez seulement à gérer des abonnements en ligne : des outils plus simples existent.</li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 8. Engagements (preuves honnêtes, sans témoignage) -->
+ <section class="filet" aria-labelledby="titre-engagements">
+  <div class="conteneur">
+   <h2 id="titre-engagements">Ce que nous pouvons vous promettre aujourd'hui</h2>
+   <p class="chapeau texte">Lanternis est en préparation : nous n'avons pas encore de clients, donc pas de témoignages. Voici ce qui est déjà vrai, et ce qui est prévu.</p>
+   <div class="grille-2">
+    <div class="carte">
+     <h3>Déjà vrai</h3>
+     <ul class="liste-coche">
+      <li>Des tarifs publics, hors taxes, sans « contactez-nous ».</li>
+      <li>Conçu par un spécialiste du SI : 25 ans de support, de projets et de pilotage de prestataires.</li>
+      <li>Cette page ne dépose aucun cookie et ne charge aucun traceur.</li>
+      <li>Vos réponses ne sont ni revendues ni utilisées à des fins publicitaires.</li>
+     </ul>
+    </div>
+    <div class="carte">
+     <h3>Prévu à l'ouverture</h3>
+     <ul class="liste-coche">
+      <li>Hébergement des données en France <span class="statut-prevu">prévu</span></li>
+      <li>Export complet de votre registre à tout moment, même si vous arrêtez <span class="statut-prevu">prévu</span></li>
+      <li>Ni vos fichiers, ni vos mots de passe, ni les données des personnes que vous accompagnez : seulement la liste de vos outils et contrats <span class="statut-prevu">prévu</span></li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 9. Tarifs envisagés -->
+ <section class="filet" id="tarifs" aria-labelledby="titre-tarifs">
+  <div class="conteneur">
+   <h2 id="titre-tarifs">Tarifs de lancement envisagés</h2>
+   <p class="prix-phare num">À partir de 149 € HT par mois</p>
+   <p class="texte">Un forfait par structure selon l'effectif, sans facturation par utilisateur. Ces tarifs sont envisagés pour le lancement et peuvent encore évoluer : les inscrits en seront informés avant toute ouverture.</p>
+   <div class="tableau-defilant">
+    <table>
+     <caption>Abonnement mensuel envisagé, par tranche d'effectif</caption>
+     <thead><tr><th scope="col">Effectif de la structure</th><th scope="col">Tarif envisagé</th><th scope="col">Pour l'essentiel</th></tr></thead>
+     <tbody>
+      <tr><th scope="row">20 à 49 salariés</th><td class="prix">149 € HT/mois</td><td>Registre du SI, import de votre Excel, alertes de renouvellement et de départ</td></tr>
+      <tr><th scope="row">50 à 99 salariés</th><td class="prix">249 € HT/mois</td><td>Le même, plus le coût du SI par salarié, la procédure d'arrivée et de départ, la synthèse mensuelle</td></tr>
+      <tr><th scope="row">100 à 249 salariés</th><td class="prix">à partir de 399 € HT/mois</td><td>Le même, plus plusieurs établissements et une revue trimestrielle d'une heure avec un DSI</td></tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="grille-2">
+    <div class="encadre">
+     <h3>Associations et structures de l'ESS</h3>
+     <p style="margin:0">Remise de 15 % sur l'abonnement, cumulable avec l'engagement annuel. Conditions d'éligibilité à préciser à l'ouverture.</p>
+    </div>
+    <div class="encadre">
+     <h3>Engagement annuel</h3>
+     <p style="margin:0">20 % de moins que le tarif mensuel. La mise en place accompagnée est facturée une fois, à part (490 à 990 € HT envisagés selon la tranche).</p>
+    </div>
+   </div>
+   <p class="petit" style="margin-top:var(--espace-4)">Prix hors taxes ; TVA en sus. Aucun paiement n'est demandé pour rejoindre la liste d'attente.</p>
+  </div>
+ </section>
+
+ <!-- 10. FAQ (objections) -->
+ <section class="filet" id="questions" aria-labelledby="titre-faq">
+  <div class="conteneur texte">
+   <h2 id="titre-faq">Vos questions</h2>
+   <details>
+    <summary>Mon prestataire s'en occupe déjà. Pourquoi Lanternis ?</summary>
+    <p>Il s'occupe de faire marcher votre informatique. Mais la liste de vos contrats, de vos abonnements et de vos accès, avec leurs dates d'échéance, l'avez-vous, vous ? Lanternis vous la donne, et votre prestataire peut y contribuer.</p>
+   </details>
+   <details>
+    <summary>Encore un outil à remplir : qui va le tenir à jour ?</summary>
+    <p>Nous faisons la mise en place avec vous, à partir de votre Excel. Ensuite, les connecteurs prévus (Microsoft 365 ou Google Workspace, banque ou logiciel comptable) et les alertes font le gros du travail : c'est Lanternis qui vous écrit, pas l'inverse.</p>
+   </details>
+   <details>
+    <summary>Je préfère recruter un responsable informatique.</summary>
+    <p>C'est une vraie option. Elle coûte de l'ordre de 45 000 à 75 000 € brut par an d'après des offres d'emploi publiées en octobre 2026<a href="#source-1" id="renvoi-1"><sup><span class="visuellement-cache">source </span>1</sup></a>, et le recrutement peut être long : en 2024, 54 % des entreprises de 50 à 249 salariés qui ont cherché un spécialiste informatique ont eu des difficultés à recruter<a href="#source-2" id="renvoi-2"><sup><span class="visuellement-cache">source </span>2</sup></a>. Lanternis peut aussi aider une personne recrutée : la carte reste dans l'outil, même quand les gens changent.</p>
+   </details>
+   <details>
+    <summary>Où seront hébergées nos données ?</summary>
+    <p>L'hébergement est prévu en France. Nous stockerons la liste de vos outils, contrats et fournisseurs, pas vos fichiers, pas vos mots de passe, ni aucune donnée des personnes que vous accompagnez. Les sous-traitants seront listés publiquement avant l'ouverture.</p>
+   </details>
+   <details>
+    <summary>Et si Lanternis s'arrête un jour ?</summary>
+    <p>L'export complet de votre registre, à tout moment, est prévu dès l'ouverture : la carte de votre SI vous appartient.</p>
+   </details>
+   <details>
+    <summary>Quand Lanternis sera-t-il disponible ?</summary>
+    <p>Le produit est en préparation. Nous ouvrirons les premiers accès d'abord aux inscrits de la liste d'attente, par petits groupes, pour faire la mise en place avec chacun. Nous ne donnons pas de date tant qu'elle n'est pas sûre.</p>
+   </details>
+   <details>
+    <summary>Qui est derrière Lanternis ?</summary>
+    <p>Lanternis est une marque d'Hasteria SASU, société française dont le siège est à Neuilly-sur-Seine. C'est Hasteria qui vous facturera, aux conditions écrites dans nos conditions générales de vente.</p>
+   </details>
+  </div>
+ </section>
+
+ <!-- 11. Formulaire (CTA final) -->
+ <section class="filet" id="liste-attente" aria-labelledby="titre-formulaire">
+  <div class="conteneur">
+   <h2 id="titre-formulaire">Rejoindre la liste d'attente</h2>
+   <p class="chapeau texte">Soyez parmi les premiers à faire la carte de votre SI avec nous. Cela prend une minute.</p>
+
+   <div id="zone-message" tabindex="-1">
+    <div class="message message-succes" id="message-succes" role="status" hidden>
+     <strong>Merci, votre demande est enregistrée.</strong>
+     Un email de confirmation vient de vous être envoyé : cliquez sur le lien qu'il contient pour valider votre inscription. Pensez à regarder dans les indésirables.
+    </div>
+    <div class="message message-erreur" id="message-erreur" role="alert" hidden>
+     <strong>Votre inscription n'a pas pu être enregistrée.</strong>
+     <span id="texte-erreur">Vérifiez les champs obligatoires, puis réessayez.</span>
+    </div>
+   </div>
+
+   <form class="formulaire" action="waitlist.php" method="post" accept-charset="UTF-8" data-evenement-debut="Début formulaire">
+    <p class="petit" style="margin-top:0">Les champs marqués « obligatoire » sont nécessaires pour traiter votre demande.</p>
+
+    <div class="champ">
+     <label for="email">Votre email professionnel <span class="oblig">(obligatoire)</span></label>
+     <span class="aide" id="aide-email">Format attendu : nom@votre-structure.fr</span>
+     <input type="email" id="email" name="email" autocomplete="email" required maxlength="254" aria-describedby="aide-email" spellcheck="false">
+    </div>
+
+    <div class="champ">
+     <label for="structure">Nom de votre structure <span class="oblig">(obligatoire)</span></label>
+     <input type="text" id="structure" name="structure" autocomplete="organization" required maxlength="120">
+    </div>
+
+    <fieldset>
+     <legend>Type de structure <span class="oblig">(obligatoire)</span></legend>
+     <div class="choix"><input type="radio" id="type-entreprise" name="type" value="entreprise" required><label for="type-entreprise">Entreprise</label></div>
+     <div class="choix"><input type="radio" id="type-ess" name="type" value="ess"><label for="type-ess">Association, fondation, coopérative ou autre structure de l'ESS</label></div>
+    </fieldset>
+
+    <div class="champ">
+     <label for="effectif">Effectif <span class="oblig">(obligatoire)</span></label>
+     <select id="effectif" name="effectif" required>
+      <option value="">Choisissez une tranche</option>
+      <option value="moins-20">Moins de 20 salariés</option>
+      <option value="20-49">20 à 49 salariés</option>
+      <option value="50-99">50 à 99 salariés</option>
+      <option value="100-249">100 à 249 salariés</option>
+      <option value="250-plus">250 salariés ou plus</option>
+     </select>
+    </div>
+
+    <fieldset>
+     <legend>Ce qui vous préoccupe le plus aujourd'hui <span class="oblig">(obligatoire, un seul choix)</span></legend>
+     <div class="choix"><input type="radio" id="d-depart" name="douleur" value="depart-referent" required><label for="d-depart">Notre référent informatique part ou est parti, et ce qu'il savait avec lui</label></div>
+     <div class="choix"><input type="radio" id="d-couts" name="douleur" value="couts"><label for="d-couts">Je ne sais pas exactement ce que nous payons (abonnements, licences, contrats)</label></div>
+     <div class="choix"><input type="radio" id="d-renouv" name="douleur" value="renouvellements"><label for="d-renouv">Des contrats se renouvellent sans que nous l'ayons décidé</label></div>
+     <div class="choix"><input type="radio" id="d-acces" name="douleur" value="acces"><label for="d-acces">Je ne sais pas qui a encore accès à quoi (anciens salariés, prestataires)</label></div>
+     <div class="choix"><input type="radio" id="d-comptes" name="douleur" value="rendre-compte"><label for="d-comptes">Je dois rendre des comptes (CA, financeurs, assureur, client) sans avoir les éléments</label></div>
+     <div class="choix"><input type="radio" id="d-autre" name="douleur" value="autre"><label for="d-autre">Autre chose</label></div>
+     <label for="douleur-autre" class="petit" style="font-weight:400;margin-top:var(--espace-3)">Si vous avez choisi « Autre chose », précisez en quelques mots (facultatif)</label>
+     <input type="text" id="douleur-autre" name="douleur_autre" maxlength="200">
+    </fieldset>
+
+    <fieldset class="consentement">
+     <legend class="visuellement-cache">Options facultatives</legend>
+     <div class="choix"><input type="checkbox" id="nouvelles" name="nouvelles" value="oui"><label for="nouvelles">J'accepte de recevoir les nouvelles de Lanternis par email (au plus une par mois). Facultatif, désinscription en un clic.</label></div>
+     <div class="choix"><input type="checkbox" id="echange" name="echange" value="oui"><label for="echange">J'accepte d'être recontacté(e) pour un échange de 30 minutes sur l'informatique de ma structure. Facultatif, sans démarche commerciale.</label></div>
+    </fieldset>
+
+    <!-- Champs techniques : variante affichée, public et source du lien (remplis par le script ; aucune donnée personnelle). -->
+    <input type="hidden" name="variante" id="champ-variante" value="a">
+    <input type="hidden" name="public" id="champ-public" value="pme">
+    <input type="hidden" name="source" id="champ-source" value="direct">
+    <div class="piege" aria-hidden="true"><label for="site_web">Ne pas remplir ce champ</label><input type="text" id="site_web" name="site_web" tabindex="-1" autocomplete="off"></div>
+
+    <button class="bouton" type="submit">Rejoindre la liste d'attente</button>
+
+    <p class="mention-form">Hasteria SASU, qui exploite la marque Lanternis, utilise ces informations pour vous prévenir de l'ouverture de Lanternis et, si vous l'avez accepté ci-dessus, pour vous envoyer ses nouvelles ou vous proposer un échange. Elles ne sont ni revendues ni cédées. Vous pouvez vous désinscrire à tout moment et exercer vos droits (accès, rectification, effacement) en écrivant à contact@hasteria.net. Détails dans notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+   </form>
+  </div>
+ </section>
+
+ <!-- Sources des chiffres cités -->
+ <section class="filet" aria-labelledby="titre-sources" style="padding-top:var(--espace-6)">
+  <div class="conteneur texte">
+   <h2 id="titre-sources" style="font-size:var(--taille-xl)">Sources des chiffres cités</h2>
+   <ol class="petit">
+    <li id="source-1">Offres d'emploi de responsable informatique publiées sur HelloWork en octobre 2026 (fourchettes de 45 à 70 k€ et de 65 à 75 k€ brut par an), consultées le 25 octobre 2026 : <a href="https://www.hellowork.com/fr-fr/emplois/82433859.html">offre 1</a>, <a href="https://www.hellowork.com/fr-fr/emplois/84330801.html">offre 2</a>. <a href="#renvoi-1">Retour au texte</a></li>
+    <li id="source-2">Insee, « Les entreprises et le recrutement de spécialistes des TIC », publication du 14 octobre 2025, consultée le 25 octobre 2026 : <a href="https://www.insee.fr/fr/statistiques/8616805">insee.fr/fr/statistiques/8616805</a>. <a href="#renvoi-2">Retour au texte</a></li>
+   </ol>
+   <p class="petit">Les montants du tableau de bord présenté plus haut sont un exemple fictif.</p>
+  </div>
+ </section>
+</main>
+
+<footer class="pied zone-nuit" role="contentinfo">
+ <div class="conteneur">
+  <img src="../../marque/charte/logo/logo-horizontal-nuit.svg" width="140" height="30" alt="Lanternis">
+  <p><strong style="color:var(--lt-papier)">Lanternis est une marque d'Hasteria SASU.</strong></p>
+  <p>Hasteria SASU au capital de 300 €, 99 avenue Achille Peretti, 92200 Neuilly-sur-Seine. RCS Nanterre 981 178 429. TVA intracommunautaire FR71981178429. Directeur de la publication : Yann Catois. Contact : <a href="mailto:contact@hasteria.net">contact@hasteria.net</a>.</p>
+  <ul>
+   <li><a href="mentions-legales.html">Mentions légales</a></li>
+   <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+   <li><a href="#contenu">Haut de page</a></li>
+  </ul>
+  <p>Cette page ne dépose aucun cookie et ne charge aucune ressource externe.</p>
+ </div>
+</footer>
+
+<script>
+/* Lanternis · landing de validation · script facultatif (la page fonctionne sans).
+   1. Variante du titre (?v=a|b) et public (?public=ess) ; 2. source du lien (?src=) ;
+   3. messages de retour de waitlist.php (?inscription=ok | ?erreur=...) ;
+   4. points d'accroche des événements, inactifs tant qu'aucun outil sans cookie n'est installé.
+   Aucun stockage local, aucun cookie. */
+(function () {
+  var q = new URLSearchParams(location.search);
+  var variante = q.get("v") === "b" ? "b" : "a";
+  var publicCible = q.get("public") === "ess" ? "ess" : "pme";
+  var source = (q.get("src") || "direct").toLowerCase().replace(/[^a-z0-9-]/g, "").slice(0, 30) || "direct";
+  var h1 = document.getElementById("titre-principal");
+  var st = document.getElementById("sous-titre");
+
+  if (publicCible === "ess") {
+    h1.textContent = h1.dataset.titreEss;
+    st.textContent = st.dataset.sousTitreEss;
+    var typeEss = document.getElementById("type-ess");
+    if (typeEss) typeEss.checked = true;
+  } else if (variante === "b") {
+    h1.textContent = h1.dataset.titreB;
+  }
+  document.getElementById("champ-variante").value = publicCible === "ess" ? "ess" : variante;
+  document.getElementById("champ-public").value = publicCible;
+  document.getElementById("champ-source").value = source;
+
+  function suivre(nom, props) {
+    props = props || {};
+    props.variante = publicCible === "ess" ? "ess" : variante;
+    props.source = source;
+    if (typeof window.plausible === "function") window.plausible(nom, { props: props });
+    else if (window._paq) window._paq.push(["trackEvent", "landing", nom, JSON.stringify(props)]);
+  }
+  document.querySelectorAll("[data-evenement]").forEach(function (el) {
+    el.addEventListener("click", function () { suivre(el.dataset.evenement); });
+  });
+  var form = document.querySelector("form.formulaire");
+  var debut = false;
+  form.addEventListener("focusin", function () {
+    if (!debut) { debut = true; suivre(form.dataset.evenementDebut); }
+  });
+  form.addEventListener("submit", function () {
+    var f = new FormData(form);
+    suivre("Envoi formulaire", { effectif: f.get("effectif") || "", type: f.get("type") || "", douleur: f.get("douleur") || "" });
+  });
+  document.querySelectorAll("details").forEach(function (d) {
+    d.addEventListener("toggle", function () { if (d.open) suivre("Ouverture FAQ", { question: d.querySelector("summary").textContent.slice(0, 60) }); });
+  });
+
+  var erreurs = {
+    email: "L'adresse email semble incorrecte. Vérifiez le champ « Votre email professionnel ».",
+    champs: "Un ou plusieurs champs obligatoires sont vides : email, nom de la structure, type, effectif et préoccupation principale.",
+    technique: "Un incident technique nous empêche d'enregistrer votre demande. Réessayez dans quelques minutes ou écrivez à contact@hasteria.net."
+  };
+  var zone = document.getElementById("zone-message");
+  if (q.get("inscription") === "ok") {
+    document.getElementById("message-succes").hidden = false;
+    form.hidden = true;
+    suivre("Inscription");
+    zone.focus();
+  } else if (q.get("erreur")) {
+    document.getElementById("texte-erreur").textContent = erreurs[q.get("erreur")] || erreurs.champs;
+    document.getElementById("message-erreur").hidden = false;
+    zone.focus();
+  }
+})();
+</script>
+</body>
+</html>
