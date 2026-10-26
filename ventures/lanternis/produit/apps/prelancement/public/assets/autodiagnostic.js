@@ -20,33 +20,33 @@
   var PROFILS = {
     "boite-noire": {
       nom: "Informatique en boîte noire",
-      constat: "Aujourd'hui, la carte de votre informatique n'est pas entre vos mains : elle tient dans une tête, chez un prestataire, ou nulle part. C'est très courant dans une structure sans DSI, et cela se corrige par étapes.",
+      constat: "Aujourd'hui, la carte de votre informatique n'est pas entre vos mains : elle tient dans une tête, chez un prestataire, ou nulle part. Cela se corrige par étapes, en commençant par une seule liste.",
       actions: [
-        "Demandez à votre prestataire, ou à votre référent, la liste écrite de ce qu'il gère pour vous : équipements, logiciels, contrats.",
-        "Ouvrez un tableau en trois colonnes : ce que vous avez, ce que vous payez, ce qui arrive à échéance. Remplissez-le avec vos dix plus grosses dépenses informatiques."
+        "Demandez à votre prestataire, ou à votre référent, la liste écrite de ce qu'il gère pour vous : contrats, matériel acheté ou loué, licences, comptes, noms de domaine et sauvegardes.",
+        "Ouvrez un tableau avec une ligne par personne : son matériel, ses comptes, ses licences. Ajoutez un onglet pour vos contrats, avec leur date limite de résiliation."
       ]
     },
     "penombre": {
       nom: "Pénombre",
-      constat: "Vous avez des morceaux de la carte, mais ils sont dispersés ou dépendent d'une personne. Le plus gros du travail est de les rassembler au même endroit, chez vous.",
+      constat: "Vous avez des morceaux de la carte, mais ils sont dispersés ou dépendent d'une personne. Le plus gros du travail est de les rassembler au même endroit, chez vous, et de relier chaque élément à quelqu'un.",
       actions: [
-        "Rassemblez vos contrats informatiques dans un seul dossier et notez, pour chacun, sa date de préavis.",
-        "Écrivez la liste des accès à fermer au départ d'un salarié, et utilisez-la au prochain départ."
+        "Rassemblez vos contrats informatiques et vos contrats de location de matériel dans un seul dossier, et notez pour chacun sa date limite de résiliation ou de fin de location.",
+        "Comparez la liste de vos licences à celle de votre personnel : repérez les licences qui n'ont plus d'utilisateur."
       ]
     },
     "carte-a-completer": {
       nom: "Carte à compléter",
-      constat: "L'essentiel est connu. Ce qui manque, c'est surtout la mise à jour dans le temps et des rappels avant les échéances.",
+      constat: "L'essentiel est connu. Ce qui manque, c'est surtout la mise à jour dans le temps et des rappels avant les échéances : fins de contrat, de location et de garantie, expirations de noms de domaine.",
       actions: [
-        "Mettez un rappel deux mois avant chaque préavis de contrat.",
-        "Fixez une revue annuelle du coût total de votre informatique, avec votre prestataire."
+        "Mettez un rappel deux mois avant chaque date limite de résiliation, chaque fin de location et chaque expiration de nom de domaine.",
+        "Avant la prochaine arrivée ou le prochain départ, préparez la liste à partir de ce que la personne a réellement : matériel, comptes, licences, accès."
       ]
     },
     "bien-eclaire": {
       nom: "Bien éclairé",
-      constat: "Votre informatique est lisible et documentée. L'enjeu est de le rester : quand les personnes changent, quand les outils s'ajoutent.",
+      constat: "Votre informatique est lisible et documentée. L'enjeu est de le rester : quand les personnes changent, quand les outils s'ajoutent, quand les contrats arrivent à échéance.",
       actions: [
-        "Testez une restauration de sauvegarde et gardez le compte rendu.",
+        "Testez une restauration de sauvegarde, gardez le compte rendu, et vérifiez les dates d'expiration de vos noms de domaine et certificats.",
         "Pour aller plus loin sur la sécurité, faites le diagnostic gratuit MonAideCyber."
       ]
     }
@@ -61,17 +61,18 @@
   var ACTION_BIEN_ECLAIRE = "Vérifiez que la documentation ne dépend pas d'une seule personne.";
 
   var POURQUOI = [
-    "Sans liste, impossible de savoir ce qui doit être renouvelé, assuré ou rendu au départ d'un salarié.",
-    "Les abonnements pris par carte bancaire se cumulent sans que personne ne les voie.",
-    "Un préavis manqué, c'est souvent un an de plus au même prix.",
-    "Le savoir qui tient dans une seule tête est le premier point fragile d'une petite structure.",
+    "Sans liste, impossible de savoir ce qui doit être renouvelé, assuré ou rendu, au départ d'un salarié comme à la fin d'une location.",
+    "Les abonnements pris par carte bancaire se cumulent sans que personne ne les voie, et une licence sans utilisateur continue d'être payée.",
+    "Un préavis manqué, c'est un contrat reconduit sans que personne l'ait décidé.",
+    "Si rien n'est relié à la personne, chaque arrivée et chaque départ se refait de mémoire : c'est là que se glissent les oublis.",
     "Un compte resté ouvert après un départ est un accès que plus personne ne surveille.",
-    "Sans ces accès, vous dépendez d'une personne pour reprendre la main sur vos propres outils.",
+    "Un nom de domaine qui expire peut arrêter votre site et votre messagerie ; sans ses accès, vous dépendez d'une personne pour reprendre la main.",
     "Une sauvegarde jamais restaurée est une promesse, pas une garantie.",
-    "Sans coût total, impossible d'arbitrer ou de comparer avec un poste interne ou un autre prestataire.",
-    "Ce qui n'est pas écrit au départ se négocie mal à la sortie.",
-    "C'est la question que posent de plus en plus de CA, de financeurs, d'assureurs et de clients."
+    "Sans coût total, impossible d'arbitrer, de comparer avec un poste interne ou un autre prestataire, ni de répondre à votre CA ou à vos financeurs.",
+    "Une fin de location qui passe inaperçue, c'est une location qui se prolonge sans décision, ou un appareil à retrouver au dernier moment pour le rendre.",
+    "Ce qui n'est pas écrit chez vous part avec la personne ou le prestataire qui le détenait."
   ];
+  /* Alignement marque v1.2 (2026-10-26) : textes des profils et explications repris de autodiagnostic.md ; calcul inchangé. */
 
   var TEXTE_ECHANGE_DEBUT = "Vous voulez savoir par où commencer ? Nous lisons votre résultat avec vous et repartons avec vos trois priorités. Gratuit, par téléphone ou en visio. Ce n'est pas une démonstration commerciale : si Lanternis n'est pas adapté à votre structure, nous vous le dirons.";
   var TEXTE_ECHANGE_AVANCE = "Vous avez déjà une bonne carte. En 30 minutes, nous regardons ensemble comment la garder à jour quand les personnes et les outils changent. Gratuit, par téléphone ou en visio, sans démonstration commerciale.";

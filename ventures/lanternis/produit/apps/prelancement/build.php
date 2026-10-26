@@ -130,8 +130,8 @@ function transformerPage(string $html, string $nom, bool $indexable, array &$res
         avertir("$nom : " . count($x[0]) . " gestionnaire(s) d'événement en ligne (onclick…) bloqué(s) par la CSP");
     }
 
-    // 5. Chemins de la charte et liens vers validation.html
-    $html = preg_replace_callback('~(\s(?:href|src)=")\.\./\.\./marque/charte/([^"#?]+)~', function ($m) use (&$ressources) {
+    // 5. Chemins de la charte (dont l'image Open Graph en content="") et liens vers validation.html
+    $html = preg_replace_callback('~(\s(?:href|src|content)=")\.\./\.\./marque/charte/([^"#?]+)~', function ($m) use (&$ressources) {
         $ressources[$m[2]] = true;
         return $m[1] . 'assets/charte/' . $m[2];
     }, $html);

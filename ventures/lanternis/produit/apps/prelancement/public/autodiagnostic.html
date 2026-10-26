@@ -5,13 +5,16 @@
   Clause du formulaire d'échange : marketing/landing/conformite-prelancement.md § 4.2.
   Le calcul se fait dans le navigateur (assets/autodiagnostic.js) : aucune réponse n'est envoyée,
   sauf si la personne demande un échange ET coche « Joindre mon résultat ». Aucun cookie, aucun stockage local.
+  Alignement marque v1.2 (2026-10-26) : questions et réponses réécrites pour couvrir les 6 domaines (autodiagnostic.md § 2) ;
+  axes, numéros de questions par axe, barème sur 30 et seuils inchangés. L'identifiant q10-tiers (variante ESS lue par le script)
+  est désormais porté par la question 8 : identifiant conservé tel quel pour ne pas modifier le script.
 -->
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Autodiagnostic SI gratuit en 10 questions · Lanternis</title>
-<meta name="description" content="Savez-vous ce que vous avez, ce que vous payez et ce qui arrive à échéance ? 10 questions, 5 minutes, un profil et trois actions à mener ce mois-ci. Résultat à l'écran, sans email.">
+<meta name="description" content="Savez-vous qui a quoi, ce que vous payez et ce qui arrive à échéance ? Contrats, matériel, licences, accès, sauvegardes : 10 questions, 5 minutes, un profil et trois actions à mener ce mois-ci. Résultat à l'écran, sans email.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/charte/logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/charte/tokens.css">
@@ -31,7 +34,7 @@
  <div class="zone-nuit">
   <div class="conteneur intro-diag">
    <h1>Autodiagnostic SI gratuit : 10 questions, 5 minutes</h1>
-   <p class="chapeau texte">Savez-vous ce que vous avez, ce que vous payez et ce qui arrive à échéance ? Répondez à 10 questions et obtenez votre profil, avec trois actions simples à mener ce mois-ci. Le résultat s'affiche à l'écran : aucune adresse email n'est demandée pour le voir.</p>
+   <p class="chapeau texte">Savez-vous qui a quoi, ce que vous payez et ce qui arrive à échéance ? Contrats et fournisseurs, matériel acheté ou loué, licences, comptes et accès, domaines et sauvegardes, arrivées et départs : répondez à 10 questions et obtenez votre profil, avec trois actions simples à mener ce mois-ci. Le résultat s'affiche à l'écran : aucune adresse email n'est demandée pour le voir.</p>
    <p class="texte">Répondez pour votre structure telle qu'elle est aujourd'hui, pas telle qu'elle devrait être. Il n'y a pas de bonne note à viser : le but est de savoir par où commencer.</p>
   </div>
  </div>
@@ -49,46 +52,46 @@
 
    <form id="questionnaire" class="questionnaire" action="#" novalidate>
     <fieldset class="question" id="question-1">
-     <legend><span class="numero">Question 1 sur 10 · Ce que vous avez</span>Avez-vous une liste à jour de vos équipements (ordinateurs, téléphones, serveurs, copieurs), avec la personne qui les utilise ?</legend>
+     <legend><span class="numero">Question 1 sur 10 · Ce que vous avez</span>Avez-vous une liste à jour de votre matériel, acheté, loué ou en leasing (ordinateurs, téléphones, serveurs, copieurs), avec la personne qui utilise chaque appareil ?</legend>
      <div class="choix"><input type="radio" id="q1-0" name="q1" value="0"><label for="q1-0">Non, ou je ne sais pas</label></div>
-     <div class="choix"><input type="radio" id="q1-1" name="q1" value="1"><label for="q1-1">Une liste existe, mais elle n&#x27;est plus à jour</label></div>
+     <div class="choix"><input type="radio" id="q1-1" name="q1" value="1"><label for="q1-1">Une liste existe, mais elle n&#x27;est plus à jour ou oublie le matériel loué</label></div>
      <div class="choix"><input type="radio" id="q1-2" name="q1" value="2"><label for="q1-2">Oui, mais c&#x27;est notre prestataire qui la tient</label></div>
-     <div class="choix"><input type="radio" id="q1-3" name="q1" value="3"><label for="q1-3">Oui, à jour, et nous y avons accès nous-mêmes</label></div>
+     <div class="choix"><input type="radio" id="q1-3" name="q1" value="3"><label for="q1-3">Oui, à jour, matériel loué compris, et nous y avons accès nous-mêmes</label></div>
     </fieldset>
     <fieldset class="question" id="question-2">
-     <legend><span class="numero">Question 2 sur 10 · Ce que vous payez</span>Pourriez-vous lister tous vos abonnements logiciels et licences, avec leur coût annuel ?</legend>
+     <legend><span class="numero">Question 2 sur 10 · Ce que vous payez</span>Pourriez-vous lister vos licences et abonnements logiciels, avec leur coût annuel et la personne qui utilise chacun ?</legend>
      <div class="choix"><input type="radio" id="q2-0" name="q2" value="0"><label for="q2-0">Non, ou je ne sais pas</label></div>
-     <div class="choix"><input type="radio" id="q2-1" name="q2" value="1"><label for="q2-1">En partie : seulement les principaux</label></div>
-     <div class="choix"><input type="radio" id="q2-2" name="q2" value="2"><label for="q2-2">Oui, mais il faudrait plusieurs heures pour la reconstituer</label></div>
-     <div class="choix"><input type="radio" id="q2-3" name="q2" value="3"><label for="q2-3">Oui, en quelques minutes</label></div>
+     <div class="choix"><input type="radio" id="q2-1" name="q2" value="1"><label for="q2-1">En partie : les principaux, sans savoir qui les utilise</label></div>
+     <div class="choix"><input type="radio" id="q2-2" name="q2" value="2"><label for="q2-2">Oui, mais il faudrait plusieurs heures pour reconstituer la liste</label></div>
+     <div class="choix"><input type="radio" id="q2-3" name="q2" value="3"><label for="q2-3">Oui, en quelques minutes, avec l&#x27;utilisateur de chaque licence</label></div>
     </fieldset>
     <fieldset class="question" id="question-3">
-     <legend><span class="numero">Question 3 sur 10 · Ce qui arrive à échéance</span>Connaissez-vous les dates de renouvellement et de préavis de vos contrats informatiques (maintenance, infogérance, copieurs, téléphonie, logiciels) ?</legend>
+     <legend><span class="numero">Question 3 sur 10 · Ce qui arrive à échéance</span>Connaissez-vous, pour chacun de vos contrats informatiques (maintenance, infogérance, copieurs, téléphonie, hébergement, logiciels), la date limite pour le résilier avant qu&#x27;il ne se reconduise ?</legend>
      <div class="choix"><input type="radio" id="q3-0" name="q3" value="0"><label for="q3-0">Non, ou je ne sais pas</label></div>
      <div class="choix"><input type="radio" id="q3-1" name="q3" value="1"><label for="q3-1">Pour un ou deux contrats seulement</label></div>
      <div class="choix"><input type="radio" id="q3-2" name="q3" value="2"><label for="q3-2">Pour la plupart, mais sans rappel organisé</label></div>
-     <div class="choix"><input type="radio" id="q3-3" name="q3" value="3"><label for="q3-3">Oui, toutes, avec un rappel avant chaque préavis</label></div>
+     <div class="choix"><input type="radio" id="q3-3" name="q3" value="3"><label for="q3-3">Oui, pour tous, avec un rappel avant chaque date limite</label></div>
     </fieldset>
     <fieldset class="question" id="question-4">
-     <legend><span class="numero">Question 4 sur 10 · Continuité</span>Si la personne qui connaît le mieux votre informatique était absente trois semaines, que se passerait-il ?</legend>
-     <div class="choix"><input type="radio" id="q4-0" name="q4" value="0"><label for="q4-0">Nous serions bloqués sur des sujets importants, ou je ne sais pas</label></div>
-     <div class="choix"><input type="radio" id="q4-1" name="q4" value="1"><label for="q4-1">Nous nous débrouillerions, avec difficulté</label></div>
-     <div class="choix"><input type="radio" id="q4-2" name="q4" value="2"><label for="q4-2">Notre prestataire prendrait le relais</label></div>
-     <div class="choix"><input type="radio" id="q4-3" name="q4" value="3"><label for="q4-3">L&#x27;essentiel est écrit : quelqu&#x27;un d&#x27;autre peut prendre le relais</label></div>
+     <legend><span class="numero">Question 4 sur 10 · Continuité</span>Quand une personne arrive ou part, savez-vous en une fois ce qu&#x27;elle a ou doit avoir : son matériel, ses comptes, ses licences et ses accès ?</legend>
+     <div class="choix"><input type="radio" id="q4-0" name="q4" value="0"><label for="q4-0">Non, ou je ne sais pas</label></div>
+     <div class="choix"><input type="radio" id="q4-1" name="q4" value="1"><label for="q4-1">Nous le reconstituons de mémoire, au cas par cas</label></div>
+     <div class="choix"><input type="radio" id="q4-2" name="q4" value="2"><label for="q4-2">Nous suivons une liste générique, la même pour tout le monde</label></div>
+     <div class="choix"><input type="radio" id="q4-3" name="q4" value="3"><label for="q4-3">Oui : une liste propre à la personne, avec qui fait quoi, cochée et datée</label></div>
     </fieldset>
     <fieldset class="question" id="question-5">
-     <legend><span class="numero">Question 5 sur 10 · Ce que vous avez</span>Quand un salarié quitte la structure, ses accès (messagerie, logiciels, partages) sont-ils fermés ?</legend>
+     <legend><span class="numero">Question 5 sur 10 · Ce que vous avez</span>Savez-vous qui a accès à quoi (messagerie, logiciels, dossiers partagés, comptes administrateur), et qu&#x27;aucun compte d&#x27;une personne partie n&#x27;est resté actif ?</legend>
      <div class="choix"><input type="radio" id="q5-0" name="q5" value="0"><label for="q5-0">Je ne sais pas</label></div>
-     <div class="choix"><input type="radio" id="q5-1" name="q5" value="1"><label for="q5-1">Parfois, quand on y pense</label></div>
-     <div class="choix"><input type="radio" id="q5-2" name="q5" value="2"><label for="q5-2">Oui, mais sans liste écrite</label></div>
-     <div class="choix"><input type="radio" id="q5-3" name="q5" value="3"><label for="q5-3">Oui, le dernier jour, avec une liste à cocher</label></div>
+     <div class="choix"><input type="radio" id="q5-1" name="q5" value="1"><label for="q5-1">En partie : nous le découvrons quand un problème se pose</label></div>
+     <div class="choix"><input type="radio" id="q5-2" name="q5" value="2"><label for="q5-2">Oui pour les comptes courants, pas pour les comptes administrateur</label></div>
+     <div class="choix"><input type="radio" id="q5-3" name="q5" value="3"><label for="q5-3">Oui : c&#x27;est écrit, et vérifié au moins à chaque départ</label></div>
     </fieldset>
     <fieldset class="question" id="question-6">
-     <legend><span class="numero">Question 6 sur 10 · Ce que vous avez</span>Les accès administrateur de vos outils clés (messagerie, nom de domaine, site web, sauvegardes, logiciels principaux) sont-ils consignés chez vous ?</legend>
-     <div class="choix"><input type="radio" id="q6-0" name="q6" value="0"><label for="q6-0">Je ne sais pas qui les détient</label></div>
-     <div class="choix"><input type="radio" id="q6-1" name="q6" value="1"><label for="q6-1">Une seule personne ou le prestataire les détient, sans copie chez nous</label></div>
-     <div class="choix"><input type="radio" id="q6-2" name="q6" value="2"><label for="q6-2">Nous savons qui les détient, mais ils ne sont pas consignés chez nous</label></div>
-     <div class="choix"><input type="radio" id="q6-3" name="q6" value="3"><label for="q6-3">Ils sont consignés en lieu sûr et la direction peut y accéder en cas de besoin</label></div>
+     <legend><span class="numero">Question 6 sur 10 · Ce que vous avez</span>Savez-vous quand expirent vos noms de domaine et les certificats de votre site, à quel compte ils sont rattachés et qui en détient l&#x27;accès administrateur ?</legend>
+     <div class="choix"><input type="radio" id="q6-0" name="q6" value="0"><label for="q6-0">Je ne sais pas</label></div>
+     <div class="choix"><input type="radio" id="q6-1" name="q6" value="1"><label for="q6-1">Seul notre prestataire ou une personne le sait, sans trace chez nous</label></div>
+     <div class="choix"><input type="radio" id="q6-2" name="q6" value="2"><label for="q6-2">Nous savons qui s&#x27;en occupe, mais les dates et les accès ne sont pas notés chez nous</label></div>
+     <div class="choix"><input type="radio" id="q6-3" name="q6" value="3"><label for="q6-3">Oui : dates, compte et accès notés chez nous, avec un rappel avant chaque expiration</label></div>
     </fieldset>
     <fieldset class="question" id="question-7">
      <legend><span class="numero">Question 7 sur 10 · Continuité</span>Une restauration de vos sauvegardes a-t-elle été testée au cours des 12 derniers mois ?</legend>
@@ -98,26 +101,26 @@
      <div class="choix"><input type="radio" id="q7-3" name="q7" value="3"><label for="q7-3">Oui, avec un compte rendu écrit</label></div>
     </fieldset>
     <fieldset class="question" id="question-8">
-     <legend><span class="numero">Question 8 sur 10 · Ce que vous payez</span>Connaissez-vous le coût total annuel de votre informatique (matériel, logiciels, prestataires, télécoms) ?</legend>
-     <div class="choix"><input type="radio" id="q8-0" name="q8" value="0"><label for="q8-0">Non, ou je ne sais pas</label></div>
-     <div class="choix"><input type="radio" id="q8-1" name="q8" value="1"><label for="q8-1">Seulement un ordre de grandeur approximatif</label></div>
-     <div class="choix"><input type="radio" id="q8-2" name="q8" value="2"><label for="q8-2">Oui, en le reconstituant depuis la comptabilité</label></div>
-     <div class="choix"><input type="radio" id="q8-3" name="q8" value="3"><label for="q8-3">Oui, il est suivi au moins une fois par an</label></div>
+     <legend><span class="numero">Question 8 sur 10 · Ce que vous payez</span>Si votre CA, un financeur, <span id="q10-tiers" data-ess="l&#x27;ARS ou votre commissaire aux comptes">un assureur ou un client</span> vous demandait demain le coût annuel de votre informatique (matériel acheté ou loué, licences, prestataires, télécoms), combien de temps vous faudrait-il pour répondre ?</legend>
+     <div class="choix"><input type="radio" id="q8-0" name="q8" value="0"><label for="q8-0">Je ne saurais pas répondre</label></div>
+     <div class="choix"><input type="radio" id="q8-1" name="q8" value="1"><label for="q8-1">Plusieurs semaines, pour un ordre de grandeur</label></div>
+     <div class="choix"><input type="radio" id="q8-2" name="q8" value="2"><label for="q8-2">Quelques jours, en reconstituant depuis la comptabilité</label></div>
+     <div class="choix"><input type="radio" id="q8-3" name="q8" value="3"><label for="q8-3">Moins d&#x27;une journée : il est suivi au moins une fois par an</label></div>
     </fieldset>
     <fieldset class="question" id="question-9" aria-describedby="aide-q9">
-     <legend><span class="numero">Question 9 sur 10 · Ce qui arrive à échéance</span>Votre contrat avec votre principal prestataire informatique précise-t-il ce qu&#x27;il fait, et comment récupérer vos données et la documentation si vous changez de prestataire ?</legend>
-     <p class="aide" id="aide-q9">Si vous n&#x27;avez pas de prestataire, répondez pour votre principal fournisseur informatique.</p>
-     <div class="choix"><input type="radio" id="q9-0" name="q9" value="0"><label for="q9-0">Pas de contrat écrit, ou je ne sais pas</label></div>
-     <div class="choix"><input type="radio" id="q9-1" name="q9" value="1"><label for="q9-1">Il y a un contrat, mais je ne sais pas ce qu&#x27;il couvre</label></div>
-     <div class="choix"><input type="radio" id="q9-2" name="q9" value="2"><label for="q9-2">Ce qu&#x27;il fait est clair, la sortie (réversibilité) ne l&#x27;est pas</label></div>
-     <div class="choix"><input type="radio" id="q9-3" name="q9" value="3"><label for="q9-3">Les deux sont écrits</label></div>
+     <legend><span class="numero">Question 9 sur 10 · Ce qui arrive à échéance</span>Connaissez-vous les dates de fin de garantie de votre matériel et, pour le matériel loué ou en leasing, la date de fin de location et ce qu&#x27;il faudra rendre ?</legend>
+     <p class="aide" id="aide-q9">Si vous n&#x27;avez aucun matériel loué, répondez pour les fins de garantie.</p>
+     <div class="choix"><input type="radio" id="q9-0" name="q9" value="0"><label for="q9-0">Non, ou je ne sais pas</label></div>
+     <div class="choix"><input type="radio" id="q9-1" name="q9" value="1"><label for="q9-1">Pour un ou deux appareils ou contrats de location seulement</label></div>
+     <div class="choix"><input type="radio" id="q9-2" name="q9" value="2"><label for="q9-2">Pour la plupart, mais sans rappel organisé</label></div>
+     <div class="choix"><input type="radio" id="q9-3" name="q9" value="3"><label for="q9-3">Oui, avec un rappel avant chaque fin de garantie ou de location</label></div>
     </fieldset>
     <fieldset class="question" id="question-10">
-     <legend><span class="numero">Question 10 sur 10 · Continuité</span>Si votre CA, un financeur, <span id="q10-tiers" data-ess="l&#x27;ARS ou votre commissaire aux comptes">un assureur ou un client</span> vous demandait demain un état de votre informatique (équipements, coûts, accès, sauvegardes), combien de temps vous faudrait-il ?</legend>
-     <div class="choix"><input type="radio" id="q10-0" name="q10" value="0"><label for="q10-0">Je ne saurais pas répondre</label></div>
-     <div class="choix"><input type="radio" id="q10-1" name="q10" value="1"><label for="q10-1">Plusieurs semaines</label></div>
-     <div class="choix"><input type="radio" id="q10-2" name="q10" value="2"><label for="q10-2">Quelques jours</label></div>
-     <div class="choix"><input type="radio" id="q10-3" name="q10" value="3"><label for="q10-3">Moins d&#x27;une journée</label></div>
+     <legend><span class="numero">Question 10 sur 10 · Continuité</span>Si votre prestataire ou votre référent informatique s&#x27;arrêtait demain, sauriez-vous récupérer vos données, vos accès et la documentation de votre informatique ?</legend>
+     <div class="choix"><input type="radio" id="q10-0" name="q10" value="0"><label for="q10-0">Non, ou je ne sais pas</label></div>
+     <div class="choix"><input type="radio" id="q10-1" name="q10" value="1"><label for="q10-1">Difficilement : tout est chez lui ou dans sa tête</label></div>
+     <div class="choix"><input type="radio" id="q10-2" name="q10" value="2"><label for="q10-2">En partie : le contrat prévoit la sortie, mais la documentation n&#x27;est pas chez nous</label></div>
+     <div class="choix"><input type="radio" id="q10-3" name="q10" value="3"><label for="q10-3">Oui : la documentation et les accès sont chez nous, et la sortie est écrite dans le contrat</label></div>
     </fieldset>
     <div class="message message-erreur" id="manquantes" role="alert" hidden>
      <strong>Il reste des questions sans réponse.</strong>
@@ -159,7 +162,7 @@
   </section>
 
   <section id="echange" class="filet" aria-labelledby="titre-echange" hidden>
-   <h2 id="titre-echange">Faites le point en 30 minutes avec un spécialiste du SI</h2>
+   <h2 id="titre-echange">Aidez-nous à concevoir Lanternis : un échange de 30 minutes sur votre résultat</h2>
    <p class="texte" id="texte-echange"></p>
 
    <form class="formulaire" action="waitlist.php" method="post" accept-charset="UTF-8" id="form-echange">
