@@ -294,7 +294,7 @@ Un développeur seul, **à temps plein**, assisté par IA, semaines de 5 jours ;
 | L4 | Comptes, licences, abonnements, rapprochement (M3) | 1,5 à 2 | 1,25 à 1,5 | 0,75 (déclaratif, rapprochement par import) |
 | L5 | Accès déclarés (M4) | 0,5 à 0,75 | 0,5 | 0,5 |
 | L6 | Contrats, fournisseurs, lignes, coût du SI (M5) | 1 à 1,5 | 0,75 à 1 (sans lignes) | 0,75 |
-| L7 | Domaines, certificats, sauvegardes (M6, hors connecteur) | 0,5 | 0,25 (sans sauvegardes) | 0,25 |
+| L7 | Domaines, certificats, sauvegardes (M6, hors connecteur) | 0,5 | 0,5 (sauvegardes incluses : décision du 2026-10-26, + 0,25 sem.) | 0,25 |
 | L8 | Arrivées et départs : modèles versionnés, conditions, générateurs, rôles, échéances, preuves, constats, rappels, clôture (M7) | 3 à 4 | 2 à 2,5 (modèles éditables sans conditions) | 1,5 à 2 (départ seul, preuve déclarative) |
 | L9 | Alertes A1 à A16 (P1), digest, centre d'alertes, tableau de bord I1 à I10 (M8) | 1,5 à 2 | 1 à 1,5 (I1 à I7) | 0,75 à 1 |
 | L10 | Import Excel/CSV (M10) | 1,5 à 2 (6 gabarits) | 1 à 1,5 (3 gabarits) | 0,75 à 1 (le fondateur importe) |
