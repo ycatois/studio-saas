@@ -1,62 +1,52 @@
 # Lanternis — statut
-Phase actuelle : 2b Pré-lancement (supports prêts en brouillon, mesure non démarrée)
+Phase actuelle : 2b Pré-lancement (supports prêts, site non déployé, mesure non démarrée)
 Dernière mise à jour : 2026-10-26
 Score GO/NO-GO : —
 Décision : en attente
 
+## Point de reprise (fin de session du 2026-10-26)
+- Tout est sur `main`, sans branche ouverte (PR #1 à #5 fusionnées, CI verte). **Rien n'est publié, envoyé ni déployé.**
+- Prochaine action côté fondateur : réserver lanternis.fr, faire relire les pages légales, créer le compte Mailjet, puis lancer `/deployer lanternis` (validation explicite requise).
+- En parallèle, sans attendre la mise en ligne : commencer les entretiens de validation (`2-marche/script-interview.md`), puis consigner les résultats dans `2-marche/validation.md`.
+
 ## Fait
 - Phase 0 : fiche idée, Lean Canvas, avocat du diable, réponses du fondateur (`0-idee/`).
-- Phase 1 : pré-mortem, JTBD, faisabilité, modèle de revenus, synthèse (`1-analyse/`).
-- Phase 2 : TAM/SAM/SOM, tendances, signaux de demande, personas, script d'entretien, benchmark, prix, acquisition, synthèse (`2-marche/`).
-- Marque (brouillon) : `marque/plateforme-de-marque.md`, `messages-par-persona.md`, `noms-et-taglines.md`. Nom de marque retenu : **Lanternis** (« Lanternis est une marque d'Hasteria SASU »).
-- Identité visuelle v1.0 (piste Veilleuse, logo Lanterne-arche) : `marque/charte/` (logo et déclinaisons, `tokens.css` et `tokens.json`, `charte-graphique.pdf` de 14 pages, image Open Graph, 20 icônes et 3 illustrations, gabarits blog, Facebook et email avec exemples). Design system v0.1 de l'application : `5-cadrage/design-system/` (design-system.md, components.css, demo.html).
-- Pré-lancement (brouillons, rien de publié ni d'envoyé) :
-  - landing de validation `marketing/landing/validation.html` et sa stratégie `validation.md`, avec l'autodiagnostic SI en 10 questions (`autodiagnostic.md`) ;
-  - blog : `marketing/blog/plan-editorial-v0.md` et 2 articles (départ du responsable informatique ; inventaire informatique de PME sans DSI) ;
-  - emails : confirmation de la liste d'attente et séquence de 5 emails (`marketing/emails/`) ;
-  - Facebook : stratégie de test sur 6 semaines et 6 posts (`marketing/facebook/`) ;
-  - prospection : 30 types de structures cibles et invitations à un entretien par email et téléphone (`marketing/campagnes/prospection-entretiens/`) ;
-  - suivi des résultats réels : `2-marche/validation.md`.
-  - pages légales en brouillon (`marketing/landing/mentions-legales.html`, `confidentialite.html`) et conformité du pré-lancement (`conformite-prelancement.md` : registre, règles de prospection tranchées) ;
-  - site de pré-lancement et back-end de la liste d'attente pour o2switch : `produit/apps/prelancement/` (double opt-in, désinscription, autodiagnostic dans le navigateur, SQLite, Mailjet sans suivi). Landing v3 (tout le SI, 6 domaines, grille D, simulateur, champs palier et essai, cible 20 à 249) fusionnée (PR #2 et #3) ; 29 tests et 41 vérifications au vert, CI verte. **Non déployé.**
-- Positionnement : un « DSI de poche » pour les PME (50 à 249 salariés) et l'ESS (20 à 249) sans DSI. Logiciel et service (modèle hybride).
+- Phase 1 : pré-mortem, JTBD, synthèse ; **périmètre produit « tout le SI centré sur les personnes »** (`1-analyse/perimetre-produit.md` : modules M0 à M12, MVP US-01 à US-20, sauvegardes incluses) ; **faisabilité v2** (`faisabilite-v2.md` : développement de zéro, tranche pilote d'environ 15 à 19 semaines avec le libre-service) ; **modèle de revenus v2** (`modele-revenus.md`, grille D, libre-service).
+- Phase 2 : TAM/SAM/SOM (recalculés), tendances, signaux, personas (cœur de cible 20 à 99), script d'entretien, benchmark, prix, **propositions de tarifs** (`propositions-tarifs.md`, grille D au § 11), **acquisition v2** (canaux automatisés), synthèse, suivi `validation.md`.
+- Marque **v1.2** : promesse « Toute votre informatique, reliée à chaque personne : vous savez qui a quoi, ce que vous payez et ce qui arrive à échéance. Et Lanternis vous prévient avant. » ; 6 domaines ; « Conçu par un DSI » ; nom **Lanternis** (marque d'Hasteria SASU).
+- Identité visuelle v1.0 (piste Veilleuse, logo Lanterne-arche) : `marque/charte/` (logo, tokens, charte PDF de 14 pages, image de partage v1.2, 20 icônes, 3 illustrations, gabarits avec exemples). Design system v0.1 : `5-cadrage/design-system/`.
+- Pré-lancement (brouillons) :
+  - landing v3 (`marketing/landing/validation.html`, titre A, 6 domaines, grille D avec simulateur, balises de partage) et sa stratégie `validation.md` ; autodiagnostic en 10 questions sur les 6 domaines ;
+  - pages légales en brouillon et conformité (`mentions-legales.html`, `confidentialite.html`, `conformite-prelancement.md`) ;
+  - blog : plan éditorial et 2 articles ; emails : confirmation et lettre mensuelle de 4 éditions ; Facebook : stratégie de test et 6 posts ; prospection : 30 types de structures et invitations à un entretien de recherche ;
+  - site de pré-lancement pour o2switch (`produit/apps/prelancement/`) : liste d'attente avec double opt-in, champs palier et essai, cible 20 à 249, autodiagnostic dans le navigateur, SQLite, Mailjet sans suivi, CSP stricte ; 29 tests et 41 vérifications au vert, CI GitHub. **Non déployé.**
 
 ## En cours
-- **Refonte du périmètre et des prix (2026-10-26), en attente des choix du fondateur :**
-  - `1-analyse/perimetre-produit.md` : tout le SI centré sur les personnes (modules M0 à M12, MVP US-01 à US-20) ; remplace le § 6 de `faisabilite.md` ;
-  - `1-analyse/faisabilite-v2.md` : effort révisé (P1 complet 19 à 26 sem., tranche pilote 14 à 18 sem., pilote concierge 9,5 à 12,5 sem.), droits Microsoft Graph et Google, RLS ;
-  - `2-marche/propositions-tarifs.md` : 3 grilles (A forfait par tranche, B modules, C prix par personne avec minimum), essai d'un mois sans carte ;
-  - décidé le 2026-10-26 : D1 à D5 validées, essai gratuit en libre-service, Cockpit DSI abandonné (développement from scratch), vente quasi automatisée ;
-  - **grille tarifaire D validée le 2026-10-26** (§ 11 de `propositions-tarifs.md`) : Essentiel 49 €, Pilotage 99 €, Pilotage+ 199 € jusqu'à 49 personnes, puis +30, +60 ou +90 € par tranche de 50 personnes ; libre-service jusqu'à 499 personnes ;
-  - documents à mettre à jour après choix : `prix.md`, `modele-revenus.md`, TAM/SAM en euros, plafonds de CAC (`acquisition.md`), bloc tarifs de la landing, hypothèses 3, 5 et 7 ci-dessous.
-- Déposer les polices Fraunces (woff2, OFL) dans `marque/charte/fonts/` (voir `fonts/README.md`) ; d'ici là, les visuels utilisent une police de repli.
-- Recherche d'antériorité du logo et du nom (INPI, EUIPO, WIPO, logiciel Lantern) avant dépôt.
-- Sécuriser le nom Lanternis : réserver lanternis.fr et lanternis.com, rechercher l'antériorité INPI/EUIPO (classes 9, 35, 42), puis demander l'avis d'un conseil en propriété industrielle avant le dépôt (skill nouvelle-marque-hasteria).
+- Rien en cours côté studio.
 
 ## Prochaines étapes
-- **Avant toute mise en ligne ou tout envoi (bloquant) :**
-  - réserver le domaine lanternis.fr ;
-  - vérifier l'antériorité du nom ;
-  - faire relire les pages légales par un avocat et lever les [À CONFIRMER] (hébergeur, transferts et DPA Mailjet, outil d'audience) ;
-  - préparer o2switch (dossier, config.php, cron de purge) avant le déploiement validé par le fondateur ;
-  - configurer Mailjet (SPF, DKIM, DMARC).
-- **Arbitrages du fondateur :**
-  - demander la fonction de l'inscrit dans le formulaire ?
-  - valider le tarif fondateur (−30 % pendant 12 mois, 10 places) et la formulation « 25 ans d'expérience du SI » ;
-  - prospecter le réseau Tecnoo au nom d'Hasteria ou de Tecnoo ?
-- **Ensuite :** lancer les entretiens (réseau Tecnoo et ESS) et consigner les résultats dans `2-marche/validation.md`.
-- 12 à 15 entretiens Mom Test (script `2-marche/script-interview.md`), en commençant par le réseau Tecnoo et l'ESS.
-- Faire valider par juriste-rgpd les règles de prospection B2B avant les premiers envois.
-- Devis : Chift, Kombo, Bridge, Powens ; demander à ESS France les données Flores par taille.
+- **Bloquant avant mise en ligne ou envoi (fondateur) :**
+  - réserver lanternis.fr (et .com) ; vérifier l'antériorité du nom et du logo (INPI, EUIPO, WIPO, logiciel Lantern), puis demander l'avis d'un conseil en propriété industrielle ;
+  - faire relire par un avocat les pages légales et `conformite-prelancement.md`, et lever les [À CONFIRMER] (hébergeur, transferts et DPA Mailjet, outil d'audience) ;
+  - créer le compte Mailjet (SPF, DKIM, DMARC) et confirmer le compte o2switch ;
+  - puis `/deployer lanternis` : config.php, cron de purge, og:url et URL absolue de l'image de partage.
+- **Validation de la demande :** 12 à 15 entretiens (réseau Tecnoo et ESS), relais ESS et Solidatech, puis `/bilan` une fois les résultats réunis.
+- **Arbitrages encore ouverts :**
+  - signature « Conçu par un DSI » et mention de l'expérience du fondateur ;
+  - forme de l'avantage « pilote fondateur » en libre-service ;
+  - services optionnels à 190 et 290 € (ou renvoi vers Tecnoo) ;
+  - nom utilisé pour contacter le réseau Tecnoo (Hasteria ou Tecnoo) ;
+  - plafond « une lettre par mois » : confirmer avec juriste-rgpd que les emails transactionnels et les réponses individuelles n'y comptent pas.
+- **Petits restes :** déposer les polices Fraunces (`marque/charte/fonts/README.md`) ; aligner `strategie-facebook-v0.md` sur la v1.2 ; vérifier le contexte du chiffre de 39 % (post Facebook 5).
 
 ## Hypothèses à vérifier
-1. **Douleur SI** : les dirigeants sans DSI ressentent assez la perte de maîtrise de leur informatique pour payer. Déclencheur à tester : le départ du référent informatique.
-2. **Pas déjà résolu** : ni le prestataire, ni Excel, ni Corma ou Primo ne leur suffisent ; un écran pour le dirigeant et un service humain font la différence.
-3. **Volonté de payer** : ≥ 3 lettres d'intention à 149 € HT/mois ou plus ; tester 399 € contre 449 € pour les 100 à 249 salariés, et l'écart de prix face à Corma.
-4. **Cockpit vide** : la mise en place assistée et les alertes suffisent à garder les données à jour.
-5. **Acquisition** : CAC ≤ 1 500 à 1 700 € ; ≥ 80 inscrits qualifiés et ≥ 12 entretiens en 8 semaines.
+1. **Douleur SI** : les dirigeants de structures de 20 à 249 personnes sans DSI ressentent assez la perte de maîtrise (contrats reconduits, licences et matériel non suivis, départs) pour payer.
+2. **Pas déjà résolu** : ni le prestataire, ni Excel, ni Corma, Primo ou GLPI ne leur suffisent ; un registre de tout le SI relié aux personnes fait la différence.
+3. **Volonté de payer (grille D)** : ≥ 60 % des inscrits qualifiés déclarent une intention d'essai, ≥ 3 structures pilotes s'engagent par écrit, et le prix n'est pas jugé « trop bon marché ».
+4. **Cockpit vide** : sans accompagnement humain, l'import, l'onboarding guidé et les alertes suffisent à activer ≥ 50 % des essais.
+5. **Acquisition en libre-service** : ≈ 18 à 28 essais par mois atteignables à terme, avec un CAC moyen ≤ 330 € la première année (H) ; ≥ 80 inscrits qualifiés en 8 semaines.
 6. **Part sans DSI** (88 % des 20 à 49, 65 % des 50 à 249) : estimation sans source directe.
-7. **Connecteurs** : Microsoft 365, Google Workspace, Qonto et Pennylane suffisent au MVP.
+7. **Connecteurs** : Microsoft 365 (et Google Workspace si un pilote l'utilise), import Excel et RDAP/TLS suffisent au MVP ; droits Microsoft Graph à vérifier sur un locataire de test.
 
 ## Journal des décisions
 - 2026-10-25 — Création de la venture.
