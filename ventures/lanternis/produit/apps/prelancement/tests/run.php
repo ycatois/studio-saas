@@ -288,8 +288,10 @@ test('double opt-in : inscription en attente puis confirmation', function () {
     egal(2, count($mailer->envoyes), 'pas de second email de bienvenue');
 });
 
-test('double opt-in : qualification selon type et effectif', function () {
-    foreach ([['ess', '20-49', 1], ['entreprise', '20-49', 0], ['entreprise', '100-249', 1], ['ess', '250-plus', 0], ['entreprise', 'moins-20', 0]] as [$type, $eff, $attendu]) {
+test('double opt-in : qualification, cœur de cible entreprises et ESS de 20 à 249', function () {
+    $cas = [['entreprise', '20-49', 1], ['entreprise', '50-99', 1], ['entreprise', '100-249', 1], ['ess', '20-49', 1],
+        ['ess', '100-249', 1], ['entreprise', 'moins-20', 0], ['ess', 'moins-20', 0], ['entreprise', '250-plus', 0], ['ess', '250-plus', 0]];
+    foreach ($cas as [$type, $eff, $attendu]) {
         [$app, $mailer] = app();
         envoyer($app, ['type' => $type, 'effectif' => $eff]);
         confirmer($app, jetonDe($mailer->envoyes[0], 'confirm.php'));
@@ -399,6 +401,87 @@ test('demande d\'échange depuis l\'autodiagnostic : email dédié et notificati
     $notif = $mailer->envoyes[2];
     egal('fondateur@hasteria.test', $notif->a, 'notification interne');
     verifier(!str_contains($notif->texte, 'depart-referent') && !str_contains($notif->texte, '1100110010'), 'ni douleur ni réponses envoyées à Mailjet');
+});
+
+test('grille D : palier et intention d\'essai validés et enregistrés', function () {
+    foreach (L\Formulaire::PALIERS as $p) {
+        egal($p, L\Formulaire::valider(formulaire(['palier' => $p]))['donnees']['palier'], "palier $p");
+    }
+    foreach ([null, '', 'premium', 'Pilotage', ['pilotage']] as $i => $faux) {
+        $r = L\Formulaire::valider(formulaire($faux === null ? [] : ['palier' => $faux]));
+        verifier($r['ok'], "palier invalide $i : le formulaire ne doit pas être rejeté");
+        egal(null, $r['donnees']['palier'], "palier invalide $i ramené à null");
+    }
+    egal(true, L\Formulaire::valider(formulaire(['essai' => 'oui']))['donnees']['essai'], 'essai coché');
+    egal(false, L\Formulaire::valider(formulaire())['donnees']['essai'], 'essai absent');
+    egal('champs', L\Formulaire::valider(formulaire(['essai' => 'yes']))['code'], 'essai : autre valeur refusée');
+
+    [$app, $mailer] = app();
+    envoyer($app, ['palier' => 'pilotage', 'essai' => 'oui']);
+    $l = lignes($app)[0];
+    egal('pilotage', $l['palier'], 'palier enregistré');
+    egal(1, (int) $l['essai'], 'essai enregistré');
+    [$app2] = app();
+    envoyer($app2, ['palier' => 'inconnu']);
+    egal(null, lignes($app2)[0]['palier'], 'palier hors liste enregistré à null');
+    egal(0, (int) lignes($app2)[0]['essai'], 'essai par défaut à 0');
+});
+
+test('grille D : doublon, le palier change, l\'intention d\'essai ne se retire pas', function () {
+    [$app, $mailer, $h] = app();
+    envoyer($app, ['palier' => 'essentiel', 'essai' => 'oui']);
+    envoyer($app, ['palier' => 'pilotage']);
+    $l = lignes($app)[0];
+    egal('pilotage', $l['palier'], 'palier mis à jour (inscription non confirmée)');
+    egal(1, (int) $l['essai'], 'intention d\'essai conservée');
+    confirmer($app, jetonDe($mailer->envoyes[0], 'confirm.php'));
+    $h->t += 86401;
+    envoyer($app, ['palier' => 'pilotage-plus']);
+    egal('pilotage', lignes($app)[0]['palier'], 'inscription confirmée : changement en attente de confirmation');
+    confirmer($app, jetonDe(end($mailer->envoyes), 'confirm.php'));
+    egal('pilotage-plus', lignes($app)[0]['palier'], 'changement appliqué après confirmation');
+});
+
+test('migration SQLite v1 -> v2 non destructive', function () {
+    $f = sys_get_temp_dir() . '/lanternis-migration-' . bin2hex(random_bytes(4)) . '.sqlite';
+    $pdo = new PDO('sqlite:' . $f, null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
+    L\Base::migrer($pdo, 1);
+    egal(1, (int) $pdo->query('PRAGMA user_version')->fetchColumn(), 'base en version 1');
+    $pdo->exec("INSERT INTO inscriptions (email, structure, type, effectif, douleur, variante, public, source, statut, qualifie,
+        version_mention, jeton_desinscription, cree_le, dernier_contact_le, confirme_le)
+        VALUES ('ancien@exemple.fr', 'Ancienne SA', 'entreprise', '50-99', 'couts', 'a', 'pme', 'direct', 'confirme', 1,
+        'landing-v1', '" . str_repeat('b', 64) . "', '2026-10-27 10:00:00', '2026-10-27 10:00:00', '2026-10-27 10:05:00')");
+    $pdo = null;
+    $pdo = L\Base::ouvrir($f); // migration automatique à l'ouverture
+    egal(2, (int) $pdo->query('PRAGMA user_version')->fetchColumn(), 'base en version 2');
+    $l = $pdo->query('SELECT * FROM inscriptions')->fetch();
+    egal('ancien@exemple.fr', $l['email'], 'inscription existante conservée');
+    egal('landing-v1', $l['version_mention'], 'données existantes intactes');
+    egal(null, $l['palier'], 'palier null par défaut');
+    egal(0, (int) $l['essai'], 'essai 0 par défaut');
+    L\Base::migrer($pdo);
+    egal(1, (int) $pdo->query('SELECT COUNT(*) FROM inscriptions')->fetchColumn(), 'migration idempotente');
+    $leve = false;
+    try {
+        $pdo->exec("UPDATE inscriptions SET palier = 'premium'");
+    } catch (PDOException) {
+        $leve = true;
+    }
+    verifier($leve, 'contrainte CHECK sur palier');
+    $pdo = null;
+    foreach (glob($f . '*') as $x) {
+        unlink($x);
+    }
+});
+
+test('notification interne : cœur de cible signalé', function () {
+    [$app, $mailer] = app(['NOTIFY_TO' => 'fondateur@hasteria.test']);
+    envoyer($app, ['echange' => 'oui', 'retour' => 'autodiag', 'effectif' => '20-49', 'palier' => 'essentiel']);
+    confirmer($app, jetonDe($mailer->envoyes[0], 'confirm.php'));
+    $notif = end($mailer->envoyes);
+    egal('fondateur@hasteria.test', $notif->a, 'notification envoyée');
+    verifier(str_contains($notif->texte, 'Cœur de cible (entreprise ou ESS, 20 à 249 personnes) : oui'), 'entreprise 20-49 signalée dans la cible');
+    verifier(!str_contains($notif->texte, 'essentiel'), 'palier non transmis à Mailjet');
 });
 
 // ---------------------------------------------------------------------------------------

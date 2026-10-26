@@ -84,6 +84,13 @@ try {
     [$s, $h, $c] = http('GET', "$base/");
     ok($s === 200 && str_contains($c, 'action="waitlist.php"'), "GET / : landing servie ($s)");
     ok(str_contains($c, 'assets/pages/index.js') && !str_contains($c, '<style'), 'landing sans style ni script en ligne');
+    // Simulateur de prix (grille D) : balisage dans la page, code dans un fichier JS externe (CSP sans unsafe-inline).
+    preg_match_all('~<script\b([^>]*)>(.*?)</script>~si', $c, $scripts, PREG_SET_ORDER);
+    $enLigne = array_filter($scripts, static fn($m) => !str_contains($m[1], 'src=') && trim($m[2]) !== '');
+    ok($enLigne === [] && !preg_match('~\son[a-z]+\s*=~i', $c) && !str_contains($c, ' style="'), 'landing : aucun script, gestionnaire ou style en ligne');
+    [$s, $h, $js] = http('GET', "$base/assets/pages/index.js");
+    ok($s === 200 && str_contains($h['content-type'] ?? '', 'javascript') && str_contains($js, 'getElementById("simulateur")')
+        && str_contains($c, 'id="simulateur"'), "simulateur servi en fichier JS externe ($s, " . ($h['content-type'] ?? '?') . ')');
     foreach (['autodiagnostic.html', 'merci.html', 'confirme.html', 'desinscrit.html', 'erreur.html', 'mentions-legales.html',
                  'confidentialite.html', 'assets/charte/tokens.css', 'assets/site.css', 'assets/autodiagnostic.js',
                  'assets/pages/index.css', 'assets/charte/logo/logo-horizontal-nuit.svg'] as $p) {
@@ -92,7 +99,7 @@ try {
     }
 
     $form = ['email' => 'Test@Exemple-Asso.org', 'structure' => 'Association Exemple', 'type' => 'ess', 'effectif' => '20-49',
-        'douleur' => 'rendre-compte', 'nouvelles' => 'oui', 'variante' => 'ess', 'public' => 'ess', 'source' => 'ess-relais',
+        'douleur' => 'rendre-compte', 'nouvelles' => 'oui', 'palier' => 'pilotage', 'essai' => 'oui', 'variante' => 'ess', 'public' => 'ess', 'source' => 'ess-relais',
         'site_web' => '', 'js' => '1'];
 
     [$s, $h] = http('POST', "$base/waitlist.php", $form);
@@ -147,8 +154,11 @@ try {
     };
     $stats = $cli('stats.php');
     ok(str_contains($stats, 'Confirmées : 1') && str_contains($stats, 'Qualifiées (confirmées) : 1'), 'bin/stats.php');
+    ok(str_contains($stats, "Intention d'essai (confirmées) : 1 sur 1 (100 %)") && preg_match('~^pilotage\s+1\s+100 %\s+1$~m', $stats) === 1,
+        'bin/stats.php : palier et intention d\'essai');
     $csv = $cli('export.php');
     ok(str_contains($csv, 'test@exemple-asso.org') && !str_contains($csv, 'jeton') && !str_contains($csv, '127.0.0.1'), 'bin/export.php sans jeton ni IP');
+    ok(str_contains($csv, ';palier;essai;') && str_contains($csv, ';pilotage;1;'), 'bin/export.php : colonnes palier et essai');
     ok(str_starts_with($cli('purge.php'), 'purge :'), 'bin/purge.php');
     [$s, , $c] = http('GET', "$base/../bin/export.php");
     ok($s !== 200 || !str_contains($c, '@'), 'bin/ inaccessible depuis le web');

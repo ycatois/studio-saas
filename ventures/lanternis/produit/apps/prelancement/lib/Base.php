@@ -14,7 +14,7 @@ namespace Lanternis\Prelancement;
  */
 final class Base
 {
-    public const VERSION_SCHEMA = 1;
+    public const VERSION_SCHEMA = 2;
 
     public static function ouvrir(string $chemin): \PDO
     {
@@ -42,12 +42,30 @@ final class Base
         return $pdo;
     }
 
-    public static function migrer(\PDO $pdo): void
+    /**
+     * Migrations successives, non destructives (ajouts seulement), appliquées dans une transaction.
+     * $jusqua permet aux tests de construire une base d'une version antérieure.
+     */
+    public static function migrer(\PDO $pdo, int $jusqua = self::VERSION_SCHEMA): void
     {
         $version = (int) $pdo->query('PRAGMA user_version')->fetchColumn();
-        if ($version >= self::VERSION_SCHEMA) {
-            return;
+        for ($v = $version + 1; $v <= $jusqua; $v++) {
+            $pdo->exec('BEGIN IMMEDIATE');
+            try {
+                $etape = 'migration' . $v;
+                self::$etape($pdo);
+                $pdo->exec('PRAGMA user_version = ' . $v);
+                $pdo->exec('COMMIT');
+            } catch (\Throwable $e) {
+                $pdo->exec('ROLLBACK');
+                throw $e;
+            }
         }
+    }
+
+    /** v1 : schéma initial (liste d'attente, PR #1). */
+    private static function migration1(\PDO $pdo): void
+    {
         $pdo->exec(<<<'SQL'
             CREATE TABLE IF NOT EXISTS inscriptions (
                 id                     INTEGER PRIMARY KEY,
@@ -89,7 +107,13 @@ final class Base
             );
             CREATE INDEX IF NOT EXISTS idx_limites ON limites (cle, ts);
             SQL);
-        $pdo->exec('PRAGMA user_version = ' . self::VERSION_SCHEMA);
+    }
+
+    /** v2 : grille D, champs facultatifs « palier » et « essai » (validation.md v2 § 7.1). */
+    private static function migration2(\PDO $pdo): void
+    {
+        $pdo->exec("ALTER TABLE inscriptions ADD COLUMN palier TEXT CHECK (palier IN ('essentiel', 'pilotage', 'pilotage-plus', 'ne-sait-pas'))");
+        $pdo->exec('ALTER TABLE inscriptions ADD COLUMN essai INTEGER NOT NULL DEFAULT 0 CHECK (essai IN (0, 1))');
     }
 
     public static function date(int $ts): string

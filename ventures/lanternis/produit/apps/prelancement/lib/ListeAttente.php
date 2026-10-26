@@ -85,14 +85,14 @@ final class ListeAttente
                 $db->prepare(<<<'SQL'
                     INSERT INTO inscriptions (email, email_generique, structure, type, effectif, douleur, douleur_autre,
                         nouvelles, nouvelles_le, nouvelles_version, echange, echange_le, echange_origine,
-                        variante, public, source, score, profil, reponses, statut, qualifie, version_mention,
+                        palier, essai, variante, public, source, score, profil, reponses, statut, qualifie, version_mention,
                         jeton_confirmation, jeton_confirmation_expire, jeton_desinscription, cree_le, dernier_contact_le)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'en_attente', 0, ?, ?, ?, ?, ?, ?)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'en_attente', 0, ?, ?, ?, ?, ?, ?)
                     SQL)->execute([
                     $d['email'], $d['email_generique'], $d['structure'], $d['type'], $d['effectif'], $d['douleur'], $d['douleur_autre'],
                     $d['nouvelles'] ? 1 : 0, $d['nouvelles'] ? $date : null, $d['nouvelles'] ? $version : null,
                     $d['echange'] ? 1 : 0, $d['echange'] ? $date : null, $d['echange'] ? $retour : null,
-                    $d['variante'], $d['public'], $d['source'], $d['score'], $d['profil'], $d['reponses'], $version,
+                    $d['palier'], $d['essai'] ? 1 : 0, $d['variante'], $d['public'], $d['source'], $d['score'], $d['profil'], $d['reponses'], $version,
                     App::hacherJeton($jeton), Base::date($maintenant + self::VALIDITE_JETON), App::jeton(), $date, $date,
                 ]);
                 $id = (int) $db->lastInsertId();
@@ -107,6 +107,14 @@ final class ListeAttente
             }
             if ($d['echange'] && (int) $existante['echange'] === 0) {
                 $ajouts['echange'] = ['le' => $date, 'origine' => $retour];
+            }
+            // Palier et intention d'essai : déclarations facultatives, mises à jour comme les autres ajouts
+            // (le palier peut changer ; l'intention d'essai ne se retire jamais silencieusement).
+            if ($d['palier'] !== null && $d['palier'] !== $existante['palier']) {
+                $ajouts['palier'] = $d['palier'];
+            }
+            if ($d['essai'] && (int) $existante['essai'] === 0) {
+                $ajouts['essai'] = true;
             }
             if ($d['reponses'] !== null) {
                 $ajouts['resultat'] = ['score' => $d['score'], 'profil' => $d['profil'], 'reponses' => $d['reponses']];
@@ -175,6 +183,12 @@ final class ListeAttente
         if (isset($ajouts['echange'])) {
             $db->prepare('UPDATE inscriptions SET echange = 1, echange_le = ?, echange_origine = ? WHERE id = ? AND echange = 0')
                 ->execute([$ajouts['echange']['le'], $ajouts['echange']['origine'], $id]);
+        }
+        if (isset($ajouts['palier']) && in_array($ajouts['palier'], Formulaire::PALIERS, true)) {
+            $db->prepare('UPDATE inscriptions SET palier = ? WHERE id = ?')->execute([$ajouts['palier'], $id]);
+        }
+        if (!empty($ajouts['essai'])) {
+            $db->prepare('UPDATE inscriptions SET essai = 1 WHERE id = ?')->execute([$id]);
         }
         if (isset($ajouts['resultat'])) {
             $db->prepare('UPDATE inscriptions SET score = ?, profil = ?, reponses = ? WHERE id = ?')

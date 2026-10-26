@@ -49,10 +49,12 @@ prelancement/
 | Traces de limitation de débit (IP hachée HMAC-SHA256 avec sel secret) | 1 heure | ≤ 24 h exigé |
 | Jeton de confirmation | 7 jours, stocké haché (SHA-256), à usage unique | |
 
+Le schéma SQLite est versionné (`PRAGMA user_version`) : les migrations sont appliquées à l'ouverture de la base, dans une transaction, sans rien supprimer (v2 : colonnes `palier` et `essai`).
+
 La purge s'exécute à chaque envoi du formulaire et par le cron horaire (`bin/purge.php`). `PRAGMA secure_delete` écrase les données supprimées.
 
 ### Ce qui est stocké
-Les champs du formulaire (§ 7.1) et les champs calculés, `version_mention` (empreinte du texte d'information affiché, calculée par `build.php`, texte archivé dans `mentions/`), horodatage et version de chaque consentement. **Aucune IP, aucun user-agent, aucun cookie** (pas de `session_start`).
+Les champs du formulaire (§ 7.1 v2, dont `palier` et `essai`, facultatifs) et les champs calculés, dont `qualifie` (entreprise **ou** structure de l'ESS de 20 à 249 personnes, cible élargie après la grille D), `version_mention` (empreinte du texte d'information affiché, calculée par `build.php`, texte archivé dans `mentions/`), horodatage et version de chaque consentement. **Aucune IP, aucun user-agent, aucun cookie** (pas de `session_start`).
 
 ## 3. Choix de sécurité
 - **CSP stricte sans `'unsafe-inline'`** : `default-src 'none'`, scripts, styles, images et polices depuis le site seulement, `form-action 'self'`, `frame-ancestors 'none'`. Pour y parvenir, `build.php` déplace les blocs `<style>`/`<script>` des pages marketing dans des fichiers et convertit les attributs `style="…"` en classes.
