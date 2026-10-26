@@ -22,6 +22,7 @@
     if (simEss) simEss.checked = true;
   } else if (variante === "b") {
     h1.textContent = h1.dataset.titreB;
+    st.textContent = st.dataset.sousTitreB;
   }
   document.getElementById("champ-variante").value = publicCible === "ess" ? "ess" : variante;
   document.getElementById("champ-public").value = publicCible;

@@ -4,7 +4,7 @@ phase: 2b Pré-lancement
 commande: /prelancement
 auteur: cro-conversion
 date: 2026-10-26
-version: 2 (périmètre « tout le SI centré sur les personnes », grille D, libre-service)
+version: 3 (plateforme de marque v1.2 : tout le SI d'abord, 6 domaines, arrivées et départs en preuve ; grille D, libre-service)
 statut: brouillon
 skills: landing-validation-waitlist, landing-page, page-tarifs, copywriting-frameworks, ab-test
 fichiers: validation.html (page), autodiagnostic.md (lead magnet)
@@ -15,7 +15,8 @@ fichiers: validation.html (page), autodiagnostic.md (lead magnet)
 > **Statut : brouillon. Rien n'est publié.** La mise en ligne, l'envoi des emails et la diffusion des liens passent par la validation explicite du fondateur (règle 2 de `CLAUDE.md`).
 > **Toujours en pré-lancement** : le produit n'existe pas. La page collecte des inscriptions à une **liste d'attente**, pas des inscriptions à l'essai. L'essai gratuit d'un mois sans carte est annoncé « à l'ouverture ».
 > **Ce qui change dans la v2 (décisions du fondateur du 2026-10-26, `STATUT.md`)** : vente en libre-service ; essai gratuit d'un mois sans carte ; **grille D validée** (`2-marche/propositions-tarifs.md` § 11) ; aucun service humain inclus ; périmètre « tout le SI centré sur les personnes » (`1-analyse/perimetre-produit.md`) ; connecteurs banque et compta retirés du MVP ; aucun téléversement de fichiers. Les promesses « mis en place avec vous » et « un DSI vous accompagne » sont supprimées et remplacées par **« conçu par un DSI »** (méthodes et check-lists de DSI intégrées).
-> **Sources internes :** `marque/plateforme-de-marque.md` (v1.1 en cours chez brand-manager), `marque/messages-par-persona.md`, `marque/charte/`, `1-analyse/perimetre-produit.md` (§ 0.3, 2, 3, 4, 6.3), `2-marche/propositions-tarifs.md` (§ 1.1, 1.3, 11), `2-marche/personas.md`, `acquisition.md`, `signaux-demande.md`.
+> **Ce qui change dans la v3 (retour du fondateur du 2026-10-26 : « on a l'impression que c'est juste un truc d'entrées et de départs »)** : la page suit la logique de la plateforme de marque v1.2 (§ 4) : **1. tout le SI → 2. relié aux personnes → 3. alertes, coût lisible, et arrivées et départs en preuve**. Nouveau titre A et sous-titre (§ 4.1), section « Tout ce que Lanternis suit pour vous » avec les 6 domaines repris tels quels (§ 4.2), aperçu du hero montrant plusieurs types d'échéances, section arrivées et départs raccourcie et placée après, FAQ « Gérez-vous le matériel loué ? ». Phrases réductrices de la v2 retirées (§ 10.7). Tarifs, formulaire et texte `.mention-form` inchangés.
+> **Sources internes :** `marque/plateforme-de-marque.md` (v1.2 : § 4, 4.1, 4.2, 10.6, 10.7), `marque/messages-par-persona.md`, `marque/charte/`, `1-analyse/perimetre-produit.md` (§ 0.3, 2, 3, 4, 6.3), `2-marche/propositions-tarifs.md` (§ 1.1, 1.3, 11), `2-marche/personas.md`, `acquisition.md`, `signaux-demande.md`.
 > **(H)** = hypothèse non vérifiée. Les seuls chiffres externes affichés sur la page sont sourcés (S2 : offres HelloWork et Insee, § 5.13). Les prix sont ceux de la grille D, affichés comme « tarifs de lancement envisagés ».
 
 ---
@@ -29,7 +30,7 @@ fichiers: validation.html (page), autodiagnostic.md (lead magnet)
 | Hypothèse (`STATUT.md`) | Ce que la page mesure | Limite |
 |---|---|---|
 | **H5 Acquisition** (en libre-service : volume d'essais, `propositions-tarifs.md` § 11.6) | Inscrits qualifiés par source ; part qui déclare vouloir essayer dès l'ouverture | La page ne crée pas le trafic. Une intention déclarée n'est pas un essai |
-| **H1 Douleur SI** (déclencheur : arrivées et départs, départ du référent) | Répartition de « ce qui vous préoccupe le plus » ; taux d'inscription selon le titre A ou B | Déclaratif ; à recouper en entretien |
+| **H1 Douleur SI** (contrats reconduits, licences et matériel non maîtrisés, départ du référent, arrivées et départs) | Répartition de « ce qui vous préoccupe le plus » ; taux d'inscription selon le titre A ou B | Déclaratif ; à recouper en entretien |
 | **H3 Volonté de payer** (grille D) | Indirect : les prix sont affichés **avant** le formulaire ; palier choisi (Essentiel, Pilotage, Pilotage+) ; usage du simulateur ; clics « Rejoindre la liste d'attente pour… » sur chaque offre | Une inscription n'est pas un achat. La preuve reste l'essai converti en abonnement, après l'ouverture |
 | **H4 Cockpit vide** (en libre-service) | Part des inscrits qui choisissent Pilotage (modèles illimités, prestataires) ; questions ouvertes dans la FAQ « Qui m'aide à démarrer ? » | Très indirect ; se mesure vraiment pendant l'essai (activation) |
 | **H2 Pas déjà résolu** | Part de « Autre chose » ; réponses à la question ouverte de l'email de bienvenue | Faible ; surtout qualitatif |
@@ -38,40 +39,40 @@ fichiers: validation.html (page), autodiagnostic.md (lead magnet)
 
 ## 2. Cibles
 
-- **P1 (principal), Marc, dirigeant d'une PME de 50 à 249 salariés sans DSI.** Version par défaut. Bénéfice phare : **les arrivées et les départs sans rien oublier** ; déclencheur secondaire : le départ du référent informatique (S2, variante B).
+- **P1 (principal), Marc, dirigeant d'une PME sans DSI.** Version par défaut. Message phare : **toute l'informatique lisible, chaque élément relié à une personne** (plateforme v1.2, message 1) ; les échéances ensuite ; les arrivées et départs en preuve. Le départ du référent informatique (S2) reste un argument de continuité.
 - **P2 (variante ESS), Nadia, DAF d'une association de 20 à 249 salariés.** Même page avec `?public=ess` : titre et sous-titre propres, type « ESS » présélectionné dans le formulaire **et dans le simulateur**. Arguments propres : tarif associatif, bénévoles non facturés, preuves pour le CA et les financeurs.
-- **P3 (office manager)** : pas de version dédiée. C'est souvent elle qui mène les arrivées et départs : la section « Arrivées et départs » lui parle directement ; elle peut transmettre la page à sa direction.
+- **P3 (office manager)** : pas de version dédiée. Elle suit souvent le matériel, les locations et les arrivées et départs : les 6 domaines et la section de preuve lui parlent directement ; elle peut transmettre la page à sa direction.
 - **Tranché le 2026-10-26** : avec la grille D validée et le libre-service, les PME de 20 à 49 personnes entrent dans la cible (cœur de cible 20 à 99). La page, la carte « Pour qui » et la règle `qualifie` (§ 7.1) visent désormais les **entreprises et structures de l'ESS de 20 à 249 personnes**.
 
 ## 3. Promesse et test des 5 secondes
 
-**Promesse (plateforme de marque § 4, à aligner sur la v1.1 de brand-manager) :** « Vous savez ce que vous avez, ce que vous payez et ce qui arrive à échéance. Et votre informatique ne part pas avec la personne qui la connaissait. » La v2 de la page la décline autour des personnes : **qui a quoi, et rien d'oublié quand quelqu'un arrive ou part**.
+**Promesse (plateforme de marque v1.2, § 4) :** « Toute votre informatique, reliée à chaque personne : vous savez qui a quoi, ce que vous payez et ce qui arrive à échéance. Et Lanternis vous prévient avant. »
 
 | En 5 secondes, le visiteur doit comprendre | Où sur la page |
 |---|---|
-| **Quoi** : tout le SI rattaché aux personnes ; une check-list prête à chaque arrivée et départ | Titre + sous-titre + aperçu (départ de « Claire M. ») |
+| **Quoi** : toute l'informatique (contrats, matériel, licences, accès), chaque élément relié à une personne, avec les échéances | Titre + sous-titre + aperçu (contrat avec préavis, fin de location d'un copieur, licences sans utilisateur, garantie, un départ) |
 | **Pour qui** : PME et associations sans DSI | Ligne « Conçu par un DSI, pour les PME et les associations qui n'en ont pas » + ligne sous les boutons |
 | **Où en est le produit** : en préparation, liste d'attente, essai d'un mois sans carte à l'ouverture | Étiquette au-dessus du titre + ligne sous les boutons |
 | **Quoi faire** : rejoindre la liste d'attente | Bouton principal (un seul objectif de conversion) |
 
-Test à faire avant la mise en ligne : montrer la page 5 secondes à 5 personnes de la cible (réseau Tecnoo), leur demander « c'est quoi, pour qui, que feriez-vous ? ». Seuil : 4 sur 5 répondent juste sur les trois points (H). Point de vigilance propre à la v2 : vérifier que « arrivées, départs » n'est pas compris comme un outil RH (paie, contrats de travail). Si 2 personnes sur 5 le comprennent ainsi, passer au titre C (§ 8).
+Test à faire avant la mise en ligne : montrer la page 5 secondes à 5 personnes de la cible (réseau Tecnoo), leur demander « c'est quoi, pour qui, que feriez-vous ? ». Seuil : 4 sur 5 répondent juste sur les trois points (H). Question ajoutée en v3 : « Citez trois choses que l'outil suit. » Seuil (H) : 4 sur 5 citent au moins deux éléments parmi contrats, matériel et licences. Si la réponse dominante est « les arrivées et départs », la hiérarchie de la page reste à revoir (retour du fondateur).
 
 ## 4. Structure (cadre PAS puis AIDA)
 
 | # | Section | Rôle | Cadre |
 |---|---|---|---|
-| 1 | En-tête (logo nuit, ancres : arrivées et départs, comment ça marche, tarifs, questions) | Repère, navigation interne | — |
-| 2 | Hero : étiquette « En préparation », titre, sous-titre, « Conçu par un DSI… », bouton principal, bouton « tarifs », ligne essai sans carte, aperçu du tableau de bord (exemple fictif, légendé) | Attention, test des 5 secondes | AIDA : A |
-| 3 | Problème : « Votre informatique tient-elle dans la tête d'une seule personne ? » (départs, arrivées, référent) | Nommer l'ennemi, pas le prestataire | PAS : P + A |
-| 4 | **Arrivées et départs** (bénéfice phare) : check-lists générées depuis le registre, preuve, « Lanternis ne crée ni ne supprime aucun compte » | Rendre la valeur concrète | PAS : S ; AIDA : I |
-| 5 | Tout le SI rattaché aux personnes : qui a quoi / ce que coûte votre SI / ce qui arrive à échéance | Élargir au SI entier ; coût du SI seulement | AIDA : I |
+| 1 | En-tête (logo nuit, ancres : ce que Lanternis suit, comment ça marche, tarifs, questions) | Repère, navigation interne | — |
+| 2 | Hero : étiquette « En préparation », titre, sous-titre, « Conçu par un DSI… », bouton principal, bouton « tarifs », ligne essai sans carte, aperçu du tableau de bord avec plusieurs types d'échéances (exemple fictif, légendé) | Attention, test des 5 secondes | AIDA : A |
+| 3 | Problème : « Votre informatique tient-elle dans la tête d'une seule personne ? » (contrats reconduits, dépenses inutiles, une seule personne sait) | Nommer l'ennemi, pas le prestataire | PAS : P + A |
+| 4 | **Tout ce que Lanternis suit pour vous** : les 6 domaines en cartes avec icônes de la charte, ligne « Et le coût de votre SI, par an et par personne. » | Montrer l'étendue : tout le SI | PAS : S ; AIDA : I |
+| 5 | Arrivées et départs, **en preuve** : « chaque départ a sa check-list », version courte | Montrer que tout est relié aux personnes | AIDA : I |
 | 6 | Comment ça marche, en libre-service (4 étapes) | Lever « encore un outil à remplir » et « personne pour m'aider » | AIDA : I |
 | 7 | Et votre prestataire ? | Objection n° 1, neutralité ; prestataire invité | AIDA : D |
 | 8 | Autodiagnostic (lead magnet) | Second point d'entrée, sans email obligatoire | AIDA : D |
 | 9 | Pour qui / pas pour qui | Qualifier ; dire ce que Lanternis ne fait pas (administration des comptes, trésorerie) | AIDA : D |
 | 10 | Ce que nous pouvons promettre aujourd'hui (déjà vrai / prévu) | Preuves honnêtes, **aucun témoignage ni logo** | AIDA : D |
 | 11 | **Tarifs envisagés (grille D)** : 3 cartes (Essentiel, Pilotage mis en avant, Pilotage+ « bientôt »), tableau par tranche, simulateur (JS progressif), règles annuel / ESS / bénévoles | Transparence, qualification, mesure de l'intérêt par palier | AIDA : D |
-| 12 | FAQ (11 questions) | Objections, dont aide en libre-service, services facultatifs, sécurité | AIDA : D |
+| 12 | FAQ (12 questions) | Objections, dont aide en libre-service, services facultatifs, sécurité | AIDA : D |
 | 13 | Formulaire de liste d'attente (CTA final), avec palier et intention d'essai facultatifs | Conversion et mesure | AIDA : A |
 | 14 | Sources des chiffres cités | Zéro chiffre non sourcé | — |
 | 15 | Pied de page (mentions Hasteria, liens légaux) | Légal | — |
@@ -84,33 +85,45 @@ Les textes ci-dessous sont ceux de `validation.html`. Ton : vouvoiement, posé, 
 
 ### 5.1 Hero
 - Étiquette : **En préparation · liste d'attente ouverte**
-- Titre (A) : **Arrivées, départs : votre informatique suit, sans rien oublier.**
-- Sous-titre : « Postes, comptes, licences, accès, contrats : Lanternis rattache tout votre SI aux personnes qui l'utilisent. Quand quelqu'un arrive ou part, la check-list est prête, faite de ce que la personne a vraiment. Et vous savez ce que coûte votre informatique et ce qui arrive à échéance. »
+- Titre (A) : **Toute votre informatique, enfin lisible : qui a quoi, ce que vous payez, ce qui arrive à échéance.** (plateforme v1.2, § 4.1, titre A)
+- Sous-titre (A) : « Contrats, matériel, licences, accès : chaque élément de votre SI relié à une personne. Lanternis est conçu pour vous prévenir avant chaque échéance, pas après. » (§ 4.1, titre B en sous-titre, complété par une phrase en « conçu pour », règle du § 10.6)
 - Signature : **Conçu par un DSI, pour les PME et les associations qui n'en ont pas.**
 - Bouton principal : **Rejoindre la liste d'attente** · bouton secondaire : **Voir les tarifs envisagés**
-- Sous les boutons : « Inscription gratuite et sans engagement. À l'ouverture : essai gratuit d'un mois, sans carte bancaire. Pour les PME de 50 à 249 salariés et les associations de 20 à 249 salariés. »
-- Aperçu « Votre informatique ce mois-ci » : coût du SI par an 38 420 € HT ; 3 arrivées et départs en cours ; 2 comptes de personnes parties « à fermer » ; bloc « Départ de Claire M., vendredi : 5 tâches générées » (portable et téléphone à récupérer ; compte Microsoft 365 à bloquer, « constat automatique » ; 2 licences à libérer, 540 € HT/an ; accès au logiciel de paie à retirer ; nouveau responsable du contrat des copieurs « à désigner ») ; « Pourquoi vous voyez ceci : Claire est responsable du contrat des copieurs, qui se reconduit tacitement le 15 décembre. » Légende : « Maquette de principe du tableau de bord prévu. Exemple fictif : ces personnes et ces montants ne viennent d'aucun client. » (scénario du § 2.4 de `perimetre-produit.md` : alertes A7, A8, A9, A13, A1).
+- Sous les boutons : « Inscription gratuite et sans engagement. À l'ouverture : essai gratuit d'un mois, sans carte bancaire. Pour les PME de 20 à 249 salariés et les associations de 20 à 249 salariés. »
+- Aperçu « Votre informatique ce mois-ci » : coût du SI par an 38 420 € HT ; coût par personne et par an 1 011 € HT (38 420 ÷ 38 personnes, cohérent avec l'exemple) ; 5 échéances à 90 jours « à décider ». Liste « Échéances des 90 prochains jours » : contrat de maintenance informatique, préavis dans 21 j, 4 800 € HT/an (A1) ; location du copieur de l'accueil, fin dans 45 j, 2 160 € HT/an (A3) ; 3 licences Microsoft 365 sans utilisateur, « à libérer », 540 € HT/an (A8) ; garantie de 6 postes portables, fin dans 70 j (A3) ; départ de Claire M. vendredi : portable, compte, 2 licences (A9, M7). « Pourquoi vous voyez ceci : le contrat de maintenance se reconduit tacitement pour un an s'il n'est pas résilié dans les 21 jours. » Légende : « Maquette de principe du tableau de bord prévu. Exemple fictif : ces éléments, ces personnes et ces montants ne viennent d'aucun client. »
+- Variante B (`?v=b`) : titre « Contrats, matériel, licences, accès : chaque élément de votre SI relié à une personne. » ; sous-titre « Vous savez qui a quoi, ce que vous payez et ce qui arrive à échéance. Lanternis est conçu pour vous prévenir avant, pas après. » (attribut `data-sous-titre-b`, échangé par le script).
 
 ### 5.2 Problème
 **Votre informatique tient-elle dans la tête d'une seule personne ?**
-« Sans DSI, personne n'a la vue d'ensemble de votre système d'information (le SI, c'est-à-dire toute votre informatique) : qui a quel poste, quels comptes, quels accès, et ce que tout cela coûte. »
-1. **Quand quelqu'un part, on oublie toujours quelque chose.** Un compte de messagerie encore actif, un portable jamais rendu, une licence payée pour personne, un mot de passe partagé qui n'a pas été changé.
-2. **Quand quelqu'un arrive, rien n'est prêt.** Le poste n'est pas commandé, le compte est créé la veille, les accès arrivent au fil des demandes.
-3. **Une seule personne sait.** Si votre référent informatique partait demain, qui saurait ce que vous possédez, qui a accès à quoi et quels contrats se renouvellent le mois prochain ?
+« Sans DSI, personne n'a la vue d'ensemble de votre système d'information (le SI, c'est-à-dire toute votre informatique) : quels contrats, quel matériel, quelles licences, qui a accès à quoi, et ce que tout cela coûte. »
+1. **Des contrats se reconduisent sans décision.** Maintenance, location du copieur, hébergement : la date de préavis passe, et le contrat repart pour un an.
+2. **On paie des choses que personne n'utilise.** Licences sans utilisateur, abonnements pris par carte bancaire, matériel dont on ne sait plus qui l'a.
+3. **Une seule personne sait.** Si votre référent informatique partait demain, qui saurait ce que vous possédez, qui a accès à quoi et ce qui se renouvelle le mois prochain ? Et quand un salarié part, qui vérifie que son compte est fermé et son portable rendu ?
 
-« On oublie toujours quelque chose » est une formulation d'expérience, pas une statistique : à confirmer en entretien (H). Si les entretiens ne la confirment pas, l'adoucir (« on oublie souvent quelque chose »).
+Ces situations sont des formulations d'expérience, pas des statistiques : à confirmer en entretien (H).
 
-### 5.3 Arrivées et départs (bénéfice phare)
-**Une arrivée, un départ : la check-list est déjà faite** — « Parce que Lanternis sait ce que chaque personne a, la liste des tâches n'est pas un modèle générique : elle contient son matériel, ses comptes, ses licences et ses accès réels. »
-- **Au départ** : récupérer le matériel affecté (le jour du départ) ; bloquer le compte de messagerie et décider du sort de la boîte (constaté automatiquement si Microsoft 365 est relié) ; libérer les licences, retirer les accès, changer les mots de passe partagés connus ; confier à quelqu'un les contrats, applications et sauvegardes dont la personne était responsable.
-- **À l'arrivée** : choisir le poste (dix jours avant) ; créer le compte et attribuer les licences (constat automatique avec Microsoft 365) ; ouvrir les accès ; remettre le matériel et présenter les règles d'usage.
-- Encadré : « Chaque tâche est confiée à quelqu'un (vous, l'office manager, votre prestataire), avec une date et un rappel. À la fin, vous gardez la preuve datée que tout a été fait : utile devant un assureur, un client ou votre CA. **Lanternis ne crée ni ne supprime aucun compte à votre place** : il vous dit quoi faire et constate que c'est fait. » (garde-fou du § 0.3 de `perimetre-produit.md`)
+### 5.3 Tout ce que Lanternis suit pour vous (6 domaines)
+Chapeau : « Un seul registre de toute votre informatique, écrit pour la direction et pas pour des techniciens. Chaque élément y est relié à une personne, ou à un responsable s'il est partagé. »
 
-### 5.4 Tout votre SI, rattaché aux personnes
-« Un seul registre, écrit pour la direction et pas pour des techniciens. Chaque poste, compte, licence et accès appartient à quelqu'un ; chaque contrat a un responsable. »
-- **Qui a quoi** : personnes (salariés, stagiaires, intérimaires, prestataires, bénévoles), postes et téléphones, comptes, licences, accès.
-- **Ce que coûte votre SI** : contrats, abonnements, licences et matériel en euros HT par an, et le coût par personne. Aucune donnée de trésorerie ni de banque : seul le coût du SI est suivi (`perimetre-produit.md` § 0.3).
-- **Ce qui arrive à échéance** : préavis, renouvellements, garanties, domaines, certificats, sauvegardes jamais testées ; alerte avant et récapitulatif hebdomadaire (anti-bruit du § 3.1).
+Six cartes (liste `ul`), textes repris **tels quels** de la plateforme v1.2 § 4.2, avec une icône de `marque/charte/iconographie/icones/` (fichier SVG en `<img alt="">`, décoratif, sur pastille ambre pâle fixe pour rester lisible en thème sombre) :
+
+| Carte | Icône | Texte |
+|---|---|---|
+| Contrats et fournisseurs | `contrat.svg` | Préavis, reconduction tacite, date limite de résiliation calculée et rappelée à temps. |
+| Matériel acheté, loué ou en leasing | `poste.svg` | Qui l'a, fin de garantie ou de location, renouvellement prévu, restitution. |
+| Licences et abonnements logiciels | `licence.svg` | Qui a quoi, licences payées sans utilisateur, date de renouvellement. |
+| Comptes et accès | `acces.svg` | Qui a accès à quoi, comptes encore actifs après un départ, aucun mot de passe stocké. |
+| Domaines, certificats et sauvegardes | `sauvegarde.svg` | **Écart volontaire avec le § 4.2** : « Expirations des domaines et des certificats surveillées ; sauvegardes (vérifications consignées) » + étiquette **prévu**, car les sauvegardes (US-13) peuvent glisser en tranche 2 (plateforme § 4.2, points de vigilance ; demande du coordinateur). |
+| Arrivées et départs | `arrivee.svg` | Une check-list tirée de ce que la personne a vraiment, preuve à l'appui. |
+
+Ligne de synthèse : **« Et le coût de votre SI, par an et par personne. »** Puis : « Le produit est en préparation : ces domaines décrivent ce qui est prévu à l'ouverture. Lanternis est conçu pour vous prévenir avant chaque échéance, avec un récapitulatif chaque semaine plutôt qu'un flux de notifications. » Aucune donnée de trésorerie ni de banque : seul le coût du SI est suivi (`perimetre-produit.md` § 0.3).
+
+### 5.4 Arrivées et départs, la preuve que tout est relié
+**La preuve que tout est relié : chaque départ a sa check-list** — « Parce que chaque contrat, matériel, licence et accès est relié à une personne, la liste des tâches d'un départ n'est pas un modèle générique : c'est ce que la personne a vraiment. »
+- Récupérer son portable et son téléphone, ou rendre le matériel loué au loueur ;
+- bloquer son compte, libérer ses licences, retirer ses accès (constat automatique prévu pour les comptes et licences Microsoft 365) ;
+- confier à quelqu'un les contrats et les applications dont elle était responsable.
+Puis : « Même principe à l'arrivée : poste, compte, licences et accès prêts à temps. Chaque tâche a un responsable et une date ; vous gardez la preuve datée que tout a été fait. **Lanternis ne crée ni ne supprime aucun compte à votre place** : il vous dit quoi faire et constate que c'est fait. » (garde-fou du § 0.3 de `perimetre-produit.md`). Cette section cite toujours contrats, matériel et licences avec les départs (§ 10.7).
 
 ### 5.5 Comment ça marche (libre-service)
 « Vous vous lancez seul, guidé pas à pas. Lanternis est conçu par un DSI : les méthodes et les check-lists d'un DSI sont déjà dans l'outil. »
@@ -127,7 +140,7 @@ Mention : « Le produit est en préparation : ces étapes décrivent le fonction
 Inchangé : **Autodiagnostic SI gratuit : 10 questions, 5 minutes**, résultat à l'écran sans email (→ `autodiagnostic.html`). À revoir par son auteur : ajouter une question sur les arrivées et départs si l'autodiagnostic est mis à jour.
 
 ### 5.8 Pour qui, et pour qui ce n'est pas
-- Fait pour vous si : PME de 50 à 249 salariés ou association de 20 à 249 ; pas de DSI ; arrivées et départs fréquents ; envie de connaître le coût du SI et de décider avant les renouvellements ; préférence pour démarrer seul, sans rendez-vous commercial.
+- Fait pour vous si : PME ou association de 20 à 249 salariés ; pas de DSI ; envie de savoir quels contrats, quel matériel (acheté ou loué) et quelles licences vous avez, et qui les utilise ; envie de connaître le coût du SI et de décider avant les renouvellements ; que rien ne soit oublié quand quelqu'un arrive ou part ; préférence pour démarrer seul, sans rendez-vous commercial.
 - Pas pour vous si : DSI ou équipe interne ; besoin de dépannage, d'infogérance ou d'antivirus ; besoin d'un outil qui **crée et supprime les comptes** (provisionnement) ; besoin d'un outil de **trésorerie ou de comptabilité**.
 
 ### 5.9 Ce que nous pouvons vous promettre aujourd'hui
@@ -149,7 +162,7 @@ Source : `2-marche/propositions-tarifs.md` § 11.2 et § 11.3, grille validée p
 |---|---|---|---|
 | Prix affiché | 49 € HT/mois jusqu'à 49 personnes | 99 € HT/mois jusqu'à 49 personnes | 199 € HT/mois **envisagés** jusqu'à 49 personnes |
 | Accroche | Pour tenir le registre et ne rien oublier | Pour piloter et rendre des comptes | Pour les structures à plusieurs sites |
-| Contenu affiché | Tout le registre ; coût du SI et par personne ; échéances ; arrivées et départs (1 modèle d'arrivée, 1 de départ) ; import Excel, Microsoft 365 en lecture seule ; alertes, récapitulatif, tableau de bord ; 3 utilisateurs, 1 prestataire invité, 12 mois d'historique ; export complet ; aide en ligne et par email | Tout Essentiel + modèles illimités avec conditions ; utilisateurs illimités, 3 prestataires invités ; historique illimité ; réponse plus rapide par email ; **« après l'ouverture »** : changement de poste, revue des accès, décisions de renouvellement, passation et procédures, synthèse mensuelle et attestations PDF | Tout Pilotage + multi-sites avec responsables de site ; prestataires illimités ; règles d'alerte personnalisées ; API en lecture. « Ouvrira avec le multi-sites, après le lancement. » |
+| Contenu affiché (v3 : domaines nommés) | Contrats et fournisseurs, avec préavis et date limite de résiliation ; matériel acheté, loué ou en leasing (affectation, garantie, fin de location) ; licences et abonnements logiciels, comptes et accès, reliés aux personnes ; domaines et certificats surveillés, sauvegardes (vérifications consignées) **« prévu »** ; coût du SI par an et par personne ; arrivées et départs (1 modèle d'arrivée, 1 de départ) ; import Excel, Microsoft 365 en lecture seule ; alertes, récapitulatif, tableau de bord ; 3 utilisateurs, 1 prestataire invité, 12 mois d'historique ; export complet ; aide en ligne et par email | Tout Essentiel + modèles illimités avec conditions ; utilisateurs illimités, 3 prestataires invités ; historique illimité ; réponse plus rapide par email ; **« après l'ouverture »** : changement de poste, revue des accès, décisions de renouvellement, passation et procédures, synthèse mensuelle et attestations PDF | Tout Pilotage + multi-sites avec responsables de site ; prestataires illimités ; règles d'alerte personnalisées ; API en lecture. « Ouvrira avec le multi-sites, après le lancement. » |
 | Lien | « Rejoindre la liste d'attente pour Essentiel » | « … pour Pilotage » | « Être prévenu de l'ouverture de Pilotage+ » |
 
 Choix de rédaction : les fonctions classées P2 au § 11.3 sont étiquetées « après l'ouverture » pour ne rien promettre au lancement. Les délais de support (2 jours ouvrés, 1 jour ouvré, H) ne sont pas chiffrés sur la page (« réponse plus rapide ») tant qu'ils ne sont pas tenables. Les connecteurs P2 (Qonto, Pennylane) ne sont pas cités.
@@ -185,6 +198,7 @@ Non affichés volontairement : le prix des services facultatifs (190 € et 290 
 
 ### 5.11 FAQ
 1. **Mon prestataire s'en occupe déjà. Pourquoi Lanternis ?** — Il fait marcher votre informatique ; mais la liste de ce que chaque personne a, de vos contrats et de vos accès, avec leurs échéances, l'avez-vous ? Et qui vérifie que tout est fermé quand quelqu'un part ? Votre prestataire peut y contribuer.
+1 bis. **Gérez-vous le matériel loué ?** *(nouvelle en v3, placée en 3e position sur la page)* — « Oui, c'est prévu dès l'ouverture. Chaque matériel indique s'il est acheté, loué ou en leasing, et le contrat qui le couvre (copieur, postes, téléphones). Lanternis est conçu pour vous rappeler la fin de location ou de garantie avant l'échéance, pour savoir à qui le matériel est affecté et pour l'inscrire dans la check-list de restitution quand la personne part. Les loyers entrent dans le coût de votre SI. » (`perimetre-produit.md` § 1.2 mode d'acquisition, § 1.4, A3, I1)
 2. **Encore un outil à remplir : qui va le tenir à jour ?** — Excel ou liste du prestataire au départ ; Microsoft 365 met à jour comptes et licences ; le prestataire invité complète ; chaque arrivée ou départ fait vivre le registre ; les alertes font le reste.
 3. **Qui m'aide à démarrer si personne ne m'accompagne ?** *(aide en libre-service)* — Liste de démarrage, gabarit Excel, structure d'exemple, courtes vidéos, aide en ligne, réponse par email. Aucun rendez-vous nécessaire pour essayer ni pour s'abonner.
 4. **Proposez-vous des services, par exemple une aide à la mise en place ?** *(services facultatifs)* — L'abonnement n'inclut aucun service humain. Quelques services facultatifs (ex. séance d'aide au démarrage en visio) pourront être réservés et payés en ligne, en nombre limité chaque mois ; jamais nécessaires ; tarifs publiés à l'ouverture.
@@ -250,7 +264,7 @@ Hypothèse de taux de qualification : ≥ 70 % des inscrits (H), soit environ 11
 | Conversion visiteur → inscription (global) | **≥ 5 %** | 2 à 5 % | **< 2 % après ≥ 500 visiteurs** | Qualité du message |
 | Part d'inscrits qualifiés | ≥ 70 % | 50 à 70 % | < 50 % | Ciblage des canaux |
 | Confirmation du double opt-in | ≥ 70 % | 50 à 70 % | < 50 % | Délivrabilité |
-| Préoccupation « arrivées et départs » (`acces`) + « départ du référent » | ≥ 35 % des qualifiés | 20 à 35 % | < 20 % | H1 : le bénéfice phare est-il le bon ? |
+| Répartition des préoccupations (`couts`, `renouvellements`, `acces`, `depart-referent`, `rendre-compte`) | Indicateur d'ordre des messages, sans seuil | | | H1 : quel domaine porte la douleur ? Sert à ordonner les 6 domaines et les messages |
 | Visiteurs de la section tarifs qui utilisent le simulateur | Indicateur de lecture, sans seuil | | | Compréhension de la grille |
 | Inscrits qui acceptent l'échange de 30 min | ≥ 15 % | 8 à 15 % | < 8 % | Alimentation des entretiens (moins central qu'en vente directe) |
 
@@ -299,12 +313,14 @@ Il rend le compte des inscrits **vérifiable** (critère éliminatoire « signal
 
 | | Titre | Sous-titre | Angle | Usage |
 |---|---|---|---|---|
-| **A** (contrôle) | Arrivées, départs : votre informatique suit, sans rien oublier. | Celui du § 5.1 | Bénéfice phare : les arrivées et départs, tout le SI autour des personnes | P1, par défaut |
-| **B** | Quand votre référent informatique part, votre informatique reste. | Identique à A | Déclencheur n° 1, continuité (S2, tagline 3) | P1, `?v=b` |
-| **C** (réserve) | Votre informatique, enfin lisible. | Identique à A | Ancien titre A : promesse générale | Si A et B convertissent < 2 %, ou si le test des 5 secondes montre une confusion avec un outil RH |
-| **ESS** | Une informatique maîtrisée, chiffrée et à jour de chaque arrivée et de chaque départ. | « Postes, comptes, licences, accès, contrats : tout votre SI rattaché aux personnes, salariés comme bénévoles. Une check-list prête à chaque arrivée et à chaque départ, le coût de votre informatique et ses échéances sur une page, de quoi rendre compte à votre CA et à vos financeurs. Tarif associatif, bénévoles non facturés. » | Rendre compte, tarif associatif | P2, `?public=ess`, hors test A/B |
+| **A** (contrôle) | Toute votre informatique, enfin lisible : qui a quoi, ce que vous payez, ce qui arrive à échéance. | « Contrats, matériel, licences, accès : chaque élément de votre SI relié à une personne. Lanternis est conçu pour vous prévenir avant chaque échéance, pas après. » | Promesse de la plateforme v1.2 (§ 4.1 A) : bénéfice d'abord | P1, par défaut |
+| **B** | Contrats, matériel, licences, accès : chaque élément de votre SI relié à une personne. | « Vous savez qui a quoi, ce que vous payez et ce qui arrive à échéance. Lanternis est conçu pour vous prévenir avant, pas après. » | Le plus explicite (§ 4.1 B) : ce que Lanternis gère, d'abord | P1, `?v=b` |
+| **C** (réserve) | La carte de tout votre SI, personne par personne. | Celui de A | § 4.1 C : court, mémorisable | Si A et B convertissent < 2 % ; sinon réservé aux formats courts (Open Graph, Facebook, objets d'email) |
+| **ESS** | Toute l'informatique de votre association, enfin lisible : qui a quoi, ce que vous payez, ce qui arrive à échéance. | « Contrats, matériel acheté ou loué, licences, accès : chaque élément relié à une personne, salariée ou bénévole. De quoi rendre compte à votre CA et à vos financeurs, avec un tarif associatif et des bénévoles non facturés. » | Même promesse, rendre compte, tarif associatif | P2, `?public=ess`, hors test A/B |
 
-**Hypothèse :** pour P1, un titre qui nomme une situation récurrente (chaque arrivée, chaque départ) convertit au moins aussi bien qu'un titre centré sur un événement rare mais grave (le départ du référent), et attire des inscrits qui choisissent plus souvent Pilotage (modèles de processus). Si B gagne nettement, le départ du référent redevient le message principal du blog et de la prospection.
+Le titre « Quand votre référent informatique part, votre informatique reste » (B de la v2) sort du test : il reste un message de continuité (plateforme, message 5) pour le blog et les entretiens.
+
+**Hypothèse :** pour P1, un titre qui nomme concrètement ce que Lanternis gère (B) convertit mieux qu'un titre centré sur le bénéfice (A), parce que le lecteur pressé comprend tout de suite que l'outil couvre tout le SI (retour du fondateur). Si B gagne nettement, il devient le titre principal et A passe en sous-titre.
 
 **Métrique principale :** taux de conversion visiteur unique → inscription envoyée, par variante. Secondaires : part d'intention d'essai, part Pilotage + Pilotage+, début de formulaire, part d'inscrits qualifiés.
 
@@ -351,6 +367,8 @@ Le compteur de `waitlist.php` reste la source de vérité ; les événements ne 
 - **Aucun chiffre non sourcé** : S2 (HelloWork, Insee) et la grille D marquée « tarifs de lancement envisagés » ; l'aperçu est légendé « exemple fictif » (personnes et montants).
 - **Aucun faux témoignage, logo client ni compteur d'inscrits.**
 - **Promesses retirées** : « mis en place avec vous », « par un spécialiste du SI », revue trimestrielle avec un DSI, frais de mise en place (490 à 990 €), connecteurs banque et compta, « à partir de 149 € ». **Ajoutées** : « conçu par un DSI », essai d'un mois sans carte à l'ouverture, lecture seule, aucun mot de passe, aucun fichier.
+- **Plateforme v1.2, § 10.7 (v3)** : aucun titre ni accroche centré sur les arrivées et départs ; partout où les départs sont cités (hero, preuve, FAQ), les contrats, le matériel et les licences le sont aussi. § 10.6 : fonctions à venir en « conçu pour », « prévu » ou « après l'ouverture » ; les sauvegardes portent « prévu ».
+- **Icônes des 6 domaines** : fichiers `marque/charte/iconographie/icones/{contrat,poste,licence,acces,sauvegarde,arrivee}.svg` en `<img>` (≈ 0,4 Ko chacun). `build.php` réécrit tout chemin `../../marque/charte/…` d'un attribut `src`/`href` en `assets/charte/…` et copie le fichier (étape 5 de `transformerPage`, puis copie des ressources) : **l'iconographie est donc copiée sans adaptation du build** (vérifié à la lecture du code, build non lancé). Les SVG fixent `color="#1B2330"` : posés sur une pastille ambre pâle fixe, ils restent lisibles en thème sombre.
 - **Aucune ressource externe ni traceur** : CSS `../../marque/charte/tokens.css`, logos SVG locaux, icônes SVG intégrées.
 - **CSP** : CSS et JS en ligne extraits par `build.php` ; attributs `style` convertis en classes ; aucun gestionnaire `on…` en ligne.
 - **Sans JavaScript** : titre A, tableau de prix complet, formulaire classique ; le simulateur est masqué (`hidden`, et règle `[hidden]{display:none!important}`). Les liens des cartes d'offre restent des ancres vers le formulaire.
@@ -376,4 +394,6 @@ Le compteur de `waitlist.php` reste la source de vérité ; les événements ne 
 - Les promesses produit (lecture seule, constat automatique, structure d'exemple, vidéos, hébergement en France, export, essai d'un mois sans carte) sont des cibles, marquées « prévu ».
 - « Conçu par un DSI » est une preuve déclarative à valider par le fondateur.
 - « On oublie toujours quelque chose » au départ d'une personne : formulation d'expérience à confirmer en entretien.
-- Cible : la page garde PME 50 à 249 et ESS 20 à 249 alors que la grille D et le libre-service visent aussi les 20 à 49 (point ouvert, § 2).
+- Cible : entreprises et ESS de 20 à 249 salariés (tranché le 2026-10-26, § 2).
+- Sauvegardes : affichées « prévu » faute de confirmation de leur présence en tranche 1 ; à confirmer au cadrage (plateforme § 4.2).
+- Titres A et B de la v3 : à choisir ou tester par le fondateur (plateforme § 4.1) ; aucune donnée ne départage aujourd'hui « bénéfice d'abord » et « liste d'abord ».

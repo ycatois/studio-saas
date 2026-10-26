@@ -1,9 +1,10 @@
 <!doctype html>
 <!--
-  Lanternis · landing de validation (liste d'attente) · statut: brouillon · v2 du 2026-10-26
+  Lanternis · landing de validation (liste d'attente) · statut: brouillon · v3 du 2026-10-26
   Auteur : cro-conversion. Stratégie, textes, champs et comportement attendu de waitlist.php : validation.md.
-  v2 : périmètre « tout le SI centré sur les personnes », arrivées et départs en bénéfice phare,
+  v3 (plateforme de marque v1.2) : tout le SI d'abord (6 domaines), les arrivées et départs en preuve ;
   grille tarifaire D (Essentiel, Pilotage, Pilotage+ bientôt), vente en libre-service, essai d'un mois sans carte à l'ouverture.
+  Icônes des 6 domaines : fichiers de marque/charte/iconographie/icones/ (copiés par build.php comme toute ressource de la charte).
   NE PAS PUBLIER sans validation explicite du fondateur (règle 2 de CLAUDE.md).
   Aucune ressource externe, aucun cookie, aucun traceur. Les attributs data-evenement préparent
   une mesure d'audience sans cookie (Plausible ou Matomo sans cookie : hypothèse, voir validation.md § 10).
@@ -15,8 +16,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lanternis · Arrivées, départs : votre informatique suit · Liste d'attente</title>
-<meta name="description" content="Lanternis rattache tout votre SI aux personnes : postes, comptes, licences, accès, contrats. Une check-list prête à chaque arrivée et à chaque départ, le coût du SI et ses échéances. Conçu par un DSI. En préparation : rejoignez la liste d'attente.">
+<title>Lanternis · Toute votre informatique, enfin lisible · Liste d'attente</title>
+<meta name="description" content="Contrats, matériel acheté ou loué, licences, accès, domaines et sauvegardes : toute votre informatique sur un registre, chaque élément relié à une personne. Qui a quoi, ce que vous payez, ce qui arrive à échéance. Conçu par un DSI. En préparation : rejoignez la liste d'attente.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="../../marque/charte/logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../marque/charte/tokens.css">
@@ -121,9 +122,15 @@ section{padding:var(--espace-8) 0}
 .liste-non li::before{width:.8rem;height:0;border-left:0;transform:none;top:.75em}
 .statut-prevu{font-size:var(--taille-xs);font-weight:var(--graisse-forte);color:var(--couleur-texte-secondaire);border:1px solid var(--couleur-trait);border-radius:var(--rayon-s);padding:0 .35rem;margin-left:.35rem;white-space:nowrap}
 
-/* Arrivées et départs (bénéfice phare) */
-.phare{display:grid;grid-template-columns:1fr 1fr;gap:var(--grille-gouttiere);margin-top:var(--espace-6);align-items:start}
-@media (max-width:60rem){.phare{grid-template-columns:1fr}}
+/* Les 6 domaines suivis (icônes de la charte, sur pastille claire fixe : lisibles aussi en thème sombre) */
+.domaines{list-style:none;padding:0}
+.domaines li{margin:0}
+.pictogramme{display:inline-grid;place-items:center;width:3rem;height:3rem;border-radius:var(--rayon-m);background:var(--lt-ambre-pale);margin-bottom:var(--espace-3)}
+.pictogramme img{width:28px;height:28px;display:block}
+.synthese{font-family:var(--police-titre);font-weight:var(--graisse-titre);font-size:var(--taille-xl);margin:var(--espace-6) 0 var(--espace-2)}
+
+/* Arrivées et départs (preuve) */
+.phare{margin-top:var(--espace-6);max-width:var(--mesure-texte)}
 .checklist{list-style:none;margin:0;padding:0}
 .checklist li{display:flex;gap:var(--espace-3);padding:var(--espace-3) 0;border-top:1px solid var(--couleur-filet)}
 .checklist li:first-child{border-top:0;padding-top:0}
@@ -220,7 +227,7 @@ fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
    <a href="#contenu" aria-label="Lanternis, haut de la page"><img src="../../marque/charte/logo/logo-horizontal-nuit.svg" width="160" height="34" alt="Lanternis"></a>
    <nav aria-label="Navigation de la page">
     <ul>
-     <li><a href="#arrivees-departs">Arrivées et départs</a></li>
+     <li><a href="#domaines">Ce que Lanternis suit</a></li>
      <li><a href="#comment">Comment ça marche</a></li>
      <li><a href="#tarifs">Tarifs envisagés</a></li>
      <li><a href="#questions">Questions</a></li>
@@ -237,8 +244,8 @@ fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
    <div>
     <p class="etiquette">En préparation · liste d'attente ouverte</p>
     <!-- Titre A (défaut, P1) ; B via ?v=b ; variante ESS via ?public=ess. Textes : validation.md § 5.1 et § 8. -->
-    <h1 id="titre-principal" data-titre-a="Arrivées, départs : votre informatique suit, sans rien oublier." data-titre-b="Quand votre référent informatique part, votre informatique reste." data-titre-ess="Une informatique maîtrisée, chiffrée et à jour de chaque arrivée et de chaque départ.">Arrivées, départs : votre informatique suit, sans rien oublier.</h1>
-    <p class="chapeau" id="sous-titre" data-sous-titre-ess="Postes, comptes, licences, accès, contrats : tout votre SI rattaché aux personnes, salariés comme bénévoles. Une check-list prête à chaque arrivée et à chaque départ, le coût de votre informatique et ses échéances sur une page, de quoi rendre compte à votre CA et à vos financeurs. Tarif associatif, bénévoles non facturés.">Postes, comptes, licences, accès, contrats : Lanternis rattache tout votre SI aux personnes qui l'utilisent. Quand quelqu'un arrive ou part, la check-list est prête, faite de ce que la personne a vraiment. Et vous savez ce que coûte votre informatique et ce qui arrive à échéance.</p>
+    <h1 id="titre-principal" data-titre-a="Toute votre informatique, enfin lisible : qui a quoi, ce que vous payez, ce qui arrive à échéance." data-titre-b="Contrats, matériel, licences, accès : chaque élément de votre SI relié à une personne." data-titre-ess="Toute l'informatique de votre association, enfin lisible : qui a quoi, ce que vous payez, ce qui arrive à échéance.">Toute votre informatique, enfin lisible : qui a quoi, ce que vous payez, ce qui arrive à échéance.</h1>
+    <p class="chapeau" id="sous-titre" data-sous-titre-b="Vous savez qui a quoi, ce que vous payez et ce qui arrive à échéance. Lanternis est conçu pour vous prévenir avant, pas après." data-sous-titre-ess="Contrats, matériel acheté ou loué, licences, accès : chaque élément relié à une personne, salariée ou bénévole. De quoi rendre compte à votre CA et à vos financeurs, avec un tarif associatif et des bénévoles non facturés.">Contrats, matériel, licences, accès : chaque élément de votre SI relié à une personne. Lanternis est conçu pour vous prévenir avant chaque échéance, pas après.</p>
     <p class="signature">Conçu par un DSI, pour les PME et les associations qui n'en ont pas.</p>
     <div class="actions">
      <a class="bouton" href="#liste-attente" data-evenement="CTA hero">Rejoindre la liste d'attente</a>
@@ -251,21 +258,21 @@ fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
     <p class="titre-apercu">Votre informatique ce mois-ci</p>
     <div class="kpis">
      <div class="kpi"><span>Coût du SI par an</span><strong>38 420 € HT</strong></div>
-     <div class="kpi"><span>Arrivées et départs en cours</span><strong>3</strong></div>
-     <div class="kpi"><span>Comptes de personnes parties</span><strong>2 <span class="pastille">à fermer</span></strong></div>
+     <div class="kpi"><span>Coût par personne et par an</span><strong>1 011 € HT</strong></div>
+     <div class="kpi"><span>Échéances à 90 jours</span><strong>5 <span class="pastille">à décider</span></strong></div>
     </div>
     <div class="echeances">
-     <p class="titre-bloc">Départ de Claire M., vendredi : 5 tâches générées</p>
+     <p class="titre-bloc">Échéances des 90 prochains jours</p>
      <ul>
-      <li><span>Portable et téléphone à récupérer</span><span class="pastille">vendredi</span></li>
-      <li><span>Compte Microsoft 365 à bloquer</span><span class="pastille pastille-ok">constat automatique</span></li>
-      <li><span>2 licences à libérer</span><span class="num">540 € HT/an</span></li>
-      <li><span>Accès au logiciel de paie à retirer</span><span class="pastille">vendredi</span></li>
-      <li><span>Nouveau responsable du contrat des copieurs</span><span class="pastille">à désigner</span></li>
+      <li><span>Contrat de maintenance informatique <span class="pastille">préavis dans 21 j</span></span><span class="num">4 800 € HT/an</span></li>
+      <li><span>Location du copieur de l'accueil <span class="pastille">fin dans 45 j</span></span><span class="num">2 160 € HT/an</span></li>
+      <li><span>3 licences Microsoft 365 sans utilisateur <span class="pastille">à libérer</span></span><span class="num">540 € HT/an</span></li>
+      <li><span>Garantie de 6 postes portables <span class="pastille">fin dans 70 j</span></span><span class="num">—</span></li>
+      <li><span>Départ de Claire M. : portable, compte, 2 licences <span class="pastille">vendredi</span></span><span class="num">—</span></li>
      </ul>
-     <p class="pourquoi">Pourquoi vous voyez ceci : Claire est responsable du contrat des copieurs, qui se reconduit tacitement le 15 décembre.</p>
+     <p class="pourquoi">Pourquoi vous voyez ceci : le contrat de maintenance se reconduit tacitement pour un an s'il n'est pas résilié dans les 21 jours.</p>
     </div>
-    <figcaption id="legende-apercu">Maquette de principe du tableau de bord prévu. Exemple fictif : ces personnes et ces montants ne viennent d'aucun client.</figcaption>
+    <figcaption id="legende-apercu">Maquette de principe du tableau de bord prévu. Exemple fictif : ces éléments, ces personnes et ces montants ne viennent d'aucun client.</figcaption>
    </figure>
   </div>
  </section>
@@ -274,68 +281,70 @@ fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
  <section aria-labelledby="titre-probleme">
   <div class="conteneur">
    <h2 id="titre-probleme">Votre informatique tient-elle dans la tête d'une seule personne ?</h2>
-   <p class="chapeau texte">Sans DSI, personne n'a la vue d'ensemble de votre système d'information (le SI, c'est-à-dire toute votre informatique) : qui a quel poste, quels comptes, quels accès, et ce que tout cela coûte.</p>
+   <p class="chapeau texte">Sans DSI, personne n'a la vue d'ensemble de votre système d'information (le SI, c'est-à-dire toute votre informatique) : quels contrats, quel matériel, quelles licences, qui a accès à quoi, et ce que tout cela coûte.</p>
    <ul class="douleurs">
-    <li><strong>Quand quelqu'un part, on oublie toujours quelque chose.</strong> Un compte de messagerie encore actif, un portable jamais rendu, une licence payée pour personne, un mot de passe partagé qui n'a pas été changé.</li>
-    <li><strong>Quand quelqu'un arrive, rien n'est prêt.</strong> Le poste n'est pas commandé, le compte est créé la veille, les accès arrivent au fil des demandes.</li>
-    <li><strong>Une seule personne sait.</strong> Si votre référent informatique partait demain, qui saurait ce que vous possédez, qui a accès à quoi et quels contrats se renouvellent le mois prochain ?</li>
+    <li><strong>Des contrats se reconduisent sans décision.</strong> Maintenance, location du copieur, hébergement : la date de préavis passe, et le contrat repart pour un an.</li>
+    <li><strong>On paie des choses que personne n'utilise.</strong> Licences sans utilisateur, abonnements pris par carte bancaire, matériel dont on ne sait plus qui l'a.</li>
+    <li><strong>Une seule personne sait.</strong> Si votre référent informatique partait demain, qui saurait ce que vous possédez, qui a accès à quoi et ce qui se renouvelle le mois prochain ? Et quand un salarié part, qui vérifie que son compte est fermé et son portable rendu ?</li>
    </ul>
   </div>
  </section>
 
- <!-- 3. Bénéfice phare : arrivées et départs -->
- <section class="filet" id="arrivees-departs" aria-labelledby="titre-arrivees">
+ <!-- 3. Les 6 domaines suivis (plateforme de marque v1.2, § 4.2, repris tels quels) -->
+ <section class="filet" id="domaines" aria-labelledby="titre-domaines">
   <div class="conteneur">
-   <h2 id="titre-arrivees">Une arrivée, un départ : la check-list est déjà faite</h2>
-   <p class="chapeau texte">Parce que Lanternis sait ce que chaque personne a, la liste des tâches n'est pas un modèle générique : elle contient son matériel, ses comptes, ses licences et ses accès réels.</p>
-   <div class="phare">
-    <div class="carte">
-     <h3>Au départ</h3>
-     <ul class="checklist">
-      <li><span class="case" aria-hidden="true"></span><span>Récupérer le matériel qui lui est affecté<span class="quand">le jour du départ</span></span></li>
-      <li><span class="case" aria-hidden="true"></span><span>Bloquer son compte de messagerie et décider du sort de sa boîte<span class="quand">constaté automatiquement si Microsoft 365 est relié</span></span></li>
-      <li><span class="case" aria-hidden="true"></span><span>Libérer ses licences, retirer ses accès, changer les mots de passe partagés qu'elle connaissait</span></li>
-      <li><span class="case" aria-hidden="true"></span><span>Confier à quelqu'un les contrats, les applications et les sauvegardes dont elle était responsable</span></li>
-     </ul>
-    </div>
-    <div class="carte">
-     <h3>À l'arrivée</h3>
-     <ul class="checklist">
-      <li><span class="case" aria-hidden="true"></span><span>Choisir le poste à remettre, en stock ou à commander<span class="quand">dix jours avant</span></span></li>
-      <li><span class="case" aria-hidden="true"></span><span>Créer le compte et attribuer les licences<span class="quand">constaté automatiquement si Microsoft 365 est relié</span></span></li>
-      <li><span class="case" aria-hidden="true"></span><span>Ouvrir les accès dont la personne a besoin</span></li>
-      <li><span class="case" aria-hidden="true"></span><span>Remettre le matériel et présenter les règles d'usage</span></li>
-     </ul>
-    </div>
-   </div>
-   <div class="encadre texte" style="margin-top:var(--espace-6)">
-    <p>Chaque tâche est confiée à quelqu'un (vous, l'office manager, votre prestataire), avec une date et un rappel. À la fin, vous gardez la preuve datée que tout a été fait : utile devant un assureur, un client ou votre CA. <strong>Lanternis ne crée ni ne supprime aucun compte à votre place</strong> : il vous dit quoi faire et constate que c'est fait.</p>
-   </div>
+   <h2 id="titre-domaines">Tout ce que Lanternis suit pour vous</h2>
+   <p class="chapeau texte">Un seul registre de toute votre informatique, écrit pour la direction et pas pour des techniciens. Chaque élément y est relié à une personne, ou à un responsable s'il est partagé.</p>
+   <ul class="grille-3 domaines">
+    <li class="carte">
+     <span class="pictogramme"><img src="../../marque/charte/iconographie/icones/contrat.svg" width="28" height="28" alt=""></span>
+     <h3>Contrats et fournisseurs</h3>
+     <p>Préavis, reconduction tacite, date limite de résiliation calculée et rappelée à temps.</p>
+    </li>
+    <li class="carte">
+     <span class="pictogramme"><img src="../../marque/charte/iconographie/icones/poste.svg" width="28" height="28" alt=""></span>
+     <h3>Matériel acheté, loué ou en leasing</h3>
+     <p>Qui l'a, fin de garantie ou de location, renouvellement prévu, restitution.</p>
+    </li>
+    <li class="carte">
+     <span class="pictogramme"><img src="../../marque/charte/iconographie/icones/licence.svg" width="28" height="28" alt=""></span>
+     <h3>Licences et abonnements logiciels</h3>
+     <p>Qui a quoi, licences payées sans utilisateur, date de renouvellement.</p>
+    </li>
+    <li class="carte">
+     <span class="pictogramme"><img src="../../marque/charte/iconographie/icones/acces.svg" width="28" height="28" alt=""></span>
+     <h3>Comptes et accès</h3>
+     <p>Qui a accès à quoi, comptes encore actifs après un départ, aucun mot de passe stocké.</p>
+    </li>
+    <li class="carte">
+     <span class="pictogramme"><img src="../../marque/charte/iconographie/icones/sauvegarde.svg" width="28" height="28" alt=""></span>
+     <h3>Domaines, certificats et sauvegardes</h3>
+     <p>Expirations des domaines et des certificats surveillées ; sauvegardes (vérifications consignées) <span class="statut-prevu">prévu</span></p>
+    </li>
+    <li class="carte">
+     <span class="pictogramme"><img src="../../marque/charte/iconographie/icones/arrivee.svg" width="28" height="28" alt=""></span>
+     <h3>Arrivées et départs</h3>
+     <p>Une check-list tirée de ce que la personne a vraiment, preuve à l'appui.</p>
+    </li>
+   </ul>
+   <p class="synthese">Et le coût de votre SI, par an et par personne.</p>
+   <p class="petit texte">Le produit est en préparation : ces domaines décrivent ce qui est prévu à l'ouverture. Lanternis est conçu pour vous prévenir avant chaque échéance, avec un récapitulatif chaque semaine plutôt qu'un flux de notifications.</p>
   </div>
  </section>
 
- <!-- 4. Tout le SI autour des personnes -->
- <section class="filet" aria-labelledby="titre-solution">
+ <!-- 4. Arrivées et départs : la preuve que tout est relié aux personnes -->
+ <section class="filet" id="arrivees-departs" aria-labelledby="titre-arrivees">
   <div class="conteneur">
-   <h2 id="titre-solution">Tout votre SI, rattaché aux personnes</h2>
-   <p class="chapeau texte">Un seul registre, écrit pour la direction et pas pour des techniciens. Chaque poste, compte, licence et accès appartient à quelqu'un ; chaque contrat a un responsable.</p>
-   <div class="grille-3">
-    <div class="carte">
-     <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5c1.8.8 3 2.7 3 5"/></svg>
-     <h3>Qui a quoi</h3>
-     <p>Les personnes (salariés, stagiaires, intérimaires, prestataires, bénévoles), leurs postes et téléphones, leurs comptes, leurs licences et leurs accès. Une réponse en quelques secondes à « qu'a cette personne ? ».</p>
-    </div>
-    <div class="carte">
-     <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.3A4.5 4.5 0 1 0 15.5 15.7"/><path d="M7.5 10.6h5M7.5 13.4h5"/></svg>
-     <h3>Ce que coûte votre SI</h3>
-     <p>Contrats, abonnements, licences et matériel en euros HT par an, et le coût de votre informatique par personne. Les licences payées sans utilisateur sautent aux yeux.</p>
-    </div>
-    <div class="carte">
-     <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="15.5" cy="15.5" r="2" fill="currentColor" stroke="none" style="fill:var(--icone-lumiere)"/></svg>
-     <h3>Ce qui arrive à échéance</h3>
-     <p>Préavis de résiliation, renouvellements, fins de garantie, noms de domaine, certificats, sauvegardes jamais testées. Une alerte avant, et un récapitulatif chaque semaine plutôt qu'un flux de notifications.</p>
-    </div>
+   <h2 id="titre-arrivees">La preuve que tout est relié : chaque départ a sa check-list</h2>
+   <p class="chapeau texte">Parce que chaque contrat, matériel, licence et accès est relié à une personne, la liste des tâches d'un départ n'est pas un modèle générique : c'est ce que la personne a vraiment.</p>
+   <div class="phare carte">
+    <ul class="checklist">
+     <li><span class="case" aria-hidden="true"></span><span>Récupérer son portable et son téléphone, ou rendre le matériel loué au loueur</span></li>
+     <li><span class="case" aria-hidden="true"></span><span>Bloquer son compte, libérer ses licences, retirer ses accès<span class="quand">constat automatique prévu pour les comptes et licences Microsoft 365</span></span></li>
+     <li><span class="case" aria-hidden="true"></span><span>Confier à quelqu'un les contrats et les applications dont elle était responsable</span></li>
+    </ul>
    </div>
+   <p class="texte" style="margin-top:var(--espace-5)">Même principe à l'arrivée : poste, compte, licences et accès prêts à temps. Chaque tâche a un responsable et une date ; vous gardez la preuve datée que tout a été fait. <strong>Lanternis ne crée ni ne supprime aucun compte à votre place</strong> : il vous dit quoi faire et constate que c'est fait.</p>
   </div>
  </section>
 
@@ -389,8 +398,9 @@ fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
      <ul class="liste-coche">
       <li>vous dirigez une PME de 20 à 249 salariés, ou une association de 20 à 249 salariés ;</li>
       <li>vous n'avez pas de DSI, et l'informatique repose sur un prestataire, un référent ou « la personne qui s'y connaît » ;</li>
-      <li>les arrivées et les départs sont fréquents, et vous voulez être sûr que rien n'est oublié ;</li>
+      <li>vous voulez savoir quels contrats, quel matériel (acheté ou loué) et quelles licences vous avez, et qui les utilise ;</li>
       <li>vous voulez savoir ce que coûte votre informatique et décider avant les renouvellements ;</li>
+      <li>vous voulez que rien ne soit oublié quand quelqu'un arrive ou part ;</li>
       <li>vous préférez démarrer seul, à votre rythme, sans rendez-vous commercial.</li>
      </ul>
     </div>
@@ -449,9 +459,11 @@ fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
      <p class="prix-offre">49 € <small>HT par mois, jusqu'à 49 personnes</small></p>
      <p class="sous-liste">Pour tenir le registre et ne rien oublier.</p>
      <ul class="liste-coche">
-      <li>Tout le registre : personnes, matériel, comptes, licences, accès, contrats, fournisseurs</li>
-      <li>Coût du SI et coût par personne</li>
-      <li>Échéances : contrats, abonnements, garanties, domaines, certificats, sauvegardes</li>
+      <li>Contrats et fournisseurs, avec préavis et date limite de résiliation</li>
+      <li>Matériel acheté, loué ou en leasing : affectation, garantie, fin de location</li>
+      <li>Licences et abonnements logiciels, comptes et accès, reliés aux personnes</li>
+      <li>Domaines et certificats surveillés ; sauvegardes (vérifications consignées) <span class="statut-prevu">prévu</span></li>
+      <li>Coût du SI par an et par personne</li>
       <li>Arrivées et départs générés depuis le registre (un modèle d'arrivée, un modèle de départ)</li>
       <li>Import Excel, Microsoft 365 en lecture seule</li>
       <li>Alertes, récapitulatif hebdomadaire, tableau de bord</li>
@@ -569,6 +581,10 @@ fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
    <details>
     <summary>Encore un outil à remplir : qui va le tenir à jour ?</summary>
     <p>Vous partez de votre Excel ou de la liste de votre prestataire. Ensuite, Microsoft 365 met à jour les comptes et les licences, votre prestataire invité complète le reste, et chaque arrivée ou départ fait vivre le registre. Les alertes font le gros du travail : c'est Lanternis qui vous écrit, pas l'inverse.</p>
+   </details>
+   <details>
+    <summary>Gérez-vous le matériel loué ?</summary>
+    <p>Oui, c'est prévu dès l'ouverture. Chaque matériel indique s'il est acheté, loué ou en leasing, et le contrat qui le couvre (copieur, postes, téléphones). Lanternis est conçu pour vous rappeler la fin de location ou de garantie avant l'échéance, pour savoir à qui le matériel est affecté et pour l'inscrire dans la check-list de restitution quand la personne part. Les loyers entrent dans le coût de votre SI.</p>
    </details>
    <details>
     <summary>Qui m'aide à démarrer si personne ne m'accompagne ?</summary>
@@ -749,6 +765,7 @@ fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
     if (simEss) simEss.checked = true;
   } else if (variante === "b") {
     h1.textContent = h1.dataset.titreB;
+    st.textContent = st.dataset.sousTitreB;
   }
   document.getElementById("champ-variante").value = publicCible === "ess" ? "ess" : variante;
   document.getElementById("champ-public").value = publicCible;

@@ -1,7 +1,7 @@
 {
-  "base_url": "/studio/ventures/lanternis/marketing/landing",
+  "base_url": "/studio/ventures/lanternis/produit/apps/prelancement/public",
   "formats": {"bureau": [1440, 900], "mobile": [390, 844]},
   "ecrans": [
-    {"nom": "landing-validation", "url": "validation.html", "attendre": "h1", "pleine_page": true}
+    {"nom": "landing-validation", "url": "index.html", "attendre": "h1", "pleine_page": true}
   ]
 }
