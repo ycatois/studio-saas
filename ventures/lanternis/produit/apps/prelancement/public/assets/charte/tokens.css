@@ -1,0 +1,208 @@
+/* GÉNÉRÉ par build.php depuis marque/charte/tokens.css : ne pas modifier ce fichier, modifier la source puis relancer php build.php. */
+/* ==========================================================================
+   Lanternis : jetons de design (design tokens) · v1.0 · 2026-10-26
+   Piste « Veilleuse ». Source de vérité : tokens.json (ce fichier en est la traduction CSS).
+   Auteur : directeur-artistique. Lanternis est une marque d'Hasteria SASU.
+   Contrastes : formule de luminance relative WCAG 2.x, calculés à la main (à recontrôler
+   avec l'analyseur de la revue design). Détail dans tokens.json > contrastes.
+   ========================================================================== */
+
+/* --- Police de titre : Fraunces (SIL OFL 1.1), auto-hébergée, une seule graisse ---
+   Fichier à déposer dans fonts/ (voir fonts/README.md). Chemin relatif à ce fichier :
+   à adapter dans l'application et la vitrine (copier le woff2 dans leurs assets). */
+/* @font-face retiré par build.php : fonts/fraunces-latin-600.woff2 pas encore déposé (repli sur les polices système) */
+
+:root {
+  /* ---------- 1. Palette de base (ne pas utiliser directement dans les composants :
+                 passer par les rôles du § 2) ---------- */
+  --lt-nuit: #1B2330;          /* rvb 27 35 48    */
+  --lt-nuit-douce: #2A3444;    /* rvb 42 52 68    */
+  --lt-ambre: #F2B24C;         /* rvb 242 178 76  : SUR FOND SOMBRE UNIQUEMENT */
+  --lt-ambre-profond: #8A5300; /* rvb 138 83 0    : l'ambre des fonds clairs */
+  --lt-ambre-pale: #FBEBD0;    /* rvb 251 235 208 : fond de mise en avant, jamais du texte */
+  --lt-papier: #FAF6EE;        /* rvb 250 246 238 */
+  --lt-blanc: #FFFFFF;
+  --lt-brume: #C5CDD8;         /* rvb 197 205 216 : texte secondaire SUR SOMBRE uniquement */
+  --lt-ardoise: #4A5260;       /* rvb 74 82 96    : texte secondaire sur clair */
+  --lt-trait: #7A808B;         /* rvb 122 128 139 : bordures de champs sur clair (3,7 : 1) */
+  --lt-trait-nuit: #7D8899;    /* rvb 125 136 153 : bordures de champs sur sombre (3,5 : 1) */
+  --lt-lin: #D9D2C3;           /* rvb 217 210 195 : filets décoratifs (1,4 : 1, jamais porteurs de sens) */
+  --lt-lin-nuit: #3A4558;      /* rvb 58 69 88    : filets décoratifs sur sombre */
+  /* États, fond clair */
+  --lt-mousse: #2F6B3F;        /* succès  : 5,9 : 1 sur papier */
+  --lt-brique: #A1322A;        /* erreur  : 6,5 : 1 sur papier */
+  --lt-lac: #2F5470;           /* info    : 7,4 : 1 sur papier */
+  /* (alerte et échéance = ambre profond) */
+  /* États, fond sombre */
+  --lt-sauge: #8FC79A;         /* succès  : 8,1 : 1 sur nuit */
+  --lt-corail: #F08A7E;        /* erreur  : 6,5 : 1 sur nuit */
+  --lt-ciel: #9DBBD6;          /* info    : 7,9 : 1 sur nuit */
+  /* (alerte et échéance = ambre) */
+
+  /* ---------- 2. Rôles : thème papier (par défaut) ---------- */
+  color-scheme: light dark;
+  --couleur-fond: var(--lt-papier);
+  --couleur-surface: var(--lt-blanc);           /* cartes, champs */
+  --couleur-surface-marque: var(--lt-nuit);     /* bandeaux de marque, en-tête de landing */
+  --couleur-texte: var(--lt-nuit);              /* 14,7 : 1 sur papier, 15,8 : 1 sur blanc */
+  --couleur-texte-secondaire: var(--lt-ardoise);/* 7,3 : 1 sur papier */
+  --couleur-accent: var(--lt-ambre-profond);    /* liens, échéances, indicateurs : 5,9 : 1 */
+  --couleur-mise-en-avant: var(--lt-ambre-pale);/* fond d'encadré ; texte nuit 13,5 : 1, ambre profond 5,4 : 1 */
+  --couleur-bouton-fond: var(--lt-nuit);
+  --couleur-bouton-texte: var(--lt-papier);     /* 14,7 : 1 */
+  --couleur-bouton-secondaire-bord: var(--lt-nuit);
+  --couleur-trait: var(--lt-trait);             /* bordures de champs, cases : >= 3 : 1 */
+  --couleur-filet: var(--lt-lin);               /* séparateurs décoratifs */
+  --couleur-focus: var(--lt-ambre-profond);     /* anneau de focus, 3 px */
+  --couleur-succes: var(--lt-mousse);
+  --couleur-alerte: var(--lt-ambre-profond);
+  --couleur-erreur: var(--lt-brique);
+  --couleur-info: var(--lt-lac);
+  /* Logo (couleurs à lire par un SVG inline) */
+  --logo-trait: var(--lt-nuit);
+  --logo-interieur: var(--lt-nuit);
+  --logo-lumiere: var(--lt-ambre);
+
+  /* ---------- 3. Typographie ---------- */
+  --police-titre: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --police-texte: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif;
+  --police-mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  --graisse-titre: 600;       /* seule graisse chargée pour Fraunces */
+  --graisse-texte: 400;
+  --graisse-forte: 600;       /* graisse système */
+  /* Échelle écran : base 16 px, rapport 1,25 (tierce majeure) */
+  --taille-xs: 0.8125rem;     /* 13 px : mentions, légendes (minimum absolu) */
+  --taille-s: 0.875rem;       /* 14 px : interface dense, tableaux */
+  --taille-m: 1rem;           /* 16 px : texte courant application */
+  --taille-l: 1.125rem;       /* 18 px : texte courant blog et landing */
+  --taille-xl: 1.25rem;       /* 20 px : titre 4, chapeau */
+  --taille-2xl: 1.5625rem;    /* 25 px : titre 3 */
+  --taille-3xl: 1.953rem;     /* 31 px : titre 2 */
+  --taille-4xl: 2.441rem;     /* 39 px : titre 1 (application, article) */
+  --taille-5xl: 3.052rem;     /* 49 px : titre de landing (écran large uniquement) */
+  --interligne-titre: 1.2;
+  --interligne-texte: 1.55;
+  --interligne-serre: 1.35;   /* tableaux, interface dense */
+  --mesure-texte: 68ch;       /* longueur de ligne maximale d'un texte courant */
+  --chiffres: tabular-nums;   /* font-variant-numeric pour montants, dates, compteurs */
+  /* Échelle impression (documents PDF, A4) */
+  --print-corps: 10pt;
+  --print-petit: 8.5pt;
+  --print-titre-3: 12pt;
+  --print-titre-2: 16pt;
+  --print-titre-1: 24pt;
+  --print-couverture: 36pt;
+
+  /* ---------- 4. Espacements (base 4 px) ---------- */
+  --espace-1: 0.25rem;  /* 4  */
+  --espace-2: 0.5rem;   /* 8  */
+  --espace-3: 0.75rem;  /* 12 */
+  --espace-4: 1rem;     /* 16 */
+  --espace-5: 1.5rem;   /* 24 */
+  --espace-6: 2rem;     /* 32 */
+  --espace-7: 3rem;     /* 48 */
+  --espace-8: 4rem;     /* 64 */
+  --espace-9: 6rem;     /* 96 */
+
+  /* ---------- 5. Grille ---------- */
+  --grille-colonnes: 12;
+  --grille-gouttiere: 1.5rem;     /* 24 px */
+  --grille-marge: 1.5rem;         /* 24 px, 16 px sous 640 px */
+  --largeur-contenu: 70rem;       /* 1120 px */
+  --largeur-texte: 42rem;         /* 672 px : article, formulaire */
+  --point-rupture-s: 40rem;       /* 640 px  (usage en @media : valeur à recopier) */
+  --point-rupture-m: 60rem;       /* 960 px  */
+  --point-rupture-l: 75rem;       /* 1200 px */
+
+  /* ---------- 6. Rayons ---------- */
+  --rayon-s: 4px;      /* cases, pastilles d'échéance */
+  --rayon-m: 8px;      /* boutons, champs */
+  --rayon-l: 12px;     /* cartes, panneaux */
+  --rayon-xl: 16px;    /* bandeaux de marque, visuels réseaux */
+  --rayon-rond: 999px; /* puces, avatars */
+
+  /* ---------- 7. Ombres (rares : un filet est préféré à une ombre) ---------- */
+  --ombre-1: 0 1px 2px rgba(27, 35, 48, 0.08);   /* carte au repos (facultatif) */
+  --ombre-2: 0 6px 16px rgba(27, 35, 48, 0.12);  /* menu, fenêtre de dialogue */
+  --contour-focus: 0 0 0 3px var(--couleur-focus);
+
+  /* ---------- 8. Motif de marque : le halo (CSS, aucune image) ---------- */
+  --halo: radial-gradient(circle, rgba(242, 178, 76, 0.30) 0, rgba(242, 178, 76, 0) 70%);
+  /* Sur fond nuit uniquement, en coin ou derrière le symbole, jamais derrière un texte. */
+
+  /* ---------- 9. Mouvement ---------- */
+  --duree-courte: 150ms;
+  --duree-moyenne: 250ms;
+  --courbe: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ---------- 10. Thème nuit (mode sombre) ----------
+   Activé par l'utilisateur (data-theme="nuit") ou par le système, sauf choix explicite
+   du thème papier (data-theme="papier"). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="papier"]) {
+    --couleur-fond: var(--lt-nuit);
+    --couleur-surface: var(--lt-nuit-douce);
+    --couleur-surface-marque: var(--lt-nuit-douce);
+    --couleur-texte: var(--lt-papier);             /* 14,7 : 1 sur nuit, 11,6 : 1 sur nuit douce */
+    --couleur-texte-secondaire: var(--lt-brume);   /* 9,9 / 7,8 : 1 */
+    --couleur-accent: var(--lt-ambre);             /* 8,5 / 6,7 : 1 */
+    --couleur-mise-en-avant: var(--lt-nuit-douce);
+    --couleur-bouton-fond: var(--lt-ambre);
+    --couleur-bouton-texte: var(--lt-nuit);        /* 8,5 : 1 */
+    --couleur-bouton-secondaire-bord: var(--lt-brume);
+    --couleur-trait: var(--lt-trait-nuit);         /* 4,4 / 3,5 : 1 */
+    --couleur-filet: var(--lt-lin-nuit);
+    --couleur-focus: var(--lt-ambre);
+    --couleur-succes: var(--lt-sauge);
+    --couleur-alerte: var(--lt-ambre);
+    --couleur-erreur: var(--lt-corail);
+    --couleur-info: var(--lt-ciel);
+    --logo-trait: var(--lt-papier);
+    --logo-interieur: var(--lt-nuit-douce);
+    --logo-lumiere: var(--lt-ambre);
+    --ombre-1: none;
+    --ombre-2: 0 0 0 1px var(--lt-lin-nuit);
+  }
+}
+[data-theme="nuit"] {
+  --couleur-fond: var(--lt-nuit);
+  --couleur-surface: var(--lt-nuit-douce);
+  --couleur-surface-marque: var(--lt-nuit-douce);
+  --couleur-texte: var(--lt-papier);
+  --couleur-texte-secondaire: var(--lt-brume);
+  --couleur-accent: var(--lt-ambre);
+  --couleur-mise-en-avant: var(--lt-nuit-douce);
+  --couleur-bouton-fond: var(--lt-ambre);
+  --couleur-bouton-texte: var(--lt-nuit);
+  --couleur-bouton-secondaire-bord: var(--lt-brume);
+  --couleur-trait: var(--lt-trait-nuit);
+  --couleur-filet: var(--lt-lin-nuit);
+  --couleur-focus: var(--lt-ambre);
+  --couleur-succes: var(--lt-sauge);
+  --couleur-alerte: var(--lt-ambre);
+  --couleur-erreur: var(--lt-corail);
+  --couleur-info: var(--lt-ciel);
+  --logo-trait: var(--lt-papier);
+  --logo-interieur: var(--lt-nuit-douce);
+  --logo-lumiere: var(--lt-ambre);
+  --ombre-1: none;
+  --ombre-2: 0 0 0 1px var(--lt-lin-nuit);
+}
+
+/* ---------- 11. Préférences d'accessibilité ---------- */
+@media (prefers-reduced-motion: reduce) {
+  :root { --duree-courte: 0ms; --duree-moyenne: 0ms; }
+}
+@media (forced-colors: active) {
+  :root { --contour-focus: 0 0 0 3px Highlight; }
+}
+
+/* ---------- 12. Usages interdits (rappel, voir charte-graphique.html § 11) ----------
+   - Ambre #F2B24C en texte, icône ou indicateur sur papier ou blanc : 1,7 / 1,9 : 1. Utiliser l'ambre profond.
+   - Ambre profond #8A5300 en texte sur nuit : 2,5 : 1. Utiliser l'ambre.
+   - Brume #C5CDD8 sur papier (1,5 : 1) ; ardoise #4A5260 sur nuit (2,0 : 1).
+   - Trait #7A808B en texte (3,7 : 1 < 4,5) ; lin #D9D2C3 pour un élément porteur de sens (1,4 : 1).
+   - Halo derrière un texte ; couleur seule pour porter une information (toujours un mot ou une icône). */

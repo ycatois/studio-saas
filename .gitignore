@@ -19,3 +19,14 @@ Thumbs.db
 **/prospection*/suivi*
 **/prives/
 *.contacts.csv
+# Applications PHP de pré-lancement (o2switch) : configuration, bases SQLite, journaux, données locales
+ventures/*/produit/apps/*/config.php
+ventures/*/produit/apps/*/data/
+ventures/*/produit/apps/*/var/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3
+*.log
+# Exports de la liste d'attente (données personnelles)
+liste-attente*.csv
