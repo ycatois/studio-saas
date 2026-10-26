@@ -1,20 +1,23 @@
 <!doctype html>
 <!-- GÉNÉRÉ par build.php depuis marketing/landing/validation.html : ne pas modifier ce fichier, modifier la source puis relancer php build.php. -->
 <!--
-  Lanternis · landing de validation (liste d'attente) · statut: brouillon · 2026-10-26
+  Lanternis · landing de validation (liste d'attente) · statut: brouillon · v2 du 2026-10-26
   Auteur : cro-conversion. Stratégie, textes, champs et comportement attendu de waitlist.php : validation.md.
+  v2 : périmètre « tout le SI centré sur les personnes », arrivées et départs en bénéfice phare,
+  grille tarifaire D (Essentiel, Pilotage, Pilotage+ bientôt), vente en libre-service, essai d'un mois sans carte à l'ouverture.
   NE PAS PUBLIER sans validation explicite du fondateur (règle 2 de CLAUDE.md).
   Aucune ressource externe, aucun cookie, aucun traceur. Les attributs data-evenement préparent
-  une mesure d'audience sans cookie (Plausible ou Matomo sans cookie : hypothèse, voir validation.md § 7).
-  Chemins relatifs valables depuis ventures/lanternis/marketing/landing/ ; à réécrire par dev-vitrine
-  quand la page sera intégrée au site Astro (copier tokens.css, les SVG et la police dans les assets).
+  une mesure d'audience sans cookie (Plausible ou Matomo sans cookie : hypothèse, voir validation.md § 10).
+  Le CSS et le JS en ligne sont extraits par produit/apps/prelancement/build.php (CSP stricte) ;
+  aucun gestionnaire d'événement en ligne (onclick…). La page reste complète et utilisable sans JavaScript :
+  le simulateur de prix est masqué (attribut hidden) tant que le script ne l'a pas activé.
 -->
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lanternis · Votre informatique, enfin lisible · Liste d'attente</title>
-<meta name="description" content="Lanternis, le DSI de poche des PME et des associations sans DSI : ce que vous avez, ce que vous payez, ce qui arrive à échéance. En préparation : rejoignez la liste d'attente.">
+<title>Lanternis · Arrivées, départs : votre informatique suit · Liste d'attente</title>
+<meta name="description" content="Lanternis rattache tout votre SI aux personnes : postes, comptes, licences, accès, contrats. Une check-list prête à chaque arrivée et à chaque départ, le coût du SI et ses échéances. Conçu par un DSI. En préparation : rejoignez la liste d'attente.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/charte/logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/charte/tokens.css">
@@ -30,9 +33,9 @@
    <a href="#contenu" aria-label="Lanternis, haut de la page"><img src="assets/charte/logo/logo-horizontal-nuit.svg" width="160" height="34" alt="Lanternis"></a>
    <nav aria-label="Navigation de la page">
     <ul>
+     <li><a href="#arrivees-departs">Arrivées et départs</a></li>
      <li><a href="#comment">Comment ça marche</a></li>
      <li><a href="#tarifs">Tarifs envisagés</a></li>
-     <li><a href="#prestataire">Et mon prestataire ?</a></li>
      <li><a href="#questions">Questions</a></li>
     </ul>
    </nav>
@@ -46,33 +49,36 @@
   <div class="conteneur grille">
    <div>
     <p class="etiquette">En préparation · liste d'attente ouverte</p>
-    <!-- Titre A (défaut, P1) ; B via ?v=b ; variante ESS via ?public=ess. Textes : validation.md § 4 et § 8. -->
-    <h1 id="titre-principal" data-titre-a="Votre informatique, enfin lisible." data-titre-b="Quand votre référent informatique part, votre informatique reste." data-titre-ess="Présentez à votre CA une informatique maîtrisée et chiffrée.">Votre informatique, enfin lisible.</h1>
-    <p class="chapeau" id="sous-titre" data-sous-titre-ess="Ce que vous avez, ce que vous payez, ce qui arrive à échéance, sur une seule page. Un DSI de poche pour les associations et les structures de l'ESS de 20 à 249 salariés sans DSI, mis en place avec vous, à tarif associatif.">Ce que vous avez, ce que vous payez, ce qui arrive à échéance, sur une seule page, avec une alerte avant chaque renouvellement. Un DSI de poche pour les PME et les associations sans DSI, mis en place avec vous.</p>
+    <!-- Titre A (défaut, P1) ; B via ?v=b ; variante ESS via ?public=ess. Textes : validation.md § 5.1 et § 8. -->
+    <h1 id="titre-principal" data-titre-a="Arrivées, départs : votre informatique suit, sans rien oublier." data-titre-b="Quand votre référent informatique part, votre informatique reste." data-titre-ess="Une informatique maîtrisée, chiffrée et à jour de chaque arrivée et de chaque départ.">Arrivées, départs : votre informatique suit, sans rien oublier.</h1>
+    <p class="chapeau" id="sous-titre" data-sous-titre-ess="Postes, comptes, licences, accès, contrats : tout votre SI rattaché aux personnes, salariés comme bénévoles. Une check-list prête à chaque arrivée et à chaque départ, le coût de votre informatique et ses échéances sur une page, de quoi rendre compte à votre CA et à vos financeurs. Tarif associatif, bénévoles non facturés.">Postes, comptes, licences, accès, contrats : Lanternis rattache tout votre SI aux personnes qui l'utilisent. Quand quelqu'un arrive ou part, la check-list est prête, faite de ce que la personne a vraiment. Et vous savez ce que coûte votre informatique et ce qui arrive à échéance.</p>
+    <p class="signature">Conçu par un DSI, pour les PME et les associations qui n'en ont pas.</p>
     <div class="actions">
      <a class="bouton" href="#liste-attente" data-evenement="CTA hero">Rejoindre la liste d'attente</a>
      <a class="bouton bouton-secondaire" href="#tarifs" data-evenement="Voir tarifs">Voir les tarifs envisagés</a>
     </div>
-    <p class="petit">Gratuit et sans engagement. Pour les PME de 50 à 249 salariés et les associations de 20 à 249 salariés.</p>
+    <p class="petit">Inscription gratuite et sans engagement. À l'ouverture : essai gratuit d'un mois, sans carte bancaire. Pour les PME de 20 à 249 salariés et les associations de 20 à 249 salariés.</p>
    </div>
 
    <figure class="apercu" aria-labelledby="legende-apercu">
     <p class="titre-apercu">Votre informatique ce mois-ci</p>
     <div class="kpis">
-     <div class="kpi"><span>Coût informatique annuel</span><strong>38 420 € HT</strong></div>
-     <div class="kpi"><span>Échéances à 90 jours</span><strong>4 <span class="pastille">à décider</span></strong></div>
-     <div class="kpi"><span>Accès d'anciens salariés</span><strong>3 <span class="pastille">à fermer</span></strong></div>
+     <div class="kpi"><span>Coût du SI par an</span><strong>38 420 € HT</strong></div>
+     <div class="kpi"><span>Arrivées et départs en cours</span><strong>3</strong></div>
+     <div class="kpi"><span>Comptes de personnes parties</span><strong>2 <span class="pastille">à fermer</span></strong></div>
     </div>
     <div class="echeances">
-     <p class="s-b5f8b53f">Échéances des 90 prochains jours</p>
+     <p class="titre-bloc">Départ de Claire M., vendredi : 5 tâches générées</p>
      <ul>
-      <li><span>Maintenance des copieurs <span class="pastille">dans 45 j</span></span><span class="num">2 160 € HT/an</span></li>
-      <li><span>Licences Microsoft 365 (38) <span class="pastille">dans 62 j</span></span><span class="num">4 560 € HT/an</span></li>
-      <li><span>Nom de domaine principal <span class="pastille">dans 80 j</span></span><span class="num">18 € HT/an</span></li>
+      <li><span>Portable et téléphone à récupérer</span><span class="pastille">vendredi</span></li>
+      <li><span>Compte Microsoft 365 à bloquer</span><span class="pastille pastille-ok">constat automatique</span></li>
+      <li><span>2 licences à libérer</span><span class="num">540 € HT/an</span></li>
+      <li><span>Accès au logiciel de paie à retirer</span><span class="pastille">vendredi</span></li>
+      <li><span>Nouveau responsable du contrat des copieurs</span><span class="pastille">à désigner</span></li>
      </ul>
-     <p class="pourquoi">Pourquoi vous voyez ceci : le contrat des copieurs se reconduit tacitement le 15 décembre.</p>
+     <p class="pourquoi">Pourquoi vous voyez ceci : Claire est responsable du contrat des copieurs, qui se reconduit tacitement le 15 décembre.</p>
     </div>
-    <figcaption id="legende-apercu">Maquette de principe du tableau de bord prévu. Exemple fictif : ces montants ne viennent d'aucun client.</figcaption>
+    <figcaption id="legende-apercu">Maquette de principe du tableau de bord prévu. Exemple fictif : ces personnes et ces montants ne viennent d'aucun client.</figcaption>
    </figure>
   </div>
  </section>
@@ -80,81 +86,113 @@
  <!-- 2. Problème -->
  <section aria-labelledby="titre-probleme">
   <div class="conteneur">
-   <h2 id="titre-probleme">Votre informatique est-elle une boîte noire ?</h2>
-   <p class="chapeau texte">Sans DSI, la carte de votre système d'information (le SI, c'est-à-dire tout votre informatique) tient souvent dans la tête d'une personne ou dans l'outil de votre prestataire.</p>
+   <h2 id="titre-probleme">Votre informatique tient-elle dans la tête d'une seule personne ?</h2>
+   <p class="chapeau texte">Sans DSI, personne n'a la vue d'ensemble de votre système d'information (le SI, c'est-à-dire toute votre informatique) : qui a quel poste, quels comptes, quels accès, et ce que tout cela coûte.</p>
    <ul class="douleurs">
-    <li><strong>Une seule personne sait.</strong> Si votre référent informatique partait demain, qui saurait ce que vous possédez, ce que vous payez et ce qui se renouvelle le mois prochain ?</li>
-    <li><strong>Des contrats se reconduisent sans décision.</strong> Abonnements pris par carte bancaire, licences que personne n'utilise, contrats de maintenance renouvelés faute d'avoir vu passer la date de préavis.</li>
-    <li><strong>On ne sait plus qui a accès à quoi.</strong> Comptes d'anciens salariés, accès de prestataires : la question arrive souvent le jour où un client, un assureur ou votre CA la pose.</li>
+    <li><strong>Quand quelqu'un part, on oublie toujours quelque chose.</strong> Un compte de messagerie encore actif, un portable jamais rendu, une licence payée pour personne, un mot de passe partagé qui n'a pas été changé.</li>
+    <li><strong>Quand quelqu'un arrive, rien n'est prêt.</strong> Le poste n'est pas commandé, le compte est créé la veille, les accès arrivent au fil des demandes.</li>
+    <li><strong>Une seule personne sait.</strong> Si votre référent informatique partait demain, qui saurait ce que vous possédez, qui a accès à quoi et quels contrats se renouvellent le mois prochain ?</li>
    </ul>
   </div>
  </section>
 
- <!-- 3. Solution -->
+ <!-- 3. Bénéfice phare : arrivées et départs -->
+ <section class="filet" id="arrivees-departs" aria-labelledby="titre-arrivees">
+  <div class="conteneur">
+   <h2 id="titre-arrivees">Une arrivée, un départ : la check-list est déjà faite</h2>
+   <p class="chapeau texte">Parce que Lanternis sait ce que chaque personne a, la liste des tâches n'est pas un modèle générique : elle contient son matériel, ses comptes, ses licences et ses accès réels.</p>
+   <div class="phare">
+    <div class="carte">
+     <h3>Au départ</h3>
+     <ul class="checklist">
+      <li><span class="case" aria-hidden="true"></span><span>Récupérer le matériel qui lui est affecté<span class="quand">le jour du départ</span></span></li>
+      <li><span class="case" aria-hidden="true"></span><span>Bloquer son compte de messagerie et décider du sort de sa boîte<span class="quand">constaté automatiquement si Microsoft 365 est relié</span></span></li>
+      <li><span class="case" aria-hidden="true"></span><span>Libérer ses licences, retirer ses accès, changer les mots de passe partagés qu'elle connaissait</span></li>
+      <li><span class="case" aria-hidden="true"></span><span>Confier à quelqu'un les contrats, les applications et les sauvegardes dont elle était responsable</span></li>
+     </ul>
+    </div>
+    <div class="carte">
+     <h3>À l'arrivée</h3>
+     <ul class="checklist">
+      <li><span class="case" aria-hidden="true"></span><span>Choisir le poste à remettre, en stock ou à commander<span class="quand">dix jours avant</span></span></li>
+      <li><span class="case" aria-hidden="true"></span><span>Créer le compte et attribuer les licences<span class="quand">constaté automatiquement si Microsoft 365 est relié</span></span></li>
+      <li><span class="case" aria-hidden="true"></span><span>Ouvrir les accès dont la personne a besoin</span></li>
+      <li><span class="case" aria-hidden="true"></span><span>Remettre le matériel et présenter les règles d'usage</span></li>
+     </ul>
+    </div>
+   </div>
+   <div class="encadre texte s-0eabfaa2">
+    <p>Chaque tâche est confiée à quelqu'un (vous, l'office manager, votre prestataire), avec une date et un rappel. À la fin, vous gardez la preuve datée que tout a été fait : utile devant un assureur, un client ou votre CA. <strong>Lanternis ne crée ni ne supprime aucun compte à votre place</strong> : il vous dit quoi faire et constate que c'est fait.</p>
+   </div>
+  </div>
+ </section>
+
+ <!-- 4. Tout le SI autour des personnes -->
  <section class="filet" aria-labelledby="titre-solution">
   <div class="conteneur">
-   <h2 id="titre-solution">Lanternis vous donne la carte, et vous prévient avant</h2>
-   <p class="chapeau texte">Un registre de tout votre SI, écrit pour la direction, pas pour des techniciens.</p>
+   <h2 id="titre-solution">Tout votre SI, rattaché aux personnes</h2>
+   <p class="chapeau texte">Un seul registre, écrit pour la direction et pas pour des techniciens. Chaque poste, compte, licence et accès appartient à quelqu'un ; chaque contrat a un responsable.</p>
    <div class="grille-3">
     <div class="carte">
-     <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
-     <h3>Ce que vous avez</h3>
-     <p>Matériel, logiciels, licences et abonnements, contrats, fournisseurs, accès : un seul registre, lisible en quelques minutes.</p>
+     <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5c1.8.8 3 2.7 3 5"/></svg>
+     <h3>Qui a quoi</h3>
+     <p>Les personnes (salariés, stagiaires, intérimaires, prestataires, bénévoles), leurs postes et téléphones, leurs comptes, leurs licences et leurs accès. Une réponse en quelques secondes à « qu'a cette personne ? ».</p>
     </div>
     <div class="carte">
      <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.3A4.5 4.5 0 1 0 15.5 15.7"/><path d="M7.5 10.6h5M7.5 13.4h5"/></svg>
-     <h3>Ce que vous payez</h3>
-     <p>Chaque abonnement et chaque contrat en euros HT par an, et le coût de votre informatique par salarié. De quoi supprimer ce qui ne sert plus.</p>
+     <h3>Ce que coûte votre SI</h3>
+     <p>Contrats, abonnements, licences et matériel en euros HT par an, et le coût de votre informatique par personne. Les licences payées sans utilisateur sautent aux yeux.</p>
     </div>
     <div class="carte">
      <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="15.5" cy="15.5" r="2" fill="currentColor" stroke="none" class="s-999fb3ef" /></svg>
      <h3>Ce qui arrive à échéance</h3>
-     <p>Une alerte avant chaque renouvellement, chaque fin de contrat et chaque départ de salarié à traiter. Des alertes rares et utiles, pas un flux de notifications.</p>
+     <p>Préavis de résiliation, renouvellements, fins de garantie, noms de domaine, certificats, sauvegardes jamais testées. Une alerte avant, et un récapitulatif chaque semaine plutôt qu'un flux de notifications.</p>
     </div>
    </div>
   </div>
  </section>
 
- <!-- 4. Comment ça marche -->
+ <!-- 5. Comment ça marche (libre-service) -->
  <section class="filet" id="comment" aria-labelledby="titre-comment">
   <div class="conteneur">
    <h2 id="titre-comment">Comment ça marche</h2>
-   <p class="chapeau texte">Lanternis n'est pas livré vide : la mise en place se fait avec vous, par un spécialiste du SI.</p>
+   <p class="chapeau texte">Vous vous lancez seul, guidé pas à pas. Lanternis est conçu par un DSI : les méthodes et les check-lists d'un DSI sont déjà dans l'outil.</p>
    <ol class="etapes">
-    <li><h3>On part de ce que vous avez déjà</h3><p>Votre fichier Excel, vos factures, la liste de votre prestataire. Nous remplissons le registre avec vous.</p></li>
-    <li><h3>On relie vos outils</h3><p>Microsoft 365 ou Google Workspace, votre banque ou votre logiciel comptable, pour que le registre reste à jour <span class="statut-prevu">connecteurs prévus</span>.</p></li>
-    <li><h3>Vous êtes prévenu avant</h3><p>Des alertes avant les échéances et une synthèse mensuelle d'une page pour la direction.</p></li>
+    <li><h3>Partez de votre Excel</h3><p>Importez la liste du personnel, du matériel ou des contrats que vous avez déjà, ou celle de votre prestataire. Un gabarit est fourni.</p></li>
+    <li><h3>Reliez Microsoft 365</h3><p>En lecture seule : comptes et licences se mettent à jour tout seuls. Google Workspace viendra ensuite.</p></li>
+    <li><h3>Invitez votre prestataire</h3><p>Il complète le matériel, les comptes et les accès, et reçoit ses tâches d'arrivée et de départ.</p></li>
+    <li><h3>Lanternis vous prévient</h3><p>Les alertes et le récapitulatif de la semaine arrivent par email : c'est Lanternis qui vous écrit, pas l'inverse.</p></li>
    </ol>
+   <p class="petit texte s-ac0b8762">Le produit est en préparation : ces étapes décrivent le fonctionnement prévu à l'ouverture.</p>
   </div>
  </section>
 
- <!-- 5. Et mon prestataire ? -->
+ <!-- 6. Et mon prestataire ? -->
  <section class="filet" id="prestataire" aria-labelledby="titre-prestataire">
   <div class="conteneur">
    <div class="encadre texte">
     <h2 id="titre-prestataire">Et votre prestataire ?</h2>
-    <p>Il fait marcher vos postes, vos sauvegardes et votre réseau : il continue. Lanternis ne le remplace pas, il vous donne la carte pour piloter avec lui. Votre prestataire peut d'ailleurs compléter le registre avec vous.</p>
-    <p class="s-ab79ea2b"><strong>Si votre référent part, votre SI reste.</strong></p>
+    <p>Il fait marcher vos postes, vos sauvegardes et votre réseau : il continue. Lanternis ne le remplace pas, il vous donne la carte pour piloter avec lui. Invité dans Lanternis, il complète le registre et traite ses tâches d'arrivée et de départ ; il ne voit pas vos montants.</p>
+    <p><strong>Si votre référent part, votre SI reste.</strong></p>
    </div>
   </div>
  </section>
 
- <!-- 6. Lead magnet : autodiagnostic -->
+ <!-- 7. Lead magnet : autodiagnostic -->
  <section aria-labelledby="titre-autodiag">
   <div class="conteneur">
    <div class="autodiag zone-nuit">
     <img src="assets/charte/logo/symbole-nuit.svg" width="72" height="72" alt="">
     <div>
      <h2 id="titre-autodiag">Autodiagnostic SI gratuit : 10 questions, 5 minutes</h2>
-     <p class="texte s-351cdaea">Savez-vous ce que vous avez, ce que vous payez et ce qui arrive à échéance ? Répondez à 10 questions et obtenez votre profil, avec trois actions simples à mener ce mois-ci. Le résultat s'affiche à l'écran : aucune adresse email n'est demandée pour le voir.</p>
-     <!-- autodiagnostic.html : page à construire par dev-vitrine à partir de autodiagnostic.md (calcul dans le navigateur). -->
+     <p class="texte">Savez-vous ce que vous avez, ce que vous payez et ce qui arrive à échéance ? Répondez à 10 questions et obtenez votre profil, avec trois actions simples à mener ce mois-ci. Le résultat s'affiche à l'écran : aucune adresse email n'est demandée pour le voir.</p>
      <a class="bouton" href="autodiagnostic.html" data-evenement="Clic autodiagnostic">Faire l'autodiagnostic</a>
     </div>
    </div>
   </div>
  </section>
 
- <!-- 7. Pour qui / pas pour qui -->
+ <!-- 8. Pour qui / pas pour qui -->
  <section class="filet" aria-labelledby="titre-pourqui">
   <div class="conteneur">
    <h2 id="titre-pourqui">Pour qui, et pour qui ce n'est pas</h2>
@@ -162,10 +200,11 @@
     <div class="carte">
      <h3>Lanternis est fait pour vous si</h3>
      <ul class="liste-coche">
-      <li>vous dirigez une PME de 50 à 249 salariés, ou une association de 20 à 249 salariés ;</li>
+      <li>vous dirigez une PME de 20 à 249 salariés, ou une association de 20 à 249 salariés ;</li>
       <li>vous n'avez pas de DSI, et l'informatique repose sur un prestataire, un référent ou « la personne qui s'y connaît » ;</li>
-      <li>vous voulez savoir ce que vous payez et décider avant les renouvellements ;</li>
-      <li>vous devez rendre des comptes : à votre CA, à vos financeurs, à un assureur ou à un client.</li>
+      <li>les arrivées et les départs sont fréquents, et vous voulez être sûr que rien n'est oublié ;</li>
+      <li>vous voulez savoir ce que coûte votre informatique et décider avant les renouvellements ;</li>
+      <li>vous préférez démarrer seul, à votre rythme, sans rendez-vous commercial.</li>
      </ul>
     </div>
     <div class="carte">
@@ -173,14 +212,15 @@
      <ul class="liste-coche liste-non">
       <li>vous avez déjà une DSI ou une équipe informatique interne qui tient ce registre ;</li>
       <li>vous cherchez un dépannage, une infogérance ou un antivirus : c'est le métier de votre prestataire ;</li>
-      <li>vous cherchez seulement à gérer des abonnements en ligne : des outils plus simples existent.</li>
+      <li>vous voulez un outil qui crée et supprime les comptes à votre place : Lanternis vous dit quoi faire et constate que c'est fait ;</li>
+      <li>vous cherchez un outil de trésorerie ou de comptabilité : Lanternis ne suit que le coût de votre SI.</li>
      </ul>
     </div>
    </div>
   </div>
  </section>
 
- <!-- 8. Engagements (preuves honnêtes, sans témoignage) -->
+ <!-- 9. Engagements (preuves honnêtes, sans témoignage) -->
  <section class="filet" aria-labelledby="titre-engagements">
   <div class="conteneur">
    <h2 id="titre-engagements">Ce que nous pouvons vous promettre aujourd'hui</h2>
@@ -189,8 +229,8 @@
     <div class="carte">
      <h3>Déjà vrai</h3>
      <ul class="liste-coche">
-      <li>Des tarifs publics, hors taxes, sans « contactez-nous ».</li>
-      <li>Conçu par un spécialiste du SI : 25 ans de support, de projets et de pilotage de prestataires.</li>
+      <li>Des tarifs publics, hors taxes, sans « contactez-nous » en dessous de 500 personnes.</li>
+      <li>Conçu par un DSI : les méthodes et les check-lists d'un DSI sont dans l'outil.</li>
       <li>Cette page ne dépose aucun cookie et ne charge aucun traceur.</li>
       <li>Vos réponses ne sont ni revendues ni utilisées à des fins publicitaires.</li>
      </ul>
@@ -198,65 +238,174 @@
     <div class="carte">
      <h3>Prévu à l'ouverture</h3>
      <ul class="liste-coche">
+      <li>Essai gratuit d'un mois, sans carte bancaire <span class="statut-prevu">prévu</span></li>
+      <li>Connexion à Microsoft 365 en lecture seule ; aucun mot de passe demandé ni stocké <span class="statut-prevu">prévu</span></li>
+      <li>Aucun fichier à téléverser : seulement la liste de vos personnes, outils, matériels et contrats <span class="statut-prevu">prévu</span></li>
       <li>Hébergement des données en France <span class="statut-prevu">prévu</span></li>
       <li>Export complet de votre registre à tout moment, même si vous arrêtez <span class="statut-prevu">prévu</span></li>
-      <li>Ni vos fichiers, ni vos mots de passe, ni les données des personnes que vous accompagnez : seulement la liste de vos outils et contrats <span class="statut-prevu">prévu</span></li>
      </ul>
     </div>
    </div>
   </div>
  </section>
 
- <!-- 9. Tarifs envisagés -->
+ <!-- 10. Tarifs envisagés (grille D) -->
  <section class="filet" id="tarifs" aria-labelledby="titre-tarifs">
   <div class="conteneur">
    <h2 id="titre-tarifs">Tarifs de lancement envisagés</h2>
-   <p class="prix-phare num">À partir de 149 € HT par mois</p>
-   <p class="texte">Un forfait par structure selon l'effectif, sans facturation par utilisateur. Ces tarifs sont envisagés pour le lancement et peuvent encore évoluer : les inscrits en seront informés avant toute ouverture.</p>
+   <p class="prix-phare num">Dès 49 € HT par mois</p>
+   <p class="texte">Un prix par structure, selon le nombre de personnes gérées, et non par utilisateur. Ces tarifs de lancement sont envisagés et peuvent encore évoluer : les inscrits en seront informés avant l'ouverture. À l'ouverture, chaque offre pourra être essayée gratuitement pendant un mois, sans carte bancaire.</p>
+
+   <div class="grille-3 offres">
+    <div class="carte offre">
+     <h3>Essentiel</h3>
+     <p class="prix-offre">49 € <small>HT par mois, jusqu'à 49 personnes</small></p>
+     <p class="sous-liste">Pour tenir le registre et ne rien oublier.</p>
+     <ul class="liste-coche">
+      <li>Tout le registre : personnes, matériel, comptes, licences, accès, contrats, fournisseurs</li>
+      <li>Coût du SI et coût par personne</li>
+      <li>Échéances : contrats, abonnements, garanties, domaines, certificats, sauvegardes</li>
+      <li>Arrivées et départs générés depuis le registre (un modèle d'arrivée, un modèle de départ)</li>
+      <li>Import Excel, Microsoft 365 en lecture seule</li>
+      <li>Alertes, récapitulatif hebdomadaire, tableau de bord</li>
+      <li>3 utilisateurs, 1 prestataire invité, 12 mois d'historique</li>
+      <li>Export complet à tout moment</li>
+      <li>Aide en ligne et par email</li>
+     </ul>
+     <p class="bas"><a href="#liste-attente" data-palier="essentiel" data-evenement="Intérêt palier">Rejoindre la liste d'attente pour Essentiel</a></p>
+    </div>
+    <div class="carte offre offre-avant">
+     <p class="badge">Le plus complet à l'ouverture</p>
+     <h3>Pilotage</h3>
+     <p class="prix-offre">99 € <small>HT par mois, jusqu'à 49 personnes</small></p>
+     <p class="sous-liste">Pour piloter et rendre des comptes. Tout Essentiel, plus :</p>
+     <ul class="liste-coche">
+      <li>Modèles d'arrivée et de départ illimités, adaptés au service, au site ou au type de personne</li>
+      <li>Utilisateurs illimités, 3 prestataires invités</li>
+      <li>Historique illimité</li>
+      <li>Réponse plus rapide par email</li>
+      <li>Ensuite : changement de poste, revue des accès, décisions de renouvellement, passation et procédures, synthèse mensuelle et attestations de départ en PDF <span class="statut-prevu">après l'ouverture</span></li>
+     </ul>
+     <p class="bas"><a href="#liste-attente" data-palier="pilotage" data-evenement="Intérêt palier">Rejoindre la liste d'attente pour Pilotage</a></p>
+    </div>
+    <div class="carte offre offre-bientot">
+     <p class="badge">Bientôt</p>
+     <h3>Pilotage+</h3>
+     <p class="prix-offre">199 € <small>HT par mois envisagés, jusqu'à 49 personnes</small></p>
+     <p class="sous-liste">Pour les structures à plusieurs sites. Tout Pilotage, plus :</p>
+     <ul class="liste-coche">
+      <li>Plusieurs sites, avec un responsable par site</li>
+      <li>Prestataires invités illimités</li>
+      <li>Règles d'alerte personnalisées</li>
+      <li>API en lecture</li>
+     </ul>
+     <p class="petit">Ouvrira avec le multi-sites, après le lancement.</p>
+     <p class="bas"><a href="#liste-attente" data-palier="pilotage-plus" data-evenement="Intérêt palier">Être prévenu de l'ouverture de Pilotage+</a></p>
+    </div>
+   </div>
+
    <div class="tableau-defilant">
     <table>
-     <caption>Abonnement mensuel envisagé, par tranche d'effectif</caption>
-     <thead><tr><th scope="col">Effectif de la structure</th><th scope="col">Tarif envisagé</th><th scope="col">Pour l'essentiel</th></tr></thead>
+     <caption>Prix envisagés selon le nombre de personnes gérées, en € HT par mois</caption>
+     <thead>
+      <tr><th scope="col">Personnes gérées</th><th scope="col">Essentiel, au mois</th><th scope="col">Essentiel, à l'année (par mois)</th><th scope="col">Pilotage, au mois</th><th scope="col">Pilotage, à l'année (par mois)</th></tr>
+     </thead>
      <tbody>
-      <tr><th scope="row">20 à 49 salariés</th><td class="prix">149 € HT/mois</td><td>Registre du SI, import de votre Excel, alertes de renouvellement et de départ</td></tr>
-      <tr><th scope="row">50 à 99 salariés</th><td class="prix">249 € HT/mois</td><td>Le même, plus le coût du SI par salarié, la procédure d'arrivée et de départ, la synthèse mensuelle</td></tr>
-      <tr><th scope="row">100 à 249 salariés</th><td class="prix">à partir de 399 € HT/mois</td><td>Le même, plus plusieurs établissements et une revue trimestrielle d'une heure avec un DSI</td></tr>
+      <tr><th scope="row">Jusqu'à 49</th><td class="prix"><strong>49 €</strong></td><td class="prix">39,20 €</td><td class="prix"><strong>99 €</strong></td><td class="prix">79,20 €</td></tr>
+      <tr><th scope="row">50 à 99</th><td class="prix"><strong>79 €</strong></td><td class="prix">63,20 €</td><td class="prix"><strong>159 €</strong></td><td class="prix">127,20 €</td></tr>
+      <tr><th scope="row">100 à 149</th><td class="prix"><strong>109 €</strong></td><td class="prix">87,20 €</td><td class="prix"><strong>219 €</strong></td><td class="prix">175,20 €</td></tr>
+      <tr><th scope="row">150 à 199</th><td class="prix"><strong>139 €</strong></td><td class="prix">111,20 €</td><td class="prix"><strong>279 €</strong></td><td class="prix">223,20 €</td></tr>
+      <tr><th scope="row">200 à 249</th><td class="prix"><strong>169 €</strong></td><td class="prix">135,20 €</td><td class="prix"><strong>339 €</strong></td><td class="prix">271,20 €</td></tr>
+      <tr><th scope="row">250 à 499</th><td class="prix">+ 30 € par tranche de 50 (199 à 319 €)</td><td class="prix">159,20 à 255,20 €</td><td class="prix">+ 60 € par tranche de 50 (399 à 639 €)</td><td class="prix">319,20 à 511,20 €</td></tr>
+      <tr><th scope="row">500 et plus</th><td colspan="4">Écrivez-nous à <a href="mailto:contact@hasteria.net">contact@hasteria.net</a> : la même règle de prix s'applique.</td></tr>
      </tbody>
     </table>
    </div>
-   <div class="grille-2">
-    <div class="encadre">
-     <h3>Associations et structures de l'ESS</h3>
-     <p class="s-ab79ea2b">Remise de 15 % sur l'abonnement, cumulable avec l'engagement annuel. Conditions d'éligibilité à préciser à l'ouverture.</p>
-    </div>
+
+   <!-- Simulateur : masqué sans JavaScript (le tableau ci-dessus suffit) ; affiché et alimenté par le script en fin de page. -->
+   <div class="simulateur" id="simulateur" hidden>
+    <h3 id="titre-simulateur">Estimez votre tarif</h3>
+    <form id="form-simulateur" aria-labelledby="titre-simulateur" novalidate>
+     <div class="sim-grille">
+      <div>
+       <label for="sim-personnes">Nombre de personnes gérées</label>
+       <span class="aide" id="aide-sim-personnes">Salariés, stagiaires, alternants, intérimaires et prestataires équipés. Les bénévoles ne comptent pas.</span>
+       <input type="number" id="sim-personnes" name="sim-personnes" min="1" max="100000" step="1" value="30" inputmode="numeric" aria-describedby="aide-sim-personnes">
+      </div>
+      <fieldset>
+       <legend>Votre structure</legend>
+       <div class="choix"><input type="radio" id="sim-entreprise" name="sim-type" value="entreprise" checked><label for="sim-entreprise">Entreprise</label></div>
+       <div class="choix"><input type="radio" id="sim-ess" name="sim-type" value="ess"><label for="sim-ess">Association ou structure de l'ESS</label></div>
+      </fieldset>
+      <fieldset>
+       <legend>Facturation</legend>
+       <div class="choix"><input type="radio" id="sim-mensuel" name="sim-periode" value="mensuel" checked><label for="sim-mensuel">Au mois, sans engagement</label></div>
+       <div class="choix"><input type="radio" id="sim-annuel" name="sim-periode" value="annuel"><label for="sim-annuel">À l'année (−20 %)</label></div>
+      </fieldset>
+     </div>
+     <div id="sim-resultat" aria-live="polite">
+      <div class="sim-resultat">
+       <div class="sim-case"><p>Essentiel</p><p class="montant" id="sim-essentiel">49 € HT/mois</p><p class="petit" id="sim-essentiel-detail"></p></div>
+       <div class="sim-case"><p>Pilotage</p><p class="montant" id="sim-pilotage">99 € HT/mois</p><p class="petit" id="sim-pilotage-detail"></p></div>
+      </div>
+      <p class="petit sim-note" id="sim-note"></p>
+     </div>
+    </form>
+   </div>
+
+   <div class="grille-3 regles">
     <div class="encadre">
      <h3>Engagement annuel</h3>
-     <p class="s-ab79ea2b">20 % de moins que le tarif mensuel. La mise en place accompagnée est facturée une fois, à part (490 à 990 € HT envisagés selon la tranche).</p>
+     <p>20 % de moins que le tarif mensuel, facturé à l'année.</p>
+    </div>
+    <div class="encadre">
+     <h3>Associations et ESS</h3>
+     <p>−15 % sur le tarif mensuel, sans engagement. Non cumulable avec l'engagement annuel : la remise la plus avantageuse s'applique. Exemple : Pilotage jusqu'à 49 personnes à 84,15 € HT par mois. Conditions d'éligibilité précisées à l'ouverture.</p>
+    </div>
+    <div class="encadre">
+     <h3>Bénévoles gratuits</h3>
+     <p>Les bénévoles peuvent figurer dans le registre sans être comptés dans le prix. Le nombre d'utilisateurs de Lanternis ne change pas le prix non plus.</p>
     </div>
    </div>
-   <p class="petit s-cac10910">Prix hors taxes ; TVA en sus. Aucun paiement n'est demandé pour rejoindre la liste d'attente.</p>
+   <p class="petit s-ac0b8762">Prix hors taxes ; TVA en sus. Aucun service humain n'est inclus dans l'abonnement : l'aide se fait en ligne et par email. Aucun paiement n'est demandé pour rejoindre la liste d'attente.</p>
   </div>
  </section>
 
- <!-- 10. FAQ (objections) -->
+ <!-- 11. FAQ (objections) -->
  <section class="filet" id="questions" aria-labelledby="titre-faq">
   <div class="conteneur texte">
    <h2 id="titre-faq">Vos questions</h2>
    <details>
     <summary>Mon prestataire s'en occupe déjà. Pourquoi Lanternis ?</summary>
-    <p>Il s'occupe de faire marcher votre informatique. Mais la liste de vos contrats, de vos abonnements et de vos accès, avec leurs dates d'échéance, l'avez-vous, vous ? Lanternis vous la donne, et votre prestataire peut y contribuer.</p>
+    <p>Il s'occupe de faire marcher votre informatique. Mais la liste de ce que chaque personne a, de vos contrats et de vos accès, avec leurs échéances, l'avez-vous, vous ? Et quand quelqu'un part, qui vérifie que tout est fermé ? Lanternis vous donne cette vue, et votre prestataire peut y contribuer.</p>
    </details>
    <details>
     <summary>Encore un outil à remplir : qui va le tenir à jour ?</summary>
-    <p>Nous faisons la mise en place avec vous, à partir de votre Excel. Ensuite, les connecteurs prévus (Microsoft 365 ou Google Workspace, banque ou logiciel comptable) et les alertes font le gros du travail : c'est Lanternis qui vous écrit, pas l'inverse.</p>
+    <p>Vous partez de votre Excel ou de la liste de votre prestataire. Ensuite, Microsoft 365 met à jour les comptes et les licences, votre prestataire invité complète le reste, et chaque arrivée ou départ fait vivre le registre. Les alertes font le gros du travail : c'est Lanternis qui vous écrit, pas l'inverse.</p>
+   </details>
+   <details>
+    <summary>Qui m'aide à démarrer si personne ne m'accompagne ?</summary>
+    <p>Lanternis est conçu pour se mettre en place seul : une liste de démarrage en quelques étapes, un gabarit Excel, une structure d'exemple à explorer avant d'entrer vos données, de courtes vidéos et une aide en ligne. Pour une question, l'aide répond par email. Aucun rendez-vous n'est nécessaire, ni pour essayer, ni pour vous abonner.</p>
+   </details>
+   <details>
+    <summary>Proposez-vous des services, par exemple une aide à la mise en place ?</summary>
+    <p>L'abonnement n'inclut aucun service humain. Quelques services facultatifs, comme une séance d'aide au démarrage en visio, pourront être réservés et payés en ligne, en nombre limité chaque mois. Ils ne sont jamais nécessaires pour utiliser Lanternis ; leurs tarifs seront publiés à l'ouverture.</p>
+   </details>
+   <details>
+    <summary>Est-ce sûr de relier Lanternis à notre Microsoft 365 ?</summary>
+    <p>La connexion est prévue en lecture seule : Lanternis lit les comptes et les licences, mais ne crée, ne modifie et ne supprime rien. Il ne vous demande et ne stocke aucun mot de passe : il note qu'une personne a accès à un outil ou à un coffre de mots de passe, jamais le mot de passe lui-même. Vous pouvez retirer l'autorisation à tout moment depuis votre administration Microsoft.</p>
+   </details>
+   <details>
+    <summary>Quelles données stockez-vous, et où ?</summary>
+    <p>L'hébergement est prévu en France. Nous stockerons la liste de vos personnes (identité professionnelle, service, dates d'arrivée et de départ), de leur matériel, de leurs comptes et accès, de vos contrats et fournisseurs. Aucun fichier à téléverser, aucun mot de passe, ni salaire, ni motif de départ, ni donnée des personnes que vous accompagnez. Les sous-traitants seront listés publiquement avant l'ouverture.</p>
+   </details>
+   <details>
+    <summary>Comment le prix est-il calculé ?</summary>
+    <p>Selon le nombre de personnes gérées : salariés, stagiaires, alternants, intérimaires et prestataires équipés présents dans le registre. Les bénévoles et les personnes parties ne comptent pas, et le nombre d'utilisateurs de Lanternis ne change rien. Si votre effectif change de tranche, le prix suit, après un préavis par email.</p>
    </details>
    <details>
     <summary>Je préfère recruter un responsable informatique.</summary>
     <p>C'est une vraie option. Elle coûte de l'ordre de 45 000 à 75 000 € brut par an d'après des offres d'emploi publiées en octobre 2026<a href="#source-1" id="renvoi-1"><sup><span class="visuellement-cache">source </span>1</sup></a>, et le recrutement peut être long : en 2024, 54 % des entreprises de 50 à 249 salariés qui ont cherché un spécialiste informatique ont eu des difficultés à recruter<a href="#source-2" id="renvoi-2"><sup><span class="visuellement-cache">source </span>2</sup></a>. Lanternis peut aussi aider une personne recrutée : la carte reste dans l'outil, même quand les gens changent.</p>
-   </details>
-   <details>
-    <summary>Où seront hébergées nos données ?</summary>
-    <p>L'hébergement est prévu en France. Nous stockerons la liste de vos outils, contrats et fournisseurs, pas vos fichiers, pas vos mots de passe, ni aucune donnée des personnes que vous accompagnez. Les sous-traitants seront listés publiquement avant l'ouverture.</p>
    </details>
    <details>
     <summary>Et si Lanternis s'arrête un jour ?</summary>
@@ -264,7 +413,7 @@
    </details>
    <details>
     <summary>Quand Lanternis sera-t-il disponible ?</summary>
-    <p>Le produit est en préparation. Nous ouvrirons les premiers accès d'abord aux inscrits de la liste d'attente, par petits groupes, pour faire la mise en place avec chacun. Nous ne donnons pas de date tant qu'elle n'est pas sûre.</p>
+    <p>Le produit est en préparation. Les inscrits de la liste d'attente seront prévenus les premiers de l'ouverture de l'essai gratuit d'un mois, sans carte bancaire. Nous ne donnons pas de date tant qu'elle n'est pas sûre.</p>
    </details>
    <details>
     <summary>Qui est derrière Lanternis ?</summary>
@@ -273,11 +422,11 @@
   </div>
  </section>
 
- <!-- 11. Formulaire (CTA final) -->
+ <!-- 12. Formulaire (CTA final) -->
  <section class="filet" id="liste-attente" aria-labelledby="titre-formulaire">
   <div class="conteneur">
    <h2 id="titre-formulaire">Rejoindre la liste d'attente</h2>
-   <p class="chapeau texte">Soyez parmi les premiers à faire la carte de votre SI avec nous. Cela prend une minute.</p>
+   <p class="chapeau texte">Soyez prévenu parmi les premiers de l'ouverture de l'essai gratuit. Cela prend une minute.</p>
 
    <div id="zone-message" tabindex="-1">
     <div class="message message-succes" id="message-succes" role="status" hidden>
@@ -311,7 +460,7 @@
     </fieldset>
 
     <div class="champ">
-     <label for="effectif">Effectif <span class="oblig">(obligatoire)</span></label>
+     <label for="effectif">Effectif salarié <span class="oblig">(obligatoire)</span></label>
      <select id="effectif" name="effectif" required>
       <option value="">Choisissez une tranche</option>
       <option value="moins-20">Moins de 20 salariés</option>
@@ -324,18 +473,27 @@
 
     <fieldset>
      <legend>Ce qui vous préoccupe le plus aujourd'hui <span class="oblig">(obligatoire, un seul choix)</span></legend>
-     <div class="choix"><input type="radio" id="d-depart" name="douleur" value="depart-referent" required><label for="d-depart">Notre référent informatique part ou est parti, et ce qu'il savait avec lui</label></div>
-     <div class="choix"><input type="radio" id="d-couts" name="douleur" value="couts"><label for="d-couts">Je ne sais pas exactement ce que nous payons (abonnements, licences, contrats)</label></div>
+     <div class="choix"><input type="radio" id="d-acces" name="douleur" value="acces" required><label for="d-acces">Les arrivées et les départs : comptes encore actifs, matériel non rendu, accès jamais retirés</label></div>
+     <div class="choix"><input type="radio" id="d-depart" name="douleur" value="depart-referent"><label for="d-depart">Notre référent informatique part ou est parti, et ce qu'il savait avec lui</label></div>
+     <div class="choix"><input type="radio" id="d-couts" name="douleur" value="couts"><label for="d-couts">Je ne sais pas exactement ce que coûte notre informatique (licences, abonnements, contrats, matériel)</label></div>
      <div class="choix"><input type="radio" id="d-renouv" name="douleur" value="renouvellements"><label for="d-renouv">Des contrats se renouvellent sans que nous l'ayons décidé</label></div>
-     <div class="choix"><input type="radio" id="d-acces" name="douleur" value="acces"><label for="d-acces">Je ne sais pas qui a encore accès à quoi (anciens salariés, prestataires)</label></div>
      <div class="choix"><input type="radio" id="d-comptes" name="douleur" value="rendre-compte"><label for="d-comptes">Je dois rendre des comptes (CA, financeurs, assureur, client) sans avoir les éléments</label></div>
      <div class="choix"><input type="radio" id="d-autre" name="douleur" value="autre"><label for="d-autre">Autre chose</label></div>
-     <label for="douleur-autre" class="petit s-260373a2">Si vous avez choisi « Autre chose », précisez en quelques mots (facultatif)</label>
+     <label for="douleur-autre" class="petit precision">Si vous avez choisi « Autre chose », précisez en quelques mots (facultatif)</label>
      <input type="text" id="douleur-autre" name="douleur_autre" maxlength="200">
+    </fieldset>
+
+    <fieldset>
+     <legend>Quelle offre vous intéresserait ? <span class="oblig">(facultatif)</span></legend>
+     <div class="choix"><input type="radio" id="p-essentiel" name="palier" value="essentiel"><label for="p-essentiel">Essentiel (dès 49 € HT par mois)</label></div>
+     <div class="choix"><input type="radio" id="p-pilotage" name="palier" value="pilotage"><label for="p-pilotage">Pilotage (dès 99 € HT par mois)</label></div>
+     <div class="choix"><input type="radio" id="p-pilotage-plus" name="palier" value="pilotage-plus"><label for="p-pilotage-plus">Pilotage+, quand il ouvrira (plusieurs sites)</label></div>
+     <div class="choix"><input type="radio" id="p-indecis" name="palier" value="ne-sait-pas"><label for="p-indecis">Je ne sais pas encore</label></div>
     </fieldset>
 
     <fieldset class="consentement">
      <legend class="visuellement-cache">Options facultatives</legend>
+     <div class="choix"><input type="checkbox" id="essai" name="essai" value="oui"><label for="essai">Je compte essayer Lanternis dès l'ouverture de l'essai gratuit d'un mois. Facultatif, sans engagement.</label></div>
      <div class="choix"><input type="checkbox" id="nouvelles" name="nouvelles" value="oui"><label for="nouvelles">J'accepte de recevoir les nouvelles de Lanternis par email (au plus une par mois). Facultatif, désinscription en un clic.</label></div>
      <div class="choix"><input type="checkbox" id="echange" name="echange" value="oui"><label for="echange">J'accepte d'être recontacté(e) pour un échange de 30 minutes sur l'informatique de ma structure. Facultatif, sans démarche commerciale.</label></div>
     </fieldset>
@@ -361,7 +519,7 @@
     <li id="source-1">Offres d'emploi de responsable informatique publiées sur HelloWork en octobre 2026 (fourchettes de 45 à 70 k€ et de 65 à 75 k€ brut par an), consultées le 25 octobre 2026 : <a href="https://www.hellowork.com/fr-fr/emplois/82433859.html">offre 1</a>, <a href="https://www.hellowork.com/fr-fr/emplois/84330801.html">offre 2</a>. <a href="#renvoi-1">Retour au texte</a></li>
     <li id="source-2">Insee, « Les entreprises et le recrutement de spécialistes des TIC », publication du 14 octobre 2025, consultée le 25 octobre 2026 : <a href="https://www.insee.fr/fr/statistiques/8616805">insee.fr/fr/statistiques/8616805</a>. <a href="#renvoi-2">Retour au texte</a></li>
    </ol>
-   <p class="petit">Les montants du tableau de bord présenté plus haut sont un exemple fictif.</p>
+   <p class="petit">Les personnes et les montants du tableau de bord présenté plus haut sont un exemple fictif. Les tarifs sont des tarifs de lancement envisagés.</p>
   </div>
  </section>
 </main>

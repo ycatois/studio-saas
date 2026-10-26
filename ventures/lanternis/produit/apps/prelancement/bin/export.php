@@ -19,7 +19,7 @@ use Lanternis\Prelancement as L;
 $config = L\Config::charger();
 $db = L\Base::ouvrir((string) $config['DB_PATH']);
 $colonnes = ['email', 'email_generique', 'structure', 'type', 'effectif', 'douleur', 'douleur_autre',
-    'nouvelles', 'nouvelles_le', 'nouvelles_version', 'echange', 'echange_le', 'echange_origine',
+    'nouvelles', 'nouvelles_le', 'nouvelles_version', 'echange', 'echange_le', 'echange_origine', 'palier', 'essai',
     'variante', 'public', 'source', 'score', 'profil', 'reponses', 'statut', 'qualifie',
     'version_mention', 'cree_le', 'confirme_le', 'dernier_contact_le'];
 $sql = 'SELECT ' . implode(', ', $colonnes) . ' FROM inscriptions'

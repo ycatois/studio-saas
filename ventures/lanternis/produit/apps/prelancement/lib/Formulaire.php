@@ -15,6 +15,8 @@ final class Formulaire
     public const DOULEURS = ['depart-referent', 'couts', 'renouvellements', 'acces', 'rendre-compte', 'autre'];
     public const VARIANTES = ['a', 'b', 'ess'];
     public const PUBLICS = ['pme', 'ess'];
+    /** Paliers de la grille D (validation.md v2 § 7.1). */
+    public const PALIERS = ['essentiel', 'pilotage', 'pilotage-plus', 'ne-sait-pas'];
     public const SOURCES = ['reseau', 'prospection', 'ess-relais', 'webinaire', 'autodiag', 'blog', 'facebook', 'confirmation', 'direct'];
 
     /** Messageries grand public : acceptées mais marquées (validation.md § 7.1). */
@@ -66,8 +68,12 @@ final class Formulaire
 
     public static function valider(array $post): array
     {
+        // Palier : facultatif ; absent, non chaîne ou hors liste -> null, sans rejeter le formulaire.
+        $palier = $post['palier'] ?? null;
+        $palier = is_string($palier) && in_array($palier, self::PALIERS, true) ? $palier : null;
+
         $champs = [];
-        foreach (['email', 'structure', 'type', 'effectif', 'douleur', 'douleur_autre', 'nouvelles', 'echange',
+        foreach (['email', 'structure', 'type', 'effectif', 'douleur', 'douleur_autre', 'nouvelles', 'echange', 'essai',
                      'variante', 'public', 'source', 'joindre_resultat', 'score', 'profil', 'reponses'] as $cle) {
             $v = self::lire($post, $cle);
             if ($v === false) {
@@ -111,7 +117,7 @@ final class Formulaire
 
         // Cases à cocher : « oui » ou absentes ; toute autre valeur est refusée.
         $cases = [];
-        foreach (['nouvelles', 'echange', 'joindre_resultat'] as $cle) {
+        foreach (['nouvelles', 'echange', 'essai', 'joindre_resultat'] as $cle) {
             $v = $champs[$cle];
             if ($v !== null && $v !== '' && $v !== 'oui') {
                 return ['ok' => false, 'code' => 'champs'];
@@ -155,6 +161,8 @@ final class Formulaire
             'douleur_autre' => $douleurAutre,
             'nouvelles' => $cases['nouvelles'],
             'echange' => $cases['echange'],
+            'palier' => $palier,
+            'essai' => $cases['essai'],
             'variante' => $variante,
             'public' => $public,
             'source' => $source,
@@ -164,10 +172,15 @@ final class Formulaire
         ]];
     }
 
-    /** Inscrit qualifié (validation.md § 7.1), calculé à la confirmation. */
+    /** Tranches d'effectif du cœur de cible : 20 à 249 personnes. */
+    public const EFFECTIFS_CIBLE = ['20-49', '50-99', '100-249'];
+
+    /**
+     * Inscrit qualifié, calculé à la confirmation : entreprise OU structure de l'ESS de 20 à 249 personnes
+     * (cible élargie aux entreprises de 20 à 49 après la validation de la grille D ; avant : entreprises 50 à 249).
+     */
     public static function qualifie(string $type, string $effectif): bool
     {
-        return ($type === 'entreprise' && in_array($effectif, ['50-99', '100-249'], true))
-            || ($type === 'ess' && in_array($effectif, ['20-49', '50-99', '100-249'], true));
+        return in_array($type, self::TYPES, true) && in_array($effectif, self::EFFECTIFS_CIBLE, true);
     }
 }

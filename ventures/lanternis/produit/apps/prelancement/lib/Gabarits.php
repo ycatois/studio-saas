@@ -178,6 +178,7 @@ final class Gabarits
             'Email : ' . $ins['email'],
             'Structure : ' . $ins['structure'],
             'Type : ' . $ins['type'] . ' · effectif : ' . $ins['effectif'],
+            'Cœur de cible (entreprise ou ESS, 20 à 249 personnes) : ' . ((int) $ins['qualifie'] === 1 ? 'oui' : 'non'),
             '',
             'Détail (préoccupation, résultat de l\'autodiagnostic) : php bin/export.php sur le serveur.',
         ]);

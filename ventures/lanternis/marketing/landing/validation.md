@@ -41,7 +41,7 @@ fichiers: validation.html (page), autodiagnostic.md (lead magnet)
 - **P1 (principal), Marc, dirigeant d'une PME de 50 à 249 salariés sans DSI.** Version par défaut. Bénéfice phare : **les arrivées et les départs sans rien oublier** ; déclencheur secondaire : le départ du référent informatique (S2, variante B).
 - **P2 (variante ESS), Nadia, DAF d'une association de 20 à 249 salariés.** Même page avec `?public=ess` : titre et sous-titre propres, type « ESS » présélectionné dans le formulaire **et dans le simulateur**. Arguments propres : tarif associatif, bénévoles non facturés, preuves pour le CA et les financeurs.
 - **P3 (office manager)** : pas de version dédiée. C'est souvent elle qui mène les arrivées et départs : la section « Arrivées et départs » lui parle directement ; elle peut transmettre la page à sa direction.
-- **Point ouvert (à trancher par le fondateur et l'analyste-marché)** : la grille D commence à « jusqu'à 49 personnes » et le § 11.6 de `propositions-tarifs.md` fait des **20 à 99 le cœur de l'acquisition** en libre-service. La page garde pour l'instant la cible du SAM décidée le 2026-10-25 (PME 50 à 249, ESS 20 à 249) et la même règle de qualification (§ 6.1). Si les PME de 20 à 49 réintègrent le SAM, modifier la ligne sous les boutons du hero, la carte « Pour qui » et la règle `qualifie` (§ 7.1).
+- **Tranché le 2026-10-26** : avec la grille D validée et le libre-service, les PME de 20 à 49 personnes entrent dans la cible (cœur de cible 20 à 99). La page, la carte « Pour qui » et la règle `qualifie` (§ 7.1) visent désormais les **entreprises et structures de l'ESS de 20 à 249 personnes**.
 
 ## 3. Promesse et test des 5 secondes
 
@@ -215,7 +215,7 @@ Inchangé : « Lanternis est une marque d'Hasteria SASU. » et coordonnées lég
 
 ### 6.1 Définitions
 - **Inscrit** : formulaire envoyé et email confirmé (double opt-in, § 7.3).
-- **Inscrit qualifié** : inscrit dans le SAM, **entreprise de 50 à 249 salariés** ou **structure de l'ESS de 20 à 249 salariés** (décision du 2026-10-25 ; voir le point ouvert du § 2).
+- **Inscrit qualifié** : **entreprise ou structure de l'ESS de 20 à 249 personnes** (décision du 2026-10-26, grille D ; remplace la règle du 2026-10-25 qui excluait les entreprises de 20 à 49).
 - **Intention d'essai** : case « Je compte essayer Lanternis dès l'ouverture » cochée.
 - **Intérêt pour un palier** : réponse à « Quelle offre vous intéresserait ? » (hors « Je ne sais pas encore »).
 - **Taux de conversion** : inscriptions envoyées / visiteurs uniques de la page, par source et par variante.
@@ -285,7 +285,7 @@ Seuils de la v1 retirés : « lettres d'intention à ≥ 149 € HT/mois » (pri
 
 **Modification nécessaire côté produit (non faite ici, à confier à dev-vitrine) :** `produit/apps/prelancement/lib/Formulaire.php` ignore aujourd'hui tout champ inattendu. Tant qu'il n'est pas mis à jour, **`palier` et `essai` sont envoyés mais perdus** (sans erreur pour l'utilisateur). Il faut : ajouter `palier` et `essai` à la lecture des champs, une constante `PALIERS`, deux colonnes dans la base (migration), les deux champs dans l'export CSV et dans `bin/stats.php` (répartition par palier et part d'intention d'essai, par variante et par source), et des tests. **Bloquant pour mesurer les indicateurs du § 6.3** ; à faire avant la mise en ligne.
 
-Champs calculés : `qualifie` inchangé (entreprise 50-99 ou 100-249 ; ESS 20-49, 50-99 ou 100-249), à revoir si le point ouvert du § 2 est tranché.
+Champs calculés : `qualifie` = entreprise ou ESS de 20-49, 50-99 ou 100-249 (décision du 2026-10-26).
 
 **Non retenu (friction)** : « Votre outil de messagerie : Microsoft 365, Google Workspace, autre ». Utile pour la décision D4 (Google au MVP), mais un champ de plus. À ajouter si le fondateur le demande, ou à poser dans l'email de bienvenue.
 
