@@ -22,6 +22,12 @@ Décision : en attente
 - Positionnement : un « DSI de poche » pour les PME (50 à 249 salariés) et l'ESS (20 à 249) sans DSI. Logiciel et service (modèle hybride).
 
 ## En cours
+- **Refonte du périmètre et des prix (2026-10-26), en attente des choix du fondateur :**
+  - `1-analyse/perimetre-produit.md` : tout le SI centré sur les personnes (modules M0 à M12, MVP US-01 à US-20) ; remplace le § 6 de `faisabilite.md` ;
+  - `1-analyse/faisabilite-v2.md` : effort révisé (P1 complet 19 à 26 sem., tranche pilote 14 à 18 sem., pilote concierge 9,5 à 12,5 sem.), droits Microsoft Graph et Google, RLS ;
+  - `2-marche/propositions-tarifs.md` : 3 grilles (A forfait par tranche, B modules, C prix par personne avec minimum), essai d'un mois sans carte ;
+  - décisions à prendre : choix de la grille, décisions D1 à D5 du périmètre, essai gratuit en libre-service (contredit `prix.md`), accès au code de Cockpit DSI ;
+  - documents à mettre à jour après choix : `prix.md`, `modele-revenus.md`, TAM/SAM en euros, plafonds de CAC (`acquisition.md`), bloc tarifs de la landing, hypothèses 3, 5 et 7 ci-dessous.
 - Déposer les polices Fraunces (woff2, OFL) dans `marque/charte/fonts/` (voir `fonts/README.md`) ; d'ici là, les visuels utilisent une police de repli.
 - Recherche d'antériorité du logo et du nom (INPI, EUIPO, WIPO, logiciel Lantern) avant dépôt.
 - Sécuriser le nom Lanternis : réserver lanternis.fr et lanternis.com, rechercher l'antériorité INPI/EUIPO (classes 9, 35, 42), puis demander l'avis d'un conseil en propriété industrielle avant le dépôt (skill nouvelle-marque-hasteria).
@@ -65,3 +71,4 @@ Décision : en attente
 - 2026-10-26 — Pré-lancement préparé en brouillon. Série LinkedIn remplacée par un test Facebook (6 semaines, orienté associations) ; le blog est le canal de contenu principal. Fichiers de suivi de prospection exclus du dépôt (`.gitignore`).
 - 2026-10-26 — Pages légales et conformité du pré-lancement rédigées (projets, relecture d'avocat requise). Back-end de la liste d'attente développé, testé et fusionné (PR #1) ; déploiement soumis à validation.
 - 2026-10-26 — Case « nouvelles » : on garde « au plus une par mois ». La séquence devient une lettre mensuelle de 4 éditions (17 nov., 17 déc., 19 janv., 18 févr.). Les entretiens viendront surtout des échanges individuels. À confirmer par juriste-rgpd : les emails transactionnels et les réponses individuelles hors plafond.
+- 2026-10-26 — Le fondateur demande de gérer **tout le SI** (contrats, matériel, messagerie et accès, arrivées et départs) et fixe le cadre tarifaire : essai d'un mois à 0 €, paliers à 49 € et 99 € HT, puis un ou deux paliers supérieurs. Périmètre, faisabilité et grilles retravaillés.
