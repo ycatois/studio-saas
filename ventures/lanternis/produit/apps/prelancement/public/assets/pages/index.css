@@ -99,9 +99,15 @@ section{padding:var(--espace-8) 0}
 .liste-non li::before{width:.8rem;height:0;border-left:0;transform:none;top:.75em}
 .statut-prevu{font-size:var(--taille-xs);font-weight:var(--graisse-forte);color:var(--couleur-texte-secondaire);border:1px solid var(--couleur-trait);border-radius:var(--rayon-s);padding:0 .35rem;margin-left:.35rem;white-space:nowrap}
 
-/* Arrivées et départs (bénéfice phare) */
-.phare{display:grid;grid-template-columns:1fr 1fr;gap:var(--grille-gouttiere);margin-top:var(--espace-6);align-items:start}
-@media (max-width:60rem){.phare{grid-template-columns:1fr}}
+/* Les 6 domaines suivis (icônes de la charte, sur pastille claire fixe : lisibles aussi en thème sombre) */
+.domaines{list-style:none;padding:0}
+.domaines li{margin:0}
+.pictogramme{display:inline-grid;place-items:center;width:3rem;height:3rem;border-radius:var(--rayon-m);background:var(--lt-ambre-pale);margin-bottom:var(--espace-3)}
+.pictogramme img{width:28px;height:28px;display:block}
+.synthese{font-family:var(--police-titre);font-weight:var(--graisse-titre);font-size:var(--taille-xl);margin:var(--espace-6) 0 var(--espace-2)}
+
+/* Arrivées et départs (preuve) */
+.phare{margin-top:var(--espace-6);max-width:var(--mesure-texte)}
 .checklist{list-style:none;margin:0;padding:0}
 .checklist li{display:flex;gap:var(--espace-3);padding:var(--espace-3) 0;border-top:1px solid var(--couleur-filet)}
 .checklist li:first-child{border-top:0;padding-top:0}
@@ -188,10 +194,8 @@ fieldset{border:0;margin:0 0 var(--espace-5);padding:0;min-width:0}
 @media print{.zone-nuit{background:none;color:#000}.halo,.actions,.entete nav,.simulateur{display:none}}
 
 /* Styles en ligne de la page source, convertis en classes par build.php */
-.s-0eabfaa2{margin-top:var(--espace-6) !important}
 .s-269dcc6a{padding-top:var(--espace-6) !important}
 .s-3e04cbda{color:var(--lt-papier) !important}
 .s-5fd9c834{font-size:var(--taille-xl) !important}
-.s-999fb3ef{fill:var(--icone-lumiere) !important}
 .s-a0925a28{margin-top:0 !important}
 .s-ac0b8762{margin-top:var(--espace-5) !important}

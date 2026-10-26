@@ -2,14 +2,23 @@
 venture: lanternis
 phase: Marque (prérequis de 2b Pré-lancement)
 auteur: brand-manager
-version: 1.1
+version: 1.2
 date: 2026-10-26
+date_v1_1: 2026-10-26
 date_v1_0: 2026-10-25
 statut: brouillon
-skills: plateforme-de-marque, messages-par-persona
+skills: plateforme-de-marque, messages-par-persona, copywriting-frameworks
 ---
 
 # Plateforme de marque — Lanternis
+
+> **Note de version v1.2 (2026-10-26).** Retour du fondateur sur la v1.1 : « Où voit-on qu'on gère les contrats, le matériel, la location du matériel, les licences des logiciels ? On a l'impression que c'est juste un truc d'entrées et de départs. »
+> **Ce qui change :**
+> - **message phare = tout le SI, relié aux personnes** : contrats et fournisseurs, matériel acheté, loué ou en leasing, licences et abonnements logiciels, comptes et accès, domaines, certificats et sauvegardes, coût du SI (`1-analyse/perimetre-produit.md` § 1.2) ;
+> - **arrivées et départs** : ils ne sont plus le titre mais un bénéfice parmi d'autres, la preuve concrète que tout est relié aux personnes ;
+> - **promesse** (§ 4) réécrite, toujours courte ; **3 titres de landing** proposés (§ 4.1) et **formulation en 6 domaines** à reprendre telle quelle sur la landing (§ 4.2) ;
+> - **positionnement** (§ 9), **on dit / on ne dit pas** (§ 10.2, lignes ajoutées), **messages clés** (§ 11, ordre revu), nouveau § 10.7 « phrases réductrices », hypothèses (§ 13) complétées.
+> **Inchangés :** le nom, la piste Veilleuse, les valeurs, la personnalité, le ton, les preuves (§ 5) et les règles de la v1.1 (aucun service humain, « conçu par un DSI », futur ou « conçu pour » avant l'ouverture). Aucun chiffre ni aucune fonction n'est ajouté : chaque domaine cité renvoie à une entité ou à une alerte du périmètre.
 
 > **Note de version v1.1 (2026-10-26).** Mise à jour après les décisions du fondateur du 2026-10-26 (`STATUT.md`, journal) : vente en libre-service, essai gratuit d'un mois sans carte, grille D validée (`2-marche/propositions-tarifs.md` § 11), aucun service humain inclus, périmètre « tout le SI centré sur les personnes » en lecture seule sans mot de passe stocké (`1-analyse/perimetre-produit.md`).
 > **Ce qui change :**
@@ -45,14 +54,57 @@ Version longue : aujourd'hui, la connaissance du système d'information d'une st
 
 ## 4. Promesse
 
-> **Vous savez qui a quoi, ce que vous payez et ce qui arrive à échéance. Et chaque arrivée, chaque départ se traite sans rien oublier.**
+> **Toute votre informatique, reliée à chaque personne : vous savez qui a quoi, ce que vous payez et ce qui arrive à échéance. Et Lanternis vous prévient avant.**
+
+(v1.1, remplacée : « Vous savez qui a quoi, ce que vous payez et ce qui arrive à échéance. Et chaque arrivée, chaque départ se traite sans rien oublier. » La seconde phrase faisait des arrivées et des départs le cœur de l'offre.)
 
 Formule courte de continuité (inchangée, toujours valable) : « Votre informatique ne part pas avec la personne qui la connaissait. »
 
-Déclinaison mesurable (toutes **H** : cibles produit, à tenir par le MVP et à mesurer pendant les essais) :
-- **une check-list de départ générée à partir de ce que la personne a réellement** : son matériel, ses comptes, ses licences, ses accès et ses responsabilités, chaque tâche avec un responsable, une échéance et une preuve (`perimetre-produit.md` § 2.4, US-15) ;
-- **une alerte avant chaque échéance** (fin de préavis d'un contrat, renouvellement, domaine, garantie) et **après chaque oubli** (compte encore actif après un départ, licence payée sans utilisateur, matériel non restitué) (`perimetre-produit.md` § 3.1) ;
-- **un écran lisible en 5 minutes** par un dirigeant non technicien (12 indicateurs au plus, `perimetre-produit.md` § 3.2) ;
+**Logique du message (à respecter dans tous les contenus) :** 1. tout le SI (ce que Lanternis tient) → 2. relié aux personnes (ce qui le distingue) → 3. donc : alertes avant les échéances, coût lisible, et arrivées et départs sans oubli (ce que cela permet). Les arrivées et les départs viennent **en preuve**, jamais en titre.
+
+### 4.1 Titre principal de la landing : 3 propositions
+
+À choisir par le fondateur ; idéalement tester les deux premières en A/B (H). Avant l'ouverture, le sous-titre porte « prévu à l'ouverture » ou « conçu pour », jamais un présent qui affirme une fonction livrée.
+
+| # | Titre | Forces | Limites |
+|---|---|---|---|
+| **A** | **« Toute votre informatique, enfin lisible : qui a quoi, ce que vous payez, ce qui arrive à échéance. »** | Reprend la promesse mot pour mot (cohérence landing, emails, produit) ; trois questions concrètes que le dirigeant se pose déjà (vocabulaire des personas) ; « toute » répond directement à l'impression « juste un truc d'entrées et de départs » ; pas de jargon | Ne nomme ni les contrats ni le matériel : les 6 domaines (§ 4.2) doivent suivre immédiatement ; un peu long pour un mobile (deux lignes) |
+| **B** | **« Contrats, matériel, licences, accès : chaque élément de votre SI relié à une personne. »** | Le plus explicite : on voit en une ligne ce que Lanternis gère ; énonce la différence (relié à une personne) face aux outils d'abonnements ou d'inventaire ; rassure le fondateur et le lecteur pressé | Liste, donc moins chaleureux ; « SI » doit être compris (à expliquer dans le sous-titre) ; ne dit pas le bénéfice (à porter par le sous-titre : « Vous savez ce que vous payez et ce qui arrive à échéance. ») |
+| **C** | **« La carte de tout votre SI, personne par personne. »** | Le plus court et le plus mémorisable ; installe le mot-clé de la marque (« carte », contraire de la boîte noire, § 6) et la souveraineté (« votre ») ; « personne par personne » dit le centrage sans le mot « départ » | Plus abstrait : sans sous-titre fort, le lecteur ne sait pas ce qu'il y a sur la carte ; à réserver si le sous-titre reprend les 6 domaines |
+
+Recommandation (H, à valider) : **A** en titre, **B** en sous-titre légèrement raccourci (« Contrats, matériel acheté ou loué, licences, comptes et accès : chaque élément relié à une personne. »), puis les 6 domaines. C reste l'accroche des formats courts (image Open Graph, publication Facebook, objet d'email).
+
+### 4.2 Les 6 domaines (formulation courte, reprise telle quelle sur la landing)
+
+1. **Contrats et fournisseurs** : préavis, reconduction tacite, date limite de résiliation calculée et rappelée à temps.
+2. **Matériel acheté, loué ou en leasing** : qui l'a, fin de garantie ou de location, renouvellement prévu, restitution.
+3. **Licences et abonnements logiciels** : qui a quoi, licences payées sans utilisateur, date de renouvellement.
+4. **Comptes et accès** : qui a accès à quoi, comptes encore actifs après un départ, aucun mot de passe stocké.
+5. **Domaines, certificats et sauvegardes** : expirations surveillées, tests de restauration consignés.
+6. **Arrivées et départs** : une check-list tirée de ce que la personne a vraiment, preuve à l'appui.
+
+Ligne de synthèse (sous les 6 domaines) : **« Et le coût de votre SI, par an et par personne. »**
+
+Correspondance avec le périmètre (pour vérification, ne pas publier) :
+| Domaine | Entités (`perimetre-produit.md` § 1.2) | Alertes et indicateurs P1 | Points de vigilance |
+|---|---|---|---|
+| 1 | Contrat, Fournisseur | A1 ; US-11 | La décision de renouvellement (renouveler, résilier…) est **P2** (US-22) : ne pas la promettre à l'ouverture |
+| 2 | Matériel (mode d'acquisition : achat, location, leasing → contrat), cycle de vie | A3 (fin de garantie ou de location), A9 (non restitué) ; US-08 | « Renouvellement prévu » = date portée par le matériel ; l'**alerte** de renouvellement par l'âge (A4) est **P2** |
+| 3 | Application, Licence / abonnement | A2, A8 (a, b) ; I5 ; US-09 | Licences inutilisées depuis 90 jours (A8 c) : **P2** et Entra ID P1 ou P2 requis ; détection des abonnements payés par carte (A15) : **P2** |
+| 4 | Compte, Accès | A7, A10 ; US-06, US-10 | Accès **déclarés** au MVP (constatés par connecteur seulement pour comptes et licences M365 et Google) ; revue des accès : **P2** |
+| 5 | Domaine, Certificat, Sauvegarde | A5, A6, A11 ; US-12, US-13 | Les sauvegardes (US-13, « Should ») peuvent glisser en tranche 2 (`perimetre-produit.md` § 6.1) : à confirmer au cadrage avant d'afficher la ligne |
+| 6 | Processus, Tâche (M7) | A12, A13 ; US-14 à US-17 | Changement de poste : **P2** (US-21) |
+| Synthèse | Coût calculé | I1, I2 ; US-19 | Le matériel sans prix est signalé, pas estimé |
+
+Les lignes téléphoniques (entité prévue, US-27 en P2) ne figurent pas dans les 6 domaines tant qu'elles ne sont pas au MVP.
+
+### 4.3 Déclinaison mesurable
+
+Toutes **H** : cibles produit, à tenir par le MVP et à mesurer pendant les essais.
+- **un registre de tout le SI, relié aux personnes** : chaque matériel, compte, licence et accès rattaché à quelqu'un (ou à un site, ou à un responsable s'il est partagé), chaque contrat, application, domaine et sauvegarde avec un responsable interne (`perimetre-produit.md` § 0.1, § 1.3) ;
+- **une alerte avant chaque échéance** (date limite de résiliation d'un contrat, renouvellement d'un abonnement, fin de garantie ou de location d'un matériel, expiration d'un domaine ou d'un certificat) et **après chaque oubli** (compte encore actif après un départ, licence payée sans utilisateur, matériel non restitué, sauvegarde non vérifiée) (`perimetre-produit.md` § 3.1) ;
+- **un écran lisible en 5 minutes** par un dirigeant non technicien, dont le coût annuel du SI et le coût par personne (12 indicateurs au plus, `perimetre-produit.md` § 3.2) ;
+- **une check-list d'arrivée ou de départ générée à partir de ce que la personne a réellement** : son matériel, ses comptes, ses licences, ses accès et ses responsabilités, chaque tâche avec un responsable, une échéance et une preuve (`perimetre-produit.md` § 2.4, US-15) ;
 - **opérationnel en une heure, sans rendez-vous** : import du personnel, connexion de Microsoft 365 en lecture seule, premiers constats. **Hypothèse à tester** : à mesurer (temps médian entre l'inscription et le premier écran « Ce que Lanternis a déjà trouvé ») avant d'en faire une affirmation. D'ici là, on écrit « conçu pour être opérationnel en une heure ».
 
 ## 5. Preuves (ce qui rend la promesse crédible)
@@ -82,7 +134,8 @@ L'ennemi n'est **ni le prestataire informatique** (il peut compléter le registr
 - le savoir qui tient dans la tête d'une seule personne ;
 - le salarié parti dont le compte, la licence et le portable sont toujours « quelque part » (H, à confirmer en entretien) ;
 - les abonnements pris par carte bancaire sans que personne ne les voie ;
-- les contrats reconduits sans décision.
+- les contrats reconduits sans décision, faute d'avoir vu passer la date limite de résiliation ;
+- le matériel loué ou en leasing dont la fin de location arrive sans que personne ne sache qui l'a ni où il est (H, à confirmer en entretien).
 
 Formule de travail : **« Votre informatique ne doit pas être une boîte noire : ni pour vous, ni pour votre CA, ni pour votre assureur. »** (H, à tester)
 
@@ -108,7 +161,9 @@ Image de travail pour le directeur-artistique (inchangée) : **un bon intendant*
 
 ## 9. Positionnement
 
-> **Pour** les dirigeants et les DAF de PME et d'associations de 20 à 249 personnes (cœur : 20 à 99) **qui** n'ont pas de DSI et ne savent plus vraiment qui a quoi, ce que coûte et ce que risque leur informatique, **Lanternis est** un DSI de poche : **un registre de tout le SI, centré sur les personnes, qui prépare chaque arrivée et chaque départ et prévient avant les échéances**. Conçu par un DSI, prêt sans rendez-vous. **Contrairement** au tableur du prestataire ou aux outils pensés pour des techniciens, **nous** écrivons pour la direction, couvrons tout le SI (pas seulement les abonnements), restons en lecture seule, publions nos prix et gardons vos données en France.
+> **Pour** les dirigeants et les DAF de PME et d'associations de 20 à 249 personnes (cœur : 20 à 99) **qui** n'ont pas de DSI et ne savent plus vraiment qui a quoi, ce que coûte et ce que risque leur informatique, **Lanternis est** un DSI de poche : **un registre de tout le SI (contrats et fournisseurs, matériel acheté ou loué, licences et abonnements, comptes et accès, domaines et sauvegardes) où chaque élément est relié à une personne, qui prévient avant les échéances, chiffre le coût du SI et prépare chaque arrivée et chaque départ**. Conçu par un DSI, prêt sans rendez-vous. **Contrairement** au tableur du prestataire ou aux outils pensés pour des techniciens, **nous** écrivons pour la direction, couvrons tout le SI (pas seulement les abonnements, pas seulement les arrivées et les départs), restons en lecture seule, publions nos prix et gardons vos données en France.
+
+Version courte (v1.2) : **« Lanternis : le registre de toute votre informatique, relié à chaque personne, qui vous prévient avant les échéances. »** (forme nominale, utilisable avant l'ouverture)
 
 Catégorie à installer : **« DSI de poche »** (à tester en entretien : est-elle comprise ? sérieuse pour un CA ? laisse-t-elle croire qu'un humain est inclus ?). Ne **pas** se placer sur la seule gestion des abonnements SaaS, où Corma est moins cher (`benchmark.md` § 3) ; ni sur l'administration des comptes (provisionnement), terrain de Primo (`perimetre-produit.md` § 0.3).
 
@@ -141,9 +196,13 @@ Catégorie à installer : **« DSI de poche »** (à tester en entretien : est-e
 | « Une attaque n'est pas une fatalité. Voici trois vérifications simples. » | « 60 % des PME ferment après une cyberattaque. » (chiffre non sourcé, et vente par la peur) |
 | « Besoin d'un coup de main ? L'aide intégrée et les modèles couvrent chaque étape. » | « Notre équipe vous accompagne de A à Z. » |
 | « Nous ne sommes pas adaptés si vous avez déjà une DSI. » | « Lanternis convient à toutes les entreprises. » |
+| « Contrats, matériel acheté ou loué, licences, comptes et accès : chaque élément relié à une personne. » (v1.2) | « Lanternis, l'outil des arrivées et des départs. » / « Gérez vos entrées et sorties de personnel. » |
+| « Le copieur loué arrive en fin de location le 30 juin : à rendre ou à reconduire, c'est à vous de décider. » (v1.2) | « Pilotez le cycle de vie de vos actifs (ITAM). » |
+| « 7 licences Microsoft 365 payées sans utilisateur. » (v1.2, exemple de format : chiffre réel du client, jamais inventé) | « Réduisez vos coûts logiciels de 30 %. » (chiffre non sourcé) |
+| « Le contrat de maintenance se reconduit seul si vous ne résiliez pas avant le 31 décembre. » (v1.2) | « Ne vous faites plus avoir par vos fournisseurs. » |
 
 ### 10.3 Mots à privilégier (vocabulaire des personas)
-Repris de `2-marche/personas.md` : « votre prestataire », « l'infogérance », « les sauvegardes », « les contrats », « le budget informatique », « les accès », « les licences Microsoft », « les abonnements », « **arrivées et départs** », « qui a quoi », « votre CA », « vos financeurs », « ESMS », « RGPD », « hébergé en France ». Et nos mots : **carte, registre, échéance, alerte, maîtrise, lisible, prévenir, check-list, preuve, lecture seule, sans rendez-vous**.
+Repris de `2-marche/personas.md` : « votre prestataire », « l'infogérance », « les sauvegardes », « les contrats », « le budget informatique », « les accès », « les licences Microsoft », « les abonnements », « **arrivées et départs** », « qui a quoi », et (v1.2) « le matériel », « la location » ou « le leasing », « la fin de location », « la garantie », « le préavis », « la reconduction tacite », « la date limite de résiliation », « les fournisseurs », « les noms de domaine », « votre CA », « vos financeurs », « ESMS », « RGPD », « hébergé en France ». Et nos mots : **carte, registre, échéance, alerte, maîtrise, lisible, prévenir, check-list, preuve, lecture seule, sans rendez-vous**.
 
 ### 10.4 Mots interdits
 - Superlatifs vides : révolutionnaire, innovant, disruptif, leader, ultime, nouvelle génération, « tout-en-un ».
@@ -176,22 +235,32 @@ Elles décrivaient un service humain qui n'existe plus (décision du 2026-10-26)
 - toute fonction prévue au présent de l'indicatif avant l'ouverture (« Lanternis détecte… ») ; toute fonction P2 présentée comme disponible à l'ouverture (rapport PDF pour le CA, changement de poste, multi-sites, connecteurs bancaires) ;
 - « Google Workspace pris en charge » tant que le connecteur n'est pas livré (dire « Google Workspace : bientôt ; en attendant, import Excel »).
 
+### 10.7 Phrases réductrices à éviter depuis la v1.2
+Elles font croire que Lanternis ne gère que les arrivées et les départs (retour du fondateur du 2026-10-26) :
+- un titre, un objet d'email ou une accroche de page d'accueil centré sur « arrivées et départs », « entrées et sorties », « départ d'un salarié » ; ces sujets restent légitimes **dans un article, une page dédiée ou un contenu P3**, pas comme présentation de Lanternis ;
+- toute présentation de Lanternis qui cite les départs **sans** citer au moins les contrats, le matériel et les licences ;
+- « la check-list de départ » comme définition du produit (c'est une conséquence du registre, pas le produit).
+Règle pratique : dans toute présentation en une phrase, **les arrivées et les départs viennent après le registre** (« … relié à chaque personne, donc chaque départ… »).
+
 ## 11. Messages clés
 
-Les trois premiers sont les messages porteurs, dans cet ordre (H, à tester en entretien et sur la landing).
+Les trois premiers sont les messages porteurs, dans cet ordre (H, à tester en entretien et sur la landing). **Ordre revu en v1.2** : tout le SI d'abord, les échéances ensuite, les arrivées et les départs en preuve.
 
-1. **Arrivées et départs (bénéfice phare) :** « Un départ, une check-list faite de ce que la personne a vraiment : matériel, comptes, licences, accès. Rien d'oublié, preuve à l'appui. »
-2. **Lisibilité et alertes :** « Qui a quoi, ce que vous payez, ce qui arrive à échéance : votre informatique sur un écran. Et Lanternis vous prévient avant. »
-3. **Conçu par un DSI, prêt sans rendez-vous :** « 25 ans de SI dans un outil que vous ouvrez seul : modèles de DSI inclus, essai d'un mois sans carte, prix publics. » (« opérationnel en une heure » : à ajouter seulement une fois mesuré)
+1. **Tout le SI, relié aux personnes (message phare) :** « Contrats, matériel acheté ou loué, licences, comptes et accès, domaines et sauvegardes : toute votre informatique sur un registre, chaque élément relié à une personne. Vous savez qui a quoi et ce que vous payez. »
+2. **Échéances et alertes :** « Date limite de résiliation d'un contrat, fin de location d'un copieur, licence payée pour personne, nom de domaine qui expire : Lanternis est conçu pour vous prévenir avant, pas après. »
+3. **Arrivées et départs, la preuve :** « Parce que tout est relié aux personnes, chaque départ a sa check-list : son matériel, ses comptes, ses licences, ses accès. Rien d'oublié, preuve à l'appui. »
 
 Messages d'appui :
-4. **Continuité :** « Quand votre référent informatique part, votre SI ne part pas avec lui. » (déclencheur S2 ; prioritaire pour P1 de 100 à 249)
-5. **Coût :** « Un DSI de poche, pour une fraction du prix d'un poste. » (45 à 75 k€ brut par an pour un responsable informatique, S2 ; Lanternis de 49 € à 339 € HT par mois jusqu'à 249 personnes avec les deux offres d'ouverture, Essentiel et Pilotage, grille D)
-6. **Souveraineté et sécurité :** « Lecture seule, aucun mot de passe stocké, données en France, export à tout moment : la carte de votre SI vous appartient. » (hébergement et export : à afficher une fois en place)
-7. **ESS (P2) :** « Une informatique maîtrisée et chiffrée à présenter à votre CA et à vos financeurs, à tarif associatif, bénévoles gratuits. »
-8. **Neutralité :** « Lanternis ne remplace pas votre prestataire : il vous donne de quoi piloter avec lui. »
+4. **Conçu par un DSI, prêt sans rendez-vous** (porteur n° 3 en v1.1) : « 25 ans de SI dans un outil que vous ouvrez seul : modèles de DSI inclus, essai d'un mois sans carte, prix publics. » (« opérationnel en une heure » : à ajouter seulement une fois mesuré ; « 25 ans » : formulation à valider par le fondateur)
+5. **Continuité :** « Quand votre référent informatique part, votre SI ne part pas avec lui. » (déclencheur S2 ; prioritaire pour P1 de 100 à 249)
+6. **Coût :** « Un DSI de poche, pour une fraction du prix d'un poste. » (45 à 75 k€ brut par an pour un responsable informatique, S2 ; Lanternis de 49 € à 339 € HT par mois jusqu'à 249 personnes avec les deux offres d'ouverture, Essentiel et Pilotage, grille D)
+7. **Souveraineté et sécurité :** « Lecture seule, aucun mot de passe stocké, données en France, export à tout moment : la carte de votre SI vous appartient. » (hébergement et export : à afficher une fois en place)
+8. **ESS (P2) :** « Une informatique maîtrisée et chiffrée à présenter à votre CA et à vos financeurs, à tarif associatif, bénévoles gratuits. »
+9. **Neutralité :** « Lanternis ne remplace pas votre prestataire : il vous donne de quoi piloter avec lui. »
 
-Déclinaison par persona et par étape d'achat : [messages-par-persona.md](messages-par-persona.md). Taglines : [noms-et-taglines.md](noms-et-taglines.md) (non mis à jour en v1.1 ; vérifier qu'aucune tagline retenue ne promet un accompagnement humain).
+Déclinaison par persona et par étape d'achat : [messages-par-persona.md](messages-par-persona.md) (v1.2). Taglines : [noms-et-taglines.md](noms-et-taglines.md) (non mis à jour en v1.1 ni en v1.2 ; vérifier qu'aucune tagline retenue ne promet un accompagnement humain ni ne réduit Lanternis aux arrivées et aux départs).
+
+**À répercuter (non modifié ici, par cro-conversion et redacteur-blog-seo) :** titre et bloc « ce que fait Lanternis » de la landing (`marketing/landing/validation.html` et `validation.md`), image Open Graph et posts Facebook, à aligner sur § 4.1, § 4.2 et § 10.7.
 
 ## 12. Mention légale de marque
 
@@ -209,3 +278,6 @@ Déclinaison par persona et par étape d'achat : [messages-par-persona.md](messa
 7. Les associations sous **Google Workspace** acceptent-elles l'import Excel en attendant le connecteur (D4) ? À suivre : part des essais sous Google (`propositions-tarifs.md` § 11.6, point 4).
 8. Les **services facultatifs** (séance d'aide, revue annuelle) : contenu, prix et plafond non validés.
 9. Formulation **« 25 ans d'expérience du SI »** : à valider par le fondateur.
+10. (v1.2) **« Tout le SI » ou « arrivées et départs » : quel message déclenche l'intérêt ?** Le fondateur tranche pour tout le SI ; à vérifier en entretien (quel sujet le dirigeant évoque spontanément en premier) et par un A/B des titres A et B (§ 4.1) sur la landing.
+11. (v1.2) **Matériel loué ou en leasing** : part des structures cibles concernées et fréquence des fins de location subies (copieurs, postes) : inconnues, à demander en entretien. Ne citer aucun chiffre d'ici là.
+12. (v1.2) **Six domaines lisibles en une fois** : une liste de 6 lignes est-elle lue sur mobile ? À observer (profondeur de défilement) une fois la landing en ligne.
