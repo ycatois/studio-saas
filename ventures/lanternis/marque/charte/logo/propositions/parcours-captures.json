@@ -1,0 +1,7 @@
+{
+  "base_url": "/studio/ventures/lanternis/marque/charte/logo/propositions",
+  "formats": {"bureau": [1440, 900]},
+  "ecrans": [
+    {"nom": "propositions-logo", "url": "propositions-logo.html", "attendre": "h1", "pleine_page": true}
+  ]
+}

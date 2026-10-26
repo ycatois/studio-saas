@@ -13,8 +13,7 @@ Décision : en attente
 - Positionnement : un « DSI de poche » pour les PME (50 à 249 salariés) et l'ESS (20 à 249) sans DSI. Logiciel et service (modèle hybride).
 
 ## En cours
-- **Point de reprise : choix de la piste créative par le fondateur** (1 Veilleuse, 2 Registre, 3 Plein jour, ou un mélange). Ensuite : `/charte lanternis` → 3 propositions de logo (attendre le choix), charte complète et tokens, iconographie, gabarits marketing, design system (ui-designer).
-- Captures PNG des pistes non produites (Docker Desktop arrêté) : relancer la commande du § 5 de `marque/charte/pistes/README.md`.
+- Charte : piste **Veilleuse** retenue. Étape en cours : 3 propositions de logo dans `marque/charte/logo/propositions/` (Lanterne-arche, Lignes de lumière, Coin éclairé) ; choix du fondateur attendu. Ensuite : `/charte lanternis` → 3 propositions de logo (attendre le choix), charte complète et tokens, iconographie, gabarits marketing, design system (ui-designer).
 - Sécuriser le nom Lanternis : réserver lanternis.fr et lanternis.com, rechercher l'antériorité INPI/EUIPO (classes 9, 35, 42), puis demander l'avis d'un conseil en propriété industrielle avant le dépôt (skill nouvelle-marque-hasteria).
 
 ## Prochaines étapes
@@ -42,3 +41,4 @@ Décision : en attente
 - 2026-10-25 — Nom de marque : **Lanternis** retenu par le fondateur (à la place du nom de travail Pilotis ; domaines .fr et .com apparemment libres, marque à vérifier). « Cockpit DSI » est écarté comme nom de marque (trop descriptif, peu protégeable), mais reste utilisable comme accroche. Dossier et slug renommés en `lanternis` par le fondateur le 2026-10-25.
 - 2026-10-26 — `SOCIETE.md` complété par le fondateur ; Lanternis ajoutée aux marques exploitées.
 - 2026-10-26 — Canaux : **pas de promotion sur LinkedIn pour le moment** (C3 retiré, prospection par email et téléphone uniquement). Le blog du site vitrine (SEO) devient le canal de contenu principal, avec une page Facebook possible. Pas de voix fondateur : les contenus sont signés par la marque.
+- 2026-10-26 — Piste créative **Veilleuse** retenue par le fondateur (nuit #1B2330, ambre #F2B24C, papier #FAF6EE ; Fraunces + polices système).
