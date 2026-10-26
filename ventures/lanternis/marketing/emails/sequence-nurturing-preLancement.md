@@ -3,74 +3,66 @@ venture: lanternis
 phase: 2b Pré-lancement
 auteur: lifecycle-emailing
 date: 2026-10-26
-révision: 2026-10-26 (v2) — alignement sur le formulaire réel (`marketing/landing/validation.html`) et sur `marketing/landing/conformite-prelancement.md` (pixels désactivés, pied § 4.3, pas d'outil de rendez-vous, autodiagnostic en 10 questions calculé dans le navigateur)
+révision: 2026-10-26 (v3) — décision du fondateur sur la cadence (voir la note ci-dessous) ; v2 : alignement sur `marketing/landing/validation.html` et `marketing/landing/conformite-prelancement.md`
 statut: brouillon
 skills: sequence-nurturing, copywriting-frameworks, ab-test
-envoi: Mailjet — RIEN N'EST ENVOYÉ ; activation soumise à la validation explicite de l'utilisateur, après authentification du domaine et décision sur la cadence (§ 1)
+envoi: Mailjet — RIEN N'EST ENVOYÉ ; chaque édition est soumise à la validation explicite de l'utilisateur, après authentification du domaine
 ---
 
-# Séquence de nurturing du pré-lancement (5 emails)
+# Lettre « nouvelles » du pré-lancement : 4 éditions mensuelles
 
-> **Objectif mesurable :** faire passer un inscrit d'un **entretien de 30 minutes** à une **lettre d'intention « pilote fondateur »**. Repères repris de `2-marche/acquisition.md` § 4.2 (tous H), tous canaux confondus : 12 à 15 entretiens et ≥ 3 lettres d'intention à ≥ 149 € HT/mois en 8 semaines. La part attribuable à cette séquence sera mesurée, sans cible propre.
-> **Destinataires :** inscrits **confirmés** (double opt-in, `liste-attente-remerciement.md`) qui ont coché la case **`nouvelles`**. Segment P1 (`type = entreprise`) ou P2 (`type = ess`). J0 = date de confirmation.
-> **Construction :** valeur d'abord (N1, N2), puis une méthode qui appelle un échange (N3, N4), puis l'offre (N5) (skill sequence-nurturing). Chaque email suit **constat concret → conséquence → action simple** (plateforme § 10.1), en BAB ou PAS doux, **sans agitation par la peur**. Un email = un objectif = un CTA.
-> **Chiffres :** aucun chiffre de marché dans les corps ; une référence sourcée en note (N3). Les prix de N5 viennent de `2-marche/prix.md` et sont présentés comme **en cours de validation**.
-> **Pied, désinscription, mentions Hasteria :** pied du § 4 de `liste-attente-remerciement.md` (texte du § 4.3 de `conformite-prelancement.md`), sur chaque email.
-> **Aucun pixel, aucun suivi d'ouverture ni de clic** (désactivés dans Mailjet, recommandation CNIL du 12 mars 2026, `conformite-prelancement.md` § 2.3). Les métriques ci-dessous reposent sur des **réponses** et des **actions comptées côté site, en agrégé**.
+> **Décision du fondateur, 2026-10-26.** Le libellé de la case `nouvelles` reste : « J'accepte de recevoir les nouvelles de Lanternis par email (au plus une par mois) ». Conséquences : **un seul email de nouvelles par mois au maximum** pour chaque inscrit qui a coché la case. La séquence hebdomadaire de 5 emails (v1 et v2 de ce fichier) est abandonnée ; ses 5 contenus sont fusionnés en **4 éditions mensuelles**.
+> **Ne comptent pas dans ce plafond** (selon la consigne transmise, **à confirmer par juriste-rgpd**) : les emails transactionnels de l'inscription (E0-A confirmation, E0-B bienvenue, `liste-attente-remerciement.md`) et les **réponses individuelles** du fondateur aux personnes qui ont demandé un échange (case `echange`, demande depuis l'autodiagnostic) ou qui ont répondu à une édition. Condition proposée pour que cette exclusion tienne : ces emails sont écrits un par un, répondent à une demande de la personne et ne contiennent pas de contenu de lettre.
 
 ---
 
-## 1. Cadence et consentement (décision requise avant activation)
+## 1. Principes
 
-Le libellé réel de la case est : « J'accepte de recevoir les nouvelles de Lanternis par email **(au plus une par mois)** ». Une séquence de 5 emails en 25 jours **ne respecte pas ce libellé** : le consentement ne serait pas éclairé (`conformite-prelancement.md` § 4.3). Deux options :
+- **Objectif mesurable :** faire passer un inscrit à un **entretien de 30 minutes**, puis à une **lettre d'intention « pilote fondateur »**. Repères repris de `2-marche/acquisition.md` § 4.2 (tous H), tous canaux confondus : 12 à 15 entretiens et ≥ 3 lettres d'intention à ≥ 149 € HT/mois avant le bilan. La part attribuable à la lettre sera mesurée, sans cible propre.
+- **Destinataires :** inscrits confirmés (double opt-in) avec `nouvelles = oui`. Segments P1 (`type = entreprise`) et P2 (`type = ess`) ; variantes selon `qualifie`, `echange` et l'état de la relation (§ 3).
+- **Rythme :** **éditions à date fixe**, espacées d'au moins 30 jours. Un inscrit reçoit l'édition suivant sa confirmation, jamais deux éditions à moins de 30 jours (interprétation prudente de « au plus une par mois » : 30 jours glissants plutôt que mois civil). Pas de rattrapage des éditions passées par email ; elles sont republiées sur le blog et citées par un lien dans le corps si utile.
+- **Pourquoi fusionner en 4 éditions plutôt que 5 :** avec la landing en ligne vers le 9 au 13 novembre (`acquisition.md` § 5) et la fin du pré-lancement au 18 décembre, **seules deux éditions** peuvent partir avant le bilan. Ce sont elles qui portent la progression **entretien → lettre d'intention** ; les contenus purement utiles (check-list des départs, questions au prestataire) passent après, et la dernière édition dépend de la décision GO / NO-GO.
+- **Chaque édition :** une valeur utile (méthode ou check-list) dans le corps, **un seul CTA**, constat concret → conséquence → action simple (plateforme § 10.1), sans vente par la peur ni fausse urgence. Signature de la marque. Aucun prénom (non collecté).
+- **Aucun pixel, aucun suivi d'ouverture ni de clic** (désactivés dans Mailjet, `conformite-prelancement.md` § 2.3). Les CTA d'entretien et de lettre d'intention se font **par réponse à l'email** (pas d'outil de rendez-vous tant qu'il n'est pas choisi). Les autres liens portent un paramètre de provenance `src=`, lu en agrégé.
+- **Pied de page :** celui du § 4 de `liste-attente-remerciement.md` (texte du § 4.3 de `conformite-prelancement.md`, lien de désinscription en un clic, mentions Hasteria).
 
-| Option | Cadence | Ce qu'il faut faire | Effet |
-|---|---|---|---|
-| **1. Modifier le libellé (recommandé pour le pré-lancement)** | N1 J+3, N2 J+7, N3 J+11, N4 J+18, N5 J+25, puis au plus un email par mois | Nouveau libellé, par exemple : « J'accepte de recevoir les conseils et nouvelles de Lanternis par email : environ un par semaine pendant un mois, puis au plus un par mois. Facultatif, désinscription en un clic. » À intégrer par cro-conversion / dev-vitrine dans `validation.html`, nouvelle `version_mention`, relecture juriste-rgpd. **Ne s'applique qu'aux inscrits qui ont consenti au nouveau libellé.** | La séquence tient dans les 8 semaines du pré-lancement |
-| **2. Garder le libellé actuel** | Un email par mois au plus : N1 à J+3, N2 à J+33, N3 à J+63, etc. | Rien à changer sur la landing | Seuls N1 et N2 tombent avant le 18 décembre. Les entretiens et lettres d'intention reposent alors sur la case `echange` et la prospection individuelle ; N3 à N5 deviennent des lettres mensuelles après la décision |
+## 2. Calendrier (dates H, à confirmer par l'utilisateur)
 
-Les inscrits sous l'ancien libellé restent **en option 2** même si l'option 1 est retenue ensuite. E0-A (confirmation) et E0-B (bienvenue) ne sont pas comptés comme des « nouvelles » : ils découlent de l'inscription elle-même (H : à confirmer par juriste-rgpd).
-
----
-
-## 2. Vue d'ensemble
-
-| # | Délai (option 1) | Valeur apportée | CTA unique | Étape | Métrique principale (sans pixel) |
+| Édition | Date d'envoi proposée | Reprend | Valeur | CTA principal (qualifiés) | Étape |
 |---|---|---|---|---|---|
-| N1 | J+3 | La carte du SI en trois colonnes (méthode) | Télécharger le modèle de tableau | Valeur | Téléchargements avec `src=n1` (compteur agrégé) |
-| N2 | J+7 | Départ d'un salarié : les accès à fermer (check-list) | Faire l'autodiagnostic | Valeur → activation | Visites agrégées de l'autodiagnostic avec `src=n2` ; demandes d'échange issues de l'autodiagnostic |
-| N3 | J+11 | P1 : préparer la passation du référent ; P2 : une page SI pour le CA | Répondre avec deux ou trois créneaux | Méthode → échange | Réponses avec créneaux / emails délivrés |
-| N4 | J+18 | Cinq questions à poser à votre prestataire, et ce que Lanternis fera ou non | Répondre avec deux ou trois créneaux | Preuve, transparence | Réponses avec créneaux ; objections reçues |
-| N5 | J+25 | Le pilote fondateur : conditions écrites, sans engagement de paiement | Répondre « pilote » pour recevoir la lettre d'intention | Offre | Demandes de lettre d'intention, puis lettres signées |
+| **L1** | mardi 17 novembre 2026 | N1 + invitation de N3 | La carte de votre SI en trois colonnes | Répondre avec deux ou trois créneaux pour un entretien de 30 min | Entretien |
+| **L2** | jeudi 17 décembre 2026 (30 jours après L1) | N3 + N5 (et la transparence de N4) | P1 : la passation du référent ; P2 : une page SI pour le CA ; puis le pilote fondateur | Répondre « pilote » pour recevoir la lettre d'intention | Lettre d'intention |
+| **L3** | mardi 19 janvier 2027 | N2 + nouvelles du projet | Départ d'un salarié : les accès à fermer | Faire l'autodiagnostic | Valeur, réactivation |
+| **L4** | jeudi 18 février 2027 | N4 + nouvelles selon la décision | Cinq questions à poser à votre prestataire | Selon la décision : répondre « pilote » (GO) ou aucun CTA commercial (NO-GO / PIVOT) | Offre ou clôture |
 
-**Pas d'outil de prise de rendez-vous** tant qu'aucun n'est choisi et ajouté aux sous-traitants : les créneaux se fixent **par réponse à l'email**, traitée par le fondateur.
+- L2 part le 17 décembre, la veille de la fin du pré-lancement : les réponses « pilote » arrivent pendant la pause de fin d'année (H : période peu propice, `acquisition.md` § 5). **Alternative :** avancer L1 au 10 novembre si la landing est en ligne à temps, ce qui permet L2 le 10 décembre. À trancher selon la date réelle de mise en ligne.
+- Aucun envoi entre le 19 décembre 2026 et le 4 janvier 2027, ni le week-end.
+- **Inscrit après L1** : sa première édition est L2 ; elle se suffit à elle-même (rappel de la carte en trois colonnes avec lien vers l'article du blog).
+- Au-delà de L4 : lettre mensuelle de la phase suivante, ou arrêt si NO-GO (§ L4).
 
-### Règles de sortie et d'exclusion
-- **Désinscription** (`desinscription.php`, un clic) : suppression de l'inscription, donc sortie de tout envoi.
-- **`echange = oui`** : ne reçoit **pas N3 ni N4** (le fondateur le contacte personnellement, `liste-attente-remerciement.md` § 1) ; reçoit N1, N2 et, si l'entretien n'a pas déjà abouti à une discussion de lettre d'intention, N5.
-- **`qualifie = non`** (hors cible) : reçoit N1 et N2 seulement (contenus utiles), pas les propositions d'entretien ni l'offre pilote.
-- **Réponse à un email** : la séquence est suspendue 7 jours pour ce contact (suspension manuelle si l'outil ne le permet pas) ; suite traitée personnellement.
-- **Entretien fixé** : sortie de N3 et N4. **Lettre d'intention demandée ou signée** : sortie définitive.
-- **Aucune réponse ni action** : N5 reste le dernier email de la séquence, puis plus rien que les nouvelles mensuelles éventuelles et l'annonce d'ouverture. Pas de relance de relance.
-- **Calendrier** : pas d'envoi entre le 19 décembre 2026 et le 4 janvier 2027 (H, `acquisition.md` § 5) ; pas d'envoi le week-end ; mardi ou jeudi matin (H, non testé).
+## 3. Variantes par destinataire
 
-### Segments
-- **P1** (entreprise) : « votre prestataire », « l'infogérance », « les contrats », « le budget informatique ».
-- **P2** (ESS) : « votre CA », « vos financeurs », « ESMS », « RGPD », « données des personnes accompagnées ».
-- Les blocs *[P1]* / *[P2]* sont des variantes de paragraphe d'un même gabarit. Aucun prénom n'est collecté : salutation « Bonjour, ».
+| Situation | L1 | L2 | L3 | L4 |
+|---|---|---|---|---|
+| Qualifié, `echange = non`, pas d'entretien | CTA entretien | CTA « pilote » | CTA autodiagnostic | Selon décision |
+| Qualifié, `echange = oui` ou entretien fixé / fait | CTA « Télécharger le modèle de tableau » (l'entretien est traité individuellement) | CTA « pilote », sauf si la lettre d'intention est déjà discutée en individuel : alors CTA autodiagnostic et paragraphe pilote retiré | CTA autodiagnostic | Selon décision |
+| Lettre d'intention signée | Modèle de tableau | Paragraphe pilote retiré, CTA autodiagnostic | Autodiagnostic | Nouvelles du pilote, sans CTA commercial |
+| Hors cible (`qualifie = non`) | Modèle de tableau | Paragraphe pilote retiré, CTA autodiagnostic | Autodiagnostic | Nouvelles, sans CTA commercial |
+
+Les attributs `echange`, `qualifie` et l'état de la relation (`entretien`, `LI`) sont tenus à la main avant chaque édition (liste de quelques dizaines de contacts) ; leur transmission à Mailjet est **à valider par juriste-rgpd** (`conformite-prelancement.md` § 5.3).
 
 ---
 
-## N1. La carte de votre SI en trois colonnes
+## L1. La carte de votre SI en trois colonnes — mardi 17 novembre 2026
 
-- **Déclencheur :** confirmation du double opt-in avec `nouvelles = oui`.
-- **Délai :** J+3.
+- **Déclencheur :** édition mensuelle ; destinataires confirmés avec `nouvelles = oui` à la veille de l'envoi.
+- **Délai :** date fixe ; au moins 3 jours après la confirmation (sinon, l'inscrit attend L2).
 - **Objet A :** Votre informatique en trois colonnes
 - **Objet B :** Ce que vous avez, ce que vous payez, ce qui arrive à échéance
 - **Pré-en-tête :** Une méthode d'une page pour dresser la carte de votre SI, avec vos propres documents.
-- **Segment :** P1 et P2 (une phrase variable) ; qualifiés et hors cible.
-- **CTA :** « Télécharger le modèle de tableau » → `{{site}}/ressources/carte-si.xlsx?src=n1` (fichier .xlsx et .ods hébergé sur le site, sans formulaire ni nouvelle saisie d'adresse).
-- **Métrique suivie :** téléchargements avec `src=n1`, comptés en agrégé (outil d'audience exempté, ou compteur anonyme côté serveur, H : à décider avec dev-vitrine et juriste-rgpd) ; réponses reçues.
+- **Segment :** P1 et P2 (une phrase variable).
+- **CTA unique :** qualifiés sans échange prévu : « Répondez avec deux ou trois créneaux » (réponse à l'email, objet prérempli « Échange de 30 minutes ») ; autres : « Télécharger le modèle de tableau » → `{{site}}/ressources/carte-si.xlsx?src=l1`.
+- **Métriques suivies :** réponses avec créneaux / délivrés (qualifiés) ; entretiens réalisés issus de L1 ; téléchargements `src=l1` (agrégé, autres destinataires).
 
 **Corps**
 
@@ -91,32 +83,100 @@ Les inscrits sous l'ancien libellé restent **en option 2** même si l'option 1 
 >
 > Ne cherchez pas l'exhaustivité au premier passage. Une carte incomplète vaut mieux que pas de carte.
 >
-> **[Télécharger le modèle de tableau]**
+> *[Qualifiés sans échange prévu]* Nous menons en ce moment des entretiens de 30 minutes avec des *[P1]* dirigeants *[P2]* DAF et directions d'association pour comprendre comment ils gèrent leur informatique sans service dédié. Nous ne vendons rien pendant cet échange ; vous recevrez la synthèse anonymisée de l'étude.
+> **Si vous êtes partant, répondez simplement à cet email avec deux ou trois créneaux.**
+>
+> *[Autres destinataires]* **[Télécharger le modèle de tableau]**
 >
 > L'équipe Lanternis
 
-**Trame :** BAB (avant : pas de carte ; après : trois réponses ; pont : la méthode). **À produire avant activation :** le modèle de tableau (3 colonnes, un onglet d'exemple fictif).
+**Trame :** BAB (avant : pas de carte ; après : trois réponses ; pont : la méthode), puis l'invitation. La méthode tient entière dans le corps : le CTA d'entretien ne retient pas la valeur en otage.
 
 ---
 
-## N2. Départ d'un salarié : les accès à fermer
+## L2. Passation ou page pour le CA, puis le pilote fondateur — jeudi 17 décembre 2026
 
-- **Déclencheur :** N1 envoyé, contact toujours inscrit.
-- **Délai :** J+7.
+Deux versions (P1, P2) pour la partie méthode ; partie pilote commune avec un paragraphe de prix variable.
+
+- **Déclencheur :** édition mensuelle ; au moins 30 jours après L1 pour chaque destinataire.
+- **Délai :** date fixe.
+- **Objet A (P1) :** Si votre référent informatique partait, que resterait-il ?
+- **Objet B (P1) :** Passation informatique en cinq points, et une proposition
+- **Objet A (P2) :** Une page sur l'informatique pour votre prochain CA
+- **Objet B (P2) :** Ce que votre CA peut vous demander sur l'informatique, et une proposition
+- **Pré-en-tête :** Une méthode en cinq points, puis les conditions de notre pilote, écrites noir sur blanc.
+- **CTA unique :** qualifiés sans lettre d'intention en cours : « Répondez "pilote" pour recevoir la lettre d'intention » ; autres : « Faire l'autodiagnostic » → `autodiagnostic.html?src=l2`, paragraphe pilote retiré.
+- **Métriques suivies :** réponses « pilote » / délivrés ; réponses demandant d'abord un entretien ; lettres d'intention signées (objectif global ≥ 3, hypothèse H3 de `STATUT.md`, tous canaux).
+
+**Corps, partie méthode, version P1**
+
+> Bonjour,
+>
+> Dans beaucoup de PME, l'informatique tient grâce à une personne : un salarié « qui s'y connaît », un responsable informatique, parfois le dirigeant lui-même. Des offres d'emploi publiées en octobre 2026 en témoignent : des PME recrutent pour remplacer un responsable informatique qui part à la retraite.
+>
+> Un départ annoncé est une occasion : celle d'écrire ce qui n'était que dans une tête. Cinq points suffisent pour commencer :
+>
+> 1. la carte en trois colonnes ([la méthode est ici]({{lien_article_carte}})) ;
+> 2. la liste des comptes administrateur, et qui d'autre y a accès ;
+> 3. où sont les sauvegardes, et quand elles ont été testées pour la dernière fois ;
+> 4. les contacts chez chaque prestataire, avec le périmètre de chacun ;
+> 5. les décisions en cours : renouvellements, achats prévus, projets.
+
+*Source de la phrase sur les offres d'emploi :* `2-marche/signaux-demande.md`, S2 : offres HelloWork du 19/10/2026 (https://www.hellowork.com/fr-fr/emplois/82433859.html) et du 12/10/2026 (https://www.hellowork.com/fr-fr/emplois/84330801.html), consultées le 2026-10-25. **Avant envoi :** vérifier qu'elles sont toujours consultables, sinon retirer la phrase.
+
+**Corps, partie méthode, version P2**
+
+> Bonjour,
+>
+> Un jour, un administrateur, un financeur ou un commissaire aux comptes vous demandera : « Où en est-on de l'informatique ? » Une page préparée à l'avance vous épargne de la rédiger au dernier moment. Cinq rubriques suffisent :
+>
+> 1. **Ce que nous avons** : outils principaux, dont le logiciel métier ;
+> 2. **Ce que cela coûte** : total annuel et principaux postes ;
+> 3. **Ce qui arrive à échéance** dans les douze mois ;
+> 4. **Qui a accès** aux données des personnes accompagnées, et comment les accès sont fermés aux départs ;
+> 5. **Les décisions à prendre** : renouvellements, projets, budget.
+
+**Corps, partie pilote (commune, qualifiés sans lettre d'intention en cours)**
+
+> C'est ce travail que Lanternis veut rendre simple. Ce qu'il fera : tenir le registre de tout votre SI (matériel, licences et abonnements, contrats, fournisseurs, accès), vous prévenir avant chaque échéance, et être mis en place avec vous par un DSI. Ce qu'il ne fera pas : remplacer votre prestataire, dépanner vos postes, stocker vos fichiers ou vos mots de passe.
+>
+> Lanternis est en construction. Nous cherchons un petit nombre de structures pilotes pour le construire avec elles.
+>
+> **Ce que vous obtenez** : la mise en place de votre registre avec un DSI, les alertes avant échéances, et un tarif fondateur de −30 % pendant douze mois sur l'abonnement.
+> **Ce que nous vous demandons** : un entretien mensuel de retour d'expérience, et un témoignage à la fin, seulement si vous en êtes satisfait et avec votre accord écrit.
+>
+> **Les prix** (hors taxes, par mois, grille en cours de validation)
+> *[P1]* De 249 € (50 à 99 salariés) à 399 € ou 449 € (100 à 249 salariés), avant la remise fondateur. Mise en place : 990 €.
+> *[P2]* De 149 € (20 à 49 salariés) à 399 € ou 449 € (100 à 249 salariés), avant remise. Les structures de l'ESS bénéficient d'une remise de 15 %, non cumulable avec la remise fondateur : la plus favorable s'applique. Mise en place : 490 € ou 990 € selon le palier.
+>
+> **La lettre d'intention** indique votre intérêt et réserve une place de pilote. Elle ne vaut ni commande ni engagement de paiement ; rien ne sera facturé avant l'ouverture et la signature d'un contrat. Les places sont limitées à dix structures, pour accompagner chacune correctement. Il n'y a pas de date limite : si les places sont prises, nous vous le dirons simplement.
+>
+> **Si cela vous intéresse, répondez « pilote » à cet email.** Si vous préférez d'abord en parler 30 minutes, dites-le dans votre réponse.
+>
+> L'équipe Lanternis
+
+*Périmètre « ne stocke ni fichiers ni mots de passe » :* repris de `marque/messages-par-persona.md` (P1, décision) ; à confirmer par l'architecte avant envoi.
+
+**À valider avant envoi (bloquant) :** grille de prix, remise fondateur −30 %, plafond de 10 places et non-cumul avec la remise ESS (hypothèses de `2-marche/prix.md` § 4.1 et § 4.2) ; le palier 100 à 249 (399 ou 449 €) n'est pas tranché ; texte de la lettre d'intention (non engageante) à rédiger et à faire relire ; aucune vente ni acompte avant le GO.
+
+---
+
+## L3. Départ d'un salarié : les accès à fermer — mardi 19 janvier 2027
+
+- **Déclencheur :** édition mensuelle ; au moins 30 jours après L2.
+- **Délai :** date fixe.
 - **Objet A :** Le dernier jour d'un salarié, côté informatique
 - **Objet B :** Départ d'un salarié : la check-list des accès
-- **Pré-en-tête :** Une liste à cocher pour que rien ne reste ouvert après un départ.
-- **Segment :** P1 et P2 (un point variable) ; qualifiés et hors cible.
-- **CTA unique :** « Faire l'autodiagnostic » → `autodiagnostic.html?src=n2`. Les réponses de l'autodiagnostic restent dans le navigateur : on **ne sait pas** qui l'a déjà fait, donc le même CTA est envoyé à tous, avec une phrase pour ceux qui l'ont déjà fait.
-- **Métrique suivie :** visites de l'autodiagnostic avec `src=n2`, en agrégé (seulement si un outil d'audience exempté est installé, T7) ; demandes d'échange envoyées depuis l'autodiagnostic dans les 7 jours (compteur du formulaire de demande).
+- **Pré-en-tête :** Une liste à cocher pour que rien ne reste ouvert après un départ. Et où en est Lanternis.
+- **Segment :** P1 et P2 (un point variable) ; tous les destinataires.
+- **CTA unique :** « Faire l'autodiagnostic » → `autodiagnostic.html?src=l3` (les réponses restent dans le navigateur : on ne sait pas qui l'a déjà fait, d'où la phrase pour eux).
+- **Métriques suivies :** visites de l'autodiagnostic `src=l3` (agrégé, si un outil d'audience exempté est installé) ; demandes d'échange envoyées depuis l'autodiagnostic dans les 7 jours ; désinscriptions (première édition après la pause : mesure de l'usure de la liste).
 
 **Corps**
 
 > Bonjour,
 >
-> Quand un salarié quitte la structure, le matériel est généralement rendu. Les accès, eux, sont plus faciles à oublier, parce qu'ils ne se voient pas.
->
-> Voici les points à vérifier le dernier jour :
+> Quand un salarié quitte la structure, le matériel est généralement rendu. Les accès, eux, sont plus faciles à oublier, parce qu'ils ne se voient pas. Voici les points à vérifier le dernier jour :
 >
 > - le compte de messagerie : fermé, ou transféré à un collègue pour une durée fixée ;
 > - les licences attribuées (Microsoft 365, Google Workspace, logiciels payés par utilisateur) : libérées, pour ne plus les payer ;
@@ -128,88 +188,30 @@ Les inscrits sous l'ancien libellé restent **en option 2** même si l'option 1 
 >
 > Le plus simple est de faire la même liste à l'arrivée : ce qu'on ouvre le premier jour, on sait le fermer le dernier.
 >
+> **Où en est Lanternis.** {{nouvelles_projet : deux ou trois phrases factuelles, rédigées au moment de l'envoi : nombre d'entretiens menés, ce que nous avons appris, prochaine étape. Aucune annonce de date non décidée.}}
+>
 > Les accès font partie des 10 questions de notre autodiagnostic. Cinq minutes, résultat immédiat à l'écran, et vos réponses ne nous sont pas transmises. Si vous l'avez déjà fait, refaites-le après avoir rempli votre tableau : le résultat devrait changer.
 >
 > **[Faire l'autodiagnostic]**
 >
 > L'équipe Lanternis
 
-**Trame :** constat → conséquence (licences payées pour rien, accès restés ouverts) → action. Pas d'exemple d'incident, pas de chiffre d'attaques.
-**Vérifié :** l'autodiagnostic comporte une question sur les accès au départ d'un salarié (`marketing/landing/autodiagnostic.md`, question 5) et une sur les accès administrateur (question 6).
+*Vérifié :* l'autodiagnostic comporte une question sur les accès au départ d'un salarié (`marketing/landing/autodiagnostic.md`, question 5) et une sur les accès administrateur (question 6).
 
 ---
 
-## N3. Préparer la passation (P1) / Une page SI pour votre CA (P2)
+## L4. Cinq questions à poser à votre prestataire — jeudi 18 février 2027
 
-Deux versions du même email, une par segment.
+Le contenu utile est fixe ; la fin dépend de la décision du comité (`4-decision/memo.md`), **à réécrire au moment de l'envoi**.
 
-- **Déclencheur :** N2 envoyé ; `echange = non` ; `qualifie = oui` ; aucun entretien fixé.
-- **Délai :** J+11.
-- **CTA unique :** « Répondez simplement à cet email avec deux ou trois créneaux » (lien `mailto:` de l'adresse d'expédition, objet prérempli « Échange de 30 minutes »).
-- **Métrique suivie :** réponses avec créneaux / emails délivrés ; puis entretiens **réalisés** (absences à suivre).
-
-### N3-P1 (entreprise)
-
-- **Objet A :** Si votre référent informatique partait, que resterait-il ?
-- **Objet B :** Départ du responsable informatique : la passation en cinq points
-- **Pré-en-tête :** Ce qu'il faut écrire avant son dernier jour, et avec qui le faire.
-
-> Bonjour,
->
-> Dans beaucoup de PME, l'informatique tient grâce à une personne : un salarié « qui s'y connaît », un responsable informatique, parfois le dirigeant lui-même. Des offres d'emploi publiées en octobre 2026 en témoignent : des PME recrutent pour remplacer un responsable informatique qui part à la retraite.
->
-> Un départ annoncé est une occasion : celle d'écrire ce qui n'était que dans une tête. Cinq points suffisent pour commencer :
->
-> 1. la carte en trois colonnes (notre premier email) ;
-> 2. la liste des comptes administrateur, et qui d'autre y a accès ;
-> 3. où sont les sauvegardes, et quand elles ont été testées pour la dernière fois ;
-> 4. les contacts chez chaque prestataire, avec le périmètre de chacun ;
-> 5. les décisions en cours : renouvellements, achats prévus, projets.
->
-> Nous menons en ce moment des entretiens de 30 minutes avec des dirigeants pour comprendre comment ils vivent cette situation. Nous ne vendons rien pendant cet échange ; vous recevrez la synthèse anonymisée de l'étude.
->
-> **Si vous êtes partant, répondez simplement à cet email avec deux ou trois créneaux.**
->
-> L'équipe Lanternis
-
-*Source de la phrase sur les offres d'emploi :* `2-marche/signaux-demande.md`, S2 : offres HelloWork du 19/10/2026 (https://www.hellowork.com/fr-fr/emplois/82433859.html) et du 12/10/2026 (https://www.hellowork.com/fr-fr/emplois/84330801.html), consultées le 2026-10-25. **Avant envoi :** vérifier qu'elles sont toujours consultables, sinon retirer la phrase.
-
-### N3-P2 (ESS)
-
-- **Objet A :** Une page sur l'informatique pour votre prochain CA
-- **Objet B :** Ce que votre CA peut vous demander sur l'informatique
-- **Pré-en-tête :** Cinq rubriques pour présenter votre SI au bureau, en une page.
-
-> Bonjour,
->
-> Un jour, un administrateur, un financeur ou un commissaire aux comptes vous demandera : « Où en est-on de l'informatique ? » Une page préparée à l'avance vous épargne de la rédiger au dernier moment.
->
-> Voici une trame en cinq rubriques :
->
-> 1. **Ce que nous avons** : outils principaux, dont le logiciel métier ;
-> 2. **Ce que cela coûte** : total annuel et principaux postes ;
-> 3. **Ce qui arrive à échéance** dans les douze mois ;
-> 4. **Qui a accès** aux données des personnes accompagnées, et comment les accès sont fermés aux départs ;
-> 5. **Les décisions à prendre** : renouvellements, projets, budget.
->
-> Nous menons en ce moment des entretiens de 30 minutes avec des DAF et des directions d'association pour comprendre comment elles gèrent leur informatique sans service dédié. Aucune démarche commerciale ; vous recevrez la synthèse anonymisée de l'étude, utilisable devant votre CA.
->
-> **Si vous êtes partante ou partant, répondez simplement à cet email avec deux ou trois créneaux.**
->
-> L'équipe Lanternis
-
----
-
-## N4. Cinq questions à poser à votre prestataire
-
-- **Déclencheur :** N3 envoyé ; `echange = non` ; `qualifie = oui` ; aucun entretien fixé.
-- **Délai :** J+18.
+- **Déclencheur :** édition mensuelle ; au moins 30 jours après L3.
+- **Délai :** date fixe.
 - **Objet A :** Cinq questions pour votre prochain point avec votre prestataire
 - **Objet B :** Votre prestataire et vous : ce qu'il est utile de lui demander
-- **Pré-en-tête :** Et, en toute transparence, ce que Lanternis fera et ne fera pas.
-- **Segment :** P1 et P2 (une phrase variable).
-- **CTA unique :** « Répondez avec deux ou trois créneaux » (réponse à l'email).
-- **Métrique suivie :** réponses avec créneaux ; objections reçues (à verser dans la matrice des objections de `marque/messages-par-persona.md`).
+- **Pré-en-tête :** Des questions de pilotage, pas de défiance. Et les nouvelles de Lanternis.
+- **Segment :** P1 et P2.
+- **CTA unique :** si GO et places pilote disponibles : « Répondez "pilote" » (qualifiés sans lettre d'intention) ; sinon : aucun CTA commercial, lien vers l'article du blog `?src=l4`.
+- **Métriques suivies :** réponses « pilote » (si GO) ; objections reçues (versées dans la matrice de `marque/messages-par-persona.md`) ; désinscriptions.
 
 **Corps**
 
@@ -225,109 +227,60 @@ Deux versions du même email, une par segment.
 >
 > Ce ne sont pas des questions de défiance : ce sont celles d'une direction qui pilote.
 >
-> C'est le rôle que nous préparons pour Lanternis. Ce qu'il fera : tenir le registre de tout votre SI (matériel, licences et abonnements, contrats, fournisseurs, accès), vous prévenir avant chaque échéance, et être mis en place avec vous par un DSI. Ce qu'il ne fera pas : remplacer votre prestataire, dépanner vos postes, stocker vos fichiers ou vos mots de passe.
->
-> *[P1]* Nous voulons vérifier ces choix avec des dirigeants avant d'aller plus loin.
-> *[P2]* Nous voulons vérifier ces choix avec des associations avant d'aller plus loin, notamment sur l'hébergement des données et le tarif associatif.
->
-> **Trente minutes vous conviendraient ? Répondez avec deux ou trois créneaux.**
+> *[Si GO]* **Où en est Lanternis.** {{état du projet et date d'ouverture aux pilotes, si décidée}}. Il reste {{n}} places de structure pilote, aux conditions décrites en décembre. **Si cela vous intéresse, répondez « pilote ».**
+> *[Si PIVOT]* **Où en est Lanternis.** {{ce qui change et pourquoi, en deux phrases}}. Nous continuerons de vous écrire au plus une fois par mois.
+> *[Si NO-GO]* **Où en est Lanternis.** Nous avons décidé de ne pas lancer Lanternis. Merci pour votre intérêt et vos réponses. Ceci est notre dernier email : vos données seront supprimées dans les trois mois, sans action de votre part.
 >
 > L'équipe Lanternis
 
-*Source de « beaucoup de dirigeants se tournent en premier vers lui » :* baromètre Cybermalveillance.gouv.fr 2025 (OpinionWay, 588 entreprises de moins de 250 salariés) : 39 % se tournent d'abord vers leur prestataire informatique (`2-marche/signaux-demande.md`, S1 ; https://www.cybermalveillance.gouv.fr/medias/2025/10/CP-TPE-PME-07102025-3.pdf, consulté le 2026-10-25). Chiffre volontairement non repris ; « beaucoup » reste en deçà de ce qu'il établit (39 % n'est pas une majorité : ne pas écrire « la plupart »).
-*Périmètre « ne stocke ni fichiers ni mots de passe » :* engagement repris de `messages-par-persona.md` (P1, décision) ; à confirmer par l'architecte avant envoi.
-
-**Trame :** BAB ; neutralité vis-à-vis du prestataire (plateforme § 6 et § 10.2) ; transparence (valeur § 7). Aucune critique du prestataire, aucun concurrent nommé.
+*Source de « beaucoup de dirigeants se tournent en premier vers lui » :* baromètre Cybermalveillance.gouv.fr 2025 (OpinionWay, 588 entreprises de moins de 250 salariés) : 39 % se tournent d'abord vers leur prestataire informatique (`2-marche/signaux-demande.md`, S1 ; https://www.cybermalveillance.gouv.fr/medias/2025/10/CP-TPE-PME-07102025-3.pdf, consulté le 2026-10-25). Chiffre volontairement non repris ; ne pas écrire « la plupart » (39 % n'est pas une majorité).
+*Suppression en cas de NO-GO dans les 3 mois :* durée proposée dans `conformite-prelancement.md` (T1), à confirmer par l'avocat.
 
 ---
 
-## N5. Le pilote fondateur
+## 4. Ce qui sort de la lettre : le suivi individuel
 
-- **Déclencheur :** N4 envoyé (ou N2 pour les contacts `echange = oui` sans discussion de lettre d'intention en cours) ; `qualifie = oui`.
-- **Délai :** J+25.
-- **Objet A :** Devenir structure pilote de Lanternis : les conditions
-- **Objet B :** Le pilote fondateur, en clair
-- **Pré-en-tête :** Une lettre d'intention, pas un contrat : ce qu'elle engage et ce qu'elle n'engage pas.
-- **Segment :** P1 et P2 (paragraphe prix variable).
-- **CTA unique :** « Répondez "pilote" à cet email pour recevoir la lettre d'intention » (pas de formulaire en ligne : il créerait un traitement à ajouter au registre).
-- **Métrique suivie :** réponses « pilote » / emails délivrés ; puis **lettres signées** (objectif global ≥ 3, hypothèse H3 de `STATUT.md`, tous canaux).
+L'essentiel de la conversion vers l'entretien et la lettre d'intention se fait **hors lettre**, par des emails écrits un par un par le fondateur :
+- aux inscrits qui ont coché `echange` (prise de contact dans les jours qui suivent la confirmation, `liste-attente-remerciement.md` § 1) ;
+- aux personnes qui demandent un échange depuis l'autodiagnostic ;
+- aux personnes qui répondent à une édition (créneaux, « pilote », question).
 
-**Corps**
+Après un entretien avec douleur avérée, la lettre d'intention est proposée **dans l'email de remerciement individuel**, conformément au bloc E de `2-marche/script-interview.md`. Ces emails **ne comptent pas** dans le plafond mensuel (décision du 2026-10-26, **à confirmer par juriste-rgpd**) et ne sont pas envoyés par Mailjet en masse.
 
-> Bonjour,
->
-> Lanternis est en construction. Avant de l'ouvrir, nous cherchons un petit nombre de structures pilotes pour le construire avec elles. Voici les conditions, écrites noir sur blanc.
->
-> **Ce que vous obtenez**
-> - la mise en place de votre registre du SI avec un DSI, à partir de vos documents ;
-> - les alertes avant échéances et le suivi des arrivées et départs ;
-> - un tarif fondateur : −30 % pendant douze mois sur l'abonnement.
->
-> **Ce que nous vous demandons**
-> - un entretien mensuel de retour d'expérience pendant le pilote ;
-> - un témoignage à la fin, seulement si vous en êtes satisfait et avec votre accord écrit.
->
-> **Les prix** (hors taxes, par mois, grille en cours de validation)
-> *[P1]* Selon votre effectif : de 249 € (50 à 99 salariés) à 399 € ou 449 € (100 à 249 salariés), avant la remise fondateur. Mise en place : 990 €.
-> *[P2]* Selon votre effectif : de 149 € (20 à 49 salariés) à 399 € ou 449 € (100 à 249 salariés), avant remise. Les structures de l'ESS bénéficient d'une remise de 15 % ; elle n'est pas cumulable avec la remise fondateur : la plus favorable s'applique. Mise en place : 490 € ou 990 € selon le palier.
->
-> **Ce qu'engage la lettre d'intention** : elle indique votre intérêt et réserve une place de pilote. Elle ne vaut ni commande ni engagement de paiement. Rien ne sera facturé avant l'ouverture et la signature d'un contrat.
->
-> Le nombre de places est limité à dix structures, pour que nous puissions accompagner chacune correctement. Il n'y a pas de date limite : si les places sont prises, nous vous le dirons simplement.
->
-> **Si cela vous intéresse, répondez « pilote » à cet email : nous vous enverrons la lettre d'intention.**
->
-> L'équipe Lanternis
+## 5. Tests A/B (exploratoires, sans pixel)
 
-(Version P1 limitée aux paliers 50 à 249 : les entreprises de 20 à 49 ne sont pas qualifiées, `validation.md` § 7.1.)
+Sans suivi d'ouverture ni de clic, un objet ne se juge que sur l'**action** qui suit : réponses (notées à la main par variante) ou visites agrégées par `src` (`src=l1a` / `src=l1b`, etc.).
 
-**Trame :** offre claire, conditions symétriques, objection « engagement » levée d'avance. Pas de compte à rebours, pas de « dernières places ».
-
-**À valider avant envoi (bloquant) :**
-- Grille de prix, remise fondateur −30 %, plafond de 10 places, non-cumul avec la remise ESS : **hypothèses de `2-marche/prix.md` § 4.1** ; à confirmer par l'utilisateur. Le palier 100 à 249 (399 ou 449 €) n'est pas tranché : l'email affiche les deux, ou un seul prix après le test en entretien.
-- Texte de la lettre d'intention (non engageante) : à rédiger et à faire relire (juriste-rgpd ou avocat) ; pas encore produit.
-- Remise ESS de 15 % et éligibilité (`prix.md` § 4.2) : à valider juridiquement.
-- Aucune vente avant le GO : la lettre d'intention n'est pas une vente ; aucun acompte demandé par email.
-
----
-
-## 3. Tests A/B (exploratoires, sans pixel)
-
-Sans suivi d'ouverture ni de clic, un test d'objet ne se lit que par l'**action** qui suit. Chaque variante porte un paramètre de provenance distinct (`src=n1a` / `src=n1b`, etc.) ou, pour les CTA par réponse, est notée à la main lors du tri des réponses.
-
-| Email | A | B | Métrique de décision |
+| Édition | A | B | Métrique de décision |
 |---|---|---|---|
-| N1 | « trois colonnes » | les trois questions | Téléchargements par `src` (agrégé) |
-| N2 | « le dernier jour » | « check-list » | Visites de l'autodiagnostic par `src` (agrégé, si outil d'audience) |
-| N3 | Question (P1) / livrable (P2) | Méthode (P1) / attente du CA (P2) | Réponses avec créneaux |
-| N4 | « Cinq questions » | « Votre prestataire et vous » | Réponses avec créneaux |
-| N5 | « Les conditions » | « En clair » | Réponses « pilote » |
+| L1 | « trois colonnes » | les trois questions | Réponses avec créneaux |
+| L2 | Question (P1) / livrable (P2) | Méthode + « une proposition » | Réponses « pilote » |
+| L3 | « le dernier jour » | « check-list » | Visites de l'autodiagnostic (agrégé) |
+| L4 | « Cinq questions » | « Votre prestataire et vous » | Réponses (si GO) |
 
-**Taille d'échantillon :** avec un objectif de 80 inscrits qualifiés, dont une partie seulement cochera `nouvelles`, aucun test ne sera significatif. Lecture **indicative**, consignée comme telle dans `marketing/rapports/`. **Option sobre recommandée :** ne tester que N3 (le plus proche de l'objectif) et envoyer la version A ailleurs.
+Avec quelques dizaines de destinataires par édition, aucun test ne sera significatif. **Recommandation :** ne tester que L1 et L2 (les deux éditions qui comptent pour la décision), lire le résultat comme indicatif, et le consigner comme tel dans `marketing/rapports/`.
 
-## 4. Tableau de suivi (chaque quinzaine, `acquisition.md` § 4.3)
+## 6. Tableau de suivi (par édition)
 
-| Email | Délivrés (Mailjet) | Action comptée | Réponses | Désinscriptions | Plaintes (spam) |
-|---|---|---|---|---|---|
-| E0-B | | Visites autodiagnostic `src=confirmation` (agrégé) | | | |
-| N1 | | Téléchargements `src=n1` | | | |
-| N2 | | Visites autodiagnostic `src=n2` ; demandes d'échange | | | |
-| N3 | | Créneaux proposés | | | |
-| N4 | | Créneaux proposés | | | |
-| N5 | | Réponses « pilote » ; lettres signées | | | |
+| Édition | Destinataires | Délivrés (Mailjet) | Action comptée | Réponses | Entretiens issus | Lettres d'intention issues | Désinscriptions | Plaintes |
+|---|---|---|---|---|---|---|---|---|
+| L1 | | | Créneaux proposés ; téléchargements `src=l1` | | | | | |
+| L2 | | | Réponses « pilote » | | | | | |
+| L3 | | | Autodiagnostic `src=l3` ; demandes d'échange | | | | | |
+| L4 | | | Réponses « pilote » (si GO) | | | | | |
 
-Les délivrances, rebonds, désinscriptions et plaintes restent disponibles dans Mailjet sans pixel. Seuil d'alerte (H) : un taux de désinscription ou de plainte nettement supérieur aux autres emails → suspendre la séquence et revoir le message.
+Délivrances, rebonds, désinscriptions et plaintes restent disponibles dans Mailjet sans pixel. À reporter dans la revue de quinzaine (`acquisition.md` § 4.3) et dans le dossier `/bilan` : part des entretiens et des lettres d'intention venant de la lettre, contre le suivi individuel et la prospection.
+**Seuil d'alerte (H) :** un taux de désinscription ou de plainte nettement plus élevé sur une édition → revoir le contenu avant la suivante.
 
----
+## 7. Points ouverts et hypothèses
 
-## 5. Points ouverts et hypothèses
-
-1. **Cadence (§ 1) : décision bloquante** de l'utilisateur ; si option 1, modification du libellé par cro-conversion / dev-vitrine et relecture juriste-rgpd.
-2. **Calendrier (option 1)** : landing prévue en S3 (9 au 13 novembre, `acquisition.md` § 5). Un inscrit après le 24 novembre atteint N5 après le 18 décembre, donc en janvier avec la pause. Option : délais compressés pour les inscrits tardifs (J+2, J+5, J+8, J+12, J+16), à trancher.
-3. **Ressources à produire :** modèle de tableau (N1), lettre d'intention (N5), autodiagnostic (`autodiagnostic.md`, à construire par dev-vitrine).
-4. **Mesure :** aucun outil d'audience n'est installé (T7) ; tant qu'il ne l'est pas, seules les réponses, les demandes d'échange et les compteurs serveur sont mesurables. Le compteur anonyme de téléchargements est à valider avec dev-vitrine et juriste-rgpd.
-5. **Données Mailjet :** ajout de `echange` et `qualifie` aux attributs transmis, à valider par juriste-rgpd (`conformite-prelancement.md` § 5.3).
-6. **Domaine :** `lanternis.fr` non réservé ; aucun envoi avant SPF, DKIM et DMARC.
-7. **Ton :** les objets de N3 sont les plus proches de la ligne « pas de vente par la peur » : relecture par le brand-manager.
-8. **P3 (office manager)** : pas de segment propre ; reçoit la version de sa structure. N2 lui est particulièrement adressé.
-9. **Réactivation des inactifs** : non prévue en pré-lancement (liste trop petite) ; à concevoir en phase 9.
+1. **Exclusion du plafond** des emails transactionnels et des réponses individuelles : à confirmer par juriste-rgpd.
+2. **Interprétation de « au plus une par mois »** : 30 jours glissants retenus (prudent) ; si le juriste valide le mois civil, L1 et L2 peuvent se rapprocher.
+3. **Dates des éditions** : hypothèses calées sur la mise en ligne de la landing en S3 ; à ajuster à la date réelle (alternative : L1 le 10 novembre, L2 le 10 décembre).
+4. **Effet de la décision sur l'acquisition** : avec deux éditions avant le bilan, la lettre ne peut porter qu'une petite partie des 12 à 15 entretiens ; l'essentiel reste le réseau chaud, la prospection individuelle et la case `echange` (`acquisition.md` § 4.1). À signaler au comité de décision.
+5. **Ressources à produire :** modèle de tableau (L1), article de blog « la carte en trois colonnes » (rattrapage, L2), texte de la lettre d'intention (L2).
+6. **Attributs et suivi manuel :** `echange`, `qualifie`, `entretien`, `LI` ; transmission à Mailjet à valider par juriste-rgpd.
+7. **Mesure :** aucun outil d'audience installé (T7) ; seuls les réponses, les demandes d'échange et les compteurs serveur sont mesurables tant qu'il ne l'est pas.
+8. **Domaine :** `lanternis.fr` non réservé ; aucun envoi avant SPF, DKIM et DMARC.
+9. **Ton :** objets de L2 (« Si votre référent informatique partait… », « Ce que votre CA peut vous demander… ») à relire par le brand-manager (ligne « pas de vente par la peur »).
+10. **Nom du fichier** conservé (`sequence-nurturing-preLancement.md`) pour ne pas casser les renvois ; le contenu est désormais une lettre mensuelle.

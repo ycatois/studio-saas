@@ -3,7 +3,7 @@ venture: lanternis
 phase: 2b Pré-lancement
 auteur: lifecycle-emailing
 date: 2026-10-26
-révision: 2026-10-26 (v2) — alignement sur le formulaire réel (`marketing/landing/validation.html`, `validation.md` § 7 et § 9) et sur `marketing/landing/conformite-prelancement.md` (§ 2.3, § 4.3, § 5.3)
+révision: 2026-10-26 (v3) — décision du fondateur : la case « nouvelles » garde « au plus une par mois » (§ 1) ; v2 — alignement sur le formulaire réel (`marketing/landing/validation.html`, `validation.md` § 7 et § 9) et sur `marketing/landing/conformite-prelancement.md` (§ 2.3, § 4.3, § 5.3)
 statut: brouillon
 skills: sequence-nurturing, copywriting-frameworks, ab-test
 envoi: Mailjet, en transactionnel, déclenché par `waitlist.php` et `confirm.php` (o2switch) — RIEN N'EST ENVOYÉ ; activation soumise à la validation explicite de l'utilisateur
@@ -29,8 +29,10 @@ Champs de `validation.html` (aucun prénom) : `email`, `structure`, `type` (`ent
 |---|---|---|---|
 | Envoi du formulaire | **E0-A Confirmation** (immédiat) | Tous | Sans clic : rien d'autre (pas de relance automatique, H : à décider ; une relance unique à J+3 est possible si le juriste la valide) |
 | Clic sur le lien de confirmation | **E0-B Bienvenue** (immédiat) | Tous les confirmés | Une phrase change selon `echange` (§ 3) |
-| — | Séquence `sequence-nurturing-preLancement.md` | Uniquement `nouvelles = oui`, confirmés | Cadence liée au libellé de la case (voir ce fichier, § « Cadence et consentement ») |
+| — | Lettre mensuelle `sequence-nurturing-preLancement.md` (4 éditions à date fixe) | Uniquement `nouvelles = oui`, confirmés | **Au plus un email de nouvelles par mois** (décision du fondateur du 2026-10-26 : le libellé de la case est maintenu) |
 | — | Prise de contact individuelle pour l'échange | Uniquement `echange = oui` | Email personnel du fondateur, hors Mailjet automatique ; aucun outil de prise de rendez-vous tant qu'il n'est pas choisi et ajouté aux sous-traitants |
+
+**Plafond « au plus une par mois » :** E0-A et E0-B sont des emails liés à l'inscription et ne comptent pas comme des « nouvelles » ; les emails individuels du fondateur aux personnes qui ont demandé un échange ou répondu non plus (consigne du 2026-10-26, **à confirmer par juriste-rgpd**). En conséquence, E0-B doit rester un email de bienvenue : pas de contenu de lettre, pas d'offre.
 
 **Segments** (seules données transmises à Mailjet, `conformite-prelancement.md` § 5.3) : `email`, `structure`, `segment` (P1 = `entreprise`, P2 = `ess`), `nouvelles`. **Ajouts proposés** pour les emails ci-dessous : `echange` (oui/non) et `qualifie` (oui/non). **À valider par juriste-rgpd** avant de les envoyer à Mailjet. Ni `douleur`, ni `douleur_autre`, ni `source` ne sont transmis.
 

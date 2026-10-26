@@ -37,7 +37,6 @@ Décision : en attente
   - demander la fonction de l'inscrit dans le formulaire ?
   - valider le tarif fondateur (−30 % pendant 12 mois, 10 places) et la formulation « 25 ans d'expérience du SI » ;
   - prospecter le réseau Tecnoo au nom d'Hasteria ou de Tecnoo ?
-  - case « nouvelles » : garder « au plus une par mois » (la séquence passe à un email par mois) ou changer le libellé pour autoriser la séquence de 5 emails en 25 jours ?
 - **Ensuite :** lancer les entretiens (réseau Tecnoo et ESS) et consigner les résultats dans `2-marche/validation.md`.
 - 12 à 15 entretiens Mom Test (script `2-marche/script-interview.md`), en commençant par le réseau Tecnoo et l'ESS.
 - Faire valider par juriste-rgpd les règles de prospection B2B avant les premiers envois.
@@ -65,3 +64,4 @@ Décision : en attente
 - 2026-10-26 — Logo **Lanterne-arche** retenu (affiné : anneau détaché, foyer agrandi, symbole compact pour 16 à 24 px). Charte v1.0, iconographie, gabarits et design system v0.1 produits.
 - 2026-10-26 — Pré-lancement préparé en brouillon. Série LinkedIn remplacée par un test Facebook (6 semaines, orienté associations) ; le blog est le canal de contenu principal. Fichiers de suivi de prospection exclus du dépôt (`.gitignore`).
 - 2026-10-26 — Pages légales et conformité du pré-lancement rédigées (projets, relecture d'avocat requise). Back-end de la liste d'attente développé, testé et fusionné (PR #1) ; déploiement soumis à validation.
+- 2026-10-26 — Case « nouvelles » : on garde « au plus une par mois ». La séquence devient une lettre mensuelle de 4 éditions (17 nov., 17 déc., 19 janv., 18 févr.). Les entretiens viendront surtout des échanges individuels. À confirmer par juriste-rgpd : les emails transactionnels et les réponses individuelles hors plafond.
