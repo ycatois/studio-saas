@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · Charte graphique · version 1.0 (26 octobre 2026)</title>
+<!-- Charte graphique imprimable A4 (14 pages). Auteur : directeur-artistique. Statut : version 1.0, à valider par le fondateur.
+     Autonome : aucune ressource externe. Seule ressource locale facultative : fonts/fraunces-latin-600.woff2 (si absente, police de repli).
+     Valeurs identiques à tokens.css / tokens.json (source de vérité). PDF : outils/documents/scripts/html2pdf.py. -->
+<style>
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/fraunces-latin-600.woff2") format("woff2")}
+:root{
+ --nuit:#1B2330;--nuit-douce:#2A3444;--ambre:#F2B24C;--ambre-profond:#8A5300;--ambre-pale:#FBEBD0;
+ --papier:#FAF6EE;--blanc:#FFFFFF;--brume:#C5CDD8;--ardoise:#4A5260;--trait:#7A808B;--trait-nuit:#7D8899;
+ --lin:#D9D2C3;--lin-nuit:#3A4558;--mousse:#2F6B3F;--brique:#A1322A;--lac:#2F5470;--sauge:#8FC79A;--corail:#F08A7E;--ciel:#9DBBD6;
+ --titre:"Fraunces","Iowan Old Style","Palatino Linotype",Palatino,Georgia,"DejaVu Serif",serif;
+ --texte:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+ --mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Menlo,Consolas,"Liberation Mono",monospace;
+ --halo:radial-gradient(circle,rgba(242,178,76,.30) 0,rgba(242,178,76,0) 70%);
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+html{background:#CFC8B8;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--nuit);font:10pt/1.45 var(--texte)}
+.page{width:210mm;height:297mm;margin:0 auto 10mm;padding:16mm 18mm 22mm;background:var(--papier);position:relative;overflow:hidden;break-after:page;page-break-after:always}
+.page:last-of-type{break-after:auto;page-break-after:auto}
+@media print{html{background:none}.page{margin:0}}
+.pied{position:absolute;left:18mm;right:18mm;bottom:9mm;display:flex;justify-content:space-between;gap:6mm;font-size:8pt;color:var(--ardoise);border-top:.5pt solid var(--lin);padding-top:2mm}
+.kicker{font-weight:700;font-size:8pt;letter-spacing:.08em;text-transform:uppercase;color:var(--ambre-profond);margin:0 0 1mm}
+h1,h2,h3,.f{font-family:var(--titre);font-weight:600}
+h2{font-size:22pt;line-height:1.15;margin:0 0 5mm}
+h3{font-size:12pt;line-height:1.25;margin:5mm 0 2mm}
+p{margin:0 0 2.5mm}
+ul{margin:0 0 3mm;padding-left:5mm}
+li{margin:0 0 1mm}
+.lead{font-family:var(--titre);font-weight:600;font-size:14pt;line-height:1.35;margin-bottom:4mm}
+.small{font-size:8.5pt;color:var(--ardoise)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm}
+.note{border-left:1mm solid var(--ambre-profond);background:var(--blanc);padding:2mm 3mm;font-size:9pt;margin:0 0 3mm}
+.panel{border-radius:3mm;display:flex;align-items:center;justify-content:center;border:.5pt solid var(--lin)}
+.sur-nuit{background:var(--nuit);color:var(--papier);border-color:var(--nuit)}
+.sur-nd{background:var(--nuit-douce);color:var(--papier);border-color:var(--nuit-douce)}
+.sur-blanc{background:var(--blanc)}
+.sur-noir{background:#000;color:#fff;border-color:#000}
+figure{margin:0}
+figcaption{font-size:8.5pt;color:var(--ardoise);margin-top:1.5mm}
+table{width:100%;border-collapse:collapse;font-size:8.5pt;background:var(--blanc)}
+th,td{border:.5pt solid var(--trait);padding:1.1mm 2mm;text-align:left;vertical-align:top}
+th{background:var(--nuit);color:var(--papier);font-weight:600}
+code{font-family:var(--mono);font-size:.92em}
+.num{font-variant-numeric:tabular-nums}
+.ok{font-weight:700}
+.ko{font-weight:700;color:var(--brique)}
+a{color:var(--ambre-profond)}
+/* Logo : les symboles SVG lisent ces variables */
+.lk{fill:none;stroke:var(--l-trait);stroke-linecap:round;stroke-linejoin:round}
+.lin{fill:var(--l-int)}
+.ll{fill:var(--l-lum)}
+.lf{fill:var(--l-trait)}
+.lg-papier{--l-trait:#1B2330;--l-int:#1B2330;--l-lum:#F2B24C}
+.lg-nuit{--l-trait:#FAF6EE;--l-int:#2A3444;--l-lum:#F2B24C}
+.lg-noir{--l-trait:#000;--l-int:#000;--l-lum:#fff}
+.lg-blanc{--l-trait:#fff;--l-int:none;--l-lum:#fff}
+/* Icônes */
+.ic{fill:none;stroke:var(--i-trait,#1B2330);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic .pt{fill:var(--i-lum,#8A5300);stroke:none}
+.ic-nuit{--i-trait:#FAF6EE;--i-lum:#F2B24C}
+/* Couverture */
+.couv{background:var(--nuit);color:var(--papier);padding:24mm 22mm}
+.couv::before{content:"";position:absolute;right:-60mm;top:-50mm;width:190mm;height:190mm;border-radius:50%;background:var(--halo)}
+.couv .pied{color:var(--brume);border-top-color:var(--lin-nuit);left:22mm;right:22mm}
+.couv a{color:var(--ambre)}
+/* Pastilles de couleur */
+.sw{border:.5pt solid var(--trait);border-radius:2mm;overflow:hidden;background:var(--blanc);font-size:8pt;line-height:1.35}
+.sw .c{height:16mm}
+.sw .l{padding:1.6mm 2mm}
+.sw b{font-size:9pt}
+.mini .c{height:8mm}
+/* Interdits */
+.non{display:inline-block;font-weight:700;color:var(--brique)}
+.oui{display:inline-block;font-weight:700;color:var(--mousse)}
+/* Applications */
+.btn{display:inline-block;border-radius:2mm;padding:2mm 4mm;font-weight:700;font-size:9pt;text-decoration:none}
+.tag{display:inline-block;font-size:7.5pt;font-weight:700;color:var(--ambre-profond);border:.6mm solid var(--ambre-profond);border-radius:1mm;padding:0 1.2mm;margin-left:1.5mm}
+.carte{background:var(--blanc);border:.5pt solid var(--lin);border-radius:3mm;padding:3mm 4mm}
+.ligne{display:flex;justify-content:space-between;gap:3mm;padding:1.6mm 0;border-top:.5pt solid var(--lin);font-size:8.5pt}
+.ligne b{font-variant-numeric:tabular-nums;white-space:nowrap}
+/* sommaire */
+.som{list-style:none;padding:0;margin:0 0 4mm;columns:2;column-gap:8mm}
+.som li{display:flex;justify-content:space-between;border-bottom:.5pt dotted var(--trait);padding:1mm 0;margin:0;break-inside:avoid}
+.som a{color:var(--nuit);text-decoration:none}
+.pill{display:inline-block;border:.5mm solid var(--nuit);border-radius:99px;padding:.6mm 3mm;margin:0 1.5mm 1.5mm 0;font-weight:600;font-size:9pt}
+</style>
+</head>
+<body>
+
+<!-- ===== Symboles SVG réutilisés (logo, grille 64 unités) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <defs>
+  <symbol id="sym" viewBox="0 0 64 64"><g class="lk"><circle cx="32" cy="9" r="4" stroke-width="4"/><path class="lin" d="M16 58V36a16 16 0 0 1 32 0v22z" stroke-width="5"/><path d="M10 58h44" stroke-width="5"/></g><circle class="ll" cx="32" cy="40" r="8.5"/></symbol>
+  <symbol id="cmp" viewBox="0 0 64 64"><g class="lk" stroke-width="6"><path class="lin" d="M17 50V30a15 15 0 0 1 30 0v20z"/><path d="M10 50h44"/></g><circle class="ll" cx="32" cy="34" r="7.5"/></symbol>
+  <symbol id="mot" viewBox="0 0 214 40"><g class="lk" stroke-width="5"><path d="M2.5 4v33.5H20"/><path transform="translate(27)" d="M21.5 18.5v19M2.5 28a9.5 9.5 0 1 0 19 0a9.5 9.5 0 1 0-19 0"/><path transform="translate(56)" d="M2.5 18.5v19M2.5 28a9.5 9.5 0 0 1 19 0v9.5"/><path transform="translate(84)" d="M7.5 6v26q0 5.5 5.5 5.5h2M2.5 18.5H15"/><path transform="translate(105)" d="M2.5 28h19a9.5 9.5 0 1 0-2.78 6.72"/><path transform="translate(134)" d="M2.5 18.5v19M2.5 28a9.5 9.5 0 0 1 9.5-9.5h3"/><path transform="translate(155)" d="M2.5 18.5v19M2.5 28a9.5 9.5 0 0 1 19 0v9.5"/><path transform="translate(184)" d="M2.5 18.5v19"/><path transform="translate(194)" d="M17.5 21.5Q15 18.5 10 18.5Q2.5 18.5 2.5 23.25Q2.5 28 10 28Q17.5 28 17.5 32.75Q17.5 37.5 10 37.5Q4.5 37.5 2.5 34.5"/></g><circle class="lf" cx="186.5" cy="8" r="3"/></symbol>
+  <symbol id="logo" viewBox="0 0 298 64"><use href="#sym" width="64" height="64"/><use href="#mot" x="76" y="20.5" width="214" height="40"/></symbol>
+  <symbol id="fav" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1B2330"/><g transform="translate(3.2 3.2) scale(.9)"><g fill="none" stroke="#FAF6EE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 50V30a15 15 0 0 1 30 0v20z" fill="#2A3444"/><path d="M10 50h44"/></g><circle cx="32" cy="34" r="7.5" fill="#F2B24C"/></g></symbol>
+  <!-- Icônes, grille 24, trait 2 -->
+  <symbol id="i-registre" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+  <symbol id="i-echeance" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle class="pt" cx="15.5" cy="15.5" r="2"/></symbol>
+  <symbol id="i-contrat" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 17c1.5-2 2.5 1 4-1s2 1 3 0"/></symbol>
+  <symbol id="i-abonnement" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/></symbol>
+  <symbol id="i-acces" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v2"/></symbol>
+  <symbol id="i-materiel" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="10" rx="1.5"/><path d="M3 19h18"/></symbol>
+  <symbol id="i-alerte" viewBox="0 0 24 24"><path d="M7 20v-8a5 5 0 0 1 10 0v8z"/><path d="M5 20h14"/><circle class="pt" cx="12" cy="14" r="2"/></symbol>
+  <symbol id="i-fournisseur" viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></symbol>
+  <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+ </defs>
+</svg>
+
+<!-- ===================== PAGE 1 : COUVERTURE ===================== -->
+<section class="page couv" id="p01" aria-label="Couverture">
+ <svg class="lg-nuit" viewBox="0 0 298 64" width="113mm" height="24.3mm" role="img" aria-label="Lanternis" style="position:relative;margin-top:22mm"><use href="#logo"/></svg>
+ <div style="position:relative;margin-top:62mm">
+  <p class="kicker" style="color:var(--ambre)">Identité visuelle · piste Veilleuse</p>
+  <h1 style="font-size:36pt;line-height:1.1;margin:0 0 6mm">Charte graphique</h1>
+  <p style="font-size:12pt;color:var(--brume);max-width:120mm">La référence pour l'application, le site vitrine et son blog, les documents, les emails et la page Facebook de Lanternis.</p>
+  <p style="font-size:10pt;color:var(--brume);margin-top:10mm">Version 1.0 · 26 octobre 2026 · statut : à valider par le fondateur<br>Piste et logo retenus par le fondateur le 26 octobre 2026<br>Source de vérité des valeurs : <code>tokens.json</code> (et sa traduction <code>tokens.css</code>)</p>
+  <p style="font-size:10pt;margin-top:6mm"><a href="#p02">Sommaire, page 2</a></p>
+ </div>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0</span><span>1 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 2 : SOMMAIRE + HISTOIRE ===================== -->
+<section class="page" id="p02" aria-labelledby="h-histoire">
+ <p class="kicker">Sommaire</p>
+ <ol class="som">
+  <li><a href="#p02">01 · L'histoire de la piste</a><span>2</span></li>
+  <li><a href="#p03">02 · Le logo et sa construction</a><span>3</span></li>
+  <li><a href="#p04">03 · Règles d'usage du logo</a><span>4</span></li>
+  <li><a href="#p05">04 · Logo : ce qu'il ne faut pas faire</a><span>5</span></li>
+  <li><a href="#p06">05 · Couleurs</a><span>6</span></li>
+  <li><a href="#p07">06 · Contrastes et mode sombre</a><span>7</span></li>
+  <li><a href="#p08">07 · Typographie</a><span>8</span></li>
+  <li><a href="#p09">08 · Grille, espacements, formes</a><span>9</span></li>
+  <li><a href="#p10">09 · Icônes, illustrations, images</a><span>10</span></li>
+  <li><a href="#p11">10 · Ton visuel, accessibilité, sobriété</a><span>11</span></li>
+  <li><a href="#p12">11 · Applications : landing, application</a><span>12</span></li>
+  <li><a href="#p13">12 · Applications : Facebook, blog, email</a><span>13</span></li>
+  <li><a href="#p14">13 · Ce qu'il ne faut pas faire</a><span>14</span></li>
+ </ol>
+
+ <p class="kicker">01</p>
+ <h2 id="h-histoire">L'histoire de la piste Veilleuse</h2>
+ <p class="lead">Une lumière chaude et posée dans la pièce sombre : Lanternis est la lanterne que l'intendant allume pour que la direction voie enfin ce que contient la maison.</p>
+ <div class="g2">
+  <div>
+   <h3 style="margin-top:0">D'où vient l'image</h3>
+   <p>La plateforme de marque décrit Lanternis comme <strong>un bon intendant</strong> : discret, méthodique, il connaît la maison par cœur et prévient avant que le problème n'arrive. Son ennemi est <strong>l'informatique en boîte noire</strong>, celle dont personne dans la structure n'a la carte.</p>
+   <p>La piste Veilleuse ne combat pas la nuit : elle l'éclaire. Le fond sombre n'est pas menaçant, il met en valeur une seule lumière, chaude et stable. C'est l'inverse de l'imagerie de la peur (écrans noirs, alertes rouges) que la marque refuse.</p>
+   <h3>Des valeurs aux choix visuels</h3>
+   <ul>
+    <li><strong>Transparence</strong> : contrastes élevés, informations écrites en clair, jamais portées par la seule couleur.</li>
+    <li><strong>Souveraineté</strong> : aucune ressource tierce (ni CDN, ni police distante, ni image de banque) ; tout est auto-hébergé.</li>
+    <li><strong>Sobriété</strong> : une seule webfont, polices système pour le texte, illustrations en SVG de quelques kilo-octets, pas de photo décorative.</li>
+   </ul>
+  </div>
+  <div>
+   <h3 style="margin-top:0">Cinq mots-clés</h3>
+   <p><span class="pill">chaleur</span><span class="pill">veille</span><span class="pill">présence humaine</span><span class="pill">apaisement</span><span class="pill">lumière qui révèle</span></p>
+   <h3>Le ton visuel en trois adjectifs</h3>
+   <table>
+    <tr><th>Nous sommes</th><th>… mais pas</th></tr>
+    <tr><td><strong>Posés</strong> : une information, une date, une action</td><td>alarmistes ni anxiogènes</td></tr>
+    <tr><td><strong>Chaleureux</strong> : l'ambre, le papier, le serif doux</td><td>artisanaux ni décoratifs</td></tr>
+    <tr><td><strong>Lisibles</strong> : contrastes AA au minimum, peu d'éléments</td><td>simplistes ni austères</td></tr>
+   </table>
+   <h3>Répartition des rôles</h3>
+   <p>La <strong>nuit</strong> est réservée aux surfaces de marque (landing, réseaux, couverture). L'<strong>application et les documents vivent sur le papier</strong> : c'est la parade au risque « cybersécurité anxiogène » noté lors du choix de la piste.</p>
+   <p class="small">Sources : <code>marque/plateforme-de-marque.md</code> (§ 6 à 8), <code>charte/pistes/piste-1-veilleuse.html</code>, <code>charte/logo/propositions/propositions-logo.html</code>.</p>
+  </div>
+ </div>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>2 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 3 : LOGO ===================== -->
+<section class="page" id="p03" aria-labelledby="h-logo">
+ <p class="kicker">02</p>
+ <h2 id="h-logo">Le logo : la Lanterne-arche</h2>
+ <p>La lanterne de l'intendant a la forme d'une fenêtre de la maison : la nuit à l'intérieur, une lumière posée au centre. Le socle de la lanterne sert de ligne de base au nom. Le nom est <strong>dessiné en tracés</strong> (lettrage monoline à terminaisons arrondies), sans police : il s'affiche partout à l'identique.</p>
+ <div class="g2" style="margin:4mm 0">
+  <figure><div class="panel" style="height:38mm"><svg class="lg-papier" viewBox="0 0 298 64" width="70mm" height="15mm" role="img" aria-label="Logo Lanternis, version papier"><use href="#logo"/></svg></div><figcaption>Version principale, fonds clairs : <code>logo-horizontal-papier.svg</code></figcaption></figure>
+  <figure><div class="panel sur-nuit" style="height:38mm"><svg class="lg-nuit" viewBox="0 0 298 64" width="70mm" height="15mm" role="img" aria-label="Logo Lanternis, version nuit"><use href="#logo"/></svg></div><figcaption>Version nuit, fonds sombres : <code>logo-horizontal-nuit.svg</code></figcaption></figure>
+ </div>
+ <div class="g2">
+  <div>
+   <h3 style="margin-top:0">Construction (grille de 64 unités)</h3>
+   <svg viewBox="-6 -4 76 70" width="70mm" height="64.5mm" role="img" aria-label="Grille de construction du symbole : anneau, arche, socle et foyer sur une grille de 64 unités">
+    <g stroke="#D9D2C3" stroke-width=".3"><path d="M0 0V64M8 0V64M16 0V64M24 0V64M32 0V64M40 0V64M48 0V64M56 0V64M64 0V64M0 0H64M0 8H64M0 16H64M0 24H64M0 32H64M0 40H64M0 48H64M0 56H64M0 64H64"/></g>
+    <g class="lg-papier"><use href="#sym" width="64" height="64"/></g>
+    <g fill="none" stroke="#8A5300" stroke-width=".5" stroke-dasharray="1.5 1"><circle cx="32" cy="36" r="16"/><path d="M-4 58H68M-4 20.5H68"/></g>
+    <g fill="#8A5300" font-size="3" font-family="system-ui,Arial,sans-serif"><text x="37.5" y="7">anneau r 4</text><text x="50" y="27">arche r 16</text><text x="-5" y="63">socle, ligne de base du nom</text><text x="43" y="42">foyer Ø 17 = X</text></g>
+   </svg>
+  </div>
+  <div>
+   <h3 style="margin-top:0">Affinages de la version définitive</h3>
+   <p class="small">Par rapport à la proposition 1, pour répondre aux risques notés :</p>
+   <ul>
+    <li><strong>Anneau détaché</strong> de l'arche (il la chevauchait de 2 unités ; 2,5 unités de jour maintenant) et trait allégé (5 → 4) : il se lit comme un anneau de suspension, ce qui écarte la lecture « porte » ou « stèle ».</li>
+    <li><strong>Foyer agrandi</strong> (rayon 8 → 8,5) et placé au centre optique de l'arche.</li>
+    <li><strong>Ligne de base</strong> du nom exactement alignée sur le bas du socle.</li>
+    <li><strong>Symbole compact</strong> officiel pour 16 à 24 px : même dessin sans l'anneau, trait 6. Le favicon en dérive.</li>
+   </ul>
+  </div>
+ </div>
+ <h3>Les versions</h3>
+ <div class="g4">
+  <figure><div class="panel" style="height:24mm"><svg class="lg-papier" viewBox="0 0 64 64" width="16mm" height="16mm" role="img" aria-label="Symbole"><use href="#sym"/></svg></div><figcaption>Symbole, dès 25 px</figcaption></figure>
+  <figure><div class="panel sur-nuit" style="height:24mm"><svg class="lg-nuit" viewBox="0 0 64 64" width="16mm" height="16mm" role="img" aria-label="Symbole, version nuit"><use href="#sym"/></svg></div><figcaption>Symbole nuit</figcaption></figure>
+  <figure><div class="panel" style="height:24mm"><svg class="lg-papier" viewBox="0 0 64 64" width="12mm" height="12mm" role="img" aria-label="Symbole compact"><use href="#cmp"/></svg></div><figcaption>Compact, 16 à 24 px</figcaption></figure>
+  <figure><div class="panel" style="height:24mm"><svg viewBox="0 0 64 64" width="14mm" height="14mm" role="img" aria-label="Favicon et icône d'application"><use href="#fav"/></svg></div><figcaption>Favicon et icône d'application</figcaption></figure>
+ </div>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>3 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 4 : RÈGLES DU LOGO ===================== -->
+<section class="page" id="p04" aria-labelledby="h-regles">
+ <p class="kicker">03</p>
+ <h2 id="h-regles">Règles d'usage du logo</h2>
+ <h3 style="margin-top:0">Zone de protection : 1 X tout autour</h3>
+ <p>X est le diamètre du foyer (17 unités sur 64, environ 27 % de la hauteur du logo). Aucun texte, bord, pictogramme ou autre logo dans cette zone.</p>
+ <div class="panel sur-blanc" style="height:46mm;margin-bottom:3mm">
+  <svg viewBox="-30 -32 358 128" width="150mm" height="53.6mm" role="img" aria-label="Zone de protection du logo : une marge égale au diamètre du foyer de chaque côté">
+   <rect x="-9.5" y="-14" width="316.5" height="91.5" fill="#FBEBD0" stroke="#8A5300" stroke-width=".8" stroke-dasharray="4 3"/>
+   <rect x="7.5" y="3" width="282.5" height="57.5" fill="#FAF6EE" stroke="#7A808B" stroke-width=".5"/>
+   <g class="lg-papier"><use href="#logo" width="298" height="64"/></g>
+   <g fill="none" stroke="#8A5300" stroke-width=".8"><circle cx="-1" cy="31.75" r="8.5"/><circle cx="298.5" cy="31.75" r="8.5"/><circle cx="148.75" cy="-5.5" r="8.5"/><circle cx="148.75" cy="69" r="8.5"/></g>
+   <g fill="#8A5300" font-size="8" font-weight="700" font-family="system-ui,Arial,sans-serif" text-anchor="middle"><text x="-1" y="34.5">X</text><text x="298.5" y="34.5">X</text><text x="148.75" y="-2.7">X</text><text x="148.75" y="71.8">X</text></g>
+  </svg>
+ </div>
+ <div class="g2">
+  <div>
+   <h3>Tailles minimales</h3>
+   <table>
+    <tr><th>Version</th><th>Écran</th><th>Impression</th></tr>
+    <tr><td>Logo horizontal</td><td class="num">120 px de large</td><td class="num">30 mm</td></tr>
+    <tr><td>Symbole complet</td><td class="num">25 px</td><td class="num">8 mm</td></tr>
+    <tr><td>Symbole compact, favicon</td><td class="num">16 px</td><td class="num">5 mm</td></tr>
+   </table>
+   <div class="panel sur-blanc" style="height:20mm;gap:6mm;margin-top:3mm;justify-content:flex-start;padding-left:4mm">
+    <svg class="lg-papier" viewBox="0 0 298 64" width="120" height="25.8" role="img" aria-label="Logo à 120 pixels de large"><use href="#logo"/></svg>
+    <svg class="lg-papier" viewBox="0 0 64 64" width="25" height="25" role="img" aria-label="Symbole à 25 pixels"><use href="#sym"/></svg>
+    <svg class="lg-papier" viewBox="0 0 64 64" width="16" height="16" role="img" aria-label="Symbole compact à 16 pixels"><use href="#cmp"/></svg>
+    <svg viewBox="0 0 64 64" width="16" height="16" role="img" aria-label="Favicon à 16 pixels"><use href="#fav"/></svg>
+   </div>
+   <figcaption>Taille réelle à l'écran : 120 px, 25 px, 16 px, favicon 16 px.</figcaption>
+   <p class="small" style="margin-top:2mm">Sous 120 px de large, utiliser le symbole et écrire « Lanternis » en texte à côté.</p>
+  </div>
+  <div>
+   <h3>Fonds autorisés</h3>
+   <div class="g2" style="gap:3mm">
+    <figure><div class="panel" style="height:17mm"><svg class="lg-papier" viewBox="0 0 298 64" width="34mm" height="7.3mm" role="img" aria-label="Logo sur papier"><use href="#logo"/></svg></div><figcaption>Papier</figcaption></figure>
+    <figure><div class="panel sur-blanc" style="height:17mm"><svg class="lg-papier" viewBox="0 0 298 64" width="34mm" height="7.3mm" role="img" aria-label="Logo sur blanc"><use href="#logo"/></svg></div><figcaption>Blanc</figcaption></figure>
+    <figure><div class="panel sur-nuit" style="height:17mm"><svg class="lg-nuit" viewBox="0 0 298 64" width="34mm" height="7.3mm" role="img" aria-label="Logo sur nuit"><use href="#logo"/></svg></div><figcaption>Nuit</figcaption></figure>
+    <figure><div class="panel sur-nd" style="height:17mm"><svg class="lg-nuit" viewBox="0 0 298 64" width="34mm" height="7.3mm" role="img" aria-label="Logo sur nuit douce"><use href="#logo"/></svg></div><figcaption>Nuit douce</figcaption></figure>
+    <figure><div class="panel sur-blanc" style="height:17mm"><svg class="lg-noir" viewBox="0 0 298 64" width="34mm" height="7.3mm" role="img" aria-label="Logo monochrome noir"><use href="#logo"/></svg></div><figcaption>Noir, une encre (<code>logo-noir.svg</code>)</figcaption></figure>
+    <figure><div class="panel sur-noir" style="height:17mm"><svg class="lg-blanc" viewBox="0 0 298 64" width="34mm" height="7.3mm" role="img" aria-label="Logo monochrome blanc"><use href="#logo"/></svg></div><figcaption>Blanc, une encre (<code>logo-blanc.svg</code>)</figcaption></figure>
+   </div>
+  </div>
+ </div>
+ <p class="note" style="margin-top:3mm"><strong>Pourquoi le foyer reste ambre sur fond clair :</strong> il est posé sur la nuit de l'arche (8,5 : 1), jamais directement sur le papier (1,7 : 1). C'est la seule présence d'ambre vif autorisée sur un fond clair. En une couleur, le foyer devient une réserve : sur <code>logo-noir.svg</code>, c'est un vrai trou qui prend la couleur du support.</p>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>4 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 5 : INTERDITS DU LOGO ===================== -->
+<section class="page" id="p05" aria-labelledby="h-interdits-logo">
+ <p class="kicker">04</p>
+ <h2 id="h-interdits-logo">Logo : ce qu'il ne faut pas faire</h2>
+ <p>Ces exemples sont volontairement fautifs. Ils sont montrés pour être reconnus, jamais pour être reproduits.</p>
+ <div class="g2" style="row-gap:5mm">
+  <figure><div class="panel" style="height:30mm"><svg class="lg-papier" viewBox="0 0 298 64" preserveAspectRatio="none" width="60mm" height="22mm" aria-hidden="true"><use href="#logo"/></svg></div><figcaption><span class="non">Interdit :</span> déformer, étirer, comprimer ou incliner.</figcaption></figure>
+  <figure><div class="panel" style="height:30mm"><svg class="lg-papier" viewBox="0 0 298 64" width="62mm" height="13.3mm" aria-hidden="true" style="--l-trait:#2E6DB4;--l-int:#2E6DB4;--l-lum:#D94F8A"><use href="#logo"/></svg></div><figcaption><span class="non">Interdit :</span> recolorer (ici bleu et rose), ajouter un dégradé.</figcaption></figure>
+  <figure><div class="panel" style="height:30mm"><svg class="lg-papier" viewBox="0 0 298 64" width="62mm" height="13.3mm" aria-hidden="true" style="filter:drop-shadow(1.2mm 1.2mm .8mm rgba(0,0,0,.45))"><use href="#logo"/></svg></div><figcaption><span class="non">Interdit :</span> ombre portée, contour, relief.</figcaption></figure>
+  <figure><div class="panel" style="height:30mm"><svg class="lg-papier" viewBox="0 0 298 64" width="62mm" height="13.3mm" aria-hidden="true" style="--l-int:#FAF6EE"><use href="#logo"/></svg></div><figcaption><span class="non">Interdit :</span> vider l'arche sur fond clair. Le foyer ambre sur papier (1,7 : 1) disparaît.</figcaption></figure>
+  <figure><div class="panel" style="height:30mm"><svg class="lg-papier" viewBox="0 0 298 64" width="58mm" height="12.5mm" aria-hidden="true" style="transform:rotate(-12deg)"><use href="#logo"/></svg></div><figcaption><span class="non">Interdit :</span> faire pivoter ou disposer le nom en arc.</figcaption></figure>
+  <figure><div class="panel" style="height:30mm;gap:3mm"><svg class="lg-papier" viewBox="0 0 64 64" width="13mm" height="13mm" aria-hidden="true"><use href="#sym"/></svg><span style="font-family:Georgia,serif;font-style:italic;font-size:22pt;letter-spacing:.12em">Lanternis</span></div><figcaption><span class="non">Interdit :</span> remplacer le lettrage dessiné par une police (même Fraunces) ou changer l'espacement.</figcaption></figure>
+  <figure><div class="panel" style="height:30mm;background:repeating-linear-gradient(45deg,#F2B24C 0 6mm,#2F5470 6mm 12mm,#C5CDD8 12mm 18mm)"><svg class="lg-papier" viewBox="0 0 298 64" width="62mm" height="13.3mm" aria-hidden="true"><use href="#logo"/></svg></div><figcaption><span class="non">Interdit :</span> poser le logo sur un fond chargé, une photo ou une couleur d'état.</figcaption></figure>
+  <figure><div class="panel sur-nuit" style="height:30mm"><svg class="lg-nuit" viewBox="0 0 298 64" width="62mm" height="13.3mm" aria-hidden="true" style="filter:drop-shadow(0 0 2.5mm #F2B24C)"><use href="#logo"/></svg></div><figcaption><span class="non">Interdit :</span> effet lumineux, lueur ou halo collé au logo (le halo se pose à distance, voir page 9).</figcaption></figure>
+ </div>
+ <p class="note" style="margin-top:5mm">Interdits aussi : séparer l'anneau, supprimer le socle ou le foyer (hors symbole compact) ; utiliser le symbole complet sous 25 px ou le logo horizontal sous 120 px ; enfermer le logo dans un cadre ou un badge ; l'animer sans validation.</p>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>5 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 6 : COULEURS ===================== -->
+<section class="page" id="p06" aria-labelledby="h-couleurs">
+ <p class="kicker">05</p>
+ <h2 id="h-couleurs">Couleurs</h2>
+ <p><strong>Règle d'or : l'ambre ne vit que dans le noir, comme une flamme.</strong> Sur fond clair, sa fonction (liens, échéances, alertes, focus) est tenue par l'ambre profond.</p>
+ <h3>Palette principale</h3>
+ <div class="g3">
+  <div class="sw"><div class="c" style="background:#1B2330"></div><div class="l"><b>Nuit</b> <code>#1B2330</code><br>RVB 27 35 48<br>Fonds de marque, texte principal sur clair</div></div>
+  <div class="sw"><div class="c" style="background:#F2B24C"></div><div class="l"><b>Ambre</b> <code>#F2B24C</code><br>RVB 242 178 76<br>La lumière : accent, bouton principal, <strong>sur sombre uniquement</strong></div></div>
+  <div class="sw"><div class="c" style="background:#FAF6EE"></div><div class="l"><b>Papier</b> <code>#FAF6EE</code><br>RVB 250 246 238<br>Fond clair par défaut : application, site, documents</div></div>
+  <div class="sw"><div class="c" style="background:#8A5300"></div><div class="l"><b>Ambre profond</b> <code>#8A5300</code><br>RVB 138 83 0<br>Liens, échéances, alertes, focus sur clair</div></div>
+  <div class="sw"><div class="c" style="background:#2A3444"></div><div class="l"><b>Nuit douce</b> <code>#2A3444</code><br>RVB 42 52 68<br>Cartes et surfaces sur sombre, intérieur de l'arche</div></div>
+  <div class="sw"><div class="c" style="background:#C5CDD8"></div><div class="l"><b>Brume</b> <code>#C5CDD8</code><br>RVB 197 205 216<br>Texte secondaire <strong>sur sombre uniquement</strong></div></div>
+ </div>
+ <h3>Neutres et fonds d'appoint</h3>
+ <div class="g4">
+  <div class="sw mini"><div class="c" style="background:#FFFFFF"></div><div class="l"><b>Blanc</b> <code>#FFFFFF</code><br>Cartes, champs, emails</div></div>
+  <div class="sw mini"><div class="c" style="background:#4A5260"></div><div class="l"><b>Ardoise</b> <code>#4A5260</code><br>Texte secondaire sur clair</div></div>
+  <div class="sw mini"><div class="c" style="background:#7A808B"></div><div class="l"><b>Trait</b> <code>#7A808B</code><br>Bordures de champs sur clair</div></div>
+  <div class="sw mini"><div class="c" style="background:#7D8899"></div><div class="l"><b>Trait nuit</b> <code>#7D8899</code><br>Bordures de champs sur sombre</div></div>
+  <div class="sw mini"><div class="c" style="background:#D9D2C3"></div><div class="l"><b>Lin</b> <code>#D9D2C3</code><br>Filets décoratifs sur clair</div></div>
+  <div class="sw mini"><div class="c" style="background:#3A4558"></div><div class="l"><b>Lin nuit</b> <code>#3A4558</code><br>Filets décoratifs sur sombre</div></div>
+  <div class="sw mini"><div class="c" style="background:#FBEBD0"></div><div class="l"><b>Ambre pâle</b> <code>#FBEBD0</code><br>Fond d'encadré, jamais du texte</div></div>
+  <div class="sw mini"><div class="c" style="background:var(--halo),#1B2330"></div><div class="l"><b>Halo</b> (CSS)<br>Motif de marque, sur nuit</div></div>
+ </div>
+ <h3>Couleurs d'état</h3>
+ <div class="g4">
+  <div class="sw mini"><div class="c" style="background:#2F6B3F"></div><div class="l"><b>Succès</b> · mousse <code>#2F6B3F</code><br>sombre : sauge <code>#8FC79A</code></div></div>
+  <div class="sw mini"><div class="c" style="background:#8A5300"></div><div class="l"><b>Alerte, échéance</b> · ambre profond<br>sombre : ambre <code>#F2B24C</code></div></div>
+  <div class="sw mini"><div class="c" style="background:#A1322A"></div><div class="l"><b>Erreur</b> · brique <code>#A1322A</code><br>sombre : corail <code>#F08A7E</code></div></div>
+  <div class="sw mini"><div class="c" style="background:#2F5470"></div><div class="l"><b>Info</b> · lac <code>#2F5470</code><br>sombre : ciel <code>#9DBBD6</code></div></div>
+ </div>
+ <p class="small" style="margin-top:2mm">Une échéance est une <strong>alerte</strong> (ambre), pas une erreur (brique) : on prévient, on n'affole pas. Le rouge brique est réservé à ce qui a échoué (import, paiement, formulaire). Une couleur d'état n'est jamais seule : toujours un mot ou une icône.</p>
+ <h3>Proportions indicatives</h3>
+ <div style="display:flex;height:7mm;border-radius:1.5mm;overflow:hidden;border:.5pt solid var(--trait)" role="img" aria-label="Proportions indicatives : papier et blanc 60 %, nuit 30 %, ambre et ambre profond 5 %, états 5 %">
+  <div style="flex:60;background:#FAF6EE"></div><div style="flex:30;background:#1B2330"></div><div style="flex:5;background:#F2B24C"></div><div style="flex:5;background:#2F5470"></div>
+ </div>
+ <p class="small" style="margin-top:1.5mm">Papier et blanc 60 %, nuit 30 %, ambre (ou ambre profond) 5 % au plus, couleurs d'état 5 % (repère pour le site vitrine ; dans l'application, la nuit descend à l'en-tête seul).</p>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>6 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 7 : CONTRASTES + MODE SOMBRE ===================== -->
+<section class="page" id="p07" aria-labelledby="h-contrastes">
+ <p class="kicker">06</p>
+ <h2 id="h-contrastes">Contrastes et mode sombre</h2>
+ <p>Rapports calculés avec la formule de luminance relative WCAG 2.x (seuils : 4,5 : 1 pour le texte, 3 : 1 pour le grand texte et les composants). Verdicts : <strong>AAA</strong> ≥ 7 ; <strong>AA</strong> ≥ 4,5 ; <strong>bord.</strong> = bordure ou composant seulement (≥ 3) ; <strong class="ko">non</strong> = interdit.</p>
+ <table class="num">
+  <tr><th>Couleur du texte ou de l'élément</th><th>sur papier</th><th>sur blanc</th><th>sur nuit</th><th>sur nuit douce</th></tr>
+  <tr><td>Nuit #1B2330</td><td>14,65 AAA</td><td>15,79 AAA</td><td>—</td><td class="ko">1,26 non</td></tr>
+  <tr><td>Papier #FAF6EE</td><td>—</td><td class="ko">1,08 non</td><td>14,65 AAA</td><td>11,64 AAA</td></tr>
+  <tr><td>Ambre #F2B24C</td><td class="ko">1,73 non</td><td class="ko">1,87 non</td><td>8,46 AAA</td><td>6,72 AA</td></tr>
+  <tr><td>Ambre profond #8A5300</td><td>5,87 AA</td><td>6,33 AA</td><td class="ko">2,50 non</td><td class="ko">1,98 non</td></tr>
+  <tr><td>Brume #C5CDD8</td><td class="ko">1,49 non</td><td class="ko">1,60 non</td><td>9,85 AAA</td><td>7,83 AAA</td></tr>
+  <tr><td>Ardoise #4A5260</td><td>7,30 AAA</td><td>7,87 AAA</td><td class="ko">2,01 non</td><td class="ko">1,59 non</td></tr>
+  <tr><td>Mousse #2F6B3F (succès)</td><td>5,91 AA</td><td>6,37 AA</td><td class="ko">2,48 non</td><td class="ko">1,97 non</td></tr>
+  <tr><td>Brique #A1322A (erreur)</td><td>6,48 AA</td><td>6,99 AA</td><td class="ko">2,26 non</td><td class="ko">1,80 non</td></tr>
+  <tr><td>Lac #2F5470 (info)</td><td>7,43 AAA</td><td>8,01 AAA</td><td class="ko">1,97 non</td><td class="ko">1,57 non</td></tr>
+  <tr><td>Sauge #8FC79A (succès, sombre)</td><td class="ko">1,80 non</td><td class="ko">1,94 non</td><td>8,13 AAA</td><td>6,46 AA</td></tr>
+  <tr><td>Corail #F08A7E (erreur, sombre)</td><td class="ko">2,25 non</td><td class="ko">2,43 non</td><td>6,50 AA</td><td>5,17 AA</td></tr>
+  <tr><td>Ciel #9DBBD6 (info, sombre)</td><td class="ko">1,85 non</td><td class="ko">2,00 non</td><td>7,91 AAA</td><td>6,28 AA</td></tr>
+  <tr><td>Trait #7A808B (bordures)</td><td>3,68 bord.</td><td>3,97 bord.</td><td>3,98 bord.</td><td>3,16 bord.</td></tr>
+  <tr><td>Trait nuit #7D8899 (bordures)</td><td>3,33 bord.</td><td>3,59 bord.</td><td>4,40 bord.</td><td>3,50 bord.</td></tr>
+ </table>
+ <p class="small" style="margin-top:1.5mm">Sur ambre pâle #FBEBD0 : nuit 13,46 (AAA), ambre profond 5,39 (AA). Bouton principal sombre : nuit sur ambre 8,46 (AAA). Lin et lin nuit (1,40 et 1,63) sont décoratifs : jamais une bordure de champ ni une information. Calculs faits à la main, à recontrôler avec l'analyseur de la revue design.</p>
+
+ <h3>Mode sombre : correspondance des rôles</h3>
+ <table>
+  <tr><th>Rôle (jeton <code>--couleur-…</code>)</th><th>Thème papier (par défaut)</th><th>Thème nuit</th></tr>
+  <tr><td>fond / surface</td><td>Papier / blanc</td><td>Nuit / nuit douce</td></tr>
+  <tr><td>texte / texte secondaire</td><td>Nuit / ardoise</td><td>Papier / brume</td></tr>
+  <tr><td>accent (liens, échéances, alertes)</td><td>Ambre profond</td><td>Ambre</td></tr>
+  <tr><td>bouton principal (fond / texte)</td><td>Nuit / papier</td><td>Ambre / nuit</td></tr>
+  <tr><td>trait / filet</td><td>Trait / lin</td><td>Trait nuit / lin nuit</td></tr>
+  <tr><td>focus (anneau 3 px, décalé de 2 px)</td><td>Ambre profond</td><td>Ambre</td></tr>
+  <tr><td>succès / erreur / info</td><td>Mousse / brique / lac</td><td>Sauge / corail / ciel</td></tr>
+  <tr><td>ombres</td><td>Rares et légères</td><td>Aucune : un filet lin nuit</td></tr>
+  <tr><td>logo</td><td><code>logo-horizontal-papier.svg</code></td><td><code>logo-horizontal-nuit.svg</code></td></tr>
+ </table>
+ <p class="small" style="margin-top:1.5mm">Le thème nuit s'active par choix de l'utilisateur (<code>data-theme="nuit"</code>) ou par la préférence du système, sauf choix explicite du thème papier. Les composants n'utilisent que les rôles, jamais les couleurs de base : le changement de thème est alors automatique.</p>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>7 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 8 : TYPOGRAPHIE ===================== -->
+<section class="page" id="p08" aria-labelledby="h-typo">
+ <p class="kicker">07</p>
+ <h2 id="h-typo">Typographie</h2>
+ <div class="g2">
+  <div class="carte">
+   <p class="small" style="margin:0">Titres · Fraunces 600 · SIL OFL 1.1</p>
+   <p class="f" style="font-size:40pt;line-height:1;margin:2mm 0">Aa</p>
+   <p class="f" style="font-size:12pt;margin:0 0 2mm">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>àâçéèêëîïôœùûü 0123456789 € « »</p>
+   <p class="small" style="margin:0">Une seule webfont, une seule graisse (600), sous-ensemble latin, auto-hébergée (<code>fonts/fraunces-latin-600.woff2</code>, 25 à 40 Ko estimés). Repli : Iowan Old Style, Palatino, Georgia.</p>
+  </div>
+  <div class="carte">
+   <p class="small" style="margin:0">Texte · polices du système · 0 Ko</p>
+   <p style="font-size:40pt;line-height:1;margin:2mm 0;font-weight:600">Aa</p>
+   <p style="font-size:10.5pt;margin:0 0 2mm">system-ui : Segoe UI (Windows), San Francisco (Apple), Roboto (Android), repli Arial. Texte courant, interface, tableaux, boutons.</p>
+   <p class="num" style="font-size:10.5pt;margin:0 0 2mm"><strong>Chiffres tabulaires : 2 160 € HT · 45 j · 12 indicateurs</strong></p>
+   <p style="font-family:var(--mono);font-size:9pt;margin:0">Mono (rare) : n° de série SN-4F2A-0091</p>
+  </div>
+ </div>
+ <h3>Échelle écran (base 16 px, rapport 1,25)</h3>
+ <table>
+  <tr><th style="width:23%">Jeton · taille</th><th>Exemple</th><th style="width:30%">Usage</th></tr>
+  <tr><td><code>5xl</code> · 49 px</td><td class="f" style="font-size:49px;line-height:1.1">Enfin lisible.</td><td>Titre de landing, écran large</td></tr>
+  <tr><td><code>4xl</code> · 39 px</td><td class="f" style="font-size:39px;line-height:1.15">Vos échéances</td><td>Titre 1 (application, article)</td></tr>
+  <tr><td><code>3xl</code> · 31 px</td><td class="f" style="font-size:31px;line-height:1.2">Ce que vous payez</td><td>Titre 2</td></tr>
+  <tr><td><code>2xl</code> · 25 px</td><td class="f" style="font-size:25px;line-height:1.2">Contrats à renouveler</td><td>Titre 3</td></tr>
+  <tr><td><code>xl</code> · 20 px</td><td style="font-size:20px;font-weight:600">Chapeau, titre 4</td><td>Chapeau, titre 4 (système, 600)</td></tr>
+  <tr><td><code>l</code> · 18 px</td><td style="font-size:18px">Texte courant du blog et de la landing.</td><td>Lecture longue</td></tr>
+  <tr><td><code>m</code> · 16 px</td><td style="font-size:16px">Texte courant de l'application.</td><td>Interface</td></tr>
+  <tr><td><code>s</code> · 14 px</td><td style="font-size:14px">Tableaux, interface dense.</td><td>Tableaux</td></tr>
+  <tr><td><code>xs</code> · 13 px</td><td style="font-size:13px">Légendes et mentions (minimum).</td><td>Jamais en dessous</td></tr>
+ </table>
+ <div class="g2" style="margin-top:3mm">
+  <div>
+   <h3 style="margin-top:0">Règles</h3>
+   <ul>
+    <li>Fraunces pour les titres et les grandes citations uniquement ; jamais pour un paragraphe, un bouton, un tableau.</li>
+    <li>Interlignage : 1,2 pour les titres, 1,55 pour le texte, 1,35 pour les tableaux.</li>
+    <li>Longueur de ligne : 68 caractères au plus. Texte aligné à gauche, jamais justifié.</li>
+    <li>Pas de capitales sur plus de trois mots, pas d'italique Fraunces (non chargé), pas de texte en image.</li>
+   </ul>
+  </div>
+  <div>
+   <h3 style="margin-top:0">Documents imprimés et PDF</h3>
+   <p>Corps 10 pt · petit 8,5 pt · titre 3 : 12 pt · titre 2 : 16 pt · titre 1 : 24 pt · couverture 36 pt.</p>
+   <h3>Emails</h3>
+   <p>Pas de webfont : titres en Georgia, texte en Arial, 16 px minimum.</p>
+   <p class="small">Montants : espace insécable avant « € », mention « HT » systématique.</p>
+  </div>
+ </div>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>8 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 9 : GRILLE, ESPACEMENTS, FORMES ===================== -->
+<section class="page" id="p09" aria-labelledby="h-grille">
+ <p class="kicker">08</p>
+ <h2 id="h-grille">Grille, espacements et formes</h2>
+ <h3 style="margin-top:0">Grilles</h3>
+ <div role="img" aria-label="Grille écran de 12 colonnes avec gouttières de 24 pixels" style="display:grid;grid-template-columns:repeat(12,1fr);gap:2.4mm;height:14mm;padding:0 2.4mm;background:var(--blanc);border:.5pt solid var(--lin);border-radius:2mm">
+  <div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div><div style="background:var(--ambre-pale)"></div>
+ </div>
+ <table style="margin-top:2.5mm">
+  <tr><th>Support</th><th>Colonnes</th><th>Gouttière</th><th>Marges</th><th>Largeur utile</th></tr>
+  <tr><td>Écran large (≥ 960 px)</td><td>12</td><td>24 px</td><td>24 px</td><td>1 120 px max ; texte 672 px max</td></tr>
+  <tr><td>Tablette (640 à 959 px)</td><td>8</td><td>24 px</td><td>24 px</td><td>fluide</td></tr>
+  <tr><td>Mobile (&lt; 640 px)</td><td>4</td><td>16 px</td><td>16 px</td><td>fluide ; zones tactiles 44 × 44 px</td></tr>
+  <tr><td>Document A4</td><td>6</td><td>5 mm</td><td>16 mm haut, 18 mm côtés, 22 mm bas</td><td>174 mm</td></tr>
+  <tr><td>Email</td><td>1</td><td>—</td><td>24 px</td><td>600 px</td></tr>
+ </table>
+ <div class="g2">
+  <div>
+   <h3>Espacements (base 4 px)</h3>
+   <div style="font-size:8.5pt">
+    <div style="display:flex;align-items:center;gap:3mm;margin-bottom:1mm"><code style="width:20mm">espace-1 · 4</code><span style="display:inline-block;height:3mm;width:4px;background:var(--nuit)"></span></div>
+    <div style="display:flex;align-items:center;gap:3mm;margin-bottom:1mm"><code style="width:20mm">espace-2 · 8</code><span style="display:inline-block;height:3mm;width:8px;background:var(--nuit)"></span></div>
+    <div style="display:flex;align-items:center;gap:3mm;margin-bottom:1mm"><code style="width:20mm">espace-3 · 12</code><span style="display:inline-block;height:3mm;width:12px;background:var(--nuit)"></span></div>
+    <div style="display:flex;align-items:center;gap:3mm;margin-bottom:1mm"><code style="width:20mm">espace-4 · 16</code><span style="display:inline-block;height:3mm;width:16px;background:var(--nuit)"></span></div>
+    <div style="display:flex;align-items:center;gap:3mm;margin-bottom:1mm"><code style="width:20mm">espace-5 · 24</code><span style="display:inline-block;height:3mm;width:24px;background:var(--nuit)"></span></div>
+    <div style="display:flex;align-items:center;gap:3mm;margin-bottom:1mm"><code style="width:20mm">espace-6 · 32</code><span style="display:inline-block;height:3mm;width:32px;background:var(--nuit)"></span></div>
+    <div style="display:flex;align-items:center;gap:3mm;margin-bottom:1mm"><code style="width:20mm">espace-7 · 48</code><span style="display:inline-block;height:3mm;width:48px;background:var(--nuit)"></span></div>
+    <div style="display:flex;align-items:center;gap:3mm;margin-bottom:1mm"><code style="width:20mm">espace-8 · 64</code><span style="display:inline-block;height:3mm;width:64px;background:var(--nuit)"></span></div>
+    <div style="display:flex;align-items:center;gap:3mm"><code style="width:20mm">espace-9 · 96</code><span style="display:inline-block;height:3mm;width:96px;background:var(--nuit)"></span></div>
+   </div>
+   <p class="small" style="margin-top:2mm">Entre deux blocs : 24 à 48 px. Dans une carte : 16 à 24 px. Entre un libellé et son champ : 4 à 8 px.</p>
+  </div>
+  <div>
+   <h3>Rayons</h3>
+   <div style="display:flex;gap:3mm;align-items:flex-end;font-size:8pt;text-align:center">
+    <div><div style="width:13mm;height:13mm;border:.6mm solid var(--nuit);border-radius:4px"></div>4 px<br>cases</div>
+    <div><div style="width:13mm;height:13mm;border:.6mm solid var(--nuit);border-radius:8px"></div>8 px<br>boutons</div>
+    <div><div style="width:13mm;height:13mm;border:.6mm solid var(--nuit);border-radius:12px"></div>12 px<br>cartes</div>
+    <div><div style="width:13mm;height:13mm;border:.6mm solid var(--nuit);border-radius:16px"></div>16 px<br>bandeaux</div>
+    <div><div style="width:13mm;height:13mm;border:.6mm solid var(--nuit);border-radius:99px"></div>rond<br>puces</div>
+   </div>
+   <h3>Ombres et focus</h3>
+   <div style="display:flex;gap:4mm;font-size:8pt;text-align:center;align-items:flex-start">
+    <div><div style="width:24mm;height:13mm;background:var(--blanc);border:.5pt solid var(--lin);border-radius:12px"></div>Filet (préféré)</div>
+    <div><div style="width:24mm;height:13mm;background:var(--blanc);border-radius:12px;box-shadow:0 1px 2px rgba(27,35,48,.08)"></div>ombre-1</div>
+    <div><div style="width:24mm;height:13mm;background:var(--blanc);border-radius:12px;box-shadow:0 6px 16px rgba(27,35,48,.12)"></div>ombre-2 (menus)</div>
+   </div>
+   <div style="display:flex;gap:4mm;margin-top:3mm;align-items:center;font-size:8pt">
+    <span class="btn" style="background:var(--nuit);color:var(--papier);outline:3px solid #8A5300;outline-offset:2px">Bouton au focus</span>
+    <span>Anneau de focus 3 px, décalé de 2 px, toujours visible.</span>
+   </div>
+  </div>
+ </div>
+ <h3>Le halo, seul motif de marque</h3>
+ <div class="g2">
+  <div class="panel sur-nuit" style="height:30mm;position:relative;overflow:hidden;justify-content:flex-start;padding-left:6mm">
+   <div style="position:absolute;right:-18mm;top:-22mm;width:70mm;height:70mm;border-radius:50%;background:var(--halo)"></div>
+   <span class="f" style="position:relative;font-size:14pt">Halo en coin, à distance du texte</span>
+  </div>
+  <div>
+   <p>Un dégradé radial ambre très léger, écrit en CSS (aucune image, 0 Ko). <strong>Sur fond nuit uniquement</strong>, en coin d'un bandeau ou derrière le grand symbole, <strong>jamais derrière un texte</strong>, un seul par écran.</p>
+   <p class="small">Valeur : <code>radial-gradient(circle, rgba(242,178,76,.30) 0, rgba(242,178,76,0) 70%)</code></p>
+  </div>
+ </div>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>9 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 10 : ICÔNES, ILLUSTRATIONS, IMAGES ===================== -->
+<section class="page" id="p10" aria-labelledby="h-images">
+ <p class="kicker">09</p>
+ <h2 id="h-images">Icônes, illustrations et images</h2>
+ <h3 style="margin-top:0">Icônes : contour, trait 2 px, grille 24 px</h3>
+ <div class="panel sur-blanc" style="justify-content:space-around;padding:4mm 2mm;font-size:8pt;text-align:center">
+  <div><svg class="ic" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><use href="#i-registre"/></svg><br>Registre</div>
+  <div><svg class="ic" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><use href="#i-echeance"/></svg><br>Échéance</div>
+  <div><svg class="ic" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><use href="#i-contrat"/></svg><br>Contrat</div>
+  <div><svg class="ic" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><use href="#i-abonnement"/></svg><br>Abonnement</div>
+  <div><svg class="ic" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><use href="#i-acces"/></svg><br>Accès</div>
+  <div><svg class="ic" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><use href="#i-materiel"/></svg><br>Matériel</div>
+  <div><svg class="ic" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><use href="#i-fournisseur"/></svg><br>Fournisseur</div>
+  <div><svg class="ic" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><use href="#i-alerte"/></svg><br>Alerte</div>
+  <div><svg class="ic" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><use href="#i-export"/></svg><br>Export</div>
+ </div>
+ <div class="panel sur-nuit" style="justify-content:space-around;padding:3mm 2mm;margin-top:2mm">
+  <svg class="ic ic-nuit" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-registre"/></svg><svg class="ic ic-nuit" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-echeance"/></svg><svg class="ic ic-nuit" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-contrat"/></svg><svg class="ic ic-nuit" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-abonnement"/></svg><svg class="ic ic-nuit" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-acces"/></svg><svg class="ic ic-nuit" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-materiel"/></svg><svg class="ic ic-nuit" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-fournisseur"/></svg><svg class="ic ic-nuit" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-alerte"/></svg><svg class="ic ic-nuit" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-export"/></svg>
+ </div>
+ <p class="small" style="margin-top:2mm">Extrémités et angles arrondis, marge interne de 2 px, aucun remplissage sauf le <strong>point de lumière</strong> (ambre profond sur clair, ambre sur nuit) réservé aux icônes « échéance » et « alerte ». Icônes dessinées pour Lanternis (ci-dessus, esquisses à compléter) ; une bibliothèque libre au même style peut compléter le jeu si sa licence le permet (par exemple Lucide, licence ISC, ou Tabler Icons, licence MIT : <strong>licences à reconfirmer</strong> avant usage). Ne jamais mélanger deux bibliothèques. Icône seule = <code>aria-label</code> ; icône à côté d'un texte = <code>aria-hidden</code>.</p>
+
+ <div class="g2">
+  <div>
+   <h3>Illustrations : au trait, une seule lumière</h3>
+   <div class="panel" style="height:50mm">
+    <svg viewBox="0 0 240 150" width="78mm" height="48.7mm" role="img" aria-label="Illustration : une maison au trait, avec un bureau, des classeurs et une lanterne allumée au centre">
+     <circle cx="120" cy="80" r="44" fill="#FBEBD0"/>
+     <g fill="none" stroke="#1B2330" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M30 140V60l90-48 90 48v80"/><path d="M14 140h212"/>
+      <path d="M44 112h44M50 112v28M82 112v28"/><rect x="52" y="96" width="26" height="16" rx="2"/>
+      <path d="M156 92h42M156 122h42"/><rect x="160" y="100" width="7" height="22" rx="1"/><rect x="170" y="100" width="7" height="22" rx="1"/><rect x="180" y="104" width="7" height="18" rx="1"/>
+      <path d="M120 24v14"/><circle cx="120" cy="43" r="4"/>
+     </g>
+     <g transform="translate(104 48) scale(.5)"><g fill="none" stroke="#1B2330" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 58V36a16 16 0 0 1 32 0v22z" fill="#1B2330"/><path d="M10 58h44"/></g><circle cx="32" cy="40" r="8.5" fill="#F2B24C"/></g>
+    </svg>
+   </div>
+   <p class="small" style="margin-top:2mm">Trait nuit uniforme, fonds en aplats papier ou ambre pâle, une seule source de lumière (ambre vif posé sur nuit). SVG inline, moins de 5 Ko. Pas de personnages détaillés ni de dégradés.</p>
+  </div>
+  <div>
+   <h3>Images et photos</h3>
+   <ul>
+    <li><span class="oui">Oui :</span> captures du produit (données fictives, thème papier, filet lin de 1 px, rayon 12 px).</li>
+    <li><span class="oui">Oui :</span> photos réelles du fondateur, de clients ou de lieux, avec accord écrit ; lumière naturelle et chaude, sans filtre.</li>
+    <li><span class="oui">Oui :</span> visuels typographiques pour les réseaux (texte sur nuit ou papier).</li>
+    <li><span class="non">Non :</span> banques d'images clichés (poignée de main, hacker à capuche, cadenas, salle de serveurs bleue, code qui défile).</li>
+    <li><span class="non">Non :</span> maquettes d'appareils en 3D, photos décoratives sans information, vidéo en lecture automatique.</li>
+   </ul>
+   <h3>Budget de sobriété (objectifs)</h3>
+   <ul class="small">
+    <li>Photo : AVIF ou WebP, 1 600 px de large au plus, 100 Ko au plus, <code>srcset</code> et <code>loading="lazy"</code>.</li>
+    <li>Illustration : SVG de 5 Ko au plus. Page vitrine : 500 Ko au plus transférés.</li>
+    <li>Toute image porteuse de sens a un texte alternatif ; les images décoratives ont <code>alt=""</code>.</li>
+   </ul>
+   <p class="small">Ces seuils sont des objectifs de travail (hypothèses) à mesurer en recette, pas des constats.</p>
+  </div>
+ </div>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>10 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 11 : TON VISUEL, ACCESSIBILITÉ, SOBRIÉTÉ ===================== -->
+<section class="page" id="p11" aria-labelledby="h-ton">
+ <p class="kicker">10</p>
+ <h2 id="h-ton">Ton visuel, accessibilité et sobriété</h2>
+ <p>Le ton visuel prolonge le ton de voix : constat concret, conséquence pour la structure, action simple. Chaque écran et chaque visuel doit pouvoir se lire en cinq secondes par un dirigeant non technicien.</p>
+ <div class="g3">
+  <div class="carte">
+   <h3 style="margin-top:0">Posé</h3>
+   <p><span class="oui">On fait :</span> une alerte = une phrase, une date, une action. L'ambre pour prévenir.</p>
+   <p><span class="non">On évite :</span> rouge, clignotements, points d'exclamation, compteurs anxiogènes.</p>
+   <div style="border-left:1mm solid var(--ambre-profond);background:var(--blanc);padding:2mm;font-size:8.5pt;border-top:.5pt solid var(--lin);border-right:.5pt solid var(--lin);border-bottom:.5pt solid var(--lin)"><strong>Le contrat des copieurs se renouvelle dans 45 jours.</strong><br><a href="#p11">Décider avant le 15 décembre</a></div>
+  </div>
+  <div class="carte">
+   <h3 style="margin-top:0">Chaleureux</h3>
+   <p><span class="oui">On fait :</span> papier plutôt que blanc pur, serif doux pour les titres, une seule lumière ambre.</p>
+   <p><span class="non">On évite :</span> la chaleur décorative : textures, ornements, polices manuscrites, dessins enfantins.</p>
+   <div class="panel sur-nuit" style="height:16mm;position:relative;overflow:hidden"><div style="position:absolute;right:-10mm;top:-12mm;width:36mm;height:36mm;border-radius:50%;background:var(--halo)"></div><span class="f" style="position:relative;font-size:11pt">Votre SI reste.</span></div>
+  </div>
+  <div class="carte">
+   <h3 style="margin-top:0">Lisible</h3>
+   <p><span class="oui">On fait :</span> 12 à 15 indicateurs, des chiffres tabulaires, des libellés en clair, un titre par écran.</p>
+   <p><span class="non">On évite :</span> graphiques décoratifs, jargon (IAM, CMDB), tableaux de 20 colonnes, texte en image.</p>
+   <div style="background:var(--blanc);border:.5pt solid var(--lin);border-radius:2mm;padding:2mm;font-size:8.5pt"><span class="small">Coût informatique annuel</span><br><strong class="num" style="font-size:13pt">38 420 € HT</strong> <span class="small">(fictif)</span></div>
+  </div>
+ </div>
+ <div class="g2" style="margin-top:4mm">
+  <div>
+   <h3 style="margin-top:0">Accessibilité (RGAA 4.1, niveau AA visé)</h3>
+   <ul>
+    <li>Contrastes : 4,5 : 1 pour le texte, 3 : 1 pour les composants et le grand texte (voir page 7).</li>
+    <li>L'information n'est jamais portée par la couleur seule : mot, icône ou motif en plus.</li>
+    <li>Focus visible partout (anneau 3 px), zones cliquables de 44 × 44 px au moins.</li>
+    <li>Texte agrandissable à 200 % sans perte ; pas de texte dans les images.</li>
+    <li>Animations désactivées si <code>prefers-reduced-motion</code> ; rien ne clignote.</li>
+    <li>Le mode sombre et le mode « couleurs forcées » du système sont respectés.</li>
+    <li>Les PDF générés sont balisés (titres, ordre de lecture) et gardent leur texte sélectionnable.</li>
+   </ul>
+  </div>
+  <div>
+   <h3 style="margin-top:0">Éco-conception</h3>
+   <ul>
+    <li>Une seule webfont (titres), auto-hébergée ; texte en polices système.</li>
+    <li>Aucune ressource tierce : ni CDN, ni police distante, ni traceur, ni vidéo embarquée.</li>
+    <li>Pictogrammes et illustrations en SVG ; le motif de marque est du CSS.</li>
+    <li>Photos uniquement quand elles informent, compressées et chargées à la demande.</li>
+    <li>Thème papier par défaut, thème nuit disponible (moins d'énergie sur les écrans OLED).</li>
+    <li>Peu d'éléments par écran : c'est aussi la promesse « lisible en 5 minutes ».</li>
+   </ul>
+   <p class="note">Le budget de poids (police ≤ 40 Ko, page vitrine ≤ 500 Ko) est un objectif à mesurer au moment de la recette (agent accessibilite-ecoconception).</p>
+  </div>
+ </div>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>11 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 12 : APPLICATIONS 1 ===================== -->
+<section class="page" id="p12" aria-labelledby="h-app1">
+ <p class="kicker">11</p>
+ <h2 id="h-app1">Applications : landing et application</h2>
+ <p class="small">Maquettes de principe, données fictives. Les écrans définitifs relèvent des agents ux et ui, à partir de ces règles.</p>
+ <h3 style="margin-top:2mm">En-tête de la landing (site vitrine, thème nuit)</h3>
+ <div style="background:var(--nuit);color:var(--papier);border-radius:4mm;padding:6mm 7mm 8mm;position:relative;overflow:hidden">
+  <div style="position:absolute;right:-30mm;top:-34mm;width:110mm;height:110mm;border-radius:50%;background:var(--halo)"></div>
+  <div style="position:relative;display:flex;justify-content:space-between;align-items:center">
+   <svg class="lg-nuit" viewBox="0 0 298 64" width="36mm" height="7.7mm" role="img" aria-label="Lanternis"><use href="#logo"/></svg>
+   <span style="font-size:8.5pt;color:var(--brume)">Comment ça marche · Tarifs · Et mon prestataire ? · Blog</span>
+  </div>
+  <p class="f" style="position:relative;font-size:24pt;line-height:1.15;margin:7mm 0 3mm;max-width:105mm">Votre informatique, enfin lisible.</p>
+  <p style="position:relative;color:var(--brume);font-size:10.5pt;max-width:110mm">Ce que vous avez, ce que vous payez, ce qui arrive à échéance. Un DSI de poche pour les PME et les associations, mis en place avec vous.</p>
+  <p style="position:relative;margin:4mm 0 0"><span class="btn" style="background:var(--ambre);color:var(--nuit)">Rejoindre la liste d'attente</span> <span class="btn" style="border:.5mm solid var(--brume);color:var(--papier);margin-left:2mm">Voir les tarifs</span></p>
+ </div>
+ <div class="g3" style="margin-top:3mm">
+  <div class="carte"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-registre"/></svg><p class="f" style="font-size:11pt;margin:1mm 0">Ce que vous avez</p><p class="small" style="margin:0">Matériel, licences, contrats, fournisseurs, accès : un seul registre.</p></div>
+  <div class="carte"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-abonnement"/></svg><p class="f" style="font-size:11pt;margin:1mm 0">Ce que vous payez</p><p class="small" style="margin:0">Chaque abonnement, chaque contrat, en euros HT par an.</p></div>
+  <div class="carte"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-echeance"/></svg><p class="f" style="font-size:11pt;margin:1mm 0">Ce qui arrive à échéance</p><p class="small" style="margin:0">Une alerte avant chaque renouvellement, pas un flux de notifications.</p></div>
+ </div>
+ <h3>Tableau de bord (application, thème papier)</h3>
+ <div style="border:.5pt solid var(--lin);border-radius:3mm;overflow:hidden;background:var(--papier)">
+  <div style="background:var(--nuit);display:flex;justify-content:space-between;align-items:center;padding:2.5mm 5mm;font-size:8.5pt;color:var(--brume)">
+   <svg class="lg-nuit" viewBox="0 0 298 64" width="28mm" height="6mm" role="img" aria-label="Lanternis"><use href="#logo"/></svg>
+   <span>Tableau de bord · Registre · Échéances · Rapports</span><span>Association Exemple</span>
+  </div>
+  <div style="padding:4mm 5mm 5mm">
+   <p class="f" style="font-size:16pt;margin:0 0 3mm">Bonjour Nadia, voici votre informatique ce mois-ci.</p>
+   <div class="g3" style="gap:3mm">
+    <div class="carte"><span class="small">Coût informatique annuel</span><br><strong class="num" style="font-size:14pt">38 420 € HT</strong></div>
+    <div class="carte"><span class="small">Échéances à 90 jours</span><br><strong class="num" style="font-size:14pt">4</strong> <span class="tag">à décider</span></div>
+    <div class="carte"><span class="small">Accès d'anciens salariés</span><br><strong class="num" style="font-size:14pt">3</strong> <span class="small">à fermer</span></div>
+   </div>
+   <div class="carte" style="margin-top:3mm">
+    <p class="f" style="font-size:11pt;margin:0 0 1mm">Échéances des 90 prochains jours</p>
+    <div class="ligne"><span>Contrat de maintenance des copieurs <span class="tag">45 j</span></span><b>2 160 € HT/an</b></div>
+    <div class="ligne"><span>Licences Microsoft 365 (38) <span class="tag">62 j</span></span><b>4 560 € HT/an</b></div>
+    <div class="ligne"><span>Nom de domaine principal <span class="tag">80 j</span></span><b>18 € HT/an</b></div>
+    <p class="small" style="margin:1.5mm 0 0">Pourquoi vous voyez ceci : le contrat se reconduit tacitement le 15 décembre.</p>
+   </div>
+  </div>
+ </div>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>12 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 13 : APPLICATIONS 2 ===================== -->
+<section class="page" id="p13" aria-labelledby="h-app2">
+ <p class="kicker">12</p>
+ <h2 id="h-app2">Applications : Facebook, blog, email</h2>
+ <p class="small">Brouillons de principe : aucune publication ni aucun envoi sans validation explicite du fondateur. Le canal LinkedIn n'est pas utilisé.</p>
+ <div class="g2" style="grid-template-columns:76mm 1fr;margin-top:3mm">
+  <figure>
+   <div style="width:76mm;height:76mm;background:var(--nuit);color:var(--papier);border-radius:3mm;padding:7mm;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between">
+    <div style="position:absolute;left:-22mm;bottom:-22mm;width:70mm;height:70mm;border-radius:50%;background:var(--halo)"></div>
+    <p class="f" style="position:relative;font-size:15pt;line-height:1.25;margin:0">Votre responsable informatique part en juin.<br><span style="color:var(--ambre)">Qui sait quand se renouvelle le contrat du serveur ?</span></p>
+    <div style="position:relative;display:flex;justify-content:space-between;align-items:flex-end"><svg class="lg-nuit" viewBox="0 0 298 64" width="30mm" height="6.4mm" role="img" aria-label="Lanternis"><use href="#logo"/></svg><span style="font-size:7.5pt;color:var(--brume)">Votre informatique, enfin lisible.</span></div>
+   </div>
+   <figcaption>Post Facebook, format carré 1 080 × 1 080 px (format à reconfirmer dans l'aide Meta au moment de publier). Texte du visuel court ; le message complet est dans la légende. Avatar de la page : <code>icone-app-512.svg</code>.</figcaption>
+  </figure>
+  <figure>
+   <div style="background:#EDE8DD;border-radius:3mm;padding:4mm">
+    <div style="background:var(--blanc);border-radius:1.5mm;overflow:hidden;font-family:Arial,Helvetica,sans-serif">
+     <div style="background:var(--nuit);padding:3mm 5mm"><svg class="lg-nuit" viewBox="0 0 298 64" width="26mm" height="5.6mm" role="img" aria-label="Lanternis"><use href="#logo"/></svg></div>
+     <div style="padding:4mm 5mm;font-size:9pt;line-height:1.5">
+      <p style="font-family:Georgia,serif;font-weight:700;font-size:13pt;margin:0 0 2mm">3 contrats informatiques arrivent à échéance d'ici mars</p>
+      <p style="margin:0 0 2mm">Bonjour Marc, voici ce qui demande une décision dans les 90 prochains jours. Rien d'urgent, mais mieux vaut choisir que subir une reconduction.</p>
+      <p style="margin:0 0 3mm"><span class="btn" style="background:var(--nuit);color:var(--papier);font-size:8.5pt">Voir les échéances</span></p>
+      <p style="margin:0;font-size:7.5pt;color:var(--ardoise);border-top:.5pt solid var(--lin);padding-top:2mm">Lanternis est une marque d'Hasteria SASU. Vous recevez cet email car vous utilisez Lanternis. <span style="text-decoration:underline">Gérer mes alertes</span></p>
+     </div>
+    </div>
+   </div>
+   <figcaption>Email (alerte d'échéance) : 600 px de large, fond blanc, logo en PNG avec texte alternatif (le SVG est mal pris en charge par les messageries), Georgia pour le titre, Arial pour le texte, un seul bouton, 100 Ko au plus.</figcaption>
+  </figure>
+ </div>
+ <h3>Article du blog (site vitrine, thème papier)</h3>
+ <div style="background:var(--papier);border:.5pt solid var(--lin);border-radius:3mm;padding:5mm 7mm;display:grid;grid-template-columns:1fr 46mm;gap:7mm">
+  <div>
+   <p class="kicker" style="margin-bottom:1.5mm">Départ du référent informatique · 6 min de lecture</p>
+   <p class="f" style="font-size:18pt;line-height:1.2;margin:0 0 2.5mm">Votre référent informatique part : la liste en trois colonnes à faire avant son départ</p>
+   <p style="font-size:9.5pt;line-height:1.55;margin:0 0 2mm">Ce que vous avez, ce que vous payez, ce qui arrive à échéance. Avant le dernier jour, une heure avec lui suffit pour écrire la première page du registre de votre SI, c'est-à-dire de tout votre informatique.</p>
+   <div style="background:var(--ambre-pale);border-radius:2mm;padding:2mm 3mm;font-size:9pt"><strong>À retenir :</strong> la liste des accès à fermer le dernier jour se prépare deux semaines avant, pas le jour même.</div>
+  </div>
+  <div class="panel" style="background:var(--blanc);height:auto;padding:3mm">
+   <svg viewBox="0 0 120 110" width="40mm" height="36.7mm" role="img" aria-label="Illustration au trait : trois colonnes et une lanterne">
+    <g fill="none" stroke="#1B2330" stroke-width="2" stroke-linecap="round"><rect x="8" y="30" width="30" height="70" rx="3"/><rect x="45" y="30" width="30" height="70" rx="3"/><rect x="82" y="30" width="30" height="70" rx="3"/><path d="M15 45h16M15 55h16M15 65h10M52 45h16M52 55h12M89 45h16M89 55h16M89 65h8"/></g>
+    <g transform="translate(48 2) scale(.38)"><g fill="none" stroke="#1B2330" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="9" r="4" stroke-width="4"/><path d="M16 58V36a16 16 0 0 1 32 0v22z" fill="#1B2330"/><path d="M10 58h44"/></g><circle cx="32" cy="40" r="8.5" fill="#F2B24C"/></g>
+   </svg>
+  </div>
+ </div>
+ <p class="small" style="margin-top:1.5mm">Article : colonne de texte de 672 px au plus, corps 18 px, titre Fraunces, une illustration au trait plutôt qu'une photo d'illustration, encadré « À retenir » sur ambre pâle. Image de partage : <code>logo/og-image.html</code> (1 200 × 630).</p>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>13 / 14</span></div>
+</section>
+
+<!-- ===================== PAGE 14 : NE PAS FAIRE + FICHIERS ===================== -->
+<section class="page" id="p14" aria-labelledby="h-nepas">
+ <p class="kicker">13</p>
+ <h2 id="h-nepas">Ce qu'il ne faut pas faire</h2>
+ <table>
+  <tr><th style="width:46%">À ne pas faire</th><th>Pourquoi, et quoi faire à la place</th></tr>
+  <tr><td>Ambre <span style="background:#FAF6EE;color:#F2B24C;font-weight:700;padding:0 1mm;border:.5pt solid var(--lin)">sur papier</span> pour un texte, une icône, un indicateur</td><td>1,7 : 1, illisible. Ambre profond sur clair, ambre sur sombre.</td></tr>
+  <tr><td>Ambre profond ou ardoise sur fond nuit</td><td>2,5 et 2,0 : 1. Sur nuit : ambre et brume.</td></tr>
+  <tr><td>Rouge pour une échéance, alertes en cascade, points d'exclamation</td><td>Vente par la peur, contraire au ton posé. Une échéance = ambre, une phrase, une date.</td></tr>
+  <tr><td>Une information portée par la couleur seule</td><td>Inaccessible (RGAA). Toujours un mot ou une icône en plus.</td></tr>
+  <tr><td>Fond nuit dans l'application par défaut</td><td>Risque « cybersécurité anxiogène ». L'application est sur papier ; le thème nuit est un choix.</td></tr>
+  <tr><td>Halo derrière un texte, plusieurs halos, dégradés vifs</td><td>Contraste incertain, effet gadget. Un halo, en coin, sur nuit.</td></tr>
+  <tr><td>Fraunces en texte courant, en bouton, en italique ; une troisième famille de polices</td><td>Lisibilité et poids. Fraunces pour les titres, système pour le reste.</td></tr>
+  <tr><td>Police chargée depuis un CDN, image de banque, traceur tiers</td><td>Souveraineté et sobriété. Tout est auto-hébergé.</td></tr>
+  <tr><td>Photos clichés : hacker à capuche, cadenas, serveurs bleus, poignée de main</td><td>Imagerie de la peur ou vide de sens. Captures produit, vraies personnes, illustrations au trait.</td></tr>
+  <tr><td>Logo déformé, recoloré, ombré, sur fond chargé, sous sa taille minimale</td><td>Voir pages 4 et 5.</td></tr>
+  <tr><td>Logos de clients, témoignages ou « hébergé en France » avant que ce soit vrai</td><td>Règle de la plateforme de marque : pas de preuve « prévue » présentée comme acquise.</td></tr>
+  <tr><td>Codes visuels « tech » : bleu électrique, violet, néons, interfaces denses</td><td>Ils ramènent Lanternis vers les outils de techniciens ; la cible est la direction.</td></tr>
+ </table>
+
+ <div class="g2" style="margin-top:4mm">
+  <div>
+   <h3 style="margin-top:0">Fichiers de la charte</h3>
+   <ul class="small" style="color:var(--nuit)">
+    <li><code>marque/charte/tokens.json</code> : source de vérité ; <code>tokens.css</code> : traduction CSS (thèmes papier et nuit).</li>
+    <li><code>marque/charte/logo/</code> : logos horizontaux papier et nuit, noir, blanc, symboles, symbole compact, favicon, icône 512, image Open Graph, <code>README.md</code> des usages.</li>
+    <li><code>marque/charte/fonts/README.md</code> : Fraunces à déposer (woff2, licence OFL).</li>
+    <li><code>marque/charte/charte-graphique.html</code> : ce document ; PDF et captures produits par la boîte à outils documents.</li>
+   </ul>
+  </div>
+  <div>
+   <h3 style="margin-top:0">Points ouverts</h3>
+   <ul class="small" style="color:var(--nuit)">
+    <li>Recherche d'antériorité graphique du symbole (INPI, EUIPO, WIPO ; logiciel Lantern) : <strong>non faite</strong>.</li>
+    <li>Contrastes calculés à la main : à recontrôler avec un outil.</li>
+    <li>Poids réel de Fraunces et des pages : à mesurer.</li>
+    <li>Lecture du symbole (lanterne, pas porte) à tester en entretien.</li>
+    <li>Nom « Lanternis » encore nom de travail (plateforme de marque).</li>
+    <li>Un graphiste peut affiner le dessin final si la marque décolle.</li>
+   </ul>
+  </div>
+ </div>
+ <div style="margin-top:6mm;display:flex;align-items:center;gap:5mm">
+  <svg class="lg-papier" viewBox="0 0 298 64" width="42mm" height="9mm" role="img" aria-label="Lanternis"><use href="#logo"/></svg>
+  <p style="margin:0;font-size:9pt"><strong>Lanternis est une marque d'Hasteria SASU.</strong><br><span class="small">Charte graphique v1.0, 26 octobre 2026, directeur-artistique du SaaS Studio.</span></p>
+ </div>
+ <div class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Charte graphique v1.0 · 26/10/2026</span><span>14 / 14</span></div>
+</section>
+
+</body>
+</html>

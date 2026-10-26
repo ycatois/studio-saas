@@ -1,0 +1,7 @@
+{
+  "base_url": "/studio/ventures/lanternis/marque/charte/iconographie",
+  "formats": {"bureau": [1280, 800]},
+  "ecrans": [
+    {"nom": "planche-iconographie", "url": "planche-iconographie.html", "attendre": "#h-jeu", "pleine_page": true}
+  ]
+}

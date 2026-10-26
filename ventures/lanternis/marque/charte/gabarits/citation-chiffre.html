@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · gabarit · citation ou chiffre clé (1080 × 1080 ou 1200 × 630)</title>
+<!-- Gabarit paramétrable, deux formats : carré 1080 × 1080 (post Facebook) et paysage 1200 × 630 (blog, post avec lien).
+     Le format se choisit par le paramètre format=carre (défaut) | paysage ; la taille de fenêtre du parcours de
+     capture doit correspondre (540 × 540 ou 600 × 315 ; voir README).
+     RÈGLES : une citation est attribuée à une personne réelle, avec son accord écrit, ou présentée comme un principe de
+     la marque. AUCUN témoignage inventé. Un chiffre clé porte TOUJOURS sa source (organisme ou document, date) ; sans
+     source vérifiable, pas de visuel chiffré.
+     Paramètres :
+       type         citation (défaut) | chiffre
+       theme        nuit (défaut) | papier
+       surtitre     facultatif
+       texte        la citation, 140 caractères au plus (taille ajustée)
+       attribution  qui parle (nom, fonction, structure) ou « Un principe Lanternis »
+       chiffre      le chiffre, court : « 45 à 75 k€ » (taille ajustée)
+       legende      ce que mesure le chiffre, 90 caractères au plus
+       source       obligatoire si type=chiffre : organisme, document, date de publication
+       signature    ligne en bas à droite (facultatif)
+       alt          texte alternatif
+     Capture : parcours-captures-1080x1080.json ou parcours-captures-1200x630.json. -->
+<link rel="stylesheet" href="commun/gabarits.css">
+</head>
+<body>
+<div id="toile"></div>
+<script src="commun/gabarits.js"></script>
+<script>
+const d = LT.donnees({
+  format: "carre",
+  type: "citation",
+  theme: "nuit",
+  surtitre: "",
+  texte: "La citation, 140 caractères au plus, d'une personne réelle avec son accord écrit, ou un principe de la marque.",
+  attribution: "Prénom Nom, fonction, structure",
+  chiffre: "",
+  legende: "",
+  source: "",
+  signature: ""
+});
+LT.rendre(d.format === "paysage" ? "citation-paysage" : "citation-carre", d);
+</script>
+</body>
+</html>

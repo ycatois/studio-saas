@@ -1,0 +1,8 @@
+{
+  "base_url": "/studio/ventures/lanternis/marque/charte/gabarits",
+  "formats": {"1080x1080": [540, 540]},
+  "ecrans": [
+    {"nom": "exemple-facebook-carre", "url": "exemple-facebook-carre.html", "attendre": "#toile[data-pret]"},
+    {"nom": "exemple-citation-carre", "url": "exemple-citation-carre.html", "attendre": "#toile[data-pret]"}
+  ]
+}

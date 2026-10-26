@@ -1,0 +1,863 @@
+/* ==========================================================================
+   Lanternis : composants de l'application (design system) · v0.1 · 2026-10-26
+   Auteur : ui-designer. Statut : brouillon, à valider par le fondateur.
+   Construit UNIQUEMENT sur les variables de la charte (marque/charte/tokens.css).
+   Aucune couleur en dur : tout passe par les rôles (--couleur-*) ou la palette (--lt-*).
+   Aucun framework, aucune ressource externe. Thèmes papier (défaut) et nuit.
+   Documentation : design-system.md (même dossier).
+   Préfixe des classes : ds-  ·  modificateurs : --  ·  sous-éléments : __
+   ========================================================================== */
+
+@import url("../../marque/charte/tokens.css");
+
+/* --------------------------------------------------------------------------
+   0. Variables propres aux composants (dérivées des rôles, jamais de valeur neuve)
+   -------------------------------------------------------------------------- */
+:root {
+  --ds-bouton-survol: var(--lt-nuit-douce);   /* papier sur nuit douce : 11,6 : 1 */
+  --ds-champ-fond: var(--lt-blanc);
+  --ds-voile: rgba(27, 35, 48, 0.6);          /* fond derrière la modale (nuit à 60 %) */
+  --ds-cible: 2.75rem;                         /* 44 px : zone tactile minimale (charte) */
+  --ds-bord-etat: 4px;                         /* liseré gauche des alertes et toasts */
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="papier"]) {
+    --ds-bouton-survol: var(--lt-ambre-pale);  /* nuit sur ambre pâle : 13,5 : 1 */
+    --ds-champ-fond: var(--lt-nuit);           /* bordure trait-nuit sur nuit : 4,4 : 1 */
+    color-scheme: dark;
+  }
+}
+[data-theme="nuit"] {
+  --ds-bouton-survol: var(--lt-ambre-pale);
+  --ds-champ-fond: var(--lt-nuit);
+  color-scheme: dark;
+}
+
+/* Thème papier imposé localement (ex. un volet clair dans une page sombre).
+   tokens.css ne définit le thème papier que sur :root ; ce bloc le réaffirme pour un
+   élément imbriqué, en ne référençant que la palette de la charte. */
+[data-theme="papier"] {
+  --couleur-fond: var(--lt-papier);
+  --couleur-surface: var(--lt-blanc);
+  --couleur-surface-marque: var(--lt-nuit);
+  --couleur-texte: var(--lt-nuit);
+  --couleur-texte-secondaire: var(--lt-ardoise);
+  --couleur-accent: var(--lt-ambre-profond);
+  --couleur-mise-en-avant: var(--lt-ambre-pale);
+  --couleur-bouton-fond: var(--lt-nuit);
+  --couleur-bouton-texte: var(--lt-papier);
+  --couleur-bouton-secondaire-bord: var(--lt-nuit);
+  --couleur-trait: var(--lt-trait);
+  --couleur-filet: var(--lt-lin);
+  --couleur-focus: var(--lt-ambre-profond);
+  --couleur-succes: var(--lt-mousse);
+  --couleur-alerte: var(--lt-ambre-profond);
+  --couleur-erreur: var(--lt-brique);
+  --couleur-info: var(--lt-lac);
+  --logo-trait: var(--lt-nuit);
+  --logo-interieur: var(--lt-nuit);
+  --logo-lumiere: var(--lt-ambre);
+  --ombre-1: 0 1px 2px rgba(27, 35, 48, 0.08);
+  --ombre-2: 0 6px 16px rgba(27, 35, 48, 0.12);
+  --ds-bouton-survol: var(--lt-nuit-douce);
+  --ds-champ-fond: var(--lt-blanc);
+  color-scheme: light;
+}
+/* Tout élément qui porte un thème repeint son fond et son texte (sinon il hériterait
+   des couleurs calculées du parent). */
+[data-theme] {
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+}
+
+/* --------------------------------------------------------------------------
+   1. Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  font-family: var(--police-texte);
+  font-size: var(--taille-m);
+  font-weight: var(--graisse-texte);
+  line-height: var(--interligne-texte);
+}
+h1, h2, h3, .ds-titre {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  line-height: var(--interligne-titre);
+  margin: 0 0 var(--espace-4);
+}
+h1 { font-size: var(--taille-4xl); }
+h2 { font-size: var(--taille-3xl); }
+h3 { font-size: var(--taille-2xl); }
+h4 { font-family: var(--police-texte); font-size: var(--taille-xl); font-weight: var(--graisse-forte); margin: 0 0 var(--espace-3); }
+p { margin: 0 0 var(--espace-4); max-width: var(--mesure-texte); }
+img, svg { max-width: 100%; }
+a, .ds-lien {
+  color: var(--couleur-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+a:hover, .ds-lien:hover { text-decoration-thickness: 2px; }
+.ds-num, .ds-tableau td.ds-num, .ds-indicateur__valeur { font-variant-numeric: var(--chiffres); }
+.ds-mono { font-family: var(--police-mono); font-size: 0.95em; white-space: nowrap; }
+.ds-secondaire { color: var(--couleur-texte-secondaire); }
+.ds-petit { font-size: var(--taille-s); }
+
+/* Focus : un seul style pour toute l'application (anneau 3 px, décalage 2 px).
+   outline (et non box-shadow) pour rester visible en mode « couleurs forcées ». */
+:focus-visible {
+  outline: 3px solid var(--couleur-focus);
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Texte réservé aux lecteurs d'écran */
+.ds-sr {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+/* Lien d'évitement (premier élément focalisable de chaque page) */
+.ds-evitement {
+  position: absolute;
+  left: var(--espace-4);
+  top: -100px;
+  z-index: 100;
+  padding: var(--espace-3) var(--espace-4);
+  background: var(--couleur-bouton-fond);
+  color: var(--couleur-bouton-texte);
+  border-radius: var(--rayon-m);
+  font-weight: var(--graisse-forte);
+}
+.ds-evitement:focus { top: var(--espace-3); }
+
+/* Icônes (règle de la charte : contour, trait 2 px, grille 24 px, point de lumière) */
+.ds-icone {
+  width: 1.5rem; height: 1.5rem;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+.ds-icone .pt { fill: var(--couleur-accent); stroke: none; }
+.ds-icone--petite { width: 1.25rem; height: 1.25rem; }
+
+/* --------------------------------------------------------------------------
+   2. Mise en page
+   -------------------------------------------------------------------------- */
+.ds-page {
+  max-width: var(--largeur-contenu);
+  margin: 0 auto;
+  padding: var(--espace-6) var(--grille-marge) var(--espace-8);
+}
+@media (max-width: 40rem) { .ds-page { padding-left: var(--espace-4); padding-right: var(--espace-4); } }
+.ds-pile > * + * { margin-top: var(--espace-5); }
+.ds-rangee { display: flex; flex-wrap: wrap; gap: var(--espace-3); align-items: center; }
+.ds-entete-page { display: flex; flex-wrap: wrap; gap: var(--espace-4); align-items: flex-end; justify-content: space-between; margin-bottom: var(--espace-5); }
+.ds-entete-page h1 { margin: 0; }
+.ds-entete-page p { margin: var(--espace-2) 0 0; color: var(--couleur-texte-secondaire); }
+
+.ds-carte {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-filet);
+  border-radius: var(--rayon-l);
+  box-shadow: var(--ombre-1);
+  padding: var(--espace-5);
+}
+.ds-carte > :last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   3. Boutons
+   -------------------------------------------------------------------------- */
+.ds-bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espace-2);
+  min-height: var(--ds-cible);
+  min-width: var(--ds-cible);
+  padding: var(--espace-2) var(--espace-5);
+  border: 2px solid transparent;            /* visible en couleurs forcées */
+  border-radius: var(--rayon-m);
+  background: var(--couleur-bouton-fond);
+  color: var(--couleur-bouton-texte);
+  font: inherit;
+  font-weight: var(--graisse-forte);
+  line-height: var(--interligne-serre);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--duree-courte) var(--courbe), border-color var(--duree-courte) var(--courbe);
+}
+.ds-bouton:hover { background: var(--ds-bouton-survol); text-decoration: none; }
+.ds-bouton:active { transform: translateY(1px); }
+
+.ds-bouton--secondaire {
+  background: transparent;
+  color: var(--couleur-texte);
+  border-color: var(--couleur-bouton-secondaire-bord);
+}
+.ds-bouton--secondaire:hover { background: var(--couleur-fond); box-shadow: inset 0 0 0 1px var(--couleur-bouton-secondaire-bord); }
+
+.ds-bouton--tertiaire {
+  background: transparent;
+  color: var(--couleur-accent);
+  padding-left: var(--espace-3);
+  padding-right: var(--espace-3);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.ds-bouton--tertiaire:hover { background: transparent; text-decoration-thickness: 2px; }
+
+.ds-bouton--danger { background: var(--couleur-erreur); color: var(--couleur-fond); }   /* 6,5 : 1 dans les deux thèmes */
+.ds-bouton--danger:hover { background: var(--couleur-erreur); box-shadow: inset 0 0 0 2px var(--couleur-fond); }
+
+.ds-bouton--pleine-largeur { width: 100%; }
+
+/* Bouton icône seule : toujours un aria-label ; cible carrée de 44 px */
+.ds-bouton-icone {
+  display: inline-grid;
+  place-items: center;
+  width: var(--ds-cible);
+  height: var(--ds-cible);
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: var(--rayon-m);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.ds-bouton-icone:hover { border-color: var(--couleur-trait); }
+
+/* Désactivé : forme différente (tirets) en plus de la couleur ; préférer expliquer
+   pourquoi l'action est impossible plutôt que désactiver sans un mot. */
+.ds-bouton:disabled, .ds-bouton[aria-disabled="true"] {
+  background: transparent;
+  color: var(--couleur-texte-secondaire);
+  border: 2px dashed var(--couleur-trait);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+/* En cours : le libellé change (« Enregistrement… ») et une roue s'affiche */
+.ds-bouton[aria-busy="true"] { cursor: progress; }
+.ds-bouton[aria-busy="true"]::before {
+  content: "";
+  width: 1em; height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--rayon-rond);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ds-bouton[aria-busy="true"]::before { animation: ds-rotation 0.9s linear infinite; }
+}
+
+/* --------------------------------------------------------------------------
+   4. Champs de formulaire
+   -------------------------------------------------------------------------- */
+.ds-formulaire { max-width: var(--largeur-texte); }
+.ds-champ { margin-bottom: var(--espace-5); }
+.ds-champ__libelle {
+  display: block;
+  margin-bottom: var(--espace-1);
+  font-weight: var(--graisse-forte);
+}
+.ds-champ__libelle .ds-facultatif { font-weight: var(--graisse-texte); color: var(--couleur-texte-secondaire); }
+.ds-champ__aide {
+  margin: 0 0 var(--espace-2);
+  font-size: var(--taille-s);
+  color: var(--couleur-texte-secondaire);
+}
+.ds-saisie, .ds-liste select, textarea.ds-saisie {
+  display: block;
+  width: 100%;
+  min-height: var(--ds-cible);
+  padding: var(--espace-2) var(--espace-3);
+  border: 1px solid var(--couleur-trait);
+  border-radius: var(--rayon-m);
+  background: var(--ds-champ-fond);
+  color: var(--couleur-texte);
+  font: inherit;
+  font-size: var(--taille-m);          /* 16 px : pas de zoom forcé sur mobile */
+  line-height: var(--interligne-serre);
+}
+textarea.ds-saisie { min-height: 6rem; resize: vertical; }
+.ds-saisie:hover, .ds-liste select:hover { border-color: var(--couleur-texte); }
+.ds-saisie::placeholder { color: var(--couleur-texte-secondaire); opacity: 1; }
+/* Erreur : bordure plus épaisse (forme) + couleur + message textuel */
+.ds-saisie[aria-invalid="true"], .ds-liste select[aria-invalid="true"] {
+  border: 2px solid var(--couleur-erreur);
+}
+.ds-champ__erreur {
+  display: flex;
+  gap: var(--espace-2);
+  align-items: flex-start;
+  margin: var(--espace-2) 0 0;
+  color: var(--couleur-erreur);
+  font-size: var(--taille-s);
+  font-weight: var(--graisse-forte);
+}
+.ds-saisie:disabled, .ds-liste select:disabled {
+  border-style: dashed;
+  color: var(--couleur-texte-secondaire);
+  background: transparent;
+  cursor: not-allowed;
+}
+.ds-saisie[readonly] { border-style: dashed; background: transparent; }
+
+/* Champ avec unité (« € HT / an ») */
+.ds-saisie-unite { display: flex; align-items: stretch; }
+.ds-saisie-unite .ds-saisie { border-top-right-radius: 0; border-bottom-right-radius: 0; text-align: right; font-variant-numeric: var(--chiffres); }
+.ds-saisie-unite__unite {
+  display: flex; align-items: center;
+  padding: 0 var(--espace-3);
+  border: 1px solid var(--couleur-trait);
+  border-left: 0;
+  border-radius: 0 var(--rayon-m) var(--rayon-m) 0;
+  color: var(--couleur-texte-secondaire);
+  font-size: var(--taille-s);
+  white-space: nowrap;
+}
+
+/* Recherche */
+.ds-recherche { position: relative; }
+.ds-recherche .ds-icone { position: absolute; left: var(--espace-3); top: 50%; transform: translateY(-50%); color: var(--couleur-texte-secondaire); pointer-events: none; }
+.ds-recherche .ds-saisie { padding-left: 2.75rem; }
+
+/* Sélecteur (select natif, chevron en CSS) */
+.ds-liste { position: relative; }
+.ds-liste select { appearance: none; -webkit-appearance: none; padding-right: 2.75rem; cursor: pointer; }
+.ds-liste::after {
+  content: "";
+  position: absolute;
+  right: 1.1rem;
+  bottom: calc(var(--ds-cible) / 2 - 0.15rem);
+  width: 0.5rem; height: 0.5rem;
+  border-right: 2px solid var(--couleur-texte);
+  border-bottom: 2px solid var(--couleur-texte);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+/* Cases à cocher et boutons radio : la zone cliquable est le libellé entier (44 px) */
+.ds-groupe { border: 0; margin: 0 0 var(--espace-5); padding: 0; min-width: 0; }
+.ds-groupe > legend { padding: 0; margin-bottom: var(--espace-2); font-weight: var(--graisse-forte); }
+.ds-case {
+  display: flex;
+  align-items: center;
+  gap: var(--espace-3);
+  min-height: var(--ds-cible);
+  cursor: pointer;
+}
+.ds-case input {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: none;
+  display: grid;
+  place-content: center;
+  width: 1.375rem; height: 1.375rem;
+  margin: 0;
+  border: 2px solid var(--couleur-trait);
+  border-radius: var(--rayon-s);
+  background: var(--ds-champ-fond);
+  cursor: pointer;
+}
+.ds-case input[type="radio"] { border-radius: var(--rayon-rond); }
+.ds-case input::before {
+  content: "";
+  opacity: 0;
+}
+.ds-case input[type="checkbox"]::before {
+  width: 0.75rem; height: 0.4rem;
+  border-left: 3px solid var(--couleur-bouton-texte);
+  border-bottom: 3px solid var(--couleur-bouton-texte);
+  transform: translateY(-2px) rotate(-45deg);
+}
+.ds-case input[type="radio"]::before {
+  width: 0.55rem; height: 0.55rem;
+  border-radius: var(--rayon-rond);
+  background: var(--couleur-bouton-texte);
+}
+.ds-case input:checked { background: var(--couleur-bouton-fond); border-color: var(--couleur-bouton-fond); }
+.ds-case input:checked::before { opacity: 1; }
+.ds-case input:hover { border-color: var(--couleur-texte); }
+.ds-case input:disabled { border-style: dashed; cursor: not-allowed; }
+.ds-case:has(input:disabled) { color: var(--couleur-texte-secondaire); cursor: not-allowed; }
+.ds-case input[aria-invalid="true"] { border-color: var(--couleur-erreur); }
+
+/* Choix segmenté (ex. thème, période) : radios déguisés en boutons */
+.ds-segment { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--couleur-trait); border-radius: var(--rayon-m); padding: 2px; gap: 2px; }
+.ds-segment label { display: inline-flex; align-items: center; min-height: calc(var(--ds-cible) - 6px); padding: 0 var(--espace-4); border-radius: calc(var(--rayon-m) - 2px); cursor: pointer; font-size: var(--taille-s); }
+.ds-segment input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.ds-segment input:checked + label { background: var(--couleur-bouton-fond); color: var(--couleur-bouton-texte); font-weight: var(--graisse-forte); }
+.ds-segment input:focus-visible + label { outline: 3px solid var(--couleur-focus); outline-offset: 2px; }
+
+/* --------------------------------------------------------------------------
+   5. Tableaux de registre
+   -------------------------------------------------------------------------- */
+.ds-tableau-conteneur {
+  overflow-x: auto;
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-filet);
+  border-radius: var(--rayon-l);
+}
+.ds-tableau {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--taille-s);
+  line-height: var(--interligne-serre);
+}
+.ds-tableau caption {
+  padding: var(--espace-4) var(--espace-4) var(--espace-2);
+  text-align: left;
+  font-weight: var(--graisse-forte);
+  font-size: var(--taille-m);
+}
+.ds-tableau caption .ds-secondaire { display: block; font-weight: var(--graisse-texte); font-size: var(--taille-s); }
+.ds-tableau th, .ds-tableau td {
+  padding: var(--espace-3) var(--espace-4);
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--couleur-filet);
+}
+.ds-tableau thead th {
+  border-bottom: 2px solid var(--couleur-trait);
+  font-weight: var(--graisse-forte);
+  white-space: nowrap;
+}
+.ds-tableau tbody tr:last-child > * { border-bottom: 0; }
+.ds-tableau tbody th { font-weight: var(--graisse-forte); min-width: 12rem; }
+.ds-tableau .ds-num { text-align: right; white-space: nowrap; }
+.ds-tableau tbody tr:hover { background: var(--couleur-fond); box-shadow: inset 3px 0 0 var(--couleur-accent); }
+.ds-tableau tbody tr[aria-selected="true"] { box-shadow: inset 3px 0 0 var(--couleur-accent); }
+.ds-tableau td .ds-bouton, .ds-tableau td .ds-bouton-icone { margin: calc(var(--espace-2) * -1) 0; }
+.ds-tableau .ds-lien-ligne { display: inline-block; padding: 0.8rem 0; margin: -0.8rem 0; color: var(--couleur-texte); font-weight: var(--graisse-forte); }
+.ds-tableau tfoot td, .ds-tableau tfoot th { border-top: 2px solid var(--couleur-trait); border-bottom: 0; font-weight: var(--graisse-forte); }
+/* Première colonne figée lors du défilement horizontal */
+.ds-tableau--fige tbody th, .ds-tableau--fige thead th:first-child { position: sticky; left: 0; background: var(--couleur-surface); }
+/* Tri : bouton dans l'en-tête ; l'état est porté par aria-sort sur le th */
+.ds-tri {
+  display: inline-flex; align-items: center; gap: var(--espace-1);
+  min-height: var(--ds-cible);
+  margin: calc(var(--espace-3) * -1) 0;
+  padding: 0;
+  border: 0; background: none;
+  color: inherit; font: inherit; font-weight: inherit;
+  cursor: pointer;
+}
+.ds-tri::after { content: ""; width: 0.45rem; height: 0.45rem; border-right: 2px solid var(--couleur-trait); border-bottom: 2px solid var(--couleur-trait); transform: rotate(45deg); margin-left: var(--espace-1); }
+th[aria-sort="ascending"] .ds-tri::after { border-color: var(--couleur-texte); transform: translateY(3px) rotate(-135deg); }
+th[aria-sort="descending"] .ds-tri::after { border-color: var(--couleur-texte); transform: translateY(-2px) rotate(45deg); }
+
+/* Barre d'outils au-dessus du tableau (recherche, filtres, export) */
+.ds-barre-outils { display: flex; flex-wrap: wrap; gap: var(--espace-3) var(--espace-4); align-items: flex-end; margin-bottom: var(--espace-4); }
+.ds-barre-outils .ds-champ { margin: 0; flex: 1 1 14rem; }
+.ds-barre-outils .ds-champ--etroit { flex: 0 1 13rem; }
+
+/* --------------------------------------------------------------------------
+   6. Cartes d'indicateurs
+   -------------------------------------------------------------------------- */
+.ds-grille-indicateurs { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--espace-4); }
+.ds-indicateur {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-2);
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-filet);
+  border-radius: var(--rayon-l);
+  box-shadow: var(--ombre-1);
+  padding: var(--espace-5);
+}
+.ds-indicateur__libelle {
+  display: flex; align-items: center; gap: var(--espace-2);
+  margin: 0;
+  font-family: var(--police-texte);
+  font-size: var(--taille-s);
+  font-weight: var(--graisse-forte);
+  line-height: var(--interligne-serre);
+  color: var(--couleur-texte-secondaire);
+}
+.ds-indicateur__valeur {
+  margin: 0;
+  font-size: var(--taille-3xl);
+  font-weight: var(--graisse-forte);
+  line-height: 1.1;
+}
+.ds-indicateur__unite { display: block; margin-top: var(--espace-1); font-size: var(--taille-m); font-weight: var(--graisse-texte); color: var(--couleur-texte-secondaire); }
+.ds-indicateur__contexte { margin: 0; font-size: var(--taille-s); color: var(--couleur-texte-secondaire); }
+.ds-indicateur__action { margin-top: auto; padding-top: var(--espace-2); }
+.ds-indicateur__action a { display: inline-flex; align-items: center; min-height: var(--ds-cible); font-weight: var(--graisse-forte); }
+/* Indicateur qui demande une décision : liseré ambre (forme + couleur) et badge texte */
+.ds-indicateur--a-traiter { border-left: var(--ds-bord-etat) solid var(--couleur-alerte); }
+.ds-indicateur--a-traiter .ds-indicateur__libelle { color: var(--couleur-texte); }
+
+/* --------------------------------------------------------------------------
+   7. Badges d'échéance et d'état (toujours un mot, jamais la couleur seule)
+   -------------------------------------------------------------------------- */
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 1.5rem;
+  padding: 0 var(--espace-2);
+  border: 1px solid currentColor;
+  border-radius: var(--rayon-s);
+  color: var(--couleur-texte-secondaire);
+  font-size: var(--taille-s);
+  font-weight: var(--graisse-forte);
+  line-height: 1.2;
+  white-space: nowrap;
+  font-variant-numeric: var(--chiffres);
+}
+/* Chaque état a sa propre forme de pastille (deuxième indice après le mot) */
+.ds-badge::before { content: ""; flex: none; }
+.ds-badge--succes { color: var(--couleur-succes); }
+.ds-badge--succes::before {             /* coche */
+  width: 0.55rem; height: 0.3rem;
+  border-left: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: translateY(-1px) rotate(-45deg);
+}
+.ds-badge--alerte, .ds-badge--echeance { color: var(--couleur-alerte); }
+.ds-badge--alerte::before, .ds-badge--echeance::before {   /* point de lumière plein */
+  width: 0.5rem; height: 0.5rem; border-radius: var(--rayon-rond); background: currentColor;
+}
+.ds-badge--echeance-proche { background: var(--couleur-mise-en-avant); }  /* ≤ 30 j : fond ambre pâle (papier) */
+.ds-badge--erreur { color: var(--couleur-erreur); }
+.ds-badge--erreur::before {             /* losange plein */
+  width: 0.45rem; height: 0.45rem; background: currentColor; transform: rotate(45deg);
+}
+.ds-badge--info { color: var(--couleur-info); }
+.ds-badge--info::before {               /* anneau */
+  width: 0.5rem; height: 0.5rem; border-radius: var(--rayon-rond); border: 2px solid currentColor;
+}
+.ds-badge--neutre::before { display: none; }
+/* Compteur discret (onglets, navigation) */
+.ds-compteur {
+  display: inline-grid; place-items: center;
+  min-width: 1.5rem; height: 1.5rem; padding: 0 0.375rem;
+  border-radius: var(--rayon-rond);
+  border: 1px solid currentColor;
+  font-size: var(--taille-xs);
+  font-weight: var(--graisse-forte);
+  font-variant-numeric: var(--chiffres);
+}
+
+/* --------------------------------------------------------------------------
+   8. Alertes (dans la page) : une phrase, une date, une action
+   -------------------------------------------------------------------------- */
+.ds-alerte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espace-2) var(--espace-4);
+  align-items: flex-start;
+  padding: var(--espace-4) var(--espace-5);
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-filet);
+  border-left: var(--ds-bord-etat) solid var(--couleur-info);
+  border-radius: var(--rayon-m);
+}
+.ds-alerte > div:not(.ds-alerte__action) { flex: 1 1 16rem; min-width: 0; }
+.ds-alerte > .ds-icone { color: var(--couleur-info); margin-top: 1px; }
+.ds-alerte--alerte { border-left-color: var(--couleur-alerte); }
+.ds-alerte--alerte > .ds-icone { color: var(--couleur-alerte); }
+.ds-alerte--succes { border-left-color: var(--couleur-succes); }
+.ds-alerte--succes > .ds-icone { color: var(--couleur-succes); }
+.ds-alerte--erreur { border-left-color: var(--couleur-erreur); }
+.ds-alerte--erreur > .ds-icone { color: var(--couleur-erreur); }
+.ds-alerte__titre { margin: 0; font-weight: var(--graisse-forte); }
+.ds-alerte__texte { margin: var(--espace-1) 0 0; color: var(--couleur-texte-secondaire); font-size: var(--taille-s); }
+.ds-alerte__action { align-self: center; margin-left: auto; }
+.ds-alerte__pourquoi { margin-top: var(--espace-2); font-size: var(--taille-s); }
+.ds-alerte__pourquoi summary {
+  display: inline-flex; align-items: center;
+  min-height: var(--ds-cible);
+  color: var(--couleur-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+.ds-alerte__pourquoi p { margin: 0 0 var(--espace-2); color: var(--couleur-texte-secondaire); }
+.ds-liste-alertes { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--espace-3); }
+
+
+/* --------------------------------------------------------------------------
+   9. Bandeaux (pleine largeur, en haut de page ou de section)
+   -------------------------------------------------------------------------- */
+.ds-bandeau {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espace-2) var(--espace-4);
+  padding: var(--espace-3) var(--grille-marge);
+  background: var(--couleur-mise-en-avant);
+  color: var(--couleur-texte);
+  border-bottom: 1px solid var(--couleur-trait);
+  font-size: var(--taille-s);
+}
+.ds-bandeau p { margin: 0; flex: 1 1 12rem; }
+.ds-bandeau .ds-bouton-icone { margin: calc(var(--espace-2) * -1) calc(var(--espace-3) * -1) calc(var(--espace-2) * -1) auto; }
+.ds-bandeau--erreur { box-shadow: inset var(--ds-bord-etat) 0 0 var(--couleur-erreur); }
+/* Bandeau de marque : à poser avec data-theme="nuit". Le halo reste en coin, hors texte. */
+.ds-bandeau--marque {
+  overflow: hidden;
+  padding: var(--espace-6) var(--espace-6);
+  padding-right: max(var(--espace-6), 10rem);
+  border-radius: var(--rayon-xl);
+  border: 0;
+  background: var(--couleur-fond);
+  font-size: var(--taille-m);
+}
+.ds-bandeau--marque::before {
+  content: "";
+  position: absolute;
+  right: -6rem; top: -6rem;
+  width: 16rem; height: 16rem;
+  border-radius: var(--rayon-rond);
+  background: var(--halo);
+  pointer-events: none;
+}
+.ds-bandeau--marque > * { position: relative; }
+.ds-bandeau--marque .ds-titre { font-size: var(--taille-2xl); margin: 0 0 var(--espace-2); flex-basis: 100%; }
+
+/* --------------------------------------------------------------------------
+   10. Navigation (en-tête d'application, toujours sur fond nuit : data-theme="nuit")
+   -------------------------------------------------------------------------- */
+.ds-entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espace-2) var(--espace-5);
+  padding: var(--espace-2) var(--grille-marge);
+  border-bottom: 1px solid var(--couleur-filet);
+}
+.ds-entete__logo { display: inline-flex; align-items: center; min-height: var(--ds-cible); padding: var(--espace-1) 0; }
+.ds-entete__logo img { display: block; width: 140px; height: auto; }   /* ≥ 120 px : taille minimale du logo horizontal */
+.ds-entete__structure { margin-left: auto; color: var(--couleur-texte-secondaire); font-size: var(--taille-s); }
+.ds-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--espace-1); }
+.ds-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espace-2);
+  min-height: var(--ds-cible);
+  padding: 0 var(--espace-3);
+  color: var(--couleur-texte-secondaire);
+  text-decoration: none;
+  border-radius: var(--rayon-m);
+}
+.ds-nav a:hover { color: var(--couleur-texte); text-decoration: underline; text-underline-offset: 0.3em; }
+.ds-nav a[aria-current="page"] {
+  color: var(--couleur-texte);
+  font-weight: var(--graisse-forte);
+  box-shadow: inset 0 -3px 0 var(--couleur-accent);
+  border-radius: 0;
+}
+.ds-nav__bascule { display: none; }
+@media (max-width: 60rem) {
+  .ds-nav__bascule { display: inline-flex; margin-left: auto; }
+  .ds-entete__structure { margin-left: 0; order: 3; flex-basis: 100%; }
+  .ds-nav { order: 4; flex-basis: 100%; }
+  .ds-nav ul { flex-direction: column; padding-bottom: var(--espace-2); }
+  .ds-nav a[aria-current="page"] { box-shadow: inset 3px 0 0 var(--couleur-accent); }
+  .ds-nav[data-ferme] ul { display: none; }
+}
+
+/* Fil d'Ariane */
+.ds-ariane ol { list-style: none; margin: 0 0 var(--espace-3); padding: 0; display: flex; flex-wrap: wrap; gap: var(--espace-1); font-size: var(--taille-s); color: var(--couleur-texte-secondaire); }
+.ds-ariane li + li::before { content: "/"; margin-right: var(--espace-1); color: var(--couleur-texte-secondaire); }
+.ds-ariane a { display: inline-flex; align-items: center; min-height: var(--ds-cible); }
+.ds-ariane li { display: inline-flex; align-items: center; }
+
+/* --------------------------------------------------------------------------
+   11. Onglets (role="tablist"), clavier : flèches gauche/droite, Début, Fin
+   -------------------------------------------------------------------------- */
+.ds-onglets [role="tablist"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espace-1);
+  border-bottom: 1px solid var(--couleur-trait);
+  margin-bottom: var(--espace-5);
+}
+.ds-onglet {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espace-2);
+  min-height: var(--ds-cible);
+  padding: 0 var(--espace-4);
+  margin-bottom: -1px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--couleur-texte-secondaire);
+  font: inherit;
+  cursor: pointer;
+}
+.ds-onglet:hover { color: var(--couleur-texte); border-bottom-color: var(--couleur-trait); }
+.ds-onglet[aria-selected="true"] {
+  color: var(--couleur-texte);
+  font-weight: var(--graisse-forte);
+  border-bottom-color: var(--couleur-accent);
+}
+.ds-onglet:focus-visible { outline-offset: -3px; }
+[role="tabpanel"]:focus-visible { outline-offset: 4px; }
+
+/* --------------------------------------------------------------------------
+   12. Modale (élément <dialog> natif, ouvert par showModal())
+   -------------------------------------------------------------------------- */
+.ds-modale {
+  width: min(34rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 4rem);
+  padding: 0;
+  border: 1px solid var(--couleur-filet);
+  border-radius: var(--rayon-l);
+  background: var(--couleur-surface);
+  color: var(--couleur-texte);
+  box-shadow: var(--ombre-2);
+}
+.ds-modale::backdrop { background: var(--ds-voile); }
+.ds-modale__entete { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--espace-4); padding: var(--espace-5) var(--espace-5) 0; }
+.ds-modale__entete h2 { font-size: var(--taille-2xl); margin: var(--espace-2) 0 0; }
+.ds-modale__corps { padding: var(--espace-4) var(--espace-5); }
+.ds-modale__corps > :last-child { margin-bottom: 0; }
+.ds-modale__pied { display: flex; flex-wrap: wrap-reverse; justify-content: flex-end; gap: var(--espace-3); padding: var(--espace-4) var(--espace-5) var(--espace-5); }
+@media (prefers-reduced-motion: no-preference) {
+  .ds-modale[open] { animation: ds-apparition var(--duree-moyenne) var(--courbe); }
+}
+
+/* --------------------------------------------------------------------------
+   13. État vide
+   -------------------------------------------------------------------------- */
+.ds-vide {
+  display: grid;
+  justify-items: center;
+  gap: var(--espace-2);
+  padding: var(--espace-7) var(--espace-5);
+  text-align: center;
+  background: var(--couleur-surface);
+  border: 1px dashed var(--couleur-trait);
+  border-radius: var(--rayon-l);
+}
+.ds-vide__illustration { width: 7.5rem; height: auto; margin-bottom: var(--espace-2); }
+.ds-vide h2, .ds-vide h3 { font-size: var(--taille-xl); margin: 0; }
+.ds-vide p { margin: 0 auto var(--espace-3); color: var(--couleur-texte-secondaire); max-width: 32rem; }
+.ds-vide .ds-rangee { justify-content: center; }
+
+/* --------------------------------------------------------------------------
+   14. Chargement
+   -------------------------------------------------------------------------- */
+.ds-chargement { display: flex; align-items: center; gap: var(--espace-3); color: var(--couleur-texte-secondaire); font-size: var(--taille-s); }
+.ds-roue {
+  flex: none;
+  width: 1.5rem; height: 1.5rem;
+  border: 3px solid var(--couleur-filet);
+  border-top-color: var(--couleur-accent);
+  border-radius: var(--rayon-rond);
+}
+.ds-squelette { display: grid; gap: var(--espace-3); }
+.ds-squelette__ligne { height: 1rem; border-radius: var(--rayon-s); background: var(--couleur-filet); }
+.ds-squelette__ligne--titre { height: 1.75rem; width: 40%; }
+.ds-squelette__ligne--court { width: 60%; }
+@media (prefers-reduced-motion: no-preference) {
+  .ds-roue { animation: ds-rotation 0.9s linear infinite; }
+  .ds-squelette__ligne { animation: ds-pulsation 1.6s ease-in-out infinite; }
+}
+
+/* --------------------------------------------------------------------------
+   15. Pagination
+   -------------------------------------------------------------------------- */
+.ds-pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--espace-3); margin-top: var(--espace-4); font-size: var(--taille-s); }
+.ds-pagination p { margin: 0; color: var(--couleur-texte-secondaire); font-variant-numeric: var(--chiffres); }
+.ds-pagination ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--espace-1); }
+.ds-pagination a, .ds-pagination [aria-disabled="true"], .ds-pagination .ds-pagination__ellipse {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: var(--ds-cible); min-height: var(--ds-cible);
+  padding: 0 var(--espace-3);
+  border-radius: var(--rayon-m);
+  font-variant-numeric: var(--chiffres);
+}
+.ds-pagination a { color: var(--couleur-texte); text-decoration: none; border: 1px solid transparent; }
+.ds-pagination a:hover { border-color: var(--couleur-trait); text-decoration: underline; }
+.ds-pagination a[aria-current="page"] { background: var(--couleur-bouton-fond); color: var(--couleur-bouton-texte); font-weight: var(--graisse-forte); }
+.ds-pagination [aria-disabled="true"] { color: var(--couleur-texte-secondaire); border: 1px dashed var(--couleur-trait); }
+
+/* --------------------------------------------------------------------------
+   16. Toasts (confirmations brèves) : région aria-live unique par page
+   -------------------------------------------------------------------------- */
+.ds-toasts {
+  position: fixed;
+  right: var(--espace-5);
+  bottom: var(--espace-5);
+  z-index: 50;
+  display: grid;
+  gap: var(--espace-3);
+  width: min(26rem, calc(100vw - 2rem));
+  margin: 0; padding: 0; list-style: none;
+}
+.ds-toast {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--espace-3);
+  align-items: center;
+  padding: var(--espace-2) var(--espace-2) var(--espace-2) var(--espace-4);
+  background: var(--couleur-surface);
+  color: var(--couleur-texte);
+  border: 1px solid var(--couleur-filet);
+  border-left: var(--ds-bord-etat) solid var(--couleur-succes);
+  border-radius: var(--rayon-m);
+  box-shadow: var(--ombre-2);
+  font-size: var(--taille-s);
+}
+.ds-toast > .ds-icone { color: var(--couleur-succes); }
+.ds-toast--erreur { border-left-color: var(--couleur-erreur); }
+.ds-toast--erreur > .ds-icone { color: var(--couleur-erreur); }
+.ds-toast p { margin: 0; }
+.ds-toast__actions { display: flex; align-items: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .ds-toast { animation: ds-apparition var(--duree-moyenne) var(--courbe); }
+}
+@media (max-width: 40rem) {
+  .ds-toasts { right: var(--espace-4); left: var(--espace-4); bottom: var(--espace-4); width: auto; }
+}
+
+/* --------------------------------------------------------------------------
+   17. Animations (toutes neutralisées si prefers-reduced-motion : reduce)
+   -------------------------------------------------------------------------- */
+@keyframes ds-rotation { to { transform: rotate(360deg); } }
+@keyframes ds-pulsation { 50% { opacity: 0.45; } }
+@keyframes ds-apparition { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* --------------------------------------------------------------------------
+   18. Couleurs forcées (Windows contraste élevé) : on rend la main au système
+   -------------------------------------------------------------------------- */
+@media (forced-colors: active) {
+  .ds-case input { appearance: auto; -webkit-appearance: auto; width: 1.25rem; height: 1.25rem; }
+  .ds-case input::before { display: none; }
+  .ds-segment input { position: static; opacity: 1; width: auto; height: auto; }
+  .ds-badge::before, .ds-squelette__ligne, .ds-roue { forced-color-adjust: auto; }
+  .ds-nav a[aria-current="page"], .ds-onglet[aria-selected="true"] { text-decoration: underline; text-decoration-thickness: 3px; }
+  .ds-tableau tbody tr:hover { outline: 1px solid CanvasText; }
+}
+
+/* --------------------------------------------------------------------------
+   19. Impression : thème papier forcé, navigation masquée
+   -------------------------------------------------------------------------- */
+@media print {
+  .ds-entete, .ds-nav, .ds-toasts, .ds-bandeau, .ds-pagination, .ds-evitement { display: none !important; }
+  .ds-carte, .ds-indicateur, .ds-tableau-conteneur { box-shadow: none; break-inside: avoid; }
+  .ds-tableau-conteneur { overflow: visible; }
+}
+
+/* Compléments */
+.ds-tableau--fige tbody tr:hover th { background: var(--couleur-fond); }
+[tabindex="-1"]:focus { outline: none; }

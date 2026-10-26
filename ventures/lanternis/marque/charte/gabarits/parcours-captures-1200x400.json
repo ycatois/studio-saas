@@ -1,0 +1,7 @@
+{
+  "base_url": "/studio/ventures/lanternis/marque/charte/gabarits",
+  "formats": {"1200x400": [600, 200]},
+  "ecrans": [
+    {"nom": "exemple-email-entete", "url": "exemple-email-entete.html", "attendre": "#toile[data-pret]"}
+  ]
+}

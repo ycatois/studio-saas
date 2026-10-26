@@ -1,0 +1,20 @@
+{
+  "base_url": "/studio/ventures/lanternis/marque/charte",
+  "formats": {"a4": [794, 1123]},
+  "ecrans": [
+    {"nom": "charte-p01-couverture", "url": "charte-graphique.html", "attendre": "#p01"},
+    {"nom": "charte-p02-histoire", "url": "charte-graphique.html", "attendre": "#p02", "cliquer": [".couv a[href='#p02']"]},
+    {"nom": "charte-p03-logo", "url": "charte-graphique.html", "attendre": "#p03", "cliquer": [".som a[href='#p03']"]},
+    {"nom": "charte-p04-regles-logo", "url": "charte-graphique.html", "attendre": "#p04", "cliquer": [".som a[href='#p04']"]},
+    {"nom": "charte-p05-interdits-logo", "url": "charte-graphique.html", "attendre": "#p05", "cliquer": [".som a[href='#p05']"]},
+    {"nom": "charte-p06-couleurs", "url": "charte-graphique.html", "attendre": "#p06", "cliquer": [".som a[href='#p06']"]},
+    {"nom": "charte-p07-contrastes", "url": "charte-graphique.html", "attendre": "#p07", "cliquer": [".som a[href='#p07']"]},
+    {"nom": "charte-p08-typographie", "url": "charte-graphique.html", "attendre": "#p08", "cliquer": [".som a[href='#p08']"]},
+    {"nom": "charte-p09-grille", "url": "charte-graphique.html", "attendre": "#p09", "cliquer": [".som a[href='#p09']"]},
+    {"nom": "charte-p10-images", "url": "charte-graphique.html", "attendre": "#p10", "cliquer": [".som a[href='#p10']"]},
+    {"nom": "charte-p11-ton", "url": "charte-graphique.html", "attendre": "#p11", "cliquer": [".som a[href='#p11']"]},
+    {"nom": "charte-p12-landing-application", "url": "charte-graphique.html", "attendre": "#p12", "cliquer": [".som a[href='#p12']"]},
+    {"nom": "charte-p13-facebook-blog-email", "url": "charte-graphique.html", "attendre": "#p13", "cliquer": [".som a[href='#p13']"]},
+    {"nom": "charte-p14-a-eviter", "url": "charte-graphique.html", "attendre": "#p14", "cliquer": [".som a[href='#p14']"]}
+  ]
+}

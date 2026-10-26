@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · exemple · en-tête de newsletter (1200 × 400, affiché à 600 × 200)</title>
+<!-- Exemple rempli du gabarit email-entete-600.html. Statut : brouillon, aucun envoi.
+     « La lettre Lanternis » est un nom de travail (HYPOTHÈSE, à valider) ; le numéro et le mois sont des exemples.
+     Titre : message « Alertes » de la plateforme de marque (§ 11, message 4). Aucun chiffre. -->
+<link rel="stylesheet" href="commun/gabarits.css">
+</head>
+<body>
+<div id="toile"></div>
+<script src="commun/gabarits.js"></script>
+<script>
+LT.rendre("email", LT.donnees({
+  theme: "nuit",
+  surtitre: "La lettre Lanternis · novembre 2026",
+  titre: "Être prévenu avant :",
+  accent: "renouvellements, licences, accès.",
+  alt: "La lettre Lanternis, novembre 2026. Être prévenu avant : renouvellements, licences, accès."
+}));
+</script>
+</body>
+</html>

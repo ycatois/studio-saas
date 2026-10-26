@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · gabarit · couverture de page Facebook (1640 × 624)</title>
+<!-- Gabarit paramétrable. Toile 1640 × 624 (double de 820 × 312, affichage ordinateur le plus cité).
+     Dimensions et recadrage mobile À RECONFIRMER dans l'aide Meta avant publication (sources secondaires divergentes,
+     consultées le 2026-10-26). Le texte et le symbole restent dans la zone centrale ; le coin bas gauche reste libre
+     (photo de profil). Ajouter ?guides=1 pour afficher les repères.
+     Paramètres :
+       theme      nuit (défaut) | papier
+       surtitre   facultatif
+       titre      60 caractères au plus (taille ajustée de 76 à 48 px)
+       accent     facultatif, en ambre
+       sous       une ligne, 70 caractères au plus
+       symbole    non = sans le grand symbole
+       guides     1 = repères de zone sûre et de photo de profil (jamais dans le fichier publié)
+     Capture : parcours-captures-1640x624.json (fenêtre 820 × 312, facteur 2). -->
+<link rel="stylesheet" href="commun/gabarits.css">
+</head>
+<body>
+<div id="toile"></div>
+<script src="commun/gabarits.js"></script>
+<script>
+LT.rendre("couverture", LT.donnees({
+  theme: "nuit",
+  surtitre: "",
+  titre: "La promesse en une phrase.",
+  accent: "",
+  sous: "Une ligne d'explication, concrète.",
+  symbole: "oui",
+  guides: "1"
+}));
+</script>
+</body>
+</html>

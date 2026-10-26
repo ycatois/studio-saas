@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · exemple · image d'en-tête d'article (1200 × 630, thème papier)</title>
+<!-- Exemple rempli du gabarit article-og-1200x630.html, thème papier, avec l'illustration « onboarding ».
+     Même article que exemple-article-og-nuit.html (en-tête dans le blog / image de partage).
+     Textes : messages-par-persona.md (P1) et plateforme de marque § 10.5. Statut : brouillon. Aucun chiffre. -->
+<link rel="stylesheet" href="commun/gabarits.css">
+</head>
+<body>
+<div id="toile"></div>
+<script src="commun/gabarits.js"></script>
+<script>
+LT.rendre("article", LT.donnees({
+  theme: "papier",
+  surtitre: "Départ du responsable informatique",
+  titre: "La check-list de passation à faire avant son dernier jour",
+  sous: "Une liste en trois colonnes : la première page du registre de votre SI.",
+  illustration: "onboarding",
+  alt: "Départ du responsable informatique : la check-list de passation à faire avant son dernier jour. Illustration : un tableur devient un registre en trois colonnes, sous une petite lanterne allumée."
+}));
+</script>
+</body>
+</html>

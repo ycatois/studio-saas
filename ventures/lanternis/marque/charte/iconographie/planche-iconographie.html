@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis : iconographie et illustrations (planche v1.0)</title>
+<!-- Planche autonome : aucune ressource externe. Seule la police Fraunces est lue dans ../fonts/ si elle a été déposée
+     (sinon police de repli). Les icônes et illustrations sont recopiées ici en <symbol> depuis icones/ et illustrations/.
+     Directeur-artistique, v1.0, 2026-10-26, statut : à valider par le fondateur. -->
+<style>
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:600;font-display:swap;src:url("../fonts/fraunces-latin-600.woff2") format("woff2")}
+:root{--nuit:#1B2330;--nuit-douce:#2A3444;--ambre:#F2B24C;--ambre-profond:#8A5300;--ambre-pale:#FBEBD0;--papier:#FAF6EE;--blanc:#fff;--brume:#C5CDD8;--ardoise:#4A5260;--trait:#7A808B;--lin:#D9D2C3;--lin-nuit:#3A4558;--mousse:#2F6B3F;--brique:#A1322A;--lac:#2F5470;
+ --titre:"Fraunces","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ --texte:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+ --mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Menlo,Consolas,"Liberation Mono",monospace}
+*{box-sizing:border-box}
+html{background:var(--papier);color:var(--nuit);font:400 16px/1.55 var(--texte)}
+body{margin:0}
+main{max-width:1120px;margin:0 auto;padding:0 24px 64px}
+h1,h2{font-family:var(--titre);font-weight:600;line-height:1.2;margin:0}
+h1{font-size:2.441rem}
+h2{font-size:1.953rem;margin:56px 0 16px;padding-top:24px;border-top:1px solid var(--lin)}
+h3{font-size:1.125rem;margin:24px 0 8px}
+p,li{max-width:68ch}
+code{font-family:var(--mono);font-size:.875em;background:var(--blanc);border:1px solid var(--lin);border-radius:4px;padding:0 4px}
+.small{font-size:.875rem;color:var(--ardoise)}
+a{color:var(--ambre-profond)}
+:focus-visible{outline:3px solid var(--ambre-profond);outline-offset:2px}
+/* bandeau */
+.bandeau{background:var(--nuit);color:var(--papier);position:relative;overflow:hidden;margin-bottom:32px}
+.bandeau::after{content:"";position:absolute;right:-160px;top:-200px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(242,178,76,.30) 0,rgba(242,178,76,0) 70%)}
+.bandeau .in{max-width:1120px;margin:0 auto;padding:40px 24px 44px;position:relative;z-index:1}
+.bandeau p{color:var(--brume);margin:8px 0 0}
+.bandeau .kicker{color:var(--ambre);font-weight:600;margin:20px 0 4px}
+/* icônes */
+.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sur-nuit{background:var(--nuit);color:var(--papier);--icone-lumiere:#F2B24C}
+.grille-ic{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--lin);border-radius:12px;overflow:hidden;background:var(--blanc)}
+.grille-ic figure{margin:0;padding:20px 8px 14px;text-align:center;border-right:1px solid var(--lin);border-bottom:1px solid var(--lin)}
+.grille-ic figure:nth-child(5n){border-right:0}
+.grille-ic figure:nth-last-child(-n+5){border-bottom:0}
+.grille-ic .ic{width:32px;height:32px}
+.grille-ic figcaption{font-size:.875rem;margin-top:8px;line-height:1.3}
+.grille-ic figcaption code{display:block;margin:4px auto 0;width:max-content;font-size:.75rem;color:var(--ardoise)}
+.bande{display:flex;flex-wrap:wrap;gap:20px;align-items:center;padding:20px 24px;border-radius:12px;margin-top:12px}
+.bande.sur-papier{background:var(--papier);border:1px solid var(--lin)}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.trois{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.carte{background:var(--blanc);border:1px solid var(--lin);border-radius:12px;padding:20px}
+table{border-collapse:collapse;width:100%;font-size:.9375rem;background:var(--blanc)}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--lin);vertical-align:top}
+th{font-weight:600}
+td b{font-variant-numeric:tabular-nums}
+.tailles{display:flex;gap:28px;align-items:flex-end}
+.tailles div{text-align:center;font-size:.8125rem;color:var(--ardoise)}
+.tailles .ic{display:block;margin:0 auto 6px}
+.exemple-ui{display:flex;flex-direction:column;gap:10px}
+.ligne{display:flex;gap:10px;align-items:center;background:var(--blanc);border:1px solid var(--lin);border-radius:8px;padding:10px 14px}
+.ligne .etat{margin-left:auto;font-size:.875rem;font-weight:600;color:var(--ambre-profond);display:flex;gap:6px;align-items:center}
+.ligne .etat.ok{color:var(--mousse)}
+.btn-ic{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid var(--nuit);border-radius:8px;background:var(--blanc);color:var(--nuit)}
+.oui{color:var(--mousse);font-weight:700}.non{color:var(--brique);font-weight:700}
+.illu{display:block;width:100%;height:auto}
+.illu-nuit{--illu-trait:#FAF6EE;--illu-aplat:#2A3444;--illu-surface:#1B2330;--illu-interieur:#2A3444}
+.panneau{border-radius:12px;padding:16px;border:1px solid var(--lin);background:var(--papier)}
+.panneau.sur-nuit{border-color:var(--lin-nuit)}
+.vide{text-align:center}
+.vide p{margin:8px auto 0;font-size:.9375rem}
+.pied{margin-top:56px;padding-top:16px;border-top:1px solid var(--lin);font-size:.8125rem;color:var(--ardoise);display:flex;justify-content:space-between;gap:16px}
+</style>
+</head>
+<body>
+
+<!-- ====== Symboles réutilisés (copie exacte de icones/sprite.svg et des illustrations) ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+<symbol id="lt-actif" viewBox="0 0 24 24"><path d="M8 6h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H8l-5-6z"/><circle cx="8" cy="12" r="1.2"/><path d="M12 10h6M12 14h4"/></symbol>
+<symbol id="lt-poste" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="10" rx="1.5"/><path d="M3 19h18"/></symbol>
+<symbol id="lt-licence" viewBox="0 0 24 24"><path d="M13 17H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2"/><path d="M7 8.5h10M7 12h4"/><circle cx="16" cy="13" r="2.5"/><path d="M14.5 15v6l1.5-1 1.5 1v-6"/></symbol>
+<symbol id="lt-abonnement" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/></symbol>
+<symbol id="lt-contrat" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 17c1.5-2 2.5 1 4-1s2 1 3 0"/></symbol>
+<symbol id="lt-fournisseur" viewBox="0 0 24 24"><path d="M3 21h18M5 21V9.5l7-5 7 5V21"/><path d="M10 21v-5h4v5"/></symbol>
+<symbol id="lt-echeance" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="15.5" cy="15.5" r="2" stroke="none" style="fill:var(--icone-lumiere,#8A5300)"/></symbol>
+<symbol id="lt-alerte" viewBox="0 0 24 24"><path d="M12 4v3"/><path d="M7 20v-8a5 5 0 0 1 10 0v8z"/><path d="M5 20h14"/><circle cx="12" cy="14" r="2" stroke="none" style="fill:var(--icone-lumiere,#8A5300)"/></symbol>
+<symbol id="lt-arrivee" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M18.5 9.5v5M16 12h5"/></symbol>
+<symbol id="lt-depart" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 12h5"/></symbol>
+<symbol id="lt-acces" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v2"/></symbol>
+<symbol id="lt-securite" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.2-2.9 7.6-7 9.5-4.1-1.9-7-5.3-7-9.5V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="lt-sauvegarde" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></symbol>
+<symbol id="lt-domaine" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3z"/></symbol>
+<symbol id="lt-cout" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.3A4.5 4.5 0 1 0 15.5 15.7"/><path d="M7.5 10.6h5M7.5 13.4h5"/></symbol>
+<symbol id="lt-tableau-de-bord" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="9" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/><rect x="3" y="14" width="8" height="7" rx="1.5"/></symbol>
+<symbol id="lt-registre" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+<symbol id="lt-export" viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+<symbol id="lt-import" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+<symbol id="lt-parametres" viewBox="0 0 24 24"><path d="M4 7h9.5M18.5 7H20M4 17h1.5M10.5 17H20"/><circle cx="16" cy="7" r="2.5"/><circle cx="8" cy="17" r="2.5"/></symbol>
+<!-- lanterne des illustrations (trait 4 à l'échelle 0,6 = 2,4) -->
+<g id="lanterne-illu"><g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--illu-trait,#1B2330)"><circle cx="32" cy="9" r="4"/><path d="M16 58V36a16 16 0 0 1 32 0v22z" style="fill:var(--illu-interieur,#1B2330)"/><path d="M10 58h44"/></g><circle cx="32" cy="40" r="8.5" fill="#F2B24C"/></g>
+<symbol id="illu-etat-vide" viewBox="0 0 240 160"><circle cx="116" cy="86" r="54" style="fill:var(--illu-aplat,#FBEBD0)"/><g fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--illu-trait,#1B2330)"><path d="M24 140h192"/><path d="M116 56c-16-7-36-7-56 0v78c20-7 40-7 56 0z" style="fill:var(--illu-surface,#FFFFFF)"/><path d="M116 56c16-7 36-7 56 0v78c-20-7-40-7-56 0z" style="fill:var(--illu-surface,#FFFFFF)"/><path d="M72 76h32M72 90h32M72 104h22M128 76h32M128 90h32M128 104h22" stroke-dasharray="0.1 7"/></g><use href="#lanterne-illu" transform="translate(176 105.2) scale(.6)"/></symbol>
+<symbol id="illu-onboarding" viewBox="0 0 240 160"><circle cx="178" cy="88" r="54" style="fill:var(--illu-aplat,#FBEBD0)"/><g fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--illu-trait,#1B2330)"><rect x="18" y="48" width="64" height="80" rx="4" style="fill:var(--illu-surface,#FFFFFF)"/><path d="M18 68h64M18 88h64M18 108h64M39 48v80M60 48v80"/><path d="M94 88h28M116 82l6 6-6 6"/><rect x="134" y="48" width="88" height="84" rx="6" style="fill:var(--illu-surface,#FFFFFF)"/><rect x="144" y="60" width="20" height="62" rx="3"/><rect x="168" y="60" width="20" height="62" rx="3"/><rect x="192" y="60" width="20" height="62" rx="3"/><path d="M149 72h10M149 82h10M149 92h6M173 72h10M173 82h7M197 72h10M197 82h10M197 92h4"/></g><use href="#lanterne-illu" transform="translate(158.8 13.2) scale(.6)"/></symbol>
+<symbol id="illu-erreur" viewBox="0 0 240 160"><circle cx="110" cy="84" r="54" style="fill:var(--illu-aplat,#FBEBD0)"/><g fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--illu-trait,#1B2330)"><path d="M24 140h192"/><path d="M68 34h60l20 20v50l-8 6-8-6-8 6-8-6-8 6-8-6-8 6-8-6-8 6-8-6z" style="fill:var(--illu-surface,#FFFFFF)"/><path d="M128 34v20h20"/><path d="M82 56h32M82 70h48M82 84h36"/></g><use href="#lanterne-illu" transform="translate(176 105.2) scale(.6)"/></symbol>
+</defs>
+</svg>
+
+<header class="bandeau">
+ <div class="in">
+  <svg viewBox="0 0 298 64" width="186" height="40" role="img" aria-label="Lanternis"><g fill="none" stroke="#FAF6EE" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="9" r="4" stroke-width="4"/><path d="M16 58V36a16 16 0 0 1 32 0v22z" fill="#2A3444" stroke-width="5"/><path d="M10 58h44" stroke-width="5"/><g transform="translate(76 20.5)" stroke-width="5"><path d="M2.5 4v33.5H20"/><path transform="translate(27)" d="M21.5 18.5v19M2.5 28a9.5 9.5 0 1 0 19 0a9.5 9.5 0 1 0-19 0"/><path transform="translate(56)" d="M2.5 18.5v19M2.5 28a9.5 9.5 0 0 1 19 0v9.5"/><path transform="translate(84)" d="M7.5 6v26q0 5.5 5.5 5.5h2M2.5 18.5H15"/><path transform="translate(105)" d="M2.5 28h19a9.5 9.5 0 1 0-2.78 6.72"/><path transform="translate(134)" d="M2.5 18.5v19M2.5 28a9.5 9.5 0 0 1 9.5-9.5h3"/><path transform="translate(155)" d="M2.5 18.5v19M2.5 28a9.5 9.5 0 0 1 19 0v9.5"/><path transform="translate(184)" d="M2.5 18.5v19"/><path transform="translate(194)" d="M17.5 21.5Q15 18.5 10 18.5Q2.5 18.5 2.5 23.25Q2.5 28 10 28Q17.5 28 17.5 32.75Q17.5 37.5 10 37.5Q4.5 37.5 2.5 34.5"/><circle cx="186.5" cy="8" r="3" fill="#FAF6EE" stroke="none"/></g></g><circle cx="32" cy="40" r="8.5" fill="#F2B24C"/></svg>
+  <p class="kicker">Charte graphique · complément v1.0</p>
+  <h1>Iconographie et illustrations</h1>
+  <p>Vingt icônes de métier dessinées pour Lanternis et trois illustrations légères. Piste Veilleuse : un trait calme, une seule lumière.</p>
+ </div>
+</header>
+
+<main>
+
+<section aria-labelledby="h-regles">
+ <h2 id="h-regles" style="border-top:0;margin-top:0;padding-top:0">1. Les règles de dessin</h2>
+ <div class="deux">
+  <div>
+   <svg viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Icône échéance agrandie sur sa grille de 24 unités, avec la marge interne de 2 unités et la zone utile de 20 unités">
+    <rect width="240" height="240" fill="#fff"/>
+    <g stroke="#D9D2C3" stroke-width="1">
+     <path d="M0 0V240M10 0V240M20 0V240M30 0V240M40 0V240M50 0V240M60 0V240M70 0V240M80 0V240M90 0V240M100 0V240M110 0V240M120 0V240M130 0V240M140 0V240M150 0V240M160 0V240M170 0V240M180 0V240M190 0V240M200 0V240M210 0V240M220 0V240M230 0V240M240 0V240"/>
+     <path d="M0 0H240M0 10H240M0 20H240M0 30H240M0 40H240M0 50H240M0 60H240M0 70H240M0 80H240M0 90H240M0 100H240M0 110H240M0 120H240M0 130H240M0 140H240M0 150H240M0 160H240M0 170H240M0 180H240M0 190H240M0 200H240M0 210H240M0 220H240M0 230H240M0 240H240"/>
+    </g>
+    <rect x="20" y="20" width="200" height="200" fill="none" stroke="#2F5470" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <svg x="0" y="0" width="240" height="240" viewBox="0 0 24 24" class="ic" style="color:#1B2330;width:240px;height:240px;opacity:.92"><use href="#lt-echeance"/></svg>
+   </svg>
+   <p class="small">Grille de 24 unités (une case = 1 unité). Pointillé bleu lac : zone utile de 20 × 20, marge interne de 2 unités.</p>
+  </div>
+  <div>
+   <table>
+    <caption class="small" style="text-align:left;padding-bottom:6px">Règles communes à toutes les icônes (reprises de <code>tokens.json</code> &gt; <code>icone</code>)</caption>
+    <tr><th scope="row">Grille</th><td>24 × 24 unités, <code>viewBox="0 0 24 24"</code>. Zone utile 20 × 20 (marge de 2). Les coordonnées tombent sur l'unité ou la demi-unité.</td></tr>
+    <tr><th scope="row">Trait</th><td>2 unités, uniforme, jamais d'autre épaisseur dans une même icône. Le trait reste à 2 quand l'icône est agrandie (on agrandit la <code>viewBox</code>, pas le trait).</td></tr>
+    <tr><th scope="row">Terminaisons</th><td>Extrémités et jonctions arrondies (<code>round</code>). Coins des rectangles : rayon 1,5 ou 2.</td></tr>
+    <tr><th scope="row">Remplissage</th><td>Aucun : contour seul. Une seule exception, le point de lumière.</td></tr>
+    <tr><th scope="row">Point de lumière</th><td>Disque de rayon 2, sans trait, réservé à <strong>échéance</strong> et <strong>alerte</strong> : ce qui demande une décision. Une seule lumière par icône.</td></tr>
+    <tr><th scope="row">Formes</th><td>Géométriques, frontales, sans perspective ni détail décoratif. Un objet par icône, lisible à 16 px.</td></tr>
+   </table>
+  </div>
+ </div>
+
+ <h3>Usage de l'ambre dans les icônes</h3>
+ <table>
+  <thead><tr><th scope="col">Fond</th><th scope="col">Trait de l'icône</th><th scope="col">Point de lumière</th><th scope="col">Contraste (composant, seuil 3 : 1)</th></tr></thead>
+  <tbody>
+   <tr><td>Papier <code>#FAF6EE</code> ou blanc</td><td>Nuit <code>#1B2330</code></td><td>Ambre profond <code>#8A5300</code></td><td>Trait <b>14,65</b> / <b>15,79</b> : 1 ; point <b>5,87</b> / <b>6,33</b> : 1</td></tr>
+   <tr><td>Nuit <code>#1B2330</code></td><td>Papier <code>#FAF6EE</code></td><td>Ambre <code>#F2B24C</code></td><td>Trait <b>14,65</b> : 1 ; point <b>8,46</b> : 1</td></tr>
+   <tr><td>Nuit douce <code>#2A3444</code></td><td>Papier <code>#FAF6EE</code></td><td>Ambre <code>#F2B24C</code></td><td>Trait <b>11,64</b> : 1 ; point <b>6,72</b> : 1</td></tr>
+  </tbody>
+ </table>
+ <p class="small">Valeurs reprises de <code>tokens.json</code> &gt; <code>contrastes</code> (calcul WCAG 2.x fait à la main, à recontrôler avec l'analyseur de la revue design). <span class="non">Interdit :</span> ambre vif <code>#F2B24C</code> sur fond clair (1,7 : 1), ambre en trait d'icône, icône entièrement ambre pour « faire joli ».</p>
+</section>
+
+<section aria-labelledby="h-jeu">
+ <h2 id="h-jeu">2. Le jeu de 20 icônes</h2>
+ <p>Fichiers individuels dans <code>icones/</code> (un SVG par icône, 300 à 600 octets) et sprite <code>icones/sprite.svg</code> (identifiants <code>lt-…</code>).</p>
+ <div class="grille-ic">
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-tableau-de-bord"/></svg><figcaption>Tableau de bord<code>tableau-de-bord</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-registre"/></svg><figcaption>Registre<code>registre</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-actif"/></svg><figcaption>Actif<code>actif</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-poste"/></svg><figcaption>Poste<code>poste</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-licence"/></svg><figcaption>Licence<code>licence</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-abonnement"/></svg><figcaption>Abonnement<code>abonnement</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-contrat"/></svg><figcaption>Contrat<code>contrat</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-fournisseur"/></svg><figcaption>Fournisseur<code>fournisseur</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-echeance"/></svg><figcaption>Échéance<code>echeance</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-alerte"/></svg><figcaption>Alerte<code>alerte</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-arrivee"/></svg><figcaption>Arrivée<code>arrivee</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-depart"/></svg><figcaption>Départ<code>depart</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-acces"/></svg><figcaption>Accès<code>acces</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-securite"/></svg><figcaption>Sécurité<code>securite</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-sauvegarde"/></svg><figcaption>Sauvegarde<code>sauvegarde</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-domaine"/></svg><figcaption>Domaine<code>domaine</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-cout"/></svg><figcaption>Coût<code>cout</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-export"/></svg><figcaption>Export<code>export</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-import"/></svg><figcaption>Import<code>import</code></figcaption></figure>
+  <figure><svg class="ic" aria-hidden="true"><use href="#lt-parametres"/></svg><figcaption>Paramètres<code>parametres</code></figcaption></figure>
+ </div>
+
+ <h3>Sur fond nuit (thème sombre, landing, réseaux)</h3>
+ <div class="bande sur-nuit" aria-label="Les 20 icônes sur fond nuit" role="img">
+  <svg class="ic" aria-hidden="true"><use href="#lt-tableau-de-bord"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-registre"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-actif"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-poste"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-licence"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-abonnement"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-contrat"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-fournisseur"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-echeance"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-alerte"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-arrivee"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-depart"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-acces"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-securite"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-sauvegarde"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-domaine"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-cout"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-export"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-import"/></svg><svg class="ic" aria-hidden="true"><use href="#lt-parametres"/></svg>
+ </div>
+
+ <h3>Tailles</h3>
+ <div class="deux">
+  <div class="tailles carte">
+   <div><svg class="ic" style="width:16px;height:16px" aria-hidden="true"><use href="#lt-echeance"/></svg>16 px<br>minimum</div>
+   <div><svg class="ic" style="width:20px;height:20px" aria-hidden="true"><use href="#lt-echeance"/></svg>20 px<br>tableaux</div>
+   <div><svg class="ic" aria-hidden="true"><use href="#lt-echeance"/></svg>24 px<br>par défaut</div>
+   <div><svg class="ic" style="width:32px;height:32px" aria-hidden="true"><use href="#lt-echeance"/></svg>32 px<br>listes, cartes</div>
+   <div><svg class="ic" style="width:48px;height:48px" aria-hidden="true"><use href="#lt-echeance"/></svg>48 px<br>pictos landing</div>
+  </div>
+  <p class="small" style="margin:0">Le trait étant défini dans la grille de 24, il mesure 1,33 px à 16 px et 4 px à 48 px : c'est voulu (l'icône garde ses proportions). Au-delà de 48 px, utiliser une illustration plutôt qu'une icône agrandie. Une icône cliquable seule occupe une zone de 44 × 44 px au moins.</p>
+ </div>
+</section>
+
+<section aria-labelledby="h-usage">
+ <h2 id="h-usage">3. Usage dans l'interface et accessibilité</h2>
+ <div class="deux">
+  <div class="exemple-ui" aria-label="Exemple de liste du registre" role="group">
+   <div class="ligne"><svg class="ic" aria-hidden="true"><use href="#lt-contrat"/></svg><span>Contrat de maintenance des copieurs</span><span class="etat"><svg class="ic" style="width:20px;height:20px" aria-hidden="true"><use href="#lt-echeance"/></svg>Renouvellement dans 45 jours</span></div>
+   <div class="ligne"><svg class="ic" aria-hidden="true"><use href="#lt-abonnement"/></svg><span>Abonnement visioconférence</span><span class="etat"><svg class="ic" style="width:20px;height:20px" aria-hidden="true"><use href="#lt-alerte"/></svg>Inutilisé depuis 3 mois</span></div>
+   <div class="ligne"><svg class="ic" aria-hidden="true"><use href="#lt-depart"/></svg><span>Départ de C. Martin</span><span class="etat ok"><svg class="ic" style="width:20px;height:20px" aria-hidden="true"><use href="#lt-securite"/></svg>Accès fermés</span></div>
+   <div style="display:flex;gap:8px"><button class="btn-ic" type="button" aria-label="Exporter le registre (CSV)"><svg class="ic" aria-hidden="true"><use href="#lt-export"/></svg></button><button class="btn-ic" type="button" aria-label="Paramètres"><svg class="ic" aria-hidden="true"><use href="#lt-parametres"/></svg></button></div>
+   <p class="small" style="margin:0">Données fictives, pour l'exemple.</p>
+  </div>
+  <ul>
+   <li><strong>Icône à côté d'un texte</strong> : <code>aria-hidden="true"</code>, le texte porte le sens.</li>
+   <li><strong>Icône seule et cliquable</strong> : le bouton porte un <code>aria-label</code> explicite (« Exporter le registre (CSV) »), zone de 44 × 44 px, focus visible ambre profond 3 px.</li>
+   <li><strong>Jamais la couleur seule</strong> : un état (échéance, succès, erreur) a toujours un mot à côté de l'icône. L'icône peut prendre la couleur d'état (ambre profond, mousse, brique, lac sur clair ; ambre, sauge, corail, ciel sur nuit).</li>
+   <li><strong>Échéance ≠ erreur</strong> : une échéance est en ambre (on prévient), jamais en brique (rouge réservé à ce qui a échoué).</li>
+   <li><strong>Mode contraste élevé</strong> : <code>currentColor</code> suit la couleur système ; aucune information ne dépend du seul point de lumière.</li>
+   <li><strong>Une bibliothèque, une seule</strong> : ce jeu couvre le métier. Pour une icône générique manquante (flèche, fermer, recherche), dessiner au même gabarit, ou reprendre une bibliothèque libre au même style après vérification de sa licence. Ne jamais mélanger deux styles dans un même écran.</li>
+  </ul>
+ </div>
+</section>
+
+<section aria-labelledby="h-illus">
+ <h2 id="h-illus">4. Trois illustrations</h2>
+ <p>Au trait (2,4), aplats papier, blanc ou ambre pâle, une seule lumière : la lanterne de la marque, foyer ambre posé sur l'intérieur nuit de l'arche. Pas de personnage, pas de dégradé, pas de rouge. Chaque fichier pèse moins de 2 Ko.</p>
+ <div class="trois">
+  <div class="panneau vide">
+   <svg class="illu" viewBox="0 0 240 160" aria-hidden="true"><use href="#illu-etat-vide"/></svg>
+   <p><strong>Votre registre est encore vide.</strong><br>Importez votre fichier Excel, ou commencez par vos contrats.</p>
+   <p class="small"><code>illustrations/etat-vide.svg</code> · listes vides de l'application</p>
+  </div>
+  <div class="panneau vide">
+   <svg class="illu" viewBox="0 0 240 160" aria-hidden="true"><use href="#illu-onboarding"/></svg>
+   <p><strong>Lanternis reprend votre Excel actuel.</strong><br>Nous faisons le premier import ensemble.</p>
+   <p class="small"><code>illustrations/onboarding.svg</code> · mise en place, landing, articles</p>
+  </div>
+  <div class="panneau vide">
+   <svg class="illu" viewBox="0 0 240 160" aria-hidden="true"><use href="#illu-erreur"/></svg>
+   <p><strong>Nous n'avons pas pu lire ce fichier.</strong><br>Lanternis accepte les fichiers .xlsx et .csv.</p>
+   <p class="small"><code>illustrations/erreur.svg</code> · erreurs d'import, page introuvable</p>
+  </div>
+ </div>
+ <h3>En thème nuit (mêmes fichiers, variables CSS)</h3>
+ <div class="trois">
+  <div class="panneau sur-nuit illu-nuit"><svg class="illu" viewBox="0 0 240 160" aria-hidden="true"><use href="#illu-etat-vide"/></svg></div>
+  <div class="panneau sur-nuit illu-nuit"><svg class="illu" viewBox="0 0 240 160" aria-hidden="true"><use href="#illu-onboarding"/></svg></div>
+  <div class="panneau sur-nuit illu-nuit"><svg class="illu" viewBox="0 0 240 160" aria-hidden="true"><use href="#illu-erreur"/></svg></div>
+ </div>
+ <p class="small">En SVG inline, déclarer sur le conteneur : <code>--illu-trait:#FAF6EE; --illu-aplat:#2A3444; --illu-surface:#1B2330; --illu-interieur:#2A3444</code>. En balise <code>&lt;img&gt;</code>, les variables ne passent pas : la version papier s'affiche, à réserver aux fonds clairs. Textes des encadrés tirés de la plateforme de marque (§ 10.5) et des messages par persona (P3).</p>
+</section>
+
+<section aria-labelledby="h-eviter">
+ <h2 id="h-eviter">5. À éviter</h2>
+ <ul>
+  <li><span class="non">Non :</span> cadenas, bouclier qui clignote, tête de mort, hacker à capuche, éclair : on ne vend pas par la peur.</li>
+  <li><span class="non">Non :</span> icônes pleines, bicolores, en dégradé ou en 3D ; mélange avec une autre bibliothèque dans le même écran.</li>
+  <li><span class="non">Non :</span> point de lumière ajouté à une icône qui ne demande pas de décision (registre, poste, domaine…).</li>
+  <li><span class="non">Non :</span> illustration avec plusieurs lumières, des personnages détaillés ou un décor chargé ; illustration de plus de 5 Ko.</li>
+  <li><span class="non">Non :</span> icône seule pour porter une information (sans mot), ou icône sous 16 px.</li>
+ </ul>
+ <p class="small">Toutes les icônes et illustrations de cette planche ont été dessinées pour Lanternis ; aucune n'est reprise d'une bibliothèque ou d'une marque existante. Les pictogrammes génériques (calendrier, globe, bouclier, clé) sont des formes communes ; leur tracé est propre à ce jeu.</p>
+</section>
+
+<footer class="pied"><span>Lanternis est une marque d'Hasteria SASU</span><span>Iconographie v1.0 · 26/10/2026 · à valider par le fondateur</span></footer>
+</main>
+</body>
+</html>

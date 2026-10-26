@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design system de l'application (démonstration) · Lanternis</title>
+<meta name="description" content="Démonstration des composants de l'application Lanternis, thèmes papier et nuit. Données fictives.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../marque/charte/logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* Habillage propre à cette page de démonstration (ne fait pas partie du design system) */
+  .demo-sommaire ul { display: flex; flex-wrap: wrap; gap: var(--espace-1) var(--espace-4); list-style: none; padding: 0; margin: 0; }
+  .demo-sommaire a { display: inline-flex; align-items: center; min-height: var(--ds-cible); }
+  .demo-section { margin-top: var(--espace-8); }
+  .demo-section > h2 { padding-top: var(--espace-4); border-top: 1px solid var(--couleur-filet); }
+  .demo-ecran { border: 1px solid var(--couleur-trait); border-radius: var(--rayon-l); padding: var(--espace-5); background: var(--couleur-fond); }
+  .demo-ecran__etiquette { margin: 0 0 var(--espace-4); }
+  .demo-duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--espace-4); margin: var(--espace-4) 0 var(--espace-6); }
+  @media (max-width: 60rem) { .demo-duo { grid-template-columns: 1fr; } }
+  .demo-volet { min-width: 0; padding: var(--espace-5); border: 1px solid var(--couleur-trait); border-radius: var(--rayon-l); }
+  .demo-volet > :last-child { margin-bottom: 0; }
+  .demo-etiquette { margin: 0 0 var(--espace-4); font-size: var(--taille-xs); font-weight: var(--graisse-forte); color: var(--couleur-texte-secondaire); letter-spacing: 0.04em; }
+  .demo-titre-bloc { font-family: var(--police-texte); font-size: var(--taille-m); font-weight: var(--graisse-forte); margin: var(--espace-5) 0 var(--espace-3); }
+  .demo-volet > .demo-titre-bloc:first-of-type { margin-top: 0; }
+  .demo-deux-col { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--espace-5); margin-top: var(--espace-5); align-items: start; }
+  @media (max-width: 60rem) { .demo-deux-col { grid-template-columns: 1fr; } }
+  .demo-volet .ds-bandeau { border-radius: var(--rayon-m); margin-bottom: var(--espace-3); }
+</style>
+</head>
+<body>
+
+<!-- Pictogrammes : jeu de la charte (marque/charte/charte-graphique.html § 9) + compléments
+     d'interface dessinés selon les mêmes règles (contour, trait 2 px, grille 24 px).
+     Le point de lumière (.pt) prend la couleur d'accent du thème. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-registre" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+  <symbol id="i-echeance" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="15.5" cy="15.5" r="2" style="fill:var(--couleur-accent);stroke:none"/></symbol>
+  <symbol id="i-contrat" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 17c1.5-2 2.5 1 4-1s2 1 3 0"/></symbol>
+  <symbol id="i-abonnement" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/></symbol>
+  <symbol id="i-acces" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v2"/></symbol>
+  <symbol id="i-materiel" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="10" rx="1.5"/><path d="M3 19h18"/></symbol>
+  <symbol id="i-alerte" viewBox="0 0 24 24"><path d="M7 20v-8a5 5 0 0 1 10 0v8z"/><path d="M5 20h14"/><circle cx="12" cy="14" r="2" style="fill:var(--couleur-accent);stroke:none"/></symbol>
+  <symbol id="i-fournisseur" viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></symbol>
+  <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+  <!-- Compléments d'interface (proposition ui-designer, à valider par le directeur-artistique) -->
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></symbol>
+  <symbol id="i-succes" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></symbol>
+  <symbol id="i-erreur" viewBox="0 0 24 24"><path d="M12 3l9 9-9 9-9-9z"/><path d="M12 8v5M12 16.5v.01"/></symbol>
+  <symbol id="i-fermer" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-recherche" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-depart" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M3 20a6 6 0 0 1 10-4.5M15 17h6M18 14l3 3-3 3"/></symbol>
+  <symbol id="i-cout" viewBox="0 0 24 24"><path d="M17 6.5A7 7 0 1 0 17 17.5"/><path d="M4 10.5h9M4 13.5h9"/></symbol>
+</svg>
+
+<a class="ds-evitement" href="#contenu">Aller au contenu</a>
+
+<div class="ds-bandeau" role="note">
+  <svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+  <p><strong>Page de démonstration.</strong> Toutes les données sont fictives (exemple) : aucune ne concerne une structure ou une personne réelle.</p>
+</div>
+
+<!-- En-tête d'application : toujours sur fond nuit, quel que soit le thème -->
+<header class="ds-entete" data-theme="nuit">
+  <a class="ds-entete__logo" href="#contenu">
+    <img src="../../marque/charte/logo/logo-horizontal-nuit.svg" width="140" height="30" alt="Lanternis, retour au tableau de bord">
+  </a>
+  <button class="ds-bouton ds-bouton--secondaire ds-nav__bascule" type="button" aria-expanded="false" aria-controls="menu-principal">
+    <svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+    Menu
+  </button>
+  <nav class="ds-nav" id="menu-principal" aria-label="Menu principal" data-ferme>
+    <ul>
+      <li><a href="#tableau-de-bord" aria-current="page">Tableau de bord</a></li>
+      <li><a href="#registre">Registre</a></li>
+      <li><a href="#tableau-de-bord">Échéances <span class="ds-compteur" aria-label="3 dans les 30 jours">3</span></a></li>
+      <li><a href="#composants">Rapports</a></li>
+      <li><a href="#composants">Réglages</a></li>
+    </ul>
+  </nav>
+  <p class="ds-entete__structure">Structure Exemple <span class="ds-sr">(fictive)</span></p>
+</header>
+
+<main id="contenu" class="ds-page" tabindex="-1">
+
+  <div class="ds-entete-page">
+    <div>
+      <h1>Design system de l'application</h1>
+      <p>Composants dérivés de la charte Veilleuse, en thème papier et en thème nuit. Version 0.1 du 26 octobre 2026, brouillon.</p>
+    </div>
+    <fieldset class="ds-groupe" style="margin:0">
+      <legend class="ds-petit">Thème de cette page</legend>
+      <div class="ds-segment">
+        <input type="radio" name="demo-theme" id="theme-systeme" value="systeme" checked><label for="theme-systeme">Système</label>
+        <input type="radio" name="demo-theme" id="theme-papier" value="papier"><label for="theme-papier">Papier</label>
+        <input type="radio" name="demo-theme" id="theme-nuit" value="nuit"><label for="theme-nuit">Nuit</label>
+      </div>
+    </fieldset>
+  </div>
+
+  <nav class="demo-sommaire" aria-label="Sommaire de la démonstration">
+    <ul>
+      <li><a href="#tableau-de-bord">Écran « Tableau de bord »</a></li>
+      <li><a href="#registre">Écran « Registre des actifs »</a></li>
+      <li><a href="#composants">Composants (papier et nuit)</a></li>
+    </ul>
+  </nav>
+
+  <!-- =================================================================== -->
+  <section class="demo-section" id="tableau-de-bord" aria-labelledby="t-tdb">
+    <h2 id="t-tdb">Exemple d'écran : tableau de bord</h2>
+    <p class="ds-secondaire">Suit le thème choisi en haut de page. Quatre indicateurs, puis les décisions du mois : une alerte, une action.</p>
+
+    <div class="demo-ecran">
+      <span class="ds-badge ds-badge--info demo-ecran__etiquette">Exemple fictif</span>
+      <h3>Bonjour Nadia, voici votre informatique ce mois-ci.</h3>
+      <p class="ds-secondaire">Données à jour au 26 octobre 2026, 8 h 00.</p>
+
+      <div class="ds-grille-indicateurs">
+        <section class="ds-indicateur ds-indicateur--a-traiter" aria-labelledby="ind-licences">
+          <h4 class="ds-indicateur__libelle" id="ind-licences"><svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-abonnement"/></svg>Licences inutilisées</h4>
+          <p class="ds-indicateur__valeur">7</p>
+          <p class="ds-indicateur__contexte">Aucune connexion depuis 60 jours, soit 1&#8239;176&#8239;€ HT par an.</p>
+          <p class="ds-indicateur__action"><a href="#registre">Voir les 7 licences</a></p>
+        </section>
+        <section class="ds-indicateur ds-indicateur--a-traiter" aria-labelledby="ind-echeances">
+          <h4 class="ds-indicateur__libelle" id="ind-echeances"><svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-echeance"/></svg>Échéances à 30 jours</h4>
+          <p class="ds-indicateur__valeur">3</p>
+          <p class="ds-indicateur__contexte">Dont 1 reconduction tacite à décider avant le 9 novembre.</p>
+          <p class="ds-indicateur__action"><a href="#alertes-du-mois">Voir les échéances</a></p>
+        </section>
+        <section class="ds-indicateur ds-indicateur--a-traiter" aria-labelledby="ind-departs">
+          <h4 class="ds-indicateur__libelle" id="ind-departs"><svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-depart"/></svg>Départs non traités</h4>
+          <p class="ds-indicateur__valeur">2</p>
+          <p class="ds-indicateur__contexte">5 accès encore ouverts au nom de personnes parties.</p>
+          <p class="ds-indicateur__action"><a href="#alertes-du-mois">Fermer les accès</a></p>
+        </section>
+        <section class="ds-indicateur" aria-labelledby="ind-cout">
+          <h4 class="ds-indicateur__libelle" id="ind-cout"><svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-cout"/></svg>Coût mensuel du SI</h4>
+          <p class="ds-indicateur__valeur">3&#8239;210&#8239;€ <span class="ds-indicateur__unite">HT par mois</span></p>
+          <p class="ds-indicateur__contexte">84&#8239;€ HT de plus qu'en septembre (2 abonnements ajoutés).</p>
+          <p class="ds-indicateur__action"><a href="#registre">Voir le détail des coûts</a></p>
+        </section>
+      </div>
+
+      <div class="demo-deux-col">
+        <section aria-labelledby="alertes-du-mois">
+          <h4 id="alertes-du-mois">À décider ce mois-ci</h4>
+          <ul class="ds-liste-alertes">
+            <li class="ds-alerte ds-alerte--alerte">
+              <svg class="ds-icone" aria-hidden="true" focusable="false"><use href="#i-echeance"/></svg>
+              <div>
+                <p class="ds-alerte__titre">Le contrat de maintenance des copieurs se reconduit le 24 novembre 2026.</p>
+                <p class="ds-alerte__texte">2&#8239;160&#8239;€ HT par an. Pour l'arrêter ou le renégocier, prévenez le fournisseur avant le 9 novembre.</p>
+                <details class="ds-alerte__pourquoi">
+                  <summary>Pourquoi vous voyez ceci</summary>
+                  <p>Ce contrat se renouvelle sans démarche de votre part pour 3 ans. Son préavis est de 15 jours : c'est la dernière occasion de décider.</p>
+                </details>
+              </div>
+              <div class="ds-alerte__action"><a class="ds-bouton ds-bouton--secondaire" href="#registre">Décider</a></div>
+            </li>
+            <li class="ds-alerte ds-alerte--alerte">
+              <svg class="ds-icone" aria-hidden="true" focusable="false"><use href="#i-depart"/></svg>
+              <div>
+                <p class="ds-alerte__titre">Camille Martin a quitté la structure le 17 octobre. 3 de ses accès sont encore ouverts.</p>
+                <p class="ds-alerte__texte">Messagerie, logiciel de paie et outil de facturation.</p>
+                <details class="ds-alerte__pourquoi">
+                  <summary>Pourquoi vous voyez ceci</summary>
+                  <p>Le départ a été saisi dans Lanternis le 17 octobre ; ces comptes figurent toujours au registre comme actifs.</p>
+                </details>
+              </div>
+              <div class="ds-alerte__action"><a class="ds-bouton ds-bouton--secondaire" href="#registre">Fermer les accès</a></div>
+            </li>
+            <li class="ds-alerte ds-alerte--info">
+              <svg class="ds-icone" aria-hidden="true" focusable="false"><use href="#i-abonnement"/></svg>
+              <div>
+                <p class="ds-alerte__titre">7 licences de messagerie n'ont pas servi depuis 60 jours.</p>
+                <p class="ds-alerte__texte">Les supprimer économiserait 1&#8239;176&#8239;€ HT par an.</p>
+              </div>
+              <div class="ds-alerte__action"><a class="ds-bouton ds-bouton--secondaire" href="#registre">Voir les licences</a></div>
+            </li>
+          </ul>
+        </section>
+
+        <div class="ds-tableau-conteneur" role="region" aria-labelledby="cap-echeances" tabindex="0">
+          <table class="ds-tableau">
+            <caption id="cap-echeances">Échéances des 90 prochains jours</caption>
+            <thead>
+              <tr><th scope="col">Élément</th><th scope="col">Échéance</th><th scope="col" class="ds-num">€ HT / an</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Copieurs (maintenance)</th><td><span class="ds-badge ds-badge--echeance ds-badge--echeance-proche">dans 29 j</span></td><td class="ds-num">2&#8239;160</td></tr>
+              <tr><th scope="row">Antivirus (60 postes)</th><td><span class="ds-badge ds-badge--echeance ds-badge--echeance-proche">dans 18 j</span></td><td class="ds-num">1&#8239;440</td></tr>
+              <tr><th scope="row">Messagerie et bureautique</th><td><span class="ds-badge ds-badge--echeance">dans 66 j</span></td><td class="ds-num">5&#8239;472</td></tr>
+              <tr><th scope="row">Nom de domaine principal</th><td><span class="ds-badge ds-badge--echeance">dans 80 j</span></td><td class="ds-num">18</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================== -->
+  <section class="demo-section" id="registre" aria-labelledby="t-registre">
+    <h2 id="t-registre">Exemple d'écran : registre des actifs</h2>
+    <p class="ds-secondaire">Onglets par catégorie, recherche et filtres, tableau triable, pagination, export libre.</p>
+
+    <div class="demo-ecran">
+      <span class="ds-badge ds-badge--info demo-ecran__etiquette">Exemple fictif</span>
+      <nav class="ds-ariane" aria-label="Fil d'Ariane">
+        <ol><li><a href="#tableau-de-bord">Tableau de bord</a></li><li><span aria-current="page">Registre des actifs</span></li></ol>
+      </nav>
+      <div class="ds-entete-page">
+        <div>
+          <h3 style="margin:0">Registre des actifs</h3>
+          <p>214 éléments. Dernière mise à jour le 26 octobre 2026.</p>
+        </div>
+        <div class="ds-rangee">
+          <button class="ds-bouton ds-bouton--secondaire" type="button" data-toast="L'export CSV du registre est prêt : 214 lignes (exemple).">
+            <svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-export"/></svg>Exporter en CSV
+          </button>
+          <button class="ds-bouton" type="button">
+            <svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>Ajouter un élément
+          </button>
+        </div>
+      </div>
+
+      <div class="ds-onglets">
+        <div role="tablist" aria-label="Catégories du registre">
+          <button class="ds-onglet" role="tab" type="button" id="ong-tout" aria-selected="true" aria-controls="pan-tout">Tout <span class="ds-compteur">214</span></button>
+          <button class="ds-onglet" role="tab" type="button" id="ong-materiel" aria-selected="false" aria-controls="pan-materiel" tabindex="-1">Matériel <span class="ds-compteur">96</span></button>
+          <button class="ds-onglet" role="tab" type="button" id="ong-licences" aria-selected="false" aria-controls="pan-licences" tabindex="-1">Licences et abonnements <span class="ds-compteur">71</span></button>
+          <button class="ds-onglet" role="tab" type="button" id="ong-contrats" aria-selected="false" aria-controls="pan-contrats" tabindex="-1">Contrats <span class="ds-compteur">18</span></button>
+          <button class="ds-onglet" role="tab" type="button" id="ong-acces" aria-selected="false" aria-controls="pan-acces" tabindex="-1">Accès <span class="ds-compteur">29</span></button>
+        </div>
+
+        <div role="tabpanel" id="pan-tout" aria-labelledby="ong-tout" tabindex="0">
+          <form class="ds-barre-outils" role="search" onsubmit="return false">
+            <div class="ds-champ">
+              <label class="ds-champ__libelle" for="reg-recherche">Rechercher dans le registre</label>
+              <div class="ds-recherche">
+                <svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-recherche"/></svg>
+                <input class="ds-saisie" type="search" id="reg-recherche" placeholder="Nom, fournisseur, numéro de série">
+              </div>
+            </div>
+            <div class="ds-champ ds-champ--etroit">
+              <label class="ds-champ__libelle" for="reg-responsable">Responsable</label>
+              <div class="ds-liste">
+                <select id="reg-responsable">
+                  <option>Tous</option><option>Direction</option><option>Direction administrative</option><option>Ressources humaines</option><option>Services généraux</option><option>Prestataire informatique</option>
+                </select>
+              </div>
+            </div>
+            <label class="ds-case"><input type="checkbox" id="reg-a-traiter"> Seulement les éléments à traiter</label>
+          </form>
+
+          <p class="ds-sr" id="annonce-tri" aria-live="polite"></p>
+          <div class="ds-tableau-conteneur" role="region" aria-labelledby="cap-registre" tabindex="0">
+            <table class="ds-tableau ds-tableau--fige" id="tableau-registre">
+              <caption id="cap-registre">Registre des actifs <span class="ds-secondaire">Éléments 1 à 8 sur 214, exemple fictif. Coûts annuels hors taxes.</span></caption>
+              <thead>
+                <tr>
+                  <th scope="col" aria-sort="ascending"><button class="ds-tri" type="button" data-col="0" data-type="texte">Nom</button></th>
+                  <th scope="col">Catégorie</th>
+                  <th scope="col">Responsable</th>
+                  <th scope="col" class="ds-num"><button class="ds-tri" type="button" data-col="3" data-type="nombre">Coût annuel</button></th>
+                  <th scope="col"><button class="ds-tri" type="button" data-col="4" data-type="nombre">Échéance</button></th>
+                  <th scope="col">État</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><a class="ds-lien-ligne" href="#registre">Accès comptable externe à la facturation</a></th>
+                  <td>Accès</td><td>Direction financière</td>
+                  <td class="ds-num" data-tri="0">Inclus</td>
+                  <td data-tri="20270115">Revue le 15/01/2027</td>
+                  <td><span class="ds-badge ds-badge--info">À vérifier</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a class="ds-lien-ligne" href="#registre">Antivirus, 60 postes</a></th>
+                  <td>Abonnement</td><td>Prestataire informatique</td>
+                  <td class="ds-num" data-tri="1440">1&#8239;440&#8239;€</td>
+                  <td data-tri="20261113">13/11/2026 <span class="ds-badge ds-badge--echeance ds-badge--echeance-proche">dans 18 j</span></td>
+                  <td><span class="ds-badge ds-badge--alerte">À décider</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a class="ds-lien-ligne" href="#registre">Copieurs, contrat de maintenance</a></th>
+                  <td>Contrat</td><td>Services généraux</td>
+                  <td class="ds-num" data-tri="2160">2&#8239;160&#8239;€</td>
+                  <td data-tri="20261124">24/11/2026 <span class="ds-badge ds-badge--echeance ds-badge--echeance-proche">dans 29 j</span></td>
+                  <td><span class="ds-badge ds-badge--alerte">À décider</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a class="ds-lien-ligne" href="#registre">Logiciel de paie</a></th>
+                  <td>Abonnement</td><td>Ressources humaines</td>
+                  <td class="ds-num" data-tri="2880">2&#8239;880&#8239;€</td>
+                  <td data-tri="20270630">30/06/2027</td>
+                  <td><span class="ds-badge ds-badge--succes">À jour</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a class="ds-lien-ligne" href="#registre">Messagerie et bureautique, 38 licences</a></th>
+                  <td>Abonnement</td><td>Direction administrative</td>
+                  <td class="ds-num" data-tri="5472">5&#8239;472&#8239;€</td>
+                  <td data-tri="20261231">31/12/2026 <span class="ds-badge ds-badge--echeance">dans 66 j</span></td>
+                  <td><span class="ds-badge ds-badge--alerte">7 inutilisées</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a class="ds-lien-ligne" href="#registre">Nom de domaine principal</a></th>
+                  <td>Abonnement</td><td>Direction</td>
+                  <td class="ds-num" data-tri="18">18&#8239;€</td>
+                  <td data-tri="20270114">14/01/2027 <span class="ds-badge ds-badge--echeance">dans 80 j</span></td>
+                  <td><span class="ds-badge ds-badge--succes">À jour</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a class="ds-lien-ligne" href="#registre">Ordinateur portable <span class="ds-mono">PC-0412</span></a></th>
+                  <td>Matériel</td><td>Camille Martin (partie le 17/10)</td>
+                  <td class="ds-num" data-tri="0">Acheté</td>
+                  <td data-tri="20270331">Garantie au 31/03/2027</td>
+                  <td><span class="ds-badge ds-badge--alerte">À récupérer</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a class="ds-lien-ligne" href="#registre">Sauvegarde externalisée du serveur</a></th>
+                  <td>Contrat</td><td>Prestataire informatique</td>
+                  <td class="ds-num" data-tri="1320">1&#8239;320&#8239;€</td>
+                  <td data-tri="20270315">15/03/2027</td>
+                  <td><span class="ds-badge ds-badge--erreur">Dernière sauvegarde en échec</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <nav class="ds-pagination" aria-label="Pages du registre">
+            <p>Éléments 1 à 8 sur 214</p>
+            <ul>
+              <li><span aria-disabled="true">Précédent</span></li>
+              <li><a href="#registre" aria-current="page"><span class="ds-sr">Page </span>1</a></li>
+              <li><a href="#registre"><span class="ds-sr">Page </span>2</a></li>
+              <li><a href="#registre"><span class="ds-sr">Page </span>3</a></li>
+              <li><span class="ds-pagination__ellipse" aria-hidden="true">…</span></li>
+              <li><a href="#registre"><span class="ds-sr">Page </span>27</a></li>
+              <li><a href="#registre">Suivant<span class="ds-sr"> : page 2</span></a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div role="tabpanel" id="pan-materiel" aria-labelledby="ong-materiel" tabindex="0" hidden>
+          <p>Onglet « Matériel » : 96 éléments. Contenu non reproduit dans la démonstration ; même tableau, filtré.</p>
+        </div>
+        <div role="tabpanel" id="pan-licences" aria-labelledby="ong-licences" tabindex="0" hidden>
+          <p>Onglet « Licences et abonnements » : 71 éléments. Contenu non reproduit dans la démonstration.</p>
+        </div>
+        <div role="tabpanel" id="pan-contrats" aria-labelledby="ong-contrats" tabindex="0" hidden>
+          <div class="ds-chargement" role="status">
+            <span class="ds-roue" aria-hidden="true"></span> Chargement des contrats…
+          </div>
+        </div>
+        <div role="tabpanel" id="pan-acces" aria-labelledby="ong-acces" tabindex="0" hidden>
+          <p>Onglet « Accès » : 29 éléments. Contenu non reproduit dans la démonstration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================== -->
+  <section class="demo-section" id="composants" aria-labelledby="t-composants">
+    <h2 id="t-composants">Composants, en thème papier et en thème nuit</h2>
+    <p class="ds-secondaire">Chaque bloc est affiché deux fois : à gauche en thème papier, à droite en thème nuit (copie produite par le script de la page ; sans JavaScript, seul le thème papier s'affiche). Le survol, le focus clavier (touche Tab) et l'activation sont fonctionnels.</p>
+
+    <h3 id="c-boutons">Boutons</h3>
+    <div class="demo-duo">
+      <div class="demo-volet" data-theme="papier">
+        <p class="demo-etiquette">Thème papier</p>
+        <div class="ds-rangee">
+          <button class="ds-bouton" type="button">Enregistrer</button>
+          <button class="ds-bouton ds-bouton--secondaire" type="button">Annuler</button>
+          <button class="ds-bouton ds-bouton--tertiaire" type="button">Plus tard</button>
+        </div>
+        <div class="ds-rangee" style="margin-top:var(--espace-3)">
+          <button class="ds-bouton ds-bouton--danger" type="button">Retirer du registre</button>
+          <button class="ds-bouton" type="button" aria-disabled="true">Envoyer le rapport</button>
+          <button class="ds-bouton" type="button" aria-busy="true">Enregistrement…</button>
+          <button class="ds-bouton-icone" type="button" aria-label="Fermer"><svg class="ds-icone" aria-hidden="true" focusable="false"><use href="#i-fermer"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <h3 id="c-champs">Champs, sélecteurs et cases</h3>
+    <div class="demo-duo">
+      <div class="demo-volet" data-theme="papier">
+        <p class="demo-etiquette">Thème papier</p>
+        <form class="ds-formulaire" onsubmit="return false" novalidate>
+          <p class="ds-petit ds-secondaire">Tous les champs sont obligatoires, sauf mention « facultatif ».</p>
+          <div class="ds-champ">
+            <label class="ds-champ__libelle" for="f-nom">Nom de l'élément</label>
+            <p class="ds-champ__aide" id="f-nom-aide">Comme vous l'appelez en interne, par exemple « Copieurs du 2e étage ».</p>
+            <input class="ds-saisie" id="f-nom" type="text" aria-describedby="f-nom-aide" required value="Copieurs du 2e étage">
+          </div>
+          <div class="ds-champ">
+            <label class="ds-champ__libelle" for="f-date">Date de fin du contrat</label>
+            <p class="ds-champ__aide" id="f-date-aide">Format : jj/mm/aaaa, par exemple 24/11/2026.</p>
+            <input class="ds-saisie" id="f-date" type="text" inputmode="numeric" autocomplete="off" aria-describedby="f-date-aide f-date-err" aria-invalid="true" required value="31/11/2026">
+            <p class="ds-champ__erreur" id="f-date-err"><svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-erreur"/></svg><span>Le 31 novembre n'existe pas. Indiquez une date réelle, par exemple 30/11/2026.</span></p>
+          </div>
+          <div class="ds-champ">
+            <label class="ds-champ__libelle" for="f-cout">Coût annuel <span class="ds-facultatif">(facultatif)</span></label>
+            <div class="ds-saisie-unite">
+              <input class="ds-saisie" id="f-cout" type="text" inputmode="decimal" value="2 160">
+              <span class="ds-saisie-unite__unite">€ HT par an</span>
+            </div>
+          </div>
+          <div class="ds-champ">
+            <label class="ds-champ__libelle" for="f-cat">Catégorie</label>
+            <div class="ds-liste">
+              <select id="f-cat" required>
+                <option value="">Choisissez une catégorie</option>
+                <option>Matériel</option><option>Licence ou abonnement</option><option selected>Contrat</option><option>Accès</option>
+              </select>
+            </div>
+          </div>
+          <div class="ds-champ">
+            <label class="ds-champ__libelle" for="f-ref">Référence interne</label>
+            <input class="ds-saisie" id="f-ref" type="text" value="CTR-2023-014" disabled>
+          </div>
+          <fieldset class="ds-groupe">
+            <legend>Me prévenir avant l'échéance</legend>
+            <label class="ds-case"><input type="radio" name="f-delai" value="30"> 30 jours avant</label>
+            <label class="ds-case"><input type="radio" name="f-delai" value="60" checked> 60 jours avant</label>
+            <label class="ds-case"><input type="radio" name="f-delai" value="90"> 90 jours avant</label>
+          </fieldset>
+          <fieldset class="ds-groupe">
+            <legend>Qui reçoit l'alerte <span class="ds-facultatif ds-secondaire" style="font-weight:400">(facultatif)</span></legend>
+            <label class="ds-case"><input type="checkbox" checked> Moi</label>
+            <label class="ds-case"><input type="checkbox"> Le responsable de l'élément</label>
+            <label class="ds-case"><input type="checkbox" disabled> Le prestataire informatique (non invité)</label>
+          </fieldset>
+          <button class="ds-bouton" type="submit">Enregistrer l'élément</button>
+        </form>
+      </div>
+    </div>
+
+    <h3 id="c-badges">Badges d'échéance et d'état</h3>
+    <div class="demo-duo">
+      <div class="demo-volet" data-theme="papier">
+        <p class="demo-etiquette">Thème papier</p>
+        <p class="demo-titre-bloc">Échéances</p>
+        <div class="ds-rangee">
+          <span class="ds-badge ds-badge--echeance ds-badge--echeance-proche">dans 12 j</span>
+          <span class="ds-badge ds-badge--echeance">dans 45 j</span>
+          <span class="ds-badge ds-badge--neutre">dans 8 mois</span>
+          <span class="ds-badge ds-badge--erreur">dépassée de 3 j</span>
+        </div>
+        <p class="demo-titre-bloc">États</p>
+        <div class="ds-rangee">
+          <span class="ds-badge ds-badge--succes">À jour</span>
+          <span class="ds-badge ds-badge--alerte">À décider</span>
+          <span class="ds-badge ds-badge--erreur">En échec</span>
+          <span class="ds-badge ds-badge--info">À vérifier</span>
+          <span class="ds-badge ds-badge--neutre">Archivé</span>
+          <span class="ds-compteur">3</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 id="c-alertes">Alertes</h3>
+    <div class="demo-duo">
+      <div class="demo-volet" data-theme="papier">
+        <p class="demo-etiquette">Thème papier</p>
+        <div class="ds-pile">
+          <div class="ds-alerte ds-alerte--alerte">
+            <svg class="ds-icone" aria-hidden="true" focusable="false"><use href="#i-echeance"/></svg>
+            <div>
+              <p class="ds-alerte__titre">L'abonnement antivirus se renouvelle le 13 novembre.</p>
+              <p class="ds-alerte__texte">1&#8239;440&#8239;€ HT par an, 60 postes. 52 postes sont au registre.</p>
+            </div>
+            <div class="ds-alerte__action"><button class="ds-bouton ds-bouton--secondaire" type="button">Ajuster</button></div>
+          </div>
+          <div class="ds-alerte ds-alerte--succes">
+            <svg class="ds-icone" aria-hidden="true" focusable="false"><use href="#i-succes"/></svg>
+            <div>
+              <p class="ds-alerte__titre">Tous les accès de vos anciens salariés sont fermés.</p>
+              <p class="ds-alerte__texte">Dernière vérification le 26 octobre 2026.</p>
+            </div>
+          </div>
+          <div class="ds-alerte ds-alerte--erreur" role="alert">
+            <svg class="ds-icone" aria-hidden="true" focusable="false"><use href="#i-erreur"/></svg>
+            <div>
+              <p class="ds-alerte__titre">Nous n'avons pas pu lire ce fichier.</p>
+              <p class="ds-alerte__texte">Lanternis accepte les fichiers .xlsx et .csv. Vérifiez que la première ligne contient les titres des colonnes, ou envoyez-nous le fichier : nous l'importerons avec vous.</p>
+            </div>
+            <div class="ds-alerte__action"><button class="ds-bouton ds-bouton--secondaire" type="button">Choisir un autre fichier</button></div>
+          </div>
+          <div class="ds-alerte">
+            <svg class="ds-icone" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+            <div>
+              <p class="ds-alerte__titre">Votre prestataire peut compléter le registre avec vous.</p>
+              <p class="ds-alerte__texte">Il voit uniquement les éléments que vous lui confiez.</p>
+            </div>
+            <div class="ds-alerte__action"><a class="ds-bouton ds-bouton--tertiaire" href="#c-alertes">Inviter mon prestataire</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 id="c-bandeaux">Bandeaux</h3>
+    <div class="demo-duo">
+      <div class="demo-volet" data-theme="papier">
+        <p class="demo-etiquette">Thème papier</p>
+        <div class="ds-bandeau" role="region" aria-label="Information sur votre essai">
+          <p>Votre période d'essai se termine le 25 novembre 2026. <a href="#c-bandeaux">Choisir une formule</a></p>
+          <button class="ds-bouton-icone" type="button" aria-label="Masquer ce bandeau" data-ferme-bandeau><svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#i-fermer"/></svg></button>
+        </div>
+        <div class="ds-bandeau ds-bandeau--erreur" role="region" aria-label="Connexion interrompue">
+          <p><strong>La connexion à votre messagerie est interrompue depuis le 22 octobre.</strong> Les licences ne sont plus mises à jour. <a href="#c-bandeaux">Reconnecter</a></p>
+        </div>
+        <div class="ds-bandeau ds-bandeau--marque" data-theme="nuit">
+          <p class="ds-titre">Votre SI reste.</p>
+          <p>Le registre est complet à 92&#8239;%. Encore 6 contrats à ajouter avec votre DSI de poche.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 id="c-onglets">Onglets et fil d'Ariane</h3>
+    <div class="demo-duo">
+      <div class="demo-volet" data-theme="papier">
+        <p class="demo-etiquette">Thème papier</p>
+        <nav class="ds-ariane" aria-label="Fil d'Ariane (exemple)">
+          <ol><li><a href="#c-onglets">Registre</a></li><li><a href="#c-onglets">Contrats</a></li><li><span aria-current="page">Copieurs</span></li></ol>
+        </nav>
+        <div class="ds-onglets">
+          <div role="tablist" aria-label="Fiche de l'élément">
+            <button class="ds-onglet" role="tab" type="button" id="o2-infos" aria-selected="true" aria-controls="p2-infos">Informations</button>
+            <button class="ds-onglet" role="tab" type="button" id="o2-docs" aria-selected="false" aria-controls="p2-docs" tabindex="-1">Documents <span class="ds-compteur">2</span></button>
+            <button class="ds-onglet" role="tab" type="button" id="o2-hist" aria-selected="false" aria-controls="p2-hist" tabindex="-1">Historique</button>
+          </div>
+          <div role="tabpanel" id="p2-infos" aria-labelledby="o2-infos" tabindex="0"><p>Contrat de maintenance signé le 24/11/2023, pour 3 ans, reconduction tacite.</p></div>
+          <div role="tabpanel" id="p2-docs" aria-labelledby="o2-docs" tabindex="0" hidden><p>2 documents : contrat signé (PDF) et avenant de 2024.</p></div>
+          <div role="tabpanel" id="p2-hist" aria-labelledby="o2-hist" tabindex="0" hidden><p>Créé le 3 octobre 2026 par Nadia, lors de la mise en place.</p></div>
+        </div>
+        <p class="ds-petit ds-secondaire">Clavier : flèches gauche et droite, Début, Fin.</p>
+      </div>
+    </div>
+
+    <h3 id="c-modale">Modale et toasts</h3>
+    <div class="demo-duo">
+      <div class="demo-volet" data-theme="papier">
+        <p class="demo-etiquette">Thème papier</p>
+        <p>La modale s'ouvre au thème de la page ; le focus y entre, Échap la ferme, le focus revient sur le bouton.</p>
+        <div class="ds-rangee">
+          <button class="ds-bouton ds-bouton--danger" type="button" data-ouvre-modale="modale-retirer">Retirer les copieurs du registre</button>
+          <button class="ds-bouton ds-bouton--secondaire" type="button" data-toast="Élément ajouté au registre : Copieurs du 2e étage." data-toast-annuler>Afficher un toast</button>
+        </div>
+        <p class="ds-petit ds-secondaire" style="margin-top:var(--espace-3)">Le toast apparaît en bas à droite. Avec une action (« Annuler »), il reste jusqu'à sa fermeture.</p>
+      </div>
+    </div>
+
+    <h3 id="c-vide">État vide et chargement</h3>
+    <div class="demo-duo">
+      <div class="demo-volet" data-theme="papier">
+        <p class="demo-etiquette">Thème papier</p>
+        <div class="ds-vide">
+          <svg class="ds-vide__illustration" viewBox="0 0 120 80" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="8" width="54" height="66" rx="4"/><path d="M20 24h34M20 36h34M20 48h20"/>
+            </g>
+            <g transform="translate(74 22) scale(.62)" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="9" r="4" fill="none" stroke-width="4" style="stroke:var(--logo-trait)"/>
+              <path d="M16 58V36a16 16 0 0 1 32 0v22z" stroke-width="5" style="fill:var(--logo-interieur);stroke:var(--logo-trait)"/>
+              <path d="M10 58h44" stroke-width="5" style="stroke:var(--logo-trait)"/>
+              <circle cx="32" cy="40" r="8.5" style="fill:var(--logo-lumiere)"/>
+            </g>
+          </svg>
+          <h4>Aucun contrat pour l'instant</h4>
+          <p>Ajoutez vos contrats un par un, ou importez votre tableau Excel : nous pouvons aussi le faire avec vous.</p>
+          <div class="ds-rangee">
+            <button class="ds-bouton" type="button">Ajouter un contrat</button>
+            <button class="ds-bouton ds-bouton--secondaire" type="button">Importer un fichier</button>
+          </div>
+        </div>
+        <p class="demo-titre-bloc">Chargement</p>
+        <div class="ds-chargement" role="status"><span class="ds-roue" aria-hidden="true"></span> Chargement du registre…</div>
+        <div class="ds-carte" style="margin-top:var(--espace-4)" aria-hidden="true">
+          <div class="ds-squelette">
+            <div class="ds-squelette__ligne ds-squelette__ligne--titre"></div>
+            <div class="ds-squelette__ligne"></div>
+            <div class="ds-squelette__ligne ds-squelette__ligne--court"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 id="c-pagination">Pagination</h3>
+    <div class="demo-duo">
+      <div class="demo-volet" data-theme="papier">
+        <p class="demo-etiquette">Thème papier</p>
+        <nav class="ds-pagination" aria-label="Pages (exemple)">
+          <p>Éléments 41 à 60 sur 214</p>
+          <ul>
+            <li><a href="#c-pagination">Précédent<span class="ds-sr"> : page 2</span></a></li>
+            <li><a href="#c-pagination"><span class="ds-sr">Page </span>1</a></li>
+            <li><span class="ds-pagination__ellipse" aria-hidden="true">…</span></li>
+            <li><a href="#c-pagination" aria-current="page"><span class="ds-sr">Page </span>3</a></li>
+            <li><a href="#c-pagination"><span class="ds-sr">Page </span>4</a></li>
+            <li><span class="ds-pagination__ellipse" aria-hidden="true">…</span></li>
+            <li><a href="#c-pagination"><span class="ds-sr">Page </span>11</a></li>
+            <li><a href="#c-pagination">Suivant<span class="ds-sr"> : page 4</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <h3 id="c-nav">Navigation</h3>
+    <p>L'en-tête de cette page est le composant de navigation : toujours sur fond nuit, logo à 140 px de large, lien actif signalé par un trait ambre et par <code>aria-current="page"</code>. Sous 960 px, il se replie derrière un bouton « Menu » (<code>aria-expanded</code>).</p>
+  </section>
+</main>
+
+<!-- Modale de confirmation (élément dialog natif) -->
+<dialog class="ds-modale" id="modale-retirer" aria-labelledby="modale-titre" aria-describedby="modale-texte">
+  <form method="dialog">
+    <div class="ds-modale__entete">
+      <h2 id="modale-titre">Retirer les copieurs du registre ?</h2>
+      <button class="ds-bouton-icone" value="annuler" aria-label="Fermer sans retirer"><svg class="ds-icone" aria-hidden="true" focusable="false"><use href="#i-fermer"/></svg></button>
+    </div>
+    <div class="ds-modale__corps">
+      <p id="modale-texte">L'élément et ses 2 documents ne seront plus suivis : vous ne recevrez plus d'alerte sur son échéance du 24 novembre 2026. Vous pourrez le retrouver dans les archives pendant 12 mois.</p>
+    </div>
+    <div class="ds-modale__pied">
+      <button class="ds-bouton ds-bouton--secondaire" value="annuler" autofocus>Garder dans le registre</button>
+      <button class="ds-bouton ds-bouton--danger" value="retirer">Retirer du registre</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Région unique des toasts : présente dès le chargement pour être annoncée -->
+<div class="ds-toasts" id="toasts" aria-live="polite" aria-relevant="additions"></div>
+
+<script>
+(function () {
+  "use strict";
+  var racine = document.documentElement;
+
+  /* 1. Choix du thème de la page */
+  document.querySelectorAll('input[name="demo-theme"]').forEach(function (r) {
+    r.addEventListener("change", function () {
+      if (r.value === "systeme") racine.removeAttribute("data-theme");
+      else racine.setAttribute("data-theme", r.value);
+    });
+  });
+
+  /* 2. Copie de chaque volet en thème nuit (identifiants suffixés pour rester uniques) */
+  var attributs = ["id", "for", "name", "aria-labelledby", "aria-describedby", "aria-controls", "data-ouvre-modale"];
+  document.querySelectorAll(".demo-duo").forEach(function (duo) {
+    var source = duo.querySelector(".demo-volet");
+    var copie = source.cloneNode(true);
+    copie.setAttribute("data-theme", "nuit");
+    copie.querySelector(".demo-etiquette").textContent = "Thème nuit";
+    copie.querySelectorAll("*").forEach(function (el) {
+      attributs.forEach(function (a) {
+        var v = el.getAttribute(a);
+        if (!v || a === "data-ouvre-modale") return;
+        el.setAttribute(a, v.split(" ").map(function (x) { return x + "-nuit"; }).join(" "));
+      });
+    });
+    duo.appendChild(copie);
+  });
+
+  /* 3. Onglets (motif ARIA « tabs », activation automatique) */
+  document.querySelectorAll('[role="tablist"]').forEach(function (liste) {
+    var onglets = Array.prototype.slice.call(liste.querySelectorAll('[role="tab"]'));
+    function choisir(onglet, focus) {
+      onglets.forEach(function (o) {
+        var actif = o === onglet;
+        o.setAttribute("aria-selected", actif ? "true" : "false");
+        o.tabIndex = actif ? 0 : -1;
+        var panneau = document.getElementById(o.getAttribute("aria-controls"));
+        if (panneau) panneau.hidden = !actif;
+      });
+      if (focus) onglet.focus();
+    }
+    onglets.forEach(function (o, i) {
+      o.addEventListener("click", function () { choisir(o, false); });
+      o.addEventListener("keydown", function (e) {
+        var n = onglets.length, j = null;
+        if (e.key === "ArrowRight") j = (i + 1) % n;
+        else if (e.key === "ArrowLeft") j = (i - 1 + n) % n;
+        else if (e.key === "Home") j = 0;
+        else if (e.key === "End") j = n - 1;
+        if (j !== null) { e.preventDefault(); choisir(onglets[j], true); }
+      });
+    });
+  });
+
+  /* 4. Toasts */
+  var region = document.getElementById("toasts");
+  function icone(nom) {
+    return '<svg class="ds-icone ds-icone--petite" aria-hidden="true" focusable="false"><use href="#' + nom + '"/></svg>';
+  }
+  function toast(message, avecAnnuler) {
+    var t = document.createElement("div");
+    t.className = "ds-toast";
+    t.innerHTML = icone("i-succes") + "<p></p>" +
+      '<div class="ds-toast__actions">' +
+      (avecAnnuler ? '<button class="ds-bouton ds-bouton--tertiaire" type="button">Annuler</button>' : "") +
+      '<button class="ds-bouton-icone" type="button" aria-label="Fermer ce message">' + icone("i-fermer") + "</button></div>";
+    t.querySelector("p").textContent = message;
+    t.querySelectorAll("button").forEach(function (b) { b.addEventListener("click", function () { t.remove(); }); });
+    region.appendChild(t);
+    if (!avecAnnuler) {
+      /* sans action : disparaît après 8 s, en pause tant que la souris ou le focus est dessus */
+      var minuteur, pause = false;
+      function armer() { minuteur = setTimeout(function () { if (!pause) t.remove(); }, 8000); }
+      t.addEventListener("mouseenter", function () { pause = true; });
+      t.addEventListener("mouseleave", function () { pause = false; clearTimeout(minuteur); armer(); });
+      t.addEventListener("focusin", function () { pause = true; });
+      t.addEventListener("focusout", function () { pause = false; clearTimeout(minuteur); armer(); });
+      armer();
+    }
+  }
+
+  /* 5. Délégation des clics : modale, toasts, bandeaux */
+  var modale = document.getElementById("modale-retirer");
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-ouvre-modale]");
+    if (b && modale.showModal) { modale.showModal(); return; }
+    b = e.target.closest("[data-toast]");
+    if (b) { toast(b.getAttribute("data-toast"), b.hasAttribute("data-toast-annuler")); return; }
+    b = e.target.closest("[data-ferme-bandeau]");
+    if (b) { b.closest(".ds-bandeau").hidden = true; }
+  });
+  modale.addEventListener("close", function () {
+    if (modale.returnValue === "retirer") toast("Les copieurs ont été retirés du registre (exemple).", true);
+  });
+
+  /* 6. Menu replié sur petit écran */
+  var bascule = document.querySelector(".ds-nav__bascule");
+  var nav = document.getElementById("menu-principal");
+  bascule.addEventListener("click", function () {
+    var ouvert = bascule.getAttribute("aria-expanded") === "true";
+    bascule.setAttribute("aria-expanded", ouvert ? "false" : "true");
+    if (ouvert) nav.setAttribute("data-ferme", ""); else nav.removeAttribute("data-ferme");
+  });
+
+  /* 7. Tri du tableau du registre (aria-sort sur l'en-tête, annonce polie) */
+  var tableau = document.getElementById("tableau-registre");
+  var annonce = document.getElementById("annonce-tri");
+  tableau.querySelectorAll(".ds-tri").forEach(function (bouton) {
+    bouton.addEventListener("click", function () {
+      var th = bouton.closest("th");
+      var sens = th.getAttribute("aria-sort") === "ascending" ? "descending" : "ascending";
+      tableau.querySelectorAll("thead th").forEach(function (x) { x.removeAttribute("aria-sort"); });
+      th.setAttribute("aria-sort", sens);
+      var col = +bouton.getAttribute("data-col"), nombre = bouton.getAttribute("data-type") === "nombre";
+      var corps = tableau.tBodies[0];
+      var lignes = Array.prototype.slice.call(corps.rows);
+      lignes.sort(function (a, b) {
+        var ca = a.cells[col], cb = b.cells[col];
+        var va = nombre ? +ca.getAttribute("data-tri") : ca.textContent.trim();
+        var vb = nombre ? +cb.getAttribute("data-tri") : cb.textContent.trim();
+        var r = nombre ? va - vb : va.localeCompare(vb, "fr");
+        return sens === "ascending" ? r : -r;
+      });
+      lignes.forEach(function (l) { corps.appendChild(l); });
+      annonce.textContent = "Registre trié par " + bouton.textContent.trim().toLowerCase() + ", ordre " + (sens === "ascending" ? "croissant" : "décroissant") + ".";
+    });
+  });
+})();
+</script>
+</body>
+</html>

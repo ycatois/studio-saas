@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · exemple · chiffre clé (1200 × 630)</title>
+<!-- Exemple rempli du gabarit citation-chiffre.html (format paysage, type chiffre). Statut : brouillon.
+     Chiffre SOURCÉ : 2-marche/signaux-demande.md, S2. Deux offres d'emploi de responsable informatique en PME publiées
+     sur HelloWork : 45 à 70 k€ brut/an (19/10/2026, https://www.hellowork.com/fr-fr/emplois/82433859.html) et
+     65 à 75 k€/an (12/10/2026, https://www.hellowork.com/fr-fr/emplois/84330801.html).
+     La source est affichée telle quelle : deux offres, ce n'est pas une étude de salaires. Le mot « brut » n'est pas
+     repris car la seconde offre ne le précise pas. Avant publication : revérifier que les offres sont toujours
+     consultables, ou citer une étude de rémunération plus large. -->
+<link rel="stylesheet" href="commun/gabarits.css">
+</head>
+<body>
+<div id="toile"></div>
+<script src="commun/gabarits.js"></script>
+<script>
+LT.rendre("citation-paysage", LT.donnees({
+  type: "chiffre",
+  theme: "nuit",
+  surtitre: "Le coût d'un poste",
+  chiffre: "45 à 75 k€",
+  legende: "par an : le salaire proposé pour un responsable informatique de PME.",
+  source: "Source : deux offres d'emploi publiées sur HelloWork les 12 et 19 octobre 2026.",
+  signature: "Un DSI de poche, pour une fraction du prix d'un poste.",
+  alt: "Le coût d'un poste : 45 à 75 k€ par an, le salaire proposé pour un responsable informatique de PME. Source : deux offres d'emploi publiées sur HelloWork les 12 et 19 octobre 2026. Lanternis, un DSI de poche, pour une fraction du prix d'un poste."
+}));
+</script>
+</body>
+</html>

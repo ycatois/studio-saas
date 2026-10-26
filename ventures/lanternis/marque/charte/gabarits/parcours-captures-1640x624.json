@@ -1,0 +1,8 @@
+{
+  "base_url": "/studio/ventures/lanternis/marque/charte/gabarits",
+  "formats": {"1640x624": [820, 312]},
+  "ecrans": [
+    {"nom": "exemple-facebook-couverture", "url": "exemple-facebook-couverture.html", "attendre": "#toile[data-pret]"},
+    {"nom": "controle-facebook-couverture-reperes", "url": "facebook-couverture.html", "attendre": "#toile[data-pret]"}
+  ]
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · gabarit · post Facebook carré (1080 × 1080)</title>
+<!-- Gabarit paramétrable. Un message par visuel ; le texte complet va dans la légende du post.
+     Format 1080 × 1080 à reconfirmer dans l'aide Meta au moment de publier.
+     Paramètres (valeurs par défaut ci-dessous, ou dans l'URL) :
+       theme      nuit (défaut) | papier
+       surtitre   thème du post, 40 caractères au plus (facultatif)
+       titre      la phrase principale, 70 caractères au plus (taille ajustée de 76 à 44 px) ; \n = retour à la ligne
+       accent     seconde phrase, en ambre (facultatif), 80 caractères au plus
+       sous       précision courte (facultatif)
+       signature  ligne en bas à droite (défaut : la signature de marque)
+       image      chemin d'une image locale (facultatif ; bandeau photo de 400 px en haut)
+       alt        texte alternatif
+     Capture : parcours-captures-1080x1080.json (fenêtre 540 × 540, facteur 2). -->
+<link rel="stylesheet" href="commun/gabarits.css">
+</head>
+<body>
+<div id="toile"></div>
+<script src="commun/gabarits.js"></script>
+<script>
+LT.rendre("carre", LT.donnees({
+  theme: "nuit",
+  surtitre: "",
+  titre: "La phrase principale du post, courte et concrète.",
+  accent: "La question ou la conséquence, en ambre.",
+  sous: "",
+  signature: "Votre informatique, enfin lisible.",
+  image: ""
+}));
+</script>
+</body>
+</html>

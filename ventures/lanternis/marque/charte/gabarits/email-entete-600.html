@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · gabarit · en-tête de newsletter (600 px de large)</title>
+<!-- Gabarit paramétrable. Image de 1200 × 400 px, insérée dans l'email à width="600" height="200" (netteté sur écrans denses).
+     Les messageries bloquent souvent les images : le même texte doit figurer dans l'attribut alt ET dans le corps HTML
+     de l'email (titre en Georgia). Poids visé : moins de 40 Ko (PNG à aplats ; hypothèse à mesurer, budget email 100 Ko).
+     Paramètres :
+       theme      nuit (défaut) | papier
+       surtitre   nom de la lettre et date, 45 caractères au plus
+       titre      le sujet du numéro, 50 caractères au plus (taille ajustée de 56 à 40 px)
+       accent     suite du titre en ambre, sur la même ligne (facultatif)
+       alt        texte alternatif
+     Capture : parcours-captures-1200x400.json (fenêtre 600 × 200, facteur 2). -->
+<link rel="stylesheet" href="commun/gabarits.css">
+</head>
+<body>
+<div id="toile"></div>
+<script src="commun/gabarits.js"></script>
+<script>
+LT.rendre("email", LT.donnees({
+  theme: "nuit",
+  surtitre: "Nom de la lettre · mois année",
+  titre: "Le sujet du numéro,",
+  accent: "en une ligne."
+}));
+</script>
+</body>
+</html>

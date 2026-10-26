@@ -1,0 +1,7 @@
+{
+  "base_url": "/studio/ventures/lanternis/marque/charte/logo",
+  "formats": {"1200x630": [600, 315]},
+  "ecrans": [
+    {"nom": "og-image", "url": "og-image.html", "attendre": "svg", "pleine_page": false}
+  ]
+}

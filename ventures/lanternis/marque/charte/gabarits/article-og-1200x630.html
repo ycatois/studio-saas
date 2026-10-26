@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lanternis · gabarit · image d'article de blog et Open Graph (1200 × 630)</title>
+<!-- Gabarit paramétrable. Usages : image de partage Open Graph d'un article ou d'une page (thème nuit),
+     image d'en-tête d'article dans le blog (thème papier), post Facebook avec lien (1200 × 630, même fichier).
+     Paramètres (valeurs par défaut ci-dessous, ou dans l'URL : ?titre=...&theme=papier) :
+       theme         nuit (défaut) | papier
+       surtitre      rubrique ou thème, 40 caractères au plus
+       titre         titre de l'article, 90 caractères au plus (taille ajustée de 64 à 40 px) ; \n = retour à la ligne
+       accent        seconde phrase du titre, en ambre (facultatif)
+       sous          chapeau, 90 caractères au plus (facultatif)
+       pied          ligne de pied (facultatif)
+       illustration  etat-vide | onboarding | erreur (facultatif, de préférence en thème papier)
+       image         chemin d'une image locale, relatif à ce dossier (facultatif, prioritaire ; photo avec droits vérifiés)
+       symbole       non = pas de grand symbole à droite (le titre prend toute la largeur)
+       alt           texte alternatif (sinon : concaténation des textes)
+     Capture : parcours-captures-1200x630.json (fenêtre 600 × 315, facteur 2). -->
+<link rel="stylesheet" href="commun/gabarits.css">
+</head>
+<body>
+<div id="toile"></div>
+<script src="commun/gabarits.js"></script>
+<script>
+LT.rendre("article", LT.donnees({
+  theme: "nuit",
+  surtitre: "Rubrique du blog",
+  titre: "Titre de l'article : une phrase claire, 90 caractères au plus",
+  accent: "",
+  sous: "Chapeau facultatif : le bénéfice pour le lecteur, en une ligne.",
+  pied: "",
+  illustration: "",
+  image: "",
+  symbole: "oui"
+}));
+</script>
+</body>
+</html>
