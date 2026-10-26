@@ -3,7 +3,7 @@ venture: lanternis
 phase: 5 Cadrage · commande /charte, étape 3c : gabarits de visuels marketing
 auteur: directeur-artistique
 date: 2026-10-26
-statut: version 1.0, à valider par le fondateur ; tous les exemples sont des brouillons (rien n'est publié ni envoyé)
+statut: version 1.0 (exemples alignés sur la plateforme v1.2 le 2026-10-26), à valider par le fondateur ; tous les exemples sont des brouillons (rien n'est publié ni envoyé)
 skills: visuels-marketing, documents-generes
 ---
 
@@ -39,10 +39,10 @@ Exemple d'appel (navigateur) : `article-og-1200x630.html?theme=papier&surtitre=C
 
 | Fichier | Texte (source) | Texte alternatif |
 |---|---|---|
-| `exemple-article-og-nuit.html` | Article P1 « Départ du responsable informatique : la check-list de passation » (`messages-par-persona.md`) ; chapeau = message principal (plateforme § 11) | « Lanternis. Départ du responsable informatique : la check-list de passation à faire avant son dernier jour. Ce que vous avez, ce que vous payez, ce qui arrive à échéance. » |
-| `exemple-article-entete-papier.html` | Même article, en-tête du blog, illustration `onboarding` ; « liste en trois colonnes » et « première page d'un registre » (plateforme § 10.5) | « Départ du responsable informatique : la check-list de passation à faire avant son dernier jour. Illustration : un tableur devient un registre en trois colonnes, sous une petite lanterne allumée. » |
-| `exemple-facebook-carre.html` | Post réécrit de la plateforme (§ 10.5) | « Votre responsable informatique part en juin. Qui sait, chez vous, quand se renouvelle le contrat du serveur ? Lanternis, votre informatique, enfin lisible. » |
-| `exemple-facebook-couverture.html` | Message principal (§ 11, message 1) | « Lanternis. Votre informatique, enfin lisible. Ce que vous avez, ce que vous payez, ce qui arrive à échéance. » |
+| `exemple-article-og-nuit.html` | v1.2 : article illustratif sur les contrats et le matériel loué (plateforme § 4.2 domaine 1, § 10.2 lignes v1.2 ; sujet **hypothèse**, pas encore au calendrier) ; chapeau = titre A (§ 4.1) | « Lanternis. Contrats et matériel loué. Préavis, fin de location, reconduction tacite : choisir plutôt que subir. Qui a quoi, ce que vous payez, ce qui arrive à échéance. » |
+| `exemple-article-entete-papier.html` | **Seul exemple centré sur les départs** (admis pour un article, plateforme § 10.7) : article P1 « Départ du responsable informatique : la check-list de passation » (`messages-par-persona.md`), illustration `onboarding` ; « liste en trois colonnes » et « première page d'un registre » (§ 10.5). Son commentaire « même article que exemple-article-og-nuit » n'est plus vrai depuis la v1.2 | « Départ du responsable informatique : la check-list de passation à faire avant son dernier jour. Illustration : un tableur devient un registre en trois colonnes, sous une petite lanterne allumée. » |
+| `exemple-facebook-carre.html` | v1.2 : angle « tout le SI » (§ 10.2 lignes v1.2, § 11 message 2) ; « 21 jours » = situation illustrative, pas une statistique ; signature = titre A | « Le contrat du copieur se reconduit dans 21 jours. Qui le sait chez vous ? Lanternis, toute votre informatique, enfin lisible. » |
+| `exemple-facebook-couverture.html` | v1.2 : titre A et sous-titre B raccourci (§ 4.1, § 11 message 1) | « Lanternis. Toute votre informatique, enfin lisible. Contrats, matériel, licences, accès : chaque élément relié à une personne. » |
 | `exemple-email-entete.html` | Message « Alertes » (§ 11, message 4) ; nom « La lettre Lanternis » = **hypothèse** | « La lettre Lanternis, novembre 2026. Être prévenu avant : renouvellements, licences, accès. » |
 | `exemple-citation-carre.html` | « On dit » de la plateforme (§ 10.2), attribué comme **principe de la marque** (aucun témoignage client n'existe) | « « Lanternis ne remplace pas votre prestataire : il vous donne la carte. » Un principe Lanternis. » |
 | `exemple-chiffre-cle-paysage.html` | **Chiffre sourcé** : `2-marche/signaux-demande.md`, S2 (voir ci-dessous) ; signature = message « Coût » (§ 11, message 3) | « Le coût d'un poste : 45 à 75 k€ par an, le salaire proposé pour un responsable informatique de PME. Source : deux offres d'emploi publiées sur HelloWork les 12 et 19 octobre 2026. Lanternis, un DSI de poche, pour une fraction du prix d'un poste. » |

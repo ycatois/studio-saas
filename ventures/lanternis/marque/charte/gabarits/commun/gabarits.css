@@ -78,7 +78,7 @@ html, body { margin: 0; padding: 0; overflow: hidden; background: #1B2330; }
 .f-carre .titre { font-size: 76px; }
 .f-carre .sous { font-size: 34px; line-height: 1.4; margin: .8em 0 0; }
 .f-carre .bas .logo { width: 300px; flex: none; }
-.f-carre .signature { font-size: 28px; max-width: 460px; }
+.f-carre .signature { font-size: 28px; max-width: 560px; }
 
 /* ---------- Couverture de page Facebook : 1640 × 624 ---------- */
 .f-couverture .texte { position: absolute; left: 420px; top: 72px; bottom: 72px; width: 640px; display: flex; flex-direction: column; }
