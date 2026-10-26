@@ -1,0 +1,7 @@
+{
+  "base_url": "/studio/ventures/lanternis/produit/apps/prelancement/public",
+  "formats": {"mobile": [390, 844]},
+  "ecrans": [
+    {"nom": "autodiagnostic", "url": "autodiagnostic.html", "attendre": "h1", "pleine_page": true}
+  ]
+}

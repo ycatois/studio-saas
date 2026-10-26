@@ -138,7 +138,7 @@ Légende : **Priorité** A = à contacter en premier (100 à 249 avec déclenche
 
 ## 5. Modèle de tableau de suivi (colonnes seulement)
 
-**Où le tenir :** le tableau rempli contient des données personnelles (nom et coordonnées professionnelles de l'interlocuteur). **Il ne doit pas être commité dans le dépôt Git.** Le tenir hors du dépôt (tableur sur un espace de stockage hébergé dans l'UE, accès limité au fondateur) ou dans un fichier exclu par `.gitignore` (modification à faire par le directeur du studio, H). Durée de conservation : voir `invitation-entretien.md` § 6.4.
+**Où le tenir :** le tableau rempli contient des données personnelles (nom et coordonnées professionnelles de l'interlocuteur). **Il ne doit pas être commité dans le dépôt Git.** Le tenir hors du dépôt (tableur sur un espace de stockage hébergé dans l'UE, accès limité au fondateur) ou dans un fichier exclu par `.gitignore` (selon juriste-rgpd, une exclusion existe déjà pour la prospection : vérifier le motif exact avant de créer le fichier). Les adresses reconstituées sont interdites par défaut (exception encadrée : `invitation-entretien.md` § 6.5). Durée de conservation : voir `invitation-entretien.md` § 6.4.
 
 ### 5.1 Onglet « Comptes » (aucune donnée personnelle)
 
@@ -157,7 +157,7 @@ Légende : **Priorité** A = à contacter en premier (100 à 249 avec déclenche
 |---|---|---|---|
 | | | | |
 
-À consulter **avant chaque envoi ou appel**. Une opposition vaut pour tous les canaux et toutes les campagnes futures de Lanternis (règle à confirmer par juriste-rgpd).
+À consulter **avant chaque envoi ou appel**. **Liste unique pour Hasteria** (tranché par juriste-rgpd, `marketing/landing/conformite-prelancement.md` § 3.6) : une opposition vaut pour tous les canaux et pour toutes les marques d'Hasteria. Stocker des empreintes hachées, conservées 3 ans minimum, pour cette seule finalité.
 
 ### 5.4 Indicateurs à calculer chaque quinzaine (`acquisition.md` § 4.3)
 Contacts envoyés · taux de réponse (objectif ≥ 10 %, arrêt si < 5 % après 60 contacts et 2 variantes) · entretiens obtenus · entretiens réalisés · engagements · temps passé par contact (chronométré) · taux de réponse par profil, par déclencheur et par variante de message · objections les plus fréquentes (à remonter au marketing et au produit).

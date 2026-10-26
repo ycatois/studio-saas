@@ -1,0 +1,292 @@
+<!doctype html>
+<!--
+  Lanternis · politique de confidentialité du site de pré-lancement · statut: brouillon · 2026-10-26
+  Auteur : juriste-rgpd (skills politique-confidentialite, cookies-consentement). Registre, sources et arbitrages : conformite-prelancement.md.
+  PROJET : ne remplace pas l'avis d'un avocat. NE PAS PUBLIER sans validation explicite du fondateur.
+  Fidèle aux traitements décrits dans validation.html, validation.md § 7 et § 10, autodiagnostic.md § 1, § 5 et § 6,
+  invitation-entretien.md. Toute évolution de ces traitements (nouveau champ, nouvel outil, calcul de l'autodiagnostic côté serveur)
+  impose de mettre cette page à jour AVANT la mise en production de l'évolution.
+  Les marqueurs [À CONFIRMER] sont volontairement visibles : chacun doit être levé avant la mise en ligne, puis le bandeau
+  « brouillon » et la balise noindex retirés. Aucune ressource externe, aucun cookie, aucun script.
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité · Lanternis</title>
+<meta name="description" content="Comment Hasteria SASU, qui exploite la marque Lanternis, utilise vos données : liste d'attente, emails, autodiagnostic, prospection. Vos droits et comment les exercer.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../../marque/charte/logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../marque/charte/tokens.css">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--couleur-fond);color:var(--couleur-texte);font-family:var(--police-texte);font-size:var(--taille-l);line-height:var(--interligne-texte);-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:var(--police-titre);font-weight:var(--graisse-titre);line-height:var(--interligne-titre);margin:0 0 var(--espace-4)}
+h1{font-size:clamp(2rem,5vw,var(--taille-4xl))}
+h2{font-size:clamp(1.4rem,3.5vw,var(--taille-2xl));margin-top:var(--espace-7)}
+h3{font-size:var(--taille-xl);margin-top:var(--espace-6)}
+p,ul,ol,dl{margin:0 0 var(--espace-4)}
+li{margin-bottom:var(--espace-2)}
+a{color:var(--couleur-accent);text-underline-offset:.15em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--couleur-focus);outline-offset:3px;border-radius:2px}
+.conteneur{width:100%;max-width:var(--largeur-contenu);margin:0 auto;padding:0 var(--grille-marge)}
+@media (max-width:40rem){.conteneur{padding:0 var(--espace-4)}}
+.texte{max-width:var(--mesure-texte)}
+.chapeau{font-size:var(--taille-xl);color:var(--couleur-texte-secondaire)}
+.petit{font-size:var(--taille-s);color:var(--couleur-texte-secondaire)}
+.evitement{position:absolute;left:var(--espace-4);top:-4rem;z-index:10;background:var(--lt-papier);color:var(--lt-nuit);padding:var(--espace-2) var(--espace-4);border-radius:var(--rayon-m)}
+.evitement:focus{top:var(--espace-2)}
+.zone-nuit{background:var(--couleur-surface-marque);color:var(--lt-papier);--couleur-texte:var(--lt-papier);--couleur-texte-secondaire:var(--lt-brume);--couleur-accent:var(--lt-ambre);--couleur-focus:var(--lt-ambre);--couleur-filet:var(--lt-lin-nuit)}
+.entete{padding:var(--espace-4) 0}
+.entete .conteneur{display:flex;align-items:center;justify-content:space-between;gap:var(--espace-4);flex-wrap:wrap}
+.entete img{display:block;width:160px;height:auto}
+.entete nav ul{list-style:none;margin:0;padding:0;display:flex;gap:var(--espace-5);flex-wrap:wrap;font-size:var(--taille-s)}
+.entete nav a{color:var(--lt-brume);text-decoration:none;padding:var(--espace-2) 0;display:inline-block}
+.entete nav a:hover,.entete nav a[aria-current]{color:var(--lt-papier);text-decoration:underline}
+main{padding:var(--espace-7) 0 var(--espace-8)}
+.brouillon{background:var(--lt-ambre-pale);color:var(--lt-nuit);border-left:4px solid var(--lt-ambre-profond);border-radius:var(--rayon-m);padding:var(--espace-4);margin-bottom:var(--espace-6);font-size:var(--taille-m)}
+.a-confirmer{background:var(--lt-ambre-pale);color:var(--lt-nuit);font-weight:var(--graisse-forte);font-size:.9em;border:1px dashed var(--lt-ambre-profond);border-radius:var(--rayon-s);padding:0 .3rem}
+.encadre{background:var(--couleur-mise-en-avant);border-radius:var(--rayon-l);padding:var(--espace-5) var(--espace-6);max-width:var(--mesure-texte)}
+@media (max-width:40rem){.encadre{padding:var(--espace-5)}}
+.encadre ul:last-child,.encadre p:last-child{margin-bottom:0}
+.sommaire{columns:2;column-gap:var(--espace-6);font-size:var(--taille-m)}
+@media (max-width:40rem){.sommaire{columns:1}}
+.tableau-defilant{overflow-x:auto;margin-bottom:var(--espace-5)}
+table{border-collapse:collapse;width:100%;font-size:var(--taille-m)}
+caption{text-align:left;font-weight:var(--graisse-forte);margin-bottom:var(--espace-3)}
+th,td{text-align:left;padding:var(--espace-3);border-bottom:1px solid var(--couleur-filet);vertical-align:top}
+thead th{font-size:var(--taille-s);color:var(--couleur-texte-secondaire)}
+tbody th{font-weight:var(--graisse-forte);width:24%}
+.pied{padding:var(--espace-7) 0 var(--espace-6);font-size:var(--taille-s)}
+.pied .conteneur{display:grid;gap:var(--espace-4)}
+.pied img{width:140px;height:auto}
+.pied p{margin:0;color:var(--lt-brume)}
+.pied a{color:var(--lt-papier)}
+.pied ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--espace-5)}
+@media print{.zone-nuit{background:none;color:#000}.entete nav{display:none}}
+</style>
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<div class="zone-nuit">
+ <header class="entete" role="banner">
+  <div class="conteneur">
+   <a href="validation.html" aria-label="Lanternis, retour à la page d'accueil"><img src="../../marque/charte/logo/logo-horizontal-nuit.svg" width="160" height="34" alt="Lanternis"></a>
+   <nav aria-label="Navigation du site">
+    <ul>
+     <li><a href="validation.html">Accueil</a></li>
+     <li><a href="validation.html#liste-attente">Liste d'attente</a></li>
+     <li><a href="mentions-legales.html">Mentions légales</a></li>
+     <li><a href="confidentialite.html" aria-current="page">Confidentialité</a></li>
+    </ul>
+   </nav>
+  </div>
+ </header>
+</div>
+
+<main id="contenu" tabindex="-1">
+ <div class="conteneur">
+  <div class="texte">
+   <p class="brouillon" role="note"><strong>Brouillon, non publié.</strong> Projet rédigé le 26 octobre 2026, à faire relire par un avocat avant la mise en ligne. Les mentions <span class="a-confirmer">[À CONFIRMER]</span> signalent les informations qui ne sont pas encore vérifiées.</p>
+
+   <h1>Politique de confidentialité</h1>
+   <p class="chapeau">Ce que nous faisons de vos données, pourquoi, combien de temps, et comment vous pouvez nous demander de les modifier ou de les supprimer.</p>
+   <p class="petit">Version 1.0 du 26 octobre 2026 <span class="a-confirmer">[À CONFIRMER : date de mise en ligne]</span>. Elle s'applique au site de pré-lancement de Lanternis <span class="a-confirmer">[À CONFIRMER : domaine, lanternis.fr pressenti, non encore réservé]</span>, aux emails envoyés au nom de Lanternis et à nos prises de contact par email et par téléphone.</p>
+
+   <div class="encadre">
+    <h2 style="margin-top:0">En bref</h2>
+    <ul>
+     <li>Le responsable de vos données est <strong>Hasteria SASU</strong>, qui exploite la marque Lanternis.</li>
+     <li>Nous collectons le minimum : votre email professionnel, le nom et la taille de votre structure, et votre principale préoccupation informatique.</li>
+     <li>Vos données ne sont <strong>ni vendues, ni louées, ni cédées</strong>, et ne servent pas à de la publicité.</li>
+     <li>Ce site ne dépose <strong>aucun cookie</strong>. L'autodiagnostic se calcule dans votre navigateur : vos réponses ne nous sont pas envoyées, sauf si vous choisissez de les joindre à une demande d'échange.</li>
+     <li>Nos emails ne contiennent <strong>pas de pixel de suivi</strong>.</li>
+     <li>Vous pouvez vous désinscrire en un clic et nous écrire à tout moment : <a href="mailto:contact@hasteria.net">contact@hasteria.net</a>.</li>
+    </ul>
+   </div>
+
+   <h2 id="sommaire">Sommaire</h2>
+   <ol class="sommaire">
+    <li><a href="#responsable">Qui est responsable de vos données</a></li>
+    <li><a href="#liste-attente">Liste d'attente</a></li>
+    <li><a href="#nouvelles">Nouvelles de Lanternis (facultatif)</a></li>
+    <li><a href="#echange">Échange de 30 minutes (facultatif)</a></li>
+    <li><a href="#autodiagnostic">Autodiagnostic</a></li>
+    <li><a href="#prospection">Prises de contact par email et par téléphone</a></li>
+    <li><a href="#securite-technique">Sécurité du site et journaux techniques</a></li>
+    <li><a href="#audience">Mesure d'audience</a></li>
+    <li><a href="#cookies">Cookies</a></li>
+    <li><a href="#emails">Nos emails</a></li>
+    <li><a href="#destinataires">Qui a accès à vos données</a></li>
+    <li><a href="#transferts">Où sont vos données</a></li>
+    <li><a href="#droits">Vos droits</a></li>
+    <li><a href="#modifications">Modifications de cette politique</a></li>
+   </ol>
+
+   <h2 id="responsable">1. Qui est responsable de vos données</h2>
+   <p>Le responsable du traitement est <strong>Hasteria SASU</strong>, au capital de 300 €, 99 avenue Achille Peretti, 92200 Neuilly-sur-Seine, RCS Nanterre 981 178 429, représentée par son président, Yann Catois. Lanternis est une marque d'Hasteria SASU : ce n'est pas une société distincte.</p>
+   <p>Contact pour toute question sur vos données : <a href="mailto:contact@hasteria.net">contact@hasteria.net</a>, ou par courrier à l'adresse ci-dessus.</p>
+   <p>Hasteria SASU n'a pas désigné de délégué à la protection des données <span class="a-confirmer">[À CONFIRMER : absence d'obligation à faire valider par l'avocat]</span> ; le président répond directement à vos demandes.</p>
+  </div>
+
+  <h2 id="liste-attente">2. Liste d'attente</h2>
+  <div class="tableau-defilant">
+   <table>
+    <caption>Liste d'attente de Lanternis (formulaire « Rejoindre la liste d'attente »)</caption>
+    <tbody>
+     <tr><th scope="row">Pourquoi</th><td>Vous prévenir de l'ouverture de Lanternis et des conditions réservées aux inscrits. Les réponses servent aussi à mesurer l'intérêt pour le projet, sous forme de statistiques globales (nombre d'inscrits par taille et type de structure, préoccupations les plus citées).</td></tr>
+     <tr><th scope="row">Données</th><td>Obligatoires : email professionnel, nom de la structure, type (entreprise ou ESS), tranche d'effectif, principale préoccupation (un choix dans une liste). Facultatif : précision libre si vous choisissez « Autre chose » (200 caractères). Ajoutées par le système : date d'inscription et de confirmation, page et lien d'origine (par exemple « relais ESS »), variante de la page affichée, mention si l'adresse est une messagerie grand public, version du texte d'information affiché.</td></tr>
+     <tr><th scope="row">Base légale</th><td>Votre <strong>consentement</strong> (article 6.1.a du RGPD), exprimé en envoyant le formulaire puis en cliquant sur le lien de confirmation reçu par email. Vous pouvez le retirer à tout moment par le lien de désinscription. <span class="a-confirmer">[À CONFIRMER : base légale à valider par l'avocat]</span></td></tr>
+     <tr><th scope="row">Durée</th><td>Inscription non confirmée : supprimée au bout de <strong>30 jours</strong>. Inscription confirmée : jusqu'à votre désinscription, et au plus <strong>3 ans après votre dernier contact</strong> avec nous (une réponse, une demande ; une simple ouverture d'email ne compte pas). Si le projet Lanternis est abandonné, toutes les inscriptions sont supprimées dans les 3 mois qui suivent la décision.</td></tr>
+     <tr><th scope="row">Vous désinscrire</th><td>Un lien dans chaque email supprime votre inscription en un clic, sans connexion. Vous pouvez aussi écrire à <a href="mailto:contact@hasteria.net">contact@hasteria.net</a>.</td></tr>
+    </tbody>
+   </table>
+  </div>
+
+  <h2 id="nouvelles">3. Nouvelles de Lanternis (case facultative)</h2>
+  <div class="tableau-defilant">
+   <table>
+    <caption>Nouvelles de Lanternis par email</caption>
+    <tbody>
+     <tr><th scope="row">Pourquoi</th><td>Vous envoyer des nouvelles du projet et des conseils pratiques, au plus une fois par mois <span class="a-confirmer">[À CONFIRMER : fréquence réelle des envois, à aligner avec le libellé de la case]</span>.</td></tr>
+     <tr><th scope="row">Données</th><td>Celles de la liste d'attente, plus la date à laquelle vous avez coché la case et la version du texte de la case (preuve de votre accord).</td></tr>
+     <tr><th scope="row">Base légale</th><td>Votre <strong>consentement</strong>, distinct de l'inscription à la liste d'attente (case non cochée par défaut). Vous le retirez en un clic, sans quitter la liste d'attente si vous le souhaitez.</td></tr>
+     <tr><th scope="row">Durée</th><td>Jusqu'au retrait de votre accord, et au plus 3 ans après votre dernier contact avec nous.</td></tr>
+    </tbody>
+   </table>
+  </div>
+
+  <h2 id="echange">4. Échange de 30 minutes (case facultative ou demande depuis l'autodiagnostic)</h2>
+  <div class="tableau-defilant">
+   <table>
+    <caption>Échange de 30 minutes sur l'informatique de votre structure</caption>
+    <tbody>
+     <tr><th scope="row">Pourquoi</th><td>Vous recontacter pour convenir d'un échange par téléphone ou en visio, puis mener cet échange. Il sert à notre étude : comprendre comment les structures sans service informatique s'organisent. Ce n'est pas une démarche commerciale.</td></tr>
+     <tr><th scope="row">Données</th><td>Celles de la liste d'attente (ou, depuis l'autodiagnostic : email, structure, type, effectif), la date de votre accord, nos échanges d'emails pour fixer le rendez-vous, votre numéro de téléphone si vous nous le donnez, et nos notes d'entretien. Si vous cochez « Joindre mon résultat » : votre score, votre profil et vos 10 réponses codées de 0 à 3.</td></tr>
+     <tr><th scope="row">Base légale</th><td>Votre <strong>consentement</strong> (case cochée ou demande d'échange). Le résultat de l'autodiagnostic n'est transmis que si vous cochez la case prévue.</td></tr>
+     <tr><th scope="row">Durée</th><td>Sans suite de votre part : demande supprimée 12 mois après votre accord. Après l'échange : vos notes d'entretien nominatives et votre résultat d'autodiagnostic sont supprimés ou rendus anonymes au plus tard 6 mois après l'échange <span class="a-confirmer">[À CONFIRMER : durées proposées, à valider par le fondateur et l'avocat]</span>. La synthèse de l'étude est anonyme : aucune citation ne vous est attribuée.</td></tr>
+    </tbody>
+   </table>
+  </div>
+
+  <div class="texte">
+   <h2 id="autodiagnostic">5. Autodiagnostic</h2>
+   <p>L'autodiagnostic en 10 questions <strong>se calcule entièrement dans votre navigateur</strong>. Vos réponses ne nous sont pas envoyées et ne sont pas enregistrées sur votre appareil : si vous fermez la page, elles disparaissent. Pour garder votre résultat, utilisez la fonction d'impression de votre navigateur.</p>
+   <p>Vos réponses ne nous parviennent que dans un cas : si vous demandez un échange de 30 minutes <strong>et</strong> cochez « Joindre mon résultat à ma demande » (voir <a href="#echange">section 4</a>).</p>
+   <p class="petit"><span class="a-confirmer">[À CONFIRMER : fonctionnement à vérifier sur la page réalisée. Si le calcul était fait sur le serveur, cette section doit être réécrite avant la mise en ligne (données reçues, base légale, durée, absence de lien avec votre identité).]</span></p>
+  </div>
+
+  <h2 id="prospection">6. Prises de contact par email et par téléphone (prospection et étude)</h2>
+  <div class="texte"><p>Pour préparer Lanternis, nous contactons des dirigeants et des responsables administratifs et financiers d'entreprises et d'associations, pour les inviter à un échange de 30 minutes. Si vous avez reçu un tel message ou un tel appel, voici ce que nous faisons de vos données.</p></div>
+  <div class="tableau-defilant">
+   <table>
+    <caption>Prospection et étude auprès des professionnels</caption>
+    <tbody>
+     <tr><th scope="row">Pourquoi</th><td>Vous inviter, par email ou par téléphone, à un échange de 30 minutes sur l'organisation informatique de votre structure ; suivre nos prises de contact (au plus trois messages) ; respecter votre demande si vous ne souhaitez plus être contacté(e).</td></tr>
+     <tr><th scope="row">Données</th><td>Civilité, nom, fonction, nom de la structure, email professionnel, téléphone professionnel (standard ou ligne professionnelle), source de ces coordonnées, dates et résultat de nos prises de contact, et, si vous acceptez l'échange, nos notes d'entretien. Nous ne collectons aucune donnée sur la vie privée et n'utilisons aucun outil d'enrichissement de fichiers.</td></tr>
+     <tr><th scope="row">D'où viennent ces données</th><td>Du site internet de votre structure ou d'une source publique professionnelle (par exemple une offre d'emploi publiée par votre structure), du standard de votre structure, ou d'une recommandation d'une personne qui vous connaît. La source exacte est indiquée dans chacun de nos emails.</td></tr>
+     <tr><th scope="row">Base légale</th><td>L'<strong>intérêt légitime</strong> d'Hasteria SASU (article 6.1.f du RGPD) à faire connaître son projet et à mener son étude auprès de professionnels, sur un sujet lié à leurs fonctions. Vous pouvez vous y opposer à tout moment, sans avoir à vous justifier.</td></tr>
+     <tr><th scope="row">Durée</th><td>Sans réponse de votre part : 12 mois après notre dernier message, puis suppression. Si vous nous avez répondu favorablement : 3 ans après votre dernier contact avec nous. Notes d'entretien : comme indiqué en <a href="#echange">section 4</a>. Si vous vous opposez : vos coordonnées sont supprimées et seule une empreinte chiffrée (non lisible) de votre email ou de votre numéro est gardée 3 ans dans notre liste d'opposition, uniquement pour ne plus vous contacter.</td></tr>
+     <tr><th scope="row">Ne plus être contacté(e)</th><td>Répondez « Stop » à n'importe lequel de nos emails, dites-le-nous au téléphone, ou écrivez à <a href="mailto:contact@hasteria.net">contact@hasteria.net</a>. Votre refus est pris en compte le jour même et vaut pour <strong>Lanternis et toutes les autres marques d'Hasteria SASU</strong>.</td></tr>
+    </tbody>
+   </table>
+  </div>
+
+  <h2 id="securite-technique">7. Sécurité du site et journaux techniques</h2>
+  <div class="tableau-defilant">
+   <table>
+    <caption>Protection du formulaire et journaux du serveur</caption>
+    <tbody>
+     <tr><th scope="row">Pourquoi</th><td>Protéger le formulaire contre les envois automatiques et les abus (au plus 5 envois par heure depuis une même connexion), et assurer le fonctionnement et la sécurité de l'hébergement.</td></tr>
+     <tr><th scope="row">Données</th><td>Pour le formulaire : une empreinte chiffrée de votre adresse IP (l'adresse elle-même n'est jamais enregistrée en clair). Pour l'hébergement : les journaux du serveur tenus par l'hébergeur (adresse IP, date, page demandée, navigateur).</td></tr>
+     <tr><th scope="row">Base légale</th><td>L'<strong>intérêt légitime</strong> d'Hasteria SASU à sécuriser son site. Pour l'hébergeur, le cas échéant, ses obligations légales de conservation.</td></tr>
+     <tr><th scope="row">Durée</th><td>Empreinte de l'adresse IP : 24 heures au plus. Journaux du serveur : durée fixée par l'hébergeur <span class="a-confirmer">[À CONFIRMER : durée de conservation des journaux chez o2switch]</span>.</td></tr>
+    </tbody>
+   </table>
+  </div>
+
+  <div class="texte">
+   <h2 id="audience">8. Mesure d'audience</h2>
+   <p><strong>Aujourd'hui, ce site ne mesure pas son audience</strong> : aucun outil de statistiques n'est installé.</p>
+   <p>Nous envisageons d'installer un outil de mesure d'audience <strong>sans cookie</strong>, configuré pour produire uniquement des statistiques anonymes pour notre propre compte (pages vues, clics sur les boutons, provenance des visites, part des visiteurs qui s'inscrivent), sans suivi d'un site à l'autre et sans recoupement avec la liste d'attente. <span class="a-confirmer">[À CONFIRMER : outil retenu (Matomo auto-hébergé ou Plausible), lieu d'hébergement, réglages, durée de conservation (25 mois au plus) et moyen de s'y opposer. Cette section sera complétée avant l'installation.]</span></p>
+   <p>Si un outil était installé sans remplir les conditions fixées par la CNIL pour se passer de votre accord, nous vous demanderions votre accord avant toute mesure.</p>
+
+   <h2 id="cookies">9. Cookies</h2>
+   <p><strong>Ce site ne dépose aucun cookie</strong> et n'enregistre rien sur votre appareil (ni stockage local, ni identifiant). Il ne charge aucune ressource externe : ni police, ni vidéo, ni bouton de réseau social, ni outil publicitaire. C'est pourquoi aucun bandeau ne vous demande votre accord. <span class="a-confirmer">[À CONFIRMER : à vérifier sur le site en ligne, y compris les éventuels cookies ajoutés par l'hébergeur]</span></p>
+
+   <h2 id="emails">10. Nos emails</h2>
+   <ul>
+    <li>Nos emails automatiques (confirmation d'inscription, bienvenue, nouvelles, confirmation de demande d'échange) sont envoyés par notre prestataire Mailjet (voir <a href="#destinataires">section 11</a>).</li>
+    <li>Ils ne contiennent <strong>pas de pixel de suivi</strong> : nous ne savons pas si vous les ouvrez. Les liens qu'ils contiennent ne sont pas suivis individuellement <span class="a-confirmer">[À CONFIRMER : suivi des ouvertures et des clics désactivé dans Mailjet]</span>. Certains liens portent une indication de provenance (par exemple « email de bienvenue »), qui sert uniquement aux statistiques globales.</li>
+    <li>Nos messages de prospection sont écrits et envoyés un par un, à la main, depuis notre messagerie professionnelle, sans pixel de suivi.</li>
+    <li>Chaque email contient un lien de désinscription ou la possibilité de répondre « Stop ».</li>
+   </ul>
+  </div>
+
+  <h2 id="destinataires">11. Qui a accès à vos données</h2>
+  <div class="texte">
+   <p>Au sein d'Hasteria SASU, seul son président a accès à vos données. Elles ne sont <strong>ni vendues, ni louées, ni cédées</strong> à quiconque, et ne sont transmises à aucun partenaire commercial. Les prestataires ci-dessous les traitent uniquement pour notre compte, sur nos instructions, dans le cadre d'un contrat conforme à l'article 28 du RGPD.</p>
+  </div>
+  <div class="tableau-defilant">
+   <table>
+    <caption>Prestataires (sous-traitants) et lieu de traitement</caption>
+    <thead><tr><th scope="col">Prestataire</th><th scope="col">Rôle</th><th scope="col">Données concernées</th><th scope="col">Lieu</th></tr></thead>
+    <tbody>
+     <tr><th scope="row">o2switch (SAS, Clermont-Ferrand) <span class="a-confirmer">[À CONFIRMER : hébergeur exact]</span></th><td>Hébergement du site, du formulaire et de la base de la liste d'attente</td><td>Liste d'attente, demandes d'échange, journaux du serveur</td><td>France, selon l'hébergeur</td></tr>
+     <tr><th scope="row">Mailjet (groupe Sinch)</th><td>Envoi des emails automatiques</td><td>Email, nom de la structure, données nécessaires à l'envoi et à la désinscription</td><td>Union européenne (Allemagne et Belgique, sur l'infrastructure de Google Cloud), selon Mailjet <span class="a-confirmer">[À CONFIRMER : liste des sous-traitants ultérieurs et absence de transfert hors UE, à vérifier dans l'accord de traitement de données de Mailjet]</span></td></tr>
+     <tr><th scope="row"><span class="a-confirmer">[À CONFIRMER : fournisseur de la messagerie contact@hasteria.net]</span></th><td>Messagerie professionnelle d'Hasteria (réponses, prospection, exercice de vos droits)</td><td>Emails échangés avec vous</td><td><span class="a-confirmer">[À CONFIRMER]</span></td></tr>
+     <tr><th scope="row"><span class="a-confirmer">[À CONFIRMER : outil de suivi des prises de contact (tableur)]</span></th><td>Suivi des prises de contact et liste d'opposition</td><td>Données de la section 6</td><td><span class="a-confirmer">[À CONFIRMER]</span></td></tr>
+     <tr><th scope="row"><span class="a-confirmer">[À CONFIRMER : outil de mesure d'audience, s'il est installé]</span></th><td>Statistiques anonymes de fréquentation</td><td>Aucune donnée vous identifiant</td><td><span class="a-confirmer">[À CONFIRMER]</span></td></tr>
+    </tbody>
+   </table>
+  </div>
+  <div class="texte"><p>Vos données peuvent aussi être communiquées à une autorité qui l'exige légalement (par exemple sur réquisition judiciaire).</p></div>
+
+  <div class="texte">
+   <h2 id="transferts">12. Où sont vos données</h2>
+   <p>Vos données sont hébergées en France (site et liste d'attente) et dans l'Union européenne (emails). Nous ne les transférons pas volontairement hors de l'Union européenne. <span class="a-confirmer">[À CONFIRMER : Mailjet appartient au groupe suédois Sinch et s'appuie sur Google Cloud ; vérifier dans son accord de traitement de données si un sous-traitant ultérieur accède aux données depuis un pays hors UE et, le cas échéant, sur quelles garanties.]</span></p>
+   <p>Les données ne sont jamais déposées dans nos outils de développement (dépôt de code) et les exports de la liste d'attente sont chiffrés et supprimés après usage.</p>
+
+   <h2 id="securite">Sécurité</h2>
+   <p>La base de la liste d'attente est stockée hors de la partie publique du site, l'accès aux exports est protégé par un mot de passe, les connexions au site sont chiffrées (HTTPS), et seules les données nécessaires sont envoyées à Mailjet. Aucune décision automatisée produisant des effets juridiques à votre égard n'est prise à partir de vos réponses.</p>
+
+   <h2 id="droits">13. Vos droits</h2>
+   <p>Vous pouvez à tout moment :</p>
+   <ul>
+    <li><strong>accéder</strong> à vos données et en obtenir une copie ;</li>
+    <li>les faire <strong>rectifier</strong> si elles sont inexactes ;</li>
+    <li>les faire <strong>effacer</strong> ;</li>
+    <li>en faire <strong>limiter</strong> l'utilisation ;</li>
+    <li>vous <strong>opposer</strong> à leur utilisation fondée sur notre intérêt légitime, et à toute prospection, sans avoir à vous justifier ;</li>
+    <li><strong>retirer votre consentement</strong> (liste d'attente, nouvelles, échange), sans que cela remette en cause ce qui a été fait avant ;</li>
+    <li>recevoir les données que vous nous avez fournies dans un format lisible (<strong>portabilité</strong>), pour celles traitées sur la base de votre consentement ;</li>
+    <li>nous donner des <strong>directives</strong> sur le sort de vos données après votre décès.</li>
+   </ul>
+   <p><strong>Comment :</strong> écrivez à <a href="mailto:contact@hasteria.net">contact@hasteria.net</a> ou à Hasteria SASU, 99 avenue Achille Peretti, 92200 Neuilly-sur-Seine, en précisant l'adresse email ou le numéro concerné. Nous répondons dans un délai d'<strong>un mois</strong> au plus. Nous ne vous demanderons une pièce d'identité qu'en cas de doute raisonnable sur votre identité.</p>
+   <p><strong>Réclamation :</strong> si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la Commission nationale de l'informatique et des libertés (CNIL), 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, ou en ligne sur cnil.fr <span class="a-confirmer">[À CONFIRMER : adresse postale de la CNIL à revérifier le jour de la mise en ligne]</span>. Nous vous invitons à nous écrire d'abord : nous ferons le nécessaire.</p>
+
+   <h2 id="modifications">14. Modifications de cette politique</h2>
+   <p>Nous mettons cette page à jour dès qu'un traitement change (nouvel outil, nouvelle donnée), avant que le changement ne s'applique. La date et le numéro de version figurent en haut de page. Si le changement vous concerne directement (par exemple un nouveau prestataire qui reçoit vos données), nous vous en informons par email.</p>
+  </div>
+ </div>
+</main>
+
+<footer class="pied zone-nuit" role="contentinfo">
+ <div class="conteneur">
+  <img src="../../marque/charte/logo/logo-horizontal-nuit.svg" width="140" height="30" alt="Lanternis">
+  <p><strong style="color:var(--lt-papier)">Lanternis est une marque d'Hasteria SASU.</strong></p>
+  <p>Hasteria SASU au capital de 300 €, 99 avenue Achille Peretti, 92200 Neuilly-sur-Seine. RCS Nanterre 981 178 429. TVA intracommunautaire FR71981178429. Directeur de la publication : Yann Catois. Contact : <a href="mailto:contact@hasteria.net">contact@hasteria.net</a>.</p>
+  <ul>
+   <li><a href="mentions-legales.html">Mentions légales</a></li>
+   <li><a href="confidentialite.html" aria-current="page">Politique de confidentialité</a></li>
+   <li><a href="#contenu">Haut de page</a></li>
+  </ul>
+  <p>Cette page ne dépose aucun cookie et ne charge aucune ressource externe.</p>
+ </div>
+</footer>
+</body>
+</html>

@@ -3,132 +3,134 @@ venture: lanternis
 phase: 2b Pré-lancement
 auteur: lifecycle-emailing
 date: 2026-10-26
+révision: 2026-10-26 (v2) — alignement sur le formulaire réel (`marketing/landing/validation.html`, `validation.md` § 7 et § 9) et sur `marketing/landing/conformite-prelancement.md` (§ 2.3, § 4.3, § 5.3)
 statut: brouillon
 skills: sequence-nurturing, copywriting-frameworks, ab-test
-envoi: Mailjet (API appelée par le script PHP de liste d'attente sur o2switch) — RIEN N'EST ENVOYÉ, validation explicite de l'utilisateur requise avant toute activation
+envoi: Mailjet, en transactionnel, déclenché par `waitlist.php` et `confirm.php` (o2switch) — RIEN N'EST ENVOYÉ ; activation soumise à la validation explicite de l'utilisateur
 ---
 
-# Liste d'attente : emails de confirmation d'inscription
+# Liste d'attente : emails de confirmation et de bienvenue
 
-> **Sources de ton et de fond :** `marque/plateforme-de-marque.md` (vouvoiement, posé, pas de vente par la peur, mots interdits § 10.4), `marque/messages-par-persona.md` (P1, P2), `2-marche/acquisition.md` § 4.2 (objectif : ≥ 40 % d'inscrits qui complètent l'autodiagnostic), `2-marche/script-interview.md` (entretien de 30 minutes, « je ne vends rien »).
+> **Sources :** `marque/plateforme-de-marque.md` (vouvoiement, ton posé, pas de vente par la peur, mots interdits § 10.4) ; `marque/messages-par-persona.md` (P1, P2) ; `marketing/landing/validation.md` § 7 (formulaire, double opt-in) et § 9 (premiers brouillons de ces deux emails, repris et complétés ici) ; `marketing/landing/conformite-prelancement.md` (registre T1 à T4, pixels § 2.3, pied d'email § 4.3, données transmises à Mailjet § 5.3).
 > **Signature :** la marque (« L'équipe Lanternis »), conformément à la décision du 2026-10-26 (pas de voix fondateur).
-> **Aucun chiffre** n'apparaît dans ces emails, hormis la durée de l'entretien et le nombre de questions de l'autodiagnostic (20, repris de `acquisition.md` C8 ; à aligner sur l'outil réel).
+> **Chiffres :** aucun, hormis le nombre de questions de l'autodiagnostic (10) et sa durée annoncée sur la landing (5 minutes, `validation.md` § 5).
 
 ---
 
-## 1. Logique d'envoi
+## 1. Formulaire réel et logique d'envoi
 
-Le formulaire de la landing collecte le minimum (RGPD by design) :
-- email (obligatoire) ;
-- prénom (facultatif) ;
-- type de structure : entreprise / association, fondation ou coopérative / autre (obligatoire, sert à la segmentation P1 / P2) ;
-- tranche d'effectif : moins de 20 / 20 à 49 / 50 à 99 / 100 à 249 / 250 et plus (obligatoire, sert à qualifier l'inscrit) ;
-- **case non pré-cochée** : « Je souhaite recevoir les conseils de Lanternis : un email par semaine environ pendant un mois, puis les nouvelles du lancement. Désinscription en un clic. »
+Champs de `validation.html` (aucun prénom) : `email`, `structure`, `type` (`entreprise` ou `ess`), `effectif` (moins de 20 / 20 à 49 / 50 à 99 / 100 à 249 / 250 et plus), `douleur` (un choix) et `douleur_autre` facultatif, puis **deux cases facultatives, décochées par défaut** :
+- `nouvelles` : « J'accepte de recevoir les nouvelles de Lanternis par email (au plus une par mois). Facultatif, désinscription en un clic. »
+- `echange` : « J'accepte d'être recontacté(e) pour un échange de 30 minutes sur l'informatique de ma structure. Facultatif, sans démarche commerciale. »
 
-| Case « conseils » | Email envoyé | Contenu | Suite |
+**Double opt-in pour tous les inscrits**, quelle que soit la case cochée (`validation.md` § 7.2 et § 7.3) : sans confirmation, rien d'autre n'est envoyé et l'inscription est supprimée au bout de 30 jours.
+
+| Étape | Email | Destinataires | Suite |
 |---|---|---|---|
-| **Non cochée** | **E0-B « Inscription confirmée »** (immédiat) | Confirme la liste d'attente, invite à l'autodiagnostic, propose l'entretien | Aucun autre email que l'annonce de l'ouverture (finalité pour laquelle la personne s'est inscrite). Pas de nurturing. |
-| **Cochée** | **E0-A « Confirmez votre adresse »** (immédiat, double opt-in) | Un seul bouton : confirmer | Sans clic : **une seule** relance à J+3, puis rien ; l'inscription aux conseils est abandonnée (la liste d'attente reste). |
-| Cochée, puis lien cliqué | **E0-C « Bienvenue »** (immédiat après confirmation) | Confirme, invite à l'autodiagnostic, propose l'entretien | Entrée dans `sequence-nurturing-preLancement.md` (J0 = date de confirmation). |
+| Envoi du formulaire | **E0-A Confirmation** (immédiat) | Tous | Sans clic : rien d'autre (pas de relance automatique, H : à décider ; une relance unique à J+3 est possible si le juriste la valide) |
+| Clic sur le lien de confirmation | **E0-B Bienvenue** (immédiat) | Tous les confirmés | Une phrase change selon `echange` (§ 3) |
+| — | Séquence `sequence-nurturing-preLancement.md` | Uniquement `nouvelles = oui`, confirmés | Cadence liée au libellé de la case (voir ce fichier, § « Cadence et consentement ») |
+| — | Prise de contact individuelle pour l'échange | Uniquement `echange = oui` | Email personnel du fondateur, hors Mailjet automatique ; aucun outil de prise de rendez-vous tant qu'il n'est pas choisi et ajouté aux sous-traitants |
 
-Segments posés à l'inscription : **P1** = entreprise ; **P2** = association, fondation ou coopérative ; « autre » (prestataire, étudiant, curieux) = aucun nurturing, revue manuelle (un prestataire peut relever de l'entretien prestataire, `script-interview.md` § 8).
-Effectif « moins de 20 » ou « 250 et plus » : confirmation envoyée normalement, mais pas de proposition d'entretien (hors cible ; Lanternis dit quand il n'est pas adapté, plateforme § 7).
+**Segments** (seules données transmises à Mailjet, `conformite-prelancement.md` § 5.3) : `email`, `structure`, `segment` (P1 = `entreprise`, P2 = `ess`), `nouvelles`. **Ajouts proposés** pour les emails ci-dessous : `echange` (oui/non) et `qualifie` (oui/non). **À valider par juriste-rgpd** avant de les envoyer à Mailjet. Ni `douleur`, ni `douleur_autre`, ni `source` ne sont transmis.
+
+**Hors cible** (`qualifie = non` : effectif moins de 20 ou 250 et plus, ou entreprise de 20 à 49) : mêmes emails, avec la phrase de franchise du § 3.
 
 ---
 
-## 2. E0-A « Confirmez votre adresse » (double opt-in)
+## 2. E0-A Confirmation (double opt-in)
 
-- **Déclencheur :** soumission du formulaire avec la case « conseils » cochée.
-- **Délai :** immédiat. Relance unique à J+3 si pas de clic (même texte, objet « Votre inscription n'est pas encore confirmée »).
-- **Expéditeur :** Lanternis <bonjour@lanternis.fr> (H : adresse à créer) ; réponse possible à la même adresse.
-- **Objet A :** Confirmez votre adresse pour recevoir les conseils Lanternis
+- **Déclencheur :** formulaire valide reçu par `waitlist.php` (y compris un renvoi pour une adresse déjà inscrite, au plus une fois par 24 h, `validation.md` § 7.2).
+- **Délai :** immédiat.
+- **Expéditeur :** Lanternis, adresse de la marque sur le domaine authentifié (H : `bonjour@lanternis.fr`, domaine non réservé) ; réponses possibles.
+- **Objet A :** Confirmez votre inscription à la liste d'attente Lanternis *(objet de `validation.md` § 9)*
 - **Objet B :** Un clic pour confirmer votre inscription
-- **Pré-en-tête :** Sans confirmation, vous ne recevrez que l'annonce de l'ouverture.
-- **CTA unique :** bouton « Confirmer mon adresse » → `{{lien_confirmation}}` (jeton unique, valable 7 jours, H).
-- **Métrique suivie :** taux de confirmation (confirmés / cases cochées). Repère interne à fixer après 2 semaines de données (pas de chiffre de référence sourcé).
+- **Pré-en-tête :** Sans confirmation, nous ne conservons pas votre adresse.
+- **Segment :** tous.
+- **CTA unique :** bouton « Confirmer mon inscription » → `confirm.php?jeton={{jeton_confirmation}}` (jeton valable 7 jours).
+- **Métrique suivie :** taux de confirmation = confirmés / formulaires reçus, lu dans le **compteur interne de `waitlist.php`** (source de vérité, `validation.md` § 7.2, point 9). Repère : ≥ 70 % (`validation.md` § 6.3, H).
 
 **Corps**
 
-> Bonjour{{var:prenom:""}},
+> Bonjour,
 >
-> Merci pour votre inscription à la liste d'attente de Lanternis.
+> Vous avez demandé à rejoindre la liste d'attente de Lanternis pour {{structure}}.
 >
-> Vous avez aussi demandé à recevoir nos conseils : un email par semaine environ pendant un mois, avec une méthode ou une check-list pour mieux connaître l'informatique de votre structure. Pour que nous puissions vous les envoyer, merci de confirmer votre adresse.
+> Pour confirmer, il suffit de cliquer sur ce bouton :
 >
-> **[Confirmer mon adresse]**
+> **[Confirmer mon inscription]**
 >
-> Si vous n'êtes pas à l'origine de cette demande, ignorez simplement ce message : vous ne recevrez rien d'autre.
+> Si vous n'êtes pas à l'origine de cette demande, ignorez cet email : rien ne sera conservé.
 >
 > L'équipe Lanternis
 
 ---
 
-## 3. E0-C « Bienvenue » (après confirmation) et E0-B « Inscription confirmée » (case non cochée)
+## 3. E0-B Bienvenue (après confirmation)
 
-Même corps pour les deux, à une phrase près (marquée **[E0-C seulement]**). Variante de paragraphe selon le segment.
-
-- **Déclencheur :** E0-C = clic sur le lien de confirmation ; E0-B = soumission du formulaire sans la case.
+- **Déclencheur :** clic sur le lien de confirmation (`confirm.php` passe le statut à `confirme`).
 - **Délai :** immédiat.
-- **Objet A :** Vous êtes sur la liste d'attente de Lanternis
-- **Objet B :** Votre informatique en 20 questions : par où commencer
-- **Pré-en-tête :** Un autodiagnostic de 20 questions pour voir où vous en êtes, sans rien installer.
-- **Segment :** P1 et P2 (paragraphe variable), effectif 20 à 249.
-- **CTA principal (bouton) :** « Faire l'autodiagnostic » → `{{lien_autodiagnostic}}?utm_source=mailjet&utm_medium=email&utm_campaign=lanternis-prelancement&utm_content=e0`.
-- **Proposition d'entretien :** en post-scriptum, sous forme de lien texte vers `{{lien_prise_rdv}}`. **Écart assumé** à la règle « un email = un CTA » : le brief demande les deux. L'autodiagnostic reste la seule action mise en avant ; le test A/B ci-dessous mesure si le post-scriptum fait baisser le clic principal.
-- **Métriques suivies :** taux de complétion de l'autodiagnostic dans les 7 jours (objectif ≥ 40 % des inscrits, `acquisition.md` § 4.2, H) ; entretiens réservés depuis E0 (objectif : à fixer, H).
+- **Objet A :** Votre place est réservée. Une question pour vous *(objet de `validation.md` § 9)*
+- **Objet B :** Votre informatique en 10 questions : par où commencer
+- **Pré-en-tête :** Une question à laquelle répondre en une ligne, et un autodiagnostic de 5 minutes.
+- **Segment :** P1 et P2 (une phrase variable) ; une phrase selon `echange` ; une phrase si `qualifie = non`.
+- **CTA unique :** « Faire l'autodiagnostic » → `autodiagnostic.html?src=confirmation` (paramètre de provenance déjà prévu par `validation.md`). La question ouverte appelle une simple **réponse à l'email** : ce n'est pas un second bouton.
+- **Proposition d'entretien :** pas de second appel à l'action. Si `echange = oui`, l'email annonce la prise de contact ; sinon, l'autodiagnostic propose lui-même l'échange en fin de parcours (`validation.md` § 4 ; formulaire de demande avec clause § 4.2 de `conformite-prelancement.md`).
+- **Métriques suivies :** réponses à la question ouverte (comptées à la main, elles alimentent `2-marche/script-interview.md`) ; demandes d'échange venant de l'autodiagnostic avec `src=confirmation` (si le formulaire de demande enregistre la provenance) ; visites de l'autodiagnostic avec `src=confirmation`, **en agrégé**, seulement si un outil d'audience exempté est installé (T7, aujourd'hui inactif). **Aucun suivi individuel des ouvertures ni des clics** (§ 5).
 
 **Corps**
 
-> Bonjour{{var:prenom:""}},
+> Bonjour,
 >
-> Votre inscription est confirmée. Nous vous écrirons à l'ouverture de Lanternis, avec les conditions réservées aux premières structures inscrites.
+> Merci, votre inscription est confirmée. Nous ouvrirons Lanternis d'abord aux inscrits, par petits groupes, et nous vous préviendrons avant.
 >
-> **[E0-C seulement]** Vous recevrez aussi, une fois par semaine environ, une méthode simple pour reprendre la main sur votre informatique.
+> En attendant, une question, à laquelle vous pouvez répondre simplement à cet email : **quel est aujourd'hui votre plus gros problème avec votre informatique ?** Une ligne suffit. Nous lisons toutes les réponses.
 >
-> En attendant, une première étape utile, avec ou sans Lanternis : savoir où vous en êtes. Notre autodiagnostic pose 20 questions sur ce que vous avez, ce que vous payez, ce qui arrive à échéance et qui détient les accès. Vous obtenez un résultat lisible et trois premières actions.
+> Et si vous avez cinq minutes, notre autodiagnostic pose 10 questions sur ce que vous avez, ce que vous payez, ce qui arrive à échéance et qui détient les accès. Le résultat s'affiche à l'écran, avec trois actions simples à mener ce mois-ci. Vos réponses restent dans votre navigateur : elles ne nous sont pas transmises.
 >
-> *[P1]* Il est pensé pour une direction sans DSI : pas de jargon, pas d'installation, aucune donnée technique demandée.
-> *[P2]* Il est pensé pour une DAF qui a hérité de l'informatique : le résultat peut servir de base à un point en bureau ou en CA.
+> *[P1]* Il est pensé pour une direction sans DSI : pas de jargon, rien à installer.
+> *[P2]* Il est pensé pour une DAF qui a hérité de l'informatique : le résultat peut servir de point de départ pour votre bureau ou votre CA.
 >
 > **[Faire l'autodiagnostic]**
 >
-> L'équipe Lanternis
+> *[si `echange = oui`]* Vous avez aussi accepté un échange de 30 minutes. Nous vous écrirons personnellement dans les prochains jours pour convenir d'un créneau ; vous pouvez aussi nous répondre dès maintenant avec deux ou trois disponibilités. Nous ne vendons rien pendant cet échange, et vous recevrez la synthèse anonymisée de l'étude.
 >
-> P.S. Nous menons des entretiens de 30 minutes avec des dirigeants et des DAF pour comprendre comment ils gèrent leur informatique sans service dédié. Nous ne vendons rien pendant cet échange ; nous vous enverrons la synthèse anonymisée de l'étude. Si vous êtes partant, [choisissez un créneau]({{lien_prise_rdv}}).
+> *[si `qualifie = non`]* Lanternis est conçu pour les structures de 50 à 249 salariés sans DSI, et pour celles de l'ESS dès 20 salariés. Si la vôtre est en dehors de ce cadre, l'autodiagnostic reste utile ; nous vous dirons franchement si Lanternis vous convient.
+>
+> L'équipe Lanternis
 
-**Variante pour les effectifs hors cible** (moins de 20 ou 250 et plus) : même email **sans le P.S.**, et cette phrase à la place du paragraphe segment : « Lanternis est conçu pour les structures de 20 à 249 salariés sans DSI. Si la vôtre est plus petite ou plus grande, l'autodiagnostic reste utile ; nous vous dirons franchement si Lanternis vous convient. »
+(Le cadre « 50 à 249, ESS dès 20 » reprend la règle de qualification de `validation.md` § 7.1.)
 
 ### Test A/B prévu
-- **Test 1 (objet) :** A « Vous êtes sur la liste d'attente de Lanternis » (confirmation, attendu) contre B « Votre informatique en 20 questions : par où commencer » (bénéfice). Métrique de décision : **clic sur l'autodiagnostic**, pas l'ouverture (les ouvertures sont faussées par le préchargement des messageries, notamment Apple Mail Privacy Protection).
-- **Test 2 (P.S. entretien), en second :** avec P.S. contre sans P.S. Si le P.S. ne réduit pas la complétion de l'autodiagnostic et génère des entretiens, on le garde.
-- **Limite :** avec un objectif de 80 inscrits qualifiés en 8 semaines (`acquisition.md` § 4.2), aucun test n'atteindra la significativité statistique. Répartition 50/50 et lecture **indicative** ; on ne conclut que sur un écart net et on le note comme tel dans `marketing/rapports/`.
+- **Variable :** objet (A question ouverte, B bénéfice « 10 questions »).
+- **Mesure possible sans pixel :** nombre de **réponses** à la question ouverte par variante (comptées à la main) et visites agrégées de l'autodiagnostic avec `src=confirmation-a` / `src=confirmation-b` (si un outil d'audience exempté est installé). Pas de mesure d'ouverture.
+- **Limite :** avec un objectif de 80 inscrits qualifiés en 8 semaines (`2-marche/acquisition.md` § 4.2), le test est **exploratoire** ; on ne conclut que sur un écart net, noté comme tel dans `marketing/rapports/`. Option sobre : ne pas tester et envoyer l'objet A.
 
 ---
 
-## 4. Pied de page commun à tous les emails Lanternis
+## 4. Pied de page de tous les emails automatiques (liste d'attente, nouvelles)
 
-> Vous recevez cet email parce que vous vous êtes inscrit(e) sur lanternis.fr le {{date_inscription}}{{#si conseils}} et avez demandé à recevoir nos conseils{{/si}}.
-> [Se désinscrire en un clic]([[UNSUB_LINK_FR]]) · [Politique de confidentialité]({{lien_confidentialite}})
->
-> Lanternis est une marque d'Hasteria SASU, société par actions simplifiée unipersonnelle au capital de 300 €, 99 avenue Achille Peretti, 92200 Neuilly-sur-Seine. RCS Nanterre 981 178 429. TVA FR71981178429. Contact : contact@hasteria.net.
+Texte du § 4.3 de `conformite-prelancement.md`, repris à l'identique, complété du lien « Mentions légales » exigé par la check-list (§ 6, « Technique ») :
 
-(Coordonnées reprises de `SOCIETE.md`. La syntaxe `{{#si …}}` est indicative : à traduire dans le langage de gabarit Mailjet, ou à remplacer par deux pieds distincts.)
+> Vous recevez cet email parce que vous vous êtes inscrit(e) à la liste d'attente de Lanternis le {{date_inscription}}. [Me désinscrire en un clic]({{lien_desinscription}}) · [Politique de confidentialité]({{lien_confidentialite}}) · [Mentions légales]({{lien_mentions_legales}})
+> Lanternis est une marque d'Hasteria SASU, SASU au capital de 300 €, 99 avenue Achille Peretti, 92200 Neuilly-sur-Seine, RCS Nanterre 981 178 429. Contact : contact@hasteria.net.
+
+- `{{lien_desinscription}}` = `desinscription.php?jeton={{jeton_desinscription}}` : supprime l'inscription en un clic, sans connexion (`validation.md` § 7.2, point 7). Doublé de l'en-tête `List-Unsubscribe` (et `List-Unsubscribe-Post` pour le désabonnement en un clic des messageries).
+- Pour E0-A (adresse non confirmée), le lien de désinscription est inutile mais sans inconvénient ; le garder pour un gabarit unique.
 
 ---
 
-## 5. Exigences techniques et RGPD (avant toute activation)
+## 5. Exigences techniques et RGPD avant activation
 
 | Exigence | Détail | Statut |
 |---|---|---|
-| Domaine d'envoi authentifié | `lanternis.fr` n'est pas encore réservé (`SOCIETE.md`). SPF, DKIM Mailjet et DMARC sur la zone OVH avant le premier envoi (`CLAUDE.md`, DNS). **Aucun envoi depuis une adresse gratuite ou un domaine non authentifié.** | À faire |
-| Lien de désinscription | Balise Mailjet de désinscription (`[[UNSUB_LINK_FR]]`, H : nom exact à vérifier dans la documentation Mailjet) + en-tête `List-Unsubscribe` en un clic. La désinscription des conseils ne retire pas de la liste d'attente, sauf demande ; un lien « Supprimer toutes mes données » figure dans la politique de confidentialité. | À configurer |
-| Consentement | Case non pré-cochée, libellé précis (fréquence, durée, objet) ; horodatage, version du libellé et adresse IP (H : à valider par juriste-rgpd) conservés comme preuve. Double opt-in pour les conseils. | À valider par juriste-rgpd |
-| Base légale | Liste d'attente : demande de la personne (annonce de l'ouverture). Conseils : consentement. À confirmer par juriste-rgpd (point déjà ouvert dans `STATUT.md`). | À valider |
-| Conservation | Proposition : suppression 3 ans après le dernier contact actif, ou à la désinscription pour les conseils (H, durée à confirmer par juriste-rgpd). | À valider |
-| Mentions | Politique de confidentialité en ligne avant la mise en ligne de la landing ; Mailjet listé comme sous-traitant. | À rédiger |
-| Mesure | Paramètres UTM sur tous les liens. Suivi d'ouverture Mailjet : à désactiver ou à mentionner dans la politique de confidentialité (pixel de suivi, H : position à faire trancher par juriste-rgpd). Suivi des clics conservé. | À décider |
-| Accessibilité et sobriété | Version texte brut systématique ; HTML léger, en-tête image facultatif (gabarit `marque/charte/gabarits/email-entete-600.html`, `alt` renseigné) ; bouton en texte HTML et non en image ; contraste AA (nuit sur papier). | Prévu |
+| **Aucun pixel, aucun suivi** | Suivi des **ouvertures et des clics désactivé** dans Mailjet pour tous les envois Lanternis (recommandation CNIL du 12 mars 2026, `conformite-prelancement.md` § 2.3). Liens en clair, non réécrits par Mailjet. Seul un paramètre de provenance (`src=`) figure dans les liens, lu en agrégé. | À configurer dans Mailjet, à contrôler en recette (code source de l'email reçu : aucune image de suivi, aucun lien de redirection Mailjet) |
+| Domaine authentifié | `lanternis.fr` non réservé. SPF, DKIM et DMARC sur la zone OVH avant tout envoi. | Bloquant |
+| Désinscription | Lien `desinscription.php` + en-tête `List-Unsubscribe` dans chaque email. | À construire (dev-vitrine) |
+| Données transmises à Mailjet | `email`, `structure`, `segment`, `nouvelles` ; ajouts proposés `echange`, `qualifie` à valider. | À valider par juriste-rgpd |
+| DPA Mailjet | Accepté, sous-traitants ultérieurs vérifiés (`conformite-prelancement.md` T8). | Bloquant |
+| Prise de rendez-vous | Aucun outil tiers tant qu'il n'est pas choisi et ajouté aux sous-traitants : prise de rendez-vous **par réponse à l'email**. | Appliqué dans ces brouillons |
+| Accessibilité et sobriété | Version texte brut systématique ; HTML léger ; bouton en texte HTML (pas en image) ; en-tête image facultatif (`marque/charte/gabarits/email-entete-600.html`, `alt` renseigné) ; contraste AA. | Prévu |
 
 ## 6. Variables à remplir avant activation
-
-`{{lien_confirmation}}`, `{{lien_autodiagnostic}}` (l'autodiagnostic n'existe pas encore : conception prévue en S2 de `acquisition.md` § 5), `{{lien_prise_rdv}}` (outil de prise de rendez-vous non choisi : à décider, de préférence hébergé dans l'UE), `{{lien_confidentialite}}`, `{{date_inscription}}`, adresse d'expédition `bonjour@lanternis.fr` (H).
+`{{structure}}`, `{{jeton_confirmation}}`, `{{jeton_desinscription}}`, `{{date_inscription}}`, `{{lien_confidentialite}}`, `{{lien_mentions_legales}}`, adresse d'expédition (H). La syntaxe des variables et des blocs conditionnels est à traduire dans le langage de gabarit Mailjet (ou le script PHP choisit le bon texte avant l'appel à l'API).
